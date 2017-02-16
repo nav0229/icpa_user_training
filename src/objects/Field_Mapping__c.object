@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used to track field name mappings between CSV input files and Salesforce object outputs</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CSV_Input__c</fullName>
+        <description>Column heading value from the CSV file</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Column heading value from the CSV file</inlineHelpText>
+        <label>CSV Input</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Type__c</fullName>
+        <description>This field should contain only the following values: Mapped, Datetime, Text, Other, Ignore, Multiselect</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please, type in only one of the following values (without quotes): &quot;Mapped&quot;, &quot;Datetime&quot;, &quot;Text&quot;, &quot;Other&quot;, or &quot;Ignore&quot;. You can also enter &quot;Multiselect&quot; followed by &quot;Mapped&quot;, &quot;Text&quot;, or &quot;Other&quot; (e.g. &quot;Multiselect; Mapped&quot;).</inlineHelpText>
+        <label>Data Type</label>
+        <length>30</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ETL_Process__c</fullName>
+        <description>Name of the ETL process used for this mapping</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the ETL process used for this mapping (e.g. &quot;Phone CSAT Upload&quot;)</inlineHelpText>
+        <label>ETL Process</label>
+        <length>20</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Field__c</fullName>
+        <description>API name of the Salesforce field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API name of the Salesforce field</inlineHelpText>
+        <label>Salesforce Field</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Field Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

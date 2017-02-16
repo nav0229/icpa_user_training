@@ -1,0 +1,30 @@
+<apex:page controller="GSA_FCIC_Datalink_Redirect">
+
+<html>
+
+<body>
+
+<form id="foo" name="ssodata" action="https://dl5.convergysresearch.com/datalink/SSOGateway.aspx" method="POST">
+
+<input type="hidden" id="vlogon" name="vlogon" value="{!login}" />
+
+<input type="hidden" id="vpwd" name="vpwd" value="{!password}" />
+
+<input type="hidden" name="GatewayId" value="{!guid}" />
+
+<input type="submit" value="Send"/> 
+
+</form>
+
+<script type="text/javascript">
+    function myfunc () {
+        var frm = document.getElementById("foo");
+        frm.submit();
+    }
+    window.onload = myfunc;
+</script>
+
+</body>
+
+</html>
+</apex:page>

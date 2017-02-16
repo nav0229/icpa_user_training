@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Staging Record</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Staging Records</value>
+    </caseValues>
+    <fields>
+        <label><!-- Avaya UCID --></label>
+        <name>Avaya_UCID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the CSAT File from which the Staging Record Object was populated --></help>
+        <label><!-- CSAT File --></label>
+        <name>CSAT_File__c</name>
+        <relationshipLabel><!-- Staging Record --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the column heading of the Phone Survey CSV file --></help>
+        <label><!-- Column Heading --></label>
+        <name>Column_Heading__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the column number on the attached CSV file on CSAT File object --></help>
+        <label><!-- Column Number --></label>
+        <name>Column_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if record contains an error --></help>
+        <label><!-- Contains Error? --></label>
+        <name>Contains_Error__c</name>
+    </fields>
+    <fields>
+        <help><!-- This will store row and column errors encountered when processing Phone Survey CSV files --></help>
+        <label><!-- Error --></label>
+        <name>Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feedback Date/Time --></label>
+        <name>Feedback_Date_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the specific issue you called about on resolved? --></help>
+        <label><!-- Q10-Specific Issue Resolved? --></label>
+        <name>Q10_Specific_Issue_Resolved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Have you contacted the USA.GOV
+Federal Information Line about this particular issue 
+more than once? --></help>
+        <label><!-- Q11-Contacted Multiple Times --></label>
+        <name>Q11_Contacted_Multiple_Times__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Q13 Which of these methods of contact
+ did you use to try to resolve this particular
+ issue before calling the Federal Information
+  Line? Select all that apply --></help>
+        <label><!-- Q12-Method of Contact 1 --></label>
+        <name>Q12_Method_of_Contact_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact 2 --></label>
+        <name>Q12_Method_of_Contact_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact 3 --></label>
+        <name>Q12_Method_of_Contact_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact 4 --></label>
+        <name>Q12_Method_of_Contact_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact 5 --></label>
+        <name>Q12_Method_of_Contact_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact 6 --></label>
+        <name>Q12_Method_of_Contact_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact 7 --></label>
+        <name>Q12_Method_of_Contact_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact DK --></label>
+        <name>Q12_Method_of_Contact_DK__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q12-Method of Contact REF --></label>
+        <name>Q12_Method_of_Contact_REF__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type other methods you tried --></help>
+        <label><!-- Q12a-What Other Method? --></label>
+        <name>Q12a_What_Other_Method__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did you contact some other government agency 
+before contacting USA.GOV? --></help>
+        <label><!-- Q13-Contact Another Agency? --></label>
+        <name>Q13_Contact_Another_Agency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Q15 Who did you contact before you called? --></help>
+        <label><!-- Q14-Who Contact Before? --></label>
+        <name>Q14_Who_Contact_Before__c</name>
+    </fields>
+    <fields>
+        <help><!-- How easy was it for you to get your question answered or the information you needed from the 
+Federal Information Line? --></help>
+        <label><!-- Q16-Ease to get Question Answered --></label>
+        <name>Q16_Ease_to_get_Question_Answered__c</name>
+    </fields>
+    <fields>
+        <help><!-- Q21  If I may ask, what was the main reason for your call? --></help>
+        <label><!-- Q19-Main Contact Reason --></label>
+        <name>Q19_Main_Contact_Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- What are other contact reasons? --></help>
+        <label><!-- Q19a-Contact Reason Comment --></label>
+        <name>Q19a_Contact_Reason_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please rate the amount of effort that you personally had to put forth to get your request addressed? --></help>
+        <label><!-- Q15-Amount of Personal Effort --></label>
+        <name>Q1_Amount_of_Personal_Effort__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Q1 Thinking about the entire experience of the 
+phone call you made to the Federal Information
+Line on (INSERT DATE), how would you rate the
+overall quality of the service you received using
+a 0 to 10 scale where 0 is Poor and 10 is 
+Excellent?
+&quot; --></help>
+        <label><!-- Q1-Overall Quality? --></label>
+        <name>Q1_Overall_Quality__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the Information Specialist place you on hold at 
+any time during your call? --></help>
+        <label><!-- Q20-Placed on Hold? --></label>
+        <name>Q20_Placed_on_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel REF --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_REF__c</name>
+    </fields>
+    <fields>
+        <help><!-- How did you hear about USA.GOV’s telephone service? --></help>
+        <label><!-- Q21-How You Heard About  USA.GOV Tel 1 --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel 2 --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel 3 --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel 4 --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel 5 --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel 6 --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel 7 --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q21-How You Heard About USA.GOV Tel DK --></label>
+        <name>Q21_How_You_Heard_About_USA_GOV_Tel_DK__c</name>
+    </fields>
+    <fields>
+        <help><!-- Key in other ways you hear about USA.GOV’s telephone 
+service? --></help>
+        <label><!-- Q21a-Other Ways Heard USA.GOV Tel --></label>
+        <name>Q21a_Other_Ways_Heard_USA_GOV_Tel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Column for Q21B - Other --></help>
+        <label><!-- Q21B - Other --></label>
+        <name>Q21b_Other__c</name>
+    </fields>
+    <fields>
+        <help><!-- Column for Q21B --></help>
+        <label><!-- Q21B --></label>
+        <name>Q21b__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17</masterLabel>
+            <translation><!-- 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18</masterLabel>
+            <translation><!-- 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19</masterLabel>
+            <translation><!-- 19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21</masterLabel>
+            <translation><!-- 21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22</masterLabel>
+            <translation><!-- 22 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23</masterLabel>
+            <translation><!-- 23 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24</masterLabel>
+            <translation><!-- 24 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26</masterLabel>
+            <translation><!-- 26 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27</masterLabel>
+            <translation><!-- 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28</masterLabel>
+            <translation><!-- 28 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29</masterLabel>
+            <translation><!-- 29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31</masterLabel>
+            <translation><!-- 31 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32</masterLabel>
+            <translation><!-- 32 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33</masterLabel>
+            <translation><!-- 33 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34</masterLabel>
+            <translation><!-- 34 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35</masterLabel>
+            <translation><!-- 35 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36</masterLabel>
+            <translation><!-- 36 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>37</masterLabel>
+            <translation><!-- 37 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>38</masterLabel>
+            <translation><!-- 38 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>39</masterLabel>
+            <translation><!-- 39 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40</masterLabel>
+            <translation><!-- 40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>41</masterLabel>
+            <translation><!-- 41 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>42</masterLabel>
+            <translation><!-- 42 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>43</masterLabel>
+            <translation><!-- 43 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44</masterLabel>
+            <translation><!-- 44 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46</masterLabel>
+            <translation><!-- 46 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>47</masterLabel>
+            <translation><!-- 47 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48</masterLabel>
+            <translation><!-- 48 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>49</masterLabel>
+            <translation><!-- 49 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50</masterLabel>
+            <translation><!-- 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>51</masterLabel>
+            <translation><!-- 51 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>52</masterLabel>
+            <translation><!-- 52 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>53</masterLabel>
+            <translation><!-- 53 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>54</masterLabel>
+            <translation><!-- 54 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>55</masterLabel>
+            <translation><!-- 55 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56</masterLabel>
+            <translation><!-- 56 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>57</masterLabel>
+            <translation><!-- 57 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>58</masterLabel>
+            <translation><!-- 58 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>59</masterLabel>
+            <translation><!-- 59 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60</masterLabel>
+            <translation><!-- 60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>61</masterLabel>
+            <translation><!-- 61 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>62</masterLabel>
+            <translation><!-- 62 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>63</masterLabel>
+            <translation><!-- 63 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>64</masterLabel>
+            <translation><!-- 64 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>65</masterLabel>
+            <translation><!-- 65 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>66</masterLabel>
+            <translation><!-- 66 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>67</masterLabel>
+            <translation><!-- 67 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>68</masterLabel>
+            <translation><!-- 68 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>69</masterLabel>
+            <translation><!-- 69 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>70</masterLabel>
+            <translation><!-- 70 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>71</masterLabel>
+            <translation><!-- 71 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>72</masterLabel>
+            <translation><!-- 72 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>73</masterLabel>
+            <translation><!-- 73 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>74</masterLabel>
+            <translation><!-- 74 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75</masterLabel>
+            <translation><!-- 75 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>76</masterLabel>
+            <translation><!-- 76 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>77</masterLabel>
+            <translation><!-- 77 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>78</masterLabel>
+            <translation><!-- 78 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>79</masterLabel>
+            <translation><!-- 79 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Would you like the Federal Information 
+Line Customer Service to call you
+ back to further discuss your unresolved
+ question or concern? --></help>
+        <label><!-- Q22-Call You to Discuss Open Issues --></label>
+        <name>Q22_Call_You_to_Discuss_Open_Issues__c</name>
+    </fields>
+    <fields>
+        <help><!-- To help address your needs when the Federal 
+Information Line contacts you, what specific issues would 
+you like to discuss? --></help>
+        <label><!-- Q23-Issues to Discuss on Call Back --></label>
+        <name>Q23_Issues_to_Discuss_on_Call_Back__c</name>
+    </fields>
+    <fields>
+        <help><!-- Why did you provide a rating of (INSERT RATING
+FROM Q1) for the overall quality of service you 
+received? --></help>
+        <label><!-- Q2-Overall Quality Comment --></label>
+        <name>Q2_Overall_Quality_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- How useful was the information provided from
+the Federal Information Line? --></help>
+        <label><!-- Q3-Useful Information? --></label>
+        <name>Q3_Useful_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- How likely are you to use the Federal Information 
+Line telephone service again? --></help>
+        <label><!-- Q4-Likely Use USA.gov Again? --></label>
+        <name>Q4_Likely_Use_USA_gov_Again__c</name>
+    </fields>
+    <fields>
+        <help><!-- How likely is it that you would recommend the 
+Federal Information Line telephone service to a friend
+or colleague? --></help>
+        <label><!-- Q5-Likely Recommend USA.gov? --></label>
+        <name>Q5_Likely_Recommend_USA_gov__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please tell us how USA.GOV’s service compared 
+to your expectations. Was it…? --></help>
+        <label><!-- Q6-Compared to Expectations? --></label>
+        <name>Q6_Compared_to_Expectation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rate the total amount of time you spent on the phone, including the time spent in the IVR when you called? --></help>
+        <label><!-- Q7-Process of Getting a Response? --></label>
+        <name>Q7_Process_of_Getting_a_Response__c</name>
+    </fields>
+    <fields>
+        <help><!-- And, using that same scale, how would you rate
+the length of time you spent waiting to speak to an 
+Information Specialist? --></help>
+        <label><!-- Q7a-Waiting Time for Specialist --></label>
+        <name>Q7a_Waiting_Time_for_Specialist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q7b-Total amnt of time spent on phone --></label>
+        <name>Q7b_Total_amnt_of_time_spent_on_phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the Information Specialist give you the 
+information you needed directly, or did they tell you 
+how to get the information you needed on your own? --></help>
+        <label><!-- Q8-Got Information Directly? --></label>
+        <name>Q8_Got_Information_Directly__c</name>
+    </fields>
+    <fields>
+        <help><!-- Overall quality of service of the Information Specialist ? --></help>
+        <label><!-- Q9a-IS Agent Overall Quality --></label>
+        <name>Q9a_IS_Agent_Overall_Quality__c</name>
+    </fields>
+    <fields>
+        <help><!-- Information Specialist Understands your question or concern? --></help>
+        <label><!-- Q9b-IS Agent Understanding of Question --></label>
+        <name>Q9b_IS_Agent_Understanding_of_Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rate Information Specialist desire to resolve your 
+question or concern? --></help>
+        <label><!-- Q9c-IS Agent Desire to Resolve Question --></label>
+        <name>Q9c_IS_Agent_Desire_to_Resolve_Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the Information Specialist Being knowledgeable about what to do? --></help>
+        <label><!-- Q9d-IS Agent Being Knowledgeable --></label>
+        <name>Q9d_IS_Agent_Being_Knowledgeable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the Information Specialist treated you as a valued customer? Please rate the Agent --></help>
+        <label><!-- Q9e-IS Agent Treating as Valued Customer --></label>
+        <name>Q9e_IS_Agent_Treating_as_Valued_Customer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the Information Specialist Being courteous? --></help>
+        <label><!-- Q9f-IS Agent Being Courteous --></label>
+        <name>Q9f_IS_Agent_Being_Courteous__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the Info provided by the Information Specialist accurate? --></help>
+        <label><!-- Q9g-IS Agent Accuracy of Info Provided --></label>
+        <name>Q9g_IS_Agent_Accuracy_of_Info_Provided__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the row number on the CSV file --></help>
+        <label><!-- Row Number --></label>
+        <name>Row_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;SQ1 Just to check, are you the person who 
+placed the call to the USA.GOV Federal 
+Information Line on (INSERT DATE)?&quot; --></help>
+        <label><!-- SQ1 - Contact USA.gov? --></label>
+        <name>SQ1_Contact_USA_gov__c</name>
+    </fields>
+    <layouts>
+        <layout>Column Errors Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Error Details --></label>
+            <section>Error Details</section>
+        </sections>
+        <sections>
+            <label><!-- Processing Information --></label>
+            <section>Processing Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Row Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Processing Information --></label>
+            <section>Processing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Survey Questions --></label>
+            <section>Survey Questions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Staging Record Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Column Errors --></label>
+        <name>Column_Errors</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Row Data --></label>
+        <name>Row_Data</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Agency Partnership Lead Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;strong&gt;What: &lt;/strong&gt;BU Accepts lead&lt;br&gt;&lt;br&gt;&lt;strong&gt;Goals:&lt;/strong&gt;&lt;br&gt; 
+&lt;div style=&quot;margin-left: 40px;&quot;&gt;1.   BU has reviewed qualification materials, asks for intro to partner&lt;/div&gt;
+&lt;br&gt;&lt;strong&gt;Client Expectations:&lt;/strong&gt; None&lt;br&gt;&lt;br&gt;&lt;strong&gt;Funnel Exit Criteria: &lt;/strong&gt; BU rejects lead</info>
+        <picklistValueName>BU Acceptance</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;strong&gt;What: &lt;/strong&gt;Weekly  internal  meeting with BU directors (and staff as appropriate) to offer qualified lead to client.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Goals:&lt;/strong&gt;
+
+&lt;div style=&quot;margin-left: 40px;&quot;&gt;1.   Ensure BU has enough information to make decision&lt;br&gt;2.   Qualification Doc completed&lt;br&gt;3.   Provide a tangible, but general, bounds of ideas that POCs can socialize across the prospective partner agency&lt;/div&gt;
+&lt;br&gt;&lt;strong&gt;Client Expectations: &lt;/strong&gt;None&lt;br&gt;&lt;br&gt;&lt;strong&gt;Funnel Exit Criteria: &lt;/strong&gt; Partner challenge can not be solved with current 18F capabilities&lt;br&gt; </info>
+        <picklistValueName>BU Assignments</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;strong&gt;What:&lt;/strong&gt; Agency Partnerships presents lead to BU&lt;br&gt;&lt;br&gt;&lt;strong&gt;Goals:&lt;/strong&gt;
+
+&lt;div style=&quot;margin-left: 40px;&quot;&gt;1.   Email Intro is made&lt;/div&gt;</info>
+        <picklistValueName>BU Introductions</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;strong&gt;What:&lt;/strong&gt; Introductory Email&lt;br&gt;&lt;br&gt;&lt;strong&gt;Goals:&lt;/strong&gt;
+
+&lt;div style=&quot;margin-left: 40px;&quot;&gt;1.   Qualification&lt;/div&gt;
+
+&lt;div style=&quot;margin-left: 80px;&quot;&gt;-   What kind of intelligence can we gather?&lt;br&gt;-   What kind of money are we looking at?&lt;br&gt;-   What level of sensitivity is there?&lt;/div&gt;
+
+&lt;div style=&quot;margin-left: 40px;&quot;&gt;2.   Understand 18F&lt;/div&gt;
+
+&lt;div style=&quot;margin-left: 80px;&quot;&gt;-   Have they read the partnership playbook?&lt;br&gt;-   Have they or their agency heard of 18F?&lt;/div&gt;
+&lt;br&gt;&lt;strong&gt;Funnel Exit Criteria: &lt;/strong&gt; Doesn’t fit current targets</info>
+        <picklistValueName>Intake Email/Returned</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;strong&gt;What:&lt;/strong&gt; Introductory Conversation booked and initial meeting completed&lt;br&gt;&lt;br&gt;&lt;strong&gt;Goals:&lt;/strong&gt;
+
+&lt;div style=&quot;margin-left: 40px;&quot;&gt;1.   Qualification&lt;/div&gt;
+
+&lt;div style=&quot;margin-left: 80px;&quot;&gt;-   First meeting scheduled&lt;br&gt;-   Client meets BU qualifications&lt;/div&gt;
+
+&lt;div style=&quot;margin-left: 40px;&quot;&gt;2.   Understanding of client problem&lt;br&gt;3.   Expectations of the sales funnel process&lt;/div&gt;
+&lt;br&gt;&lt;strong&gt;Out-of-Scope: &lt;/strong&gt;Discussion about potential 18F solutions&lt;br&gt;&lt;br&gt;&lt;strong&gt;Client Expectations: &lt;/strong&gt;18F will come back with a BU to start their process&lt;br&gt;&lt;br&gt;&lt;strong&gt;Funnel Exit Criteria: &lt;/strong&gt; Client not qualified&lt;br&gt; </info>
+        <picklistValueName>Problem + Capacity</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;strong&gt;What:&lt;/strong&gt; Potential work in future</info>
+        <picklistValueName>Waiting for things to happen</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>X18F_Lead</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Managers_and_Supervisors</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared survey report cards for managers and supervisors.</description>
+        <label>Managers and Supervisors</label>
+        <sharedTo>
+            <group>FCIC_Mgrs_Supervisors_Topic_Desk_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Webform Survey Report Card,Phone Survey Report Card,Chat Survey Report Card</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

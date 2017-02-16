@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LiveChatButton xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoGreeting>&quot;Hi, I&apos;m {!User_FirstName}. I&apos;ll be your guide today for government information. One moment, please, while I review your message&quot;.</autoGreeting>
+    <deployments/>
+    <enableQueue>true</enableQueue>
+    <isActive>true</isActive>
+    <label>USA.GOV</label>
+    <optionsCustomRoutingIsEnabled>false</optionsCustomRoutingIsEnabled>
+    <optionsHasChasitorIdleTimeout>false</optionsHasChasitorIdleTimeout>
+    <optionsHasInviteAfterAccept>false</optionsHasInviteAfterAccept>
+    <optionsHasInviteAfterReject>false</optionsHasInviteAfterReject>
+    <optionsHasRerouteDeclinedRequest>true</optionsHasRerouteDeclinedRequest>
+    <optionsIsAutoAccept>false</optionsIsAutoAccept>
+    <optionsIsInviteAutoRemove>false</optionsIsInviteAutoRemove>
+    <perAgentQueueLength>2</perAgentQueueLength>
+    <preChatFormPage>LiveAgentForm_USAGov</preChatFormPage>
+    <pushTimeOut>20</pushTimeOut>
+    <routingType>MostAvailable</routingType>
+    <site>Live_Agent_USA_gov</site>
+    <skills>
+        <skill>USA_gov</skill>
+    </skills>
+    <type>Standard</type>
+</LiveChatButton>

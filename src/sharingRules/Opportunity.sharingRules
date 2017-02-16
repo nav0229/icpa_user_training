@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>PropTrack_Share18FoppsWith18F_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>PropTrack - Share 18F opportunities with Read/Write access with 18F Users</description>
+        <label>PropTrack-Share18FoppsWith18F-RW</label>
+        <sharedTo>
+            <group>PropTrack_18F_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>18F Opportunity</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_Share18FoppsWithPIF_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>PropTrack - Share 18F Opportunities with PIF Users with Read Only access</description>
+        <label>PropTrack-Share18FoppsWithPIF-R</label>
+        <sharedTo>
+            <group>PropTrack_PIF_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>18F Opportunity</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_SharePIFoppsWith18F_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>PropTrack - Share PIF Opportunities with 18F Users with Read Only access</description>
+        <label>PropTrack-SharePIFoppsWith18F-R</label>
+        <sharedTo>
+            <group>PropTrack_18F_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>PIF Project Opportunity</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_SharePIFoppsWithPIF_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>PropTrack - Share PIF Opportunities with PIF Users with Read/Write access</description>
+        <label>PropTrack-SharePIFoppsWithPIF-RW</label>
+        <sharedTo>
+            <group>PropTrack_PIF_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>PIF Project Opportunity</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

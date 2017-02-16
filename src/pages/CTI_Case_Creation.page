@@ -1,0 +1,14 @@
+<apex:page Controller="GSA_FCIC_CTI_Case_Creation" >
+
+<!-- Submit the page via action function on onload event to avoid XSRF issues -->
+<apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"/>
+<apex:form >
+    <apex:actionFunction name="displayCase" action="{!displayCase}"/>
+    <script>
+        j$ = jQuery.noConflict();
+        j$().ready(function() {
+            displayCase();
+        });
+    </script>
+  </apex:form>    
+</apex:page>

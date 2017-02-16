@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>FCIC_Access_to_FCIC_Individual</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Gives the ‘FCIC-All Users’ public group access to accounts of record type FCIC-Individual</description>
+        <label>FCIC-Access to FCIC-Individual</label>
+        <sharedTo>
+            <group>FCIC_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>FCIC - Individual</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_ShareFederalAccountsWith18F_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>PropTrack - Share Federal Accounts with 18F users - Read/Write Access</description>
+        <label>PropTrack-ShareFederalAccountsWith18F-RW</label>
+        <sharedTo>
+            <group>PropTrack_18F_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Federal</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_ShareFederalAccountsWithPIFManagers_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>PropTrack - Share Federal Accounts with PIF Managers - Read/Write Access</description>
+        <label>PropTrack-ShareFederalAccountsWithPIFManagers-RW</label>
+        <sharedTo>
+            <group>PropTrack_PIF_Managers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Federal</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_ShareFederalAccountsWithPIF_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>PropTrack - Share Federal Accounts with PIF users - Read Only Access</description>
+        <label>PropTrack-ShareFederalAccountsWithPIF-R</label>
+        <sharedTo>
+            <group>PropTrack_PIF_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Federal</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,77 @@
+<apex:page Controller="GSA_FCIC_CTI_Case_Redirect_Controller"  sidebar="true" >
+
+<!-- Submit the page via action function on onload event to avoid XSRF issues -->
+<apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"/>
+
+<apex:form >
+	<script type="text/javascript">
+		$( document ).ready(function() {
+	  		displayCase();
+	});
+		</script>
+	<apex:actionFunction name="displayCase" action="{!displayCase}" reRender="redirectScript" oncomplete="runRedirect()"/>
+	<apex:outputPanel id="redirectScript">
+	<script type="text/javascript">
+				var caseId = '{!JSENCODE(cas.id)}';
+				var caseNumber ='{!JSENCODE(cas.CaseNumber)}'
+		</script>
+	</apex:outputPanel>
+	 
+	    <apex:includeScript value="/support/console/25.0/integration.js"/>
+		<!-- <apex:outputPanel id="redirectScript"> -->
+			
+	   <!--  </apex:outputPanel> -->
+		
+		<script>
+
+		// Logic - Try to refresh primary tab and then focus tab by name. 
+		// If the results for those operations are null instead try to open a new tab 
+		// If all the above fails - cry! 
+
+		var subTabToClose; 
+		var showTabId = function showTabId(result) { 
+			subTabToClose = result.id;
+		};
+		/*----------------------------------------------------------------------------------------------------*/
+		/*----------------------------------------------------------------------------------------------------*/
+
+		function testOpenPrimaryTab() { 
+			//Open a new primary tab with the salesforce.com home page in it 
+					
+					var url = '/'+caseId+'/e?retURL='+caseId;
+					console.log(url);
+		//			alert('Im getting called');
+			sforce.console.openPrimaryTab(null, url, true, caseNumber, openSuccess, caseNumber);
+		}
+
+		var openSuccess = function openSuccess(result) { 
+			//Report whether opening the new tab was successful 
+			if (result.success == true) { 
+				//alert('Primary tab successfully opened'); 
+				sforce.console.closeTab(subTabToClose);
+			} else {
+				alert('Primary tab cannot be opened'); 
+			}
+		};
+
+	    /*
+	        j$ = jQuery.noConflict();
+	        j$().ready(function() {
+	            displayCase();
+	        });
+	*/
+	function runRedirect() {
+		sforce.console.setTabTitle('Loading...');
+			sforce.console.getFocusedPrimaryTabId(showTabId);
+			testOpenPrimaryTab();
+	}
+	/*	j$ = jQuery.noConflict();
+		j$(document).ready(function(){
+			//displayCase();
+			sforce.console.setTabTitle('Loading...');
+			sforce.console.getFocusedPrimaryTabId(showTabId);
+			testOpenPrimaryTab();
+		});*/
+		</script>
+  </apex:form>    
+</apex:page>

@@ -1,0 +1,203 @@
+<apex:page controller="GSA_FCIC_CustomFeedbackController" id="thePage" standardStyleSheets="true" showHeader="false" sidebar="false">
+
+<head>
+	<apex:stylesheet value="{!URLFOR($Resource.Bootstrap, 'css/bootstrap.css')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.Select2, 'select2.css')}"/>
+	<style>
+		.h9 {
+			font-size: 14px;
+			font-weight: bold;
+		}
+		.red {
+			color: red;
+			font-weight: bold;
+		}
+		body {
+			margin-left: 8px;
+			margin-top: 10px;
+		}
+		input[type=text] {
+			width: 300px;
+			resize: none;
+		}
+		textarea {
+			width: 300px;
+			height: 100px;
+			resize: none;
+		}
+		select {
+			width: 300px;
+			resize: none;
+		}
+	</style>
+</head>
+
+<body>
+	<apex:form id="theForm">
+	<apex:pageMessages />
+	<p/>
+
+	<apex:outputPanel id="feedbackMain" rendered="{!!createdFeedback}">
+		<div class="h9">Provide your content feedback here.</div>
+		<p/>
+		<table class="table">
+			<tr>
+				<td>Case:</td>
+				<td><apex:inputField styleClass="caseNumber" value="{!newFeedback.ParentId}"/></td>
+				<td><input type="button" class="btn" value="Use open case" onclick="populateCaseNumber();"/></td>
+			</tr>
+			<tr>
+				<td><span class="red">*</span>Article:</td>
+				<td>
+					<select id="articleSelectList"></select>
+					<apex:inputHidden html-class="articleField" value="{!newFeedback.Article__c}"/>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Agency:</td>
+				<td><apex:inputField value="{!newFeedback.Agency__c}"/></td>
+				<td></td>
+			</tr>
+			<!--
+				Hiding this field, because it needs to be on the page but we don't want to show it
+				and we're automatically setting it in the class.
+			-->
+			<tr style="display: none">
+				<td>Channel:</td>
+				<td><apex:inputField value="{!newFeedback.Origin}"/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Topic:</td>
+				<td>
+					<apex:inputField value="{!newFeedback.Call_Topic__c}"/>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><span class="red">*</span>Comments:</td>
+				<td><apex:inputTextarea value="{!newFeedback.Feedback_Comments__c}" html-maxlength="255"/></td>
+				<td></td>
+			</tr>
+		</table>
+		<p/>
+		<apex:commandButton value="Create Feeback" action="{!saveFeedback}"/>
+	</apex:outputPanel>
+
+	<apex:outputPanel id="feedbackThankyou" rendered="{!createdFeedback}">
+		<div class="h9">Thank you for your feedback!</div>
+		<p/>
+		<apex:commandButton value="Close" action="{!backToCreateMoreFeedback}" onClick="sforce.console.setCustomConsoleComponentVisible(false);"/>
+	</apex:outputPanel>
+
+	</apex:form>
+</body>
+
+<script src="/support/console/36.0/integration.js" type="text/javascript"></script>
+<apex:includeScript value="{!$Resource.jQuery}"/>
+<apex:includeScript value="{!URLFOR($Resource.Select2, 'select2.min.js')}"/>
+<script>
+	var j$ = jQuery.noConflict();
+
+	j$(document).ready(function (){
+		// Select2-based autocomplete
+		j$.fn.select2.amd.require([ 'select2/data/array', 'select2/utils' ], function (ArrayData, Utils) {
+	  		function CustomData ($element, options) {
+				CustomData.__super__.constructor.call(this, $element, options);
+	  		}
+
+	  		Utils.Extend(CustomData, ArrayData);
+
+			CustomData.prototype.query = function (params, callback) {
+				Visualforce.remoting.Manager.invokeAction(
+					'{!$RemoteAction.GSA_FCIC_CustomFeedbackController.getArticles}',
+					params.term,
+					function(result, event){
+						var data = { results: [] };
+						for(var i = 0; i < result.length; i++){
+							var record = result[i];
+							data.results.push({
+								id: params.term + i,
+								text: record.Title
+							});
+						}
+						callback(data);
+					}
+				);
+	  		};
+
+			j$("#articleSelectList").select2({
+				dataAdapter: CustomData,
+				allowClear: true,
+				placeholder: "Click here to search for an article to attach..."
+			});
+
+			// adds on-select event to autocomplete component
+			j$("#articleSelectList").on("select2:select", function (e) {
+				populateArticleInput(e.params.data.text);
+			});
+
+			j$("#articleSelectList").on("select2:unselect", function(e) {
+				depopulateArticleInput();
+			});
+
+			var prevArticleName = "{!HTMLENCODE(newFeedback.Article__c)}";
+			if(prevArticleName != ""){
+				var elementToAdd = "<option selected>" + prevArticleName + "</option>";
+				var opti0n = j$(elementToAdd).val(prevArticleName);
+				j$("#articleSelectList").append(opti0n).trigger("change");
+			}
+
+		});
+
+		// registering onclick listener for component button
+		//sforce.console.onCustomConsoleComponentButtonClicked(componentClicked);
+	});
+
+	/*function componentClicked(result){
+		if(!result.windowHidden){
+			populateCaseNumber();
+		}
+	}*/
+
+	function populateCaseNumber(){
+		sforce.console.getFocusedPrimaryTabObjectId(callbackForObjectId);
+		sforce.console.getFocusedSubtabObjectId(callbackForObjectId);
+	}
+
+	function callbackForObjectId(result){
+		queryObjectRemotely(result.id);
+	}
+
+	function queryObjectRemotely(id){
+		Visualforce.remoting.Manager.invokeAction(
+			'{!$RemoteAction.GSA_FCIC_CustomFeedbackController.getCaseNumber}',
+			id,
+			function(result, event){
+				populateCaseInput(result);
+			}
+		);
+	}
+
+	function populateCaseInput(result){
+		var currentVal = j$(".caseNumber").val();
+		if(currentVal === '' && result.length > 0){
+			j$(".caseNumber").val(result);
+		} else if(currentVal.length > 0 && result.length > 0){
+			j$(".caseNumber").val(result);
+		}
+	}
+
+	function populateArticleInput(result){
+		article = result;
+		j$(".articleField").val(result);
+	}
+
+	function depopulateArticleInput(){
+		article = null;
+		j$(".articleField").val(null);
+	}
+</script>
+
+</apex:page>

@@ -1,0 +1,30 @@
+<apex:page standardController="CSAT_File__c" extensions="GSA_FCIC_CSV_File_Reader_Controller" action="{!ReadCSVFile}" showHeader="true" sidebar="true">
+
+	<script>
+		function addLoadEvent(func) { 
+			var oldonload = window.onload; 
+			if (typeof window.onload != 'function') { 
+				window.onload = func; 
+			} 
+			else { 
+				window.onload = function() { 
+					if (oldonload) { 
+					   oldonload(); 
+					} 
+					func(); 
+				} 
+			} 
+		} 
+   
+		addLoadEvent(function()  
+			doInit();
+		});
+	</script>
+	
+	<apex:form >
+		<apex:actionFunction name="doInit" action="{!ReadCSVFile}"/>
+	</apex:form>
+	
+	<apex:pageMessages escape="false" />
+
+</apex:page>

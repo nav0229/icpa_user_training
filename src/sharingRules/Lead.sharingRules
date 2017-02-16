@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>PropTrack_Share18FLeadsWith18F_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>PropTrack - Share 18F leads with 18F users - Read/Write Access</description>
+        <label>PropTrack-Share18FLeadsWith18F-RW</label>
+        <sharedTo>
+            <group>PropTrack_18F_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>18F Lead</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_Share18FLeadsWithPIF_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>PropTrack - Share 18F Leads with all PIF Users with Read Only access</description>
+        <label>PropTrack-Share18FLeadsWithPIF-R</label>
+        <sharedTo>
+            <group>PropTrack_PIF_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>18F Lead</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_SharePIFLeadsWith18F_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>PropTrack - Share PIF leads with 18F users - Read Only Access</description>
+        <label>PropTrack-SharePIFLeadsWith18F-R</label>
+        <sharedTo>
+            <group>PropTrack_18F_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>PIF Lead</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_SharePIFLeadsWithPIF_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>PropTrack - Share PIF leads with PIF users - Read/Write Access</description>
+        <label>PropTrack-SharePIFLeadsWithPIF-RW</label>
+        <sharedTo>
+            <group>PropTrack_PIF_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>PIF Lead</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

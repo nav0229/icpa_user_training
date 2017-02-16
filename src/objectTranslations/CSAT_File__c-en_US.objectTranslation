@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CSAT File</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CSAT Files</value>
+    </caseValues>
+    <fields>
+        <label><!-- Dataset First Date --></label>
+        <name>Data_Set_First_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dataset Last Date --></label>
+        <name>Data_Set_Last_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Table --></label>
+        <name>Error_Table__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uploaded</masterLabel>
+            <translation><!-- Uploaded --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of error records created from a Phone Survey CSV file attachment --></help>
+        <label><!-- Total Number of Errors --></label>
+        <name>Total_Number_of_Errors__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of records created from the upload CSV file --></help>
+        <label><!-- Total Record Inserted --></label>
+        <name>Total_Record_Inserted__c</name>
+    </fields>
+    <layouts>
+        <layout>CSAT File Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Processed Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- New --></label>
+        <name>New</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Processed --></label>
+        <name>Processed</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Process_Data --></label>
+        <name>Process_Data</name>
+    </webLinks>
+</CustomObjectTranslation>

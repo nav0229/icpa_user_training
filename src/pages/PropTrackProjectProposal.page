@@ -1,0 +1,586 @@
+<apex:page cache="false" showHeader="false" sidebar="false" showChat="false" controller="PropTrackProjectProposalController"
+    standardStylesheets="false" id="appPage" docType="html-5.0">
+
+<apex:stylesheet value="{!URLFOR($Resource.pifa,'pifa/baseline.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.pifa,'pifa/style.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.pifb,'pifb/css/bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.pifb,'pifb/fonts/font-awesome-4.4.0/css/font-awesome.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.pifb,'pifb/css/stylesheet.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.pifb,'pifb/js/jquery.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.pifa,'pifa/simple-expand.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.pifb,'pifb/js/bootstrap.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.pifb,'pifb/js/main.js')}"/>
+<!-- general description of website -->
+<link REL="SHORTCUT ICON" HREF="{!URLFOR($Resource.PIF_Favicon)}"/>
+
+<apex:outputText value="<" escape="false"/>!--
+                      __,__r========qL,
+                   ,m**`~'            XW;
+            ____Lm/'      _mmmm    jW@+===m___,
+      .m+*f~TX7''|    `Y*X@X7~MMLL          ._JXmL,
+    jf~'    `YM#:~      !*##@ d j@~Y!     `~~~+m_
+   Z            M       `Nd*=+5+      -====L__ !M-
+  m!            `Y=;m_,   ~Yf~~               YL`W;
+  |        .mmmmmqrL_XXX~*==mL,                 Y#|
+  |  ,Z~~~~~'        ~~~~    X#         -==L__,  !#,
+  | |tL             ____WY*f~~                `~qd#W
+  V,| `~~Y*+mL_,  :f~~ ~                   q_    V#b
+  `b|         `Y+-W;                        `\\,  _#
+    V              N,  m                 YL,   `\L#@
+                    N  #                   YL,   `##,
+                   .P  #                     `\   V#|
+                 ../   #           ^           YL |W
+                -P     #    :P  ;  ||           `|!W
+                Z'     #   :P  :'   #,           #L#
+            _ _Wb    jWD  jf   /    |b           V@*
+          j+N##8#4rt8#~.,jf    |    |#       b   |W
+       .r*'m8####q#P8###*'    W    :##       V;  d|
+      /K_jWK#X###~#|###mW#   :P  j;##|    #, `#, @
+     !TGW###8#m#K7q=WWmd##mmm#m.Z8###!    #W  |b |
+     /4#@##W#+##P:WZWMZ*W=m##WMN|WZWP:#;m,d#W;Dd |
+    W*~~~M#W!KWjW5!!/WV##N7j#KXPNMX#DW###b###D#Xb|
+   !'    d!JXXXW!`!Ldm@#bd#WW8K)X|X#8#8#K##V#!K5|#
+        d@f~  jf.Z\/Vb*Y+W#j(WMZPrMM#@##K#@##;WWj##,
+        ~    m*~'   '#`\8#W4KW#qX@VW##W#8##8#rNWK###G-
+            `'       #`8*=#YWWK/b+WW#W#*#MWm8*KKd#M#**m,
+                     #Z'  VW#f'~M+NM#####K#8@WLMZKX#W#+M;
+                              ~` *YM#######@*)P/+DK####m#
+                                   `'*##fXVPX|Vr~##Z#W@N@
+                                      `WL_d**DfWX#8#WK##*b
+                                                `W###@#N#/b
+                                                 .#mj#X~YM#
+                                                 ~`#WdD~  Y!
+                                                 `'_|#f--          built by Presidential Innovation Fellows (pif.gov)
+  --<apex:outputText value=">" escape="false"/>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Proposal | Presidential Innovation Fellow</title>
+    <meta name="DC.creator" content="Presidential Innovation Fellows - https://pif.gov/" />
+    <meta name="DC.language" content="en" />
+    <meta name="description" content="The Presidential Innovation Fellows program brings the principles, values, and practices of the innovation economy into government through the most effective agents of change we know: our people." />
+    <link rel="canonical" href="https://proposal.pif.gov/" />
+    <link rel="alternate" type="application/rss+xml" title="Presidential Innovation Fellows" 
+    href="https://presidentialinnovationfellows.gov/feed.xml" />
+
+     
+  <!-- Google+ -->
+  <meta itemprop="name" content="Application | Presidential Innovation Fellows" />
+  <meta itemprop="description" content="The Presidential Innovation Fellows program brings the principles, values, and practices of the innovation economy into government through the most effective agents of change we know: our people." />
+  <meta itemprop="image" content="https://presidentialinnovationfellows.gov/assets/images/pif-og.png"/>
+
+  <!-- Facebook OG -->
+  <meta property="og:title" content="Application | Presidential Innovation Fellows" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://apply.pif.gov" />
+  <meta property="og:description" content="The Presidential Innovation Fellows program brings the principles, values, and practices of the innovation economy into government through the most effective agents of change we know: our people." />
+  <meta property="og:image" content="https://presidentialinnovationfellows.gov/assets/images/pif-og.png" />
+  <meta property="og:site_name" content="Presidential Innovation Fellows" />
+  <meta property="fb:admins" content="123456789" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="The Presidential Innovation Fellows program brings the principles, values, and practices of the innovation economy into government through the most effective agents of change we know: our people." />
+  <meta name="twitter:site" content="@innovfellows" />
+  <meta name="twitter:title" content="Application | Presidential Innovation Fellows" />
+  <meta name="twitter:description" content="The Presidential Innovation Fellows program brings the principles, values, and practices of the innovation economy into government through the most effective agents of change we know: our people." />
+  <meta name="twitter:creator" content="@innovfellows" />
+  <meta name="twitter:image:src" content="https://presidentialinnovationfellows.gov/assets/images/pif-og.png" />
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+
+  <!--[if lt IE 9]>
+  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <!--Made changes to the labels on the page to make it 508 compliant - Ramesh Dugar(6/29/16)-->
+  <style>
+      #hero{
+          margin-top:60px;
+      }
+
+      i{
+          font-weight:100;
+      }
+  </style>
+
+</head>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TQXNND"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQXNND');</script>
+<!-- End Google Tag Manager -->
+
+<header>
+  <div id="skip"><a href="#Contact-Information" id="anch_skip">Skip to Main Content</a></div>
+  <nav class="navbar navbar-default navbar-fixed-top nav-bg" id="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://presidentialinnovationfellows.gov">
+          <apex:image url="{!URLFOR($Resource.pifb, 'pifb/images/pif-header-full.png')}" alt="Header" id="navbar-logo" />
+          <apex:image url="{!URLFOR($Resource.pifb, 'pifb/images/pif-header-logo-only.png')}" alt="Header logo" id="navbar-logo-alt" />
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://presidentialinnovationfellows.gov/fellows/"><h4>FELLOWS</h4></a></li>
+          <li><a href="https://presidentialinnovationfellows.gov/projects/"><h4>PROJECTS</h4></a></li>
+          <li><a href="https://presidentialinnovationfellows.gov/agencies/"><h4>AGENCIES</h4></a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<div class="container-fluid" id="hero">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Project Proposal</h1>
+    </div>
+  </div>
+</div>
+<div class="container clearfix">
+    <div id="header">
+        <apex:image url="{!URLFOR($Resource.pifb, 'pifb/images/pif-logo.png')}" alt="Presidential Innovation Fellows seal" width="315" height="315" />
+        <p class="highlight">Please fill out the following form to kick off the exploratory process in working with the Presidential Innovation Fellows (PIF) program.  Feel free to contact us at <a href="mailto:pif-intake@gsa.gov">pif-intake@gsa.gov</a> with any questions.</p>
+        <ul class="highlight">
+        <li><a href="https://presidentialinnovationfellows.gov/" target="_blank">Read More about the Fellowship</a></li>
+        <li><a href="https://presidentialinnovationfellows.gov/fellows" target="_blank">Meet the Fellows</a></li>
+        <li><a href="mailto:pif-intake@gsa.gov" target="_blank">Contact Us</a></li>
+        </ul>
+    </div>
+    <apex:pageMessages ></apex:pageMessages>
+    <div id="content">
+
+            <div id="emailmsg" style="display:none; color:red">
+                Please enter a email address ending with one of the following domains .gov*,.us*,.mil* .
+            </div>
+
+
+            <form action="{!wtlURL}" name="proposalForm" method="POST" onsubmit="return validateForm()">
+
+            <input type="hidden" name="oid" value="{!orgID}"/>
+            <input type="hidden" name="retURL" value="{!retURL}"/>
+            <input type="hidden" name="recordType" id="recordType" value="012r00000000GDVAA2"/>
+            <input type="hidden" name="Lead_Convert_Flag__c" value="1"/>
+
+            <h4 style="font-size:26px" id="Contact-Information"><Strong>Contact Information</Strong></h4><br/>
+
+            <label for="first_name" style="width:200px">First Name </label>
+            <input  id="first_name" maxlength="80" name="first_name" type="text" placeholder="First Name"/>
+
+            <label for="last_name" style="width:200px">Last Name <Strong><font color="red">*</font></Strong></label>
+            <input  id="last_name" maxlength="80" name="last_name" type="text" placeholder="Last Name" required="true"/>
+
+            <label for="email" style="width:200px">Email <Strong><font color="red">*</font></Strong></label>
+            <input  id="email" maxlength="80" name="email" type="text" placeholder="Email (.gov, .us, or .mil)" required="true"/>
+
+            <label for="company" style="width:200px">Agency <Strong><font color="red">*</font></Strong></label>
+            <input  id="company" maxlength="40" name="company" type="text" placeholder="Agency" required="true"/>
+
+            <label for="Title" style="width:200px">Your Title</label>
+            <input id="Title" type="text" name="title" placeholder="Title"/> <br/> <br/>
+
+            <label for="role">Role &amp; Responsibility<br/>
+              <i>Please indicate your primary responsibilities, or the role of your program office within the agency.</i>
+            </label>
+            <textarea  id="role" name="Role_Responsiblity__c" type="text" placeholder="Your answer"/> <br/> <br/>
+
+                <div tabindex="0" style="line-height:0;font-weight: 700;">Does your agency have a CIO? CTO? <Strong><font color="red">*</font></Strong></div>
+            <br/>
+            <div tabindex="0" style="line-height:0"><i id="CIOCTOtherHT">If Other, please elaborate in the space provided.</i></div><br/>
+
+              <label>
+                <input style="width:20px" type="radio" id="YesCIOCTO" name="Agency_has_a_CIO_CTO__c"
+                 value="Yes" required="true" onClick="enableOther('OtherCIOCTO', 'CIOCTOOtherInput')"/>
+                 Yes
+              </label>
+
+            <label>
+                <input style="width:20px" type="radio" name="Agency_has_a_CIO_CTO__c" value="No" onClick="enableOther('OtherCIOCTO', 'CIOCTOOtherInput')"/>No  <br/>
+            </label>
+            <label>
+                <input style="width:20px" type="radio" id="OtherCIOCTO" name="Agency_has_a_CIO_CTO__c" value="Other" onClick="enableOther('OtherCIOCTO', 'CIOCTOOtherInput')"/>Other
+            </label>
+            <label>
+                <input type="text" style="width:200px;height:25px;display:none;" id="CIOCTOOtherInput" name="CIO_CTO_Other__c"/>
+            </label>
+            <br/><br/>
+
+
+            <label for="CTO_CIO_Contact__c">CTO/CIO Contact: If you answered "Yes" to the previous question, please indicate name(s) and email(s):
+            <i>Note: PIFs often work in close collaboration with these offices in developing technology solutions.</i></label>
+            <i id="cioctomsg" style="display:none; color:red">Please enter CTO/CIO contact information.</i>
+            <input id="CTO_CIO_Contact__c" type="text" name="CTO_CIO_Contact__c" placeholder="Your answer"/> <br/> <br/>
+
+            <label for="Potential_Agency_Team__c">Who/which team in your agency would a potential PIF team be working most closely with? <Strong><font color="red">*</font></Strong></label>
+            <input  id="Potential_Agency_Team__c" name="Potential_Agency_Team__c" type="text" placeholder="Your answer" required="true"/><br/><br/>
+
+            <h4 style="font-size:26px"><Strong>Problem Statement</Strong></h4>
+
+            <fieldset>
+            <div   tabindex="0" style="line-height:0;font-weight: 700;">
+                Does your project or problem address one of the following Presidential Priorities?
+                <Strong><font color="red">*</font></Strong>
+            </div > <br/>
+            <div tabindex="0" style="line-height:0">
+                <i id="PPOOtherHT">If Other, please elaborate in the space provided.</i>
+                </div><br/>
+            <label>
+                  <input id="problemstatement1" style="width:20px" type="radio" name="Presidential_Priority__c" required="true" value="Education" onClick="enableOther('PPOtherRadio', 'PPOtherInput')"/>Education -- using innovation to make education more accessible, available, and attainable<br/>
+            </label>
+            <label>
+                  <input style="width:20px" type="radio" name="Presidential_Priority__c" value="Health & Patient Care" onClick="enableOther('PPOtherRadio', 'PPOtherInput')"/>Health &amp; Patient Care -- leveraging innovation to save lives, provide better access to benefits and programs promoting quality-of-life<br/>
+            </label>
+            <label>
+                  <input style="width:20px" type="radio" name="Presidential_Priority__c" value="Jobs & the Economy" onClick="enableOther('PPOtherRadio', 'PPOtherInput')"/>Jobs &amp; the Economy  -- fueling the economy and job growth through innovation and improved opportunities for entrepreneurs and businesses of all sizes<br/>
+            </label>
+            <label>
+                  <input style="width:20px" type="radio" name="Presidential_Priority__c" value="Climate Change" onClick="enableOther('PPOtherRadio', 'PPOtherInput')"/>Climate Change -- preparing the U.S. to lead international efforts, and prepare for the impacts of climate change <br/>
+            </label>
+            <label>
+                  <input style="width:20px" type="radio" name="Presidential_Priority__c" value="Government Effectiveness" onClick="enableOther('PPOtherRadio', 'PPOtherInput')"/>Government Effectiveness -- improving processes and technology to eliminate wasteful spending, streamline what works, and modernize government<br/>
+            </label>
+            <label>
+             <input style="width:20px" type="radio" name="Presidential_Priority__c" onClick="enableOther('PPOtherRadio', 'PPOtherInput')" id="PPOtherRadio" value="Other"/>Other
+            </label>
+            <label>
+                <input type="text" style="width:200px;height:25px;display:none;" id="PPOtherInput" name="Presidential_Priority_Other__c"/>
+            </label><br/><br/>
+            </fieldset>
+
+            <label for="Problem" >Tell us a little more about the problem you're trying to solve: <Strong><font color="red">*</font></Strong></label>
+            <textarea  id="Problem" name="Problem__c" type="text" placeholder="Your answer" required="true"/><br/><br/>
+
+            <label for="PIF_Role__c">Tell us a little about the potential solution you have in mind. What role do you envision Presidential Innovation Fellows playing in this effort? (1-2 paragraphs) <Strong><font color="red">*</font></Strong></label>
+            <textarea id="PIF_Role__c" type="text" name="PIF_Role__c" placeholder="e.g. 'act as technology leads to help us validate our problem statement with end-users; lead software development of pilot; and own manage the deployment of a solution in beta'" required="true"/> <br/> <br/>
+
+            <label for="Large_or_Tangible_Impact__c">What large or tangible impact do you envision this project or solution having? (Could be inter-agency efficiency, or direct impact on the American people) (4-6 sentences) <Strong><font color="red">*</font></Strong></label>
+            <textarea id="Large_or_Tangible_Impact__c" type="text" name="Large_or_Tangible_Impact__c" placeholder="e.g. save significant 'y' burden hours per year in time; saves 'x' taxpayer dollars; saves 'x' lives; creates 'x' jobs;" required="true"/> <br/> <br/>
+
+            <label for="Users__c">Who are the people that would be impacted by this solution? <Strong><font color="red">*</font></Strong></label>
+            <textarea id="Users__c" type="text" name="Users__c" placeholder="e.g. who are the users, stakeholders, influencers, and champions of this solution?" required="true"/> <br/> <br/>
+
+            <label for="End_User_Problems__c">What end-user problems could this data help to solve? <Strong><font color="red">*</font></Strong></label><br/>
+            <textarea id="End_User_Problems__c" type="text" name="End_User_Problems__c" placeholder="e.g. ‘help students select a college, or evaluate student loan options’" required="true"/> <br/> <br/>
+
+            <label for="Existing_Solutions__c">Do any of these solutions exist today? <Strong><font color="red">*</font></Strong></label>
+            <textarea id="Existing_Solutions__c" type="text" name="Existing_Solutions__c" placeholder="Your answer" required="true"/> <br/> <br/>
+
+            <label for="Project_Success__c">In a sentence, what does success of the project or product look like? <Strong><font color="red">*</font></Strong></label>
+            <textarea id="Project_Success__c" type="text" name="Project_Success__c" placeholder="Your answer" required="true"/> <br/> <br/>
+
+                <h4 style="font-size:26px"><strong>Scope</strong></h4><br/>
+
+           <!--<label for="Core_Competencies__c">Please indicate the competencies you consider core to this effort: <Strong><font color="red">*</font></Strong><br/>
+            <i>To choose more than one, hold down the Shift + Arrow keys OR Ctrl + Arrow keys while selecting options.</i></label><br/>-->
+            <div tabindex="0" style="line-height:0;font-weight: 700;">
+                Please indicate the competencies you consider core to this effort: <Strong><font color="red">*</font></Strong></div><br/>
+            <div tabindex="0" style="line-height:0">
+
+                <i>To choose more than one, hold down the Shift + Arrow keys OR Ctrl + Arrow keys while selecting options.</i></div><br/>
+
+            <select required="required" id="Core_Competencies__c " size="5" multiple="multiple" name="Core_Competencies__c" title="Core Competencies">
+                <option value="User Experience/Design">User Experience/Design</option>
+                <option value="Front End Web Development">Front End Web Development</option>
+                <option value="Back End Web Development">Back End Web Development</option>
+                <option value="Product/Project Management">Product/Project Management</option>
+                <option value="MKTG/Communications/Bus. Development">MKTG/Communications/Bus. Development</option>
+            </select><br/><br/>
+
+            <label for="Beneficial_Domain_Expertise__c">What (if any) domain expertise will be beneficial?<br/>
+            <i>Note: Fellows are recruited primarily for innovation acumen, and sometimes look to internal government stakeholders for domain expertise.</i></label>
+            <textarea id="Beneficial_Domain_Expertise__c" type="text" name="Beneficial_Domain_Expertise__c" placeholder="e.g. 'online privacy'; electronic health records'"/> <br/> <br/>
+
+            <label for="No_of_Fellows__c">How many Fellows do you imagine this project requiring? <Strong><font color="red">*</font></Strong><br/>
+            <i style="font-weight:100;">Note: ideal team size is 2-4 Fellows per program office; Fellows are deployed under IAAs, which may allow offices to use operating budget.</i></label><br/>
+            <select  id="No_of_Fellows__c" name="No_of_Fellows__c" title="# of Fellows" required="true">
+                <option value="">--None--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5 - 8">5 - 8</option>
+                <option value="8+">8+</option>
+            </select><br/><br/>
+
+            <label for="Executive_Sponsor__c">Who is the proposed executive sponsor? <Strong><font color="red">*</font></Strong><br/>
+            <i>Please list name, email address, and title.</i></label><br/>
+            <input id="Executive_Sponsor__c" type="text" name="Executive_Sponsor__c" placeholder="Your answer" required="true"/> <br/> <br/>
+
+            <label for="Engagement_Timeframe__c">We work on projects with spectrum of sizes and lengths. What is your ideal engagement timeframe? <Strong><font color="red">*</font></Strong><br/>
+            <i id="ETOtherHT">If Other, please elaborate in the space provided.</i></label><br/>
+            <select  id="Engagement_Timeframe__c" name="Engagement_Timeframe__c" title="Engagement Timeframe" onChange="enableETOther(); return true">
+                <option value="2 Weeks - 1 Month">2 Weeks - 1 Month</option>
+                <option value="2-4 Months">2-4 Months</option>
+                <option value="4-6 Months">4-6 Months</option>
+                <option value="6-12 Months">6-12 Months</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>
+                <input type="text" style="width:200px;height:25px;display:none;" id="ETOtherInput" name="Engagement_Timeframe_Other__c"/>
+            </label><br/><br/>
+
+            <label for="Data_Needed__c">What (if any) data might aid in the delivery of this project? <Strong><font color="red">*</font></Strong><br/>
+            <i>If known, please list the data format (e.g. API) and where it can be found (e.g. data.gov)</i></label>
+            <textarea id="Data_Needed__c" type="text" name="Data_Needed__c" required="true" placeholder="Your answer"/> <br/> <br/>
+
+            <h4 style="font-size:26px"><Strong>Agency Details</Strong></h4>
+
+            <label for="Existing_Tech_Office_Team__c">What (if any) technology and innovation-focused offices, teams), or role(s) exist within your agency? <br/>
+            <i>1-2 sentences description per team/office</i></label>
+            <textarea id="Existing_Tech_Office_Team__c" type="text" name="Existing_Tech_Office_Team__c" placeholder="Your answer"/> <br/> <br/>
+
+            <label for="Tech_Barriers__c">What barriers (if any) have made it challenging to hire and deploy a team of developers to address the technology opportunities at your agency? </label>
+            <textarea id="Tech_Barriers__c" type="text" name="Tech_Barriers__c" placeholder="Your answer"/> <br/> <br/>
+
+            <label  for="API_Usage_Rating__c">Please rate your office or agency’s usage of APIs <br/>
+
+            <i>Rate from 0-10; 0 being no knowledge of APIs being used; 10 being there are several examples of the Agency using APIs in production.</i>
+            </label><br/>
+
+            <select  id="API_Usage_Rating__c" name="API_Usage_Rating__c" title="API Usage Rating">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br/><br/>
+
+            <label for="Private_Sector_Innovation__c">In what areas is your agency helping to fuel innovation in the private sector? </label>
+            <textarea id="Private_Sector_Innovation__c" type="text" name="Private_Sector_Innovation__c" placeholder="Your answer"/> <br/> <br/>
+
+            <label for="Top_3_Transactions__c">If you had to list the top 3 transactions between your agency and the people you serve, what<br/> might those be? </label><br/>
+            <textarea id="Top_3_Transactions__c" type="text" name="Top_3_Transactions__c" placeholder="e.g. offering and processing online student loans"/> <br/> <br/>
+
+            <label for="Under_served_Agency_Area__c">Which area of your agency do you think is the most underserved by Technology? <br/>
+            <i>(i.e. an area of weakness)</i></label>
+            <textarea id="Under_served_Agency_Area__c" type="text" name="Under_served_Agency_Area__c" placeholder="Your answer"/> <br/> <br/>
+
+            <label for="Unsuccessful_Past_Attempts__c">What (if any) has your agency attempted in the past to address this challenge that has NOT worked? </label><br/>
+            <textarea id="Unsuccessful_Past_Attempts__c" type="text" rows="2" name="Unsuccessful_Past_Attempts__c" placeholder="Your answer"/> <br/> <br/>
+
+            <label for="Project_in_Flight__c">Is anyone currently working on this project?</label><br/>
+            <textarea id="Project_in_Flight__c" type="text" name="Project_in_Flight__c" placeholder="e.g. contractors"/> <br/> <br/>
+
+            <input type="hidden"  id="external" name="external" value="1" />
+            <input type="hidden"  id="lead_source" name="lead_source" value="Web"/><br/>
+
+            <div id="captchamsg" style="display:none; color:red">
+                Please be sure to correctly answer the math problem.
+            </div>
+            <style>
+                #lblInptHuman {font-size:1em; line-height:1.5em; margin:10px 0;}
+            </style>
+            <div id="divQuestion">
+            <table style="height:65px" id="tblQuestion">
+                    <tr>
+                        <td colspan="3"><label for="inptHuman" id="lblInptHuman"></label></td>
+                    </tr>
+                    <tr>
+                        <td><input name="inptHuman" id="inptHuman" required="true" size="10" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/></td>
+                    </tr>
+            </table>
+            </div>
+            <br/>
+
+            <input type="submit" name="submit"/>
+
+
+        </form>
+    </div>
+</div>
+<footer>
+
+  <div class="container-fluid" id="footer">
+    <div class="row" id="footer-text">
+      <div class="col-md-7 col-md-offset-1 col-sm-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <ul>
+              <li><h4><a href="https://presidentialinnovationfellows.gov/fellows/">Meet the Fellows</a></h4></li>
+              <li><h4><a href="https://presidentialinnovationfellows.gov/projects/">Project Case Studies</a></h4></li>
+              <li><h4><a href="https://presidentialinnovationfellows.gov/agencies/">Agencies Supported</a></h4></li>
+              <li><h4><a href="https://presidentialinnovationfellows.gov/leadership/">Leadership Team</a></h4></li>
+              <li><h4><a href="https://presidentialinnovationfellows.gov/about/">About Us</a></h4></li>
+              <li><h4><a href="https://presidentialinnovationfellows.gov/events/">Events</a></h4></li>
+              <li><h4><a href="https://presidentialinnovationfellows.gov/faq/">FAQs</a></h4></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 hidden-xs">
+            <ul>
+              <li><h4><a href="https://www.whitehouse.gov/innovationfellows" target="_blank">White House</a></h4></li>
+              <li><h4><a href="https://www.whitehouse.gov/issues" target="_blank">Presidential Priorities</a></h4></li>
+              <li><h4><a href="http://gsa.gov" target="_blank">GSA</a></h4></li>
+              <li><h4><a href="https://18f.gsa.gov" target="_blank">18F</a></h4></li>
+              <li><h4><a href="https://www.whitehouse.gov/digital/united-states-digital-service" target="_blank">USDS</a></h4></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 hidden-xs hidden-sm" id="social">
+        <!-- Begin MailChimp Signup Form -->
+        <link href="https://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+          #mc_embed_signup{background:#fff; clear:left;  }
+          /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+             We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+        <form action="https://presidentialinnovationfellows.us11.list-manage.com/subscribe/post?u=8ff93f9a5662324b360f8107e&amp;id=8cec6581b6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="true">
+            <div id="mc_embed_signup_scroll">
+          <label for="mce-EMAIL">Join our mailing list</label>
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="true"></input>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_8ff93f9a5662324b360f8107e_8cec6581b6" tabindex="-1" value=""></input></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></input></div>
+            </div>
+        </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+        <h4>Connect:</h4>
+        <ul>
+          <li><a href="https://github.com/presidential-innovation-fellows" target="blank" title="PIF GitHub"><i class="fa fa-github-square fa-2x"></i></a></li>
+          <li><a href="https://twitter.com/innovfellows" target="blank" title="PIF Twitter"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+          <li><a href="https://www.facebook.com/presidentialinnovationfellows" target="blank" title="PIF Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/white-house-presidential-innovation-fellows" target="blank" title="PIF LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+          <li><a href="https://angel.co/presidential-innovation-fellowship" target="blank"><i class="fa fa-angellist fa-2x" title="PIF Angel"></i></a></li>
+          <li><a href="https://medium.com/presidential-innovation-fellows" target="blank"><i class="fa fa-medium fa-2x" title="PIF Medium"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1" id="gov-links">
+        <p><a href="https://presidentialinnovationfellows.gov/sitemap.xml" target="_blank">SITEMAP</a> | <a href="http://www.gsa.gov/portal/content/116609" target="_blank">PRIVACY</a> | <a href="https://18f.gsa.gov/linking-policy/" target="_blank">LINKING POLICY</a></p>
+      </div>
+    </div>
+    <div class="row" id="disclaimer">
+      <div class="col-lg-4 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-7">
+        <div class="row">
+          <div class="col-sm-3">
+            <apex:image url="{!URLFOR($Resource.pifb, 'pifb/images/logo-gsa.png')}" id="gsa-logo" alt="GSA Logo"/>
+          </div>
+          <div class="col-sm-9">
+            <p>A federal government website managed by the U.S. General Services Administration. 1800 F Street Northwest, Washington, DC 20405</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1 col-lg-offset-5 col-md-1 col-md-offset-4 col-sm-2 col-sm-offset-3 hidden-xs">
+        <a href="https://www.whitehouse.gov/innovationfellows" target="_blank" alt="White House Innovation Fellows" >
+            <apex:image url="{!URLFOR($Resource.pifb, 'pifb/images/white-house-logo.png')}" id="white-house-logo" alt="White House Logo"/>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://analytics.usa.gov/dap/dap.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48605964-3', 'gsa.gov');
+  ga('send', 'pageview');
+</script>
+<script >
+    function validateForm() {
+        setErrorMessages();
+        if (!checkEmail()) {
+            document.getElementById('email').focus();
+            return false;
+        } else if (checkAnswer() == 0) {
+            document.getElementById('captchamsg').style.display = "block";
+            document.getElementById('inptHuman').focus();
+            return false;
+        } else if (isMissingCIOCTOContact()){
+            document.getElementById('CTO_CIO_Contact__c').focus();
+            return false;
+        } else if (isMissingPPOther()) {
+            document.getElementById('PPOtherInput').focus();
+            return false;
+        } else if (isMissingCIOCTOOther__c()) {
+            document.getElementById('CIOCTOOtherInput').focus();
+            return false;
+        } else if (isMissingETOther()) {
+            document.getElementById('ETOtherInput').focus();
+            return false;
+        }
+    }
+    function setErrorMessages() {
+        hideOrUnhideElement('emailmsg', checkEmail());
+        hideOrUnhideElement('captchamsg', !(checkAnswer()==0));
+        hideOrUnhideElement('cioctomsg', !isMissingCIOCTOContact());
+        redOrUnredElement('PPOOtherHT', isMissingPPOther());
+        redOrUnredElement('CIOCTOtherHT', isMissingCIOCTOOther__c());
+        redOrUnredElement('ETOtherHT', isMissingETOther());
+    }
+
+    function hideOrUnhideElement(element, hide) {
+        document.getElementById(element).style.display = hide ? "none" : "block";
+
+    }
+    function redOrUnredElement(element, turnRed) {
+        document.getElementById(element).style.color = turnRed ? "red" : "black";
+    }
+    function checkEmail() {
+        var Email = document.getElementById('email').value;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+(gov|us|mil|GOV|US|MIL)+$/;
+        return (filter.test(Email));
+    }
+
+    function isMissingCIOCTOContact() {
+        return ((document.getElementById('YesCIOCTO').checked)&&((document.getElementById('CTO_CIO_Contact__c').value=="")||(document.getElementById('CTO_CIO_Contact__c').value==null)));
+    }
+    function isMissingCIOCTOOther__c() {
+        return ((document.getElementById('OtherCIOCTO').checked)&&((document.getElementById('CIOCTOOtherInput').value=="")||(document.getElementById('CIOCTOOtherInput').value==null)));
+    }
+    function isMissingPPOther() {
+       return ((document.getElementById('PPOtherRadio').checked)&&((document.getElementById('PPOtherInput').value=="")||(document.getElementById('PPOtherInput').value==null)));
+    }
+    function isMissingETOther() {
+        return ((document.getElementById('Engagement_Timeframe__c').value=="Other")&&((document.getElementById('ETOtherInput').value=="")||(document.getElementById('ETOtherInput').value==null)));
+    }
+
+    function enableETOther() {
+        if(document.getElementById('Engagement_Timeframe__c').value=="Other") {
+            document.getElementById('ETOtherInput').style.display = "block";
+        } else {
+            document.getElementById('ETOtherInput').style.display = "none";
+        }
+    }
+    function enableOther(button, input) {
+        if(document.getElementById(button).checked) {
+            document.getElementById(input).style.display = "block";
+        } else {
+            document.getElementById(input).style.display = "none";
+        }
+    }
+
+        </script>
+</apex:page>

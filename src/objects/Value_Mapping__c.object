@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used to track field available value mappings between CSV input files and Salesforce object outputs</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CSV_Input__c</fullName>
+        <description>Available values for this field from the CSV file</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Available values for this field from the CSV file</inlineHelpText>
+        <label>CSV Input</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Mapping__c</fullName>
+        <description>The Field Mapping field API name entry that this Value Mapping pertains to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Field Mapping field API name entry that this Value Mapping pertains to</inlineHelpText>
+        <label>Field Mapping</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Value__c</fullName>
+        <description>Output value used for this field in Salesforce</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Output value used for this field in Salesforce</inlineHelpText>
+        <label>Salesforce Value</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Value Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,162 @@
+<apex:page controller="GSA_FCIC_LiveAgent_Prechat_Controller" sidebar="false" showHeader="false">
+<apex:stylesheet value="{!$Resource.ExIM}" />
+<header>
+
+<title>Web Chat | ExIm.gov</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script type="text/javascript">
+
+	(function() 
+
+	{
+
+	function handlePageLoad() 
+
+	{
+
+	var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+
+	document.getElementById('prechatForm').setAttribute('action',
+
+	decodeURIComponent(endpointMatcher.exec(document.location.search)[1]));
+
+	} 
+
+	if (window.addEventListener) 
+
+	{
+
+	window.addEventListener('load', handlePageLoad, false);
+
+	} 
+
+	else 
+
+	{ 
+
+	window.attachEvent('onload', handlePageLoad, false);
+
+	}
+
+	})();
+
+	function isValidEmail(email) {  
+		return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email));
+	}
+
+	function submitForm(){
+		var email = document.getElementById('email').value;
+
+		if(isValidEmail(email)){
+			return true;
+		}
+		else {
+			alert('Please enter a valid email address.');
+			return false;
+		}
+		
+		return true;
+	}
+
+</script>
+
+<style type="text/css">
+	h2 {
+		margin-left:5px;
+		font-size:16px;
+		color:black;
+	}
+	.reqTop {
+		margin-left:5px;
+		color:#FF0000;
+	}
+	.req {color:#FF0000;}
+	.table {margin-left:20px;}
+
+	a:focus, 
+	input:focus, 
+	button:focus, 
+	textarea:focus, 
+	select:focus, 
+	a:active, 
+	input:active, 
+	button:active, 
+	textarea:active, 
+	select:active{
+		outline:#ff8c00 solid 3px;
+	}
+</style>
+
+</header>
+
+<body>
+
+<h1></h1>
+
+<p>
+	<h2>ExIm.gov — Web Chat Request</h2>
+</p>
+
+<p>
+	<span class="reqTop">* Required</span>
+</p>
+
+<form method="post" id="prechatForm" class="table">
+
+<table role="presentation">
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:FirstName"><font color="#FF0000">*</font> First Name</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:FirstName" id="liveagent.prechat:FirstName" required="true" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:LastName">Last Name</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:LastName" id="liveagent.prechat:LastName" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:Email"><font color="#FF0000">*</font> Email</label>
+		</td>
+		<td>
+			<input type="email" name="liveagent.prechat:Email" id="liveagent.prechat:Email" required="true" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:Comments"><font color="#FF0000">*</font> Comments</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:Comments" id="liveagent.prechat:Comments" maxlength="32000" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type='submit' value='Request Chat' id='prechat_submit'/>
+		</td>
+	</tr>
+</table>
+
+<!-- Create a Case every time -->
+<!-- We need to verify whether record type can be set this way because we may need the record type Id -->
+<input type="hidden" name="liveagent.prechat:caseRecordType" value="{!exImGovRecordTypeId}" />
+<input type="hidden" name="liveagent.prechat:caseOrigin" value="Chat" /> 
+<input type="hidden" name="liveagent.prechat.findorcreate.map:Case" value="RecordTypeId,caseRecordType;Origin,caseOrigin;Customer_First_Name__c,FirstName;Customer_Last_Name__c,LastName;Customer_Email_address__c,Email;Description,Comments;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Case" value="RecordTypeId,true;Origin,true;Customer_First_Name__c,true;Customer_Last_Name__c,true;Customer_Email_address__c,true;Description,true;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Case" value="true" />
+<input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Case" value="Case" />
+
+</form>
+</body>
+</apex:page>

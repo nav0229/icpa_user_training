@@ -1,0 +1,237 @@
+<apex:page controller="GSA_FCIC_LiveAgent_Prechat_Controller" sidebar="false" showHeader="false">
+<apex:stylesheet value="{!$Resource.BUSA}" />
+<header>
+
+<title>Web Chat | BusinessUSA.gov</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script type="text/javascript">
+
+	(function() 
+
+	{
+
+	function handlePageLoad() 
+
+	{
+
+	var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+
+	document.getElementById('prechatForm').setAttribute('action',
+
+	decodeURIComponent(endpointMatcher.exec(document.location.search)[1]));
+
+	} 
+
+	if (window.addEventListener) 
+
+	{
+
+	window.addEventListener('load', handlePageLoad, false);
+
+	} 
+
+	else 
+
+	{ 
+
+	window.attachEvent('onload', handlePageLoad, false);
+
+	}
+
+	})();
+
+	function isValidUSZip(sZip) {
+		return (/^\d{5}(-\d{4})?$/).test(sZip);
+	}
+
+	function isValidEmail(email) {  
+		return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email));
+	}
+
+	function submitForm(){
+		var zip = document.getElementById('liveagent.prechat:Zip').value;
+		
+		var email = document.getElementById('liveagent.prechat:Email').value;
+
+		/*if(isValidEmail(email)){
+			// do nothing yet as we still need to check the zip code
+		}
+		else {
+			alert('Please enter a valid email address.');
+			return false;
+		}*/
+		// only if zip has something in it will we complain about an invalid zip
+		
+		if(zip) {
+			// check if the zip code is valid
+			if(isValidUSZip(zip)){
+				return true;
+			} else {
+				alert('Please provide a valid US zip code.');
+				return false;
+			}
+		}
+		return true;
+	}
+
+</script>
+
+<style type="text/css">
+    h2 {
+        margin-left:5px;
+        font-size:16px;
+        color:black;
+    }
+    .reqTop {
+        margin-left:5px;
+        color:#FF0000;
+    }
+    .req {color:#FF0000;}
+    .table {margin-left:20px;}
+
+    a:focus, 
+	input:focus, 
+	button:focus, 
+	textarea:focus, 
+	select:focus, 
+	a:active, 
+	input:active, 
+	button:active, 
+	textarea:active, 
+	select:active{
+		outline:#ff8c00 solid 3px;
+	}
+</style>
+
+</header>
+
+<body>
+
+<h1></h1>
+
+<p>
+	<h2>BusinessUSA.gov — Web Chat Request</h2>
+</p>
+
+<p>
+    <span class="reqTop">* Required</span>
+</p>
+
+<form method="post" id="prechatForm" class="table" onsubmit="return submitForm()" >
+
+<table role="presentation">
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:FirstName"><font color="#FF0000">*</font> First Name</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:FirstName" id="liveagent.prechat:FirstName" required="true" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:LastName">Last Name</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:LastName" id="liveagent.prechat:LastName" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:Email"><font color="#FF0000">*</font> Email</label>
+		</td>
+		<td>
+			<input type="email" name="liveagent.prechat:Email" id="liveagent.prechat:Email" required="true" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:BusinessName">Business Name</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:BusinessName" id="liveagent.prechat:BusinessName" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:Address">Address</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:Address" id="liveagent.prechat:Address" maxlength="255" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:Zip">Zip</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:Zip" id="liveagent.prechat:Zip" maxlength="5" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:Industry">Industry</label>
+		</td>
+		<td>
+			<select name="liveagent.prechat:Industry" id="liveagent.prechat:Industry">
+			<option value="Accommodation and Food Services">Accommodation and Food Services</option> 
+			<option value="Administrative, Support, Waste Management, Remediation Services">Administrative, Support, Waste Management, Remediation Services</option> 
+			<option value="Agriculture, Forestry, Fishing, Hunting">Agriculture, Forestry, Fishing, Hunting</option> 
+			<option value="Arts, Entertainment, Recreation">Arts, Entertainment, Recreation</option> 
+			<option value="Construction">Construction</option> 
+			<option value="Educational Services">Educational Services</option> 
+			<option value="Health Care and Social Assistance">Health Care and Social Assistance</option> 
+			<option value="Finance and Insurance">Finance and Insurance</option> 
+			<option value="Information">Information</option> 
+			<option value="Management of Companies and Enterprises">Management of Companies and Enterprises</option> 
+			<option value="Manufacturing">Manufacturing</option> 
+			<option value="Accommodation and Food Services">Mining, Quarrying, Oil and Gas Extraction</option> 
+			<option value="Professional, Scientific, and Technical Services">Professional, Scientific, and Technical Services</option> 
+			<option value="Public Administration">Public Administration</option> 
+			<option value="Real Estate, Rental, Leasing">Real Estate, Rental, Leasing</option> 
+			<option value="Retail Trade">Retail Trade</option> 
+			<option value="Transportation and Warehousing">Transportation and Warehousing</option> 
+			<option value="Utilities">Utilities</option> 
+			<option value="Wholesale Trade">Wholesale Trade</option> 
+			<option value="Other Services (except Public Administration)">Other Services (except Public Administration)</option> 
+			<option value="Not Provided">Not Provided</option> 
+	  </select>
+		</td>
+	</tr>
+	<tr>
+		<!-- Used as the case Subject (changed to Description on 2/24) -->
+		<td></td>
+		<td>
+			<label for="liveagent.prechat:Comments">Comments</label>
+		</td>
+		<td>
+			<input type="text" name="liveagent.prechat:Comments" id="liveagent.prechat:Comments" maxlength="32000" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type='submit' value='Request Chat' id='prechat_submit'/>
+		</td>
+	</tr>
+</table>
+
+<!-- Create a Case every time -->
+<!-- We need to verify whether record type can be set this way because we may need the record type Id -->
+<input type="hidden" name="liveagent.prechat:caseRecordType" value="{!businessGovRecordTypeId}" />
+<input type="hidden" name="liveagent.prechat:caseOrigin" value="Chat" /> 
+<input type="hidden" name="liveagent.prechat.findorcreate.map:Case" value="RecordTypeId,caseRecordType;Origin,caseOrigin;Customer_First_Name__c,FirstName;Customer_Last_Name__c,LastName;Customer_Email_address__c,Email;Description,Comments;Mailing_Address__c,Address;Zip_Code__c,Zip;Industry__c,Industry;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Case" value="RecordTypeId,true;Origin,true;Customer_First_Name__c,true;Customer_Last_Name__c,true;Customer_Email_address__c,true;Description,true;Mailing_Address__c,true;Zip_Code__c,true;Industry__c,true;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Case" value="true" />
+<input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Case" value="Case" />
+
+</form>
+</body>
+</apex:page>

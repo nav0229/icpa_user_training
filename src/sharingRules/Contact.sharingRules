@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>FCIC_Access_to_FCIC_Contacts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Gives the ‘FCIC-All Users’ public group access to contacts of record types FCIC-Individual and FCIC-Duplicate</description>
+        <label>FCIC-Access to FCIC Contacts</label>
+        <sharedTo>
+            <group>FCIC_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>FCIC - Individual,FCIC - Duplicate</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_ShareFedAndGSAcontactsWith18F_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>PropTrack - All Federal and GSA contacts will be shared with all 18F CRM Users</description>
+        <label>PropTrack-ShareFedAndGSAcontactsWith18F-RW</label>
+        <sharedTo>
+            <group>PropTrack_18F_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>GSA,Federal</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PropTrack_ShareFedandGSAcontactsWithPIF_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>PropTrack - All Federal and GSA contacts will be shared with all PIF Users</description>
+        <label>PropTrack-ShareFedandGSAcontactsWithPIF-RW</label>
+        <sharedTo>
+            <group>PropTrack_PIF_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>GSA,Federal</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>
