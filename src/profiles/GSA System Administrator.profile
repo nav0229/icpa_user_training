@@ -2003,6 +2003,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Post_Copy_Log__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Staging_Record__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
