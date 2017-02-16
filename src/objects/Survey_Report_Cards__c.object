@@ -21,10 +21,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -98,52 +94,56 @@
         <description>Was the specific question resolved by the IS.</description>
         <externalId>false</externalId>
         <label>Q10-Specific Issue Resolved?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>No</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Still Waiting</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Still Waiting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q11_Contacted_Multiple_Times__c</fullName>
         <description>Did the citizen contact USA.gov more than once regarding this issue.</description>
         <externalId>false</externalId>
         <label>Q11-Contacted Multiple Times</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Yes, contacted more than once</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>No, only contacted one time</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes, contacted more than once</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No, only contacted one time</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q12_Method_of_Contact__c</fullName>
@@ -151,40 +151,42 @@
         <externalId>false</externalId>
         <inlineHelpText>Please select all that applies</inlineHelpText>
         <label>Q12-Method of Contact</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Calling the Federal Information Line</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Emailing USA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Chatting with USA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Researching on the website USA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Other (specify)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calling the Federal Information Line</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Emailing USA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chatting with USA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Researching on the website USA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other (specify)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
@@ -202,28 +204,30 @@
         <description>Did the citizen contact another government agency?</description>
         <externalId>false</externalId>
         <label>Q13-Contact Another Agency?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>No</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q14_Who_Contact_Before__c</fullName>
@@ -240,451 +244,459 @@
         <description>How easy was it to get an answer or information they needed from the IS.</description>
         <externalId>false</externalId>
         <label>Q16-Ease to get Question Answered</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q17_Written_by_Computer_or_Person__c</fullName>
         <externalId>false</externalId>
         <label>Q17-Written by Computer or Person</label>
-        <picklist>
-            <picklistValues>
-                <fullName>By a Computer</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>By a Live Person</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Don&apos;t Know</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>By a Computer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>By a Live Person</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Don&apos;t Know</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q18_Live_in_the_US__c</fullName>
         <description>Does the person who contacted USA.gov live in the US.</description>
         <externalId>false</externalId>
         <label>Q18-Live in the US?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Yes, I live in the United States</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>No, I live in a different country</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes, I live in the United States</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No, I live in a different country</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q19_Main_Contact_Reason__c</fullName>
         <description>What was the primary reason the citizen contacted USA.gov.</description>
         <externalId>false</externalId>
         <label>Q19-Main Contact Reason</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Business Issues</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Consumer problems and complaints</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Contacting elected officials</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Foreign travel by Americans</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Housing</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Law enforcement, justice system</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Retirement matters</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Social services</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Taxes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Other (please specify)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Business Issues: loan guarantees</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Business Issues: operating/setting up a business</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Business Issues: import/export</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Business Issues: business with the federal government</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Business Issues: authentication of documents for business purposes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Consumer problems and complaints: Complaints/inquiries about businesses including banks and auto dealers</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Consumer problems and complaints: investing (including Savings Bonds)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Consumer problems and complaints: frauds</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Consumer problems and complaints: scams</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Consumer problems and complaints: insurance companies</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (1) reasons for public policy</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (2) foreign relations</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (3) proposed legislation</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (4) copies of laws</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Foreign travel by Americans: leaving the US</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Foreign travel by Americans: admission to other countries (visas)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Foreign travel by Americans: reentry to the US</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Foreign travel by Americans: US passports</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care: primarily insurance matters</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care: prescription drugs</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care: nutrition</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care: food safety</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care: disease diagnosis and prevention</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care: health research</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health care: Affordable Care Act</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Housing: loan guarantees</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Housing: home repairs</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Housing: mortgage issues</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Housing: discrimination</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Housing: landlord/tenant relations</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Housing: flood insurance</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Immigration and naturalization: legally visiting USA</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Immigration and naturalization: studying in USA</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Immigration and naturalization: or moving to the USA (e.g., getting a USA visa)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Immigration and naturalization: becoming a US citizen</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: applying for work (not federal)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: benefits</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: proper wages</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: discrimination</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: safety</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: applying for federal jobs</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: pay scale</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: government travel (per diem)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jobs and workplace issues: military recruiters</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Law enforcement, justice system: reporting suspected criminal or unsafe activities (e.g., illegal aliens, organized crime, most-wanted felons)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Law enforcement, justice system: inquiries about any aspect of the criminal and civil justice system, federal courts</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Law enforcement, justice system: federal courts</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Law enforcement, justice system: bankruptcy</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Law enforcement, justice system: incarceration</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Law enforcement, justice system:correctional facilities</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: camping</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: birding</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: wildlife</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: hunting/fishing</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: hiking</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: boating</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: pollution</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: energy conservation</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: farming</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parks, environment, energy: gardening</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Retirement matters: Applications</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Retirement matters: payments</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Retirement matters: benefits</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Retirement matters:social security</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Social services (like food stamps and other benefits)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Taxes: Payments</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Taxes: forms</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Taxes: computation</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Immigration and naturalization</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business Issues</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Consumer problems and complaints</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contacting elected officials</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Foreign travel by Americans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement, justice system</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retirement matters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Social services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Taxes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other (please specify)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Issues: loan guarantees</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Issues: operating/setting up a business</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Issues: import/export</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Issues: business with the federal government</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Issues: authentication of documents for business purposes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Consumer problems and complaints: Complaints/inquiries about businesses including banks and auto dealers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Consumer problems and complaints: investing (including Savings Bonds)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Consumer problems and complaints: frauds</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Consumer problems and complaints: scams</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Consumer problems and complaints: insurance companies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (1) reasons for public policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (2) foreign relations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (3) proposed legislation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contacting elected officials: a variety of issues, primarily &quot;why&quot; questions related to (4) copies of laws</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Foreign travel by Americans: leaving the US</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Foreign travel by Americans: admission to other countries (visas)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Foreign travel by Americans: reentry to the US</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Foreign travel by Americans: US passports</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care: primarily insurance matters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care: prescription drugs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care: nutrition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care: food safety</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care: disease diagnosis and prevention</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care: health research</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health care: Affordable Care Act</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing: loan guarantees</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing: home repairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing: mortgage issues</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing: discrimination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing: landlord/tenant relations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing: flood insurance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Immigration and naturalization: legally visiting USA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Immigration and naturalization: studying in USA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Immigration and naturalization: or moving to the USA (e.g., getting a USA visa)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Immigration and naturalization: becoming a US citizen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: applying for work (not federal)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: proper wages</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: discrimination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: safety</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: applying for federal jobs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: pay scale</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: government travel (per diem)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jobs and workplace issues: military recruiters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement, justice system: reporting suspected criminal or unsafe activities (e.g., illegal aliens, organized crime, most-wanted felons)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement, justice system: inquiries about any aspect of the criminal and civil justice system, federal courts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement, justice system: federal courts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement, justice system: bankruptcy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement, justice system: incarceration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement, justice system:correctional facilities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: camping</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: birding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: wildlife</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: hunting/fishing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: hiking</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: boating</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: pollution</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: energy conservation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: farming</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parks, environment, energy: gardening</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retirement matters: Applications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retirement matters: payments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retirement matters: benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retirement matters:social security</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Social services (like food stamps and other benefits)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Taxes: Payments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Taxes: forms</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Taxes: computation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Immigration and naturalization</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q19a_Contact_Reason_Comment__c</fullName>
@@ -701,124 +713,128 @@
         <description>The citizens amount of personal effort put forth to resolve their question or concern.</description>
         <externalId>false</externalId>
         <label>Q15-Amount of Personal Effort</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q1_Overall_Quality__c</fullName>
         <description>The overall quality the citizen experienced.</description>
         <externalId>false</externalId>
         <label>Q1-Overall Quality?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>0</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q20_Placed_on_Hold__c</fullName>
@@ -826,28 +842,30 @@
         <externalId>false</externalId>
         <inlineHelpText>Did the Information Specialist place you on hold at any time during your call?</inlineHelpText>
         <label>Q20-Placed on Hold?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q21_How_You_Heard_About_USA_GOV_Tel__c</fullName>
@@ -856,40 +874,42 @@ service? Was it from…? SELECT AS MANY AS APPLY</description>
         <externalId>false</externalId>
         <inlineHelpText>SELECT AS MANY AS APPLY</inlineHelpText>
         <label>Q21-How You Heard About  USA.GOV Tel</label>
-        <picklist>
-            <picklistValues>
-                <fullName>USA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>The Internet</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Referred by a government agency</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>The paper phone book</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Other (Specify)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>USA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The Internet</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Referred by a government agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The paper phone book</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other (Specify)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
@@ -920,328 +940,330 @@ service? Was it from…? SELECT AS MANY AS APPLY</description>
         <externalId>false</externalId>
         <inlineHelpText>What specifically were you calling about in regards to (Q21 CALL REASON)?</inlineHelpText>
         <label>Q21b-what were you calling about (Q21)?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>11</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>13</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>14</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>15</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>16</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>17</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>18</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>19</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>20</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>21</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>22</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>23</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>24</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>25</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>26</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>27</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>28</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>29</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>30</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>31</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>32</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>33</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>34</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>35</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>36</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>37</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>38</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>39</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>40</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>41</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>42</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>43</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>44</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>45</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>46</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>47</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>48</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>49</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>50</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>51</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>52</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>53</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>54</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>55</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>56</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>57</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>58</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>59</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>60</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>61</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>62</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>63</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>64</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>65</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>66</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>67</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>68</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>69</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>70</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>71</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>72</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>73</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>74</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>75</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>76</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>77</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>78</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>79</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>17</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>18</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>19</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>20</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>21</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>22</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>23</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>24</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>25</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>26</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>27</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>28</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>29</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>31</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>32</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>33</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>34</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>35</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>36</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>37</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>38</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>39</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>40</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>41</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>42</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>43</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>44</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>45</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>46</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>47</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>48</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>49</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>50</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>51</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>52</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>53</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>54</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>55</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>56</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>57</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>58</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>59</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>60</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>61</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>62</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>63</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>64</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>65</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>66</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>67</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>68</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>69</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>70</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>71</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>72</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>73</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>74</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>75</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>76</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>77</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>78</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>79</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q22_Call_You_to_Discuss_Open_Issues__c</fullName>
@@ -1252,28 +1274,30 @@ Line Customer Service to call you
         <externalId>false</externalId>
         <inlineHelpText>Would you like a call back to discuss unresolved problems?</inlineHelpText>
         <label>Q22-Call You to Discuss Open Issues</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>No</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q23_Issues_to_Discuss_on_Call_Back__c</fullName>
@@ -1303,288 +1327,298 @@ Line Customer Service to call you
         <description>How useful was the information provided to the citizen.</description>
         <externalId>false</externalId>
         <label>Q3-Useful Information?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>0</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q4_Likely_Use_USA_gov_Again__c</fullName>
         <description>How likely the citizen is to use USA.gov again in the future.</description>
         <externalId>false</externalId>
         <label>Q4-Likely Use USA.gov Again?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>0</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q5_Likely_Recommend_USA_gov__c</fullName>
         <description>How likely the citizen is to recommend USA.gov?</description>
         <externalId>false</externalId>
         <label>Q5-Likely Recommend USA.gov?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>0</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q6_Compared_to_Expectation__c</fullName>
         <description>How the citizens experience compared to their expectations.</description>
         <externalId>false</externalId>
         <label>Q6-Compared to Expectations?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Better than what you expected</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>About the same as what you expected</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Worse than what you expected</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Better than what you expected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>About the same as what you expected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Worse than what you expected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q7_Process_of_Getting_a_Response__c</fullName>
         <description>How the citizen rates the process in getting a response from USA.gov.</description>
         <externalId>false</externalId>
         <label>Q7-Process of Getting a Response?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>0</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q7a_Waiting_Time_for_Specialist__c</fullName>
@@ -1592,60 +1626,62 @@ Line Customer Service to call you
         <externalId>false</externalId>
         <inlineHelpText>Rate the length of time spent waiting to speak to an Information Specialist</inlineHelpText>
         <label>Q7a-Waiting Time for Specialist</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q7b_Total_amnt_of_time_spent_on_phone__c</fullName>
@@ -1660,528 +1696,546 @@ Line Customer Service to call you
         <fullName>Q8_Got_Information_Directly__c</fullName>
         <externalId>false</externalId>
         <label>Q8-Got Information Directly?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>They told me the information during the chat session</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>They told me the information in the e-mail</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>They told me the information during the phone session</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>They told me how to get the information myself</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Neither</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Both, they told me the information during the chat session and how to get the information myself</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Both, they told me the information in the email and how to get the information myself</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Both, they told me the information during the call and how to get the information myself</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>They told me the information during the chat session</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>They told me the information in the e-mail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>They told me the information during the phone session</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>They told me how to get the information myself</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neither</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Both, they told me the information during the chat session and how to get the information myself</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Both, they told me the information in the email and how to get the information myself</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Both, they told me the information during the call and how to get the information myself</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9a_IS_Agent_Overall_Quality__c</fullName>
         <description>The citizens rating of the IS overall quality.</description>
         <externalId>false</externalId>
         <label>Q9a-IS Agent Overall Quality</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9b_IS_Agent_Understanding_of_Question__c</fullName>
         <description>The citizens rating of the IS understanding of question or concern.</description>
         <externalId>false</externalId>
         <label>Q9b-IS Agent Understanding of Question</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>0</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9c_IS_Agent_Desire_to_Resolve_Question__c</fullName>
         <description>The citizens rating of the agents desire to resolve their question or concern.</description>
         <externalId>false</externalId>
         <label>Q9c-IS Agent Desire to Resolve Question</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9d_IS_Agent_Being_Knowledgeable__c</fullName>
         <description>The citizens rating of the IS knowledge about their question or concern.</description>
         <externalId>false</externalId>
         <label>Q9d-IS Agent Being Knowledgeable</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9e_IS_Agent_Treating_as_Valued_Customer__c</fullName>
         <description>Did the agent treat the citizen as a valued customer.</description>
         <externalId>false</externalId>
         <label>Q9e-IS Agent Treating as Valued Customer</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9f_IS_Agent_Being_Courteous__c</fullName>
         <description>Was the IS courteous when dealing with the citizen.</description>
         <externalId>false</externalId>
         <label>Q9f-IS Agent Being Courteous</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9g_IS_Agent_Accuracy_of_Info_Provided__c</fullName>
         <description>Was the information provided by the agent to the citizen accurate regarding their question or concern.</description>
         <externalId>false</externalId>
         <label>Q9g-IS Agent Accuracy of Info Provided</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DK</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>REF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>REF</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Q9h_IS_Agent_Time__c</fullName>
         <description>How timely was the agent in providing an answer to the citizen.</description>
         <externalId>false</externalId>
         <label>Q9h-IS Agent Timeliness</label>
-        <picklist>
-            <picklistValues>
-                <fullName>10</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>9</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>8</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>7</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>6</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>5</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>4</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>1</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Related_Case__c</fullName>
@@ -2215,20 +2269,22 @@ Line Customer Service to call you
         <description>Did the citizen contact USA.gov</description>
         <externalId>false</externalId>
         <label>SQ1 - Contact USA.gov?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>No</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Staging_Record__c</fullName>

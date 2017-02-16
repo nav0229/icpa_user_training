@@ -2,6 +2,7 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultLandingTab>standard-home</defaultLandingTab>
     <description>Proposal Tracker</description>
+    <formFactors>Large</formFactors>
     <label>Proposal Tracker</label>
     <tab>standard-Account</tab>
     <tab>standard-Contact</tab>
