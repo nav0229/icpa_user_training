@@ -44,28 +44,30 @@
         <fullName>Content__c</fullName>
         <externalId>false</externalId>
         <label>Content</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Training</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>How To</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Worksheet</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Business Rules</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>How To</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Worksheet</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Rules</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Format_Text_Test__c</fullName>
@@ -93,20 +95,22 @@ asset might be worthwhile to
 highlight</description>
         <externalId>false</externalId>
         <label>Notify Marketing Team</label>
-        <picklist>
-            <picklistValues>
-                <fullName>No</fullName>
-                <default>true</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Procedural_Article_ID__c</fullName>
@@ -130,52 +134,54 @@ highlight</description>
         <fullName>Procedural_Type__c</fullName>
         <externalId>false</externalId>
         <label>Procedural Type</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Common</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Business Rules</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Prepared Responses</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Escalation</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Email Templates</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Chat Templates</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Quality</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>SFDC</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>EON</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>FAQ</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Common</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Rules</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prepared Responses</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Email Templates</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chat Templates</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quality</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SFDC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EON</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAQ</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Related_CMS_Article__c</fullName>
@@ -189,64 +195,66 @@ highlight</description>
         <fullName>Site_Agency__c</fullName>
         <externalId>false</externalId>
         <label>Site (Agency Program)</label>
-        <picklist>
-            <picklistValues>
-                <fullName>ALL</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>USA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>GobiernoUSA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Kids.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>GSA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>BusinessUSA.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>DoS</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>FWS</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>FDA</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>TTY</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Benefits.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>GovLoans.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>ExIm.gov</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ALL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>USA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GobiernoUSA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kids.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GSA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BusinessUSA.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DoS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FWS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FDA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TTY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefits.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GovLoans.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ExIm.gov</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
