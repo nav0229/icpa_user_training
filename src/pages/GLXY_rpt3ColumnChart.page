@@ -1,0 +1,308 @@
+<apex:page controller="Glxy_BC_3ColumnChart" title="3-Column Report" readonly="true" sidebar="false">
+    
+    <table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">3-Column Report</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+           		<div style="background:White; border:2px outset #888888;">
+                <h2><font color="darkred" size="+1">
+                    Reporting Fiscal Year: {!strReportingYear} &nbsp;&nbsp;&nbsp;
+                    Region: {!strRegion} &nbsp;&nbsp;&nbsp;
+                    Submission Type: {!strSubmissionType} &nbsp;&nbsp;&nbsp;
+                    Data Format: {!strDataFormat}
+                </font></h2>
+                </div>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>  
+   
+    <apex:form id="frmList">
+    
+		<table border="1" align="center" cellspacing="1">
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2" align="center"><h2><font color="DarkBlue" size="+1">Fiscal Year&nbsp;<apex:outputText value="{!FiscalYear1}" /></font></h2></td>
+                <td colspan="2" align="center"><h2><font color="DarkBlue" size="+1">Fiscal Year&nbsp;<apex:outputText value="{!FiscalYear2}" /></font></h2></td>
+                <td colspan="2" align="center"><h2><font color="DarkBlue" size="+1">Fiscal Year&nbsp;<apex:outputText value="{!FiscalYear3}" /></font></h2></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center"><font color="DarkBlue"><b>SQ FT</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>OBLIGATIONS</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>SQ FT</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>OBLIGATIONS</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>SQ FT</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>OBLIGATIONS</b></font></td>
+            </tr>
+            <tr>
+                <td><b>PRIOR YEAR COST</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!PriorYearCostSqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!PriorYearCostAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!PriorYearCostSqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!PriorYearCostAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!PriorYearCostSqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!PriorYearCostAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Annualization of Rental Increases</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualRentIncreaseSqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualRentIncreaseAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualRentIncreaseSqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualRentIncreaseAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualRentIncreaseSqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualRentIncreaseAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Lump Sum - Real Estate Taxes; Lease Buyouts</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualLumpSumAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualLumpSumAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualLumpSumAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Annualization of Lease Cancellations</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualCancellationsSqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualCancellationsAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualCancellationsSqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualCancellationsAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualCancellationsSqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualCancellationsAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Annualization of Lease Expansion - All Other</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualExpansionNOASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualExpansionNOAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualExpansionNOASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualExpansionNOAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualExpansionNOASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualExpansionNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Annualization of Lease Expansion - Indefinite</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualExpansionIASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualExpansionIAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualExpansionIASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualExpansionIAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!AnnualExpansionIASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnnualExpansionIAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Indefinite Lease Expansion Converted to NOA</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!IAToNOASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAToNOAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!IAToNOASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAToNOAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!IAToNOASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAToNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>BASE COST</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!BaseCostSqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!BaseCostAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!BaseCostSqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!BaseCostAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!BaseCostSqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!BaseCostAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Current Year Cost of Rental Increases - NOA</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!RentIncreaseNOASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RentIncreaseNOAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!RentIncreaseNOASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RentIncreaseNOAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!RentIncreaseNOASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RentIncreaseNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Lump Sum - Real Estate Taxes; Lease Buyouts - NOA</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumNOAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumNOAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Current Year Cost of Lease Cancellations - NOA</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CancellationsNOASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CancellationsNOAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CancellationsNOASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CancellationsNOAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CancellationsNOASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CancellationsNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            
+            <tr>
+                <td>Current Year Cost of Lease Expansion - NOA</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!ExpansionNOASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!ExpansionNOAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!ExpansionNOASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!ExpansionNOAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!ExpansionNOASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!ExpansionNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Current Year Cost of Rental Increases - IA</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!RentIncreaseIASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RentIncreaseIAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!RentIncreaseIASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RentIncreaseIAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!RentIncreaseIASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RentIncreaseIAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Lump Sum - Real Estate Taxes; Lease Buyouts - IA</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumIAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumIAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumIAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Current Year Cost of Lease Cancellations - IA</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CancellationsIASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CancellationsIAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CancellationsIASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CancellationsIAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CancellationsIASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CancellationsIAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>Current Year Cost of Lease Expansion - IA</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!ExpansionIASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!ExpansionIAAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!ExpansionIASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!ExpansionIAAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!ExpansionIASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!ExpansionIAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>CURRENT YEAR COST</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CurrentYearCostSqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CurrentYearCostAmount1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CurrentYearCostSqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CurrentYearCostAmount2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!CurrentYearCostSqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CurrentYearCostAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td colspan="7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="7"><b>Additional Information:</b></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;New Obligational Authority (NOA)</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!NOASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!NOAObligations1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!NOASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!NOAObligations2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!NOASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!NOAObligations3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;Indefinite Authority (IA)</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!IASqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAObligations1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!IASqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAObligations2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!IASqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAObligations3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Current Year Authority</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!TotalSqFt1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!TotalObligations1}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!TotalSqFt2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!TotalObligations2}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!TotalSqFt3}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!TotalObligations3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;NOA Obligations (-)</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!NOAObligationsMinus1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!NOAObligationsMinus2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!NOAObligationsMinus3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;IA Obligations (-)</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAObligationsMinus1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAObligationsMinus2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!IAObligationsMinus3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Current Year Obligations</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!TotalCurrentYearObligations1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!TotalCurrentYearObligations2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!TotalCurrentYearObligations3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recission (-)</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RecessionMinus1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RecessionMinus2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RecessionMinus3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reprogrammings (-)</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!Reprogrammings1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!Reprogrammings2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!Reprogrammings3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prior Year Balances</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!PriorYearBalances1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!PriorYearBalances2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!PriorYearBalances3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anticipated Recoveries</td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnticipatedRecoveries1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnticipatedRecoveries2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!AnticipatedRecoveries3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unobligated Balances</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!UnobligatedBalances1}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!UnobligatedBalances2}" /></apex:outputText></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!UnobligatedBalances3}" /></apex:outputText></td>
+            </tr>
+        </table>
+        
+        <br/><br/>
+        
+        
+    </apex:form>
+
+</apex:page>

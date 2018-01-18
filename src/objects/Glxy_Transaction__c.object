@@ -1,0 +1,2147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>GLXY_HelpPage</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains monthly Galaxy summarized Data. This data will be loaded on monthly basis using SalesForce APEX code. Purpose of this data is to produce monthly reconciliation reports.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ActualLeaseAwardDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Date the Lease or Lease Action was Awarded</inlineHelpText>
+        <label>Actual Lease Award Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ActualLeaseTermCommencementDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The actual day the lease starts.  Either the day the government starts paying rent or the start of the free rent period at the beginning of the lease term.</inlineHelpText>
+        <label>Actual Lease Term Commencement Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BA53Approver__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>BA53 Analyst that acutally approves the most recent Lease Action.</inlineHelpText>
+        <label>BA53 Approver</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BA53_User__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>BA53 Analyst that the associated Lease is assigned to in REXUS</inlineHelpText>
+        <label>BA53 User</label>
+        <length>50</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Count_of_Accruals__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Accruals</label>
+        <summaryFilterItems>
+            <field>Glxy_LeaseDigest__c.Count_of_Accruals__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Glxy_LeaseDigest__c.Transaction__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_digests_w_Accrual__c</fullName>
+        <description>count of digests where include accrual is set.</description>
+        <externalId>false</externalId>
+        <label>Count of digests w/ Accrual</label>
+        <summaryFilterItems>
+            <field>Glxy_LeaseDigest__c.Include_Accrual__c</field>
+            <operation>equals</operation>
+            <value>YES</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Glxy_LeaseDigest__c.Transaction__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Digest_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Digest Effective Date</label>
+        <summarizedField>Glxy_LeaseDigest__c.Digest_Effective_DT__c</summarizedField>
+        <summaryForeignKey>Glxy_LeaseDigest__c.Transaction__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Digest_IA_NOA_Conversion_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Digest IA/NOA Conversion date</label>
+        <summarizedField>Glxy_LeaseDigest__c.IA_NOA_Conversion_Date__c</summarizedField>
+        <summaryForeignKey>Glxy_LeaseDigest__c.Transaction__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Digest_IA_Sq_Ft__c</fullName>
+        <externalId>false</externalId>
+        <label>Digest IA Sq Ft</label>
+        <summarizedField>Glxy_LeaseDigest__c.IA_RSF__c</summarizedField>
+        <summaryForeignKey>Glxy_LeaseDigest__c.Transaction__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedAnnualAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The Estimated Annual Rent that appears in the &quot;Budget Info&quot; field in REXUS</inlineHelpText>
+        <label>Estimated Annual Rent (Budget)</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedAnnualRentFundingPayment__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The Initial Annual Rent that appears in the &quot;Budget Info&quot; field in REXUS. It sums the payment lines.</inlineHelpText>
+        <label>Estimated Annual Rent (Funding Payment)</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedIAAmountFundingPayment__c</fullName>
+        <externalId>false</externalId>
+        <formula>IA_RSF_RLLUP__c * NewRatePerSqFtFunding_Payment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimated IA Amount (Funding Payment)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedIAAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>EstimatedIAAmount</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EstimatedLeaseTermCommencementDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The estimated day the lease starts.  Either the day the government starts paying rent or the start of the free rent period at the beginning of the lease term.</inlineHelpText>
+        <label>Estimated Lease Term Commencement Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedNOAAmountFundingPayment__c</fullName>
+        <externalId>false</externalId>
+        <formula>EstimatedAnnualRentFundingPayment__c - EstimatedIAAmountFundingPayment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimated NOA Amount (Funding Payment)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedNOAAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>EstimatedAnnualAmount__c -  Estimated_IA_Amount__c</formula>
+        <label>Estimated NOA Amount (Budget)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_IA_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IA_RSF_RLLUP__c * RatePerSquareFoot__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimated IA Amount (Budget)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Lease_Award_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The estimated day the lease starts.  Either the day the government starts paying rent or the start of the free rent period at the beginning of the lease term.</inlineHelpText>
+        <label>Estimated Lease Award Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Fully_Service_Lease__c</fullName>
+        <externalId>false</externalId>
+        <label>Fully Service Lease</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blank</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IA_NOA_Conversion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>IA/NOA Conversion Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IA_RSF_RLLUP__c</fullName>
+        <externalId>false</externalId>
+        <label>Total New IA Sq Ft</label>
+        <summarizedField>Glxy_ProjectAgencyTransaction__c.IASquareFeet__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgencyTransaction__c.TransactionID__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>IA_RSF__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>IA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsUserEmailMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(BA53_User__c==$User.Email, &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsUserEmailMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsUserRegionMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(TEXT(Region__c)==$User.Glxy_Region_Code__c,$User.Glxy_Region_Code__c==&quot;CO&quot;), &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsUserRegionMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LeaseNumber__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Lease object</description>
+        <externalId>false</externalId>
+        <label>Lease Number</label>
+        <referenceTo>Glxy_Lease__c</referenceTo>
+        <relationshipLabel>Galaxy Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lease_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Action</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Change in Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change in SF</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change To External Contacts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expansion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Extension</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Holdover</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New/Replacing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating Cost Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Estate Tax Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reduction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Step Rent Decrease</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Step Rent Increase</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Succeeding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Superseding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Terminating</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lease_Agreement_RSF__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Agreement RSF</label>
+        <summarizedField>Glxy_LeaseDigest__c.Agreement_RSF__c</summarizedField>
+        <summaryForeignKey>Glxy_LeaseDigest__c.Transaction__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lease_CO_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lease CO Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Contact not matched to this region.</errorMessage>
+            <filterItems>
+                <field>$Source.Region__c</field>
+                <operation>equals</operation>
+                <valueField>Glxy_LeaseCoContact__c.RegionCD__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Glxy_LeaseCoContact__c</referenceTo>
+        <relationshipLabel>Galaxy Transactions</relationshipLabel>
+        <relationshipName>Galaxy_Transactions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lease_Term__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Lease Term (In Months)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOA_RSF_RLLUP__c</fullName>
+        <externalId>false</externalId>
+        <label>Total New NOA Sq Ft</label>
+        <summarizedField>Glxy_ProjectAgencyTransaction__c.NOA_RSF__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgencyTransaction__c.TransactionID__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>NOA_RSF__c</fullName>
+        <externalId>false</externalId>
+        <formula>Lease_Agreement_RSF__c - IA_RSF__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NewRatePerSqFtFunding_Payment__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( (IA_RSF_RLLUP__c + NOA_RSF_RLLUP__c =0),0,EstimatedAnnualRentFundingPayment__c /( IA_RSF_RLLUP__c + NOA_RSF_RLLUP__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Rate Per Sq Ft (Funding Payment)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Lease_Number__c</fullName>
+        <description>New Lease Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>LXXNNNNN - L &apos;State Code&apos; 00000. This is an eight character identifier for a specific lease. With the first character being &quot;L&quot;, the second two characters being the state code, and the final five characters being a unique set of numeric values.</inlineHelpText>
+        <label>New Lease Number</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NoImpactonBA53__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies that the Project will not impact BA53 funding.</inlineHelpText>
+        <label>No BA53 Impact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OID_UserName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Lease_CO_Contact__r.OID_USER_NAME__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Email address of the CO for the lease.</inlineHelpText>
+        <label>OID User Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Old_Rate_Per_Sq_Ft__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_Old_RSF_RLLUP__c=0,0,Total_Old_Annual_Rent__c /Total_Old_RSF_RLLUP__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Old Rate Per Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OtherContractServicesAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Contract Services Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Pre_Certification_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the pre-certification of funds for the Project was approved.</inlineHelpText>
+        <label>Pre Certification Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Location</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Number</label>
+        <referenceTo>Glxy_LeaseProjects__c</referenceTo>
+        <relationshipLabel>Galaxy Transactions</relationshipLabel>
+        <relationshipName>Galaxy_Transactions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Status</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prospectus_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Prospectus Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Prospectus_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Prospectus Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RatePerSquareFoot__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( (IA_RSF_RLLUP__c + NOA_RSF_RLLUP__c =0),0,EstimatedAnnualAmount__c /( IA_RSF_RLLUP__c + NOA_RSF_RLLUP__c ))</formula>
+        <label>New Rate Per Sq Ft (Budget)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RealtySpecialist__c</fullName>
+        <externalId>false</externalId>
+        <label>Realty Specialist Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Lookup__c</fullName>
+        <externalId>false</externalId>
+        <formula>RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Type Lookup</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reject_Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Reason for Rejection</inlineHelpText>
+        <label>Reject Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invalid Data</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Data Mismatch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Missing Documentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rejection_Remarks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Rejection Remarks</inlineHelpText>
+        <label>Rejection Remarks</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RentEstOnly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies that the Project is to estimate the rent only.</inlineHelpText>
+        <label>RentEst Only</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Status of the transaction</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Approved by BA53</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected by BA53</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected by REXUS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Accepted by REXUS</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Team Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Change_in_RSF__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Total_Request_RSF__c) - Total_Old_RSF_RLLUP__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Change in Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Change_in_Structured_Parking__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Change in Structured Parking</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Change_in_Surface_Parking__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Change in Surface Parking</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_New_Annual_Rent__c</fullName>
+        <externalId>false</externalId>
+        <label>Total New Annual Rent</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_New_RSF__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total New Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Old_Annual_Rent__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Old Annual Rent</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Old_RSF_RLLUP__c</fullName>
+        <description>Total Old RSF Rollup summary</description>
+        <externalId>false</externalId>
+        <label>Total Old Sq Ft</label>
+        <summarizedField>Glxy_ProjectAgencyTransaction__c.Current_RSF__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgencyTransaction__c.TransactionID__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Request_RSF__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Request Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Request_Structured_Parking__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Request Structured Parking</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Request_Surface_Parking__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Request Surface Parking</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>TransactionID__c</fullName>
+        <externalId>true</externalId>
+        <label>Rexus Transaction ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionProcessedDateFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(DATEVALUE(TransactionProcessedDate__c)), Text(YEAR(DATEVALUE(TransactionProcessedDate__c) + 92 )), Text(YEAR(DATEVALUE(TransactionProcessedDate__c) + 92 )))</formula>
+        <label>Transaction Processed Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionProcessedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction Processed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Created_By__c</fullName>
+        <description>Transaction Created By from Rexus</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Transaction Created By</inlineHelpText>
+        <label>Transaction Created By</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>USF_Variance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>USF Variance</inlineHelpText>
+        <label>USF Variance</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Galaxy Transaction</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>Project_Number__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_My_Regional_Transactions</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>Project_Number__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <label>All My Regional Transactions</label>
+    </listViews>
+    <listViews>
+        <fullName>All_My_Transactions</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>Project_Number__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsUserEmailMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <label>All My Transactions</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Lease_Actions</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <filters>
+            <field>IsUserEmailMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Glxy_Transaction__c.Lease_Action</value>
+        </filters>
+        <label>My Lease Actions</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Project_Final_Certification_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Project_Number__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <filters>
+            <field>IsUserEmailMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Glxy_Transaction__c.Project_Final_Certification</value>
+        </filters>
+        <label>My Project Final Certification Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Project_Pre_Certification_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Project_Number__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <filters>
+            <field>IsUserEmailMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Glxy_Transaction__c.Project_Pre_Certification</value>
+        </filters>
+        <label>My Project Pre-Certification Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Regional_Lease_Actions</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Glxy_Transaction__c.Lease_Action</value>
+        </filters>
+        <label>My Regional Lease Actions</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Regional_Project_Final_Certifications</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Project_Number__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Glxy_Transaction__c.Project_Final_Certification</value>
+        </filters>
+        <label>My Regional Project Final Certifications</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Regional_Project_Pre_Certifications</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Project_Number__c</columns>
+        <columns>Region__c</columns>
+        <columns>Status__c</columns>
+        <columns>Team_CD__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected by REXUS,Pending</value>
+        </filters>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Glxy_Transaction__c.Project_Pre_Certification</value>
+        </filters>
+        <label>My Regional Project Pre-Certifications</label>
+    </listViews>
+    <nameField>
+        <label>Transaction ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Galaxy Transactions</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Lease_Action</fullName>
+        <active>true</active>
+        <label>Lease Action</label>
+        <picklistValues>
+            <picklist>Fully_Service_Lease__c</picklist>
+            <values>
+                <fullName>Blank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lease_Action__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reject_Reason__c</picklist>
+            <values>
+                <fullName>Data Mismatch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invalid Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Accepted by REXUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by BA53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Rejected by BA53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected by REXUS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Project_Final_Certification</fullName>
+        <active>true</active>
+        <label>Project Final Certification</label>
+        <picklistValues>
+            <picklist>Fully_Service_Lease__c</picklist>
+            <values>
+                <fullName>Blank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lease_Action__c</picklist>
+            <values>
+                <fullName>Change To External Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in SF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Holdover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New%2FReplacing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Succeeding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Superseding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminating</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reject_Reason__c</picklist>
+            <values>
+                <fullName>Data Mismatch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invalid Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Accepted by REXUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by BA53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Rejected by BA53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected by REXUS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Project_Pre_Certification</fullName>
+        <active>true</active>
+        <label>Project Pre-Certification</label>
+        <picklistValues>
+            <picklist>Fully_Service_Lease__c</picklist>
+            <values>
+                <fullName>Blank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lease_Action__c</picklist>
+            <values>
+                <fullName>Change To External Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in SF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Holdover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New%2FReplacing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Succeeding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Superseding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminating</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reject_Reason__c</picklist>
+            <values>
+                <fullName>Data Mismatch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invalid Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Accepted by REXUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by BA53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Rejected by BA53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected by REXUS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LeaseNumber__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Region__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Team_CD__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BA53Approver__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reject_Reason__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Record_Type_Lookup__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>IA_Sq_Ft_Not_Blank_on_Date_LA</fullName>
+        <active>true</active>
+        <description>IA Conversion Date should be NULL when IA Sq Ft is Zero</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(IA_NOA_Conversion_Date__c)), OR(ISBLANK(IA_RSF__c),IA_RSF__c=0), RecordType.DeveloperName =&quot;Lease_Action&quot; )</errorConditionFormula>
+        <errorMessage>IA Conversion Date should be NULL when IA Sq Ft is Zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lease_Number_NOT_Null</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( RecordType.DeveloperName = &quot;Lease_Action&quot;,  ISBLANK(LeaseNumber__c) )</errorConditionFormula>
+        <errorMessage>Lease Number Cannot be Null</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Project_Number_NOT_Null</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( NOT(RecordType.DeveloperName = &quot;Lease_Action&quot;), ISBLANK( Project_Number__c ) )</errorConditionFormula>
+        <errorMessage>Project Number Cannot be NULL</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredRegion</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(Region__c,&quot;&quot;)</errorConditionFormula>
+        <errorMessage>Region cannot be left blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TransactionIDChanged</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED(Name)</errorConditionFormula>
+        <errorMessage>Cannot Change Transaction ID</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_Estimated_IA_Amount</fullName>
+        <active>true</active>
+        <description>Estimated IA amount  is greater than or equal to zero and is less than or equal to Estimated Annual Rent</description>
+        <errorConditionFormula>AND(NOT( RecordType.DeveloperName =&quot;Lease_Action&quot;), OR(EstimatedIAAmount__c &gt; EstimatedAnnualAmount__c,EstimatedIAAmount__c &lt; 0 ) )</errorConditionFormula>
+        <errorMessage>Estimated IA Rent cannot be greater than Estimated Annual Amount or Less than Zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_IANOA_Conversion_date_1</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(IA_RSF__c &gt;0, OR(MONTH(IA_NOA_Conversion_Date__c) &lt;&gt;10,DAY(IA_NOA_Conversion_Date__c)&lt;&gt;1,ISNULL(IA_NOA_Conversion_Date__c )), (RecordType.DeveloperName = &quot;Lease_Action&quot;))</errorConditionFormula>
+        <errorMessage>IA/NOA Conversion Date must be filled in if IA RSF is greater than 0 and Date  must be Oct 1.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_IANOA_Conversion_date_2</fullName>
+        <active>true</active>
+        <description>IA/NOA Conversion Date must be as of 10/1 and must be greater than Max effective date of All Digests.</description>
+        <errorConditionFormula>AND(  NOT(ISNULL(IA_NOA_Conversion_Date__c )), IA_RSF__c &gt;0, IA_NOA_Conversion_Date__c &lt; Digest_Effective_Date__c,  RecordType.DeveloperName = &quot;Lease_Action&quot;)</errorConditionFormula>
+        <errorMessage>IA/NOA Conversion Date must be as of 10/1 and must be greater than Max effective date of All Digests.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_IA_RSF_is_valid</fullName>
+        <active>true</active>
+        <description>Checks that the IA RSF is less than max and greater than zero</description>
+        <errorConditionFormula>AND(OR(IA_RSF__c&lt;0,IA_RSF__c &gt;  Lease_Agreement_RSF__c ),$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>IA RSF must be greater than 0 but less than the Maximum Agreement value from the digests.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Approve</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Approve</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)} 
+
+var sr = new sforce.SObject(&quot;GLXY_Transaction__c&quot;); 
+sr.id = &quot;{!Glxy_Transaction__c.Id}&quot;; 
+var count1=&quot;{!Glxy_Transaction__c.Count_of_digests_w_Accrual__c}&quot;;
+var count2=&quot;{!Glxy_Transaction__c.Count_of_Accruals__c}&quot;;
+var reason1=&quot;{!Glxy_Transaction__c.Reject_Reason__c}&quot;; 
+var reason2=&quot;{!JSENCODE(Glxy_Transaction__c.Rejection_Remarks__c)}&quot;;
+var RT=&quot;{!Glxy_Transaction__c.Record_Type_Lookup__c}&quot;;
+var status=&quot;{!Glxy_Transaction__c.Status__c}&quot;;
+var iadate = &quot;{!TEXT(Glxy_Transaction__c.IA_NOA_Conversion_Date__c)}&quot;;
+var iad = &quot;{!DATEVALUE(TEXT(Glxy_Transaction__c.IA_NOA_Conversion_Date__c))}&quot;;
+var NewLeaseNumber = &quot;{!Glxy_Transaction__c.New_Lease_Number__c}&quot;;
+var LeaseAction = &quot;{!Glxy_Transaction__c.Lease_Action__c}&quot;;
+
+if (iadate != &apos;&apos;){
+	iadate=new Date(&quot;{!TEXT(Glxy_Transaction__c.IA_NOA_Conversion_Date__c)}&quot;);
+}
+if (iad != &apos;&apos;){
+	iad = new Date(&quot;{!DATEVALUE(TEXT(Glxy_Transaction__c.IA_NOA_Conversion_Date__c))}&quot;);
+}
+
+var date=&quot;{!DAY(Glxy_Transaction__c.IA_NOA_Conversion_Date__c)}&quot;;
+var month=&quot;{!MONTH(Glxy_Transaction__c.IA_NOA_Conversion_Date__c)}&quot;;
+var tiarsf =&quot;{!Glxy_Transaction__c.IA_RSF_RLLUP__c}&quot;.valueOf();
+var region = &quot;{!Glxy_Transaction__c.IsUserRegionMatch__c}&quot;;
+var user = &quot;{!$User.Alias}&quot;;
+var rsf = &quot;{!Glxy_Transaction__c.IA_RSF__c}&quot;.valueOf();
+var effdate = &quot;{!DATEVALUE(TEXT(Glxy_Transaction__c.Digest_Effective_Date__c))}&quot;;
+
+if (effdate != &apos;&apos;){
+	effdate = new Date(&quot;{!DATEVALUE(TEXT(Glxy_Transaction__c.Digest_Effective_Date__c))}&quot;);
+}
+
+if(status==&quot;Approved by BA53&quot; || status==&quot;Rejected by BA53&quot; || status==&quot;Accepted by REXUS&quot; || region==&quot;FALSE&quot;){
+	alert(&apos;You cannot change the status of this transaction.&apos;);
+}else{
+	
+	if(RT==&quot;Lease Action&quot;){
+        
+        //alert(&apos;iad=&apos; + iad); alert(&apos;effdate=&apos; + effdate); alert(rsf); alert(date); alert(month);
+        //alert(&apos;iad &lt; effdate&apos; + (iad &lt; effdate));
+        
+        if(rsf != 0 &amp;&amp; ((date != 1 || month != 10) || iad==&apos;&apos; || iad &lt; effdate)){
+		//if(rsf &gt; 0 &amp;&amp; !(iad &lt; effdate || iadate == &apos;&apos; || date != 1 || month != 10)){
+			alert(&apos;When IA Sq ft is greater than 0, the IA/NOA Conversion Date must be 10/1, and must be greater than Max effective date of All Digests.&apos;);
+		}else{
+			if(rsf == &apos;0&apos; &amp;&amp; iadate != &apos;&apos;){
+				alert(&apos;IA Conversion Date should be NULL when IA Sq Ft is Zero&apos;);
+			} else {
+				if(count1!=count2){
+					alert(&apos;One or more of the lease digests is missing accruals, please fix.&apos;);
+				}else{
+					if(reason1!= &quot;&quot; || reason2!= &quot;&quot;){
+						alert(&apos;You cannot have a value on Rejection Reason or Remarks on Approval.&apos;);
+					} else {
+						sr.Status__c = &apos;Approved by BA53&apos;; 
+						sr.TransactionProcessedDate__c = new Date();
+						sr.BA53Approver__c=&quot;{!$User.Email}&quot;;
+						result = sforce.connection.update([sr]); 
+						window.location.reload();
+					}
+				}
+			}
+		}	
+	
+	}else{
+	
+		//alert(RT);alert(tiarsf); alert(date); alert(month); alert(iadate); 
+	    if(tiarsf != 0 &amp;&amp; ((date != 1 || month != 10) || iadate==&quot;&quot;)){
+        	alert(&apos;IA/NOA Conversion Date must be filled in if IA RSF is greater than 0 and Date must be Oct 1.&apos;);
+       	}else{
+			if(tiarsf == &apos;0&apos; &amp;&amp; (iadate != &quot;&quot;)){
+				alert(&apos;IA Conversion Date should be NULL when Total IA Sq Ft is Zero&apos;);
+			}else{
+				if(reason1!=&quot;&quot; || reason2!=&quot;&quot;){
+					alert(&apos;You cannot have a value on Rejection Reason or Remarks on Approval.&apos;);
+				}else{
+					if((RT == &quot;Project Final Certification&quot;) &amp;&amp; (NewLeaseNumber.length == 0)){
+						if(LeaseAction == &quot;New&quot; || LeaseAction == &quot;Superseding&quot;  || LeaseAction == &quot;New/Replacing&quot; || LeaseAction == &quot;Succeeding&quot;){
+					 		alert(&apos;New Lease Number cannot have a NULL value&apos;);
+					 	}else{
+						 	sr.Status__c = &apos;Approved by BA53&apos;; 
+							sr.TransactionProcessedDate__c=new Date();//System.Now();
+							sr.BA53Approver__c=&quot;{!$User.Email}&quot;;
+							result = sforce.connection.update([sr]); 
+							window.location.reload();
+						}	
+					} else {
+						sr.Status__c = &apos;Approved by BA53&apos;; 
+						sr.TransactionProcessedDate__c=new Date();//System.Now();
+						sr.BA53Approver__c=&quot;{!$User.Email}&quot;;
+						result = sforce.connection.update([sr]); 
+						window.location.reload();
+					}
+				}
+			}
+		}
+	}
+	
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Open_Lease</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Open Lease</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/{!Glxy_Transaction__c.LeaseNumberId__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Open_Project</fullName>
+        <availability>online</availability>
+        <description>Opens Project Information in New Window. Keep note that if there is no Project # on record, the new window will not contain any information.</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Open Project</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/{!Glxy_Transaction__c.Project_NumberId__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reject</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reject</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)} 
+
+var sr = new sforce.SObject(&quot;GLXY_Transaction__c&quot;); 
+sr.id = &quot;{!Glxy_Transaction__c.Id}&quot;; 
+var comments= &quot;{!JSENCODE(Glxy_Transaction__c.Rejection_Remarks__c)}&quot;;
+var reason=&quot;{!Glxy_Transaction__c.Reject_Reason__c}&quot;;
+var status=&quot;{!Glxy_Transaction__c.Status__c}&quot;;
+var region = &quot;{!Glxy_Transaction__c.IsUserRegionMatch__c}&quot;; 
+var AccrualCount = &quot;{!Glxy_Transaction__c.Count_of_Accruals__c}&quot;;
+
+if( status==&quot;Approved by BA53&quot; || status==&quot;Rejected by BA53&quot; || status==&quot;Accepted by REXUS&quot; || region==&quot;FALSE&quot;){ 
+	alert(&apos;You cannot change the status of this transaction.&apos;);
+}else{
+	if(comments == &quot;&quot; || reason == &quot;&quot;){
+		alert(&apos;Please fill out the Rejection Remarks section and provide reason before Rejecting the record.&apos;);
+	}else{
+		if(reason == &quot;Failed REXUS Validation&quot;){
+			alert(&apos;Please update the Rejection Reason field before Rejecting the record.&apos;);
+		}else{
+			if (AccrualCount != &quot;0&quot;){
+				alert(&apos;Please delete the Lease Accrual(s) before Rejecting the record.&apos;);
+			} else {
+				sr.Status__c = &apos;Rejected by BA53&apos;; 
+				sr.TransactionProcessedDate__c = new Date();
+		        sr.BA53Approver__c = &quot;{!$User.Email}&quot;;
+				result = sforce.connection.update([sr]); 
+				window.location.reload();
+			}
+		}
+	}
+}</url>
+    </webLinks>
+</CustomObject>

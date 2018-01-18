@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Glxy_AddAccruals</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains the Lease Accrual information. This information will be provided by BA53 users during the Lease Digest approval process for sending over to the REXUS application.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Accrual_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount obligated for expected cost.</inlineHelpText>
+        <label>Accrual Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Accrual_PDN_Key__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Accrual_Type__c,&quot;Full&quot;),  PDN__c + TEXT(Accrual_Type__c ),&quot;&quot;)</formula>
+        <label>Accrual PDN Key</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Accrual_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies accrual cost category (CPI, Real Estate Taxes, BID Taxes, Facilities Rental/Other, Settlement)</inlineHelpText>
+        <label>Accrual Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partial</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LeaseDigest__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Digest</label>
+        <referenceTo>Glxy_LeaseDigest__c</referenceTo>
+        <relationshipLabel>Lease Accruals</relationshipLabel>
+        <relationshipName>Lease_Accruals</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PDNKey__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>PDNKey</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PDN__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Pegasys Document Number</inlineHelpText>
+        <label>PDN</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lease Accrual</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LA-{0000000}</displayFormat>
+        <label>Lease Accrual ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Lease Accruals</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Accroual_Amount_not_Negative_OR_Zero</fullName>
+        <active>true</active>
+        <errorConditionFormula>Accrual_Amount__c  &lt;= 0</errorConditionFormula>
+        <errorMessage>Accrual Amount Cannot be Negative or Zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_Amount_is_greater_than_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Accrual_Amount__c =0,$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_Include_Accrual_is_set_on_Digest</fullName>
+        <active>true</active>
+        <description>Checks the include accrual is set on lease digest.</description>
+        <errorConditionFormula>AND(OR(ISPICKVAL( LeaseDigest__r.Include_Accrual__c ,&quot;NO&quot;),ISPICKVAL( LeaseDigest__r.Include_Accrual__c,&quot;&quot;)),$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>Cannot Add Lease Accruals, Include Accruals is not specified on parent Digest</errorMessage>
+    </validationRules>
+</CustomObject>

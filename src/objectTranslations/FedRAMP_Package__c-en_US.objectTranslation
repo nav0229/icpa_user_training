@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Package</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Packages</value>
+    </caseValues>
+    <fields>
+        <help><!-- If previous ATO had a contract - list contract # --></help>
+        <label><!-- Agency ATO Contract --></label>
+        <name>Agency_ATO_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Contact Email --></label>
+        <name>Agency_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Contact Name --></label>
+        <name>Agency_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Contact Phone --></label>
+        <name>Agency_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attended FedRAMP Document Training --></label>
+        <name>Attended_FedRAMP_Document_Training__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Backup ISSO --></label>
+        <name>Backup_ISSO__c</name>
+        <relationshipLabel><!-- Packages (Backup ISSO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CSP Address --></label>
+        <name>CSP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- CSP Name --></label>
+        <name>CSP_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- CSP Size --></label>
+        <name>CSP_Size__c</name>
+        <picklistValues>
+            <masterLabel>Large</masterLabel>
+            <translation><!-- Large --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small</masterLabel>
+            <translation><!-- Small --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CSP Website --></label>
+        <name>CSP_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- CSP --></label>
+        <name>CSP__c</name>
+        <relationshipLabel><!-- Packages (CSP) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cloud Deployment Model --></label>
+        <name>Cloud_Deployment_Model__c</name>
+        <picklistValues>
+            <masterLabel>Community</masterLabel>
+            <translation><!-- Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hybrid</masterLabel>
+            <translation><!-- Hybrid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public</masterLabel>
+            <translation><!-- Public --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cloud Service Model --></label>
+        <name>Cloud_Service_Model__c</name>
+        <picklistValues>
+            <masterLabel>Infrastructure as a Service</masterLabel>
+            <translation><!-- Infrastructure as a Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platform as a Service</masterLabel>
+            <translation><!-- Platform as a Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software as a Service</masterLabel>
+            <translation><!-- Software as a Service --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Notes on significant events that affect the CSP&apos;s Status --></help>
+        <label><!-- Reason Removed or Suspended --></label>
+        <name>Denied_Removed_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Authorization Date --></label>
+        <name>Estimated_Authorization_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- FIPS-199 Categorization --></label>
+        <name>FIPS_199_Categorization__c</name>
+        <picklistValues>
+            <masterLabel>Low Impact Level</masterLabel>
+            <translation><!-- Low Impact Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderate Impact Level</masterLabel>
+            <translation><!-- Moderate Impact Level --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FedRAMP Readiness --></label>
+        <name>FedRAMP_Readiness__c</name>
+    </fields>
+    <fields>
+        <label><!-- Kickoff Meeting Total Days --></label>
+        <name>Kickoff_Meeting_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Package ID --></label>
+        <name>Old_Package_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Cloud Service Model --></label>
+        <name>Other_Cloud_Service_Model__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date JAB approves P-ATO --></help>
+        <label><!-- P-ATO Approved Date --></label>
+        <name>PATO_Approved_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Complexity --></label>
+        <name>Package_Complexity__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please enter total package cost savings in USD. Please use only numbers; special characters are not accepted. --></help>
+        <label><!-- Package Cost Savings (USD) --></label>
+        <name>Package_Cost_Savings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Progress --></label>
+        <name>Package_Progress__c</name>
+        <picklistValues>
+            <masterLabel>ConMon</masterLabel>
+            <translation><!-- ConMon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In queue</masterLabel>
+            <translation><!-- In queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Readiness</masterLabel>
+            <translation><!-- Readiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP</masterLabel>
+            <translation><!-- SAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAR</masterLabel>
+            <translation><!-- SAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSP</masterLabel>
+            <translation><!-- SSP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Package Status --></label>
+        <name>Package_Status__c</name>
+        <picklistValues>
+            <masterLabel>ATO Cancelled</masterLabel>
+            <translation><!-- ATO Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorized</masterLabel>
+            <translation><!-- Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Package Exception</masterLabel>
+            <translation><!-- Package Exception --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Readiness</masterLabel>
+            <translation><!-- Readiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removed</masterLabel>
+            <translation><!-- Removed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Prelimnary SSP Readiness Rating --></label>
+        <name>Prelimnary_SSP_Readiness_Rating__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Previous ATO Date --></label>
+        <name>Previous_ATO_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of Agency that may have issued an ATO to the CSP --></help>
+        <label><!-- Previous ATO Federal Agency --></label>
+        <name>Previous_ATO_Federal_Agency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary ISSO --></label>
+        <name>Primary_ISSO__c</name>
+        <relationshipLabel><!-- Packages (Primary ISSO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Readiness Rating --></label>
+        <name>Readiness_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Readiness Total Days --></label>
+        <name>Readiness_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review Category --></label>
+        <name>Review_Category__c</name>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSP</masterLabel>
+            <translation><!-- CSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JAB</masterLabel>
+            <translation><!-- JAB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SAP Total Days --></label>
+        <name>SAP_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAR Total Days --></label>
+        <name>SAR_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSP Total Days --></label>
+        <name>SSP_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSP Training Confirmation --></label>
+        <name>SSP_Training_Confirmation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date --></help>
+        <label><!-- Secure Repository Account Created --></label>
+        <name>Secure_Repository_Account_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secure Repository Account (Max) --></label>
+        <name>Secure_Repository_Account_Max__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Provided Description --></label>
+        <name>Service_Provided_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted Documents --></label>
+        <name>Submitted_Documents__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- System Name --></label>
+        <name>System_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Owner --></label>
+        <name>System_Owner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the CSP have an Agency ATO before coming to FedRAMP? --></help>
+        <label><!-- System Previously Authorized --></label>
+        <name>System_Previously_Authorized__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Was an Accredited 3PAO Assessor used? --></label>
+        <name>Was_an_Accredited_3PAO_Assessor_used__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 3PAO Used --></label>
+        <name>X3PAO_Used__c</name>
+    </fields>
+    <layouts>
+        <layout>Package Layout</layout>
+        <sections>
+            <label><!-- CSP Information --></label>
+            <section>CSP Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Miscellaneous --></label>
+            <section>Miscellaneous</section>
+        </sections>
+        <sections>
+            <label><!-- Package Information --></label>
+            <section>Package Information</section>
+        </sections>
+        <sections>
+            <label><!-- Package Process Total Days --></label>
+            <section>Package Process Total Days</section>
+        </sections>
+        <sections>
+            <label><!-- Package Status --></label>
+            <section>Package Status</section>
+        </sections>
+        <sections>
+            <label><!-- Previous System Authorizations --></label>
+            <section>Previous System Authorizations</section>
+        </sections>
+        <sections>
+            <label><!-- Third Party Assessor Information --></label>
+            <section>Third Party Assessor Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter P-ATO Approved Date before adding Package Cost Savings --></errorMessage>
+        <name>FedRAMP_Cost_Savings_needs_PATO_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason Removed or Suspended is required when Package Status is Removed, ATO Cancelled, or Package Exception --></errorMessage>
+        <name>FedRAMP_Reason_Removed_Susp_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please check for Submitted Documents before assigning a Preliminary SSP Score to the package --></errorMessage>
+        <name>FedRAMP_SSP_Score_only_w_Submitted_Docs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter P-ATO Approved Date to Authorize this package --></errorMessage>
+        <name>FedRAMP_needs_PATO_Date_to_Authorize</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Agency Transaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Agencies Transactions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agency Name --></label>
+        <name>Agency_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Structured Parking Spaces --></label>
+        <name>BaseStructuredParkingSpaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Surface Parking Spaces --></label>
+        <name>BaseSurfaceParkingSpaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Sq Ft --></label>
+        <name>Current_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- IA Sq Ft --></label>
+        <name>IASquareFeet__c</name>
+    </fields>
+    <fields>
+        <label><!-- NOA Sq Ft --></label>
+        <name>NOA_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resulting ASA --></label>
+        <name>New_ASA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Null RSF Released Indicator --></label>
+        <name>NullRSFReleasedInd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing ASA --></label>
+        <name>OLD_ASA__c</name>
+    </fields>
+    <fields>
+        <label><!-- AB Code --></label>
+        <name>PBS_ABCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PBS AB Code --></label>
+        <name>PBS_AB_Code__c</name>
+        <relationshipLabel><!-- Project Agencies Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Agency Transaction ID --></label>
+        <name>ProjectAgencyID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Number --></label>
+        <name>ProjectNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProposedReqID --></label>
+        <name>ProposedReqID__c</name>
+    </fields>
+    <fields>
+        <label><!-- RSF Released --></label>
+        <name>RSF_Released__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request ASA ID --></label>
+        <name>RequestASAID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request ID --></label>
+        <name>RequestID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Parking Spaces --></label>
+        <name>Total_Parking_Spaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Sq Ft --></label>
+        <name>Total_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction ID --></label>
+        <name>TransactionID__c</name>
+        <relationshipLabel><!-- Project Agencies Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Agency Transaction Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- IA Square Feet cannot be a Negative Value --></errorMessage>
+        <name>IA_RSF_not_Negative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- IA  Square Feet cannot be greater than New Square Feet --></errorMessage>
+        <name>IA_RSF_not_greater_than_New_RSF</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- RSF Released Cannot Be changed when NULL --></errorMessage>
+        <name>Released_RSF_Not_Change_on_NULL</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Value for RSF Released cannot be Negative. --></errorMessage>
+        <name>Verify_RSF_Released_Not_Negative</name>
+    </validationRules>
+</CustomObjectTranslation>

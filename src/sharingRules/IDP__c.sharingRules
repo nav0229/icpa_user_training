@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>IDP_Admin_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with A</description>
+        <label>IDP Admin Office Group</label>
+        <sharedTo>
+            <group>IDP_Admin_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>notContain</operation>
+            <value>AK</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Admin_Services_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with H</description>
+        <label>IDP Admin Services Office Group</label>
+        <sharedTo>
+            <group>IDP_Admin_Services_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>H</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_CFO_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with CFO Office Group if the User Division Starts with B</description>
+        <label>IDP CFO Office Group</label>
+        <sharedTo>
+            <group>IDP_CFO_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>B</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Citizen_Services_Tech_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with X</description>
+        <label>IDP Citizen Services &amp; Tech Office Group</label>
+        <sharedTo>
+            <group>IDP_CitizenSrvcs_Tech_Ofc_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>X</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Civil_Rights_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Civils Rights Office Group if the User Division Starts with</description>
+        <label>IDP Civil Rights Office Group</label>
+        <sharedTo>
+            <group>IDP_Civil_Rights_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>AK</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Comms_Marketing_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with Z</description>
+        <label>IDP Comms &amp; Marketing Office Group</label>
+        <sharedTo>
+            <group>IDP_Comms_Marketing_Ofc_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>Z</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Congress_Intergov_Affairs_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with S</description>
+        <label>IDP Congress &amp; Intergov Affairs Office Group</label>
+        <sharedTo>
+            <group>IDP_Cong_IntergovAffairsOfc_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>S</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Contract_Appeals_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with G</description>
+        <label>IDP Contract Appeals Office Group</label>
+        <sharedTo>
+            <group>IDP_Contract_Appeals_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>G</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_FAS_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with FAS Group if the User Division Starts with Q, 1Q, 2Q, 3Q, 4Q, 5Q, 6Q, 7Q, 8Q, 9Q, 10Q, WQ</description>
+        <label>IDP FAS Group</label>
+        <sharedTo>
+            <group>IDP_FAS_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>Q,1Q,2Q,3Q,4Q,5Q,6Q,7Q,8Q,9Q,10Q,WQ</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_GSA_IT_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with GSA IT Group if the User Division Starts &quot;I&quot;.</description>
+        <label>IDP GSA IT Group</label>
+        <sharedTo>
+            <group>IDP_GSA_IT_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>I</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_General_Counsel_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with L</description>
+        <label>IDP General Counsel Office Group</label>
+        <sharedTo>
+            <group>IDP_General_Counsel_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>L</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Government_wide_Policy_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with M</description>
+        <label>IDP Government-wide Policy Office Group</label>
+        <sharedTo>
+            <group>IDP_Govwide_Policy_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>M</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_HR_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with C</description>
+        <label>IDP HR Office Group</label>
+        <sharedTo>
+            <group>IDP_HR_Office_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>C</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Inspector_General_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with J</description>
+        <label>IDP Inspector General Office Group</label>
+        <sharedTo>
+            <group>IDP_Inspector_General_Ofc_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>J</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Mission_Assurance_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with D</description>
+        <label>IDP Mission Assurance Office Group</label>
+        <sharedTo>
+            <group>IDP_Mission_Assurance_Ofc_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>D</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_PBS_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with PBS Group if the User Division Starts with P, 1P, 2P, 3P, 4P, 5P, 6P, 7P, 8P, 9P, 10P, WP</description>
+        <label>IDP PBS Group</label>
+        <sharedTo>
+            <group>IDP_PBS_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>P,1P,2P,3P,4P,5P,6P,7P,8P,9P,10P,WP</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_10_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 10 Group if the User Division Starts with &quot;10&quot;</description>
+        <label>IDP Region 10 Users</label>
+        <sharedTo>
+            <group>IDP_Region_10_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>10</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_11_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 11 Group if the User Division Starts with &quot;W&quot;</description>
+        <label>IDP Region 11 Users</label>
+        <sharedTo>
+            <group>IDP_Region_11_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>W</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_1_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 1 Group if the User Division Starts &quot;1&quot;</description>
+        <label>IDP Region 1 Users</label>
+        <sharedTo>
+            <group>IDP_Region_1_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>notContain</operation>
+            <value>10</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_2_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region2 Group if the User Division Starts with &quot;2&quot;</description>
+        <label>IDP Region 2 Users</label>
+        <sharedTo>
+            <group>IDP_Region_2_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>2</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_3_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 3 Group if the User Division Starts with &quot;3&quot;</description>
+        <label>IDP Region 3 Users</label>
+        <sharedTo>
+            <group>IDP_Region_3_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>3</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_4_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 4 Group if the User Division Starts with &quot;4&quot;</description>
+        <label>IDP Region 4 Users</label>
+        <sharedTo>
+            <group>IDP_Region_4_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>4</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_6_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 6 Group if the User Division Starts with &quot;6&quot;</description>
+        <label>IDP Region 6 Users</label>
+        <sharedTo>
+            <group>IDP_Region_6_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>6</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_7_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 7 Group if the User Division Starts with &quot;7&quot;</description>
+        <label>IDP Region 7 Users</label>
+        <sharedTo>
+            <group>IDP_Region_7_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>7</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_8_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 8 Group if the User Division Starts with &quot;8&quot;</description>
+        <label>IDP Region 8 Users</label>
+        <sharedTo>
+            <group>IDP_Region_8_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>8</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Region_9_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 9 Group if the User Division Starts with &quot;9&quot;</description>
+        <label>IDP Region 9 Users</label>
+        <sharedTo>
+            <group>IDP_Region_9_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>9</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Report_5_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Region 5 Group if the User Division Starts with &quot;5&quot;</description>
+        <label>IDP Report 5 Users</label>
+        <sharedTo>
+            <group>IDP_Region_5_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>startsWith</operation>
+            <value>5</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Report_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>IDP-Report-Users</label>
+        <sharedTo>
+            <group>IDP_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>contains</operation>
+            <value>IDP</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IDP_Small_Business_Utilization_Office_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with Admin Office Group if the User Division Starts with E</description>
+        <label>IDP Small Business Utilization Office Group</label>
+        <sharedTo>
+            <group>IDP_Sm_Business_Utilization_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>E</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

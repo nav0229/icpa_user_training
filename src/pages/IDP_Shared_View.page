@@ -1,0 +1,48 @@
+<apex:page Controller="IDP_ListView" sidebar="false">    
+    <apex:includeScript value="{!URLFOR($Resource.jQueryTables, '/js/jquery1102min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jQueryTables, '/js/jquerydataTables.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.jQueryTables, '/css/jquerydataTables.css')}"/>    
+    <script type="text/javascript">  
+         $(document).ready(function() { 
+           $("#j_id0\\:theTable").dataTable();
+        } );
+    </script>
+    <apex:pageBlock title="Shared View" >
+    <div id ="instructions">
+	    <div>
+	    		The 'Shared View' will only list IDPs where you have been selected as the Other Viewer within another user's IDP or another user has manually shared their IDP with you.
+		</div>
+		<br/>
+		<div>		
+			<h1>Instructions:</h1>
+		</div>
+		<div id="list">
+			<li>Select the different columns to sort (ascending/descending) your colleague's IDPs.</li> 
+			<li>Use the 'Search' field to filter your colleague's IDPs; you can filter by their <b>Created Date</b>, <b>IDP Name</b>, <b>IDP ID</b> or <b>Status</b>.</li>  
+			<li>To view the details of their IDP, select the link of the IDP within the 'IDP ID' column.</li>
+		</div>
+
+    </div>
+    </apex:pageBlock>
+            <apex:dataTable value="{!lstOthIDPs}" var="idp" id="theTable" styleClass="stripe">
+                    <apex:column >
+                        <apex:facet name="header">Created Date</apex:facet>
+                        <apex:outputtext value="{0,date,MM/dd/yyyy}">
+                                        <apex:param value="{!idp.Create_Date__c}" />
+                        </apex:outputtext>
+
+                </apex:column>               
+                <apex:column >
+                        <apex:facet name="header">IDP Name</apex:facet>
+                        <apex:outputtext value="{!idp.IDP_Names__c}" />                                       
+                </apex:column>
+                 <apex:column >
+                        <apex:facet name="header">IDP ID</apex:facet>
+                    <apex:outputLink value="/apex/IDP_Wizard?id={!idp.Id}&operation=Review" target="_blank">{!idp.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column >
+                        <apex:facet name="header">Status</apex:facet>
+                        <apex:outputtext value="{!idp.IDP_Status__c}" />                                       
+                </apex:column>                
+            </apex:dataTable>
+</apex:page>

@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Performance Indicator</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Performance Indicators</value>
+    </caseValues>
+    <fields>
+        <help><!-- Provide the algorithm that you use to calculate it if there is an algorithm. --></help>
+        <label><!-- Calculation Methodology --></label>
+        <name>Calculation_Methodology__c</name>
+    </fields>
+    <fields>
+        <help><!-- A URL or other pathway where the measure is being reported. If none is available, please enter &quot;N/A&quot; in this field --></help>
+        <label><!-- Dashboard/Data link --></label>
+        <name>Dashboard_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Limitations --></label>
+        <name>Data_Limitations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Explanation --></label>
+        <name>Data_Quality_Explanation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Level of confidence in the accuracy/reliability of the data. This should reflect the quality of data verification
+and certification --></help>
+        <label><!-- Data Quality --></label>
+        <name>Data_Quality__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The originator(s) of the data used in to perform the measurement. Each source should be a system/application. If there are multiple source, each source should be separated by a comma and space. All acronyms used should be spelt out and explained. --></help>
+        <label><!-- Data Source --></label>
+        <name>Data_Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- You have 255 characters --></help>
+        <label><!-- Denominator Definition --></label>
+        <name>Denominator_Definition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Denominator Unit of Measurement --></label>
+        <name>Denominator_Unit_of_Measurement__c</name>
+    </fields>
+    <fields>
+        <help><!-- A plain language description of the Performance Indicator and its outputs --></help>
+        <label><!-- Performance Indicator Definition --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Desired Indicator Direction --></label>
+        <name>Desired_Indicator_Direction__c</name>
+        <picklistValues>
+            <masterLabel>Decreasing</masterLabel>
+            <translation><!-- Decreasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Increasing</masterLabel>
+            <translation><!-- Increasing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IS Percent? --></label>
+        <name>IS_Percent__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Indicator Category --></label>
+        <name>Indicator_Category__c</name>
+        <picklistValues>
+            <masterLabel>APG</masterLabel>
+            <translation><!-- APG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency Internal</masterLabel>
+            <translation><!-- Agency Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget</masterLabel>
+            <translation><!-- Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAP</masterLabel>
+            <translation><!-- CAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program</masterLabel>
+            <translation><!-- Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional</masterLabel>
+            <translation><!-- Regional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSO</masterLabel>
+            <translation><!-- SSO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSPP</masterLabel>
+            <translation><!-- SSPP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Indicator Type --></label>
+        <name>Indicator_Type__c</name>
+        <picklistValues>
+            <masterLabel>Contextual</masterLabel>
+            <translation><!-- Contextual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Efficiency</masterLabel>
+            <translation><!-- Efficiency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input</masterLabel>
+            <translation><!-- Input --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milestone</masterLabel>
+            <translation><!-- Milestone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outcome</masterLabel>
+            <translation><!-- Outcome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Output</masterLabel>
+            <translation><!-- Output --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Indicator Units --></label>
+        <name>Indicator_Units__c</name>
+    </fields>
+    <fields>
+        <help><!-- You Have 255 Characters --></help>
+        <label><!-- Numerator Definition --></label>
+        <name>Numerator_Definition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Numerator Unit of Measurement --></label>
+        <name>Numerator_Unit_of_Measurement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perf Indicator Duplicate Hidden --></label>
+        <name>Perf_Indicator_Duplicate_Hidden__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Goal Lead Organization --></label>
+        <name>Performance_Goal_Lead_Organization__c</name>
+        <picklistValues>
+            <masterLabel>Federal Acquisition Service (Q)</masterLabel>
+            <translation><!-- Federal Acquisition Service (Q) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSA Board of Contract Appeals (G)</masterLabel>
+            <translation><!-- GSA Board of Contract Appeals (G) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ofc of Citizens Svcs &amp; Innovative Tech (X)</masterLabel>
+            <translation><!-- Ofc of Citizens Svcs &amp; Innovative Tech (X) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ofc of Communications &amp; Marketing (Z)</masterLabel>
+            <translation><!-- Ofc of Communications &amp; Marketing (Z) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ofc of Congr&apos;l &amp; Intergovt&apos;l Affairs (S)</masterLabel>
+            <translation><!-- Ofc of Congr&apos;l &amp; Intergovt&apos;l Affairs (S) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ofc of Emergency Response &amp; Recovery (D)</masterLabel>
+            <translation><!-- Ofc of Emergency Response &amp; Recovery (D) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ofc of the Chief Information Officer (I)</masterLabel>
+            <translation><!-- Ofc of the Chief Information Officer (I) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ofc of the Chief People Officer (C)</masterLabel>
+            <translation><!-- Ofc of the Chief People Officer (C) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Administrative Services (H)</masterLabel>
+            <translation><!-- Office of Administrative Services (H) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Civil Rights (AR)</masterLabel>
+            <translation><!-- Office of Civil Rights (AR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of General Counsel (L)</masterLabel>
+            <translation><!-- Office of General Counsel (L) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Governmentwide Policy (M)</masterLabel>
+            <translation><!-- Office of Governmentwide Policy (M) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Small Business Utilization (E)</masterLabel>
+            <translation><!-- Office of Small Business Utilization (E) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Administrator (A)</masterLabel>
+            <translation><!-- Office of the Administrator (A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Chief Financial Officer (B)</masterLabel>
+            <translation><!-- Office of the Chief Financial Officer (B) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Buildings Service (P)</masterLabel>
+            <translation><!-- Public Buildings Service (P) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Performance Goal Owner --></label>
+        <name>Performance_Goal_Owner__c</name>
+        <relationshipLabel><!-- Performance Indicators (Performance Goal Leader) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Performance Goal Category --></label>
+        <name>Performance_Goal_Type__c</name>
+        <picklistValues>
+            <masterLabel>Agency Priority Goal (APG)</masterLabel>
+            <translation><!-- Agency Priority Goal (APG) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cross Agency Priority Goal (CAP)</masterLabel>
+            <translation><!-- Cross Agency Priority Goal (CAP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Performance Goal (Internal)</masterLabel>
+            <translation><!-- Internal Performance Goal (Internal) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Goal Reported in Budget (Budget)</masterLabel>
+            <translation><!-- Performance Goal Reported in Budget (Budget) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustainability Performance Goal (Sustainability)</masterLabel>
+            <translation><!-- Sustainability Performance Goal (Sustainability) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Performance Goal --></label>
+        <name>Performance_Goal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Indicator Data Owner --></label>
+        <name>Performance_Indicator_Data_Owner__c</name>
+        <relationshipLabel><!-- Performance Indicators (Performance Indicator Functional POC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Performance Indicator End Date --></label>
+        <name>Performance_Indicator_End_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Indicator Leader --></label>
+        <name>Performance_Indicator_Leader__c</name>
+        <relationshipLabel><!-- Performance Indicators (Performance Indicator Leader) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Performance Indicator Origination Date --></label>
+        <name>Performance_Indicator_Origination_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Indicator Owner --></label>
+        <name>Performance_Indicator_Owner__c</name>
+        <relationshipLabel><!-- Performance Indicators (Performance Indicator Data Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Performance Indicator Reporting POC --></label>
+        <name>Performance_Indicator_Reporting_POC__c</name>
+        <relationshipLabel><!-- Performance Indicators (Performance Indicator Reporting POC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Publish --></label>
+        <name>Publish__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of times the measure is published per year or how many times per year this measure is reported. --></help>
+        <label><!-- Reporting Frequency --></label>
+        <name>Reporting_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bi-annually (Twice per year)</masterLabel>
+            <translation><!-- Bi-annually (Twice per year) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bi-weekly</masterLabel>
+            <translation><!-- Bi-weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily</masterLabel>
+            <translation><!-- Daily --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reporting Lag --></label>
+        <name>Reporting_Lag__c</name>
+        <picklistValues>
+            <masterLabel>10 months</masterLabel>
+            <translation><!-- 10 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11 months</masterLabel>
+            <translation><!-- 11 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12 months</masterLabel>
+            <translation><!-- 12 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 months</masterLabel>
+            <translation><!-- 2 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 weeks</masterLabel>
+            <translation><!-- 2 weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 months</masterLabel>
+            <translation><!-- 3 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 weeks</masterLabel>
+            <translation><!-- 3 weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 months</masterLabel>
+            <translation><!-- 4 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 weeks</masterLabel>
+            <translation><!-- 4 weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 months</masterLabel>
+            <translation><!-- 5 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 weeks</masterLabel>
+            <translation><!-- 5 weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 months</masterLabel>
+            <translation><!-- 6 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 weeks</masterLabel>
+            <translation><!-- 6 weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7 months</masterLabel>
+            <translation><!-- 7 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7 weeks</masterLabel>
+            <translation><!-- 7 weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8 months</masterLabel>
+            <translation><!-- 8 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8 weeks</masterLabel>
+            <translation><!-- 8 weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9 months</masterLabel>
+            <translation><!-- 9 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than 1 week</masterLabel>
+            <translation><!-- less than 1 week --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Program within the identified SSO for performing a measurement --></help>
+        <label><!-- Program Responsible for the Measure --></label>
+        <name>Responsible_Program__c</name>
+        <picklistValues>
+            <masterLabel>Admin-Ofc of the Assistant Administrator(AF)</masterLabel>
+            <translation><!-- Admin-Ofc of the Assistant Administrator(AF) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin-Ofc of the Associate Administrator(AG)</masterLabel>
+            <translation><!-- Admin-Ofc of the Associate Administrator(AG) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin-Ofc of the Sen Counselor to the Admin(AE)</masterLabel>
+            <translation><!-- Admin-Ofc of the Sen Counselor to the Admin(AE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin-Office of Management Services(AC)</masterLabel>
+            <translation><!-- Admin-Office of Management Services(AC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin-Office of the Administrator(A)</masterLabel>
+            <translation><!-- Admin-Office of the Administrator(A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin-Office of the Administrator(AA)</masterLabel>
+            <translation><!-- Admin-Office of the Administrator(AA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin-Office of the Administrator(AM)</masterLabel>
+            <translation><!-- Admin-Office of the Administrator(AM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin-Office of the Deputy Administrator(AD)</masterLabel>
+            <translation><!-- Admin-Office of the Deputy Administrator(AD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBCA-GSA Board of Contract Appeals(G)</masterLabel>
+            <translation><!-- CBCA-GSA Board of Contract Appeals(G) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBCA-GSA Board of Contract Appeals(GW)</masterLabel>
+            <translation><!-- CBCA-GSA Board of Contract Appeals(GW) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBCA-Judicial Division(GJ)</masterLabel>
+            <translation><!-- CBCA-Judicial Division(GJ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBCA-Staff Support Division(GA)</masterLabel>
+            <translation><!-- CBCA-Staff Support Division(GA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO-Ofc of Financial Policy &amp; Operations(BC)</masterLabel>
+            <translation><!-- CFO-Ofc of Financial Policy &amp; Operations(BC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO-Office of Budget(BB)</masterLabel>
+            <translation><!-- CFO-Office of Budget(BB) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO-Office of Budget(BE)</masterLabel>
+            <translation><!-- CFO-Office of Budget(BE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO-Office of Financial Management Systems(BD)</masterLabel>
+            <translation><!-- CFO-Office of Financial Management Systems(BD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO-Office of the Chief Financial Officer(B)</masterLabel>
+            <translation><!-- CFO-Office of the Chief Financial Officer(B) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO-Office of the Chief Financial Officer(BU)</masterLabel>
+            <translation><!-- CFO-Office of the Chief Financial Officer(BU) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO-Program Management Office(BP)</masterLabel>
+            <translation><!-- CFO-Program Management Office(BP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO-Ofc of the Chief Information Officer(I)</masterLabel>
+            <translation><!-- CIO-Ofc of the Chief Information Officer(I) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO-Office of Enterprise Infrastructure(IO)</masterLabel>
+            <translation><!-- CIO-Office of Enterprise Infrastructure(IO) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO-Office of Enterprise Mgmt Services(IE)</masterLabel>
+            <translation><!-- CIO-Office of Enterprise Mgmt Services(IE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO-Office of Enterprise Solutions(IA)</masterLabel>
+            <translation><!-- CIO-Office of Enterprise Solutions(IA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO-Office of the Deputy CIO(ID)</masterLabel>
+            <translation><!-- CIO-Office of the Deputy CIO(ID) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO-Resources Management Staff(IR)</masterLabel>
+            <translation><!-- CIO-Resources Management Staff(IR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO-Sr Agency Info Security Officer Staff(IS)</masterLabel>
+            <translation><!-- CIO-Sr Agency Info Security Officer Staff(IS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO-Ofc of the Chief People Officer(C)</masterLabel>
+            <translation><!-- CPO-Ofc of the Chief People Officer(C) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO-Ofc of the Chief People Officer(CB)</masterLabel>
+            <translation><!-- CPO-Ofc of the Chief People Officer(CB) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO-Office of Executive Resources(CX)</masterLabel>
+            <translation><!-- CPO-Office of Executive Resources(CX) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO-Office of Human Capital Management(CH)</masterLabel>
+            <translation><!-- CPO-Office of Human Capital Management(CH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO-Office of Human Resources Services(CP)</masterLabel>
+            <translation><!-- CPO-Office of Human Resources Services(CP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO-Office of Information Management(CI)</masterLabel>
+            <translation><!-- CPO-Office of Information Management(CI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO-Office of Program Performance(CD)</masterLabel>
+            <translation><!-- CPO-Office of Program Performance(CD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Acquisition Operations Division(QZ)</masterLabel>
+            <translation><!-- FAS-Acquisition Operations Division(QZ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of Acquisition Management(QV)</masterLabel>
+            <translation><!-- FAS-Ofc of Acquisition Management(QV) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of Assisted Acquisition Svs(QF)</masterLabel>
+            <translation><!-- FAS-Ofc of Assisted Acquisition Svs(QF) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of Cust Accounts &amp; Research(QC)</masterLabel>
+            <translation><!-- FAS-Ofc of Cust Accounts &amp; Research(QC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of Integrated Technology Svcs(QT)</masterLabel>
+            <translation><!-- FAS-Ofc of Integrated Technology Svcs(QT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of Strategic Solutions(QE)</masterLabel>
+            <translation><!-- FAS-Ofc of Strategic Solutions(QE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of Strategy Management(QP)</masterLabel>
+            <translation><!-- FAS-Ofc of Strategy Management(QP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of Trvl,Motor Vech &amp; Card Svcs(QM)</masterLabel>
+            <translation><!-- FAS-Ofc of Trvl,Motor Vech &amp; Card Svcs(QM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of the Chief Info Officer(QI)</masterLabel>
+            <translation><!-- FAS-Ofc of the Chief Info Officer(QI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of the Deputy Reg Commissioner(Q1)</masterLabel>
+            <translation><!-- FAS-Ofc of the Deputy Reg Commissioner(Q1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Ofc of the Regional Commissioner(Q0)</masterLabel>
+            <translation><!-- FAS-Ofc of the Regional Commissioner(Q0) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Office of Administration(QA)</masterLabel>
+            <translation><!-- FAS-Office of Administration(QA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Office of General Supply and Services (QS)</masterLabel>
+            <translation><!-- FAS-Office of General Supply and Services (QS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Office of the Commissioner(AQ)</masterLabel>
+            <translation><!-- FAS-Office of the Commissioner(AQ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Office of the Commissioner(Q)</masterLabel>
+            <translation><!-- FAS-Office of the Commissioner(Q) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-Office of the Controller(QB)</masterLabel>
+            <translation><!-- FAS-Office of the Controller(QB) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAS-Office of Administrative Services(H)</masterLabel>
+            <translation><!-- OAS-Office of Administrative Services(H) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAS-Office of Administrative Services(H1)</masterLabel>
+            <translation><!-- OAS-Office of Administrative Services(H1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCIA-Ofc of Congr&apos;l &amp; Intergovt&apos;l Affairs(S)</masterLabel>
+            <translation><!-- OCIA-Ofc of Congr&apos;l &amp; Intergovt&apos;l Affairs(S) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCM-Creative Service Division(ZC)</masterLabel>
+            <translation><!-- OCM-Creative Service Division(ZC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCM-Deputy Associate Administrator(Z1)</masterLabel>
+            <translation><!-- OCM-Deputy Associate Administrator(Z1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCM-Ofc of Communications &amp; Marketing(Z)</masterLabel>
+            <translation><!-- OCM-Ofc of Communications &amp; Marketing(Z) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCM-Office of the Press Secretary(ZS)</masterLabel>
+            <translation><!-- OCM-Office of the Press Secretary(ZS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCR-Regional Operations Division(AK)</masterLabel>
+            <translation><!-- OCR-Regional Operations Division(AK) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT-Ofc of Citizens Svcs &amp; Innovative Tech(X)</masterLabel>
+            <translation><!-- OCSIT-Ofc of Citizens Svcs &amp; Innovative Tech(X) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT-Ofc of Info Tech Svces &amp; Solutions(XT)</masterLabel>
+            <translation><!-- OCSIT-Ofc of Info Tech Svces &amp; Solutions(XT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT-Office of Business Management(XB)</masterLabel>
+            <translation><!-- OCSIT-Office of Business Management(XB) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT-Office of Citizen Services(XC)</masterLabel>
+            <translation><!-- OCSIT-Office of Citizen Services(XC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT-Office of Innovative Technologies(XI)</masterLabel>
+            <translation><!-- OCSIT-Office of Innovative Technologies(XI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OERR-Disaster Support Division(DD)</masterLabel>
+            <translation><!-- OERR-Disaster Support Division(DD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OERR-Ofc of Emergency Response &amp; Recovery(D)</masterLabel>
+            <translation><!-- OERR-Ofc of Emergency Response &amp; Recovery(D) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OERR-Ofc of Emergency Response &amp; Recovery(DC)</masterLabel>
+            <translation><!-- OERR-Ofc of Emergency Response &amp; Recovery(DC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OERR-Policy &amp; Plans Division(DP)</masterLabel>
+            <translation><!-- OERR-Policy &amp; Plans Division(DP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC-General Law Division(LG)</masterLabel>
+            <translation><!-- OGC-General Law Division(LG) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC-Great Lakes Division(LD)</masterLabel>
+            <translation><!-- OGC-Great Lakes Division(LD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC-Office of General Counsel(L)</masterLabel>
+            <translation><!-- OGC-Office of General Counsel(L) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC-Personal Property Division(LP)</masterLabel>
+            <translation><!-- OGC-Personal Property Division(LP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC-Real Property Division(LR)</masterLabel>
+            <translation><!-- OGC-Real Property Division(LR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Federal Acquisition Institute(VB)</masterLabel>
+            <translation><!-- OGP-Federal Acquisition Institute(VB) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-GS Acquisition Policy Division(VA)</masterLabel>
+            <translation><!-- OGP-GS Acquisition Policy Division(VA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-OGP/Office of Associate Administrator(P4)</masterLabel>
+            <translation><!-- OGP-OGP/Office of Associate Administrator(P4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-OGP/Office of Associate Administrator(P5)</masterLabel>
+            <translation><!-- OGP-OGP/Office of Associate Administrator(P5) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-OGP/Office of Associate Administrator(VP)</masterLabel>
+            <translation><!-- OGP-OGP/Office of Associate Administrator(VP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-OGP/Office of Associate Administrator(XA)</masterLabel>
+            <translation><!-- OGP-OGP/Office of Associate Administrator(XA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-OGP/Office of Associate Administrator(ZE)</masterLabel>
+            <translation><!-- OGP-OGP/Office of Associate Administrator(ZE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-OGP/Office of Associate Administrator(ZP)</masterLabel>
+            <translation><!-- OGP-OGP/Office of Associate Administrator(ZP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-OGP/Office of Associate Administrator(ZX)</masterLabel>
+            <translation><!-- OGP-OGP/Office of Associate Administrator(ZX) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Acquisition Policy(MV)</masterLabel>
+            <translation><!-- OGP-Office of Acquisition Policy(MV) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Associate Administrator(M)</masterLabel>
+            <translation><!-- OGP-Office of Associate Administrator(M) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Associate Administrator(MA)</masterLabel>
+            <translation><!-- OGP-Office of Associate Administrator(MA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Associate Administrator(MI)</masterLabel>
+            <translation><!-- OGP-Office of Associate Administrator(MI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Committee and Reg Mgmt(MC)</masterLabel>
+            <translation><!-- OGP-Office of Committee and Reg Mgmt(MC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Deputy Assoc Admin(M1)</masterLabel>
+            <translation><!-- OGP-Office of Deputy Assoc Admin(M1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Fed High Perf Green Bldgs(MG)</masterLabel>
+            <translation><!-- OGP-Office of Fed High Perf Green Bldgs(MG) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Governmentwide Acq Policy(VI)</masterLabel>
+            <translation><!-- OGP-Office of Governmentwide Acq Policy(VI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Real Property Management(MP)</masterLabel>
+            <translation><!-- OGP-Office of Real Property Management(MP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Technology(ME)</masterLabel>
+            <translation><!-- OGP-Office of Technology(ME) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP-Office of Travel, Trans and Asset Mgmt(MT)</masterLabel>
+            <translation><!-- OGP-Office of Travel, Trans and Asset Mgmt(MT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Acquisition Division(PQ)</masterLabel>
+            <translation><!-- PBS-Acquisition Division(PQ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Client Solutions Division(PA)</masterLabel>
+            <translation><!-- PBS-Client Solutions Division(PA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Dep Reg&apos;l Commissioner for Operations(P3)</masterLabel>
+            <translation><!-- PBS-Dep Reg&apos;l Commissioner for Operations(P3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Deputy Regional Commissioner(P1)</masterLabel>
+            <translation><!-- PBS-Deputy Regional Commissioner(P1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Deputy Regional Commissioner(P2)</masterLabel>
+            <translation><!-- PBS-Deputy Regional Commissioner(P2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Design &amp; Construction Division(PC)</masterLabel>
+            <translation><!-- PBS-Design &amp; Construction Division(PC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Energy Management(PE)</masterLabel>
+            <translation><!-- PBS-Energy Management(PE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Facilities Management(PM)</masterLabel>
+            <translation><!-- PBS-Facilities Management(PM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Land Ports of Entry(PL)</masterLabel>
+            <translation><!-- PBS-Land Ports of Entry(PL) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Ofc of Budget &amp; Financial Mgmt(PF)</masterLabel>
+            <translation><!-- PBS-Ofc of Budget &amp; Financial Mgmt(PF) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Ofc of Infrastructure &amp; Campus Dev(PS)</masterLabel>
+            <translation><!-- PBS-Ofc of Infrastructure &amp; Campus Dev(PS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of Chief of Staff(PB)</masterLabel>
+            <translation><!-- PBS-Office of Chief of Staff(PB) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of Organizational Resources(PG)</masterLabel>
+            <translation><!-- PBS-Office of Organizational Resources(PG) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of Portfolio Management(PT)</masterLabel>
+            <translation><!-- PBS-Office of Portfolio Management(PT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of Real Estate Acquisition(PR)</masterLabel>
+            <translation><!-- PBS-Office of Real Estate Acquisition(PR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of the ARRA Recovery Executive(PN)</masterLabel>
+            <translation><!-- PBS-Office of the ARRA Recovery Executive(PN) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of the Commissioner(P)</masterLabel>
+            <translation><!-- PBS-Office of the Commissioner(P) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of the Commissioner(PH)</masterLabel>
+            <translation><!-- PBS-Office of the Commissioner(PH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Office of the Commissioner(PJ)</masterLabel>
+            <translation><!-- PBS-Office of the Commissioner(PJ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-PBS Deputy Commissioner(PD)</masterLabel>
+            <translation><!-- PBS-PBS Deputy Commissioner(PD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Planning and Policy(PP)</masterLabel>
+            <translation><!-- PBS-Planning and Policy(PP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Project Management Division(PX)</masterLabel>
+            <translation><!-- PBS-Project Management Division(PX) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-Real Property Utilztn &amp; Disposal Div(PZ)</masterLabel>
+            <translation><!-- PBS-Real Property Utilztn &amp; Disposal Div(PZ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBU-Ofc of Small &amp; Disadvantaged Bus Utltz(EU)</masterLabel>
+            <translation><!-- SBU-Ofc of Small &amp; Disadvantaged Bus Utltz(EU) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBU-Office of Small Business Utilization(E)</masterLabel>
+            <translation><!-- SBU-Office of Small Business Utilization(E) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The SSO responsible for performing a measurement --></help>
+        <label><!-- Staff or Service Office (SSO) --></label>
+        <name>Staff_or_Service_Office__c</name>
+        <picklistValues>
+            <masterLabel>FAS</masterLabel>
+            <translation><!-- FAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAS</masterLabel>
+            <translation><!-- OAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCFO</masterLabel>
+            <translation><!-- OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCIA</masterLabel>
+            <translation><!-- OCIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCIO</masterLabel>
+            <translation><!-- OCIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCM</masterLabel>
+            <translation><!-- OCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCPO</masterLabel>
+            <translation><!-- OCPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCR</masterLabel>
+            <translation><!-- OCR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT</masterLabel>
+            <translation><!-- OCSIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OERR</masterLabel>
+            <translation><!-- OERR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP</masterLabel>
+            <translation><!-- OGP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSBU</masterLabel>
+            <translation><!-- OSBU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS</masterLabel>
+            <translation><!-- PBS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If the measure is in use, choose &quot;Active.&quot; If it is no longer used, choose &quot;Retired.&quot; If it is used for tracking or establishing a baseline, choose &quot;Inactive.&quot; If it is under consideration as a future measure, choose &quot;Proposed.&quot; --></help>
+        <label><!-- Indicator Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed</masterLabel>
+            <translation><!-- Proposed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Operational Excellence, Customer Intimacy, Innovation --></help>
+        <label><!-- Strategic Goal --></label>
+        <name>Strategic_Goals_Supported__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strategic Objective --></label>
+        <name>Strategic_Objective__c</name>
+    </fields>
+    <layouts>
+        <layout>Performance Indicator Layout</layout>
+        <sections>
+            <label><!-- Calculation Methodology --></label>
+            <section>Calculation Methodology</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Goals Supported --></label>
+            <section>Goals Supported</section>
+        </sections>
+        <sections>
+            <label><!-- Organizational Responsibility --></label>
+            <section>Organizational Responsibility</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Performance Indicator Read Only</layout>
+        <sections>
+            <label><!-- Calculation Methodology --></label>
+            <section>Calculation Methodology</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Goals Supported --></label>
+            <section>Goals Supported</section>
+        </sections>
+        <sections>
+            <label><!-- Organizational Responsibility --></label>
+            <section>Organizational Responsibility</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Perf Indicator Read Only --></label>
+        <name>Perf_Indicator_Read_Only</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Performance Indicator Default --></label>
+        <name>Performance_Indicator_Default</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The Performance Indicator End Date can not be sooner than the Performance Indicator Origination Date. --></errorMessage>
+        <name>PMT_indicator_Start_less_than_End_date</name>
+    </validationRules>
+</CustomObjectTranslation>

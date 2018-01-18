@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>All_GSA_Buildings</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>All internal users have read only access to all GSA owned/leased buildings</description>
+        <label>All GSA Buildings</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Non_GSA__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TSS_Edit_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TSS Edit Access</label>
+        <sharedTo>
+            <group>TSS_Report_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Non_GSA__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TSS_Guest_Site_User</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TSS Guest Site User</label>
+        <sharedTo>
+            <group>TSS_Guest_Site_User</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OGC Case History Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OGC Case History Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- ADR --></label>
+        <name>ADR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affirmative Claim Amount --></label>
+        <name>Affirmative_Claim_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you have an affirmative claim, put zero for the claim amount. --></help>
+        <label><!-- Claim Amount --></label>
+        <name>Claim_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Action (Protest) --></label>
+        <name>Corrective_Action_Protest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Closed --></label>
+        <name>Date_Closed_Case_History_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Filed --></label>
+        <name>Date_Opened_OGC_Case_History_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use &quot;Dismissed&quot; if decision was based on a procedural matter (e.g., jurisdiction); use &quot;In Government&apos;s Favor&quot; if the decision was on the merits. --></help>
+        <label><!-- Decision --></label>
+        <name>Decision__c</name>
+        <picklistValues>
+            <masterLabel>Dismissed</masterLabel>
+            <translation><!-- Dismissed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Adverse Party&apos;s Favor</masterLabel>
+            <translation><!-- In Adverse Party&apos;s Favor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Government&apos;s Favor</masterLabel>
+            <translation><!-- In Government&apos;s Favor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially in Government&apos;s Favor</masterLabel>
+            <translation><!-- Partially in Government&apos;s Favor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Do not use &quot;Deemed Denial&quot; except for contracting officer final decisions. --></help>
+        <label><!-- Disposition --></label>
+        <name>Disposition__c</name>
+        <picklistValues>
+            <masterLabel>Decision</masterLabel>
+            <translation><!-- Decision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deemed Denial</masterLabel>
+            <translation><!-- Deemed Denial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settled</masterLabel>
+            <translation><!-- Settled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transferred</masterLabel>
+            <translation><!-- Transferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Docket Number --></label>
+        <name>Docket_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Attorney Fees --></label>
+        <name>Estimated_Attorney_Fees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Total Interest Amount --></label>
+        <name>Estimated_Total_Interest_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forum --></label>
+        <name>Forum_Case_History_Data__c</name>
+        <picklistValues>
+            <masterLabel>Administrative</masterLabel>
+            <translation><!-- Administrative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency Protest Official</masterLabel>
+            <translation><!-- Agency Protest Official --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arbitration</masterLabel>
+            <translation><!-- Arbitration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBCA</masterLabel>
+            <translation><!-- CBCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracting Officer</masterLabel>
+            <translation><!-- Contracting Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Court of Federal Claims</masterLabel>
+            <translation><!-- Court of Federal Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEOC - AJ</masterLabel>
+            <translation><!-- EEOC - AJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEOC - OFO</masterLabel>
+            <translation><!-- EEOC - OFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLRA</masterLabel>
+            <translation><!-- FLRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLRA - Hearing Examiner</masterLabel>
+            <translation><!-- FLRA - Hearing Examiner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GAO</masterLabel>
+            <translation><!-- GAO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSPB - AJ</masterLabel>
+            <translation><!-- MSPB - AJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSPB - FB</masterLabel>
+            <translation><!-- MSPB - FB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Special Counsel</masterLabel>
+            <translation><!-- Office of Special Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Forum</masterLabel>
+            <translation><!-- Other Forum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Utility Commission</masterLabel>
+            <translation><!-- Public Utility Commission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Court</masterLabel>
+            <translation><!-- State Court --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Bankruptcy Court</masterLabel>
+            <translation><!-- U.S. Bankruptcy Court --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Court of Appeals</masterLabel>
+            <translation><!-- U.S. Court of Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. District Court</masterLabel>
+            <translation><!-- U.S. District Court --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Supreme Court</masterLabel>
+            <translation><!-- U.S. Supreme Court --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Forum Type --></label>
+        <name>Forum_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling Division --></label>
+        <name>Handling_Division__c</name>
+        <picklistValues>
+            <masterLabel>L</masterLabel>
+            <translation><!-- L --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD1</masterLabel>
+            <translation><!-- LD1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD2</masterLabel>
+            <translation><!-- LD2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD3</masterLabel>
+            <translation><!-- LD3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD4</masterLabel>
+            <translation><!-- LD4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD5</masterLabel>
+            <translation><!-- LD5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD6</masterLabel>
+            <translation><!-- LD6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD7</masterLabel>
+            <translation><!-- LD7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD8</masterLabel>
+            <translation><!-- LD8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD9</masterLabel>
+            <translation><!-- LD9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDA</masterLabel>
+            <translation><!-- LDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDW</masterLabel>
+            <translation><!-- LDW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG</masterLabel>
+            <translation><!-- LG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP</masterLabel>
+            <translation><!-- LP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LR</masterLabel>
+            <translation><!-- LR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NTC</masterLabel>
+            <translation><!-- NTC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Include in Affirmative Claim --></label>
+        <name>Include_in_Affirmative_Claim__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include in Loss Amount --></label>
+        <name>Include_in_Loss_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include in Total Amount Claimed --></label>
+        <name>Include_in_Total_Amount_Claimed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Start Date --></label>
+        <name>Interest_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loss Amount --></label>
+        <name>Loss_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Claim Amount --></label>
+        <name>No_Claim_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- OGC Matter Title/Name --></label>
+        <name>OGC_Matter_Title_Name__c</name>
+        <relationshipLabel><!-- OGC Case History Data --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Personnel Forum --></label>
+        <name>Personnel_Forum_Case_History_Data__c</name>
+        <picklistValues>
+            <masterLabel>Administrative</masterLabel>
+            <translation><!-- Administrative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arbitration</masterLabel>
+            <translation><!-- Arbitration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Court of Federal Claims</masterLabel>
+            <translation><!-- Court of Federal Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEOC - AJ</masterLabel>
+            <translation><!-- EEOC - AJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEOC - OFO</masterLabel>
+            <translation><!-- EEOC - OFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLRA</masterLabel>
+            <translation><!-- FLRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLRA - Hearing Examiner</masterLabel>
+            <translation><!-- FLRA - Hearing Examiner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSPB - AJ</masterLabel>
+            <translation><!-- MSPB - AJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSPB - FB</masterLabel>
+            <translation><!-- MSPB - FB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Special Counsel</masterLabel>
+            <translation><!-- Office of Special Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Forum</masterLabel>
+            <translation><!-- Other Forum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Court of Appeals</masterLabel>
+            <translation><!-- U.S. Court of Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. District Court</masterLabel>
+            <translation><!-- U.S. District Court --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Supreme Court</masterLabel>
+            <translation><!-- U.S. Supreme Court --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Personnel Handling Division --></label>
+        <name>Personnel_Handling_Division__c</name>
+        <picklistValues>
+            <masterLabel>L</masterLabel>
+            <translation><!-- L --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD1</masterLabel>
+            <translation><!-- LD1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD2</masterLabel>
+            <translation><!-- LD2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD3</masterLabel>
+            <translation><!-- LD3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD4</masterLabel>
+            <translation><!-- LD4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD5</masterLabel>
+            <translation><!-- LD5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD6</masterLabel>
+            <translation><!-- LD6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD7</masterLabel>
+            <translation><!-- LD7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD8</masterLabel>
+            <translation><!-- LD8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD9</masterLabel>
+            <translation><!-- LD9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDA</masterLabel>
+            <translation><!-- LDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDW</masterLabel>
+            <translation><!-- LDW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG</masterLabel>
+            <translation><!-- LG --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recovery Amount --></label>
+        <name>Recovery_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks_OGC_Case_History_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provide name of agency to which case was transferred. --></help>
+        <label><!-- Transferred to Agency --></label>
+        <name>Transferred_to_Agency__c</name>
+    </fields>
+    <layouts>
+        <layout>Case History Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>OGC Case History Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Personnel Case History Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Non-Personnel Case History Data --></label>
+        <name>OGC_Case_Matter_History_Data</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Personnel Case History Data --></label>
+        <name>OGC_Personnel_Case_History_Data</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Date Closed field is Mandatory, when Status field value is Closed. If status is &quot;Open&quot; then leave this field blank. --></errorMessage>
+        <name>Date_Closed_Mandatory_Status_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Date Closed cannot be earlier than Date Opened. --></errorMessage>
+        <name>Date_Closed_cannot_be_prior_to_Date_Open</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An Estimated Claim Amount must be entered or you must identify No Claim Amount. --></errorMessage>
+        <name>Estimated_Claim_Amount_greater_than_zero</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter a Value in &quot;Claim Amount&quot; or Check &quot;No Claim Amount&quot; --></errorMessage>
+        <name>NoClaimAmount_or_EstimatedClaimAmount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Recovery Amount cannot be negative. --></errorMessage>
+        <name>No_Negative_Recovery_Amount</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Case_History_Data --></label>
+        <name>New_Case_History_Data</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>P360_Project_CorporateITServices_Triage</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>P360 - Share &apos;Corporate IT Services&apos; records with Triage team so that they can edit all fields on the converted project</description>
+        <label>P360-Project-CorporateITServices-Triage</label>
+        <sharedTo>
+            <group>P360_Triage</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Corporate IT Services</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PC_Share_Projects</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>PC Share Projects</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Project,Corporate IT Services,Simple Project,Sprint</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>ICPA_Projects</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Rule to share all ICPA initiatives with the ICPA public group. If it is owned by a member of the ICPA Users public group, share it with the public group.</description>
+        <label>ICPA Projects</label>
+        <sharedTo>
+            <group>ICPA_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>ICPA_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>ICPW_Projects</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Rule to share all ICPW Initiatives with the ICPW public group. If it is owned by a member of the ICPW Users public group, share it with the public group.</description>
+        <label>ICPW Projects</label>
+        <sharedTo>
+            <group>ICPW_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>ICPW_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

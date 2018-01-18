@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains the Agency Space Assignments (ASA) data for Leases.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ABCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>PBSABCode__r.AB_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AB Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ASAIAAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>LeaseNumber__r.IA_Cost_Per_Sq_Ft__c *  ASA_IASqFt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ASA IA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ASAID__c</fullName>
+        <externalId>true</externalId>
+        <label>ASAID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ASANOAAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LeaseNumber__r.NOA_Rate_Per_Sq_Ft__c) *  (ASA_NOASqFt__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ASA NOA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ASA_IASqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c)=0,0,(LeaseNumber__r.Total_IA_Sq_feet__c / ( LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c )) *  SquareFeet__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ASA IA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ASA_NOASqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(( LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c )=0,0,(LeaseNumber__r.Total_NOA_Sq_feet__c / ( LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c )) *  SquareFeet__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ASA NOA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ASA__c</fullName>
+        <externalId>false</externalId>
+        <label>ASA</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Bureau_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>PBSABCode__r.Agency_Bureau_Short_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agency Bureau Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BaseStructuredParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Base Structured Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BaseSurfaceParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Base Surface Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LeaseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Number</label>
+        <referenceTo>Glxy_Lease__c</referenceTo>
+        <relationshipName>Lease_Agencies</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Lease_Asa_KeyVal__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Asa KeyVal</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PBSABCode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PBS AB Code</label>
+        <referenceTo>PBS_AB_Code__c</referenceTo>
+        <relationshipLabel>Lease Agencies</relationshipLabel>
+        <relationshipName>Lease_Agencies</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>REXUSABCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>REXUSPBSABCode__r.AB_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS AB Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSASAIAAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>LeaseNumber__r.IA_Cost_Per_Sq_Ft__c * REXUSASA_IASqFt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS ASA IA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>REXUSASANOAAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>LeaseNumber__r.NOA_Rate_Per_Sq_Ft__c * REXUSASA_NOASqFt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS ASA NOA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>REXUSASA_IASqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c)=0,0,(LeaseNumber__r.Total_IA_Sq_feet__c / ( LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c )) * REXUSSquareFeet__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS ASA IA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSASA_NOASqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(( LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c )=0,0,(LeaseNumber__r.Total_NOA_Sq_feet__c / ( LeaseNumber__r.Total_IA_Sq_feet__c + LeaseNumber__r.Total_NOA_Sq_feet__c )) * REXUSSquareFeet__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS ASA NOA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSASA__c</fullName>
+        <externalId>false</externalId>
+        <label>REXUS ASA</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSAgencyBureauName__c</fullName>
+        <externalId>false</externalId>
+        <formula>REXUSPBSABCode__r.Agency_Bureau_Short_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS Agency Bureau Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSBaseStructuredParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Parking spaces available in a parking structure/garage. (REXUS current Value)</description>
+        <externalId>false</externalId>
+        <label>REXUS Base Structured Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSBaseSurfaceParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Parking spaces available in a parking lot. (REXUS current Value)</description>
+        <externalId>false</externalId>
+        <label>REXUS Base Surface Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSPBSABCode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>REXUS PBS AB Code</label>
+        <referenceTo>PBS_AB_Code__c</referenceTo>
+        <relationshipLabel>Lease Agencies (REXUS PBS AB Code)</relationshipLabel>
+        <relationshipName>Lease_Agencies1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>REXUSSquareFeet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>SQ Ft assigned at ASA Level (REXUS current Value)</description>
+        <externalId>false</externalId>
+        <label>REXUS SquareFeet</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SquareFeet__c</fullName>
+        <externalId>false</externalId>
+        <label>Square Feet</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lease Agency</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>ABCode__c</columns>
+        <columns>ASA__c</columns>
+        <columns>ASA_IASqFt__c</columns>
+        <columns>ASAIAAnnualRent__c</columns>
+        <columns>ASA_NOASqFt__c</columns>
+        <columns>ASANOAAnnualRent__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ADA-{00000000}</displayFormat>
+        <label>Lease Agency ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Lease Agencies</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>LeaseNumber__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ABCode__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASA__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASA_IASqFt__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASAIAAnnualRent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASA_NOASqFt__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASANOAAnnualRent__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>ABCode__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASA__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SquareFeet__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BaseSurfaceParkingSpaces__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BaseStructuredParkingSpaces__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

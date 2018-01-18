@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agency Bureau Code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agency Bureau Codes</value>
+    </caseValues>
+    <fields>
+        <label><!-- AB Code (4 Digit) --></label>
+        <name>AB_Code_41__c</name>
+    </fields>
+    <fields>
+        <label><!-- AB Code (5 Digit) --></label>
+        <name>AB_Code_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Code (3 Digit) --></label>
+        <name>Agency_Code_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Code (2 Digit) --></label>
+        <name>Agency_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency --></label>
+        <name>Agency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>FederalAccount__c</name>
+        <relationshipLabel><!-- Agency Bureau Codes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>ProjectBureau__c</name>
+        <relationshipLabel><!-- Agency Bureau Codes --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Project Bureau Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

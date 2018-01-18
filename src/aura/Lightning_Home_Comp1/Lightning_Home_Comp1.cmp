@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="LeftImage" type="String"/>
+    <aura:attribute name="RightImage" type="String"/>
+    <aura:if isTrue="{!v.LeftImage=='LeftImage'}">
+       <img src="{!$Label.c.LEX_WelcomeScreen_ImageURL}" 
+         alt="Welcome to GSA  Salesforce Lightning. Salesforce's new intuitive, intelligent interface, designed to support
+    	 the way you work and help you be more productive. Whats new ? Path - Helpful guidance and relevant information
+    	 at every stage to support your project planning and request tracking. Project Kanban - A powerful way to visualize 
+    	 and work on your projects and requests. App Launcher - Switch Between apps and access items and featurs in the App Launcher." 
+         class="img-responsive"  style="width:100% !important"/>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.RightImage=='RightImage'}">
+        <img src="{!$Label.c.LEX_Back2Classic_ImageURL}" 
+         alt="Want to go back to Salesforce Classic? Click on View Profile at the top right of the screen, and choose Switch to Salesforce Classic." class="img-responsive"  
+         style="width:100% !important"/>
+    </aura:if> 
+</aura:component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Rescinded_Records_with_OAS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Rescinded Records with OAS</label>
+        <sharedTo>
+            <group>Event_Tracker_OAS_Approvers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rescinded,In Progress,Approved,New,Denied</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agency Protest Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agency Protest Cases</value>
+    </caseValues>
+    <fields>
+        <label><!-- APO Approval Date --></label>
+        <name>APO_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date a case was rejected during the APO Approval Process. --></help>
+        <label><!-- APO Approval Reject Date --></label>
+        <name>APO_Approval_Reject_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date a case was rejected during the Legal Approval process. --></help>
+        <label><!-- APO Legal Reject Date --></label>
+        <name>APO_Legal_Reject_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- APO Submit for Approval --></label>
+        <name>APO_Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mark for Deletion --></help>
+        <label><!-- Mark for Deletion --></label>
+        <name>AP_Mark_for_Deletion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Decision Date --></help>
+        <label><!-- Decision Date --></label>
+        <name>Actual_Decision_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Agency Counsel --></help>
+        <label><!-- Agency Counsel --></label>
+        <name>Agency_Counsel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Agency response due date --></help>
+        <label><!-- Agency Response Due Date --></label>
+        <name>Agency_Response_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Closed --></label>
+        <name>Case_Closed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used to show the case status within the approval process --></help>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any additional comments on the case --></help>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comments for APO --></help>
+        <label><!-- Comments for APO --></label>
+        <name>Comments_for_APO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contracting Officer --></help>
+        <label><!-- Contracting Officer --></label>
+        <name>Contracting_Officer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the agency response was received by the APO --></help>
+        <label><!-- Date Agency Response Received by APO --></label>
+        <name>Date_Agency_Response_Received_by_APO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the final Written Matters were received by APO --></help>
+        <label><!-- Date Final Written Matters Rec&apos;d by APO --></label>
+        <name>Date_Final_Written_Matters_ReceivedbyAPO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date_Protest_Received_by_APO__c + 35 Days --></help>
+        <label><!-- Date Protest Received by APO +35 Days --></label>
+        <name>Date_Protest_Received_by_APO_35_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Protest Received by APO FY --></help>
+        <label><!-- Date Protest Received by APO FY --></label>
+        <name>Date_Protest_Received_by_APO_FY__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the protest was received by APO --></help>
+        <label><!-- Date Protest Received by APO --></label>
+        <name>Date_Protest_Received_by_APO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the protest was received by the Agency --></help>
+        <label><!-- Date Protest Received by Agency --></label>
+        <name>Date_Protest_Received_by_Agency__c</name>
+    </fields>
+    <fields>
+        <help><!-- The decision grounds for the case disposition --></help>
+        <label><!-- Decision Ground(s) --></label>
+        <name>Decision_Grounds__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation</masterLabel>
+            <translation><!-- Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debriefing</masterLabel>
+            <translation><!-- Debriefing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flawed Communications</masterLabel>
+            <translation><!-- Flawed Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flawed Evaluation</masterLabel>
+            <translation><!-- Flawed Evaluation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other-Explained in Comments</masterLabel>
+            <translation><!-- Other-Explained in Comments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small Business Issue</masterLabel>
+            <translation><!-- Small Business Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solicitation</masterLabel>
+            <translation><!-- Solicitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unduly Restrictive Solicitation</masterLabel>
+            <translation><!-- Unduly Restrictive Solicitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unequal Treatment</masterLabel>
+            <translation><!-- Unequal Treatment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Decision Sent Date --></help>
+        <label><!-- Decision Sent Date --></label>
+        <name>Decision_Sent_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Destruction Date is auto populated based on the Actual Decision Date. Destruction Date should be two years from the end of the Fiscal Year in which the Agency Protest decision was made. Destruction happens on October 1 --></help>
+        <label><!-- Destruction Date --></label>
+        <name>Destruction_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The case disposition --></help>
+        <label><!-- Disposition --></label>
+        <name>Disposition__c</name>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dismissed</masterLabel>
+            <translation><!-- Dismissed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Granted</masterLabel>
+            <translation><!-- Granted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Final Matters Due date --></help>
+        <label><!-- Final Written Matters Due Date --></label>
+        <name>Final_Written_Matters_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The individual ultimately responsible for the work on a case. --></help>
+        <label><!-- Integrity Officer --></label>
+        <name>Integrity_Officer__c</name>
+        <relationshipLabel><!-- Agency Protest Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field will be checked when the approval process is triggered. This is used to trigger the sharing of SD Document Upload records to the current approver. --></help>
+        <label><!-- Is Currently In Approval Approcess --></label>
+        <name>Is_Currently_In_Approval_Approcess__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Approval Date --></label>
+        <name>Legal_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of days in APO Approval --></label>
+        <name>Number_of_days_in_APO_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of days in Legal Approval --></label>
+        <name>Number_of_days_in_Legal_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oral Presentations Date --></help>
+        <label><!-- Oral Presentations Date --></label>
+        <name>Oral_Presentations_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Oral Presentations are needed --></help>
+        <label><!-- Oral Presentations Needed --></label>
+        <name>Oral_Presentations_Needed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Other Decision Ground(s) --></help>
+        <label><!-- Other Decision Ground(s) --></label>
+        <name>Other_Decision_Grounds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Other relevant written submissions --></help>
+        <label><!-- Other Written Submissions --></label>
+        <name>Other_Written_Submissions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Timeliness Issue --></label>
+        <name>Potential_Timeliness_Issue__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Priority or Easy --></help>
+        <label><!-- Priority or Easy --></label>
+        <name>Priority_or_Easy__c</name>
+        <picklistValues>
+            <masterLabel>Easy</masterLabel>
+            <translation><!-- Easy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Priority</masterLabel>
+            <translation><!-- Priority --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Protestor in the Case --></help>
+        <label><!-- Protester --></label>
+        <name>Protester__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Region the protest was in --></help>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Scheduling conference date --></help>
+        <label><!-- Scheduling Conference Date --></label>
+        <name>Scheduling_Conference_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The GSA Service --></help>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <picklistValues>
+            <masterLabel>FAS</masterLabel>
+            <translation><!-- FAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAS</masterLabel>
+            <translation><!-- OAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS</masterLabel>
+            <translation><!-- PBS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 35-Day Decision Due Date --></label>
+        <name>Y35_Day_Decision_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- 35 Day Deadline Met Yes or No --></help>
+        <label><!-- 35-Day Deadline Met? --></label>
+        <name>Z35_Day_Deadline_Met__c</name>
+    </fields>
+    <layouts>
+        <layout>Agency Protest Case</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Documents --></label>
+            <section>Documents</section>
+        </sections>
+        <sections>
+            <label><!-- Protest --></label>
+            <section>Protest</section>
+        </sections>
+        <sections>
+            <label><!-- Responses --></label>
+            <section>Responses</section>
+        </sections>
+        <sections>
+            <label><!-- Written Disposition --></label>
+            <section>Written Disposition</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The case cannot be closed if the case is still in the approval process flow. --></errorMessage>
+        <name>APCase_Cannot_Be_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Record cannot be updated when Case Closed is marked as &apos;Yes&apos;. --></errorMessage>
+        <name>APClose_Case_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You do not have the permissions to close or reopen this case --></errorMessage>
+        <name>Case_Closed_Val_Rule_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Record cannot be updated when Mark for Deletion is checked. --></errorMessage>
+        <name>MarkforDeletionCheck</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- APClose_Case --></label>
+        <name>APClose_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mark_for_Deletion --></label>
+        <name>Mark_for_Deletion</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Release</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Releases</value>
+    </caseValues>
+    <fields>
+        <help><!-- What types of changes are being deployed? --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- General Comments --></label>
+        <name>General_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org --></label>
+        <name>Org__c</name>
+        <picklistValues>
+            <masterLabel>CEO</masterLabel>
+            <translation><!-- CEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEO</masterLabel>
+            <translation><!-- EEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GEO</masterLabel>
+            <translation><!-- GEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS Client Solutions</masterLabel>
+            <translation><!-- PBS Client Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS Property Disposal</masterLabel>
+            <translation><!-- PBS Property Disposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS Workspaces</masterLabel>
+            <translation><!-- PBS Workspaces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEO</masterLabel>
+            <translation><!-- PEO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Release Date/ Time --></label>
+        <name>Release_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Manager --></label>
+        <name>Release_Manager__c</name>
+        <relationshipLabel><!-- Releases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release Type --></label>
+        <name>Release_Type__c</name>
+        <picklistValues>
+            <masterLabel>DM&amp;E</masterLabel>
+            <translation><!-- DM&amp;E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency</masterLabel>
+            <translation><!-- Emergency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M Release</masterLabel>
+            <translation><!-- O&amp;M Release --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Release Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

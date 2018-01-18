@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Version</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Versions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Name --></label>
+        <name>Application_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application ID --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Initial Operational Capability - This field represents the planned deployment date of the application. --></help>
+        <label><!-- IOC --></label>
+        <name>IOC__c</name>
+    </fields>
+    <fields>
+        <help><!-- The website, URL, or other location where the application can be found. --></help>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Owning Organization --></help>
+        <label><!-- Owning Organization --></label>
+        <name>Owning_Organization__c</name>
+        <picklistValues>
+            <masterLabel>Board of Contract Appeals</masterLabel>
+            <translation><!-- Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congressional and Intergovernmental Affairs</masterLabel>
+            <translation><!-- Congressional and Intergovernmental Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Acquisition Service</masterLabel>
+            <translation><!-- Federal Acquisition Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Citizen Services and Innovative Technologies</masterLabel>
+            <translation><!-- Office of Citizen Services and Innovative Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Civil Rights</masterLabel>
+            <translation><!-- Office of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Communications and Marketing</masterLabel>
+            <translation><!-- Office of Communications and Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Emergency Response and Recovery</masterLabel>
+            <translation><!-- Office of Emergency Response and Recovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of General Counsel</masterLabel>
+            <translation><!-- Office of General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Governmentwide Policy</masterLabel>
+            <translation><!-- Office of Governmentwide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Inspector General</masterLabel>
+            <translation><!-- Office of Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Small Business Utilization</masterLabel>
+            <translation><!-- Office of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Administrator</masterLabel>
+            <translation><!-- Office of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Chief Financial Officer</masterLabel>
+            <translation><!-- Office of the Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Chief Information Officer</masterLabel>
+            <translation><!-- Office of the Chief Information Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Chief People Officer</masterLabel>
+            <translation><!-- Office of the Chief People Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Buildings Service</masterLabel>
+            <translation><!-- Public Buildings Service --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+        <picklistValues>
+            <masterLabel>Force.com</masterLabel>
+            <translation><!-- Force.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Apps</masterLabel>
+            <translation><!-- Google Apps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business POC --></label>
+        <name>Point_of_Contact__c</name>
+        <relationshipLabel><!-- Versions1 --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- An abbreviated Release Notes field. --></help>
+        <label><!-- Release_Notes_Abbrev --></label>
+        <name>Release_Notes_Abbrev__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is used to highlight the primary differences from the previous version --></help>
+        <label><!-- Release Notes --></label>
+        <name>Release_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>In Development</masterLabel>
+            <translation><!-- In Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operational</masterLabel>
+            <translation><!-- Operational --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready For Deployment</masterLabel>
+            <translation><!-- Ready For Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunset Planned</masterLabel>
+            <translation><!-- Sunset Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunsetted</masterLabel>
+            <translation><!-- Sunsetted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sunset Date --></label>
+        <name>Sunset_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Technical Point of Contact --></help>
+        <label><!-- Technical POC --></label>
+        <name>Technical_POC__c</name>
+        <relationshipLabel><!-- Versions (Technical POC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Version Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

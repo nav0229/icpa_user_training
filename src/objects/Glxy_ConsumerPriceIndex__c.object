@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains information about each lease, along with increases and decreases in operating costs associated with the lease and the CPI to adjust rent on leases.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>APR_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>APR IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>APR_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>APR NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AUG_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>AUG IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AUG_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>AUG NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Acceptance620Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date 620 approved/forwarded to R7</inlineHelpText>
+        <label>620 to R7 Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmountCurrentFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(
+    (AccrualEndDate__c &gt; AccrualStartDateCY__c  &amp;&amp; Text(StatusCD__c)  == &apos;Estimate&apos; &amp;&amp;
+         EffectiveDate__c &lt;= Today ()),
+    ( 
+      (
+        (AnnualAmount__c/12) 
+        * 
+        ((12 * (YEAR(AccrualEndDate__c) - YEAR(AccrualStartDateCY__c))) +
+          (MONTH(AccrualEndDate__c) - MONTH(AccrualStartDateCY__c)) + 1)
+      )
+      +
+      (
+        if( (EffectiveDateFY__c == ProcessedDateFY__c),
+            ( 
+               (DAY(DATE(YEAR(EffectiveDate__c), MONTH(EffectiveDate__c), 1))
+                  - Day(EffectiveDate__c)) 
+               * 
+               AccrualAmountEffectiveMonthRate__c  
+            ),
+            0
+         )
+      )
+    ),
+   0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Amount of transaction attributable to current FY</inlineHelpText>
+        <label>Current FY Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmountEffectiveMonthRate__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <label>Accrual Amount Effective Month Rate</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmountPriorFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( (Value(EffectiveDateFY__c) &lt; YEAR(TODAY()+ 92)),
+     
+     If( ((YEAR(TODAY()+ 92) - Value(EffectiveDateFY__c)) == 1),
+         (
+            (  ((12 * (YEAR(DATE(YEAR(EffectiveDate__c + 92),09,30)) - YEAR(EffectiveDate__c))) +
+               (MONTH(DATE(YEAR(EffectiveDate__c + 92),09,30))- MONTH(EffectiveDate__c)) + 1) 
+                * 
+               (AnnualAmount__c/12) 
+            )
+            +
+            (
+                (DAY(DATE(YEAR(EffectiveDate__c), MONTH(EffectiveDate__c), 1))
+                       - Day(EffectiveDate__c)) 
+                * 
+                AccrualAmountEffectiveMonthRate__c   
+            )
+         ),
+         (AnnualAmount__c)
+     ),
+
+    0
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Amount of transaction attributable to previous FY</inlineHelpText>
+        <label>Prior FY Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Accrual Amount</description>
+        <externalId>false</externalId>
+        <label>Accrual Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualEndDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(
+     (If(IsNull(Acceptance620Date__c), TODAY(), Acceptance620Date__c) &gt; EffectiveDate__c),
+     If(IsNull(Acceptance620Date__c), TODAY(), Acceptance620Date__c),
+     EffectiveDate__c 
+  )</formula>
+        <label>Accrual End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AccrualNumber__c</fullName>
+        <description>Accrual Number</description>
+        <externalId>false</externalId>
+        <label>Accrual Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccrualStartDateCY__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(EffectiveDateFY__c==Text(YEAR(TODAY()+ 92)),EffectiveDate__c,DATE((YEAR(TODAY())-1),10,01))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Accrual Start Date CY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AccrualType__c</fullName>
+        <externalId>false</externalId>
+        <label>Accrual Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Partial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Full</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AnnualAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Annual Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Obligation_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>(
+  IA_Sq_Ft__c /
+  IF(
+    ((IA_Sq_Ft__c + NOA_Sq_Ft__c) &lt;&gt; 0),
+    (IA_Sq_Ft__c + NOA_Sq_Ft__c),
+    1 
+  )
+) 
+
+* AnnualAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Annual Obligation IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Obligation_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>If ( ((IA_Sq_Ft__c + NOA_Sq_Ft__c) = 0),
+      AnnualAmount__c,
+      ((NOA_Sq_Ft__c /(IA_Sq_Ft__c + NOA_Sq_Ft__c)) * AnnualAmount__c)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Annual Obligation NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BDGFlag__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Checkmark indicates item is included in budget projection</inlineHelpText>
+        <label>Include in Budget Flag</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Exclusion_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Exclusion Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CalculateAccruals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Calculate Accruals</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DEC_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DEC IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DEC_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DEC NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Delegated_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(LeaseNumber__r.DelegatedLease__c=True, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Delegated Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDateFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(YEAR( EffectiveDate__c + 92 ))</formula>
+        <label>Effective Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EscalationType__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of type/frequency of escalation</inlineHelpText>
+        <label>Escalation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Operating Cost Rent Adjustment Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Estate Tax Rent Adjustment Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating Cost and Real Estate Tax Rent Adjustment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating Cost Lump Sum Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Estate Tax Lump Sum Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating Cost and Real Estate Tax Lump Sum</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating Cost Rent Adjustment and Real Estate Tax Lump Sum</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Estate Tax Rent Adjustment and Operating Cost Lump Sum</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>O-Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Annual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Economic</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FEB_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FEB IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FEB_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FEB NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FY_Obligation_IA__c</fullName>
+        <externalId>false</externalId>
+        <label>FY Obligation IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FY_Obligation_NOA__c</fullName>
+        <externalId>false</externalId>
+        <label>FY Obligation NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FY_Obligation__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FY Obligation</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinanceProcessedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Processed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IA_Sq_Ft__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>IA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsUserRegionMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(RegionCd__c==$User.Glxy_Region_Code__c,$User.Glxy_Region_Code__c==&quot;CO&quot;), &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsUserRegionMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JAN_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JAN IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JAN_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JAN NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUL_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUL IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUL_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUL NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUN_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUN IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUN_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUN NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LeaseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Number</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <errorMessage>Region Specified for Lease falls outside your region</errorMessage>
+            <filterItems>
+                <field>$User.Glxy_Region_Code__c</field>
+                <operation>equals</operation>
+                <valueField>Glxy_Lease__c.RegionCD__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>$User.Glxy_Region_Code__c</field>
+                <operation>equals</operation>
+                <value>CO</value>
+            </filterItems>
+            <infoMessage>Leases in this list as limited to your region</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Glxy_Lease__c</referenceTo>
+        <relationshipLabel>Consumer Price Index</relationshipLabel>
+        <relationshipName>CPIs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>MAR_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAR IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAR_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAR NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAY_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAY IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAY_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAY NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOA_Sq_Ft__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOV_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOV IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOV_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOV NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OCT_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>OCT IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OCT_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>OCT NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OnTime_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Text(StatusCD__c) == &apos;Actual&apos;) &amp;&amp; !(PastDueIndicator__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OnTime Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PastDueIndicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(
+    AND(
+          (Text(StatusCD__c)  == &apos;Estimate&apos;),
+          (LeaseNumber__r.HoldoverStatusInd__c = False), 
+          (BDGFlag__c == true), 
+          (
+              (MONTH(Today()) + 12 - MONTH(EffectiveDate__c) +
+              12 * (YEAR(Today()) - YEAR(EffectiveDate__c) - 1)) &gt; 1
+          )
+       )
+)
+,
+true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Past Due Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PaymentID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Escalation ID</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Unique identifier from Rexus. This helps in finding the record in Rexus.</inlineHelpText>
+        <label>Payment ID</label>
+        <length>14</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessedDateFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(YEAR(ProcessedDate__c + 92 ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Process Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessedDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date completed</inlineHelpText>
+        <label>Process Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>REXUSTotalAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>REXUS Total Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>REXUSandPlaceHolders__c</fullName>
+        <externalId>false</externalId>
+        <formula>LeaseNumber__r.LeaseID__c   &amp; &apos;/&apos;&amp;  Text(EscalationType__c)  &amp; &apos;/&apos; &amp;    Text(EffectiveDate__c)</formula>
+        <label>Lease/Escalation Type/Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate_per__c</fullName>
+        <externalId>false</externalId>
+        <formula>AnnualAmount__c / if(Square_Feet__c ==0, 1, Square_Feet__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rate Per Sq Foot</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RealtySpecialist__c</fullName>
+        <externalId>false</externalId>
+        <label>Realty Specialist Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RegionCd__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(LeaseNumber__r.RegionCD__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rexus_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Rexus Annual Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SEP_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>SEP IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SEP_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>SEP NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Square_Feet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>CPI Square Feet</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StatusCD__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;Actual&quot; or &quot;Estimate&quot;</inlineHelpText>
+        <label>Status Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Estimate</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TeamCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>LeaseNumber__r.TeamCode__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Team Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Upcoming_CPI__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+
+   AND (
+        (Text(StatusCD__c) == &apos;Estimate&apos;),
+        (BDGFlag__c == true),
+        (Text(LeaseNumber__r.StatusCode__c) &lt;&gt; &apos;Terminated&apos;),
+        (Text(LeaseNumber__r.StatusCode__c) &lt;&gt; &apos;Deleted&apos;)
+   )
+
+, true, false   
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Upcoming CPI</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <label>Consumer Price Index</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>RegionCd__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>AnnualAmount__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Region_s_CPI</fullName>
+        <columns>NAME</columns>
+        <columns>LeaseNumber__c</columns>
+        <columns>RegionCd__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>AnnualAmount__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <label>My Region&apos;s CPI</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CPI-{000000}</displayFormat>
+        <label>CPI ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Consumer Price Index</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Placeholder</fullName>
+        <active>true</active>
+        <description>Record entered in Galaxy</description>
+        <label>Placeholder</label>
+        <picklistValues>
+            <picklist>AccrualType__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EscalationType__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Economic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>O-Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Lump Sum Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Rent Adjustment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Rent Adjustment and Real Estate Tax Lump Sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost and Real Estate Tax Lump Sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost and Real Estate Tax Rent Adjustment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Lump Sum Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Rent Adjustment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Rent Adjustment and Operating Cost Lump Sum</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>StatusCD__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Rexus</fullName>
+        <active>true</active>
+        <description>Record imported from Rexus</description>
+        <label>Rexus</label>
+        <picklistValues>
+            <picklist>AccrualType__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EscalationType__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Economic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>O-Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Lump Sum Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Rent Adjustment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Rent Adjustment and Real Estate Tax Lump Sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost and Real Estate Tax Lump Sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost and Real Estate Tax Rent Adjustment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Lump Sum Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Rent Adjustment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Rent Adjustment and Operating Cost Lump Sum</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>StatusCD__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>LeaseNumber__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RegionCd__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EffectiveDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AnnualAmount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TeamCode__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>AnnualAmount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EffectiveDate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RegionCd__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>LeaseNumber__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EffectiveDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RegionCd__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>CPI_Process_Date_FY</fullName>
+        <active>true</active>
+        <description>Process Date cannot be in a prior Fiscal Year</description>
+        <errorConditionFormula>TEXT(StatusCD__c) == &apos;Estimate&apos;
+&amp;&amp;
+YEAR(ProcessedDate__c + 92) &lt; YEAR(TODAY() + 92)
+&amp;&amp;
+!CONTAINS($User.FirstName, &apos;CastIron&apos;)</errorConditionFormula>
+        <errorDisplayField>ProcessedDate__c</errorDisplayField>
+        <errorMessage>Process Date cannot be in a prior Fiscal Year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CPI_Process_Date_Validation</fullName>
+        <active>false</active>
+        <description>Process Date cannot be less than the Effective Date</description>
+        <errorConditionFormula>TEXT(StatusCD__c) == &apos;Estimate&apos;
+&amp;&amp;
+ProcessedDate__c &lt; EffectiveDate__c</errorConditionFormula>
+        <errorDisplayField>ProcessedDate__c</errorDisplayField>
+        <errorMessage>Process Date cannot be less than the Effective Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SumOfNOAandIA</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(AND(NOA_Sq_Ft__c &lt;&gt;0, IA_Sq_Ft__c&lt;&gt;0,LeaseNumber__r.BaseSquareFeet__c&lt;&gt;0),
+NOA_Sq_Ft__c +  IA_Sq_Ft__c &gt; LeaseNumber__r.BaseSquareFeet__c,FALSE)</errorConditionFormula>
+        <errorMessage>Sum of NOA and IA Sq. Ft. cannot exceed the total square feet of the Lease.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_Budget_exclude_Comments</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( BDGFlag__c =False,ISBLANK( Budget_Exclusion_Reason__c ))</errorConditionFormula>
+        <errorDisplayField>Budget_Exclusion_Reason__c</errorDisplayField>
+        <errorMessage>Please provide a reason for exclusion of this record from the budget.</errorMessage>
+    </validationRules>
+</CustomObject>

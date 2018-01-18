@@ -1,0 +1,33 @@
+<apex:page sidebar="false" >
+	<table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">PWC Report</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+           		<div style="background:White; border:2px outset #888888;">
+                <h2><font color="darkred" size="+1">
+                    Fiscal Year: {!$CurrentPage.parameters.FY}&nbsp;&nbsp;&nbsp;
+                    Region: {!$CurrentPage.parameters.Region} &nbsp;&nbsp;&nbsp;
+                    Delegated Flag: {!$CurrentPage.parameters.DelegatedFlag} &nbsp;&nbsp;&nbsp;
+                    Include in Budget: {!If($CurrentPage.parameters.IncludeInBudgetFlag == '1', 'True', 'False')}
+                </font></h2>
+                </div>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>  
+    
+	<table align = "center" border="0">
+		<tr>
+			<td>
+				<iframe src="GLXY_PWCReportYearly?FY={!VALUE($CurrentPage.parameters.FY)}&Region={!$CurrentPage.parameters.Region}&DelegatedFlag={!$CurrentPage.parameters.DelegatedFlag}&IncludeInBudgetFlag={!$CurrentPage.parameters.IncludeInBudgetFlag}" scrolling="false" id="frameFY1" width="370" height="950"/>
+    			<iframe src="GLXY_PWCReportYearly?FY={!VALUE($CurrentPage.parameters.FY) + 1}&Region={!$CurrentPage.parameters.Region}&DelegatedFlag={!$CurrentPage.parameters.DelegatedFlag}&IncludeInBudgetFlag={!$CurrentPage.parameters.IncludeInBudgetFlag}" scrolling="false" id="frameFY2" width="370" height="950"/>
+    			<iframe src="GLXY_PWCReportYearly?FY={!VALUE($CurrentPage.parameters.FY) + 2}&Region={!$CurrentPage.parameters.Region}&DelegatedFlag={!$CurrentPage.parameters.DelegatedFlag}&IncludeInBudgetFlag={!$CurrentPage.parameters.IncludeInBudgetFlag}" scrolling="false" id="frameFY3" width="370" height="950"/>
+			</td>
+		</tr>
+	</table>
+    
+</apex:page>

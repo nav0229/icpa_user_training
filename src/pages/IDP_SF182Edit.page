@@ -1,0 +1,110 @@
+<apex:page docType="html-5.0" showHeader="true" sidebar="true" standardController="Form_SF_182__c" extensions="IDP_SF182EditController" id="thePage">
+
+	<head>
+	<link href="{!URLFOR($Resource.SRIDP, 'scripts/libs/bootstrap/IDP_Bootstrap.css')}" rel="stylesheet" media="all"/>
+	<link rel="stylesheet" href="{!URLFOR($Resource.SRIDP, 'styles/style.css')}" type="text/css"></link>
+	</head>
+	
+	<div class="IDP_Bootstrap">
+		<!-- STEP OF PROCESS INDICATOR CODE START -->
+		<div class="wizardStep">
+			<ul class="wizardStep-timeline mobile-hide">
+				<li class="wizard-step-first">
+					<div class="line"></div>
+					<div class="wizardStep-icon completed-step"></div>
+					<div class="wizardStep-label">
+						<h2 class="completed-step">Link SF182 to IDP</h2>
+					</div>
+				</li>
+				<li class='wizard-step-middle'>
+					<div class="line"></div>
+					<div class="wizardStep-icon"></div>
+					<div class="wizardStep-label">
+						<h2>Training Request</h2> 
+					</div>
+				</li>
+				<li class='wizard-step-last'>
+					<div class="line"></div>
+					<div class="wizardStep-icon"></div>
+					<div class="wizardStep-label">
+						<h2>Submit or Manage Approvals</h2>
+					</div>
+				</li>
+			</ul>
+			<ul class="wizardStep-timeline desktop-hide">
+				<li class="wizard-step-first">
+					<div class="line"></div>
+					<div class="wizardStep-icon completed-step"></div>
+					<div class="wizardStep-label">
+						<h2 class="completed-step">Link SF182 to</h2>
+						<h2 class="completed-step">IDP</h2>
+					</div>
+				</li>
+				<li class='wizard-step-middle'>
+					<div class="line"></div>
+					<div class="wizardStep-icon"></div>
+					<div class="wizardStep-label">
+						<h2>Training</h2>
+						<h2>Request</h2>
+					</div>
+				</li>
+				<li class='wizard-step-last'>
+					<div class="line"></div>
+					<div class="wizardStep-icon"></div>
+					<div class="wizardStep-label">
+						<h2>Submit or Manage</h2>
+						<h2>Approvals</h2>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- STEP OF PROCESS INDICATOR CODE END -->
+		
+		<apex:form id="theForm" html-novalidate="novalidate">
+			<apex:sectionHeader title="{!$ObjectType.Form_SF_182__c.label}" subtitle="{!Form_SF_182__c.name}"/>
+			<apex:pageBlock title="{!$ObjectType.Form_SF_182__c.label} Edit" mode="edit" id="mainPageBlock">
+				<apex:pageBlockButtons id="firstPageBlockButtons">
+						<apex:commandButton action="{!save}" value="Save"/>
+						<apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+				</apex:pageBlockButtons>
+
+				<!-- INSTRUCTION SECTION START -->
+				<apex:pageBlockSection showHeader="true" title="Instructions" columns="1">
+					<apex:pageBlockSectionItem >
+						<apex:outputText value="{!$ObjectType.Form_SF_182__c.fields.SF_182_Instructions__c.Label}"/>
+						<apex:outputText value="{!instr}"/>
+					</apex:pageBlockSectionItem>
+					<div></div>
+					<apex:pageBlockSectionItem >
+						<apex:outputText value="{!$ObjectType.Form_SF_182__c.fields.Supervisor_SF_182_Instructions__c.Label}"/>
+						<apex:outputText value="{!instrSupervisor}"/>
+					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
+				<!-- INSTRUCTION SECTION END -->
+		
+				<!-- INFORMATION START -->
+				<apex:pageBlockSection showHeader="true" title="Choose Related IDP" columns="1">
+					<apex:inputField value="{!Form_SF_182__c.IDP__c}" required="true"/>
+				</apex:pageBlockSection>
+				<!-- INFORMATION END -->
+					
+				<!-- TRAINEE INFORMATION START -->
+					<apex:pageBlockSection showHeader="true" title="Your Information" columns="1">
+						<apex:inputField value="{!Form_SF_182__c.Age_Range__c}"/>
+						<apex:inputField value="{!Form_SF_182__c.Education_Level__c}"/>
+						<apex:inputField value="{!Form_SF_182__c.Position_Level__c}" required="true"/>
+						<apex:inputField value="{!Form_SF_182__c.Does_Applicant_need_special_Accomodation__c}"/>
+						<apex:inputField value="{!Form_SF_182__c.If_Yes_please_describe__c}"/>
+					</apex:pageBlockSection>
+				<!-- TRAINEE INFORMATION END -->
+					
+				<!-- SYSTEM INFORMATION START -->
+				<apex:pageBlockSection showHeader="true" title="System Information" columns="1"> 
+					<apex:outputField value="{!Form_SF_182__c.OwnerId}"/>
+				</apex:pageBlockSection>
+				<!-- SYSTEM INFORMATION END -->
+		
+			</apex:pageBlock>
+		</apex:form>
+	</div>
+</apex:page>

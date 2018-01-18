@@ -1,0 +1,84 @@
+<apex:page controller="CollaborationGroupController"> 
+    <apex:includeScript id="a" value="https://www.google.com/jsapi" /> 
+    <apex:sectionHeader title="Chatter Group Health Check"/>
+    <apex:outputText value="{!groupType}"/>
+    <apex:form >
+        <apex:selectList Id="selectedGroupType" value="{!groupType}" onchange="getSelectedGroupType(this.options[this.selectedIndex])" size="1">
+            <apex:selectOptions value="{!collaborationGroupType}"/>
+        </apex:selectList> &nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:commandButton value="Load Groups" onClick="{!loadCollaborationGroups}"/>
+        <apex:selectList Id="selectedGroupId" value="{!groupName}" onchange="getSelectedGroupId(this.options[this.selectedIndex])"  size="1"> 
+            <apex:selectOptions value="{!selectGroups }"/>
+        </apex:selectList> &nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:commandButton value="Get group health" onClick="getChart()"/>
+    </apex:form> 
+    <div id="chartBlock" style="width: 620px; height: 400px;"></div>
+    <div id="tableBlock" style="width: 620px; height: 400px;"></div>
+    <script type="text/javascript">
+        var selectedGroupId = '{!JSENCODE(groupName)}';
+        var selectedGroupType = '{!JSENCODE(groupType)}';
+        
+        function getSelectedGroupId(selectedValue)
+        {
+            selectedGroupId = selectedValue.value;
+        } 
+        
+        function getSelectedGroupType(selectedTypeValue)
+        {
+            selectedGroupType = selectedTypeValue.value;
+        }         
+        google.load('visualization', '1.0', {'packages':['corechart']});
+        google.setOnLoadCallback(getChart);   
+        
+        function getChart() {
+            CollaborationGroupController.getGroupHealthCheck(selectedGroupId,selectedGroupType,
+            function(result, event){  
+                var visualization = new google.visualization.ColumnChart(document.getElementById('chartBlock'));
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Month');
+                    data.addColumn('number', 'Posts');
+                    data.addColumn('number', 'Comments');
+                    data.addColumn('number', 'Newly Joined');
+                    data.addColumn('number', '#Members');                    
+                    data.addColumn('number', '#Comments');     
+                    data.addColumn('number', '#Likes');                                        
+                    data.addColumn('number', '#Links');                                                            
+                    data.addColumn('number', '#Documents');                          
+                                        
+                    for(var i =0; i<result.length;i++)
+                    {
+                        var r = result[i];
+                        data.addRow([r.month,r.numberOfPosts,r.numberOfComments,r.numberOfNewlyJoined,r.totalMembers,r.totalComments,r.numberOfLikes,r.linkCount,r.docCount]); 
+                    }
+                    var options = {
+                      title : 'Monthly Group Health of {!JSENCODE(groupName)}',
+                      vAxis: {title: "Number"},
+                      hAxis: {title: "Month",direction : "-1"},
+                      seriesType: "bars",
+                      series: {8: {type: "line"}}
+                    };                      
+                    visualization.draw(data,options);
+              });              
+          } 
+          /*
+            google.load('visualization', '1.0', {'packages':['table']});
+            google.setOnLoadCallback(getTableChart);   
+                  
+          function getTableChart() {
+            CollaborationGroupController.getTableChatForSelectedGroup(selectedGroupId,selectedGroupType,
+            function(result, event){  
+                var visualization = new google.visualization.Table(document.getElementById('tableBlock'));
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Top 10 users by "Influence Ranking');
+                    data.addColumn('number', 'Top 10 users within group');
+                    for(var i =0; i<result.length;i++)
+                    {
+                        var r = result[i];
+                        data.addRow([r.month,r.numberOfPosts]); 
+                    }
+                    visualization.draw(data);
+              });              
+          }       
+          */   
+    </script>    
+</apex:page>

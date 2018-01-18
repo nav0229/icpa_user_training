@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Assignee__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Assignee</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OCM_Tracker_Identifier__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>OCM Tracker Identifier</label>
+        <referenceTo>Comms_Marketing_Service__c</referenceTo>
+        <relationshipLabel>Point of Contacts</relationshipLabel>
+        <relationshipName>Point_of_Contacts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>POC_Time__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each assignee should enter the amount of time they spent on the task. Example: If it takes 1 hour 15 minutes, then 1.25 should be entered here.</inlineHelpText>
+        <label>Point of Contact Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>POC_Update_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>POC Update Status</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Point_of_Contact_Name__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Point of Contact Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact_Master_ORG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Point_of_Contact_Name__r.MAJOR_ORG__c</formula>
+        <label>Point of Contact Master Org</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Point of Contact Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Point of Contacts</relationshipLabel>
+        <relationshipName>Point_of_Contacts</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact_Org__c</fullName>
+        <externalId>false</externalId>
+        <formula>Point_of_Contact_Name__r.MAJOR_ORG_DESCRIPTION__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Point of Contact Org</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Point_of_Contact_Name__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Point of Contact Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Point of Contact Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Requester</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Point of Contact</label>
+    <nameField>
+        <displayFormat>POC{0000000}</displayFormat>
+        <label>Point of Contact Identifier</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Point of Contacts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Point_Of_Contact_Type_One</fullName>
+        <active>true</active>
+        <description>&quot;Point of Contact Type&quot; and &quot;Assignee&quot; fields cannot be filled together.</description>
+        <errorConditionFormula>AND(
+NOT( ISPICKVAL( Point_of_Contact_Type__c ,&quot;&quot;) ), 
+Assignee__c = TRUE)</errorConditionFormula>
+        <errorDisplayField>Assignee__c</errorDisplayField>
+        <errorMessage>&quot;Point of Contact Type&quot; and &quot;Assignee&quot; fields cannot be filled together.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Point_Of_Contact_Type_Or_Assignee</fullName>
+        <active>true</active>
+        <description>Either &quot;Point of Contact Type&quot; field Or &quot;Assignee&quot; field should be filled.</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Point_of_Contact_Type__c ,&quot;&quot;) , 
+Assignee__c = FALSE )</errorConditionFormula>
+        <errorDisplayField>Point_of_Contact_Type__c</errorDisplayField>
+        <errorMessage>Either &quot;Point of Contact Type&quot; field Or &quot;Assignee&quot; field should be filled.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Point_of_Contact_Type_Principal</fullName>
+        <active>true</active>
+        <description>&quot;Point of Contact Type&quot; field value &quot;Principal&quot; is only available for &quot;Media Affairs &amp; Public Engagement&quot; record.</description>
+        <errorConditionFormula>AND( OCM_Tracker_Identifier__r.RecordType.DeveloperName &lt;&gt; &quot;Media_Affairs_Public_Engagement&quot;,  ISPICKVAL(Point_of_Contact_Type__c , &quot;Principal&quot;))</errorConditionFormula>
+        <errorDisplayField>Point_of_Contact_Type__c</errorDisplayField>
+        <errorMessage>&quot;Point of Contact Type&quot; field value &quot;Principal&quot; is only available for &quot;Media Affairs &amp; Public Engagement&quot; record.</errorMessage>
+    </validationRules>
+</CustomObject>

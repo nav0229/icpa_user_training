@@ -1,0 +1,7 @@
+<apex:page standardController="Campaign" extensions="SetUpRolloutController" action="{!completeRollout}">
+  <apex:pageMessages id="errorMessage" ></apex:pageMessages> 
+	
+	<apex:variable var="" value="{!Campaign.Status}" />
+	
+	 <apex:outputText value="Click "/><apex:outputLink value="/{!Campaign.Id}" id="Back" > here </apex:outputLink> <apex:outputText value=" to back to Campaign record." />
+</apex:page>

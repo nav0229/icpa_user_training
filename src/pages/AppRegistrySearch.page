@@ -1,0 +1,88 @@
+<!------------------------------------------------------------------------------------------------------
+-- Revision History
+--
+-- 09/20/2011   DRH - Created.
+-- 09/21/2011   DRH - Implemented Advanced Search.
+-- 09/22/2011   DRH - Added <Enter> key detection.
+-- 09/23/2011   JD - Removed GSA logo; changed sidebar to true.
+-------------------------------------------------------------------------------------------------------->
+<apex:page controller="AppRegistrySearchController" sidebar="true">
+
+    <script language="Javascript">
+        // detect <Enter> key event
+        document.onkeydown = function() {
+            if (event.keyCode == 13) {
+                textSearch();
+                return false;
+            }
+        }
+
+        function textSearch() {
+            searchJS();
+        }
+    </script>
+
+    <apex:outputPanel id="rerenderPanel">
+
+        <apex:form id="searchForm">
+
+            <apex:actionFunction action="{!search}" name="searchJS" rerender="rerenderPanel" />
+
+            <div style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px;">
+                <apex:pageMessages id="error" />
+            </div> 
+
+            <apex:pageBlock title="Search">
+                <table>
+                    <tr>
+                        <td class="labelCol">Search by Keyword(s):</td>
+                        <td colspan="3"><apex:inputText style="margin-left: 10px; width: 495px;" value="{!keyWordInput}" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;" class="labelCol">Application Type:</td>
+                        <td>
+                            <apex:selectList value="{!appType}" size="1" style="margin-left: 10px; margin-right: 20px;">
+                                <apex:selectOptions value="{!appTypeOptions}" />
+                            </apex:selectList>
+                        </td>
+                        <td class="labelCol">Function:
+                            <apex:selectList value="{!functionType}" size="1" style="margin-left: 10px; margin-right: 20px;">
+                                <apex:selectOptions value="{!functionTypeOptions}" />
+                            </apex:selectList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;" class="labelCol">Point of Contact:</td>
+                        <td>
+                            <apex:inputField value="{!appVersionPOC.Point_of_Contact__c}" style="margin-left: 10px; margin-right: 20px;" />
+                        </td>
+                        <td class="labelCol">State:
+                            <apex:selectList value="{!state}" size="1" style="margin-left: 10px; margin-right: 20px;">
+                                <apex:selectOptions value="{!stateOptions}" />
+                            </apex:selectList>
+                        </td>
+                        <td><apex:commandButton value="Go!" action="{!search}" rerender="rerenderPanel" /></td>
+                    </tr>
+                </table>
+            </apex:pageBlock>
+
+            <apex:pageBlock id="resultsBlock" title="Search Results">           
+                <apex:pageBlockTable value="{!appVersionList}" var="appVersion" id="resultsTable" rendered="true">
+
+                    <apex:column headerValue="Version"  style="width: 100px;">
+                        <apex:outputLink value="/{!appVersion.Id}" style="color: blue;">{!appVersion.Version__c}</apex:outputLink>
+                    </apex:column>
+
+                    <apex:column headerValue="Application" value="{!appVersion.Application_Name__c}"  style="width: 150px;" />
+                    <apex:column headerValue="Application Type" value="{!appVersion.Application__r.Type__c}"  style="width: 150px;" />
+                    <apex:column headerValue="Description" value="{!appVersion.Application__r.Description_Abbrev__c}" style="width: 200px;" />
+                    <apex:column headerValue="State" value="{!appVersion.State__c}" style="width: 150px;" />
+                    <apex:column headerValue="Point of Contact" value="{!appVersion.Point_of_Contact__r.Name}" style="width: 150px;" />
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+</apex:page>

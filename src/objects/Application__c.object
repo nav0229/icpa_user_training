@@ -1,0 +1,1982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is for the Project Central - Application Registry application and used to track applications maintained in the Application Registry.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Application_AKA__c</fullName>
+        <description>Other names of this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Other names of this application</inlineHelpText>
+        <label>Application AKA</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BCRT__c</fullName>
+        <description>Business Community Requirements Team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Business Community Requirements Team</inlineHelpText>
+        <label>BCRT</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Facilities Management and Services Program (FMSP)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Design and Construction (ODC)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Leasing (OoL)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Client Solutions (OCS)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS Chief Information Officer (CIO)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Organizational Resources (OOR)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Acquisition Management (AM)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS Financial Services (OCFO)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Property Asset Management (RPAM)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Regional BCRT (Reg)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Backend__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The backend used for this application</inlineHelpText>
+        <label>Backend</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Functions_Performed__c</fullName>
+        <description>The business functions performed by the application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business functions performed by the application</inlineHelpText>
+        <label>Business Functions Performed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Construction management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Facilities management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real asset management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real property acquisition &amp; disposal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Space delivery</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CCB_Chair__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The chair of the Change Control Board</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The chair of the Change Control Board</inlineHelpText>
+        <label>CCB Chair</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Applications (CCB Chair)</relationshipLabel>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>COOP_Id__c</fullName>
+        <description>The continuity of operations id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The continuity of operations id</inlineHelpText>
+        <label>COOP Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Name__c</fullName>
+        <description>The contract name of the application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The contract name of the application</inlineHelpText>
+        <label>Contract Name</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Year_Plan__c</fullName>
+        <description>Current year plan for this application. This field will be updated every year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Current year plan for this application.</inlineHelpText>
+        <label>Current Year Plan</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description_Abbrev__c</fullName>
+        <description>An abbreviated description field.</description>
+        <externalId>false</externalId>
+        <formula>&quot;Please enter abbrev&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>An abbreviated description field.</inlineHelpText>
+        <label>Description Abbrev</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Expected_End_Date__c</fullName>
+        <description>The expected end date of the application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The expected end date of the application</inlineHelpText>
+        <label>Expected End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Transition_Plan__c</fullName>
+        <description>The expected transition plan of the application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The expected transition plan of the application</inlineHelpText>
+        <label>Expected Transition Plan</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Investment__c</fullName>
+        <description>The &apos;Investment&apos; that this application maps to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The &apos;Investment&apos; that this application maps to.</inlineHelpText>
+        <label>Investment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Real Estate Across the US (REXUS)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Elec Acq. System (EAS) / Comprizon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>eLease</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tech for Real Estate Exchange (TREX)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Asset Business Plan (ABP)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IRIS / Project Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Occupancy Agreement Tool (OA Tool)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Central Office Program Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rent Estimate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CAD / CIFM Pgm</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PDA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IT Management Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NCMMS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SmartBuildings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS Business Line IT Svcs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tech Svcs Support / NTA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RETA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fclty Mgmt Support / ESC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Electronic Project Management (ePM)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Intelligence (BI)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Frameworks</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Customer Solutions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Regional IT Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Geospatial Line of Business (GLoB)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS Enterprise Architecture (EA)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Locations_Used__c</fullName>
+        <description>The regions / locations that use this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The regions / locations that use this application</inlineHelpText>
+        <label>Locations Used</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All regions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R01</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R02</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R03</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R04</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R05</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R06</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R07</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R08</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R09</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R11</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Major_Data_Categories__c</fullName>
+        <externalId>false</externalId>
+        <label>Major Data Categories</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <description>Application Long Name - For use (Currently) for IT Spend Record Type and Page layout.</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Users__c</fullName>
+        <description>The number of users using this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of users using this application</inlineHelpText>
+        <label>Number of Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_Portal__c</fullName>
+        <description>Whether this application available on portal?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether this application available on portal?</inlineHelpText>
+        <label>On Portal</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>One_Year_Plan__c</fullName>
+        <description>The one year plan for this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The one year plan for this application</inlineHelpText>
+        <label>One Year Plan</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contact information of Application Owner</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Same as the Application Owner field value from Project Central Application</inlineHelpText>
+        <label>Point of Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_User_Group__c</fullName>
+        <description>The Primary User Group using this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Primary User Group using this application</inlineHelpText>
+        <label>Primary User Group</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Programs_Supported_Primarily__c</fullName>
+        <description>The programs supported primarily by this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The programs supported primarily by this application</inlineHelpText>
+        <label>Programs Supported Primarily</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Programs_Supported_Secondary__c</fullName>
+        <description>The programs supported secondary by this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The programs supported secondary by this application</inlineHelpText>
+        <label>Programs Supported Secondary</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Project Manager of this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Project Manager of this application</inlineHelpText>
+        <label>Project Manager</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Applications (Project Manager)</relationshipLabel>
+        <relationshipName>Applications2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Staff_Service_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Staff/Service Office</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AA - Office of the Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AC - Office of the Chief of Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AD - Office of the Deputy Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AE - Office of the Senior Counselor to the Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AF - Office of the Assistant Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AG - Office of the Associate Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK - Office of Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>B - Office of the Chief Financial Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>C - Office of the Chief People Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>D - Office of Emergency Response &amp; Recovery</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>E - Office of Small Business Utilization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>G - Civilan Board of Contract Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H - Office of Administrative Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I - Office of the Chief Information Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>J - Office of the Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L - Office of General Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>M - Office of Governmentwide Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>P - Public Buildings Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Q - Federal Acquisition Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R - Office of Performance Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>S - Office of Congressional &amp; Intergovernmental Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>V - Office of the Chief Acquisition Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA - Office of the Regional Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>X - Office of Citizen Services &amp; Innovative Technologies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Z - Office of Communications and Marketing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>To Be Retired</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pipeline</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Planning</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Implementation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Production</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retired</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Strategic_Vision__c</fullName>
+        <description>The strategic vision for this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The strategic vision for this application</inlineHelpText>
+        <label>Strategic Vision</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>System_Implemented_Date__c</fullName>
+        <description>The date on which the application was implemented</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date on which the application was implemented</inlineHelpText>
+        <label>System Implemented Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>System_Interfaces__c</fullName>
+        <description>The list of applications that this application interfaces with</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The list of applications that this application interfaces with</inlineHelpText>
+        <label>System Interfaces</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Three_Year_Plan__c</fullName>
+        <description>The three year plan for this application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The three year plan for this application</inlineHelpText>
+        <label>Three Year Plan</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Two_Year_Plan__c</fullName>
+        <description>Two year plan for this application. This field will be updated every year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Two year plan for this application.</inlineHelpText>
+        <label>Two Year Plan</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asset Allocation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Asset Cataloging</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Asset Maintenance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Awards Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefits Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Billing &amp; Accounting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blog</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Career Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Configuration Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contact &amp; Profile Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Credit/Charge</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Data Entry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Data Lookup</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Education &amp; Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expense Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Forum</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Library</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>News/Notification</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Organization Composition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Portfolio Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program/Project Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recruiting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reference</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Report Generator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Resume Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review &amp; Approval</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Survey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Time Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Travel Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wiki</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Workforce Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Workforce Directory</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Application</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>ITGIS_Applications</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>BCRT__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Application__c.ITGIS_Application</value>
+        </filters>
+        <label>ITGIS Applications</label>
+    </listViews>
+    <nameField>
+        <label>Application ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Applications</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>ITGIS_Application</fullName>
+        <active>true</active>
+        <label>ITGIS Application</label>
+        <picklistValues>
+            <picklist>BCRT__c</picklist>
+            <values>
+                <fullName>Acquisition Management %28AM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Solutions %28OCS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design and Construction %28ODC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities Management and Services Program %28FMSP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leasing %28OoL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizational Resources %28OOR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS Chief Information Officer %28CIO%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS Financial Services %28OCFO%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Property Asset Management %28RPAM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional BCRT %28Reg%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Functions_Performed__c</picklist>
+            <values>
+                <fullName>Construction management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real asset management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real property acquisition %26 disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Space delivery</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Investment__c</picklist>
+            <values>
+                <fullName>Asset Business Plan %28ABP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Intelligence %28BI%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD %2F CIFM Pgm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central Office Program Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elec Acq%2E System %28EAS%29 %2F Comprizon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Project Management %28ePM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fclty Mgmt Support %2F ESC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frameworks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Geospatial Line of Business %28GLoB%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS %2F Project Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Management Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCMMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Occupancy Agreement Tool %28OA Tool%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS Business Line IT Svcs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS Enterprise Architecture %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RETA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Across the US %28REXUS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional IT Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent Estimate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartBuildings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Svcs Support %2F NTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech for Real Estate Exchange %28TREX%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLease</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locations_Used__c</picklist>
+            <values>
+                <fullName>All regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R11</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Portal__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Staff_Service_Office__c</picklist>
+            <values>
+                <fullName>AA - Office of the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AC - Office of the Chief of Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AD - Office of the Deputy Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AE - Office of the Senior Counselor to the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AF - Office of the Assistant Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AG - Office of the Associate Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AK - Office of Civil Rights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Office of the Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Office of the Chief People Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Office of Emergency Response %26 Recovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E - Office of Small Business Utilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G - Civilan Board of Contract Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H - Office of Administrative Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I - Office of the Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J - Office of the Inspector General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L - Office of General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Office of Governmentwide Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P - Public Buildings Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Federal Acquisition Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R - Office of Performance Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Office of Congressional %26 Intergovernmental Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V - Office of the Chief Acquisition Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA - Office of the Regional Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X - Office of Citizen Services %26 Innovative Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z - Office of Communications and Marketing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Retired</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Asset Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Cataloging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awards Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing %26 Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Career Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configuration Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact %26 Profile Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit%2FCharge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Lookup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education %26 Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expense Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News%2FNotification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization Composition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program%2FProject Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recruiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Generator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review %26 Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wiki</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workforce Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workforce Directory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>IT_Spend</fullName>
+        <active>true</active>
+        <label>IT Spend</label>
+        <picklistValues>
+            <picklist>BCRT__c</picklist>
+            <values>
+                <fullName>Acquisition Management %28AM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Solutions %28OCS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design and Construction %28ODC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities Management and Services Program %28FMSP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leasing %28OoL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizational Resources %28OOR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS Chief Information Officer %28CIO%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS Financial Services %28OCFO%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Property Asset Management %28RPAM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional BCRT %28Reg%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Functions_Performed__c</picklist>
+            <values>
+                <fullName>Construction management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real asset management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real property acquisition %26 disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Space delivery</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Investment__c</picklist>
+            <values>
+                <fullName>Asset Business Plan %28ABP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elec Acq%2E System %28EAS%29 %2F Comprizon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIS %2F Project Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Occupancy Agreement Tool %28OA Tool%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Across the US %28REXUS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech for Real Estate Exchange %28TREX%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLease</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locations_Used__c</picklist>
+            <values>
+                <fullName>All regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R11</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>On_Portal__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Staff_Service_Office__c</picklist>
+            <values>
+                <fullName>AA - Office of the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AC - Office of the Chief of Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AD - Office of the Deputy Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AE - Office of the Senior Counselor to the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AF - Office of the Assistant Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AG - Office of the Associate Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AK - Office of Civil Rights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Office of the Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Office of the Chief People Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Office of Emergency Response %26 Recovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E - Office of Small Business Utilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G - Civilan Board of Contract Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H - Office of Administrative Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I - Office of the Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J - Office of the Inspector General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L - Office of General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Office of Governmentwide Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P - Public Buildings Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Federal Acquisition Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R - Office of Performance Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Office of Congressional %26 Intergovernmental Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V - Office of the Chief Acquisition Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA - Office of the Regional Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X - Office of Citizen Services %26 Innovative Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z - Office of Communications and Marketing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Asset Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Cataloging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awards Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing %26 Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Career Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configuration Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact %26 Profile Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit%2FCharge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Lookup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education %26 Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expense Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News%2FNotification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization Composition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portfolio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program%2FProject Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recruiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Generator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review %26 Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wiki</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workforce Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workforce Directory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Name__c</searchFilterFields>
+        <searchFilterFields>Type__c</searchFilterFields>
+        <searchFilterFields>Description__c</searchFilterFields>
+        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

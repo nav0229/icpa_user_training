@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is an add on to the Event Approval application. This would be to track the expenses of any individual attendees that wish attend either a GSA sponsored conference or a Non GSA sponsored conference.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Attendee__c</fullName>
+        <externalId>false</externalId>
+        <label>Attendee</label>
+        <referenceTo>Attendee__c</referenceTo>
+        <relationshipLabel>Attendee Expenses</relationshipLabel>
+        <relationshipName>Attendee_Expenses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Description_of_Other__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If you&apos;ve chosen &quot;Other&quot; as an expense category, please describe here.</inlineHelpText>
+        <label>Description of Other</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Amount</label>
+        <precision>10</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Category</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conference Registration Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lodging</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Exhibit Fees</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Detail__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Detail</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Expense_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Air</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>POV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shuttle or Taxi</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rental Car</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Breakfast</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lunch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dinner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incidental</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Per Diem</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Booth Rental</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Displays</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Registration Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Taxes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>gratuities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Room</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Toll</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Public Transit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parking</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Exhibit Cost</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Audio Visual</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Conference Registration Fee</controllingFieldValue>
+                <valueName>Registration Fee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conference Registration Fee</controllingFieldValue>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <controllingFieldValue>Lodging</controllingFieldValue>
+                <valueName>Taxes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conference Registration Fee</controllingFieldValue>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <controllingFieldValue>Lodging</controllingFieldValue>
+                <controllingFieldValue>Meals</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Exhibit Fees</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>Air</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>Rail</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>POV</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>Shuttle or Taxi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>Rental Car</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>Toll</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>Public Transit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <valueName>Parking</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Lodging</controllingFieldValue>
+                <valueName>Room</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Meals</controllingFieldValue>
+                <valueName>Breakfast</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Meals</controllingFieldValue>
+                <valueName>Lunch</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Meals</controllingFieldValue>
+                <valueName>Dinner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Incidental</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exhibit Fees</controllingFieldValue>
+                <valueName>Booth Rental</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exhibit Fees</controllingFieldValue>
+                <valueName>Displays</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exhibit Fees</controllingFieldValue>
+                <valueName>Exhibit Cost</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exhibit Fees</controllingFieldValue>
+                <valueName>Audio Visual</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Justification__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If you are getting a rental car, a justification is needed in this field. You have 255 characters to enter this justification</inlineHelpText>
+        <label>Justification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Attendee Expense</label>
+    <nameField>
+        <displayFormat>Attendee Exp #-{0000000000}</displayFormat>
+        <label>Attendee Expenses Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Attendee Expenses</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Attendee__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Expense_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Expense_Detail__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Estimated_Amount__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Attendee__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Expense_Category__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Expense_Detail__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Estimated_Amount__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Attendee__c</searchFilterFields>
+        <searchFilterFields>Expense_Category__c</searchFilterFields>
+        <searchFilterFields>Expense_Detail__c</searchFilterFields>
+        <searchFilterFields>Estimated_Amount__c</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Estimated_Expenses_cannot_be_less_than_0</fullName>
+        <active>true</active>
+        <description>Will not allow a zero or negative value in the Estimated Amount field</description>
+        <errorConditionFormula>Estimated_Amount__c  &lt; 0</errorConditionFormula>
+        <errorMessage>Your Estimated Amount cannot be a negative amount.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Expense_category_equals_other</fullName>
+        <active>true</active>
+        <description>For Event Approval Conference Attendee add on. This rule will make the &quot;Description of Other&quot; field required if the expense category = Other</description>
+        <errorConditionFormula>AND(ISPICKVAL(  Expense_Category__c  , &quot;Other&quot;), 
+ISBLANK( Description_of_Other__c ) )</errorConditionFormula>
+        <errorDisplayField>Description_of_Other__c</errorDisplayField>
+        <errorMessage>You must provide a description of why &quot;Other&quot; was chosen</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CIS Office</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CIS Offices</value>
+    </caseValues>
+    <fields>
+        <help><!-- Activity Address Code --></help>
+        <label><!-- Activity Address Code --></label>
+        <name>Activity_Address_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- CSC Account --></help>
+        <label><!-- CSC Account --></label>
+        <name>CSC_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duplicate PmoAo Check --></label>
+        <name>Duplicate_PmoAo_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax Number --></label>
+        <name>Fax_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Inventory Date --></help>
+        <label><!-- Last Inventory Date --></label>
+        <name>Last_Inventory_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main Phone Number --></label>
+        <name>Main_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Member ID --></help>
+        <label><!-- Member ID --></label>
+        <name>Member_ID__c</name>
+        <relationshipLabel><!-- CIS Offices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Member of Congress --></label>
+        <name>Member_of_Congress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Next Inventory Date --></help>
+        <label><!-- Next Inventory Date --></label>
+        <name>Next_Inventory_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMO/AO Number --></label>
+        <name>PMO_AO_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- PmoAo City State --></label>
+        <name>PmoAo_City_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporting Region --></label>
+        <name>Reporting_Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- Space Assigned --></help>
+        <label><!-- Space Assigned --></label>
+        <name>Space_Assigned__c</name>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSA</masterLabel>
+            <translation><!-- GSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leased</masterLabel>
+            <translation><!-- Leased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Office</masterLabel>
+            <translation><!-- Post Office --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 2 --></label>
+        <name>Street_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields>
+    <layouts>
+        <layout>House</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inventory Information --></label>
+            <section>Inventory Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Senate</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inventory Information --></label>
+            <section>Inventory Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- House --></label>
+        <name>House</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Senate --></label>
+        <name>Senate</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- PMO/AO Number &quot;77ZA&quot; is preserved for storage account. Please enter any other PMO/AO Number. --></errorMessage>
+        <name>Avoid_Duplicate_Standard_PMOAO_Numbers</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Fax Number must be 10 digits --></errorMessage>
+        <name>Fax_Number_must_be_10</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Last Inventory Date cannot be future --></errorMessage>
+        <name>Last_Inventory_Date_not_future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Main Phone Number must be 10 digits --></errorMessage>
+        <name>Main_Phone_Number_must_be_10</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- PMOAO Number should be a length of 4 characters --></errorMessage>
+        <name>PMOAO_Number_should_be_length_of_4</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_House_Office --></label>
+        <name>New_House_Office</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Senate_Office --></label>
+        <name>New_Senate_Office</name>
+    </webLinks>
+</CustomObjectTranslation>

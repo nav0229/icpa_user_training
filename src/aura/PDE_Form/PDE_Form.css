@@ -1,0 +1,12 @@
+.THIS {
+}
+
+/* 
+ * Normally... the date picker appears outside of the control, this fixes it
+ * https://salesforce.stackexchange.com/questions/111481/lightning-system-datepicker-icon-not-in-input-box/111527
+*/
+.THIS .uiInputDate .datePicker-openIcon {
+    position: absolute;
+    left: 95%;
+    top: 35%;
+}

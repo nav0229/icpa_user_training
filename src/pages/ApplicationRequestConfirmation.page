@@ -1,0 +1,61 @@
+<apex:page Controller="ApplicationRequestController">
+<!--<apex:page controller="ApplicationRequestConfirmationController">-->
+<apex:includeScript value="{!$Resource.jQuery}"/>
+<style type="text/css">
+.italicText { font-weight: bold; }
+</style>
+<style>
+        .text1{
+            color: black;
+           font-weight: bold;
+        }
+        .text2{
+            color: blue;
+            font-weight: bold;
+            text-decoration:underline;
+            
+        }
+         .text3{
+               text-decoration:underline;
+         }
+        .text4{
+            visibility:hidden;
+            
+        }
+        .block{
+            
+            border-width:1px;
+            text-align: center;
+        }
+        .blue{
+            font-weight: bold;
+            text-decoration:underline;  
+        }
+    </style>
+<script>
+        var jQuery = $.noConflict();
+    function exitWizard() {
+        var isCancel = confirm("Do you wish to exit this Page?");
+        if (isCancel) 
+            return true; 
+        return false;
+    }  
+   
+</script>
+<apex:sectionHeader title="Thank You" subtitle=""/>
+    <apex:form >
+        <apex:pageBlock mode="edit" id="block">
+            <apex:pageBlockSection columns="1">
+               <apex:outputPanel styleClass="block" layout="black" id="code">
+                <!--<apex:outputText value=" A ticket is being generated inside the ServiceNow ticketing system on your behalf."></apex:outputText><br/><br/>-->
+               <apex:outputText value="Thanks, "></apex:outputText><apex:outputText value="{!$User.Email}" styleClass="text3" ></apex:outputText><apex:outputText value=", for submitting your request and your OCIO Application Support Request identification number is:  task # "></apex:outputText><apex:outputText value="{!$CurrentPage.parameters.caseNumber}" styleClass="text1"></apex:outputText><br/><br/>
+               <!--<apex:outputText value="NOTE" styleClass="blue" ></apex:outputText><apex:outputText value=": If you do not receive an auto-generated email from IT ServiceDesk ("></apex:outputText><apex:outputText value="servicedesk@gsa.gov" styleClass="text3"></apex:outputText><apex:outputText value=") within 24 hours identifying your new ServiceNow ticket,"></apex:outputText><br/>-->
+               <!--<apex:outputText value="pleas" styleClass="text4"></apex:outputText>--><apex:outputText value="If you have any questions, please send an email to "></apex:outputText><apex:outputText value="app-support@gsa.gov" styleClass="text2"></apex:outputText><apex:outputText value=" identifying creation of task # "></apex:outputText><apex:outputText value="{!$CurrentPage.parameters.caseNumber}" styleClass="text1"></apex:outputText><apex:outputText value=" via the Application Support Request form."></apex:outputText>
+                <!--<apex:commandButton value="Close" onclick="return exitWizard()" immediate="true"/>-->
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>    
+        <div id="disAttach">
+        </div>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SF 182 Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SF 182 Request</value>
+    </caseValues>
+    <fields>
+        <label><!-- About Approvals/Concurrence --></label>
+        <name>About_Approvals_Concurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- About the GSA Continuing Srvc Agreement --></label>
+        <name>About_the_GSA_Continuing_Srvc_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active User --></label>
+        <name>Active_User__c</name>
+    </fields>
+    <fields>
+        <help><!-- Activity Name - This field is automatically populated with the name of the selected Activity --></help>
+        <label><!-- Activity Name --></label>
+        <name>Activity_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Activity Total Cost - The sum of the selected Activity&apos;s costs (Books and Materials + Tuition and Fees) --></help>
+        <label><!-- Activity Total Cost --></label>
+        <name>Activity_Total_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Activity - Please select the Developmental Activity (from your IDP) that is relevant to this training --></help>
+        <label><!-- Activity --></label>
+        <name>Activity__c</name>
+        <relationshipLabel><!-- SF 182 Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Appropriation Fund (Direct Cost) - If applicable, please enter the direct cost associated with this training procurement. A direct cost includes both tuition and fees as well as books and materials. Example format: 1000. --></help>
+        <label><!-- Appropriation Fund (Direct Cost) --></label>
+        <name>Appropriation_Fund_Direct_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Appropriation Fund (InDirect Cost) - If applicable, please enter the total indirect cost associated with this training opportunity.  Indirect costs include travel and per diem. Example format: 1000. --></help>
+        <label><!-- Appropriation Fund (InDirect Cost) --></label>
+        <name>Appropriation_Fund_InDirect_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Process Instructions --></label>
+        <name>Approval_Process_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approver Status - This field indicates what step within the approval process the request is in (i.e. which of the selected supervisors/approvers is currently reviewing or approving the request) --></help>
+        <label><!-- Approver Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Final Approval</masterLabel>
+            <translation><!-- Final Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approver 1 Review</masterLabel>
+            <translation><!-- Pending Approver 1 Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approver 2 Review</masterLabel>
+            <translation><!-- Pending Approver 2 Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approver 3 Review</masterLabel>
+            <translation><!-- Pending Approver 3 Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approver 4 Review</masterLabel>
+            <translation><!-- Pending Approver 4 Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Supervisor Review</masterLabel>
+            <translation><!-- Pending Supervisor Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed by Approver 1</masterLabel>
+            <translation><!-- Reviewed by Approver 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed by Approver 2</masterLabel>
+            <translation><!-- Reviewed by Approver 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed by Approver 3</masterLabel>
+            <translation><!-- Reviewed by Approver 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed by Approver 4</masterLabel>
+            <translation><!-- Reviewed by Approver 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed by Supervisor</masterLabel>
+            <translation><!-- Reviewed by Supervisor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Approver 1 - Please refer to your organizational structure to determine if another Approver is required --></help>
+        <label><!-- Approver 1 --></label>
+        <name>Approver_1__c</name>
+        <relationshipLabel><!-- SF 182 Request (Approver 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Approver 2 - Please refer to your organizational structure to determine if another Approver is required --></help>
+        <label><!-- Approver 2 --></label>
+        <name>Approver_2__c</name>
+        <relationshipLabel><!-- SF 182 Request (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Approver 3 - Please refer to your organizational structure to determine if another Approver is required --></help>
+        <label><!-- Approver 3 --></label>
+        <name>Approver_3__c</name>
+        <relationshipLabel><!-- SF 182 Request (Approver 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Approver 4 - Please refer to your organizational structure to determine if another Approver is required --></help>
+        <label><!-- Approver 4 --></label>
+        <name>Approver_4__c</name>
+        <relationshipLabel><!-- SF 182 Request (Approver 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Billing Instructions - The requesting user should enter any details they may have about the registration and payment process of their training for the Purchase Card Holder to reference --></help>
+        <label><!-- Billing Instructions --></label>
+        <name>Billing_Instructions_c__c</name>
+    </fields>
+    <fields>
+        <help><!-- Books and Materials - The requesting user should enter books and materials costs associated with this training that was paid for by the Federal Gov. (Refer to the Guide for HR Reporting at http://www.opm.gov/feddata/guidance.asp.) Example Format: 300. --></help>
+        <label><!-- Books and Materials (Direct Cost) --></label>
+        <name>Books_and_Materials__c</name>
+    </fields>
+    <fields>
+        <label><!-- CSA Hours Remaining --></label>
+        <name>CSA_Hours_Remaining__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cancel Training - Please contact your Supervisor if you need to cancel your training (this field is only editable by the Supervisor). Selecting this checkbox will void the training and the approval process will be discontinued. --></help>
+        <label><!-- Cancel Training --></label>
+        <name>Cancel_My_Training__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancel Obligated --></label>
+        <name>Cancel_Obligated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Continued Srvc Agreement Accepted Date - This field is automatically populated with the date that you agreed to the GSA Continuing Service Agreement --></help>
+        <label><!-- Continued Srvc Agreement Accepted Date --></label>
+        <name>Continued_Srvc_Agreement_Accepted_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Course Number - Please enter the course number of your training course or class --></help>
+        <label><!-- Course Number --></label>
+        <name>Course_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Course Title - Please enter the name of your training course or class --></help>
+        <label><!-- Course Title --></label>
+        <name>Course_Title_if_Diff_from_Activity_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cumulative Amount - This is the sum of all amounts listed within the &quot;Total (TF and BM)&quot; of the related SF 182 Training form(s). --></help>
+        <label><!-- Estimated Cumulative Amount --></label>
+        <name>Cumulative_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Deadline for requesting a refund? - This field is only required if you select &quot;Yes&quot; within &quot;Is the money refundable?&quot;; please indicate the date in which the deadline for requesting a refund is. Example format: MM/DD/YYYY. --></help>
+        <label><!-- Deadline for requesting a refund? --></label>
+        <name>Deadline_for_requesting_a_refund_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Digit Station Symbol - Please enter the appropriate Digit Station Symbol. Example Format: 12-34-5678 --></help>
+        <label><!-- Digit Station Symbol --></label>
+        <name>Digit_Station_Symbol__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document/PO/Requisition Number - The requisitioner, or the office with the NEED for the training service, must fill out a requisition for the acquisition of the supply/services. Example format: 2PSNN-14-0125. --></help>
+        <label><!-- Document/PO/Requisition Number --></label>
+        <name>Document_PO_Requisition_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- I am the Final Approver - As a Supervisor/Approver check this field if no one else is required to approve this training (refer to your org structure); once this field is selected the Purchasing Training Coordinator will be notified to contact the vendor --></help>
+        <label><!-- I am the Final Approver --></label>
+        <name>Final_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Approves Flag --></label>
+        <name>Final_Approves_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Final Status - The overall final status of the SF 182 --></help>
+        <label><!-- Final Status --></label>
+        <name>Final_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approver 1 Approved</masterLabel>
+            <translation><!-- Approver 1 Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 2 Approved</masterLabel>
+            <translation><!-- Approver 2 Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 3 Approved</masterLabel>
+            <translation><!-- Approver 3 Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 4 Approved</masterLabel>
+            <translation><!-- Approver 4 Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Approval</masterLabel>
+            <translation><!-- Final Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervisor Approved</masterLabel>
+            <translation><!-- Supervisor Approved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Funding Source - The funding source is the accounting and appropriation budget from which the supply/service will be paid. Example format: PJ4BA0227. --></help>
+        <label><!-- Funding Source --></label>
+        <name>Funding_Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Grand Total Training Costs - Sum of (TF and BM); you are required to accept the &apos;GSA Continuing Service Agreement&apos; when this amount exceeds 3K. This field will reset if a training is rejected, cancelled not obligated or cancelled but money is refundable. --></help>
+        <label><!-- Grand Total Training Costs --></label>
+        <name>Grand_Total_Training_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to Approve and Select Next Approver --></label>
+        <name>How_to_Approve_and_Select_Next_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to Approve as a Final Approver --></label>
+        <name>How_to_Approve_as_a_Final_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to Cancel a Request (Supv Only) --></label>
+        <name>How_to_Cancel_a_Request_Supv_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to Reject a Request --></label>
+        <name>How_to_Reject_a_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to Resume the Approval Process --></label>
+        <name>How_to_Resume_the_Approval_Process__c</name>
+    </fields>
+    <fields>
+        <help><!-- IDP Name - The name of the corresponding IDP --></help>
+        <label><!-- IDP Name --></label>
+        <name>IDP_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Off-site, list City - If Off-site is selected from Location, list the name of the off-site city --></help>
+        <label><!-- If Off-site, list City --></label>
+        <name>If_Offsite_list_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Off-site, list State - If Off-site is selected from Location, list the name of the off-site state --></help>
+        <label><!-- If Off-site, list State --></label>
+        <name>If_Offsite_list_State__c</name>
+        <picklistValues>
+            <masterLabel>AK</masterLabel>
+            <translation><!-- AK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL</masterLabel>
+            <translation><!-- AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS</masterLabel>
+            <translation><!-- AS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT</masterLabel>
+            <translation><!-- CT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE</masterLabel>
+            <translation><!-- DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL</masterLabel>
+            <translation><!-- FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA</masterLabel>
+            <translation><!-- GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GU</masterLabel>
+            <translation><!-- GU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HI</masterLabel>
+            <translation><!-- HI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA</masterLabel>
+            <translation><!-- IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID</masterLabel>
+            <translation><!-- ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KS</masterLabel>
+            <translation><!-- KS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY</masterLabel>
+            <translation><!-- KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD</masterLabel>
+            <translation><!-- MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MI</masterLabel>
+            <translation><!-- MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN</masterLabel>
+            <translation><!-- MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO</masterLabel>
+            <translation><!-- MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP</masterLabel>
+            <translation><!-- MP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ND</masterLabel>
+            <translation><!-- ND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE</masterLabel>
+            <translation><!-- NE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NJ</masterLabel>
+            <translation><!-- NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM</masterLabel>
+            <translation><!-- NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NV</masterLabel>
+            <translation><!-- NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OH</masterLabel>
+            <translation><!-- OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR</masterLabel>
+            <translation><!-- PR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RI</masterLabel>
+            <translation><!-- RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD</masterLabel>
+            <translation><!-- SD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN</masterLabel>
+            <translation><!-- TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX</masterLabel>
+            <translation><!-- TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UM</masterLabel>
+            <translation><!-- UM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UT</masterLabel>
+            <translation><!-- UT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VI</masterLabel>
+            <translation><!-- VI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VT</masterLabel>
+            <translation><!-- VT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WA</masterLabel>
+            <translation><!-- WA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WI</masterLabel>
+            <translation><!-- WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WV</masterLabel>
+            <translation><!-- WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WY</masterLabel>
+            <translation><!-- WY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions to Submit for Approval --></label>
+        <name>Instructions_to_Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is Vendor Accredited? - Please indicate whether or not the vendor is accredited --></help>
+        <label><!-- Is Vendor Accredited? --></label>
+        <name>Is_Vendor_Accredited__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the Money Refundable? - This field is only required if you select &quot;Yes&quot; within &quot;Was money obligated?&quot;; please indicate if the money is refundable --></help>
+        <label><!-- Is the Money Refundable? --></label>
+        <name>Is_the_Money_Refundable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is the request shared with me? --></label>
+        <name>Is_the_request_shared_with_me__c</name>
+    </fields>
+    <fields>
+        <help><!-- Location - Please indicate if the training course or class is On-site or Off-site --></help>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>Off-site</masterLabel>
+            <translation><!-- Off-site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-site</masterLabel>
+            <translation><!-- On-site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Objective Title - The name of the Activity&apos;s corresponding Objective --></help>
+        <label><!-- Objective Title --></label>
+        <name>Objective_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pegasys Reference QI - Please enter the appropriate Pegasys Reference QI --></help>
+        <label><!-- Pegasys Reference QI --></label>
+        <name>Pegasys_Reference_QI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is the request pending on me? --></label>
+        <name>Pending_for_me__c</name>
+    </fields>
+    <fields>
+        <help><!-- Per Diem - Insert the actual/final per diem cost (i.e. meals, lodging, miscellaneous expenses) for training completed by the employee that was paid for by the Federal Government. Example format: 400. --></help>
+        <label><!-- Per Diem (Indirect Cost) --></label>
+        <name>Per_Diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Card Holder Instructions --></label>
+        <name>Purchase_Training_Coord_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Card Holder Group --></label>
+        <name>Purchasing_Training_Coordinator_Group__c</name>
+        <picklistValues>
+            <masterLabel>IDP-IMS Program Support</masterLabel>
+            <translation><!-- IDP-IMS Program Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDP-ITC Program Support-Users</masterLabel>
+            <translation><!-- IDP-ITC Program Support-Users --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Purchase Card Holder - Please refer to your organizational structure to determine your Purchase Card Holder; this is the person who will contact the training vendor for registration and payment --></help>
+        <label><!-- Purchase Card Holder --></label>
+        <name>Purchasing_Training_Coordinator__c</name>
+        <relationshipLabel><!-- SF 182 Request (Purchase Card Holder) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Request Status - Please refer to Instructions for status definitions --></help>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Process in Progress</masterLabel>
+            <translation><!-- Approval Process in Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled Not Obligated</masterLabel>
+            <translation><!-- Cancelled Not Obligated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled Obligated</masterLabel>
+            <translation><!-- Cancelled Obligated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Correction</masterLabel>
+            <translation><!-- Correction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Approval</masterLabel>
+            <translation><!-- Final Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiating</masterLabel>
+            <translation><!-- Initiating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requester Instructions - Activity Info --></label>
+        <name>Requester_Instructions_Activity_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Instructions - Costs &amp; Billing --></label>
+        <name>Requester_Instructions_Costs_Billing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Instructions - General Info --></label>
+        <name>Requester_Instructions_General_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Instructions - Training Course --></label>
+        <name>Requester_Instructions_Training_Course__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Instructions - Vendor Info --></label>
+        <name>Requester_Instructions_Vendor_Info__c</name>
+    </fields>
+    <fields>
+        <help><!-- Resume Approval Process - A requesting user can check this field after they have recalled their request (but before they resubmit) if they would like to skip the approvers that have already reviewed the request &amp; send it directly to the next Approver --></help>
+        <label><!-- Resume Approval Process --></label>
+        <name>Resubmit_Approval_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF182 Training Total --></label>
+        <name>SF182_Training_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- SF 182 - Auto generated name of the corresponding SF 182 page; select this field&apos;s link to go back to the SF 182 page where general information about the employee is stored --></help>
+        <label><!-- SF 182 --></label>
+        <name>SF_182__c</name>
+        <relationshipLabel><!-- SF 182 Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Supervisor/Approver Instructions --></label>
+        <name>Supervisor_Approver_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Supervisor - Please refer to your organizational structure to determine your Supervisor --></help>
+        <label><!-- Supervisor --></label>
+        <name>Supervisor__c</name>
+        <relationshipLabel><!-- SF 182 Request (Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Terms and Conditions - Accepted - This field is checked when you agree to the GSA Continuing Service Agreement terms and conditions --></help>
+        <label><!-- Terms and Conditions - Accepted --></label>
+        <name>Terms_and_Conditions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Cumulative Amount --></label>
+        <name>Total_Cumulative_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Hours - The sum of Training Duty Hours + Training Non Duty Hours --></help>
+        <label><!-- Total Hours --></label>
+        <name>Total_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total (TF and BM) - Tuition and Fee Costs  +  Books and Materials Costs --></help>
+        <label><!-- Total (TF and BM) Direct Cost --></label>
+        <name>Total_TF_and_BM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total (T and PD) - Travel Costs  +  Per Diem Costs --></help>
+        <label><!-- Total (T and PD) Indirect Costs --></label>
+        <name>Total_T_and_PD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Training Completed - Once you have completed this training please select this checkbox --></help>
+        <label><!-- Training Completed --></label>
+        <name>Training_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Training Credit Type Code - Please select the value that applies to your requested training --></help>
+        <label><!-- Training Credit Type Code --></label>
+        <name>Training_Credit_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>1-Semester Hours</masterLabel>
+            <translation><!-- 1-Semester Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-Quarter Hours</masterLabel>
+            <translation><!-- 2-Quarter Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Continuing Education Unit</masterLabel>
+            <translation><!-- 3-Continuing Education Unit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Training Credit - Amount of academic credit hours of continued education units (1, 1.5, or .75) earned by the employee for the completed training --></help>
+        <label><!-- Training Credit --></label>
+        <name>Training_Credit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Training Delivery Type Code - Please select the value that applies to your requested training --></help>
+        <label><!-- Training Delivery Type Code --></label>
+        <name>Training_Delivery_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>1-Traditional Classroom (no technology)</masterLabel>
+            <translation><!-- 1-Traditional Classroom (no technology) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-On the Job</masterLabel>
+            <translation><!-- 2-On the Job --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Technology Based</masterLabel>
+            <translation><!-- 3-Technology Based --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Conference/Workshop</masterLabel>
+            <translation><!-- 4-Conference/Workshop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Blended</masterLabel>
+            <translation><!-- 5-Blended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6-Correspondence</masterLabel>
+            <translation><!-- 6-Correspondence --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Training Designation Type Code - Please select the value that applies to your requested training --></help>
+        <label><!-- Training Designation Type Code --></label>
+        <name>Training_Designation_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>1-Undergraduate Credit</masterLabel>
+            <translation><!-- 1-Undergraduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-Graduate Credit</masterLabel>
+            <translation><!-- 2-Graduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Continuing Education Unit</masterLabel>
+            <translation><!-- 3-Continuing Education Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Post Graduate Credit</masterLabel>
+            <translation><!-- 4-Post Graduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-N/A</masterLabel>
+            <translation><!-- 5-N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Training Duty Hours - Please insert the number of duty hours for training. Example format: 80. --></help>
+        <label><!-- Training Duty Hours --></label>
+        <name>Training_Duty_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Training End Date - Please enter the date in which your training course or class will end; please note that the system will notify you to mark your training as completed 5 days following the date entered within this field; Example format: MM/DD/YYYY --></help>
+        <label><!-- Training End Date --></label>
+        <name>Training_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Training Non Duty Hours - Please insert the number of non-duty hours for training. Example format: 40. --></help>
+        <label><!-- Training Non Duty Hours --></label>
+        <name>Training_Non_Duty_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Training Purpose Type - Please insert the purpose for taking this course or program using the appropriate training purpose type code --></help>
+        <label><!-- Training Purpose Type --></label>
+        <name>Training_Purpose_Type__c</name>
+        <picklistValues>
+            <masterLabel>1-Program/Mission</masterLabel>
+            <translation><!-- 1-Program/Mission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-New Work Assignment</masterLabel>
+            <translation><!-- 2-New Work Assignment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Improve/Maintain Present Performance</masterLabel>
+            <translation><!-- 3-Improve/Maintain Present Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Future Staff Needs</masterLabel>
+            <translation><!-- 4-Future Staff Needs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Develop Unavailable Skills</masterLabel>
+            <translation><!-- 5-Develop Unavailable Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6-Retention</masterLabel>
+            <translation><!-- 6-Retention --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Training Source Type Code - Please select the value that applies to your requested training --></help>
+        <label><!-- Training Source Type Code --></label>
+        <name>Training_Source_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>1-Government Internal</masterLabel>
+            <translation><!-- 1-Government Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-Government External</masterLabel>
+            <translation><!-- 2-Government External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Non-government</masterLabel>
+            <translation><!-- 3-Non-government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Government State/Local</masterLabel>
+            <translation><!-- 4-Government State/Local --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Foreign Governments and Organizations</masterLabel>
+            <translation><!-- 5-Foreign Governments and Organizations --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Training Start Date - Please enter the date in which your training course or class will begin; Example format: MM/DD/YYYY --></help>
+        <label><!-- Training Start Date --></label>
+        <name>Training_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Training Sub Type Code - This field&apos;s values are dependent on the value selected from the &quot;Training Type Code&quot; field; please select the value that applies to your requested training --></help>
+        <label><!-- Training Sub Type Code --></label>
+        <name>Training_Sub_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>1-Legal</masterLabel>
+            <translation><!-- 1-Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10-Acquisition</masterLabel>
+            <translation><!-- 10-Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11-Logistic Specialty</masterLabel>
+            <translation><!-- 11-Logistic Specialty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12-Security</masterLabel>
+            <translation><!-- 12-Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13-Clerical (Non-supervisory clerical/administrative)</masterLabel>
+            <translation><!-- 13-Clerical (Non-supervisory clerical/administrative) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14-Trade and Craft</masterLabel>
+            <translation><!-- 14-Trade and Craft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15-Foreign Affairs</masterLabel>
+            <translation><!-- 15-Foreign Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16-Leadership/Manager/Communications Courses</masterLabel>
+            <translation><!-- 16-Leadership/Manager/Communications Courses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-Medical and Health</masterLabel>
+            <translation><!-- 2-Medical and Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20-Presupervisory Program</masterLabel>
+            <translation><!-- 20-Presupervisory Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21-Supervisory Program</masterLabel>
+            <translation><!-- 21-Supervisory Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22-Management Program</masterLabel>
+            <translation><!-- 22-Management Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23-Leadership Development Program</masterLabel>
+            <translation><!-- 23-Leadership Development Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24-SES Candidate Development</masterLabel>
+            <translation><!-- 24-SES Candidate Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25-Executive Development</masterLabel>
+            <translation><!-- 25-Executive Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26-Mentoring Program</masterLabel>
+            <translation><!-- 26-Mentoring Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27-Coaching Program</masterLabel>
+            <translation><!-- 27-Coaching Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Scientific</masterLabel>
+            <translation><!-- 3-Scientific --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30-Employee Orientation</masterLabel>
+            <translation><!-- 30-Employee Orientation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31-Adult Basic Education</masterLabel>
+            <translation><!-- 31-Adult Basic Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32-Federally Mandated Training</masterLabel>
+            <translation><!-- 32-Federally Mandated Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33-Work-life</masterLabel>
+            <translation><!-- 33-Work-life --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34-Soft Skills</masterLabel>
+            <translation><!-- 34-Soft Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35-Agency Required Training</masterLabel>
+            <translation><!-- 35-Agency Required Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Engineering or Architecture</masterLabel>
+            <translation><!-- 4-Engineering or Architecture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Human Resources</masterLabel>
+            <translation><!-- 5-Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6-Budget/Finance Business Administration</masterLabel>
+            <translation><!-- 6-Budget/Finance Business Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7-Planning and Analysis</masterLabel>
+            <translation><!-- 7-Planning and Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8-Information Technology</masterLabel>
+            <translation><!-- 8-Information Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9-Project Management</masterLabel>
+            <translation><!-- 9-Project Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Training Type Code - Please select the value that applies to your requested training --></help>
+        <label><!-- Training Type Code --></label>
+        <name>Training_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>1-Training Program Area</masterLabel>
+            <translation><!-- 1-Training Program Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-Developmental Training Area</masterLabel>
+            <translation><!-- 2-Developmental Training Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Basic Training Area</masterLabel>
+            <translation><!-- 3-Basic Training Area --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Training Vendor Name - Please select the name of the vendor that will be providing the training (i.e. Strayer University); if they are not listed within the system please add them using the &apos;Contact Mgr&apos; application: https://gsa.my.salesforce.com/001/o --></help>
+        <label><!-- Training Vendor Name --></label>
+        <name>Training_Vendor_Name__c</name>
+        <relationshipLabel><!-- SF 182 Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Training Vendor Telephone Number --></label>
+        <name>Training_Vendor_Telephone_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Travel Cost - Please insert the actual/final travel cost excluding per diem for training completed by the employee that was paid for by the Federal Government. Example format: 200. --></help>
+        <label><!-- Travel Cost (Indirect Cost) --></label>
+        <name>Travel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tuition and Fee - Please insert the actual/final cost of training tution &amp; fees for training completed by the employee that was paid for by the Federal Government. Example format: 1000. --></help>
+        <label><!-- Tuition and Fee (Direct Cost) --></label>
+        <name>Tuition_and_Fee__c</name>
+    </fields>
+    <fields>
+        <help><!-- Vendor Contact - If there is a specific contact for the associated training vendor please add the contact within this field; if they are not listed within the system please add them using the &apos;Contact Mgr&apos; application https://gsa.my.salesforce.com/003/o --></help>
+        <label><!-- (Optional) Vendor Contact --></label>
+        <name>Vendor_Contact__c</name>
+        <relationshipLabel><!-- SF 182 Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Was Money Obligated? - This field is only required if you select &quot;Cancel My Training&quot;; please indicate if any money was obligated for your requested training --></help>
+        <label><!-- Was Money Obligated? --></label>
+        <name>Was_Money_Obligated__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Purchasing Training Coordinator</layout>
+        <sections>
+            <label><!-- Activity Information --></label>
+            <section>Activity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals/Concurrence --></label>
+            <section>Approvals/Concurrence</section>
+        </sections>
+        <sections>
+            <label><!-- Cancel Training --></label>
+            <section>Cancel Training</section>
+        </sections>
+        <sections>
+            <label><!-- Costs and Billing Information - Purchase Card Holder --></label>
+            <section>Costs and Billing Information - Purchase Card Holder</section>
+        </sections>
+        <sections>
+            <label><!-- Costs and Billing Information - Training Requester --></label>
+            <section>Costs and Billing Information - Training Requester</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions Section --></label>
+            <section>Instructions Section</section>
+        </sections>
+        <sections>
+            <label><!-- SF 182 Approval Process --></label>
+            <section>SF 182 Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- Training Codes --></label>
+            <section>Training Codes</section>
+        </sections>
+        <sections>
+            <label><!-- Training Course Data --></label>
+            <section>Training Course Data</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Information --></label>
+            <section>Vendor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SF 182 Approver Layout</layout>
+        <sections>
+            <label><!-- Activity Information --></label>
+            <section>Activity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals/Concurrence --></label>
+            <section>Approvals/Concurrence</section>
+        </sections>
+        <sections>
+            <label><!-- Cancel Training --></label>
+            <section>Cancel Training</section>
+        </sections>
+        <sections>
+            <label><!-- Costs and Billing Information - Training Requester --></label>
+            <section>Costs and Billing Information - Training Requester</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions Section --></label>
+            <section>Instructions Section</section>
+        </sections>
+        <sections>
+            <label><!-- SF 182 Approval Process --></label>
+            <section>SF 182 Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- Supervisor/Approver Instructions - How to Approve/Reject/Cancel --></label>
+            <section>Supervisor/Approver Instructions - How to Approve/Reject/Cancel</section>
+        </sections>
+        <sections>
+            <label><!-- Training Codes --></label>
+            <section>Training Codes</section>
+        </sections>
+        <sections>
+            <label><!-- Training Course Data --></label>
+            <section>Training Course Data</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Information --></label>
+            <section>Vendor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SF 182 Training Completed</layout>
+        <sections>
+            <label><!-- Activity Information --></label>
+            <section>Activity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals/Concurrence --></label>
+            <section>Approvals/Concurrence</section>
+        </sections>
+        <sections>
+            <label><!-- Cancel Training --></label>
+            <section>Cancel Training</section>
+        </sections>
+        <sections>
+            <label><!-- Costs and Billing Information - Purchase Card Holder --></label>
+            <section>Costs and Billing Information - Purchase Card Holder</section>
+        </sections>
+        <sections>
+            <label><!-- Costs and Billing Information - Training Requester --></label>
+            <section>Costs and Billing Information - Training Requester</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions Section --></label>
+            <section>Instructions Section</section>
+        </sections>
+        <sections>
+            <label><!-- SF 182 Approval Process --></label>
+            <section>SF 182 Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- Training Codes --></label>
+            <section>Training Codes</section>
+        </sections>
+        <sections>
+            <label><!-- Training Course Data --></label>
+            <section>Training Course Data</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Information --></label>
+            <section>Vendor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SF 182 Training Layout</layout>
+        <sections>
+            <label><!-- Activity Information --></label>
+            <section>Activity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Activity Information (to be completed by the requesting user) --></label>
+            <section>Activity Information (to be completed by the requesting user)</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals/Concurrence --></label>
+            <section>Approvals/Concurrence</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals/Concurrence (reference section for requester) --></label>
+            <section>Approvals/Concurrence (reference section for requester)</section>
+        </sections>
+        <sections>
+            <label><!-- Cancel Training --></label>
+            <section>Cancel Training</section>
+        </sections>
+        <sections>
+            <label><!-- Costs and Billing Information (to be completed by the requesting user) --></label>
+            <section>Costs and Billing Information (to be completed by the requesting user)</section>
+        </sections>
+        <sections>
+            <label><!-- Costs and Billing Information - Training Requester --></label>
+            <section>Costs and Billing Information - Training Requester</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- General Information (reference section for requester) --></label>
+            <section>General Information (reference section for requester)</section>
+        </sections>
+        <sections>
+            <label><!-- How to submit your request for approval (to be completed by the requesting user) --></label>
+            <section>How to submit your request for approval (to be completed by the requesting user)</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions Section --></label>
+            <section>Instructions Section</section>
+        </sections>
+        <sections>
+            <label><!-- SF 182 Approval Process --></label>
+            <section>SF 182 Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- Training Codes --></label>
+            <section>Training Codes</section>
+        </sections>
+        <sections>
+            <label><!-- Training Course Data --></label>
+            <section>Training Course Data</section>
+        </sections>
+        <sections>
+            <label><!-- Training Course Data (to be completed by the requesting user) --></label>
+            <section>Training Course Data (to be completed by the requesting user)</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Information --></label>
+            <section>Vendor Information</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Information  (to be completed by the requesting user) --></label>
+            <section>Vendor Information  (to be completed by the requesting user)</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- SF 182 Purchase Card Holder --></label>
+        <name>Purchasing_Training_Coordinator</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF 182 Training Completed --></label>
+        <name>SF_182_Training_Completed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF 182 Training Request --></label>
+        <name>SF_182_Training_RecordType</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF 182 Approval Process --></label>
+        <name>Sf_182_Approver_RecordType</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot resubmit your request at this time. --></errorMessage>
+        <name>SF182_validation_to_check_the_resubmt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your Suppose to do modification on this. --></errorMessage>
+        <name>SF_182_Purchasing_Training_Coordinator</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You may only check the Training Completed field after the Training End Date. --></errorMessage>
+        <name>SF_182_Training_Completed_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the Purchase Card Holder or Purchase Card Holder Group. --></errorMessage>
+        <name>SF_182_Training_validation_for_pc</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- As the creator of this request you do not have the permissions to edit this field. --></errorMessage>
+        <name>SF_182_Validation_on_Final_Approver</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Training End Date should be later than Training Start Date. --></errorMessage>
+        <name>SF_182_form_check_for_start_and_end_date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Off-site, list City and Off-site, list State fields are required when the Location is Off Site. Please complete these two fields before saving. --></errorMessage>
+        <name>SF_182_validation_for_Location</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select whether or not the money obligated is refundable. --></errorMessage>
+        <name>Sf_182_Training_is_money_refundable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the money is refundable, please enter the deadline date for requesting a refund. The deadline must be later than today&apos;s date. --></errorMessage>
+        <name>Sf_182_Training_on_Deadline_for_request</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select if there was money already obligated for this request. --></errorMessage>
+        <name>Sf_182_Training_validation_for_money_obl</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot select another Approver if you are the Final Approver. --></errorMessage>
+        <name>Validation_Not_to_enter_Approver</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select the GSA Continuing Service Agreement button and accept the Continued Service Agreement if the cost of your request is 3000.00 or more or your Total Hours are greater 80 or more. --></errorMessage>
+        <name>Validation_for_Terms_and_Conditions</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot skip an Approver. Please be sure to follow your organizational structure. For example, a Supervisor should select Approver 1 and Approver 1 should select Approver 2. A Supervisor should not select Approver 2 until Approver 1 has been chosen. --></errorMessage>
+        <name>Validation_for_the_Approves</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot select the next Approver at this time. --></errorMessage>
+        <name>validation_to_check_the_approver</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GSA_Continuing_Service_Agreement --></label>
+        <name>GSA_Continuing_Service_Agreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Restart_Approval --></label>
+        <name>Restart_Approval</name>
+    </webLinks>
+</CustomObjectTranslation>

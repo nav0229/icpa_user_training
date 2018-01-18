@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Critical_Item_Reviewers_Audit_Group_sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Item Reviewers Audit Group sharing</label>
+        <sharedTo>
+            <group>Critical_Items_AuditGroup_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Item_Reviewers_Exec_Sec_sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Item Reviewers Exec Sec sharing</label>
+        <sharedTo>
+            <group>Critical_Items_ExecSec_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Reviewers_recordsharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Critical Items Reviewers-recordsharing</label>
+        <sharedTo>
+            <group>Critical_Items_Reviewers_Record_Sharing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

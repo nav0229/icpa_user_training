@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Assign Survey to Users, and capture their responses from them.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CAV_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>CAV Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Experience_for_Job_Performance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This experience will help me perform my job responsibilities better</inlineHelpText>
+        <label>4. Experience for Job Performance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strongly Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strongly Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Future_RAP_Opportunities__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Would you participate in future Ride Along Opportunities?</inlineHelpText>
+        <label>5. Future RAP Opportunities</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IOA_Information_Seeking__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What information would you like the IOA to seek during the visit you feel would be valuable to your business decisions?</inlineHelpText>
+        <label>7. IOA Information Seeking</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IOA_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>IOA Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>RAP_Surveys1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IOA_Role__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>I better understand the role of IOA as a result of the Ride Along</inlineHelpText>
+        <label>3. IOA Role</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strongly Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strongly Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Instructions__c</fullName>
+        <defaultValue>&quot;1. Please verify your details in the top Section before proceeding onto the Survey.&quot; &amp; BR() &amp;
+&quot;2. Please click on Edit to begin the Survey.&quot; &amp; BR()&amp;
+&quot;3. Please hover your mouse onto the &apos;?&apos; to view the full Question.&quot; &amp; BR()&amp;
+&quot;4. Please hit the &apos;Submit&apos; button at the top after answering all the Questions.&quot; &amp; BR()&amp; 
+&quot;5. You will not be allowed to edit any answers after you Submit them.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>&lt;font color=&quot;#FF0000&quot;&gt;Instructions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Interest_in_other_Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Would you be interested in other opportunities to meet with IOAs and ACOs?</inlineHelpText>
+        <label>8. Interest in other Opportunity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Locations_and_Logistics__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Locations and other logistical details were worked out prior to the visit</inlineHelpText>
+        <label>2. Locations and Logistics</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strongly Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strongly Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Office__c</fullName>
+        <externalId>false</externalId>
+        <formula>PCO_Name__r.User_Organization_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operation_Center__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CASE( IOA_Name__r.User_Region__c ,&quot;1&quot;,&quot;Northeast&quot;,&quot;2&quot;,&quot;Northeast&quot; ,&quot;NC&quot;,&quot;Northeast&quot;,&quot;3&quot;,&quot;Northeast&quot;,&quot;4&quot;,&quot;Southeast&quot;,&quot;5&quot;,&quot;Midwest&quot;,&quot;6&quot;,&quot;Midwest&quot;,&quot;7&quot;,&quot;Western&quot;,&quot;8&quot;,&quot;Western&quot;,&quot;9&quot;,&quot;Western&quot;,&quot;10&quot;,&quot;Western&quot;,&quot;11&quot;,&quot;Central Office&quot;,&quot;CO&quot;,&quot;Central Office&quot;, &quot;Other&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Operation Center</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCO_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PCO Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>RAP_Surveys</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pre_trip_meeting__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>I found the Pre Trip business meeting helpful and informative</inlineHelpText>
+        <label>1. Pre trip meeting</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strongly Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disagree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strongly Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Recommend_RAP__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Would you recommend a Ride Along to your colleagues</inlineHelpText>
+        <label>6. Recommend RAP</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CASE(IOA_Name__r.User_Region__c,&quot;1&quot;,&quot;New England&quot;,&quot;2&quot;,&quot;Northeast &amp; Caribbean&quot;,&quot;NC&quot;,&quot;Northeast &amp; Caribbean&quot;,&quot;3&quot;,&quot;Mid-Atlantic&quot;,&quot;4&quot;,&quot;Southeast Sunbelt&quot;,&quot;5&quot;,&quot;Great Lakes&quot;,&quot;6&quot;,&quot;Heartland&quot;,&quot;7&quot;,&quot;Greater Southwest&quot;,&quot;8&quot;,&quot;Rocky Mountain&quot;,&quot;9&quot;,&quot;Pacific Rim&quot;,&quot;10&quot;,&quot;Northwest/Arctic&quot;,&quot;11&quot;,&quot;Central Office&quot;,&quot;CO&quot;,&quot;Central Office&quot;, &quot;Other&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SIOA_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SIOA Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>RAP_Surveys2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <formula>PCO_Name__r.WORK_BUILDING_PRIMARY__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Why__c</fullName>
+        <externalId>false</externalId>
+        <label>Why?</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Why_do_you__c</fullName>
+        <externalId>false</externalId>
+        <label>Why..?</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>RAP Survey</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CAV_Date__c</columns>
+        <columns>Survey_Status__c</columns>
+        <columns>PCO_Name__c</columns>
+        <columns>IOA_Name__c</columns>
+        <columns>SIOA_Name__c</columns>
+        <columns>Operation_Center__c</columns>
+        <columns>Region__c</columns>
+        <columns>State__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Completed_Surveys</fullName>
+        <columns>NAME</columns>
+        <columns>CAV_Date__c</columns>
+        <columns>Survey_Status__c</columns>
+        <columns>Survey_Completed_Date__c</columns>
+        <columns>PCO_Name__c</columns>
+        <columns>IOA_Name__c</columns>
+        <columns>SIOA_Name__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <label>Completed Surveys</label>
+    </listViews>
+    <listViews>
+        <fullName>In_Progress_Surveys</fullName>
+        <columns>NAME</columns>
+        <columns>CAV_Date__c</columns>
+        <columns>Survey_Status__c</columns>
+        <columns>PCO_Name__c</columns>
+        <columns>IOA_Name__c</columns>
+        <columns>SIOA_Name__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <label>In Progress Surveys</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Surveys</fullName>
+        <columns>NAME</columns>
+        <columns>CAV_Date__c</columns>
+        <columns>Survey_Status__c</columns>
+        <columns>PCO_Name__c</columns>
+        <columns>IOA_Name__c</columns>
+        <columns>SIOA_Name__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>New Surveys</label>
+    </listViews>
+    <nameField>
+        <displayFormat>RAP - {00000}</displayFormat>
+        <label>RAP ID Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>RAP Surveys</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>NewRecordType</fullName>
+        <active>true</active>
+        <label>NewRecordType</label>
+        <picklistValues>
+            <picklist>Experience_for_Job_Performance__c</picklist>
+            <values>
+                <fullName>Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disagree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Disagree</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Future_RAP_Opportunities__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IOA_Role__c</picklist>
+            <values>
+                <fullName>Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disagree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Disagree</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Interest_in_other_Opportunity__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Locations_and_Logistics__c</picklist>
+            <values>
+                <fullName>Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disagree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Disagree</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Pre_trip_meeting__c</picklist>
+            <values>
+                <fullName>Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disagree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Agree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strongly Disagree</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Recommend_RAP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Survey_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>PCO_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CAV_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Survey_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Survey_Completed_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>PCO_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Survey_Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PCO_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Survey_Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>PCO_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAV_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Survey_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Survey_Completed_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>IOA_Name__c</fullName>
+        <label>IOA Name</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>PCO_Name__c</fullName>
+        <label>PCO_Name</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>SIOA_Name__c</fullName>
+        <label>SIOA Name</label>
+    </sharingReasons>
+    <webLinks>
+        <fullName>Submit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)}
+var retStr;
+var update_rap = new sforce.SObject(&quot;RAP_Survey__c&quot;);
+update_rap.Id = &apos;{!RAP_Survey__c.Id}&apos;;
+result = sforce.connection.update([update_rap]);
+retStr = sforce.apex.execute(&quot;SubmitRecord&quot;, &quot;processDetails&quot;,{Id:&quot;{!RAP_Survey__c.Id}&quot;});
+if (retStr != &quot;yes&quot;) {
+alert(retStr);
+} else {
+if (retStr == &quot;yes&quot; &amp;&amp; result[0].getBoolean(&quot;success&quot;)) {
+alert(&quot;Your Survey has been succesfully Completed&quot;);
+location.reload(true);
+}else{
+alert(&quot;You don&apos;t have access to submit&quot;);
+}
+}</url>
+    </webLinks>
+</CustomObject>

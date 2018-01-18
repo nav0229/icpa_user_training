@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OGC Case Contact/ Litigation Hold</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OGC Case Contacts/ Litigation Holds</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address_OGC_Case_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Notes --></label>
+        <name>Contact_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact&apos;s Account --></label>
+        <name>Contact_s_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email_OGC_Case_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Litigation Hold Issued Date --></label>
+        <name>Litigation_Hold_Issued_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mediator/Expert Rating --></label>
+        <name>Mediator_Expert_Rating__c</name>
+        <picklistValues>
+            <masterLabel>1 - Not Recommended</masterLabel>
+            <translation><!-- 1 - Not Recommended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Acceptable, Some Reservations</masterLabel>
+            <translation><!-- 2 - Acceptable, Some Reservations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Acceptable, Neutral</masterLabel>
+            <translation><!-- 3 - Acceptable, Neutral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Recommended</masterLabel>
+            <translation><!-- 4 - Recommended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Highly Recommended</masterLabel>
+            <translation><!-- 5 - Highly Recommended --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mediator/Expert Subject Matter --></label>
+        <name>Mediator_Expert_Subject_Matter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name_OGC_Case_Contact__c</name>
+        <relationshipLabel><!-- OGC Case Contacts/ Litigation Holds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OGC Matter Title/Name --></label>
+        <name>OGC_CASE__c</name>
+        <relationshipLabel><!-- OGC Case Contacts/ Litigation Holds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone_OGC_Case_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Custodian for Litigation Hold --></label>
+        <name>Record_Custodian_for_Litigation_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>Relationship_OGC_Case_Contact__c</name>
+        <picklistValues>
+            <masterLabel>Claimant/Adverse Party</masterLabel>
+            <translation><!-- Claimant/Adverse Party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Contact</masterLabel>
+            <translation><!-- Client Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Co-Counsel</masterLabel>
+            <translation><!-- Co-Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracting Officer</masterLabel>
+            <translation><!-- Contracting Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DOJ Attorney</masterLabel>
+            <translation><!-- DOJ Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expert Witness/Consultant</masterLabel>
+            <translation><!-- Expert Witness/Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fact Witness</masterLabel>
+            <translation><!-- Fact Witness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GAO Attorney</masterLabel>
+            <translation><!-- GAO Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intervenor&apos;s Counsel</masterLabel>
+            <translation><!-- Intervenor&apos;s Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Judge</masterLabel>
+            <translation><!-- Judge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Counsel</masterLabel>
+            <translation><!-- Lead Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mediator</masterLabel>
+            <translation><!-- Mediator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opposing Counsel</masterLabel>
+            <translation><!-- Opposing Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>OGC Case Contact/ Litigation Hold Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Litigation Hold Issued Date must be filled in if the contact relationship is &quot;Record Custodian for Litigation Hold.&quot; --></errorMessage>
+        <name>Litigation_Hold_Issued_Date_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

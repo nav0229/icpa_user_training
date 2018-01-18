@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lease Accrual</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lease Accruals</value>
+    </caseValues>
+    <fields>
+        <help><!-- Amount obligated for expected cost. --></help>
+        <label><!-- Accrual Amount --></label>
+        <name>Accrual_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accrual PDN Key --></label>
+        <name>Accrual_PDN_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies accrual cost category (CPI, Real Estate Taxes, BID Taxes, Facilities Rental/Other, Settlement) --></help>
+        <label><!-- Accrual Type --></label>
+        <name>Accrual_Type__c</name>
+        <picklistValues>
+            <masterLabel>Full</masterLabel>
+            <translation><!-- Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial</masterLabel>
+            <translation><!-- Partial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lease Digest --></label>
+        <name>LeaseDigest__c</name>
+        <relationshipLabel><!-- Lease Accruals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PDNKey --></label>
+        <name>PDNKey__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pegasys Document Number --></help>
+        <label><!-- PDN --></label>
+        <name>PDN__c</name>
+    </fields>
+    <layouts>
+        <layout>Lease Accrual Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Accrual Amount Cannot be Negative or Zero --></errorMessage>
+        <name>Accroual_Amount_not_Negative_OR_Zero</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Value must be greater than 0 --></errorMessage>
+        <name>Verify_Amount_is_greater_than_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot Add Lease Accruals, Include Accruals is not specified on parent Digest --></errorMessage>
+        <name>Verify_Include_Accrual_is_set_on_Digest</name>
+    </validationRules>
+</CustomObjectTranslation>

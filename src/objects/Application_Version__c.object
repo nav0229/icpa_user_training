@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is for the Project Central - Application Registry application and supports the &quot;Application&quot; object. This object tracks the different versions of an application.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Application_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Application__r.Id, Application__r.Name__c ,&quot;_self&quot;)</formula>
+        <label>Application</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Name__c</formula>
+        <label>Application Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <externalId>false</externalId>
+        <label>Application ID</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Versions</relationshipLabel>
+        <relationshipName>Application_Versions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>IOC__c</fullName>
+        <description>Initial Operational Capability - This field represents the planned deployment date of the application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial Operational Capability - This field represents the planned deployment date of the application.</inlineHelpText>
+        <label>IOC</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The website, URL, or other location where the application can be found.</inlineHelpText>
+        <label>Location</label>
+        <length>100</length>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Owning Organization</inlineHelpText>
+        <label>Owning Organization</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Office of the Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal Acquisition Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Public Buildings Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Governmentwide Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Chief Financial Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Chief People Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Chief Information Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Congressional and Intergovernmental Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Citizen Services and Innovative Technologies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Communications and Marketing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Small Business Utilization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of General Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Emergency Response and Recovery</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Board of Contract Appeals</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <externalId>false</externalId>
+        <label>Platform</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Google Apps</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Force.com</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Business POC</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Versions1</relationshipLabel>
+        <relationshipName>Versions1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Release_Notes_Abbrev__c</fullName>
+        <description>An abbreviated Release Notes field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An abbreviated Release Notes field.</inlineHelpText>
+        <label>Release_Notes_Abbrev</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Release_Notes__c</fullName>
+        <description>&quot;This field is used to highlight the primary differences from the previous version&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to highlight the primary differences from the previous version</inlineHelpText>
+        <label>Release Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ready For Deployment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operational</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sunset Planned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sunsetted</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sunset_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sunset Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Technical_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Technical Point of Contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Technical Point of Contact</inlineHelpText>
+        <label>Technical POC</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Versions (Technical POC)</relationshipLabel>
+        <relationshipName>Versions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Version_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( Id ,  Version__c  ,&quot;_self&quot;)</formula>
+        <label>Version</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Version__c</fullName>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>30</length>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Version</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Application_Name__c</columns>
+        <columns>Version_Link__c</columns>
+        <columns>Point_of_Contact__c</columns>
+        <columns>Platform__c</columns>
+        <columns>State__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AV-{0000000}</displayFormat>
+        <label>Application Version ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Versions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Application__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>State__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Version__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Application__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>State__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Version__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Application__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>State__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Version__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Application__c</searchFilterFields>
+        <searchFilterFields>State__c</searchFilterFields>
+        <searchFilterFields>Version__c</searchFilterFields>
+        <searchResultsAdditionalFields>Application__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>State__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Version__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

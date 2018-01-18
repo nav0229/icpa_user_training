@@ -1,0 +1,22 @@
+<apex:page standardcontroller="Glxy_Transaction__c" title="FMIS Accruals" extensions="Glxy_FMISAccruals" >
+
+ 	<apex:outputText style="font-style:italic;font-weight:bold;color:DarkRed" value="{!strMessage}"/>
+ 	 
+	<apex:pageBlock >
+       	<apex:pageBlockTable value="{!PDNForlease}" var="item">        
+           <apex:column headerValue="PDN" value="{!item.PEG_DOC_NUM__c}"/> 
+           <apex:column headerValue="Amount" value="{!item.AMT__c}"/>
+           <apex:column headerValue="Function Code" value="{!item.FUNC_CD__c}"/>
+           <apex:column headerValue="Function Name" value="{!item.Function_Name__c}"/>
+           <apex:column headerValue="Description" value="{!item.DESCRIPTION__c}"/>
+       	</apex:pageBlockTable>   
+    </apex:pageBlock>
+    
+    <style type="text/css">
+	  	table.FMISMessageText td {
+			font-style:italic;
+        	font-weight:bold;
+        	color:DarkRed;}
+	</style>
+    
+</apex:page>

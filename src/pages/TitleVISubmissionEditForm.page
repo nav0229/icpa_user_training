@@ -1,0 +1,1277 @@
+<apex:page id="titleVISubmission" standardController="OCIO_Title_VI_Submission__c" extensions="TitleVISubmissionController" tabStyle="Enter_Compliance_Report__tab" language="en-US">
+    <apex:form id="titleVISubmissionForm" >  
+        <apex:sectionHeader title="Title VI Submission" subtitle="New/Edit" rendered="{!isEditable}"/>
+        <apex:pageBlock id="titleVISubmissionPageBlock" title="" mode="edit"  rendered="{!isEditable}">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveDraft}" value="Save as Draft" rendered="{!isPortalUser}"/>
+                <apex:commandButton action="{!submit}" value="Submit" rendered="{!isPortalUser}"/>
+                <apex:commandButton action="{!submit}" value="Save" rendered="{!NOT(isPortalUser)}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection showHeader="false" columns="2">
+                <tr>
+                    <div>
+                        <td>
+                        </td>
+                        <td colspan="2">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td>  
+                                                    <span style="font-weight:bold;" tabIndex="0">Compliance Questionnaire for Recipients</span>
+                                                </td>
+                                                <td align="right">
+                                                    <span style="font-weight:normal" tabIndex="0">
+                                                        Form Approved
+                                                    </span>
+                                                    <br/>
+                                                    <span style="font-weight:normal" tabIndex="0">
+                                                        OMB No.: 3090-0310
+                                                    </span>
+                                                    <br/>
+                                                    <span style="font-weight:normal" tabIndex="0">
+                                                        Exp. Date : 1/31/2020
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+            </apex:pageBlockSection>
+            
+            <apex:pageMessages /> 
+            
+            <apex:pageBlockSection columns="2" rendered="{!NOT(isPortalUser)}">
+                <apex:facet name="header">
+                    <h3 tabIndex="0">
+                        Donee Information
+                    </h3>
+                </apex:facet>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Rollout__c']} *" for="rollout" />
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock" />
+                        <apex:inputField value="{!titleVISubmission.OCR_Rollout__c}" id="rollout" />
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Owner"/>
+                    <apex:outputPanel >
+                        {!$User.FirstName} {!$User.LastName}
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!titleVISubmission.OCR_Preparation_Date__c}"/>
+                
+                <apex:outputField value="{!titleVISubmission.OCR_Submission_Date__c}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Submission_Status__c']} *" for="submissionstatus"></apex:outputLabel>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock" />
+                        <apex:inputField value="{!titleVISubmission.OCR_Submission_Status__c}" style="width: 360px; height: 40px" id="submissionstatus" />
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem> 
+                
+                <apex:inputField value="{!titleVISubmission.OCR_Hard_Copy__c}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Donee_Account__c']} *" for="donee_account"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Donee_Account__c}" id="donee_account"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Donee_Contact__c']} *" for="donee_contact"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Donee_Contact__c}" id="donee_contact"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem> 
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:facet name="header">
+                    <h3 tabIndex="0">
+                        I. Organizational Background:
+                    </h3>
+                </apex:facet>
+                
+                <tr>
+                    <div>
+                        <td colspan="4"> 
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        A. Please describe the nature and purpose of your agency/organization, to include programs and activities 
+                                                        conducted by your agency/organization.
+                                                    </span>
+                                                    <br/><br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Organizational_Background__c']} *" for="organizational_background"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Organizational_Background__c}" style="width:500px;height:100px" id="organizational_background"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <br/>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        B. Please mark one or more of the following categories that best describes the “organizational type” for your agency/organization:
+                                                    </span>
+                                                    <br/><br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Organizational_Type__c']} *" for="organizational_type"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock" />
+                        <apex:inputField value="{!titleVISubmission.OCR_Organizational_Type__c}" html-aria-label="Organizational Type &#42;" id="organizational_type"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!titleVISubmission.OCR_Organizational_Type_Other__c}" style="width:500px;" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2">
+                <apex:facet name="header">
+                    <h3 tabIndex="0">
+                        II. Civil Rights Data:
+                    </h3>
+                </apex:facet>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-style:italic;font-size:small;" tabindex="0">
+                                                        [NOTE: For all questions regarding race or ethnicity reporting, first, report the race ( i.e., American Indian/Alaska Native, 
+                                                        Asian, Black/African American, Native Hawaiian/Other Pacific Islander, and White), then report ethnicity (i.e., Hispanic or Non-Hispanic).]
+                                                    </span>
+                                                    <br/><br/>
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        Please report the number of individuals in each of the following racial categories:
+                                                    </span>
+                                                    <br/><br/>
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        A. Please provide the current composition (based on race, ethnicity and sex) 
+                                                        of any advisory board, committee, etc. that has influence and/or control over the way in which your federally assisted 
+                                                        programs and/or activities are administered:
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <table border="1">
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#C0C0C0" align="center">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0"><strong>Race</strong></theader></tr><tr><td class="dataCol " colspan="2"></td></tr></tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>       
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table><apex:inputField value="{!titleVISubmission.OCR_advis_American_Indian_Alaska_Native__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table align="right" width="75%"><apex:inputField value="{!titleVISubmission.OCR_advis_Asian__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_advis_Black_or_African_American__c}"/></table>
+                                    </td>
+                                    <td >
+                                        <table align="right" width="75%"><apex:inputField value="{!titleVISubmission.OCR_advis_Native_Hawaiian_Other_Pacific__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_advis_White__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table align="right" width="75%"><!--<apex:inputField value="{!titleVISubmission.OCR_advis_Hispanic_or_Latino__c}" tabOrderHint="14"/>--></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#C0C0C0" align="center">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0"><strong>Ethinicity</strong></theader></tr><tr><td class="dataCol " colspan="2"></td></tr></tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_advis_Hispanic_or_Latino__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table align="right" width="60%"><apex:inputField value="{!titleVISubmission.OCR_advis_Non_Hispanic_or_Non_Latino__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#C0C0C0" align="center">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0"><strong>Sex</strong></theader></tr><tr><td class="dataCol " colspan="2"></td></tr></tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_advis_Male__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table align="right" width="60%"><apex:inputField value="{!titleVISubmission.OCR_advis_Female__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                
+                <br/>
+                <br/>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">
+                                                B. Individuals who, because of their national origin, are Limited English Proficient (LEP) 
+                                                are entitled to meaningful access to federally assisted programs and activities. (See GSA’s LEP guidance for recipients of Federal 
+                                                financial assistance at http://www.gsa.gov/civilrights) Does your agency/organization's service area population include individuals 
+                                                with Limited English Proficiency?</span>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Limited_English_Proficiency__c']} *" for="limited_english_proficiency"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Limited_English_Proficiency__c}" id="limited_english_proficiency"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        If No, skip to "H"
+                                                    </span>
+                                                    <br/><br/>
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        C. If so, what are the languages most encountered?
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:inputField value="{!titleVISubmission.OCR_Languages_Most_Encountered__c}"/>
+                <apex:inputField value="{!titleVISubmission.OCR_Lanuage_Other__c}" style="width:200px; height:100px;"/>
+                <br/>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        D. Where non-English languages are encountered, what type(s) of translation or interpretation
+                                                        assistance services does your agency/organization provide to LEP individuals? (Please mark all that apply)
+                                                    </span>
+                                                    <br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:inputField value="{!titleVISubmission.OCR_Translation_or_Interpretation_Assist__c}"/>
+                <apex:inputField value="{!titleVISubmission.OCR_Trans_Interpretation_Assis_Other__c}" style="width:200px; height:100px;"/>
+                <br />
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0"> E. How does your agency/organization notify its LEP population regarding the availability of LEP assistance? Please describe all methods used.</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:inputField value="{!titleVISubmission.OCR_LEP_Notification_Method__c}"/>
+                <apex:inputField value="{!titleVISubmission.OCR_LEP_Notification_Method_Other__c}" style="width:200px; height:100px;"/>
+                <br />
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">F. Did your agency/organization incur any additional cost during the previous calendar year related to providing LEP assistance?</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:inputField value="{!titleVISubmission.OCR_LEP_Additional_Cost__c}"/>
+                <apex:pageBlockSectionItem />
+                <br />   
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        G. If so, what were your agency/organization’s costs for the previous calendar year in providing LEP assistance?
+                                                    </span>
+                                                    <br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!titleVISubmission.OCR_LEP_Actual_Cost__c}"/>
+                <apex:pageBlockSectionItem />
+                <br />
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody><tr>
+                                            <td colspan="4">
+                                                <span style="font-weight:bold;" tabindex="0">
+                                                    H. Section 504 of the Rehabilitation Act of 1973, as amended, provides that no qualified individuals with disabilities shall, 
+                                                    on the basis of disability, be excluded from participation in, be denied the benefits of, or otherwise be subject to discrimination 
+                                                    under any program or activity that receives or benefits from Federal assistance from GSA. (GSA’s implementing regulation for Section 504 
+                                                    is located at 41 CFR 101-8.302, et seq.)
+                                                </span>
+                                                <br/><br/>
+                                                <span style="font-weight:bold;" tabindex="0">
+                                                    This chart refers to public access areas only, do not include work-only areas in your answers.
+                                                </span>
+                                                <br/>
+                                                <span style="font-weight:bold;" tabindex="0">
+                                                    (i) For each of following areas listed below, indicate whether your agency/organization’s facilities are accessible to individuals with disabilities.
+                                                    (For more information about the uniform accessibility standards, please check the instructions page)
+                                                </span>
+                                                <br/>
+                                                <span style="clip:rect(1px, 1px, 1px, 1px); height: 1px; width: 1px; overflow: hidden; position: absolute !important;" tabindex="0">
+                                                    For Screen Readers: The following table will have you tabbing over between facilities your agency/organization owns, and their accessibility towards individuals with disabilities.
+                                                    Select the checkbox if the facility is available, then select if that facility complies with uniform accessibility standards. If you do not own a particular facility, do not select the accompanying
+                                                    accessibility checkbox.
+                                                </span>
+                                            </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <table border="1">
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#C0C0C0" align="center"  width="250">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0">Do You Have the Following?</theader></tr></tbody>
+                                            </table>
+                                        </td>
+                                        <td bgcolor="#C0C0C0" align="center">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0">Do you comply with uniform accessibility standards?</theader></tr></tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:27px;"><apex:inputField value="{!titleVISubmission.OCR_Telephone__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:25px;"><apex:inputField value="{!titleVISubmission.OCR_Telephone_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:25px;"><apex:inputField value="{!titleVISubmission.OCR_Restrooms__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:25px;" ><apex:inputField value="{!titleVISubmission.OCR_Restrooms_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:30px;"><apex:inputField value="{!titleVISubmission.OCR_Water_Fountains__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:23px;"><apex:inputField value="{!titleVISubmission.OCR_Water_Fountains_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:35px;"><apex:inputField value="{!titleVISubmission.OCR_Hallways__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:20px;" ><apex:inputField value="{!titleVISubmission.OCR_Hallways_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:5px;"><apex:inputField value="{!titleVISubmission.OCR_Entrances_Exits__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:10px;"><apex:inputField value="{!titleVISubmission.OCR_Entrances_Exits_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:35px;"><apex:inputField value="{!titleVISubmission.OCR_Lounges__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:22px;" ><apex:inputField value="{!titleVISubmission.OCR_Lounges_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:34px;"><apex:inputField value="{!titleVISubmission.OCR_Cafeteria__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Cafeteria_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:33px;"><apex:inputField value="{!titleVISubmission.OCR_Elevators__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Elevators_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:22px;"><apex:inputField value="{!titleVISubmission.OCR_Conference_Rooms__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Conference_Rooms_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:24px;"><apex:inputField value="{!titleVISubmission.OCR_Work_Study_areas__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Work_Study_Areas_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Classrooms__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Classrooms_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr align="right">
+                                    <td width="250">
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Parking__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table style="padding-left:20px;"><apex:inputField value="{!titleVISubmission.OCR_Parking_Accessibility__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        (ii) How does your agency/organization provide assistance to individuals that are hearing-impaired and/or to
+                                                        individuals who are visually impaired? Please explain.
+                                                    </span>
+                                                    <br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Hearing_Visual_Impaired_Assistance__c']} *" for="hearing_visual_impaired_assistance"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Hearing_Visual_Impaired_Assistance__c}" style="width:500px;height:100px" id="hearing_visual_impaired_assistance"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        I. Title IX of the Education Amendments Act of 1972 provides that, except as where exempt under the
+                                                        law, no person shall, on the basis of sex, be excluded from participation in, be denied the benefits of,
+                                                        or be subjected to discrimination under any education or training program conducted by a recipient of Federal
+                                                        financial assistance. Implementing regulations require that where recipients conduct or provide education or training
+                                                        programs, they must: (1) Designate a Title IX coordinator; (2) Establish a written policy with regard to Title IX and disseminate
+                                                        such policy--Title IX coordinator’s name and contact information should be included in such policy; and (3) Establish procedures to
+                                                        promptly and equitably resolve complaints that allege discrimination on the basis of sex in the agency/organization’s education programs
+                                                        or activities.
+                                                    </span>
+                                                    <br/><br/>
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        (i) Does your agency/organization offer any type of training or educational programs/activities?
+                                                    </span>
+                                                    <br/>
+                                                    <span style="font-style:italic;font-size:small;" tabindex="0">
+                                                        (If answer is no, skip to III-A “Marketing/Advertisement of Programs and Activities")
+                                                    </span>
+                                                    <br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Training_Educational_Programs__c']} *" for="ocr_training_educational_programs"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Training_Educational_Programs__c}" id="ocr_training_educational_programs"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        (ii) If so, please describe type(s) of training/educational programs/activities, the target
+                                                        audience of such programs/activities, and recruitment/admission criteria/process:
+                                                    </span>
+                                                    <br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <apex:inputField value="{!titleVISubmission.OCR_Training_Educational_Programs_Desc__c}" style="width:500px;height:100px"/>
+                
+                <apex:pageBlockSectionItem />
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        (iii) Does your agency/organization have an administrative grievance procedure established
+                                                        should an individual wish to file a sex-based complaint with regard to the way in which your
+                                                        agency/organization operates its educational or training programs/activities?
+                                                    </span>
+                                                    <br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Administrative_Grievance_Procedure__c']} *" for="ocr_administrative_grievance_procedure" />
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Administrative_Grievance_Procedure__c}" id="ocr_administrative_grievance_procedure"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection showHeader="true" title="" columns="2">
+                <apex:facet name="header">
+                    <h3 tabIndex="0">
+                        III. Marketing/Advertisement of Programs and Activities:
+                    </h3>
+                </apex:facet>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div>
+                                <div class="pbSubsection">
+                                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span style="font-weight:bold;" tabindex="0">
+                                                        A. Does your agency/organization market and/or advertise your programs,activities,benefits or services?</span>
+                                                    <br/>
+                                                    <span style="font-style:italic;font-size:small;" tabindex="0">If No, skip to Section IV, Complaint Information</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Market_Advertise__c']} *" for="ocr_market_advertise"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Market_Advertise__c}" id="ocr_market_advertise"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                <br />
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">B. Please use the following chart to provide the population profile for the targeted audience for the marketing/advertisement of your programs and activities. Example: If your target audience for marketing/advertising your program is county-wide, you may use the 2010 U.S. Census Data.</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                
+                <table border="1">
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#C0C0C0" align="center">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0"><strong>Race</strong></theader></tr><tr><td class="dataCol " colspan="2"></td></tr></tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                            
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table><apex:inputField value="{!titleVISubmission.OCR_Pop_American_Indian_or_Alaska_Native__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table align="right" width="75%"><apex:inputField value="{!titleVISubmission.OCR_Pop_Asian__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_pop_Black_or_African_American__c}"/></table>
+                                    </td>
+                                    <td >
+                                        <table align="right" width="75%"><apex:inputField value="{!titleVISubmission.OCR_pop_Native_Hawaiian_Pacific_Islande__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_pop_White__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#C0C0C0" align="center">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0"><strong>Ethinicity</strong></theader></tr><tr><td class="dataCol " colspan="2"></td></tr></tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_pop_Hispanic_or_Latino__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table align="right" width="60%"><apex:inputField value="{!titleVISubmission.OCR_Pop_Non_Hispanic_or_Non_Latino__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#C0C0C0" align="center">
+                                            <table>
+                                                <tbody><tr><theader text-align="center" tabIndex="0"><strong>Sex</strong></theader></tr><tr><td class="dataCol " colspan="2"></td></tr></tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="1" width="100%">
+                                <tr>
+                                    <td width="337">
+                                        <table align="right"><apex:inputField value="{!titleVISubmission.OCR_pop_Male__c}"/></table>
+                                    </td>
+                                    <td>
+                                        <table align="right" width="60%"><apex:inputField value="{!titleVISubmission.OCR_pop_Female__c}"/></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">C. Please describe the way in which your agency/organization ensures that individuals who are eligible to participate in your federally assisted programs and activities are aware of and have a full and fair opportunity to participate.</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!titleVISubmission.OCR_Full_Fair_Opportunity__c}" style="width:500px;height:100px"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:facet name="header"><h3 tabIndex="0">IV. Complaint Information:</h3></apex:facet>
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-style:italic;font-size:small;" tabindex="0">Individuals have the right to either (1) file an administrative complaint with GSA based on discrimination in federally assisted programs or activities (GSA only has jurisdiction over recipients of Federal surplus property); or (2) file a lawsuit in Federal court. Complainants may also have other avenues available.</span>
+                                            <br/>
+                                            <br/>
+                                            <span style="font-weight:bold;" tabindex="0">With regard to the way in which your agency/organization operates/administers its federally assisted programs and/or provides services/benefits:</span>
+                                            <br/>
+                                            <span style="font-weight:bold;" tabindex="0">A. Have any complaints (oral or written, informal or formal), lawsuits, charges, inquiries, etc. been filed with any Federal, State or local agency, alleging that your agency/organization--or any component thereof—discriminated against an individual or individuals on the basis of race, color, national origin, sex, disability or age?</span>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Complaints_Filed__c']} *" for="ocr_complaints_filed"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Complaints_Filed__c}" id="ocr_complaints_filed"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                
+                <br />
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">B. If so, please provide the following for each complaint received or filed for the last two calendar years: </span>
+                                            <br/>
+                                            <span style="font-style:italic;font-size:small;" tabindex="0">Date of Complaint, Basis ( i.e., race, nat'l origin, etc.), Issue(s), Status of Complaint</span>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!titleVISubmission.OCR_Complaint_Received__c}" style="width:500px;height:100px"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2">
+                <apex:facet name="header"><h3 tabIndex="0">V. Information Regarding Participation in the Federal Surplus Property Program:</h3></apex:facet>
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">A. How did your agency/organization learn about the program?</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_How_Did_You_Learn__c']} *" for="ocr_how_did_you_learn"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_How_Did_You_Learn__c}" html-aria-label="How Did You Learn &#42;" id="ocr_how_did_you_learn"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>                     
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_How_Did_You_Learn_Other__c']}" for="ocr_how_did_you_learn_other"/>
+                    
+                    <apex:inputField value="{!titleVISubmission.OCR_How_Did_You_Learn_Other__c}" id="ocr_how_did_you_learn_other"/>
+                    
+                </apex:pageBlockSectionItem>                     
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1">  
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">B. How does your agency/organization find out about the availability of the property?</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />  
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Property_Availability__c']} *" for="ocr_property_availability"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Property_Availability__c}" style="width:500px;" id="ocr_property_availability"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />  
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">C. Has your agency experienced problems in the past in obtaining the type of property your agency/organization needs?</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />  
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Problems_Experienced__c']} *" for="ocr_problems_experienced"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Problems_Experienced__c}" id="ocr_problems_experienced"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <br />
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">D. How would you rate the quality of the property that your agency/organization has received through the Federal surplus property program?</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />  
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Property_Quality__c']} *" for="ocr_property_quality"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Property_Quality__c}" id="ocr_property_quality"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+                <apex:facet name="header"><h3 tabIndex="0">VI. Unavailable Compliance Data:</h3></apex:facet>
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-style:italic;font-size:small;" tabindex="0">Federal civil rights laws and regulations require recipients of Federal financial assistance to collect and maintain compliance data and, upon request, provide such data - as requested by the Federal agency - for the purpose of determining compliance with applicable Federal civil rights laws and regulations. </span>
+                                            <br/>
+                                            <br/>
+                                            <span style="font-weight:bold;" tabindex="0">A. Is your agency/organization unable to provide any of the information requested in this submission?</span>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!fieldLabel['OCR_Information_Unavailable__c']} *" for="ocr_information_unavailable"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!titleVISubmission.OCR_Information_Unavailable__c}" id="ocr_information_unavailable"/>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <br />
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">B. If so, please identify the corresponding number and/or type of data that your agency/organization is unable to provide (as requested above) due to unavailability of such data.</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />  
+                
+                <apex:inputField value="{!titleVISubmission.OCR_Unavailable_Data__c}" style="width:500px;height:100px"/>
+                
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">C. Briefly describe your agency/organization’s plan(s) to begin collecting and maintaining such data for future requests regarding civil rights compliance. Your plan should provide dates and action(s) that will be taken to ensure such data is collected and maintained. The Office of Civil Rights is available to provide assistance in developing such a plan.</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                <apex:pageBlockSectionItem />  
+                <apex:inputField value="{!titleVISubmission.OCR_Plan_for_Collecting_Data__c}" style="width:500px;height:100px"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+                <apex:facet name="header"><h3 tabIndex="0">VII. Amount of Time To Submit this Questionnaire:</h3></apex:facet>
+                <tr>
+                    <div>
+                        <td colspan="4">
+                            <div><div class="pbSubsection">
+                                <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td colspan="4">
+                                            <span style="font-weight:bold;" tabindex="0">A. Please provide the estimated amount of time that your agency spent in completing this compliance submission.</span>
+                                            <br/>
+                                        </td></tr></tbody></table></div></div></td>
+                    </div>
+                </tr>
+                
+                <apex:inputField value="{!titleVISubmission.OCR_Number_of_Hours__c}"/>
+                <apex:inputField value="{!titleVISubmission.OCR_Number_of_Minutes__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

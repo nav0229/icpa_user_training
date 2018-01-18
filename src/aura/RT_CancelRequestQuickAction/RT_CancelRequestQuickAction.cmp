@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="RT_CancelRequestQuickActionController">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="EnableDisableButton" type="Boolean" default="False"/>
+    <aura:attribute name="OwnerName" type="string"/>
+    <aura:handler name="init" value="{!this}" action="{!c.ownerName}"/>  
+    <div id="main">
+        <p><b>Please press OK if you wish to deactivate this request.</b></p>
+        <ui:button class="btn" label="Ok" press="{!c.myAction}" disabled="{!v.EnableDisableButton}"/>
+	</div>
+    <aura:if isTrue="{!v.EnableDisableButton}">
+       		<p class="slds-theme--error slds-theme--alert-texture" style="height:65px;padding:15px;">Only the owner can cancel this Request Tracker record. Please contact {!v.OwnerName} for assistance.</p>
+    </aura:if>
+</aura:component>

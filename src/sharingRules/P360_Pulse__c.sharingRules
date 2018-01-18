@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>P360_Pulse_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>P360 - Share all pulses with all users of the application</description>
+        <label>P360-Pulse-R</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Request Pulse,Project Pulse</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

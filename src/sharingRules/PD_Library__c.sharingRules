@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>PD_Library_Classifiers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PD Library Classifiers</label>
+        <sharedTo>
+            <group>PD_Library_Classifiers</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Hide_Obsolete_Record__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PD_Library_Share_with_Staffer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PD Library Share with Staffer</label>
+        <sharedTo>
+            <group>PD_Library_Staffers</group>
+        </sharedTo>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Hide_Obsolete_Record__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PD_Master_Classifiers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PD Master Classifiers</label>
+        <sharedTo>
+            <group>PD_Library_Master_Classifiers</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Hide_Obsolete_Record__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PD_Reader</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>PD Reader</label>
+        <sharedTo>
+            <group>PD_Library_Readers</group>
+        </sharedTo>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Hide_Obsolete_Record__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

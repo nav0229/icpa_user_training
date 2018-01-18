@@ -1,0 +1,994 @@
+<apex:page Controller="GLXY_ProjectionsByLease" Title="Lease Projections" readonly="true" sidebar="false" cache="true">
+<apex:form id="frmLease">
+
+	<table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">Lease Projections</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+           		<div style="background:White; border:2px outset #888888;">
+				<h2><font color="darkred" size="+1">
+                    Fiscal Year: {!strFiscalYear} &nbsp;&nbsp;&nbsp;
+                    Lease Number: {!strLeaseNumber} &nbsp;&nbsp;&nbsp;
+                    Delegated Flag: {!strDelegatedFlagDisplay} &nbsp;&nbsp;&nbsp;
+                    Include in Budget: {!strIncludeinBudgetFlag}&nbsp;&nbsp;&nbsp;
+                    Status Code: {!strStatusCodeDisplay}
+                </font></h2>
+                </div>
+           </td>
+        </tr>
+    </table>
+    <br/> 
+    
+    <apex:pageBlock rendered="{!If(LeaseInformation==null,TRUE,FALSE)}"> 
+ 		<apex:messages />
+	</apex:pageBlock> 
+ 	
+    <apex:pageBlock title="Lease Details" rendered="{!If(LeaseInformation!=null,TRUE,FALSE)}"> 
+    	<apex:pageBlockSection >
+    		<apex:repeat value="{!LeaseInformation}" var="LeaseInfo">
+    			<apex:pageBlockSectionItem >
+    				<apex:outputLabel value="{!$ObjectType.Glxy_Lease__c.fields.BaseAnnualRent__c.label}"></apex:outputLabel>
+    				<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LeaseInfo.BaseAnnualRent__c}" /></apex:outputText>
+    			</apex:pageBlockSectionItem>
+    			<apex:pageBlockSectionItem >
+    				<apex:outputLabel value="{!$ObjectType.Glxy_Lease__c.fields.BaseSquareFeet__c.label}"></apex:outputLabel>
+    				<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!LeaseInfo.BaseSquareFeet__c}" /></apex:outputText>
+    			</apex:pageBlockSectionItem>
+    			<apex:pageBlockSectionItem >
+    				<apex:outputLabel value="{!$ObjectType.Glxy_Lease__c.fields.BaseLeaseEffectiveDate__c.label}"></apex:outputLabel>
+    				<apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!LeaseInfo.BaseLeaseEffectiveDate__c}" /></apex:outputText>
+    			</apex:pageBlockSectionItem>
+    			<apex:outputText value="{!LeaseInfo.RegionCD__c}"/>
+    			<apex:outputText value="{!LeaseInfo.RealtySpecialist__c}"/>
+    			<apex:outputText value="{!LeaseInfo.BA53User__c}"/>
+		  	</apex:repeat>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	
+ 	<apex:pageBlock title="Monthly Impact" rendered="{!If(LeaseInformation!=null,TRUE,FALSE)}"> 
+    		<table border="0" width="100%">
+    			<tr>
+    				<td align="Right" width="6%">&nbsp;</td>
+    				<td align="Right" width="6%"><b>Sq. Feet</b></td>
+    				<td align="Right" width="6%"><b>Oct</b></td>
+    				<td align="Right" width="6%"><b>Nov</b></td>
+    				<td align="Right" width="6%"><b>Dec</b></td>
+    				<td align="Right" width="6%"><b>Jan</b></td>
+    				<td align="Right" width="6%"><b>Feb</b></td>
+    				<td align="Right" width="6%"><b>Mar</b></td>
+    				<td align="Right" width="6%"><b>Apr</b></td>
+    				<td align="Right" width="6%"><b>May</b></td>
+    				<td align="Right" width="6%"><b>Jun</b></td>
+    				<td align="Right" width="6%"><b>Jul</b></td>
+    				<td align="Right" width="6%"><b>Aug</b></td>
+    				<td align="Right" width="6%"><b>Sep</b></td>
+    				<td align="Right" width="6%"><b>FY Total</b></td>
+    			</tr>
+    			
+    			<apex:repeat value="{!LeaseInformation}" var="LeaseMonthly">
+    				<tr>
+	    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_SFTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, ###,###,##0}"><apex:param value="{!LeaseMonthly.Total_IA_Sq_feet__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Oct_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Nov_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Dec_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jan_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Feb_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Mar_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Apr_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.May_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jun_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jul_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Aug_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Sep_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Total_IA_Annual_Rent__c}" /></apex:outputText></td>
+    				</tr>
+    				<tr>
+	    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_SFTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, ###,###,##0}"><apex:param value="{!LeaseMonthly.Total_NOA_Sq_feet__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Oct_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Nov_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Dec_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jan_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Feb_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Mar_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Apr_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.May_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jun_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jul_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Aug_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Sep_NOA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Total_NOA_Annual_Rent__c}" /></apex:outputText></td>
+    				</tr>
+    				<tr>
+	    				<td align="Right"><b><apex:outputLabel value="Base Total" rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}"/></b></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, ###,###,##0}"><apex:param value="{!LeaseMonthly.Total_NOA_Sq_feet__c + LeaseMonthly.Total_IA_Sq_feet__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Oct_NOA__c + LeaseMonthly.Oct_IA__c }" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Nov_NOA__c + LeaseMonthly.Nov_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Dec_NOA__c + LeaseMonthly.Dec_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jan_NOA__c + LeaseMonthly.Jan_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Feb_NOA__c + LeaseMonthly.Feb_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Mar_NOA__c + LeaseMonthly.Mar_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Apr_NOA__c + LeaseMonthly.Apr_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.May_NOA__c + LeaseMonthly.May_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jun_NOA__c + LeaseMonthly.Jun_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Jul_NOA__c + LeaseMonthly.Jul_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Aug_NOA__c + LeaseMonthly.Aug_IA__c }" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Sep_NOA__c + LeaseMonthly.Sep_IA__c}" /></apex:outputText></td>
+	    				<td align="Right"><apex:outputText rendered="{!If(blnNOA && blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LeaseMonthly.Total_NOA_Annual_Rent__c + LeaseMonthly.Total_IA_Annual_Rent__c}" /></apex:outputText></td>
+    				</tr>
+    			</apex:repeat>
+			</table>
+	</apex:pageBlock>
+	
+ 	<apex:pageBlock title="CPI" rendered="{!If(DatasetCPI.Size > 0,TRUE,FALSE)}"> 
+   		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status - Record Type - Escalation Type - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetCPI}" var="CPIMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + CPIMonthly.ID}" id="theLink">{!CPIMonthly.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!CPIMonthly.EffectiveDate__c}" /> 
+						</apex:outputText>
+   						<apex:outputLabel value="{!' - ' + CPIMonthly.StatusCD__c}"/>
+   						<apex:outputLabel value="{!' - ' + CPIMonthly.RecordType.DeveloperName}"/>
+   						<apex:outputLabel value="{!' - ' + CPIMonthly.EscalationType__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!CPIMonthly.ProcessedDate__c}" /> 
+						</apex:outputText>
+   						<!-- <apex:outputText value="{{0, number, $###,###,##0}}">
+    						<apex:param value="{!CPIMonthly.AnnualAmount__c}" /> 
+						</apex:outputText> -->
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.OCT_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.NOV_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.DEC_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.FEB_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.MAR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.APR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.MAY_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.JUN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.JUL_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.AUG_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.SEP_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.OCT_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.NOV_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.DEC_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.FEB_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.MAR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.APR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.MAY_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.JUN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.JUL_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.AUG_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.SEP_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!CPIMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+	
+ 	<apex:pageBlock title="Lump Sum" rendered="{!If(DatasetLS.Size> 0,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status - Record Type - Lump Sum Type - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetLS}" var="LSMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + LSMonthly.LumpSum__r.ID}" id="theLink">{!LSMonthly.LumpSum__r.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!LSMonthly.LumpSum__r.EffectiveDate__c}" /> 
+						</apex:outputText>
+   						<apex:outputLabel value="{!' - ' + LSMonthly.LumpSum__r.StatusCd__c}"/>
+   						<apex:outputLabel value="{!' - ' + LSMonthly.LumpSum__r.RecordType.DeveloperName}"/>
+   						<apex:outputLabel value="{!' - ' + LSMonthly.LumpSum__r.LumSumType__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!LSMonthly.LumpSum__r.ProcessedDate__c}" /> 
+						</apex:outputText>
+   						<!-- <apex:outputText value="{{0, number, $###,###,##0}}">
+    						<apex:param value="{!LSMonthly.FY_Obligation__c}" /> 
+						</apex:outputText> -->
+
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Oct_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Nov_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Dec_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Feb_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Mar_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Apr_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.May_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Jun_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Jul_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Aug_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Sep_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Oct_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Nov_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Dec_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Feb_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Mar_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Apr_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.May_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Jun_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Jul_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Aug_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.Sep_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LSMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+    
+    <apex:pageBlock title="Step Rent" rendered="{!If(DatasetStepRent.Size> 0,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status - Record Type - Payment Type - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetStepRent}" var="SRMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + SRMonthly.ID}" id="theLink">{!SRMonthly.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!SRMonthly.EffectiveDate__c}" /> 
+						</apex:outputText>
+   						<apex:outputLabel value="{!' - ' + SRMonthly.StatusCode__c}"/>
+   						<apex:outputLabel value="{!' - ' + SRMonthly.RecordType.DeveloperName}"/>
+   						<apex:outputLabel value="{!' - ' + SRMonthly.PaymentType__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!SRMonthly.ProcessedDate__c}" /> 
+						</apex:outputText>
+   						<!--<apex:outputText value="{{0, number, $###,###,##0}}">
+    						<apex:param value="{!SRMonthly.Amount__c}" /> 
+						</apex:outputText>-->
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.OCT_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.NOV_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.DEC_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.FEB_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.MAR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.APR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.MAY_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.JUN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.JUL_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.AUG_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.SEP_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.OCT_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.NOV_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.DEC_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.FEB_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.MAR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.APR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.MAY_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.JUN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.JUL_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.AUG_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.SEP_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!SRMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+    
+     <apex:pageBlock title="IBAA" rendered="{!If(DatasetIBAA.Size> 0,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status Code - Type - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetIBAA}" var="IBAAMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + IBAAMonthly.ID}" id="theLink">{!IBAAMonthly.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!IBAAMonthly.EffectiveDate__c}" /> 
+						</apex:outputText>
+   						<apex:outputLabel value="{!' - ' + IBAAMonthly.StatusCd__c}"/>
+   						<apex:outputLabel value="{!' - ' + IBAAMonthly.Type__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!IBAAMonthly.ProcessedDate__c}" /> 
+						</apex:outputText>
+   						<!--<apex:outputText value="{{0, number, $###,###,##0}}">
+    						<apex:param value="{!IBAAMonthly.AuthorizedAmount__c}" /> 
+						</apex:outputText>-->
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.OCT_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.NOV_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.DEC_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.FEB_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.MAR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.APR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.MAY_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.JUN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.JUL_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.AUG_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.SEP_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.OCT_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.NOV_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.DEC_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.FEB_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.MAR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.APR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.MAY_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.JUN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.JUL_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.AUG_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.SEP_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!IBAAMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+    
+    <apex:pageBlock title="RWA" rendered="{!If(DatasetRWA.Size> 0,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status Code - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetRWA}" var="RWAMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + RWAMonthly.ID}" id="theLink">{!RWAMonthly.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!RWAMonthly.EffectiveDate__c}" /> 
+						</apex:outputText>
+						<apex:outputLabel value="{!' - ' + RWAMonthly.StatusCd__c}"/>
+						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!RWAMonthly.ProcessedDate__c}" /> 
+						</apex:outputText>
+   						<!-- <apex:outputText value="{{0, number, $###,###,##0}}">
+    						<apex:param value="{!RWAMonthly.Amount__c}" /> 
+						</apex:outputText>-->
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.OCT_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.NOV_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.DEC_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.FEB_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.MAR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.APR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.MAY_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.JUN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.JUL_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.AUG_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.SEP_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.OCT_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.NOV_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.DEC_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.FEB_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.MAR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.APR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.MAY_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.JUN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.JUL_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.AUG_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.SEP_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!RWAMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+
+    <apex:pageBlock title="Double Rent" rendered="{!If(DatasetDoubleRent.Size> 0,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status - Record Type - Project Type - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetDoubleRent}" var="DRMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + DRMonthly.Associated_Leases_Projects_ID__r.Project__r.ID}" id="theLink">{!DRMonthly.Associated_Leases_Projects_ID__r.Project__r.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!DRMonthly.Associated_Leases_Projects_ID__r.Project__r.EffectiveDate__c}" /> 
+						</apex:outputText>
+   						<apex:outputLabel value="{!' - ' + DRMonthly.Associated_Leases_Projects_ID__r.Project__r.eEorA__c}"/>
+   						<apex:outputLabel value="{!' - ' + DRMonthly.Associated_Leases_Projects_ID__r.Project__r.RecordType.DeveloperName}"/>
+   						<apex:outputLabel value="{!' - ' + DRMonthly.Associated_Leases_Projects_ID__r.Project__r.Project_Type__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!DRMonthly.Associated_Leases_Projects_ID__r.Project__r.ProcessedDate__c}" /> 
+						</apex:outputText>
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Oct_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Nov_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Dec_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Feb_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Mar_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Apr_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.May_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Jun_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Jul_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Aug_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Sep_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Oct_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Nov_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Dec_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Feb_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Mar_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Apr_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.May_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Jun_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Jul_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Aug_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.Sep_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!DRMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+    
+    <apex:pageBlock title="Associated Projects" rendered="{!If(AssociatedProjects.Size > 0,TRUE,FALSE)}"> 
+   		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>Project Number - Project Type - Status - Effective Date - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>Sq. Feet</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!AssociatedProjects}" var="ProjectMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + ProjectMonthly.ID}" id="theLink">{!ProjectMonthly.Name}</apex:outputLink></b>
+   						<apex:outputLabel value="{!' - ' + ProjectMonthly.Project_Type__c}"/>
+   						<apex:outputLabel value="{!' - ' + ProjectMonthly.eEorA__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!ProjectMonthly.EffectiveDate__c}" /> 
+						</apex:outputText>
+						<apex:outputLabel value=" - "/>
+						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!ProjectMonthly.ProcessedDate__c}" /> 
+						</apex:outputText>
+						<!--
+						<apex:outputLabel value=" - "/>
+						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!ProjectMonthly.ProcessedDate__c}" /> 
+						</apex:outputText>
+						-->
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SFTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, ###,###,##0}"><apex:param value="{!ProjectMonthly.ChangeinIASQFt__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.OCT_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.NOV_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.DEC_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.FEB_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.MAR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.APR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.MAY_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.JUN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.JUL_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.AUG_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.SEP_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.CY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SFTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, ###,###,##0}"><apex:param value="{!ProjectMonthly.ChangeinNOASQFt__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.OCT_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.NOV_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.DEC_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.FEB_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.MAR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.APR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.MAY_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.JUN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.JUL_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.AUG_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.SEP_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!ProjectMonthly.CY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+	
+   <apex:pageBlock title="Lease Proj. Lump Sum" rendered="{!If(DatasetLPLS.Size> 0,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status - Record Type - Lump Sum Type - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetLPLS}" var="LPLSMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + LPLSMonthly.LPLumpSum__r.ID}" id="theLink">{!LPLSMonthly.LPLumpSum__r.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!LPLSMonthly.LPLumpSum__r.EffectiveDate__c}" /> 
+						</apex:outputText>
+   						<apex:outputLabel value="{!' - ' + LPLSMonthly.LPLumpSum__r.StatusCd__c}"/>
+   						<apex:outputLabel value="{!' - ' + LPLSMonthly.LPLumpSum__r.RecordType.DeveloperName}"/>
+   						<apex:outputLabel value="{!' - ' + LPLSMonthly.LPLumpSum__r.LumSumType__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!LPLSMonthly.LPLumpSum__r.ProcessedDate__c}" /> 
+						</apex:outputText>
+   						<!--<apex:outputText value="{{0, number, $###,###,##0}}">
+    						<apex:param value="{!LPLSMonthly.FY_Obligation__c}" /> 
+						</apex:outputText>-->
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Oct_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Nov_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Dec_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Feb_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Mar_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Apr_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.May_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Jun_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Jul_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Aug_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Sep_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Oct_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Nov_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Dec_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Feb_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Mar_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Apr_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.May_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Jun_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Jul_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Aug_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.Sep_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPLSMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+    
+    <apex:pageBlock title="Lease Proj. Step Rent" rendered="{!If(DatasetProjectStepRent.Size> 0,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td colspan="15" align="left"><b>ID - Effective Date - Status - Record Type - Payment Type - Process Date</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>&nbsp;</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<apex:repeat value="{!DatasetProjectStepRent}" var="LPSRMonthly">
+   				<tr>
+   					<td colspan="15" align="left"><b><br/>
+   						<apex:outputLink target="_blank" value="{!'../' + LPSRMonthly.ID}" id="theLink">{!LPSRMonthly.Name}</apex:outputLink>
+   						<apex:outputLabel value=" - "/></b>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!LPSRMonthly.EffectiveDate__c}" /> 
+						</apex:outputText>
+   						<apex:outputLabel value="{!' - ' + LPSRMonthly.StatusCode__c}"/>
+   						<apex:outputLabel value="{!' - ' + LPSRMonthly.RecordType.DeveloperName}"/>
+   						<apex:outputLabel value="{!' - ' + LPSRMonthly.PaymentType__c}"/>
+   						<apex:outputLabel value=" - "/>
+   						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+    						<apex:param value="{!LPSRMonthly.ProcessedDate__c}" /> 
+						</apex:outputText>
+   						<!--<apex:outputText value="{{0, number, $###,###,##0.00}}">
+    						<apex:param value="{!LPSRMonthly.Amount__c}" /> 
+						</apex:outputText> -->
+   					</td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="IA" rendered="{!If(blnIA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.OCT_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.NOV_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.DEC_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.JAN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.FEB_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.MAR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.APR_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.MAY_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.JUN_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.JUL_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.AUG_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.SEP_IA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTIA" rendered="{!If(blnIA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.FY_Obligation_IA__c}" /></apex:outputText></td>
+   				</tr>
+   				<tr>
+    				<td align="Right"><b><apex:outputLabel value="NOA" rendered="{!If(blnNOA,TRUE,FALSE)}"/></b></td>
+    				<td align="Right">&nbsp;</td>
+    				<td align="Right"><apex:outputText ID="GLXY_OCTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.OCT_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_NOVNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.NOV_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_DECNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.DEC_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JANNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.JAN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_FEBNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.FEB_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MARNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.MAR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_APRNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.APR_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_MAYNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.MAY_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JUNNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.JUN_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_JULNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.JUL_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_AUGNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.AUG_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_SEPNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.SEP_NOA__c}" /></apex:outputText></td>
+    				<td align="Right"><apex:outputText ID="GLXY_CYTNOA" rendered="{!If(blnNOA,TRUE,FALSE)}" value="{0, number, $###,###,##0}"><apex:param value="{!LPSRMonthly.FY_Obligation_NOA__c}" /></apex:outputText></td>
+   				</tr>
+   			</apex:repeat>
+		</table>
+	</apex:pageBlock>
+    
+ 	<apex:pageBlock title="Lease Total" id="Total" rendered="{!If(LeaseInformation!=null,TRUE,FALSE)}">
+		<table border="0" width="100%">
+   			<tr>
+   				<td align="Right" width="6%">&nbsp;</td>
+   				<td align="Right" width="6%"><b>Sq. Feet</b></td>
+   				<td align="Right" width="6%"><b>Oct</b></td>
+   				<td align="Right" width="6%"><b>Nov</b></td>
+   				<td align="Right" width="6%"><b>Dec</b></td>
+   				<td align="Right" width="6%"><b>Jan</b></td>
+   				<td align="Right" width="6%"><b>Feb</b></td>
+   				<td align="Right" width="6%"><b>Mar</b></td>
+   				<td align="Right" width="6%"><b>Apr</b></td>
+   				<td align="Right" width="6%"><b>May</b></td>
+   				<td align="Right" width="6%"><b>Jun</b></td>
+   				<td align="Right" width="6%"><b>Jul</b></td>
+   				<td align="Right" width="6%"><b>Aug</b></td>
+   				<td align="Right" width="6%"><b>Sep</b></td>
+   				<td align="Right" width="6%"><b>FY Total</b></td>
+   			</tr>
+   			<tr>
+   				<td align="Right">&nbsp;</td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTSFT" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTOCT" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTNOV" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTDEC" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTJAN" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTFEB" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTMAR" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTAPR" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTMAY" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTJUN" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTJUL" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTAUG" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTSEP" value=""/></td>
+   				<td align="Right"><apex:outputText ID="GLXY_TOTCYT" value=""/></td>
+  			</tr>
+    	</table>	
+    </apex:pageBlock>
+    	
+ 	<script language = "Javascript">
+	
+ 		var blnValidLease = 'false'; //Assume no lease found ...
+		var Amount = '0';
+		var TotalAmountSFT = '0';
+		var TotalAmountOCT = '0';
+		var TotalAmountNOV = '0';
+		var TotalAmountDEC = '0';
+		var TotalAmountJAN = '0';
+		var TotalAmountFEB = '0';
+		var TotalAmountMAR = '0';
+		var TotalAmountAPR = '0';
+		var TotalAmountMAY = '0';
+		var TotalAmountJUN = '0';
+		var TotalAmountJUL = '0';
+		var TotalAmountAUG = '0';
+		var TotalAmountSEP = '0';
+		var TotalAmountCYT = '0';
+		
+ 		var elems = document.getElementsByTagName("*");
+		
+ 		for (var i=0, m=elems.length; i<m; i++) {
+			if (elems[i].id && elems[i].id.indexOf(":GLXY_") != -1) {
+				blnValidLease = 'true';
+	 			Amount = document.getElementById(elems[i].id).innerHTML;
+			    Amount = Amount.replace('$','');
+			    Amount = Amount.replace('$','').replace(',','').replace(',','').replace(',','').replace(' ',''); // Easy way to make sure that we handle big numbers, or more commas ...
+		    }
+		    if (elems[i].id && elems[i].id.indexOf(":GLXY_SFT") != -1) {
+		    	TotalAmountSFT = parseInt(TotalAmountSFT, 10) + parseInt(Amount, 10);
+		 	}
+		    if (elems[i].id && elems[i].id.indexOf(":GLXY_OCT") != -1) {
+		    	TotalAmountOCT = parseInt(TotalAmountOCT) + parseInt(Amount);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_NOV") != -1) {
+		    	TotalAmountNOV = parseInt(TotalAmountNOV, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_DEC") != -1) {
+		    	TotalAmountDEC = parseInt(TotalAmountDEC, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_JAN") != -1) {
+		    	TotalAmountJAN = parseInt(TotalAmountJAN, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_FEB") != -1) {
+		    	TotalAmountFEB = parseInt(TotalAmountFEB, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_MAR") != -1) {
+		    	TotalAmountMAR = parseInt(TotalAmountMAR, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_APR") != -1) {
+		    	TotalAmountAPR = parseInt(TotalAmountAPR, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_MAY") != -1) {
+		    	TotalAmountMAY = parseInt(TotalAmountMAY, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_JUN") != -1) {
+		    	TotalAmountJUN = parseInt(TotalAmountJUN, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_JUL") != -1) {
+		    	TotalAmountJUL = parseInt(TotalAmountJUL, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_AUG") != -1) {
+		    	TotalAmountAUG = parseInt(TotalAmountAUG, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_SEP") != -1) {
+		    	TotalAmountSEP = parseInt(TotalAmountSEP, 10) + parseInt(Amount, 10);
+		 	}
+		 	if (elems[i].id && elems[i].id.indexOf(":GLXY_CYT") != -1) {
+		 		TotalAmountCYT = parseInt(TotalAmountCYT, 10) + parseInt(Amount, 10);
+		 	}
+		}
+		
+		if(blnValidLease=='true') {
+			TotalAmountSFT = numberWithCommas(TotalAmountSFT);
+			TotalAmountOCT = '$' + numberWithCommas(TotalAmountOCT);
+			TotalAmountNOV = '$' + numberWithCommas(TotalAmountNOV);
+			TotalAmountDEC = '$' + numberWithCommas(TotalAmountDEC);
+			TotalAmountJAN = '$' + numberWithCommas(TotalAmountJAN);
+			TotalAmountFEB = '$' + numberWithCommas(TotalAmountFEB);
+			TotalAmountMAR = '$' + numberWithCommas(TotalAmountMAR);
+			TotalAmountAPR = '$' + numberWithCommas(TotalAmountAPR);
+			TotalAmountMAY = '$' + numberWithCommas(TotalAmountMAY);
+			TotalAmountJUN = '$' + numberWithCommas(TotalAmountJUN);
+			TotalAmountJUL = '$' + numberWithCommas(TotalAmountJUL);
+			TotalAmountAUG = '$' + numberWithCommas(TotalAmountAUG);
+			TotalAmountSEP = '$' + numberWithCommas(TotalAmountSEP);
+			TotalAmountCYT = '$' + numberWithCommas(TotalAmountCYT);
+			
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTSFT}').innerHTML = TotalAmountSFT;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTOCT}').innerHTML = TotalAmountOCT;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTNOV}').innerHTML = TotalAmountNOV;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTDEC}').innerHTML = TotalAmountDEC;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTJAN}').innerHTML = TotalAmountJAN;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTFEB}').innerHTML = TotalAmountFEB;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTMAR}').innerHTML = TotalAmountMAR;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTAPR}').innerHTML = TotalAmountAPR;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTMAY}').innerHTML = TotalAmountMAY;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTJUN}').innerHTML = TotalAmountJUN;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTJUL}').innerHTML = TotalAmountJUL;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTAUG}').innerHTML = TotalAmountAUG;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTSEP}').innerHTML = TotalAmountSEP;
+			document.getElementById('{!$Component.frmLease.Total.GLXY_TOTCYT}').innerHTML = TotalAmountCYT;
+		}
+				
+		function numberWithCommas(x) {
+    		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+	</script>
+	
+</apex:form> 	
+</apex:page>

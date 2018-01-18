@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_CO_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing CO Editors</description>
+        <label>IMT Leasing-CO-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_CO_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_CO_Superusers_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing CO Superusers</description>
+        <label>IMT Leasing-CO-Superusers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_CO_Superusers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_CO_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing CO Viewers</description>
+        <label>IMT Leasing-CO-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_CO_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_Editors</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IMT Leasing-Editors</label>
+        <sharedTo>
+            <group>IMT_Leasing_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R10_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R10 Editors</description>
+        <label>IMT Leasing-R10-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R10_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R10_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R10 Viewers</description>
+        <label>IMT Leasing-R10-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R10_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R11_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R11 Editors</description>
+        <label>IMT Leasing-R11-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R11_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>11</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R11_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R11 Viewers</description>
+        <label>IMT Leasing-R11-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R11_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>11</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R1_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R1 Editors</description>
+        <label>IMT Leasing-R1-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R1_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R1_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R1 Viewers</description>
+        <label>IMT Leasing-R1-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R1_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R2_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R2 Editors</description>
+        <label>IMT Leasing-R2-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R2_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R2_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R2 Viewers</description>
+        <label>IMT Leasing-R2-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R2_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R3_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R3-Editors</description>
+        <label>IMT Leasing-R3-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R3_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R3_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R3 Viewers</description>
+        <label>IMT Leasing-R3-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R3_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R4_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R4 Editors</description>
+        <label>IMT Leasing-R4-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R4_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>4</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R4_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R4 viewers</description>
+        <label>IMT Leasing-R4-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R4_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>4</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R5_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R5 Editors</description>
+        <label>IMT Leasing-R5-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R5_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>5</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R5_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rules for IMT Leasing R5 viewers</description>
+        <label>IMT Leasing-R5-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R5_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>5</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R6_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R6 Editors</description>
+        <label>IMT Leasing-R6-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R6_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>6</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R6_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R6 Viewers</description>
+        <label>IMT Leasing-R6-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R6_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>6</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R7_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R7 Editors</description>
+        <label>IMT Leasing-R7-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R7_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>7</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R7_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R7 Viewers</description>
+        <label>IMT Leasing-R7-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R7_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>7</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R8_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R8 Editors</description>
+        <label>IMT Leasing-R8-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R8_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>8</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R8_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R8 Viewers</description>
+        <label>IMT Leasing-R8-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R8_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>8</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R9_Editors_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule for IMT Leasing R9 Editors</description>
+        <label>IMT Leasing-R9-Editors-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R9_Editors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>9</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_R9_Viewers_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule for IMT Leasing R9 Viewers</description>
+        <label>IMT Leasing-R9-Viewers-Rule</label>
+        <sharedTo>
+            <group>IMT_Leasing_R9_Viewers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>9</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IMT_Leasing_Readers</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>IMT Leasing-Readers</label>
+        <sharedTo>
+            <group>IMT_Leasing_Readers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

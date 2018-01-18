@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Agency Protest Case object</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>SD_AgencyProtectFieldSet</fullName>
+        <description>Field Set to change the picklist values of Agency Protest Case</description>
+        <displayedFields>
+            <field>Decision_Grounds__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Disposition__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Oral_Presentations_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Potential_Timeliness_Issue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Region__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Service__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>SD_AgencyProtectFieldSet</label>
+    </fieldSets>
+    <fields>
+        <fullName>APO_Approval_Date__c</fullName>
+        <description>This field is updated when APO Approval happens in the Approval processes. Hidden field used for email reminders.</description>
+        <externalId>false</externalId>
+        <label>APO Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>APO_Approval_Reject_Date__c</fullName>
+        <description>Date a case was rejected during the APO Approval Process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date a case was rejected during the APO Approval Process.</inlineHelpText>
+        <label>APO Approval Reject Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>APO_Legal_Reject_Date__c</fullName>
+        <description>Date a case was rejected during the Legal Approval process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date a case was rejected during the Legal Approval process.</inlineHelpText>
+        <label>APO Legal Reject Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>APO_Submit_for_Approval__c</fullName>
+        <description>Field is updated when Submit for Approval happens in the Approval processes. Hidden field used for email reminders.</description>
+        <externalId>false</externalId>
+        <label>APO Submit for Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AP_Mark_for_Deletion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Mark for Deletion</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mark for Deletion</inlineHelpText>
+        <label>Mark for Deletion</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Decision_Date__c</fullName>
+        <description>Decision Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Decision Date</inlineHelpText>
+        <label>Decision Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agency_Counsel__c</fullName>
+        <description>Agency Counsel</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Agency Counsel</inlineHelpText>
+        <label>Agency Counsel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Response_Due_Date__c</fullName>
+        <description>Agency response due date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Agency response due date</inlineHelpText>
+        <label>Agency Response Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Case_Closed__c</fullName>
+        <description>Yes or No picklist field to determine if a case is closed.</description>
+        <externalId>false</externalId>
+        <label>Case Closed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case_Status__c</fullName>
+        <defaultValue>&quot;Pending Initial IO Review&quot;</defaultValue>
+        <description>Used to show the case status within the approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to show the case status within the approval process</inlineHelpText>
+        <label>Case Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Any additional comments on the case</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Any additional comments on the case</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comments_for_APO__c</fullName>
+        <description>Comments for APO</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments for APO</inlineHelpText>
+        <label>Comments for APO</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contracting_Officer__c</fullName>
+        <description>Contracting Officer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contracting Officer</inlineHelpText>
+        <label>Contracting Officer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Agency_Response_Received_by_APO__c</fullName>
+        <description>Date the agency response was received by the APO</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the agency response was received by the APO</inlineHelpText>
+        <label>Date Agency Response Received by APO</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Final_Written_Matters_ReceivedbyAPO__c</fullName>
+        <description>Date the final Written Matters were received by APO</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the final Written Matters were received by APO</inlineHelpText>
+        <label>Date Final Written Matters Rec&apos;d by APO</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Protest_Received_by_APO_35_Days__c</fullName>
+        <description>Date_Protest_Received_by_APO__c + 35 Days</description>
+        <externalId>false</externalId>
+        <formula>Date_Protest_Received_by_APO__c+35</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Date_Protest_Received_by_APO__c + 35 Days</inlineHelpText>
+        <label>Date Protest Received by APO +35 Days</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Protest_Received_by_APO_FY__c</fullName>
+        <description>Date Protest Received by APO financial year</description>
+        <externalId>false</externalId>
+        <formula>Text(YEAR( Date_Protest_Received_by_APO__c  + 92 ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Date Protest Received by APO FY</inlineHelpText>
+        <label>Date Protest Received by APO FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Protest_Received_by_APO__c</fullName>
+        <description>Date the protest was received by APO</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the protest was received by APO</inlineHelpText>
+        <label>Date Protest Received by APO</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Protest_Received_by_Agency__c</fullName>
+        <description>Date the protest was received by the Agency</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the protest was received by the Agency</inlineHelpText>
+        <label>Date Protest Received by Agency</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Decision_Grounds__c</fullName>
+        <description>The decision grounds for the case disposition</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The decision grounds for the case disposition</inlineHelpText>
+        <label>Decision Ground(s)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cancellation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Debriefing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flawed Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flawed Evaluation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other-Explained in Comments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Small Business Issue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Solicitation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unduly Restrictive Solicitation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unequal Treatment</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Decision_Sent_Date__c</fullName>
+        <description>Decision Sent Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Decision Sent Date</inlineHelpText>
+        <label>Decision Sent Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Destruction_Date__c</fullName>
+        <description>Destruction date for Agency Protest Cases is auto populated based on the Actual Decision Date. Destruction Date should be two years from the end of the Fiscal Year in which the Agency Protest decision was made. Destruction happens on October 1</description>
+        <externalId>false</externalId>
+        <formula>Date(if 
+(month( Actual_Decision_Date__c )&gt;=10, 
+year( Actual_Decision_Date__c )+3,year( Actual_Decision_Date__c )+2) 
+, 10, 1)</formula>
+        <inlineHelpText>Destruction Date is auto populated based on the Actual Decision Date. Destruction Date should be two years from the end of the Fiscal Year in which the Agency Protest decision was made. Destruction happens on October 1</inlineHelpText>
+        <label>Destruction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disposition__c</fullName>
+        <description>The case disposition</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The case disposition</inlineHelpText>
+        <label>Disposition</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <color>#E27001</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dismissed</fullName>
+                    <color>#3333FF</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <color>#990000</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Granted</fullName>
+                    <color>#006600</color>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Final_Written_Matters_Due_Date__c</fullName>
+        <description>Final Matters Due date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Final Matters Due date</inlineHelpText>
+        <label>Final Written Matters Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Integrity_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The individual ultimately responsible for the work on a case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The individual ultimately responsible for the work on a case.</inlineHelpText>
+        <label>Integrity Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Agency_Protest_Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_Currently_In_Approval_Approcess__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be checked when the approval process is triggered. This is used to trigger the sharing of SD Document Upload records to the current approver.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be checked when the approval process is triggered. This is used to trigger the sharing of SD Document Upload records to the current approver.</inlineHelpText>
+        <label>Is Currently In Approval Approcess</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Approval_Date__c</fullName>
+        <description>This field is updated when APO Legal Approval happens in the Approval processes. Hidden field used for email reminders.</description>
+        <externalId>false</externalId>
+        <label>Legal Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_days_in_APO_Approval__c</fullName>
+        <description>Field to get number of days in APO approval for email template.</description>
+        <externalId>false</externalId>
+        <formula>Today () -  APO_Submit_for_Approval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of days in APO Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_days_in_Legal_Approval__c</fullName>
+        <description>Field to get number of days in Legal approval for email template.</description>
+        <externalId>false</externalId>
+        <formula>Today() -  APO_Approval_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of days in Legal Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oral_Presentations_Date__c</fullName>
+        <description>Oral Presentations Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Oral Presentations Date</inlineHelpText>
+        <label>Oral Presentations Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Oral_Presentations_Needed__c</fullName>
+        <description>If Oral Presentations are needed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Oral Presentations are needed</inlineHelpText>
+        <label>Oral Presentations Needed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Decision_Grounds__c</fullName>
+        <description>Other Decision Ground(s)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Other Decision Ground(s)</inlineHelpText>
+        <label>Other Decision Ground(s)</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Written_Submissions__c</fullName>
+        <description>Other relevant written submissions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Other relevant written submissions</inlineHelpText>
+        <label>Other Written Submissions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Potential_Timeliness_Issue__c</fullName>
+        <description>Flag that there is a timeliness issue.</description>
+        <externalId>false</externalId>
+        <label>Potential Timeliness Issue</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Priority_or_Easy__c</fullName>
+        <description>Priority or Easy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Priority or Easy</inlineHelpText>
+        <label>Priority or Easy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Priority</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Easy</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Protester__c</fullName>
+        <description>The Protestor in the Case</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Protestor in the Case</inlineHelpText>
+        <label>Protester</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>The Region the protest was in</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Region the protest was in</inlineHelpText>
+        <label>Region</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scheduling_Conference_Date__c</fullName>
+        <description>Scheduling conference date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Scheduling conference date</inlineHelpText>
+        <label>Scheduling Conference Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service__c</fullName>
+        <description>The GSA Service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The GSA Service</inlineHelpText>
+        <label>Service</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PBS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OAS</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Y35_Day_Decision_Due_Date__c</fullName>
+        <description>Date Protest Received by Agency + 35 days</description>
+        <externalId>false</externalId>
+        <formula>CASE( 
+MOD( Date_Protest_Received_by_Agency__c + 35 - DATE( 1900, 1, 7 ), 7 ), 
+1, Date_Protest_Received_by_Agency__c + 35, 
+2, Date_Protest_Received_by_Agency__c + 35, 
+3, Date_Protest_Received_by_Agency__c + 35, 
+4, Date_Protest_Received_by_Agency__c + 35, 
+5, Date_Protest_Received_by_Agency__c + 35, 
+6, Date_Protest_Received_by_Agency__c + 37, 
+Date_Protest_Received_by_Agency__c + 36 
+)</formula>
+        <label>35-Day Decision Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Z35_Day_Deadline_Met__c</fullName>
+        <description>35 Day Deadline Met Yes or No</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+(Actual_Decision_Date__c&lt;=Date_Protest_Received_by_APO__c +35), 
+&apos;Yes&apos;, 
+&apos;No&apos;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>35 Day Deadline Met Yes or No</inlineHelpText>
+        <label>35-Day Deadline Met?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Agency Protest Case</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Protester__c</columns>
+        <columns>Priority_or_Easy__c</columns>
+        <columns>Integrity_Officer__c</columns>
+        <columns>Region__c</columns>
+        <columns>Service__c</columns>
+        <columns>Date_Protest_Received_by_Agency__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Marked_for_Deletion</fullName>
+        <columns>NAME</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Destruction_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AP_Mark_for_Deletion__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Marked for Deletion</label>
+        <sharedTo>
+            <group>Suspension_Debarment_Users</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>AP-{00000000}</displayFormat>
+        <label>Case Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Agency Protest Cases</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Protester__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Integrity_Officer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Region__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Service__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_Protest_Received_by_Agency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Priority_or_Easy__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AP_Mark_for_Deletion__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Protester__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Integrity_Officer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Region__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_Protest_Received_by_Agency__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Priority_or_Easy__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Protester__c</searchFilterFields>
+        <searchFilterFields>Integrity_Officer__c</searchFilterFields>
+        <searchFilterFields>Region__c</searchFilterFields>
+        <searchFilterFields>Service__c</searchFilterFields>
+        <searchFilterFields>Date_Protest_Received_by_Agency__c</searchFilterFields>
+        <searchFilterFields>LAST_UPDATE</searchFilterFields>
+        <searchFilterFields>UPDATEDBY_USER</searchFilterFields>
+        <searchFilterFields>OWNER.ALIAS</searchFilterFields>
+        <searchFilterFields>Priority_or_Easy__c</searchFilterFields>
+        <searchResultsAdditionalFields>Protester__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Integrity_Officer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Region__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Protest_Received_by_Agency__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Priority_or_Easy__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>APCase_Cannot_Be_Closed</fullName>
+        <active>true</active>
+        <errorConditionFormula>And( 
+Is_Currently_In_Approval_Approcess__c= TRUE,
+ISPICKVAL(Case_Closed__c, &apos;Yes&apos;))</errorConditionFormula>
+        <errorMessage>The case cannot be closed if the case is still in the approval process flow.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>APClose_Case_Rule</fullName>
+        <active>true</active>
+        <description>Check if Close Case is marked as &apos;Yes&apos;.</description>
+        <errorConditionFormula>ISPICKVAL(Case_Closed__c, &apos;Yes&apos;)
+&amp;&amp; NOT (ISCHANGED(Case_Closed__c )) 
+&amp;&amp; NOT (ISCHANGED(  AP_Mark_for_Deletion__c ))</errorConditionFormula>
+        <errorMessage>Record cannot be updated when Case Closed is marked as &apos;Yes&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Case_Closed_Val_Rule_1</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISCHANGED( Case_Closed__c ),  $Permission.Suspension_Debarment_Approval_User_RE )</errorConditionFormula>
+        <errorMessage>You do not have the permissions to close or reopen this case</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MarkforDeletionCheck</fullName>
+        <active>true</active>
+        <description>Check for Mark for Deletion is checked.</description>
+        <errorConditionFormula>AP_Mark_for_Deletion__c = true 
+&amp;&amp; NOT ((PRIORVALUE( AP_Mark_for_Deletion__c )) = false)
+&amp;&amp; NOT (ISCHANGED(  Case_Closed__c ))</errorConditionFormula>
+        <errorMessage>Record cannot be updated when Mark for Deletion is checked.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>APClose_Case</fullName>
+        <availability>online</availability>
+        <description>Button to update Close Case and lock record.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Close Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+
+var AP = new sforce.SObject(&quot;Agency_Protest_Case__c&quot;); 
+AP.id = &quot;{!Agency_Protest_Case__c.Id}&quot;; 
+
+AP.Close_Case__c = true; 
+result = sforce.connection.update([AP]); 
+
+if ( result[0].getBoolean( &quot;success&quot; ) ) 
+{ 
+window.location.reload(); 
+} 
+else 
+{ 
+alert( result[0].errors.message); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mark_for_Deletion</fullName>
+        <availability>online</availability>
+        <description>Mark for Deletion button</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mark for Deletion</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+
+var AP = new sforce.SObject(&quot;Agency_Protest_Case__c&quot;); 
+AP.id = &quot;{!Agency_Protest_Case__c.Id}&quot;; 
+
+  AP.AP_Mark_for_Deletion__c= true; 
+  result = sforce.connection.update([AP]); 
+
+  if ( result[0].getBoolean( &quot;success&quot; ) )
+          {
+               window.location.reload();
+          }
+          else
+          {
+               alert( result[0].errors.message);
+          }</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteBannerPhotoAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>FreezeUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LinkToSetupUserDetailAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ManagePermSetsAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>PasswordUnlockAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResetPasswordAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SmsHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UpdateBannerPhotoAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UserActivationAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Affiliation__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliation</label>
+        <length>24</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CHRIS_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>CHRIS ID</label>
+        <length>12</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Contact ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FAS_USER_ID__c</fullName>
+        <description>Lookup field for Chatter Migration from FAS to GSA Org</description>
+        <externalId>true</externalId>
+        <label>FAS_USER_ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GOVTPOC_COTAR__c</fullName>
+        <externalId>false</externalId>
+        <label>COTR for Contractors</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Glxy_Region_Code__c</fullName>
+        <description>Region code fireld used by the Galaxy2 system</description>
+        <externalId>false</externalId>
+        <label>Region Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_a_supervisor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if a user is a supervisory.</description>
+        <externalId>false</externalId>
+        <label>Is a supervisor?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MAJOR_ORG_DESCRIPTION__c</fullName>
+        <externalId>false</externalId>
+        <label>Master ORG Description</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAJOR_ORG__c</fullName>
+        <externalId>false</externalId>
+        <label>Master ORG</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManagerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Middle_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Middle Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Nickname__c</fullName>
+        <externalId>false</externalId>
+        <label>Nickname</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pers_Separation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Pers Separation Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pers_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Pers Start Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Separation_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE( VALUE(MID( Pers_Separation_Date__c , 7, 4)) , VALUE(MID( Pers_Separation_Date__c , 1, 2)) , VALUE(MID( Pers_Separation_Date__c , 4, 2)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Person Separation Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Person_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE( VALUE(MID( Pers_Start_Date__c , 7, 4)) , VALUE(MID( Pers_Start_Date__c , 1, 2)) , VALUE(MID( Pers_Start_Date__c , 4, 2)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Person Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SAML_Federation_ID_Custom__c</fullName>
+        <externalId>true</externalId>
+        <label>SAML Federation ID Custom</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standard_Salesforce_Placeholder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox shows whether this particular user is holding a Service Cloud license as part of the license mgt strategy in OCIO. If checked this is simply a placeholder account and can be traded in for a Platform license if needed. NO CRM DEPENDENCIES.</description>
+        <externalId>false</externalId>
+        <label>Standard Salesforce Placeholder</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>MID( Supervisor__c , 4,LEN( Supervisor__c )-37)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Supervisor Email</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <externalId>false</externalId>
+        <label>Supervisor</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisory_Status_Description__c</fullName>
+        <description>Describes the type of supervisor for a user.</description>
+        <externalId>false</externalId>
+        <label>Supervisory Status Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisory_Status__c</fullName>
+        <description>Code from CHRIS that identifies if an employee is a supervisor and the type of supervisor.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Code from CHRIS that identifies if an employee is a supervisor and the type of supervisor.</inlineHelpText>
+        <label>Supervisory Status</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UPN__c</fullName>
+        <externalId>false</externalId>
+        <label>UPN</label>
+        <length>64</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_License__c</fullName>
+        <externalId>false</externalId>
+        <formula>Profile.UserLicense.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User License</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Organization_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Name</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WORK_BUILDING_PRIMARY__c</fullName>
+        <externalId>false</externalId>
+        <label>Work Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>project_manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Manager</label>
+        <relationshipName>Users</relationshipName>
+        <restrictedAdminField>true</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>sm1e__Labor_Rate_Overtime__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Labor Rate Overtime</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Labor Rate Overtime</inlineHelpText>
+        <label>Labor Rate Overtime</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>sm1e__Labor_Rate_Regular__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Default Labor Rate used to calculate work order labor costs</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default Labor Rate used to calculate work order labor costs</inlineHelpText>
+        <label>Labor Rate Regular</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <listViews>
+        <fullName>ActiveUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active Users</label>
+    </listViews>
+    <listViews>
+        <fullName>AllUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Users</label>
+    </listViews>
+    <listViews>
+        <fullName>GSA_System_Administrators_Active</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>GSA System Administrator</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>GSA System Administrators - Active</label>
+    </listViews>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USERS.TITLE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USERS.DIVISION</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USERS.EMAIL</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.PHONE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.EXTENSION</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.CELL</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.PHONE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.EMAIL</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Cell_cannot_be_edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( MobilePhone ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>MobilePhone</errorDisplayField>
+        <errorMessage>Please access your Self-Service profile in GCIMS to update this field.  Your Mobile number will be updated in Salesforce shortly.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Department_Cannot_be_edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( Department ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>Department</errorDisplayField>
+        <errorMessage>This field must be updated in your personnel file located in CHRIS.  Please contact your HR representative for assistance.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Division_cannot_be_edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( Division ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>Division</errorDisplayField>
+        <errorMessage>This field must be updated in your personnel file located in CHRIS.  Please contact your HR representative for assistance.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Email_Cannot_be_Edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( Email ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>Email</errorDisplayField>
+        <errorMessage>This field can be edited only by a system administrator. Please contact the IT Service Desk.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EmployeeNumber_cannot_be_edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( EmployeeNumber ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>EmployeeNumber</errorDisplayField>
+        <errorMessage>This field can be edited only by a system administrator. Please contact the IT Service Desk.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Extension_cannot_be_edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( Extension ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>Extension</errorDisplayField>
+        <errorMessage>This field can be edited only by a system administrator. Please contact the IT Service Desk.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_cannot_be_edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( Fax ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>Fax</errorDisplayField>
+        <errorMessage>Please access your Self-Service profile in GCIMS to update this field.  Your Fax number will be updated in Salesforce shortly.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FirstName_Cannot_be_Edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED(FirstName), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>FirstName</errorDisplayField>
+        <errorMessage>This field can be edited only by a system administrator. Please contact the IT Service Desk.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LastName_Cannot_be_Edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED(LastName), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>LastName</errorDisplayField>
+        <errorMessage>This field can be edited only by a system administrator. Please contact the IT Service Desk.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_cannot_be_edited</fullName>
+        <active>true</active>
+        <description>Prevent users from editing this field. Only Administrators are allowed to edit this field.</description>
+        <errorConditionFormula>AND(ISCHANGED( Phone ), NOT(OR($Profile.Name = &quot;GSA System Administrator&quot;,$Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;GSA System User&quot;)))</errorConditionFormula>
+        <errorDisplayField>Phone</errorDisplayField>
+        <errorMessage>Please access your Self-Service profile in GCIMS to update this field.  Your phone number will be updated in Salesforce shortly.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>sm1e__Labor_Rate_Overtime_Non_Negative</fullName>
+        <active>false</active>
+        <description>Ensures that the Labor Rate Overtime is a Non-Negative Value</description>
+        <errorConditionFormula>False</errorConditionFormula>
+        <errorDisplayField>sm1e__Labor_Rate_Overtime__c</errorDisplayField>
+        <errorMessage>The Overtime Labor Rate must be a non-negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>sm1e__Labor_Rate_Regular_Non_Negative</fullName>
+        <active>false</active>
+        <description>Ensures that the Labor Rate Regular is a non-negative value</description>
+        <errorConditionFormula>False</errorConditionFormula>
+        <errorDisplayField>sm1e__Labor_Rate_Regular__c</errorDisplayField>
+        <errorMessage>The Regular Labor Rate must be a non-negative value</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,56 @@
+<apex:page standardController="Suspension_and_Debarment_Case__c" extensions="SDRespondentListController" id="RespPage">
+    <style>
+        .fewerMore {
+            display: none;
+        }
+    </style>
+    <apex:form id="RespForm">
+
+        <apex:pageblock id="RespList">
+
+            <apex:inputHidden id="name" value="{!Suspension_and_Debarment_Case__c.name}"/>
+            <p/>
+            <apex:inputHidden id="case_name" value="{!Suspension_and_Debarment_Case__c.Case_Name__c}"/>
+            <p/>
+            <apex:inputHidden id="integrity_officer" value="{!Suspension_and_Debarment_Case__c.OwnerId}"/>
+            <p/>
+            <apex:inputHidden id="integrity_officer_name"
+                              value="{!Suspension_and_Debarment_Case__c.Owner.Name}"/>
+            <p/>
+
+            <div align="center" draggable="false">
+                <apex:outputLink styleClass="btn" target="_parent" value="{!baseURL}/{!$Setup.Suspension_Debarment_Parameters__c.ReturnURL_Field_ID__c}/e?retURL={!Suspension_and_Debarment_Case__c.id}&RecordType={!$Setup.Suspension_Debarment_Parameters__c.RecordTypeID__c}&{!$Setup.Suspension_Debarment_Parameters__c.Case_Number_Field_ID__c}={!Suspension_and_Debarment_Case__c.name}&{!$Setup.Suspension_Debarment_Parameters__c.CaseNameText__c}={!Suspension_and_Debarment_Case__c.Case_Name__c}&{!$Setup.Suspension_Debarment_Parameters__c.Integrity_Officer_Name__c}={!Suspension_and_Debarment_Case__c.OwnerId}">
+                    New Respondent
+                </apex:outputLink>
+                <p/>
+            </div>
+
+            <apex:pageBlockTable value="{!respondentLineItems}" var="item" rendered="{!NULLVALUE(respondentLineItems.size,0)!=0}" id="RespondentTable">
+                <apex:column headervalue="Case Number">
+                    <apex:outputLink target="_parent" value="/{!item.id}">
+                        <apex:outputText value="{!item.name}"/>
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column value="{!item.respondentName}" headervalue="Respondent Name"/>
+                <apex:column value="{!item.closeCase}" headervalue="Case Closed"/>
+                <apex:column value="{!item.caseStatus}" headervalue="Status"/>
+                <apex:column value="{!item.suspensionDate}" headervalue="Suspension Date"/>
+                <apex:column value="{!item.proposalForDebarmentDate}" headervalue="P4D Date"/>
+                <apex:column value="{!item.debarmentDecisionDate}" headervalue="Debarment Date"/>
+                <apex:column value="{!item.commentsForSDO}" headervalue="Comments for SDO"/>
+            </apex:pageBlockTable>
+
+            <p>&nbsp;</p>
+
+            <apex:outputLabel value="No records to display" rendered="{!NULLVALUE(respondentLineItems.size,0)==0}"/>
+
+        </apex:pageblock>
+
+    </apex:form>
+
+    <script language="javascript">
+        function confirmDelete() {
+            return (confirm('Are you sure?'));
+        }
+    </script>
+</apex:page>

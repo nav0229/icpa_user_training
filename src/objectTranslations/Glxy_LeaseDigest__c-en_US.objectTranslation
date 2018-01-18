@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lease Digest</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lease Digests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Acceptance Date --></label>
+        <name>AcceptanceDT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accrual Amount For Digest --></label>
+        <name>AccrualAmountForDigest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Sq Ft --></label>
+        <name>Agreement_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Rent --></label>
+        <name>Annual_Rent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Award Date --></label>
+        <name>Award_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Accruals --></label>
+        <name>Count_of_Accruals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digest ID --></label>
+        <name>DigestID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digest Approval Date --></label>
+        <name>Digest_Approval_DT__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Actual Effective Date of the Action executed by the digest. (Can be Retro Active) --></help>
+        <label><!-- Digest Effective Date --></label>
+        <name>Digest_Effective_DT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Assigned by REXUS once Lease Digest action (R620) processed. --></help>
+        <label><!-- Digest Number --></label>
+        <name>Digest_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- IA Amount --></label>
+        <name>IA_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- IA/NOA Conversion Date --></label>
+        <name>IA_NOA_Conversion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- IA Sq Ft --></label>
+        <name>IA_RSF__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicator box that is selected when referencing an accrual associated with the digest action. --></help>
+        <label><!-- Include Accrual --></label>
+        <name>Include_Accrual__c</name>
+        <picklistValues>
+            <masterLabel>NO</masterLabel>
+            <translation><!-- NO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YES</masterLabel>
+            <translation><!-- YES --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Include Interest Indicator --></label>
+        <name>Include_Interest_Ind__c</name>
+        <picklistValues>
+            <masterLabel>NO</masterLabel>
+            <translation><!-- NO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YES</masterLabel>
+            <translation><!-- YES --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Interest Due (if paid after) --></label>
+        <name>Interest_Due_IF_Paid_After__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease Number --></label>
+        <name>LeaseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease Action --></label>
+        <name>Lease_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Rent --></label>
+        <name>Monthly_Rent__c</name>
+    </fields>
+    <fields>
+        <label><!-- NOA Amount --></label>
+        <name>NOA_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- NOA Sq Ft --></label>
+        <name>NOA_SQFT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDN&apos;s for Digest --></label>
+        <name>PDNsForDigest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Number --></label>
+        <name>ProjectNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- R620Link2 --></label>
+        <name>R620Link2__c</name>
+    </fields>
+    <fields>
+        <label><!-- R620Link --></label>
+        <name>R620Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Digest Action in PDF format that is uploaded into REXUS and linked to G2. --></help>
+        <label><!-- R620 --></label>
+        <name>R620__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Number --></label>
+        <name>SLA_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Funding Code --></label>
+        <name>Special_Funding_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suspend Indicator --></label>
+        <name>Suspend_Ind__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction --></label>
+        <name>Transaction__c</name>
+        <relationshipLabel><!-- Lease Digests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Urgent Indicator --></label>
+        <name>Urgent_Ind__c</name>
+    </fields>
+    <fields>
+        <label><!-- Void Digest --></label>
+        <name>Void_Digest_IND__c</name>
+    </fields>
+    <layouts>
+        <layout>Lease Digest Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Project Payment Lines --></label>
+            <section>Project Payment Lines</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The Lease Digest Acceptance Date cannot be NULL or Greater than current Date/Time when Include Interest is set to YES. --></errorMessage>
+        <name>Acceptance_Date_on_Include_Interest</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Acceptance Date must be NULL when Include interest is set to NO. --></errorMessage>
+        <name>Acceptance_Date_on_Include_interest_NO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- IA RSF Must be greater than 0 and  less than or equal to Lease Agreement RSF --></errorMessage>
+        <name>ISF_Less_than_Agreement_RSF</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Include Interest Indicator cannot be NULL --></errorMessage>
+        <name>Included_Interest_NOT_NULL</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change Include Accrual value from &apos;NO&apos; --></errorMessage>
+        <name>NoChange_on_Accrual_on_NO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Urgent Indicator cannot be changed if Suspend Flag is True. --></errorMessage>
+        <name>Verify_if_Urgent_on_Suspend_off</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Must remove existing Accrual records before setting this field to No or blank. --></errorMessage>
+        <name>Verify_no_existing_Accruals_on_No_value</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Open_R620 --></label>
+        <name>Open_R620</name>
+    </webLinks>
+</CustomObjectTranslation>

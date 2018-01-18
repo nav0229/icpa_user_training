@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Event Approval</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Event Approvals</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Step --></label>
+        <name>Approval_Step__c</name>
+        <picklistValues>
+            <masterLabel>HSSO</masterLabel>
+            <translation><!-- HSSO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAS</masterLabel>
+            <translation><!-- OAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervisor</masterLabel>
+            <translation><!-- Supervisor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the site where the conference is being held. Include the country if international travel is required. --></help>
+        <label><!-- Conference Venue --></label>
+        <name>Conference_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Actual # GSA Contractors --></label>
+        <name>EA_Actual_GSA_Contractors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please include all grants received.  If there were none, please enter a &quot;0&quot; in this field. --></help>
+        <label><!-- Actual Grants --></label>
+        <name>EA_Actual_Grants__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Actual # Non GSA Contractors --></label>
+        <name>EA_Actual_Non_GSA_Contractors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Actual # Non GSA Govt. Employees --></label>
+        <name>EA_Actual_Non_GSA_Govt_Employees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter &quot;0&quot; if no-one of this type is attending --></help>
+        <label><!-- Actual # Other Attendees --></label>
+        <name>EA_Actual_Other_Attendees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fill in actuals after the event has occurred. --></help>
+        <label><!-- Actual Other Revenue --></label>
+        <name>EA_Actual_Other_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please place a &quot;0&quot; if there is no value. --></help>
+        <label><!-- Actual Registration Fees Collected --></label>
+        <name>EA_Actual_Registration_Fees_Collected__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please include any Vendor Fees collected from a Vendor.  If there are no Vendor Fees, please place a &quot;0&quot; in this field. --></help>
+        <label><!-- Actual Vendor Fees --></label>
+        <name>EA_Actual_Vendor_Fees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Actual # of GSA Employees --></label>
+        <name>EA_Actual_of_GSA_Employees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please supply the Name Address and Phone number of two alternate locations --></help>
+        <label><!-- Alternate Location Considered --></label>
+        <name>EA_Alternate_Location_Considered__c</name>
+    </fields>
+    <fields>
+        <help><!-- If there is an existing contract attach a copy to this record. --></help>
+        <label><!-- Contract Status --></label>
+        <name>EA_Contract_Status__c</name>
+        <picklistValues>
+            <masterLabel>Existing</masterLabel>
+            <translation><!-- Existing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal</masterLabel>
+            <translation><!-- Proposal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contracting Vehicle Type --></label>
+        <name>EA_Contracting_Vehicle_Type__c</name>
+        <picklistValues>
+            <masterLabel>External, Third Party</masterLabel>
+            <translation><!-- External, Third Party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal With Contract</masterLabel>
+            <translation><!-- Internal With Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal, No Contract</masterLabel>
+            <translation><!-- Internal, No Contract --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>EA_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please fill in the Only the number of GSA participants that MUST travel --></help>
+        <label><!-- Est. # of GSA Attendees That Must Travel --></label>
+        <name>EA_Est_of_GSA_Attendees_That_Must_Travel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Helptext: Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Estimated # GSA Employees --></label>
+        <name>EA_Estimated_GSA_Employees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Estimated # GSA contractors --></label>
+        <name>EA_Estimated_GSA_contractors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please include any grants that you estimate that you will receive.  If there are none, please enter a &quot;0&quot; in this field. --></help>
+        <label><!-- Estimated Grants --></label>
+        <name>EA_Estimated_Grants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated # Non GSA Contractors --></label>
+        <name>EA_Estimated_Non_GSA_Contractors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Helptext: Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Estimated # Non GSA Govt Employees --></label>
+        <name>EA_Estimated_Non_GSA_Govt_Employees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Place a &quot;0&quot; here if there is no amount for this field. --></help>
+        <label><!-- Estimated Other Revenue --></label>
+        <name>EA_Estimated_Other_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Input any Registration fees you estimate that you will collect.  If there are no registration fees, then please enter a &quot;0&quot; in this field. --></help>
+        <label><!-- Estimated Registration Fees --></label>
+        <name>EA_Estimated_Registration_Fees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Total Travel Cost --></label>
+        <name>EA_Estimated_Total_Travel_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated VS Actual --></label>
+        <name>EA_Estimated_VS_Actual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please include any fees that will be charged to a vendor if attending the conference.  If there are no Vendor Fees, please place a &quot;0&quot; in this field. --></help>
+        <label><!-- Estimated Vendor Fees --></label>
+        <name>EA_Estimated_Vendor_Fees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please fill in &quot;0&quot; if no one of this type is attending --></help>
+        <label><!-- Estimated # of Other Attendees --></label>
+        <name>EA_Estimated_of_Other_Attendees__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Event Identifier is the Short Name of the event for example &quot;FOSE&quot;  
+The Event Name is the Long name of the event for example &quot;Federal Office Systems Expo&quot; --></help>
+        <label><!-- Event --></label>
+        <name>EA_Event_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event POC Email --></label>
+        <name>EA_Event_POC_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Point Of Contact Alternate Phone --></label>
+        <name>EA_Event_Point_Of_Contact_Alternate_Phon__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Event Point of Contact may not be the same as the submitter.  There may be someone who has attended the event previously or that has more knowledge of the event.  That Person should be populated here. --></help>
+        <label><!-- Event Point of Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Point of Contact must be a GSA employee. --></errorMessage>
+        </lookupFilter>
+        <name>EA_Event_Point_of_Contact__c</name>
+        <relationshipLabel><!-- Event Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expected Performance or Outcome --></label>
+        <name>EA_Expected_Performance_or_Outcome__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please explain reasons for not using FEDROOMS. --></help>
+        <label><!-- If not used, why not? If Yes, put N/A. --></label>
+        <name>EA_IF_FEDROOMS_Not_Used_Why__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please explain reasons for not using Travel MIS. --></help>
+        <label><!-- If not used, why not? If Yes, put N/A. --></label>
+        <name>EA_IF_Travel_MIS_Not_Used_Why__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe why you feel this is the best value to GSA. --></help>
+        <label><!-- IF Yes, Why? --></label>
+        <name>EA_IF_Yes_Why__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is not the best value to GSA, describe why this location was chosen. --></help>
+        <label><!-- If No, Why? --></label>
+        <name>EA_If_No_Why__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate how activity relates to the mission of GSA --></help>
+        <label><!-- Justification for meeting --></label>
+        <name>EA_Justification_for_meeting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Location --></label>
+        <name>EA_Office_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent of Estimated --></label>
+        <name>EA_Percent_of_Estimated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Briefly Describe justification for proposed city/location.  You have 255 characters. --></help>
+        <label><!-- Proposed Location Justification --></label>
+        <name>EA_Proposed_Location_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Travel Start Date --></label>
+        <name>EA_Proposed_Travel_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose or Objective --></label>
+        <name>EA_Purpose_or_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sponsoring Office --></label>
+        <name>EA_Sponsoring_Office__c</name>
+        <picklistValues>
+            <masterLabel>AA - Office of the Administrator</masterLabel>
+            <translation><!-- AA - Office of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK - Office of Civil Rights</masterLabel>
+            <translation><!-- AK - Office of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B - Office of the Chief Financial Officer</masterLabel>
+            <translation><!-- B - Office of the Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C - Office of Human Resource Management</masterLabel>
+            <translation><!-- C - Office of Human Resource Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D - Office of Mission Assurance</masterLabel>
+            <translation><!-- D - Office of Mission Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E - Office of Small Business Utilization</masterLabel>
+            <translation><!-- E - Office of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G - Civilan Board of Contract Appeals</masterLabel>
+            <translation><!-- G - Civilan Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H - Office of Administrative Services</masterLabel>
+            <translation><!-- H - Office of Administrative Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I - Office of the Chief Information Officer</masterLabel>
+            <translation><!-- I - Office of the Chief Information Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J - Office of the Inspector General</masterLabel>
+            <translation><!-- J - Office of the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L - Office of General Counsel</masterLabel>
+            <translation><!-- L - Office of General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M - Office of Governmentwide Policy</masterLabel>
+            <translation><!-- M - Office of Governmentwide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O - Office of Customer Experience</masterLabel>
+            <translation><!-- O - Office of Customer Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P - Public Buildings Service</masterLabel>
+            <translation><!-- P - Public Buildings Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q - Federal Acquisition Service</masterLabel>
+            <translation><!-- Q - Federal Acquisition Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S - Office of Congressional &amp; Intergovernmental Affairs</masterLabel>
+            <translation><!-- S - Office of Congressional &amp; Intergovernmental Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z - Office of Strategic Communication</masterLabel>
+            <translation><!-- Z - Office of Strategic Communication --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>EA_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Actuals</masterLabel>
+            <translation><!-- Waiting for Actuals --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>EA_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Audience --></label>
+        <name>EA_Target_Audience__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Actual Expenses --></label>
+        <name>EA_Total_Actual_Expenses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Actual Participants --></label>
+        <name>EA_Total_Actual_Participants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Actual Revenue --></label>
+        <name>EA_Total_Actual_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Estimated Expenses --></label>
+        <name>EA_Total_Estimated_Expenses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Estimated Participants --></label>
+        <name>EA_Total_Estimated_Participants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Estimated Revenue --></label>
+        <name>EA_Total_Estimated_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Was Travel MIS used to pick event site? --></label>
+        <name>EA_Travel_MIS_used__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Estimated Other Participants --></label>
+        <name>Estimated_Other_Participants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated # GSA Employees --></label>
+        <name>Estimated_Participants__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your conference or event has been cancelled, please check this box. --></help>
+        <label><!-- Event Canceled --></label>
+        <name>Event_Canceled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disclaimer --></label>
+        <name>Event_Disclaimer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event POC Phone --></label>
+        <name>Event_POC_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Status Hidden --></label>
+        <name>Event_Type_Hidden__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who is my HSSO approver? 
+See GSA HSSO Approver Listing at https://insite.gsa.gov/portal/content/669402 --></help>
+        <label><!-- HSSO --></label>
+        <name>HSSO__c</name>
+        <relationshipLabel><!-- Event Approvals (HSSO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Does the proposed site (Location and Venue) Represent the best value to the Government, cost and all relevant factors considered? --></help>
+        <label><!-- Is this Best Value --></label>
+        <name>Is_this_Best_Value__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Link to HSSO Approver List page --></label>
+        <name>Link_to_HSSO_Approver_List_page__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide an 80 character or less description of why &quot;Other&quot; was chosen for the State. --></help>
+        <label><!-- Other State Reason --></label>
+        <name>Other_State_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Travel End Date --></label>
+        <name>Proposed_Travel_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please select the region for the requesting event --></help>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>Central Office</masterLabel>
+            <translation><!-- Central Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 11</masterLabel>
+            <translation><!-- Region 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>AK</masterLabel>
+            <translation><!-- AK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL</masterLabel>
+            <translation><!-- AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Samoa</masterLabel>
+            <translation><!-- American Samoa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT</masterLabel>
+            <translation><!-- CT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE</masterLabel>
+            <translation><!-- DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL</masterLabel>
+            <translation><!-- FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA</masterLabel>
+            <translation><!-- GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guam</masterLabel>
+            <translation><!-- Guam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HI</masterLabel>
+            <translation><!-- HI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA</masterLabel>
+            <translation><!-- IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID</masterLabel>
+            <translation><!-- ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KS</masterLabel>
+            <translation><!-- KS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY</masterLabel>
+            <translation><!-- KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD</masterLabel>
+            <translation><!-- MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MI</masterLabel>
+            <translation><!-- MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN</masterLabel>
+            <translation><!-- MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO</masterLabel>
+            <translation><!-- MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor Outlying Islands</masterLabel>
+            <translation><!-- Minor Outlying Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ND</masterLabel>
+            <translation><!-- ND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE</masterLabel>
+            <translation><!-- NE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NJ</masterLabel>
+            <translation><!-- NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM</masterLabel>
+            <translation><!-- NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NV</masterLabel>
+            <translation><!-- NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northern Mariana Islands</masterLabel>
+            <translation><!-- Northern Mariana Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OH</masterLabel>
+            <translation><!-- OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puerto Rico</masterLabel>
+            <translation><!-- Puerto Rico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RI</masterLabel>
+            <translation><!-- RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD</masterLabel>
+            <translation><!-- SD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN</masterLabel>
+            <translation><!-- TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX</masterLabel>
+            <translation><!-- TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Virgin Islands</masterLabel>
+            <translation><!-- U.S. Virgin Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UT</masterLabel>
+            <translation><!-- UT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VT</masterLabel>
+            <translation><!-- VT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WA</masterLabel>
+            <translation><!-- WA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WI</masterLabel>
+            <translation><!-- WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WV</masterLabel>
+            <translation><!-- WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WY</masterLabel>
+            <translation><!-- WY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervisor --></label>
+        <name>Supervisor__c</name>
+        <relationshipLabel><!-- Event Approvals (Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Estimated Attendee Expenses --></label>
+        <name>Total_Estimated_Attendee_Expenses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Was FEDROOMS used to pick event venue? --></label>
+        <name>Was_FEDROOMS_used_to_pick_event_venue__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>Zip_code__c</name>
+    </fields>
+    <layouts>
+        <layout>Awards Ceremony (With Food)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Initial Approvers --></label>
+            <section>Initial Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Participants Information --></label>
+            <section>Participants Information</section>
+        </sections>
+        <sections>
+            <label><!-- Proposed Location And Justification --></label>
+            <section>Proposed Location And Justification</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>GSA Sponsored Conference Layout</layout>
+        <sections>
+            <label><!-- Contract Vehicle for Hosting --></label>
+            <section>Contract Vehicle for Hosting</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Initial Approvers --></label>
+            <section>Initial Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Participants Information --></label>
+            <section>Participants Information</section>
+        </sections>
+        <sections>
+            <label><!-- Proposed Location and Justification --></label>
+            <section>Proposed Location and Justification</section>
+        </sections>
+        <sections>
+            <label><!-- Revenue/Fees --></label>
+            <section>Revenue/Fees</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Non GSA Sponsored Conference</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description/Justification --></label>
+            <section>Description/Justification</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Regional Internal Management Meeting</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description/Justification --></label>
+            <section>Description/Justification</section>
+        </sections>
+        <sections>
+            <label><!-- Initial Approvers --></label>
+            <section>Initial Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Meeting Location --></label>
+            <section>Meeting Location</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Awards Ceremony (With Cost) --></label>
+        <name>EA_Awards_Ceremony_With_Food</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- GSA Sponsored Conference --></label>
+        <name>EA_GSA_Sponsored_Conference</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Internal Management Meeting --></label>
+        <name>EA_Internal_Management_Meeting</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Non GSA Sponsored Conference --></label>
+        <name>Non_GSA_Sponsored_Conference</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot fill in the actual amounts until the event has ended. --></errorMessage>
+        <name>Actuals_For_Revenue_and_Attendees</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date cannot be before Start Date. --></errorMessage>
+        <name>End_Date_cannot_be_before_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Estimated Total Travel Cost Cannot be a negative amount or &quot;0&quot;.  Please enter a valid amount --></errorMessage>
+        <name>Estimated_Total_Trvl_cost_cannot_be_neg</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must submit a reason for choosing &quot;Other&quot; for the Proposed Location State. --></errorMessage>
+        <name>Must_submit_reason_for_State_Other</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Estimated Number of GSA Attendees cannot be a negative number --></errorMessage>
+        <name>Number_cannot_be_negative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Estimated Revenuecannot be a negative number. Please Review all estimated Revenue Entriesto determine if any have negative values.  If so, please correct to a positive value or &quot;o&quot; --></errorMessage>
+        <name>Total_Est_Revenue_cannot_be_negative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Estimated Expenses cannot be a zero or a negative number. Please Review all estimated expenses to determine if any have negative values.  If so, please correct to a positive value. --></errorMessage>
+        <name>Total_Expenses_cannot_be_negative_or_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Proposed Travel End Date cannot be before Proposed Travel Start Date. --></errorMessage>
+        <name>Trav_End_Date_cant_be_before_Start_Date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Event_Expense --></label>
+        <name>New_Event_Expense</name>
+    </webLinks>
+</CustomObjectTranslation>

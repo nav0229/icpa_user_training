@@ -1,0 +1,51 @@
+<apex:page readOnly="true" standardController="IDP__c" extensions="IDP_activitySecOnIDPStdPage" >
+    <apex:form >
+        <apex:pageBlock title="List of All Associated Activities">
+            <!----------------------------------- List of All Associated Activity in Activity page ------------------------------------------>
+            
+            <td width="100%">
+                
+                <apex:pageBlockTable value="{!activityWrapperList}" var="ActivityWrap" id="activitiestabel1" >
+                    <apex:column headerValue="Action" width="5%" >
+                    <apex:outputLink value="/{!ActivityWrap.Activity.Id}/e?retURL={!ActivityWrap.Activity.IDP_ID__c}" target="_blank">Edit</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Related Objective Text" width="20%" >
+                        <apex:outputtext value="{!ActivityWrap.Activity.Developmental_Objective__r.Objective__c}"/>
+                    </apex:column>
+                    
+                    
+                    <!-- <apex:column headervalue="Activity Name" value="{!ActivityWrap.Activity.Name}"/ --> 
+                    
+                    <!-- apex:column headerValue="Activity ID" width="10%" value="{!ActivityWrap.Activity.Name}"/ -->
+                    
+                    
+                    <apex:column headervalue="Activity Name" width="25%" value="{!ActivityWrap.Activity.Assignment_Title__c}"/>
+                    
+                    <apex:column headerValue="Start Date" width="9%">
+                     <apex:outputText value="{0,date,MM/dd/yyyy}">
+                         <apex:param value="{!ActivityWrap.Activity.Planned_Start_Date__c}"/>
+                         </apex:outputText> 
+                    </apex:column>
+                    
+                    <apex:column headerValue="End Date" width="9%">
+                         <apex:outputText value="{0,date,MM/dd/yyyy}">
+                             <apex:param value="{!ActivityWrap.Activity.Planned_End_Date__c}"/>
+                         </apex:outputText> 
+                    </apex:column>
+                    
+                    <apex:column headerValue="Required Date" width="9%">
+                        <apex:outputText value="{0,date,MM/dd/yyyy}">
+                            <apex:param value="{!ActivityWrap.Activity.Required_Date__c}"/>
+                        </apex:outputText> 
+                    </apex:column>
+                                            
+                    <apex:column headervalue="Type" width="17%" value="{!ActivityWrap.Activity.Activity_Type__c}"/>
+                    
+                    <apex:column headervalue="Total Cost" value="{!ActivityWrap.Activity.Total_Cost__c}"/>
+                
+                </apex:pageBlockTable>
+            </td>
+            <!------------------------------------------------------------------------------------------------------------>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,185 @@
+<apex:page id="profilePage" controller="TitleVIProfileController" tabStyle="My_Profile__tab">
+    <style>
+        .errorClass{
+            border:2px solid red;
+        }
+    </style>
+    
+    <script>        
+        function validate() {
+            var lastName = document.getElementById('profilePage:profileForm:profileBlock:editSection:editLastNameItem:lastName');
+            var phone = document.getElementById('profilePage:profileForm:profileBlock:editSection:editPhoneItem:phone');
+            var email = document.getElementById('profilePage:profileForm:profileBlock:editSection:editEmailItem:email');
+
+            var noError = true;            
+            noError = requiredFields(lastName) && noError;
+            noError = requiredFields(phone) && noError;
+            
+            if (noError) {
+                noError = validateEmail(email) && noError;
+                if (noError) {
+                    saveContactJS();
+                } else {
+                    emailErrorJS();
+                }
+            } else {
+                requiredErrorJS();
+            }
+        }
+        
+        function requiredFields(fName) {
+            fName.className = '';
+            if(fName.value == null || fName.value == '') {
+                fName.className = 'errorClass';
+                return false;
+            } else {
+                return true;
+            }
+        }
+        
+        function validateEmail(fName) {
+            if (fName.value == null || fName.value == '') {
+                return true;
+            }
+            var x = fName.value;
+            var atpos = x.indexOf("@");
+            var dotpos = x.lastIndexOf(".");
+            
+            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                fName.className = 'errorClass';
+                return false;
+            } else {
+                return true;
+            }
+        }        
+    </script>
+        
+    <apex:form id="profileForm">    
+        
+        <apex:actionFunction action="{!saveContact}" name="saveContactJS" rerender="profileBlock"/>
+        <apex:actionFunction action="{!requiredError}" name="requiredErrorJS" rerender="rPanel"/>
+        <apex:actionFunction action="{!emailError}" name="emailErrorJS" rerender="rPanel"/>
+            
+        <apex:pageBlock id="profileBlock" title="Profile">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Edit" action="{!editContact}" rendered="{!!isEdit}" reRender="profileBlock"/>
+                <apex:commandButton value="Save" onclick="validate();return false;" rendered="{!isEdit}" />
+                <apex:commandButton value="Cancel" action="{!cancelAction}" rendered="{!isEdit}" reRender="profileBlock"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1" rendered="{!!isEdit}">
+	            <apex:pageBlockSectionItem >
+	                <apex:outputLabel >Name</apex:outputLabel>
+	                <apex:outputText value="{!acctName}"/>
+	            </apex:pageBlockSectionItem> 
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Address</apex:outputLabel>
+                    <apex:outputText > {!billingStreet} <br/> <apex:outputText value="{!billingCity}, " rendered="{!NOT(billingCity==null)}"/> {!billingState} {!billingPostalCode} <br/> {!billingCountry}</apex:outputText>
+                </apex:pageBlockSectionItem> 
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >County</apex:outputLabel>
+                    <apex:outputText value="{!billingCounty}"/>
+                </apex:pageBlockSectionItem> 
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Contact Name</apex:outputLabel>
+                    <apex:outputText >{!firstName} {!lastName}</apex:outputText>
+                </apex:pageBlockSectionItem>                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Title</apex:outputLabel>
+                    <apex:outputText value="{!title}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >AKA (Nickname)</apex:outputLabel>
+                    <apex:outputText value="{!nickname}"/>
+                </apex:pageBlockSectionItem>                                                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Phone</apex:outputLabel>
+                    <apex:outputText value="{!phone}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Fax</apex:outputLabel>
+                    <apex:outputText value="{!fax}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Email</apex:outputLabel>
+                    <apex:outputText value="{!email}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Contact Via</apex:outputLabel>
+                    <apex:outputText value="{!contactVia}"/>
+                </apex:pageBlockSectionItem>
+                                                                
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection id="editSection" columns="1" rendered="{!isEdit}">
+                <div style="color:red;font-size:12px;"> * - Required Fields </div>
+	            <apex:outputpanel id="rPanel">
+	                <center>
+	                    <div id="reqField" style="color:red;font-weight:bold;"> 
+	                        <apex:outputText value="Please fill all the required field(s)" rendered="{!isRequiredError}"/>
+	                        <apex:outputText value="Please enter a valid email" rendered="{!isEmailError}"/>
+	                    </div>
+	                </center>
+	            </apex:outputpanel>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Name</apex:outputLabel>
+                    <apex:outputText value="{!acctName}"/>
+                </apex:pageBlockSectionItem> 
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Address</apex:outputLabel>
+                    <apex:outputText > {!billingStreet} <br/> <apex:outputText value="{!billingCity}, " rendered="{!NOT(billingCity==null)}"/> {!billingState} {!billingPostalCode} <br/> {!billingCountry}</apex:outputText>
+                </apex:pageBlockSectionItem> 
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >County</apex:outputLabel>
+                    <apex:outputText value="{!billingCounty}"/>
+                </apex:pageBlockSectionItem>                
+ 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="First Name"/>
+                    <apex:inputText value="{!firstName}"/>
+                </apex:pageBlockSectionItem>            
+                <apex:pageBlockSectionItem id="editLastNameItem">
+                    <apex:outputPanel >
+                        <apex:outputLabel value="Last Name"/><font style="color:red;font-size:14px;"> * </font>
+                    </apex:outputPanel>
+                    <apex:inputText id="lastName" value="{!lastName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Title</apex:outputLabel>
+                    <apex:inputText value="{!title}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >AKA (Nickname)</apex:outputLabel>
+                    <apex:inputText value="{!nickname}"/>
+                </apex:pageBlockSectionItem>                                                
+                <apex:pageBlockSectionItem id="editPhoneItem">
+                    <apex:outputPanel >
+                        <apex:outputLabel >Phone</apex:outputLabel> <font style="color:red;font-size:14px;"> * </font>
+                    </apex:outputPanel>
+                    <apex:inputText id="phone" value="{!phone}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Fax</apex:outputLabel>
+                    <apex:inputText value="{!fax}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="editEmailItem">
+                    <apex:outputLabel >Email</apex:outputLabel>
+                    <apex:inputText id="email" value="{!email}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Contact Via</apex:outputLabel>
+                    <apex:selectList value="{!contactVia}" size="1">
+                        <apex:selectOptions value="{!contactViaList}"/>
+                    </apex:selectList>                    
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>        
+</apex:page>

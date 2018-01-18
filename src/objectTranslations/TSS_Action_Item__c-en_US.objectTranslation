@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TSS Action Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TSS Action Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Deferred Justification --></label>
+        <name>Action_Item_Deferred_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Item Instructions --></label>
+        <name>Action_Item_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Plan FY --></label>
+        <name>Action_Plan_FY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Completion Date --></label>
+        <name>Actual_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mark &quot;Checked&quot; if this Action Item addresses a specific comment from TSS --></help>
+        <label><!-- Addresses a Comment --></label>
+        <name>Addresses_a_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Consulted --></label>
+        <name>Agency_Consulted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deferred Completion Date --></label>
+        <name>Deferred_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Completion Date --></label>
+        <name>Estimated_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Cost --></label>
+        <name>Estimated_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Explanation of Cancellation --></label>
+        <name>Explanation_of_Cancellation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extent of Issue --></label>
+        <name>Extent_of_Issue__c</name>
+        <picklistValues>
+            <masterLabel>Building</masterLabel>
+            <translation><!-- Building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tenant(Agency)</masterLabel>
+            <translation><!-- Tenant(Agency) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Issue Description --></label>
+        <name>Issue_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Resolution --></label>
+        <name>Issue_Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Deferred --></label>
+        <name>Item_Deferred__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Code Plus --></label>
+        <name>Location_Code_Plus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Service Category --></label>
+        <name>Other_Service_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Category --></label>
+        <name>Service_Category__c</name>
+        <picklistValues>
+            <masterLabel>Condition of Facility (functional, repairs needed)</masterLabel>
+            <translation><!-- Condition of Facility (functional, repairs needed) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elevators</masterLabel>
+            <translation><!-- Elevators --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Know who to call on Building issues</masterLabel>
+            <translation><!-- Know who to call on Building issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overall Satisfaction</masterLabel>
+            <translation><!-- Overall Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Workspace</masterLabel>
+            <translation><!-- Personal Workspace --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality of Cleanliness</masterLabel>
+            <translation><!-- Quality of Cleanliness --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TSS Result and Action Plan --></label>
+        <name>TSS_Result_Action_Plan__c</name>
+        <relationshipLabel><!-- TSS Action Items --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>TSS Action Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deferred --></label>
+            <section>Deferred</section>
+        </sections>
+        <sections>
+            <label><!-- Issue --></label>
+            <section>Issue</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Actual Completion Date can be no more than two days in the future. Please choose a different date or update this date after the Actual Completion Date. --></errorMessage>
+        <name>Actual_Completion_can_not_be_future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide justification and completion date if action item is deferred. --></errorMessage>
+        <name>TSS_Action_Item_Deferred_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Action Item name must be less than 40 characters --></errorMessage>
+        <name>TSS_Action_Item_Name_length_limitation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Actual Completed Date is required to complete an Action Item. --></errorMessage>
+        <name>TSS_Completed_Date_is_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Action Items MUST be completed on or before 06/01/2018 --></errorMessage>
+        <name>TSS_Est_Completion_Date_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Estimated Completion Date must be a future date. --></errorMessage>
+        <name>TSS_Estimated_date_must_be_future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Explanation of Cancellation is required to Cancel an Action Item. --></errorMessage>
+        <name>TSS_Explan_for_Cancellation_is_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You don&apos;t have permissions to modify/change the Action Item details for this Action Plan. Please contact the Property Manager of the Action Plan. --></errorMessage>
+        <name>TSS_No_access_to_modify_the_action_items</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You don&apos;t have permissions to create a new Action Items for this Action Plan. Please contact the Property Manager of the Action Plan. --></errorMessage>
+        <name>TSS_Not_able_to_create_the_action_items</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Other Service Category is required if Service Category is Other. --></errorMessage>
+        <name>TSS_Other_Service_Category_is_required</name>
+    </validationRules>
+</CustomObjectTranslation>

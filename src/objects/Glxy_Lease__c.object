@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>GLXY_HelpPage</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains lease information at the beginning of the fiscal year.  This information is updated at the beginning of each fiscal year.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Antennas__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Antennas</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apr_IA__c</fullName>
+        <description>Updated in R2.4; earlier formula - (CostPerSqFt__c * Total_IA_Sq_feet__c ) / 12</description>
+        <externalId>false</externalId>
+        <formula>(BaseAnnualRent__c *  IAPercentage__c)/12</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>APR IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Apr_NOA__c</fullName>
+        <description>Updated in R2.4; earlier formula -
+( CostPerSqFt__c * IF(ParkingOnly__c = &quot;No&quot;, Total_NOA_Sq_feet__c, BaseStructuredParkingSpaces__c + BaseSurfaceParkingSpaces__c ) )/12</description>
+        <externalId>false</externalId>
+        <formula>(BaseAnnualRent__c *  NOAPercentage__c)/12</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>APR NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Aug_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AUG IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Aug_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AUG NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BA53User__c</fullName>
+        <description>BA53 analysts assigned to lease.</description>
+        <externalId>false</externalId>
+        <label>BA53 Budget Analyst</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BaseAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Be sure to click save to adjust monthly impact.</inlineHelpText>
+        <label>Base Annual Rent</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BaseLeaseEffectiveDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BaseSquareFeet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Base Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BaseStructParkingSpacesRollup__c</fullName>
+        <description>This field is used for Validation purposes of Base Structure Parking Spaces in Lease Agencies</description>
+        <externalId>false</externalId>
+        <label>Base Structured Parking Spaces - Roll-up</label>
+        <summarizedField>Glxy_LeaseAgencies__c.BaseStructuredParkingSpaces__c</summarizedField>
+        <summaryForeignKey>Glxy_LeaseAgencies__c.LeaseNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BaseStructuredParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Parking spaces available in a parking structure/garage.</description>
+        <externalId>false</externalId>
+        <label>Base Structured Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BaseSurfParkingSpacesRollup__c</fullName>
+        <description>This field is used for Validation purposes of Base Surface Parking Spaces in Lease Agencies</description>
+        <externalId>false</externalId>
+        <label>Base Surface Parking Spaces - Roll-up</label>
+        <summarizedField>Glxy_LeaseAgencies__c.BaseSurfaceParkingSpaces__c</summarizedField>
+        <summaryForeignKey>Glxy_LeaseAgencies__c.LeaseNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BaseSurfaceParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Parking spaces available in a parking lot.</description>
+        <externalId>false</externalId>
+        <label>Base Surface Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ConstructProspectusIND__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Construct Prospectus Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ConstructProspectusNO__c</fullName>
+        <externalId>false</externalId>
+        <label>Construct Prospectus Number</label>
+        <length>13</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CostPerSqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>BaseAnnualRent__c / IF(BaseSquareFeet__c &lt;&gt; 0, BaseSquareFeet__c ,if( ParkingOnly__c = &quot;Yes&quot; ,BaseStructuredParkingSpaces__c + BaseSurfaceParkingSpaces__c ,1 ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cost Per Sq Foot</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dec_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DEC IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dec_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DEC NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DelegatedLease__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicator Box populated with a check if designated as a Delegated Lease in REXUS.</inlineHelpText>
+        <label>Delegated Lease</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delegated_Lease_Rep_lkp__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DelegatedLease__c = true, &apos;True&apos;, &apos;False&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Delegated Lease</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DigestID__c</fullName>
+        <externalId>false</externalId>
+        <label>Digest ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpirationDateofLease__c</fullName>
+        <description>Expiration Date</description>
+        <externalId>false</externalId>
+        <label>Lease Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FY_Obligation__c</fullName>
+        <externalId>false</externalId>
+        <formula>BaseAnnualRent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FY Obligation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Feb_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FEB IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Feb_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FEB NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>HoldoverExpirationDate__c</fullName>
+        <description>Holdover Expiration Date</description>
+        <externalId>false</externalId>
+        <label>Holdover Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>HoldoverStatusInd__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Status, Yes or No  - The Government’s right to remain in the lease space after the expiration date of the current term without a contract in the event a mutual agreement to extend the lease term cannot be made and continued occupancy is required.</inlineHelpText>
+        <label>Holdover Status Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IAConverstionDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date upon which the fund type converts from IA Base to NOA Base</inlineHelpText>
+        <label>IA/NOA Conversion Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IAConverstionFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(IAConverstionDate__c), 
+&quot;2099&quot;, 
+Text(YEAR(IAConverstionDate__c + 92))
+)</formula>
+        <label>IAConverstionFY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IAPercentage__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Percent of RSF/AR that is Indefinite Authority.</inlineHelpText>
+        <label>IA Percentage</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>IA_Cost_Per_Sq_Ft__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(
+
+ ParkingOnly__c = &quot;Yes&quot;,
+
+ (
+      BLANKVALUE(Total_IA_Annual_Rent__c, 0)/
+      (
+        (BaseStructuredParkingSpaces__c + BaseSurfaceParkingSpaces__c) 
+              * 
+        (If(IAPercentage__c = 0, 1, IAPercentage__c)) 
+      )
+ ),
+ 
+ (
+      BLANKVALUE(Total_IA_Annual_Rent__c, 0)/
+     (If(Total_IA_Sq_feet__c  = 0, 1, Total_IA_Sq_feet__c))
+ )
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IA Cost Per Sq Foot</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IncludeInterest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Include Interest Indicator</description>
+        <externalId>false</externalId>
+        <label>Include Interest Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsUserRegionMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(TEXT(RegionCD__c)==$User.Glxy_Region_Code__c,$User.Glxy_Region_Code__c==&quot;CO&quot;), &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsUserRegionMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jan_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JAN IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Jan_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JAN NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Jul_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JUL IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Jul_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JUL NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Jun_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JUN IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Jun_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JUN NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LandOnly__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(
+    (
+       BaseStructuredParkingSpaces__c == 0 &amp;&amp;
+       BaseSurfaceParkingSpaces__c == 0 &amp;&amp;   
+       BaseSquareFeet__c == 0 &amp;&amp;
+       Antennas__c == 0
+    ),
+True,
+False
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Land Only</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LeaseExpirationDateFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(YEAR(  ExpirationDateofLease__c + 92 ))</formula>
+        <label>Lease Expiration Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LeaseID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Lease ID</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mar_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MAR IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mar_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MAR NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>May_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MAY IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>May_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MAY NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MonthlyRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>BaseAnnualRent__c/12</formula>
+        <label>Monthly Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOAPercentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>1 - IAPercentage__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Percent of RSF/AR that is New Obligational Authority.</inlineHelpText>
+        <label>NOA Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>NOA_Rate_Per_Sq_Ft__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(
+
+ ParkingOnly__c = &quot;Yes&quot;,
+
+ (
+     BLANKVALUE(Total_NOA_Annual_Rent__c, 0)/
+     (  (BaseStructuredParkingSpaces__c + BaseSurfaceParkingSpaces__c)  
+               *         
+        (If(NOAPercentage__c = 0, 1, NOAPercentage__c))   
+     )
+ ),
+ 
+ (
+      BLANKVALUE(Total_NOA_Annual_Rent__c, 0)/
+     (If(Total_NOA_Sq_feet__c  = 0, 1, Total_NOA_Sq_feet__c))
+ )
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOA Cost Per Sq Foot</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NewLeaseConstructIND__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>New Lease Construct Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Next_FY_Leases__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Flag to identify the leases that are not included in base.</inlineHelpText>
+        <label>Next FY Leases</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Nov_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOV IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Nov_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOV NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NumberofChildCPIs__c</fullName>
+        <description>Report - Leases with more than 1 CPI - This field will help us determine if a particular lease has more than one associated CPI.</description>
+        <externalId>false</externalId>
+        <label>Number of CPI records</label>
+        <summaryForeignKey>Glxy_ConsumerPriceIndex__c.LeaseNumber__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Oct_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OCT IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Oct_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OCT NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ParkingOnly__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND( BaseSquareFeet__c = 0, BaseStructuredParkingSpaces__c + BaseSurfaceParkingSpaces__c &lt;&gt; 0),&quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parking-Only</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R620Link2__c</fullName>
+        <externalId>false</externalId>
+        <label>R620Link2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>R620Link__c</fullName>
+        <externalId>false</externalId>
+        <label>R620Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>REXUSAnnualRent__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Rexus Annual Rent</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSIANOAConversionDate__c</fullName>
+        <externalId>false</externalId>
+        <label>REXUS IA/NOA Conversion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>REXUSIASq_ft__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Rexus IA Sq ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSLeaseExpirationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Rexus Lease Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>REXUSNOASqft__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Rexus NOA Sq ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSR620__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://&quot;&amp;(RIGHT( R620Link__c,(LEN(R620Link__c)-FIND(&quot;://&quot;,R620Link__c)-2))&amp; R620Link2__c ),&quot;Click here for R620&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Most Recent Digest Action in PDF Format uploaded in REXUS.</inlineHelpText>
+        <label>Latest R620</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUSStatusCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Rexus Status Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deleted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Terminated</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>REXUSTotalSqFt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Rexus Total Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUS_Cost_Per_Sq_Foot__c</fullName>
+        <externalId>false</externalId>
+        <formula>REXUSAnnualRent__c / IF(REXUSTotalSqFt__c  &lt;&gt; 0, REXUSTotalSqFt__c ,if( ParkingOnly__c = &quot;Yes&quot; ,BaseStructuredParkingSpaces__c + BaseSurfaceParkingSpaces__c ,1 ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS Cost Per Sq Foot</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REXUS_IA_Annual_Rent__c</fullName>
+        <externalId>false</externalId>
+        <formula>REXUS_Cost_Per_Sq_Foot__c *  REXUSIASq_ft__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS IA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>REXUS_NOA_Annual_Rent__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( ParkingOnly__c = &quot;Yes&quot; ,  REXUSAnnualRent__c, ( REXUS_Cost_Per_Sq_Foot__c *  REXUSNOASqft__c) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REXUS NOA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RealtySpecialist__c</fullName>
+        <externalId>false</externalId>
+        <label>Realty Specialist Email</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RegionCD__c</fullName>
+        <description>Region Code</description>
+        <externalId>false</externalId>
+        <label>Region Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sep_IA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_IA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SEP IA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sep_NOA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apr_NOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SEP NOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>StatusCode__c</fullName>
+        <description>Status Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Current status of during G2 Base Sertting period. Options are Active, Terminated, Pending.
+DL	Deleted
+PD	Pending
+TM	Terminated
+AC	Active</inlineHelpText>
+        <label>Status Code</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deleted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Terminated</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SuspendInd__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Suspend Indicator</description>
+        <externalId>false</externalId>
+        <label>Suspend Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tax__c</fullName>
+        <description>rollup of Tax data from Lumpsums by lease</description>
+        <externalId>false</externalId>
+        <label>Tax</label>
+        <summarizedField>Glxy_LumpSum__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Glxy_LumpSum__c.LumSumType__c</field>
+            <operation>equals</operation>
+            <value>Tax Escalation</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Glxy_LumpSum__c.StatusCd__c</field>
+            <operation>equals</operation>
+            <value>Actual</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Glxy_LumpSum__c.LeaseNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>TeamCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Team Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TerminationDateofLease__c</fullName>
+        <description>Termination  Date</description>
+        <externalId>false</externalId>
+        <label>Lease Termination Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Total_IA_Annual_Rent__c</fullName>
+        <description>Updated in R2.4; previous formula was - (CostPerSqFt__c * Total_IA_Sq_feet__c)</description>
+        <externalId>false</externalId>
+        <formula>(BaseAnnualRent__c * IAPercentage__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total IA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_IA_Sq_feet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total IA Sq ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_NOA_Annual_Rent__c</fullName>
+        <description>Updated in R2.4; Previous formula - 
+if( ParkingOnly__c = &quot;Yes&quot; , BaseAnnualRent__c, (CostPerSqFt__c * Total_NOA_Sq_feet__c) )</description>
+        <externalId>false</externalId>
+        <formula>(BaseAnnualRent__c * NOAPercentage__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total NOA Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_NOA_Sq_feet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total NOA Sq ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TriggerUpdateField__c</fullName>
+        <description>This is a dummy field that we will use to fire the trigger on this (parent) object when a child (e.g. Lease Agency) record is updated.</description>
+        <externalId>false</externalId>
+        <label>Trigger Update Field</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UrgentInd__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Urgent Indicator</description>
+        <externalId>false</externalId>
+        <label>Urgent Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Lease</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>RegionCD__c</columns>
+        <columns>BaseLeaseEffectiveDate__c</columns>
+        <columns>BaseAnnualRent__c</columns>
+        <columns>Total_NOA_Annual_Rent__c</columns>
+        <columns>Total_IA_Annual_Rent__c</columns>
+        <columns>TeamCode__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Region_s_Leases</fullName>
+        <columns>NAME</columns>
+        <columns>RegionCD__c</columns>
+        <columns>BaseLeaseEffectiveDate__c</columns>
+        <columns>BaseAnnualRent__c</columns>
+        <columns>Total_NOA_Annual_Rent__c</columns>
+        <columns>Total_IA_Annual_Rent__c</columns>
+        <columns>TeamCode__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <label>My Region&apos;s Leases</label>
+    </listViews>
+    <nameField>
+        <label>Lease Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Leases</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>RegionCD__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BaseLeaseEffectiveDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BaseAnnualRent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_NOA_Annual_Rent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_IA_Annual_Rent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TeamCode__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>RegionCD__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BaseLeaseEffectiveDate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BaseAnnualRent__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_IA_Annual_Rent__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_NOA_Annual_Rent__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>RegionCD__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BaseLeaseEffectiveDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ExpirationDateofLease__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BaseAnnualRent__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_IA_Annual_Rent__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_NOA_Annual_Rent__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Change_in_Lease_Number</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED( Name )</errorConditionFormula>
+        <errorMessage>Lease cannot be Changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IAConversionDateCheck</fullName>
+        <active>true</active>
+        <description>Checks if IA Conversion Date is less than Effective date, and throws error.</description>
+        <errorConditionFormula>IAConverstionDate__c &lt; BaseLeaseEffectiveDate__c</errorConditionFormula>
+        <errorMessage>IA Conversion Date cannot be less than Lease Effective Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SumOfNOAandIA</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(Total_IA_Sq_feet__c &lt;&gt; 0, BaseSquareFeet__c &lt;&gt; 0), (Total_IA_Sq_feet__c &gt; BaseSquareFeet__c), FALSE)</errorConditionFormula>
+        <errorMessage>Total IA Sq. Ft. cannot exceed the Base Sq Ft of the Lease.</errorMessage>
+    </validationRules>
+</CustomObject>

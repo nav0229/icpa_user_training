@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Step</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Steps</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Approver --></label>
+        <name>Actual_Approver__c</name>
+    </fields>
+    <fields>
+        <help><!-- The status of the Approval Step. This value is set by the system and cannot be manually input by users. --></help>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved w Comments</masterLabel>
+            <translation><!-- Approved w Comments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiated</masterLabel>
+            <translation><!-- Initiated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiated/Closed</masterLabel>
+            <translation><!-- Initiated/Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiated/Reopened</masterLabel>
+            <translation><!-- Initiated/Reopened --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Initiated</masterLabel>
+            <translation><!-- Not Initiated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Step Type --></label>
+        <name>Approval_Step_Type__c</name>
+        <picklistValues>
+            <masterLabel>Group of Approvers - All Must Approve</masterLabel>
+            <translation><!-- Group of Approvers - All Must Approve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group of Approvers - One Approval Needed</masterLabel>
+            <translation><!-- Group of Approvers - One Approval Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual Approver</masterLabel>
+            <translation><!-- Individual Approver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Approver assigned to this Approval Step. --></help>
+        <label><!-- Approver --></label>
+        <name>Assigned_Approver__c</name>
+        <relationshipLabel><!-- Approval Steps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date the Approval Step was completed (i.e., a decision was made). --></help>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Controlled Document --></label>
+        <name>Correspondence_Document__c</name>
+        <relationshipLabel><!-- Approval Steps --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Document Type of the Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Document Type --></label>
+        <name>Correspondence_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of business days that elapse after this Approval Step was initiated and before it was completed. --></help>
+        <label><!-- Days Open --></label>
+        <name>Days_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delegate --></label>
+        <name>Delegate__c</name>
+        <picklistValues>
+            <masterLabel>Approver</masterLabel>
+            <translation><!-- Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delegate</masterLabel>
+            <translation><!-- Delegate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ExecSec</masterLabel>
+            <translation><!-- ExecSec --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Due Date of the Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Document Due Date --></label>
+        <name>Document_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Stage of the Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Document Stage --></label>
+        <name>Document_Stage__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Title of the Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Document Title --></label>
+        <name>Document_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date this Approval Step is due. --></help>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exec Sec Proxy Approval Requested --></label>
+        <name>Exec_Sec_Proxy_Approval_Requested__c</name>
+    </fields>
+    <fields>
+        <help><!-- When the &quot;Role of Approver&quot; is marked as &quot;External Review&quot;, this field indicates the external party that is conducting the review. --></help>
+        <label><!-- External Review Party --></label>
+        <name>External_Review_Party__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checking this field marks this Approval Step as no longer being needed. Approval Steps that have been initiated will be recalled. At a later time, this field can be unchecked to reinstate an Approval Step. --></help>
+        <label><!-- Deactivate Step --></label>
+        <name>Marked_for_Deletion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note: --></label>
+        <name>Note_about_Approve_w_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notification History Trigger --></label>
+        <name>Notification_History_Trigger__c</name>
+        <picklistValues>
+            <masterLabel>Access Granted</masterLabel>
+            <translation><!-- Access Granted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Request</masterLabel>
+            <translation><!-- Approval Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Status Change Notification</masterLabel>
+            <translation><!-- Status Change Notification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step Overdue Notifications</masterLabel>
+            <translation><!-- Step Overdue Notifications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step Reminder Notification</masterLabel>
+            <translation><!-- Step Reminder Notification --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Office/Portfolio indicated for the Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Office / Portfolio --></label>
+        <name>Office_Portfolio__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Service/Staff Office of the Approver. --></help>
+        <label><!-- Approver&apos;s Service/Staff Office --></label>
+        <name>Office__c</name>
+        <picklistValues>
+            <masterLabel>A - Office of the Administrator</masterLabel>
+            <translation><!-- A - Office of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AC - Office of the GSA Chief of Staff</masterLabel>
+            <translation><!-- AC - Office of the GSA Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AD - Office of the Deputy Administrator</masterLabel>
+            <translation><!-- AD - Office of the Deputy Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK - Office of Civil Rights</masterLabel>
+            <translation><!-- AK - Office of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKE – OCR External Programs Division</masterLabel>
+            <translation><!-- AKE – OCR External Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKN – OCR EEO Program Division</masterLabel>
+            <translation><!-- AKN – OCR EEO Program Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKR – OCR Regional Operations Division</masterLabel>
+            <translation><!-- AKR – OCR Regional Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B - Office of the Chief Financial Officer</masterLabel>
+            <translation><!-- B - Office of the Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B1 - Childcare Subsidy Administration Program</masterLabel>
+            <translation><!-- B1 - Childcare Subsidy Administration Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BB - Office of Budget</masterLabel>
+            <translation><!-- BB - Office of Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BE - Office of Strategic Planning and Performance Management</masterLabel>
+            <translation><!-- BE - Office of Strategic Planning and Performance Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BG - Office of Financial Management</masterLabel>
+            <translation><!-- BG - Office of Financial Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI - Office of Business and Financial Analytics</masterLabel>
+            <translation><!-- BI - Office of Business and Financial Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR - Office of Regional Financial Services</masterLabel>
+            <translation><!-- BR - Office of Regional Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C - Office of Human Resource Management</masterLabel>
+            <translation><!-- C - Office of Human Resource Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA - OHRM Office of Account Management</masterLabel>
+            <translation><!-- CA - OHRM Office of Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CM - OHRM Office of Management &amp; Performance Improvement</masterLabel>
+            <translation><!-- CM - OHRM Office of Management &amp; Performance Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CS - OHRM Office of HR Strategy &amp; Services</masterLabel>
+            <translation><!-- CS - OHRM Office of HR Strategy &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D - Office of Mission Assurance</masterLabel>
+            <translation><!-- D - Office of Mission Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DA - OMA Northeast Regions Division</masterLabel>
+            <translation><!-- DA - OMA Northeast Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DB - OMA Southeast Regions Division</masterLabel>
+            <translation><!-- DB - OMA Southeast Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC - OMA Midwest Regions Division</masterLabel>
+            <translation><!-- DC - OMA Midwest Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - OMA Policy &amp; Plans Division</masterLabel>
+            <translation><!-- DD - OMA Policy &amp; Plans Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE - OMA Western Regions Division</masterLabel>
+            <translation><!-- DE - OMA Western Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DP - OMA Operations Division</masterLabel>
+            <translation><!-- DP - OMA Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS - OMA GSA Security Division</masterLabel>
+            <translation><!-- DS - OMA GSA Security Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E - Office of Small Business Utilization</masterLabel>
+            <translation><!-- E - Office of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G - Civilian Board of Contract Appeals</masterLabel>
+            <translation><!-- G - Civilian Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA - CBCA Staff Support Division</masterLabel>
+            <translation><!-- GA - CBCA Staff Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GJ - CBCA Judicial Division</masterLabel>
+            <translation><!-- GJ - CBCA Judicial Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H - Office of Administrative Services</masterLabel>
+            <translation><!-- H - Office of Administrative Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1A - Office of Internal Acquisition Division</masterLabel>
+            <translation><!-- H1A - Office of Internal Acquisition Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1B - Office of Workplace Management and Services Division</masterLabel>
+            <translation><!-- H1B - Office of Workplace Management and Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1C - Charge Card Division</masterLabel>
+            <translation><!-- H1C - Charge Card Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1E - Executive Secretariat Division</masterLabel>
+            <translation><!-- H1E - Executive Secretariat Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1F - FOIA &amp; Records Management Division</masterLabel>
+            <translation><!-- H1F - FOIA &amp; Records Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1G - GAO/IG Audit Response Division</masterLabel>
+            <translation><!-- H1G - GAO/IG Audit Response Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I - Office of the GSA IT</masterLabel>
+            <translation><!-- I - Office of the GSA IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - OCIO Office of Governmentwide and Enterprise Solutions</masterLabel>
+            <translation><!-- IA - OCIO Office of Governmentwide and Enterprise Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB - OCIO Office of Financial and HR IT Services</masterLabel>
+            <translation><!-- IB - OCIO Office of Financial and HR IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - OCIO Office of Supply, Travel, and Transportation</masterLabel>
+            <translation><!-- IC - OCIO Office of Supply, Travel, and Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID - OCIO Office of the Deputy Chief Info Officer &amp; Chief Technology Officer</masterLabel>
+            <translation><!-- ID - OCIO Office of the Deputy Chief Info Officer &amp; Chief Technology Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE - OCIO Office of Enterprise Planning and Governance</masterLabel>
+            <translation><!-- IE - OCIO Office of Enterprise Planning and Governance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEA - OCIO Enterprise Architecture</masterLabel>
+            <translation><!-- IEA - OCIO Enterprise Architecture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEE - OCIO IT Portfolio Management</masterLabel>
+            <translation><!-- IEE - OCIO IT Portfolio Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO - OCIO Office of Enterprise Infrastructure</masterLabel>
+            <translation><!-- IO - OCIO Office of Enterprise Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP - OCIO Office of Public Building IT Services</masterLabel>
+            <translation><!-- IP - OCIO Office of Public Building IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ - OCIO Office of Acquisition IT Services</masterLabel>
+            <translation><!-- IQ - OCIO Office of Acquisition IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR - OCIO Resource Management Staff</masterLabel>
+            <translation><!-- IR - OCIO Resource Management Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IS - OCIO Office of the Chief Information Security Officer</masterLabel>
+            <translation><!-- IS - OCIO Office of the Chief Information Security Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IST - Inaugural Support Team</masterLabel>
+            <translation><!-- IST - Inaugural Support Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J - Office of the Inspector General</masterLabel>
+            <translation><!-- J - Office of the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JA - OIG Office of Audits</masterLabel>
+            <translation><!-- JA - OIG Office of Audits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JC - OIG Counsel of the Inspector General</masterLabel>
+            <translation><!-- JC - OIG Counsel of the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JE - OIG Office of Internal Evaluation &amp; Analysis</masterLabel>
+            <translation><!-- JE - OIG Office of Internal Evaluation &amp; Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JI - OIG Office of Investigations</masterLabel>
+            <translation><!-- JI - OIG Office of Investigations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JP - OIG Office of Administration</masterLabel>
+            <translation><!-- JP - OIG Office of Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L - Office of the General Counsel</masterLabel>
+            <translation><!-- L - Office of the General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD1 - OGC New England Division</masterLabel>
+            <translation><!-- LD1 - OGC New England Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD2 - OGC Northeast and Caribbean Division</masterLabel>
+            <translation><!-- LD2 - OGC Northeast and Caribbean Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD3 - OGC Mid-Atlantic Division</masterLabel>
+            <translation><!-- LD3 - OGC Mid-Atlantic Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD4 - OGC Southeast Sunbelt Division</masterLabel>
+            <translation><!-- LD4 - OGC Southeast Sunbelt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD5 - OGC Great Lakes Division</masterLabel>
+            <translation><!-- LD5 - OGC Great Lakes Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD6 - OGC Heartland Division</masterLabel>
+            <translation><!-- LD6 - OGC Heartland Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD7 - OGC Greater Southwest Division</masterLabel>
+            <translation><!-- LD7 - OGC Greater Southwest Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD8 - OGC Rocky Mountain Division</masterLabel>
+            <translation><!-- LD8 - OGC Rocky Mountain Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD9 - OGC Pacific Rim Division</masterLabel>
+            <translation><!-- LD9 - OGC Pacific Rim Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDA - OGC Northwest/Arctic Division</masterLabel>
+            <translation><!-- LDA - OGC Northwest/Arctic Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDW - OGC National Capital Region</masterLabel>
+            <translation><!-- LDW - OGC National Capital Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LE - OGC Ethics Law Staff</masterLabel>
+            <translation><!-- LE - OGC Ethics Law Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG - OGC General Law Division</masterLabel>
+            <translation><!-- LG - OGC General Law Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LL - OGC Legal Support Staff</masterLabel>
+            <translation><!-- LL - OGC Legal Support Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP - OGC Personal Property Division</masterLabel>
+            <translation><!-- LP - OGC Personal Property Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LR - OGC Real Property Division</masterLabel>
+            <translation><!-- LR - OGC Real Property Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LS - OGC Administrative Support Staff</masterLabel>
+            <translation><!-- LS - OGC Administrative Support Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M - Office of Governmentwide Policy</masterLabel>
+            <translation><!-- M - Office of Governmentwide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA - OGP Office of Asset and Transportation Management</masterLabel>
+            <translation><!-- MA - OGP Office of Asset and Transportation Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME - OGP Office of Information, Integrity, &amp; Access</masterLabel>
+            <translation><!-- ME - OGP Office of Information, Integrity, &amp; Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG - OGP Office of Federal High-Performance Buildings</masterLabel>
+            <translation><!-- MG - OGP Office of Federal High-Performance Buildings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MV - OGP Office of Acquisition Policy</masterLabel>
+            <translation><!-- MV - OGP Office of Acquisition Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MX - OGP Office of Executive Councils</masterLabel>
+            <translation><!-- MX - OGP Office of Executive Councils --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O - Office of Customer Experience</masterLabel>
+            <translation><!-- O - Office of Customer Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OST - Outgoing Team</masterLabel>
+            <translation><!-- OST - Outgoing Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P - Public Buildings Service</masterLabel>
+            <translation><!-- P - Public Buildings Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA - PBS Office of Client Solutions</masterLabel>
+            <translation><!-- PA - PBS Office of Client Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PB - PBS Office of the Chief of Staff</masterLabel>
+            <translation><!-- PB - PBS Office of the Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC - PBS Office of Design and Construction</masterLabel>
+            <translation><!-- PC - PBS Office of Design and Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PD - PBS Office of the Deputy Commissioner</masterLabel>
+            <translation><!-- PD - PBS Office of the Deputy Commissioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PG - PBS Office of Acquisition Management</masterLabel>
+            <translation><!-- PG - PBS Office of Acquisition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PI - PBS Office of Real Property Utilization &amp; Disposal</masterLabel>
+            <translation><!-- PI - PBS Office of Real Property Utilization &amp; Disposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM - PBS Office of Facilities Management &amp; Services Programs</masterLabel>
+            <translation><!-- PM - PBS Office of Facilities Management &amp; Services Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR - PBS Office of Leasing</masterLabel>
+            <translation><!-- PR - PBS Office of Leasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT - PBS Office of Real Property Asset Management</masterLabel>
+            <translation><!-- PT - PBS Office of Real Property Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTST - Presidential Transition Support Team</masterLabel>
+            <translation><!-- PTST - Presidential Transition Support Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTT - Presidential Transition Team</masterLabel>
+            <translation><!-- PTT - Presidential Transition Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q - Federal Acquisition Service</masterLabel>
+            <translation><!-- Q - Federal Acquisition Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q0A - FAS Chief of Staff</masterLabel>
+            <translation><!-- Q0A - FAS Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC - FAS Office of Customer Accounts &amp; Research</masterLabel>
+            <translation><!-- QC - FAS Office of Customer Accounts &amp; Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD - FAS Office of Integrated Award Environment</masterLabel>
+            <translation><!-- QD - FAS Office of Integrated Award Environment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QF - FAS Office of Assisted Acquisition Services</masterLabel>
+            <translation><!-- QF - FAS Office of Assisted Acquisition Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QM - FAS Office of Travel, Motor Vehicle, &amp; Card Services</masterLabel>
+            <translation><!-- QM - FAS Office of Travel, Motor Vehicle, &amp; Card Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP - FAS Office of Strategy Management</masterLabel>
+            <translation><!-- QP - FAS Office of Strategy Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QR - FAS Office of Professional Services &amp; Human Capital</masterLabel>
+            <translation><!-- QR - FAS Office of Professional Services &amp; Human Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS - FAS Office of General Supplies &amp; Services</masterLabel>
+            <translation><!-- QS - FAS Office of General Supplies &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT - FAS Office of Information Technology Category</masterLabel>
+            <translation><!-- QT - FAS Office of Information Technology Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV - FAS Office of Acquisition Management</masterLabel>
+            <translation><!-- QV - FAS Office of Acquisition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10A</masterLabel>
+            <translation><!-- Region 10A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10P</masterLabel>
+            <translation><!-- Region 10P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10Q</masterLabel>
+            <translation><!-- Region 10Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 11A</masterLabel>
+            <translation><!-- Region 11A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 11P</masterLabel>
+            <translation><!-- Region 11P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 11Q</masterLabel>
+            <translation><!-- Region 11Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1A</masterLabel>
+            <translation><!-- Region 1A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1P</masterLabel>
+            <translation><!-- Region 1P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1Q</masterLabel>
+            <translation><!-- Region 1Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2A</masterLabel>
+            <translation><!-- Region 2A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2P</masterLabel>
+            <translation><!-- Region 2P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2Q</masterLabel>
+            <translation><!-- Region 2Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3A</masterLabel>
+            <translation><!-- Region 3A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3P</masterLabel>
+            <translation><!-- Region 3P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3Q</masterLabel>
+            <translation><!-- Region 3Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4A</masterLabel>
+            <translation><!-- Region 4A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4P</masterLabel>
+            <translation><!-- Region 4P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4Q</masterLabel>
+            <translation><!-- Region 4Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5A</masterLabel>
+            <translation><!-- Region 5A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5P</masterLabel>
+            <translation><!-- Region 5P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5Q</masterLabel>
+            <translation><!-- Region 5Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6A</masterLabel>
+            <translation><!-- Region 6A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6P</masterLabel>
+            <translation><!-- Region 6P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6Q</masterLabel>
+            <translation><!-- Region 6Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7A</masterLabel>
+            <translation><!-- Region 7A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7P</masterLabel>
+            <translation><!-- Region 7P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7Q</masterLabel>
+            <translation><!-- Region 7Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8A</masterLabel>
+            <translation><!-- Region 8A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8P</masterLabel>
+            <translation><!-- Region 8P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8Q</masterLabel>
+            <translation><!-- Region 8Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9A</masterLabel>
+            <translation><!-- Region 9A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9P</masterLabel>
+            <translation><!-- Region 9P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9Q</masterLabel>
+            <translation><!-- Region 9Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S - Office of Congressional and Intergovernmental Affairs</masterLabel>
+            <translation><!-- S - Office of Congressional and Intergovernmental Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T - Technology Transformation Service</masterLabel>
+            <translation><!-- T - Technology Transformation Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA - TTS Office of Products &amp; Programs</masterLabel>
+            <translation><!-- TA - TTS Office of Products &amp; Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TB - TTS Office of Investment</masterLabel>
+            <translation><!-- TB - TTS Office of Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC - TTS Office of Acquisition</masterLabel>
+            <translation><!-- TC - TTS Office of Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TD - TTS Office of Presidential Innovation Fellows</masterLabel>
+            <translation><!-- TD - TTS Office of Presidential Innovation Fellows --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TE - TTS Office of 18F</masterLabel>
+            <translation><!-- TE - TTS Office of 18F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y - Federal Permitting Improvement Steering Council</masterLabel>
+            <translation><!-- Y - Federal Permitting Improvement Steering Council --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z - Office of Strategic Communication</masterLabel>
+            <translation><!-- Z - Office of Strategic Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZC - OCM Communications Division</masterLabel>
+            <translation><!-- ZC - OCM Communications Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZM - OCM Media Affairs Division</masterLabel>
+            <translation><!-- ZM - OCM Media Affairs Division --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Originating Service/Staff Office indicated for the Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Originating Service/Staff Office --></label>
+        <name>Originating_Service_Staff_Office__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Region indicated for the Controlled Document on which this Approval Step is listed. --></help>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- The role the Approver is playing for this Approval Step. --></help>
+        <label><!-- Role of Approver --></label>
+        <name>Role_of_Approver__c</name>
+        <picklistValues>
+            <masterLabel>Approver</masterLabel>
+            <translation><!-- Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audit Analyst</masterLabel>
+            <translation><!-- Audit Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Close-Out</masterLabel>
+            <translation><!-- Close-Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drafter</masterLabel>
+            <translation><!-- Drafter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Editor</masterLabel>
+            <translation><!-- Editor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exec Sec Reviewer</masterLabel>
+            <translation><!-- Exec Sec Reviewer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Review</masterLabel>
+            <translation><!-- External Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FYI</masterLabel>
+            <translation><!-- FYI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office POC</masterLabel>
+            <translation><!-- Office POC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signatory</masterLabel>
+            <translation><!-- Signatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subject Matter Expert</masterLabel>
+            <translation><!-- Subject Matter Expert --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The order in which this Approval Step will appear on the Controlled Document record. --></help>
+        <label><!-- Sequence --></label>
+        <name>Sequence__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17</masterLabel>
+            <translation><!-- 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18</masterLabel>
+            <translation><!-- 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19</masterLabel>
+            <translation><!-- 19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21</masterLabel>
+            <translation><!-- 21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22</masterLabel>
+            <translation><!-- 22 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23</masterLabel>
+            <translation><!-- 23 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24</masterLabel>
+            <translation><!-- 24 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26</masterLabel>
+            <translation><!-- 26 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27</masterLabel>
+            <translation><!-- 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28</masterLabel>
+            <translation><!-- 28 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29</masterLabel>
+            <translation><!-- 29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31</masterLabel>
+            <translation><!-- 31 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32</masterLabel>
+            <translation><!-- 32 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33</masterLabel>
+            <translation><!-- 33 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34</masterLabel>
+            <translation><!-- 34 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35</masterLabel>
+            <translation><!-- 35 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36</masterLabel>
+            <translation><!-- 36 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>37</masterLabel>
+            <translation><!-- 37 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>38</masterLabel>
+            <translation><!-- 38 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>39</masterLabel>
+            <translation><!-- 39 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40</masterLabel>
+            <translation><!-- 40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>41</masterLabel>
+            <translation><!-- 41 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>42</masterLabel>
+            <translation><!-- 42 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>43</masterLabel>
+            <translation><!-- 43 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44</masterLabel>
+            <translation><!-- 44 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46</masterLabel>
+            <translation><!-- 46 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>47</masterLabel>
+            <translation><!-- 47 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48</masterLabel>
+            <translation><!-- 48 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>49</masterLabel>
+            <translation><!-- 49 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50</masterLabel>
+            <translation><!-- 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>99</masterLabel>
+            <translation><!-- 99 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The date this Approval Step was initiated. --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Approval Step Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Document Details --></label>
+            <section>Document Details</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- The Due Date must be later than the Start Date. --></errorMessage>
+        <name>Due_Date_must_be_later_than_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If &quot;External Review&quot; is selected as the Role of Approver, you must input a value in the &quot;External Review Party&quot; field. --></errorMessage>
+        <name>Must_Specify_Ext_Review_Party</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Approve_w_Comments --></label>
+        <name>Approve_w_Comments</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Proxy_Approval_by_Exec_Sec --></label>
+        <name>Proxy_Approval_by_Exec_Sec</name>
+    </webLinks>
+</CustomObjectTranslation>

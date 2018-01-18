@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains the Lease Project Agency information for Pre-certification and Final Certification process. This information will be used during these 2 transaction processes only.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Agency_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>PBS_AB_Code__r.Agency_Bureau_Short_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agency Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BaseStructuredParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Base Structured Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BaseSurfaceParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Base Surface Parking Spaces</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_RSF__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Old Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IASquareFeet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>IA Sq Ft</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOA_RSF__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Total_RSF__c =0,0,Total_RSF__c - IASquareFeet__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_ASA__c</fullName>
+        <externalId>false</externalId>
+        <label>Resulting ASA</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NullRSFReleasedInd__c</fullName>
+        <defaultValue>&quot;N&quot;</defaultValue>
+        <description>Indicates whether the Federal RSF Released value for a Request ASA was null when the Request ASA was added to Galaxy as part of a transaction. This is used to determine if the ASA should be returned to REXUS later when the transaction is approved.</description>
+        <externalId>false</externalId>
+        <label>Null RSF Released Indicator</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OLD_ASA__c</fullName>
+        <externalId>false</externalId>
+        <label>Existing ASA</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PBS_ABCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>PBS_AB_Code__r.AB_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AB Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PBS_AB_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>used by cast iron to set the relationship</description>
+        <externalId>false</externalId>
+        <label>PBS AB Code</label>
+        <referenceTo>PBS_AB_Code__c</referenceTo>
+        <relationshipLabel>Project Agencies Transactions</relationshipLabel>
+        <relationshipName>Project_Agencies_Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProjectAgencyID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Project Agency Transaction ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProposedReqID__c</fullName>
+        <externalId>false</externalId>
+        <label>ProposedReqID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSF_Released__c</fullName>
+        <externalId>false</externalId>
+        <label>RSF Released</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequestASAID__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Request ASA ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequestID__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Request ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Parking_Spaces__c</fullName>
+        <externalId>false</externalId>
+        <formula>BaseStructuredParkingSpaces__c +  BaseSurfaceParkingSpaces__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Parking Spaces</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_RSF__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New Sq Ft</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionID__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction ID</label>
+        <referenceTo>Glxy_Transaction__c</referenceTo>
+        <relationshipLabel>Project Agencies Transactions</relationshipLabel>
+        <relationshipName>Project_Agencies_Transactions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(   PBS_AB_Code__c  ),&quot;No Client SQFT Info&quot;,&quot;Client  SQFT Info&quot;)</formula>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Project Agency Transaction</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PAT-{000000}</displayFormat>
+        <label>Project Agency Transaction ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Project Agencies Transactions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>OLD_ASA__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>New_ASA__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Current_RSF__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IASquareFeet__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_RSF__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>OLD_ASA__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>New_ASA__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Current_RSF__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IASquareFeet__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_RSF__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>IA_RSF_not_Negative</fullName>
+        <active>true</active>
+        <errorConditionFormula>IASquareFeet__c  &lt; 0</errorConditionFormula>
+        <errorMessage>IA Square Feet cannot be a Negative Value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IA_RSF_not_greater_than_New_RSF</fullName>
+        <active>true</active>
+        <errorConditionFormula>IASquareFeet__c  &gt;  Total_RSF__c</errorConditionFormula>
+        <errorMessage>IA  Square Feet cannot be greater than New Square Feet</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Released_RSF_Not_Change_on_NULL</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISCHANGED(RSF_Released__c),ISNULL(PRIORVALUE(RSF_Released__c)), $User.Alias &lt;&gt; &quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>RSF Released Cannot Be changed when NULL</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_RSF_Released_Not_Negative</fullName>
+        <active>true</active>
+        <description>Checks that value in RSF Released is less than zero.</description>
+        <errorConditionFormula>AND(ISCHANGED(RSF_Released__c),RSF_Released__c&lt;0 ,$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>Value for RSF Released cannot be Negative.</errorMessage>
+    </validationRules>
+</CustomObject>

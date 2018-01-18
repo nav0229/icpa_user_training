@@ -1,0 +1,331 @@
+<!-- TSS Action Planning Application                         -->
+<!--  -----------------------------------------------------  -->
+<!-- Created By      | Version |  Date    | Description      -->
+<!--  -----------------------------------------------------  -->
+<!-- Raja Kumar        1.0      05/19/2015  Created          -->
+<!-- Raja Kumar        1.1      08/21/2015  Changed title    -->
+<!-- Todd Carlough     1.2      04/19/2016  UI/Mobile Update -->
+<!-- Khemvisoth Prum   1.3      05/03/2016  UI Update        -->
+<!-- Ramesh Dugar      1.4      05/03/2016  UI Update and removed call to Detectdevice method-->
+<!--  -----------------------------------------------------  -->
+
+<apex:page controller="TSSSurveyController" showheader="false" title="GSA"
+    sidebar="false" standardStylesheets="false" id="Page2" doctype="html-5.0">
+    <apex:stylesheet value="{!URLFOR($Resource.WDS091, '/uswds-0.9.1/css/uswds.css')}"/>
+
+    <style type="text/css">
+    .usa-heading-alt {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(91, 97, 107);
+    }
+
+    form {
+        max-width: 1400px;
+    }
+
+    label {
+        max-width: 1040px;
+        margin-top: 0px;
+    }
+
+    table th, table td {
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    .question {
+        text-align: left;
+    }
+
+    .labelCol {
+        max-width: 300px;
+        max-height: 20px;
+    }
+
+
+    </style>
+
+    <html>
+    <body>
+        <div class="usa-grid">
+            <div class="usa-grid-full">
+                <header class="usa-site-header" role="banner">
+                  <div class="wrap">
+                    <a target="_blank" href="http://www.gsa.gov/">
+                      <apex:image url="{!URLFOR($Resource.GSATSSLogo)}" alt="GSA Seal" width="286" height="50" />
+                    </a>
+                    <h1>Federal Tenant Satisfaction Survey</h1>
+                    <h4>Page 2 of 2</h4>
+
+                  </div>
+                </header>
+            </div>
+         <apex:Pagemessages />
+        <!--<apex:form id="Form1" rendered="{!contactfound}" >commented out for testing purpose,uncomment this line and comment
+  below form tag for production use-->
+    <apex:form id="Form1">
+
+        <apex:pageBlock >
+         <apex:pageBlockSection columns="1" id="Section1">
+            <h2 class="usa-heading-alt">OVERALL SATISFACTION</h2>
+            <div class="usa-grid-full">
+               <p style="font-style:italic">Think about all aspects of your building and workspace environment (e.g., attractiveness of building and grounds, cleanliness, and building management). Please rate your OVERALL level of satisfaction with the building services you receive.</p>
+            </div>
+
+            <!--<apex:outputText value="* Overall Satisfaction" />-->
+            <p style="margin-bottom:0px"><b style="color:red">*</b> Overall Satisfaction</p>
+            <apex:selectList size="1" value="{!overallsat}" id="OverallSat" required="true"
+                           title="Overall Satisfaction"
+                           html-aria-label="Overall Satisfaction" html-aria-required="true">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+          </apex:pageBlockSection>
+          </apex:pageBlock>
+
+
+            <h2 class="usa-heading-alt">BUILDING AND WORKSPACE ENVIRONMENT </h2>
+            <div class="usa-grid-full">
+            <p style="font-style:italic"> Please rate your level of satisfaction in the past 12 months with your building and workspace environment on the following features: </p>
+                <h3>Condition of Facility</h3>
+            <p style="font-style:italic"> The condition of the facility means how you feel about the look and functionality of the building you work in, i.e., aesthetically pleasing, in need of repairs, obsolete, and or meets your needs.</p>
+            </div>
+
+            <apex:pageBlock >
+            <apex:pageBlockSection columns="1" id="psBldgwkspace1">
+
+            <apex:outputText value="Building exterior and grounds" id="item1"/>
+            <apex:selectList size="1" value="{!condcat1}" id="condcat1"
+                           title="Building exterior and grounds"
+                           html-aria-label="Building exterior and grounds">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Building interior common areas (hallways, stairwells, building lobby)" id="item2"/>
+            <apex:selectList size="1" value="{!condcat2}" id="condcat2"
+                           title="Building interior common areas (hallways, stairwells, building lobby)"
+                           html-aria-label="Building interior common areas (hallways, stairwells, building lobby)">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Restrooms" id="item3"/>
+            <apex:selectList size="1" value="{!condcat3}" id="condcat3"
+                           title="Restrooms"
+                           html-aria-label="Restrooms">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Personal Workspace" id="item4"/>
+            <apex:selectList size="1" value="{!condcat4}" id="condcat4"
+                           title="Personal Workspace"
+                           html-aria-label="Personal Workspace">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+              <apex:pageBlockSectionItem id="Item5">
+                  <h3>Quality of Cleanliness</h3>
+              </apex:pageBlockSectionItem>
+
+            <apex:outputText value="Building exterior and grounds" id="item6"/>
+            <apex:selectList size="1" value="{!cleancat1}" id="cleancat1"
+                           title="Building exterior and grounds"
+                           html-aria-label="Building exterior and grounds">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Building interior common areas (hallways, stairwells, building lobby)" id="item7"/>
+            <apex:selectList size="1" value="{!cleancat2}" id="cleancat2"
+                           title="Building interior common areas (hallways, stairwells, building lobby)"
+                           html-aria-label="Building interior common areas (hallways, stairwells, building lobby)">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Restrooms" id="item8"/>
+            <apex:selectList size="1" value="{!cleancat3}" id="cleancat3"
+                           title="Restrooms"
+                           html-aria-label="Restrooms">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Personal Workspace" id="item9"/>
+            <apex:selectList size="1" value="{!cleancat4}" id="cleancat4"
+                           title="Personal Workspace"
+                           html-aria-label="Personal Workspace">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+          </apex:pageBlockSection>
+          <h2 class="usa-heading-alt">ELEVATORS</h2>
+
+            <br />
+            <apex:outputText value="How satisfied are you with how well the elevators operate?" id="item10"/>
+            <apex:selectList size="1" value="{!elevator}" id="elevator"
+                           title="How satisfied are you with how well the elevators operate?"
+                           html-aria-label="How satisfied are you with how well the elevators operate?">
+            <apex:selectOptions value="{!namobratings}" id="elevators"/>
+            </apex:selectList>
+
+          <h2 class="usa-heading-alt">MEETING SPACES</h2>
+
+            <br />
+            <apex:outputText value="How satisfied are you with the availability of meeting spaces?" id="item11"/>
+            <apex:selectList size="1" value="{!meetspace}" id="meetspace"
+                           title="How satisfied are you with the availability of meeting spaces?"
+                           html-aria-label="How satisfied are you with the availability of meeting spaces?">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+          <h2 class="usa-heading-alt">PERSONAL WORKSPACE COMFORT</h2>
+
+            <br />
+            <apex:outputText value="Temperature" id="item12"/>
+            <apex:selectList size="1" value="{!workcat1}" id="workcat1"
+                           title="Temperature"
+                           html-aria-label="Temperature">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Air quality (proper ventilation, air freshness, odors)" id="item13"/>
+            <apex:selectList size="1" value="{!workcat2}" id="workcat2"
+                           title="Air quality (proper ventilation, air freshness, odors)"
+                           html-aria-label="Air quality (proper ventilation, air freshness, odors)">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Amount of light" id="item14"/>
+            <apex:selectList size="1" value="{!workcat3}" id="workcat3"
+                           title="Amount of light"
+                           html-aria-label="Amount of light">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Noise levels" id="item15"/>
+            <apex:selectList size="1" value="{!workcat4}" id="workcat4"
+                           title="Noise levels"
+                           html-aria-label="Noise levels">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+          <h2 class="usa-heading-alt">BUILDING MANAGEMENT</h2>
+            <br />
+            <apex:outputText value="Do you know who to contact if you notice an issue in your building?" id="item16"/>
+            <apex:selectList size="1" value="{!bldgmgmt1}" id="bldgmgmt1"
+                           title="Do you know who to contact if you notice an issue in your building?"
+                           html-aria-label="Do you know who to contact if you notice an issue in your building?">
+            <apex:selectOptions value="{!bmmobratings}"/>
+            </apex:selectList>
+
+            <br />
+            <apex:outputText value="Do you know how to get an issue corrected in your building?" id="item17"/>
+            <apex:selectList size="1" value="{!bldgmgmt2}" id="bldgmgmt2"
+                           title="Do you know how to get an issue corrected in your building?"
+                           html-aria-label="Do you know how to get an issue corrected in your building?">
+            <apex:selectOptions value="{!bmmobratings}"/>
+            </apex:selectList>
+
+          <h2 class="usa-heading-alt">BUILDING SECURITY </h2>
+          <p style="font-style:italic"> Please rate your level of satisfaction
+                                                    in the past 12 months with the security in your building. </p>
+
+            <br />
+            <apex:outputText value="How satisfied are you with the security presence and measures in your building?" id="item18"/>
+            <apex:selectList size="1" value="{!security}" id="security"
+                           title="How satisfied are you with the security presence and measures in your building?"
+                           html-aria-label="How satisfied are you with the security presence and measures in your building?">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+            <!--This is a NEW QUESTION added to the UI.  It will need to be added to the remaining code and process. -->
+            <br />
+            <apex:outputText value="How satisfied are you with the professionalism of the Federal Protective Service officers and security personnel?" id="item19"/>
+            <apex:selectList size="1" value="{!securityPersonnel}" id="securityPersonnel"
+                           title="How satisfied are you with the professionalism of the Federal Protective Service officers and security personnel?"
+                           html-aria-label="How satisfied are you with the professionalism of the Federal Protective Service officers and security personnel?">
+            <apex:selectOptions value="{!namobratings}"/>
+            </apex:selectList>
+
+          <h2 class="usa-heading-alt">PERSONAL WORKSPACE TYPE</h2>
+
+            <apex:outputText value="Which of the following best describes your personal workspace?" id="item20"/>
+            <apex:selectList size="1" value="{!wkspacetype}" id="wkspacetype"
+                           title="Which of the following best describes your personal workspace?"
+                           html-aria-label="Which of the following best describes your personal workspace?" >
+            <apex:selectOptions value="{!wsmobratings}"/>
+            </apex:selectList>
+
+           <br />
+          <H2 class="usa-heading-alt" >ADDITIONAL COMMENTS</H2>
+          <apex:outputLabel value="Please provide any additional comments concerning your overall satisfaction." for="comments" styleClass="question"/>
+          <apex:inputTextarea value="{!comments}" id="comments" rows="5" cols="60" title="additional comments" />
+
+          <apex:outputpanel layout="block">
+
+                <apex:pageBlock >
+                    <p style="font-size:1.7rem;text-transform:none" tabindex="0"><strong>Note:</strong>
+                      <i>Please confirm that your selections above are correct before clicking "Submit." If you have any questions, please contact us at
+                        <a href='mailto:TSScustomerservice@gsa.gov?subject=Update TSS Building Information'>TSScustomerservice@gsa.gov.</a>
+                      </i><br/>
+                    </p>
+                </apex:pageBlock>
+           </apex:outputpanel>
+
+          <div id="button" style="text-align:center">
+                <apex:commandButton value="Previous" action="{!previous}" title="previous" style="display:inline" styleClass="usa-button-gray"/>
+                <apex:commandButton value="Submit" action="{!save}" title="submit" onclick="return validatePage2();" style="display:inline" />
+          </div>
+
+    </apex:pageBlock>
+        </apex:form>
+        </div>
+    </body>
+
+  <!--<apex:outputpanel rendered="{!!contactfound}" layout="block"> commenting for testing purpose,uncomment and delete the below line before
+  deploying to prod -->
+  <!--<apex:outputpanel rendered="{!contactfound}" layout="block">
+        <apex:pageBlock >
+            <p style="font-style:Arial;font-size:12px;text-align:center;margin-left:15px;margin-top:25px;margin-bottom:25px;">
+                The page that you are looking for does not exist. Please ensure that you have the correct URL.
+                If you have any questions please contact <a href="mailto:TSScustomerservice@gsa.gov" tabindex="-1">TSScustomerservice@gsa.gov</a>
+                <br/>
+            </p>
+        </apex:pageBlock>
+   </apex:outputpanel>-->
+    <footer style="text-align:center;color:gray;margin-top:110px">
+   <p style="text-align:center;font-size:medium;">Proudly built using <a href="https://standards.usa.gov/" style="color:blue">U.S. Web Design Standards</a></p>
+  </footer>
+  <!--<script>
+    window.onload = function(){
+        document.getElementById('{!$Component.Page2.Form1.Block1.Section1.Item2.comments}').blur();
+    };
+  </script>-->
+  <script type="text/javascript">
+      function validatePage2() {
+            var myradios = document.getElementById('{!$Component.Page2:Form1:j_id30:Section1:OverallSat}');
+
+            if(myradios.value==0){
+                alert('Please indicate your OVERALL level of satisfaction.');
+                myradios.focus()
+                return false;
+            }
+
+            else {
+                return true;
+            }
+      }
+  </script>
+</html>
+
+    <apex:includeScript value="{!URLFOR($Resource.wds, '/uswds-0.9.0/js/uswds.min.js')}"/>
+</apex:page>

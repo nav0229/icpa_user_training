@@ -1,0 +1,23 @@
+<apex:page standardController="Glxy_LPStepRent__c" extensions="GLXY_LPSRBuildingRelatedList">
+  <!-- Begin Default Content REMOVE THIS -->
+   <apex:pageBlock >
+
+        <apex:pageBlockTable value="{!projectLocations}" var="item">
+           
+            <apex:column headerValue="PBS Building Name">
+              <apex:outputLink value="/{!item.BuildingNumber__c}" target="_top"><apex:outputText value="{!item.BuildingNumber__r.Name}" /></apex:outputLink>
+           </apex:column>
+            <apex:column headerValue="Project Location ID">
+              <apex:outputLink value="/{!item.id}" target="_top"><apex:outputText value="{!item.Name}" /></apex:outputLink>
+           </apex:column>
+            
+            <apex:column value="{!item.BuildingName__c }"/> 
+            <apex:column value="{!item.Address__c }"/>
+            <apex:column value="{!item.City__c }"/>
+            <apex:column value="{!item.State__c }"/>
+            <apex:column value="{!item.LocationCode__c }"/>
+        </apex:pageBlockTable> 
+
+    </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

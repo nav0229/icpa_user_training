@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Load the Galaxy Lease Project (Region 6-11) Accrual Data.</description>
+    <mappings>
+        <sourceField>Glxy_LeaseProjects__c.AccrualAmountCurrentFY__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.Amount__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>BucketField_47395100</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.DataCategory__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>CUST_ID</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.DataRecordID__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>CUST_ID</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.LeaseProject__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>Glxy_LeaseProjects__c.RegionCd__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.Region__c</targetField>
+    </mappings>
+    <name>Galaxy Accrual Snapshot 2</name>
+    <runningUser>nkasala@gsa.gov</runningUser>
+    <sourceReport>Galaxy_Reports/Glxy_AccrualsLeaseProject2</sourceReport>
+    <targetObject>Glxy_Accrual__c</targetObject>
+</AnalyticSnapshot>

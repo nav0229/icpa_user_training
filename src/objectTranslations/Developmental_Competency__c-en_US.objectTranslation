@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Developmental Competency</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Developmental Competencies</value>
+    </caseValues>
+    <fields>
+        <help><!-- Activity Name - Select an Activity for this IDP that pertains to a Competency Model, Competency Area or Competency --></help>
+        <label><!-- Activity Name --></label>
+        <name>Activity_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Competency Area - Here you drill deeper in the model to show what you want to develop with this activity --></help>
+        <label><!-- Competency Area --></label>
+        <name>Competency_Area__c</name>
+    </fields>
+    <fields>
+        <help><!-- Competency Model - What area are you trying to develop with this activity? Your leadership skills, your contracting skills? --></help>
+        <label><!-- Competency Model --></label>
+        <name>Competency_Model__c</name>
+    </fields>
+    <fields>
+        <help><!-- Competency - Here you drill even deeper in the model to show what you want to develop with this activity --></help>
+        <label><!-- Competency --></label>
+        <name>Competency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select Activity - Select an Activity for this IDP that pertains to a Competency Model, Competency Area or Competency --></help>
+        <label><!-- Developmental Activity --></label>
+        <name>Developmental_Activity__c</name>
+        <relationshipLabel><!-- Developmental Competencies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related IDP --></label>
+        <name>Related_IDP__c</name>
+    </fields>
+    <layouts>
+        <layout>Developmental Competency Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

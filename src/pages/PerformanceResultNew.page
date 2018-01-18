@@ -1,0 +1,8 @@
+<!-- Custom visualforce page to override the Performance Results new button                         -->
+<!---------------------------------------------------------------------------------------------------->  
+<!-- Author             |Date       |Version| Description                                           -->
+<!---------------------------------------------------------------------------------------------------->
+<!-- Rajakumar P         09/27/2012  1.0      Iteration 1                                           -->
+<!---------------------------------------------------------------------------------------------------->
+<apex:page standardController="Performance_Result__c" 
+            action="{!URLFOR($Action.Performance_Result__c.New,null,[retURL=$Request.retURL],true)}" />

@@ -1,0 +1,73 @@
+<apex:page renderAs="pdf" standardStylesheets="false" showHeader="false" controller="TitleVISendLetterController">
+    <head>
+        <style>
+            @page {
+                margin-bottom: 100px ; 
+                @bottom-right { 
+                    content: element(footer);
+                }
+            }
+            div.footer {                
+                display: block;                           
+                position: running(footer);    
+                color:#C0C0C0;      
+                margin-top:0px;
+                text-align:right;
+                font-family:arial;
+            }   
+        </style>
+    </head>
+<div class="footer">
+U.S. General Services Administration <br /> 1800 F Street, NW <br /> Washington, DC 20405 <br /> www.gsa.gov
+</div>
+    <apex:form >
+        <apex:repeat value="{!contactsToMail}" var="currContact" >
+            <div style="width:100%;height:120px;">
+                <div style="float:left;">
+                    <apex:image url="{!$Resource.headerLogo}" />
+                </div>
+                <div style="float:right;color:#C0C0C0;font-family:arial;">
+                    GSA Office of Civil Rights
+                </div>
+            </div>
+
+            {!todaysDate}<br/>
+            <br/>
+            
+            {!currContact.Contact.Salutation} {!currContact.Contact.Name}<br/>
+            {!currContact.Contact.Account.Name}<br/>
+            {!currContact.Contact.Account.BillingStreet}<br/>
+            {!currContact.Contact.Account.BillingCity}, {!currContact.Contact.Account.BillingState} {!currContact.Contact.Account.BillingPostalCode}<br/><br/>
+            
+            RE:  Request for Compliance Submission<br/>
+            <br/>
+            Dear {!currContact.Contact.Salutation} {!currContact.Contact.Name}:
+            
+            <p>Your organization has been identified by your State Agency for Surplus Property as a recipient of Federal surplus personal property under the Federal Surplus Personal Property Donations Program.  The Federal Surplus Personal Property Donations Program is a Federal financial assistance program administered by the General Services Administration (GSA), a Federal agency.  As a recipient, your organization signed a nondiscrimination statement agreeing to conduct your programs and activities in compliance with Federal nondiscrimination laws.  Those laws are listed below:</p>
+            <ul>
+                <li>Title VI of the Civil Rights Act of 1964, as amended</li>
+                <li>Title IX of the Education Amendments Act of 1972, as amended</li>
+                <li>Section 504 of the Rehabilitation Act of 1973, as amended</li>
+                <li>Age Discrimination Act of 1975</li>
+                <li>Federal Property Management Act of 1949, as amended.</li>
+            </ul>  
+            <p>Generally, the aforementioned laws provide that no person in the United States shall, on the ground of race, color, national origin, sex, disability or age, be subject to discrimination under any program or activity receiving Federal financial assistance.  Federal agencies that provide financial assistance are responsible for ensuring that recipients of Federal assistance operate their programs and activities in a nondiscriminatory manner.  GSA’s implementing and enforcement regulations for these laws are located at 41 CFR 101-4 et. seq; 41 CFR 101-6.2 et. seq; 41 CFR 101-8.3 et. seq; and 41 CFR 101-8.7 et. seq.</p>
+            <p>Pursuant to these laws and regulations, your organization must keep records and submit compliance reports to GSA for the purpose of determining your organization's compliance.  Therefore, your organization is required to submit to GSA’s Office of Civil Rights (OCR) compliance data, <u>within sixty (60) days</u> of receipt of this letter.  <b>Please submit your completed questionnaire within the mandatory timeframe.</b>  </p>
+            <p>Your submission must be completed using the enclosed questionnaire.  Completed submissions must be mailed to the following address: </p>
+            <p>General Services Administration <br/>Office of Civil Rights (AK) <br/>1275 First Street, NE <br/>Room 513A <br/>Washington, DC, 20417</p>
+            <p>If you would prefer to complete the submission electronically, please provide our office with your email address within 10 days of receipt of this letter.  OCR’s compliance staff is available to assist you by telephone at (202) 501-0767 or by email at civilrights@gsa.gov.</p>
+            <br/>
+            Sincerely,
+            <br/>
+            Dennis Oden<br/>
+            Director, Civil Rights Division<br/>
+            Office of Civil Rights<br/>
+            General Services Administration<br/>
+            <!-- This line below must be removed on the last letter, but no handle to index on salesforce repeater tag -->
+            <div style="page-break-before:always;"></div>
+            <!--<div style="page-break-before:auto;"></div>-->
+
+        </apex:repeat>
+    </apex:form>
+
+</apex:page>

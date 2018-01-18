@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is created to serve the business need of Internal Management Tool (IMT) Communications events/records.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Background__c</fullName>
+        <externalId>false</externalId>
+        <label>Background</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_of_POC__c</fullName>
+        <externalId>false</externalId>
+        <label>Email of POC</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Discussions__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Discussions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OAS_Notification_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>OAS Notification Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved by OAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Form Submitted, Awaiting Approval</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Agencies_Entities_Involved__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Agencies/Entities Involved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PAO_Discussions__c</fullName>
+        <externalId>false</externalId>
+        <label>PAO Discussions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>POC</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>GSA_Comms1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Principals_Involved__c</fullName>
+        <externalId>false</externalId>
+        <label>Principals Involved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Region_SSO__c</fullName>
+        <externalId>false</externalId>
+        <label>Region / SSO</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>OCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CPO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OERR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OSBU</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CIO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCIA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCSIT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Administrative Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Central Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Show_in_Shared_Calendar__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show in IMT Calendar</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_of_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Activity</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Annual Reports/Rule Changes - grey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Conferences/Engagements (Media) - purple</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Conferences/Training (No Media) - dark blue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Congressional - pink</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Events/Exhibits (extended days) - green</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAS/Procurement - blue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Land Port of Entry (LPOE) expansion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS/Property Events - yellow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Communications</label>
+    <nameField>
+        <label>Activity</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Communications</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Type_of_Activity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Region_SSO__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>POC__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>State__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Show_in_Shared_Calendar__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Type_of_Activity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Region_SSO__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>POC__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>State__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Show_in_Shared_Calendar__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Communications_End_Date_Not_Lesser</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c &lt;  Start_Date__c</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date must be greater than or equal to Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Communications_Start_Date_End_Date_Diff</fullName>
+        <active>true</active>
+        <errorConditionFormula>( End_Date__c - Start_Date__c ) &gt; 5</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date should not be more than 5 days from Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_Validation_rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(End_Date__c)</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>Please select the End Date value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Start_Date_Validation_rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Start_Date__c )</errorConditionFormula>
+        <errorDisplayField>Start_Date__c</errorDisplayField>
+        <errorMessage>Please select the Start Date value</errorMessage>
+    </validationRules>
+</CustomObject>

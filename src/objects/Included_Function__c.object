@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is for the Project Central - Application Registry application and supports the &quot;Application&quot; object. This object tracks the functions each application has.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Application_Function__c</fullName>
+        <description>To view all Application Functions, Click on the Application Functions tab above</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To view all Application Functions, Right Click on the Application Functions tab above and Open in a New Tab</inlineHelpText>
+        <label>Application Function</label>
+        <referenceTo>Application_Function__c</referenceTo>
+        <relationshipLabel>Included Functions</relationshipLabel>
+        <relationshipName>Application_Version_Functions</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Application_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Application_Version__r.Application__r.Id,Application_Version__r.Application__r.Name__c,&quot;_self&quot;)</formula>
+        <label>Application Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Version__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Version</label>
+        <referenceTo>Application_Version__c</referenceTo>
+        <relationshipName>Application_Version_Functions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Function_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Application_Function__r.Id,Application_Function__r.Description__c,&quot;_self&quot;)</formula>
+        <label>Function Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Included Function</label>
+    <nameField>
+        <displayFormat>AVF-{0000000}</displayFormat>
+        <label>Included Function ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Included Functions</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Application_Function__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Application_Version__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Application_Function__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Application_Version__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Application_Function__c</searchFilterFields>
+        <searchFilterFields>Application_Version__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <fullName>View_Application_Functions</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>View Application Functions</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/a0J?fcf=00BS0000001iCht</url>
+    </webLinks>
+</CustomObject>

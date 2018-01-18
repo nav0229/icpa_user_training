@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Contact_Manager_Clicktools_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide Read Write access to users in Contact Manager-Clicktools Users public group to allow them to modify a field in GSA Contact</description>
+        <label>Contact Manager Clicktools Users</label>
+        <sharedTo>
+            <group>Contact_Manager_ClickTools_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>GSA</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TSS_Guest_Site_User</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TSS Guest Site User</label>
+        <sharedTo>
+            <group>TSS_Guest_Site_User</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Email</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

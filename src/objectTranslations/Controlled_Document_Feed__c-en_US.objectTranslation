@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Grant Update Access Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Grant Update Access Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Step Delegate --></label>
+        <name>Approval_Step_Delegate_Origin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Controlled Document --></label>
+        <name>Controlled_Document__c</name>
+        <relationshipLabel><!-- Grant Update Access Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requested Time --></label>
+        <name>Created_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Granted Time --></label>
+        <name>Granted_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notified --></label>
+        <name>Notified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quick Share? --></label>
+        <name>Quick_Share_Origin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Grant Update Access Requests --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Controlled Document Feed Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

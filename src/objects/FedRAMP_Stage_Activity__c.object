@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stage Activity object for FedRAMP application to track Activities and Events on Package Stages</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actors__c</fullName>
+        <externalId>false</externalId>
+        <label>Actors</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PMO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ISSO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>JAB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CSP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3PAO</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Types__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Types</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Initial Interview</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kick-Off</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Architectural Briefing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SAR Briefing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Exec Meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Misc Meeting</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Package_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Stage</label>
+        <referenceTo>FedRAMP_Package_Stage__c</referenceTo>
+        <relationshipLabel>Stage Activities</relationshipLabel>
+        <relationshipName>Stage_Activities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Process</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Start_Date__c - DATE(1985,6,24),7), 
+0 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( End_Date__c - Start_Date__c )/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Number of Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Stage Activity</label>
+    <nameField>
+        <displayFormat>SA-{0000}</displayFormat>
+        <label>Stage Activity Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Stage Activities</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Stage_Activities</fullName>
+        <active>true</active>
+        <description>Activities on Stages</description>
+        <label>Stage Activities</label>
+        <picklistValues>
+            <picklist>Actors__c</picklist>
+            <values>
+                <fullName>3PAO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CSP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JAB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PMO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Types__c</picklist>
+            <values>
+                <fullName>Architectural Briefing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exec Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kick-Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAR Briefing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Process</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Stage_Events</fullName>
+        <active>true</active>
+        <description>Events on Stages</description>
+        <label>Stage Events</label>
+        <picklistValues>
+            <picklist>Actors__c</picklist>
+            <values>
+                <fullName>3PAO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CSP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JAB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PMO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Types__c</picklist>
+            <values>
+                <fullName>Architectural Briefing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exec Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kick-Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAR Briefing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Check_End_Date_on_Activity</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( $RecordType.DeveloperName == &quot;Stage_Activities&quot;, ISBLANK( End_Date__c ), ISPICKVAL( Status__c , &quot;Completed&quot;))</errorConditionFormula>
+        <errorMessage>End Date must be filled in and Status set to “Complete” to save this record</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Status_on_Activity</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( $RecordType.DeveloperName == &quot;Stage_Activities&quot;, NOT(ISBLANK(End_Date__c)), NOT(ISPICKVAL(Status__c , &quot;Completed&quot;)))</errorConditionFormula>
+        <errorMessage>End Date must be filled in and Status set to “Complete” to save this record</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_cannot_be_after_today</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c &gt; TODAY()</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date cannot be a future date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_cannot_be_before_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c  &lt;  Start_Date__c</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date cannot be before Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Event_Date_cannot_be_after_today</fullName>
+        <active>true</active>
+        <errorConditionFormula>Event_Date__c  &gt;  TODAY()</errorConditionFormula>
+        <errorDisplayField>Event_Date__c</errorDisplayField>
+        <errorMessage>Event Date cannot be a future date</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_Activity</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a0x/e?CF00Nn0000000O23a={!FedRAMP_Package_Stage__c.Name}&amp;CF00Nn0000000O23a_lkid={!FedRAMP_Package_Stage__c.Id}&amp;RecordType=01230000001O83V
+&amp;retURL=%2F{!FedRAMP_Package_Stage__c.Id}&amp;saveURL=%2F{!FedRAMP_Package_Stage__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_Event</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add Event</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a0x/e?CF00Nn0000000O23a={!FedRAMP_Package_Stage__c.Name}&amp;CF00Nn0000000O23a_lkid={!FedRAMP_Package_Stage__c.Id} 
+&amp;retURL=%2F{!FedRAMP_Package_Stage__c.Id}&amp;RecordType=01230000001O83W&amp;saveURL=%2F{!FedRAMP_Package_Stage__c.Id}</url>
+    </webLinks>
+</CustomObject>

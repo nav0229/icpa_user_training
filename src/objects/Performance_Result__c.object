@@ -1,0 +1,1593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>PerformanceResultNew</content>
+        <skipRecordTypeSelect>true</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>An add on to the Performance measure application that will allow the various organizations to report on their measures.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>A_Denominator_Definition__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Denominator_Definition__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Denominator Definition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Denominator_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Denominator_Unit_of_Measurement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Denominator Units</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Numerator_Definition__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Numerator_Definition__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Numerator Definition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Numerator_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Numerator_Unit_of_Measurement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Numerator Units</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q1_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q1_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q2_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q2_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q3_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q3_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q4_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>A_Q4_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Support__c</fullName>
+        <defaultValue>&quot;Enter performance results in the native units for the numerator of the measure and the denominator of the measure.  Report numbers in cumulative performance to the date reported using the appropriate units.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Actual Support</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cumulative_To_Date__c</fullName>
+        <defaultValue>&quot;Enter performance results and targets cumulative performance to the date reported.  Enter values in appropriate units. &quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Cumulative To Date</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Denominator_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Denominator_Unit_of_Measurement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Denominator Units</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FY_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Fiscal_Year__c )</formula>
+        <label>FY Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Fiscal Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2010</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2011</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2012</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2013</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2014</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2015</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2016</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2017</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2018</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2019</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2020</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2021</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2022</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2023</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2024</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2025</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2026</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2027</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2028</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2029</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2030</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Year_dupe_check__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Used to check for duplicate fy on created Reports</description>
+        <externalId>false</externalId>
+        <label>Fiscal Year dupe check</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Indicator_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Indicator_Units__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Indicator Units</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lock_Q1_Actuals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Lock Q1 Actuals</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lock_Q2_Actuals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Lock Q2 Actuals</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lock_Q3_Actuals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Lock Q3 Actuals</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lock_Q4_Actuals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Lock Q4 Actuals</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lock_Targets__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For Performance Managers only.</description>
+        <externalId>false</externalId>
+        <label>Lock Targets</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Marked_For_Deletion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If this Performance Report entry needs to be deleted please mark this box</inlineHelpText>
+        <label>Marked For Deletion</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Numerator_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Numerator_Unit_of_Measurement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Numerator Units</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Performance_Measure__c</fullName>
+        <externalId>false</externalId>
+        <label>Performance Indicator</label>
+        <referenceTo>Performance_Indicator__c</referenceTo>
+        <relationshipLabel>Performance Results</relationshipLabel>
+        <relationshipName>Performance_Reports</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Q1_Actual__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Actual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q1_Color_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(
+CASE( Q1_Status__c ,
+&quot;Performance Not Reported&quot;, &quot;/resource/1321982287000/RedFlag&quot;,
+&quot;Off Target&quot;, &quot;/resource/1321982312000/YellowFlag&quot;,
+&quot;On Target&quot;, &quot;/resource/1321982245000/GreenFlag&quot;,
+&quot;Performance Data Not Available&quot;, &quot;/resource/1345065926000/BlueFlag&quot;,&quot;/s.gif&quot;),
+CASE( Q1_Status__c,
+&quot;Performance Not Reported&quot;, &quot;Performance Not Reported&quot;,
+&quot;Off Target&quot;, &quot;Off Target&quot;,
+&quot;On Target&quot;, &quot;On Target&quot;,
+&quot;Performance Data Not Available&quot;, &quot;Performance Data Not Available&quot;,&quot;Status Flag&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Red = NO Data, Yellow = Off Target, Green = On Target,  No color = Not Available</inlineHelpText>
+        <label>Q-1 Status Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q1_Explanation_of_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>You have 32768 characters</inlineHelpText>
+        <label>Q1 Explanation of Status</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q1_Likelihood__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Likelihood</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q1_Risks_and_Challenges__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>You have 32,768 Characters</inlineHelpText>
+        <label>Q1 Risks and Challenges</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q1_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Off Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Not Reported</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Data Not Available</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q1_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Target</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q2_Actual__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Actual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q2_Color_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(
+CASE( Q2_Status__c ,
+&quot;Performance Not Reported&quot;, &quot;/resource/1321982287000/RedFlag&quot;,
+&quot;Off Target&quot;, &quot;/resource/1321982312000/YellowFlag&quot;,
+&quot;On Target&quot;, &quot;/resource/1321982245000/GreenFlag&quot;,
+&quot;Performance Data Not Available&quot;, &quot;/resource/1345065926000/BlueFlag&quot;,&quot;/s.gif&quot;),
+CASE( Q2_Status__c,
+&quot;Performance Not Reported&quot;, &quot;Performance Not Reported&quot;,
+&quot;Off Target&quot;, &quot;Off Target&quot;,
+&quot;On Target&quot;, &quot;On Target&quot;,
+&quot;Performance Data Not Available&quot;, &quot;Performance Data Not Available&quot;,&quot;Status Flag&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Red = NO Data, Yellow = Off Target, Green = On Target,  Blue = Not Available</inlineHelpText>
+        <label>Q-2 Status Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q2_Explanation_of_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Explanation of Status</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q2_Likelihood__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Likelihood</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q2_Risks_and_Chanllenges__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Risks and Chanllenges</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q2_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Off Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Not Reported</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Data Not Available</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q2_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Target</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q3_Actual__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Actual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q3_Color_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(
+CASE( Q3_Status__c ,
+&quot;Performance Not Reported&quot;, &quot;/resource/1321982287000/RedFlag&quot;,
+&quot;Off Target&quot;, &quot;/resource/1321982312000/YellowFlag&quot;,
+&quot;On Target&quot;, &quot;/resource/1321982245000/GreenFlag&quot;,
+&quot;Performance Data Not Available&quot;, &quot;/resource/1345065926000/BlueFlag&quot;,&quot;/s.gif&quot;),
+CASE( Q3_Status__c,
+&quot;Performance Not Reported&quot;, &quot;Performance Not Reported&quot;,
+&quot;Off Target&quot;, &quot;Off Target&quot;,
+&quot;On Target&quot;, &quot;On Target&quot;,
+&quot;Performance Data Not Available&quot;, &quot;Performance Data Not Available&quot;,&quot;Status Flag&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Red = NO Data, Yellow = Off Target, Green = On Target,  Blue = Not Available</inlineHelpText>
+        <label>Q-3 Status Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q3_Explanation_of_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Explanation of Status</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q3_Likelihood__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Likelihood</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q3_Risks_and_Challenges__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Risks and Challenges</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q3_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Off Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Not Reported</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Data Not Available</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q3_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Target</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q4_Actual__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Actual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q4_Color_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(
+CASE( Q4_Status__c ,
+&quot;Performance Not Reported&quot;, &quot;/resource/1321982287000/RedFlag&quot;,
+&quot;Off Target&quot;, &quot;/resource/1321982312000/YellowFlag&quot;,
+&quot;On Target&quot;, &quot;/resource/1321982245000/GreenFlag&quot;,
+&quot;Performance Data Not Available&quot;, &quot;/resource/1345065926000/BlueFlag&quot;,&quot;/s.gif&quot;),
+CASE( Q4_Status__c,
+&quot;Performance Not Reported&quot;, &quot;Performance Not Reported&quot;,
+&quot;Off Target&quot;, &quot;Off Target&quot;,
+&quot;On Target&quot;, &quot;On Target&quot;,
+&quot;Performance Data Not Available&quot;, &quot;Performance Data Not Available&quot;,&quot;Status Flag&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Red = NO Data, Yellow = Off Target, Green = On Target,  Blue = Not Available</inlineHelpText>
+        <label>Q-4 Status Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q4_Explanation_of_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Explanation of Status</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q4_Likelihood__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Likelihood</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q4_Risks_and_Challenges__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Risks and Challenges</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Q4_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Off Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Not Reported</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Data Not Available</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Q4_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Target</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Denominator_Definition__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Denominator_Definition__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Denominator Definition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Numerator_Definition__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Measure__r.Numerator_Definition__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Numerator Definition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q1_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q1_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q2_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q2_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q3_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q3_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q4_Denominator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Denominator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>T_Q4_Numerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 Numerator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_Lock__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used only for the BBI team to lock down the target fields on The  Indicator reports object.</description>
+        <externalId>false</externalId>
+        <label>Target Lock</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Target_Support__c</fullName>
+        <defaultValue>&quot;Enter performance results in the native units for the numerator of the measure and the denominator of the measure.  Report numbers in cumulative performance to the date reported using the appropriate units.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Target Support</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Performance Result</label>
+    <nameField>
+        <displayFormat>Report-{0000000000}</displayFormat>
+        <label>Performance Reporting Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Performance Results</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Performance_Result_Default</fullName>
+        <active>true</active>
+        <label>Performance Result Default</label>
+        <picklistValues>
+            <picklist>Fiscal_Year__c</picklist>
+            <values>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2021</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2022</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2025</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2026</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2027</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2028</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2029</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2030</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q1_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q1_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q2_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q2_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q3_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q3_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q4_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q4_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Performance_Results_Read_Only</fullName>
+        <active>true</active>
+        <description>Used to facilitate workflow to make records uneditable once FY is completed.</description>
+        <label>Performance Results Read Only</label>
+        <picklistValues>
+            <picklist>Fiscal_Year__c</picklist>
+            <values>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2021</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2022</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2025</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2026</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2027</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2028</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2029</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2030</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q1_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q1_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q2_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q2_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q3_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q3_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q4_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Q4_Status__c</picklist>
+            <values>
+                <fullName>Off Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Data Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Lock_Q1_actuals</fullName>
+        <active>true</active>
+        <description>Locks down q1 actuals after they have been entered and the lock Q1 actuals checkbox has been checked.</description>
+        <errorConditionFormula>AND(OR( ISCHANGED(  Q1_Actual__c ),  ISCHANGED( A_Q1_Denominator__c ), ISCHANGED( A_Q1_Numerator__c ) ),Lock_Q1_Actuals__c  = TRUE)</errorConditionFormula>
+        <errorMessage>Actuals have been locked for editing for this quarter and cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Q2_actuals</fullName>
+        <active>true</active>
+        <description>Locks down q2 actuals after they have been entered and the lock Q1 actuals checkbox has been checked.</description>
+        <errorConditionFormula>AND(OR( ISCHANGED(  Q2_Actual__c ),  ISCHANGED( A_Q2_Denominator__c ), ISCHANGED( A_Q2_Numerator__c ) ),Lock_Q2_Actuals__c  = TRUE)</errorConditionFormula>
+        <errorMessage>Actuals have been locked for editing for this quarter and cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Q3_actuals</fullName>
+        <active>true</active>
+        <description>Locks down q3 actuals after they have been entered and the lock Q1 actuals checkbox has been checked.</description>
+        <errorConditionFormula>AND(OR( ISCHANGED(  Q3_Actual__c ),  ISCHANGED( A_Q3_Denominator__c ), ISCHANGED( A_Q3_Numerator__c ) ),Lock_Q3_Actuals__c  = TRUE)</errorConditionFormula>
+        <errorMessage>Actuals have been locked for editing for this quarter and cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Q4_actuals</fullName>
+        <active>true</active>
+        <description>Locks down q4 actuals after they have been entered and the lock Q1 actuals checkbox has been checked.</description>
+        <errorConditionFormula>AND( ISCHANGED(  Q4_Actual__c ),  Lock_Q4_Actuals__c  = TRUE)</errorConditionFormula>
+        <errorMessage>Actuals have been locked for editing for this quarter and cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Targets</fullName>
+        <active>true</active>
+        <description>This will make all target fields locked for editing except for the CFO BBI team.</description>
+        <errorConditionFormula>AND(OR( ISCHANGED( Q1_Target__c),ISCHANGED( Q2_Target__c),ISCHANGED( Q3_Target__c),ISCHANGED( Q4_Target__c), ISCHANGED( T_Q1_Denominator__c ), ISCHANGED( T_Q1_Numerator__c ), ISCHANGED( T_Q2_Denominator__c ), ISCHANGED( T_Q2_Numerator__c ), ISCHANGED( T_Q3_Denominator__c ), ISCHANGED( T_Q3_Numerator__c ) , ISCHANGED( T_Q4_Denominator__c ), ISCHANGED( T_Q4_Numerator__c )),  Lock_Targets__c  = TRUE)</errorConditionFormula>
+        <errorDisplayField>Target_Lock__c</errorDisplayField>
+        <errorMessage>You may not edit your targets once they have been entered.</errorMessage>
+    </validationRules>
+</CustomObject>

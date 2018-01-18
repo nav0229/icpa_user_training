@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Child object to Developmental Objectives. Used to capture developmental activity line items.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Activity_Type_List__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Activity Type - Select the option that most closely fits your activity</inlineHelpText>
+        <label>Activity Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Coaching</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Higher Education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Person Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mentoring</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On the Job Activities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shadowing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Structured Development Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training Conference</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>$RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Activity Type - Select the option that most closely fits your activity</inlineHelpText>
+        <label>Activity Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assignment_Title__c</fullName>
+        <description>This is a generic title for all developmental activities that can fall under IDP.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Activity Name - Enter a brief description of the Activity</inlineHelpText>
+        <label>Activity Name</label>
+        <length>140</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Books_Material_Costs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated Books &amp; Material Cost - Insert the materials cost for training that was paid for
+by the Federal Government. (Refer to the Guide for Human Resources Reporting at
+http://www.opm.gov/feddata/guidance.asp for more information) Example Format: 250.</inlineHelpText>
+        <label>Estimated Books &amp; Material Costs</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments - Enter any comments/notes related to your IDP</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Completed Date - Use this field if you want to keep a record of your activity completions only after your IDP is Approved</inlineHelpText>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Material__c</fullName>
+        <description>material fees: books, documents.  materials needed to complete course study</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Costs Books &amp; Materials - This field represents the estimated material fees: books, documents or other materials needed to complete the activity.</inlineHelpText>
+        <label>Cost Books &amp; Materials</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Travel__c</fullName>
+        <description>Travel Fees</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated Travel Cost - This field represents the estimated travel cost that the Activity is expected to cost. Example Format: 500.</inlineHelpText>
+        <label>Estimated Travel Costs</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Create_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Created Date - This field will automatically show the date the activity was created.</inlineHelpText>
+        <label>Create Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Developmental_Objective__c</fullName>
+        <description>Lookup to Objective from Activity
+
+One Objective of an IDP can have mutiple Activity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Developmental Objective - Select the Objective that your new Activity will be associated with</inlineHelpText>
+        <label>Developmental Objective</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 AND 2 AND 3) OR 4</booleanFilter>
+            <filterItems>
+                <field>Developmental_Objective__c.IDP__r.IDP_Status__c</field>
+                <operation>equals</operation>
+                <value>New, Needs Revision, Resubmit, Approved</value>
+            </filterItems>
+            <filterItems>
+                <field>$User.Id</field>
+                <operation>equals</operation>
+                <valueField>Developmental_Objective__c.IDP__r.OwnerId</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Developmental_Objective__c.IDP__r.Id</field>
+                <operation>equals</operation>
+                <valueField>Developmental_Objective__c.IDP__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>$User.Id</field>
+                <operation>equals</operation>
+                <valueField>Developmental_Objective__c.IDP__r.Supervisor__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Developmental_Objective__c</referenceTo>
+        <relationshipLabel>Developmental Activities</relationshipLabel>
+        <relationshipName>Developmental_Activities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Expected_Outcomes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Expected Outcomes - Examples of Expected Outcomes: Enhanced ability to lead my team through needed changes, help achieve key objective for GSA, direct reports are finishing their own work to a high standard, without my direct involvement</inlineHelpText>
+        <label>Expected Outcomes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IDP_Activity_Status__c</fullName>
+        <description>Approval IDP Activity Status</description>
+        <externalId>false</externalId>
+        <label>Activity Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Initial</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Plan Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Plan Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Request Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Primary  Supervisor Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Primary  Supervisor Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Secondary Supervisor Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Secondary Supervisor Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training Coordinator Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training Coordinator Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Financial Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Financial Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Certification Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Certification Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Certification Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Activity Request Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Activity Request Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IDP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Developmental_Objective__r.IDP__r.Id)</formula>
+        <inlineHelpText>IDP ID - Pre-populated ID of your IDP</inlineHelpText>
+        <label>IDP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IDP_Instructions__c</fullName>
+        <defaultValue>&quot;Step 1: Please input your IDP Information, Employee Information, Career Goals, IDP Objectives and click on Save.&quot;&amp;br()&amp;
+&quot;Step 2: Add developmental activities by clicking on the New Developmental Activity button.&quot;&amp;br()&amp;
+&quot;Step 3: Select a &apos;New Developmental Activity Type&apos; and click &apos;Continue&apos;.&quot;&amp;br()&amp;
+&quot;Step 4: Please complete the Development Plan Section Only and click Save.&quot;&amp;br()&amp;
+&quot;Step 5: Return to the IDP summary page by clicking on the IDP link under IDP Developmental Activity Detail.&quot;&amp;br()&amp;
+&quot;             &quot;&amp;&quot;Note: Follow Step 2 to add more activities.&quot;&amp;br()&amp;
+&quot;Step 6: When you are ready to submit the development plan for approval, click Submit for Approval to select your supervisor.&quot;&amp;br()&amp;
+&quot;Step 7: Use the look-up field to Select your Supervisor and click on the Send to Next Approver button.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>IDP Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IDP_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Developmental_Objective__r.IDP__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>IDP Name - The pre-populated name of your IDP</inlineHelpText>
+        <label>IDP Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <description>Location of developmental activity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Activity Location - Enter the name of the location for this activity</inlineHelpText>
+        <label>Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Office_Telephone__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Office Telephone - Enter your office telephone number</inlineHelpText>
+        <label>Office Telephone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Organization_City__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Organization City - Enter the city of the organization</inlineHelpText>
+        <label>Organization City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Per_Diem__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated Per Diem - If traveling to fulfill an activity, provide the estimated per diem. Example Format: 1000.</inlineHelpText>
+        <label>Estimated Per Diem</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Planned_End_Date__c</fullName>
+        <description>Planned End Date for IDP Developmental Activities.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Planned End Date - Enter the date in which your Activity will end. Example Format: MM/DD/YYYY.</inlineHelpText>
+        <label>Planned End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Start_Date__c</fullName>
+        <description>Planned Start Date for IDP Developmental Activities</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Planned Start Date - Enter the date in which your Activity will begin. Example Format: MM/DD/YYYY.</inlineHelpText>
+        <label>Planned Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <description>Priority for Training</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Priority - This shows the level of priority for this activity</inlineHelpText>
+        <label>Priority</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RecordTypeName__c</fullName>
+        <externalId>false</externalId>
+        <formula>$RecordType.DeveloperName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RecordTypeName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_IDP__c</fullName>
+        <externalId>false</externalId>
+        <formula>Developmental_Objective__r.IDP__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Related IDP - The pre-populated name of the related IDP.</inlineHelpText>
+        <label>Related IDP</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Required_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Required Date - The required date is mandatory if the activity is required. Example Format: MM/DD/YYYY.</inlineHelpText>
+        <label>Required Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Series__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Series - The position classification four digit series. (e.g., 0201)</inlineHelpText>
+        <label>Series</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Supervisor Comments - This field is only intended for the Supervisor of this IDP; as the selected Supervisor of this IDP please add comments about the user&apos;s IDP Activity</inlineHelpText>
+        <label>Supervisor Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Supv_Instructions_How_to_Add_Comments__c</fullName>
+        <defaultValue>&quot;As a Supervisor of an IDP you have the option of adding comments to an employee&apos;s Activity within the &apos;Supervisor Comments&apos; field. Users will be able to review the comments within the &apos;Review and Submit&apos; section of their IDP. After adding your comments please be sure to select &apos;Save&apos;. If you are not automatically redirected to the user&apos;s IDP, select the link within the &apos;Developmental Objective&apos; field and from there select the link within the &apos;IDP&apos; field. This will redirect you to the main IDP section so that you can continue reviewing before approval or rejection&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Supv Instructions - How to Add Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>Books_Material_Costs__c+Tuition_Fees__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Estimated Cost - This field calculates the total dollar value from the Estimated Tuition &amp; Fees and Estimated Books &amp; Material Costs fields.</inlineHelpText>
+        <label>Total Estimated Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Training_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Training Name - Enter the name of the training you plan to take</inlineHelpText>
+        <label>Training Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Training_Need__c</fullName>
+        <description>Required or recommended training</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Activity Required? - Select whether this training is required or recommended</inlineHelpText>
+        <label>Is this Activity Required?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Required</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recommended</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tuition_Fees__c</fullName>
+        <description>Direct Cost - Tuition &amp; Fees</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated Tuition and Fees - This field represents the estimated tuition and fees that the Activity is expected to cost. Example Format: 2000.</inlineHelpText>
+        <label>Estimated Tuition &amp; Fees</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <description>IDP Developmental Activity Vendors</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Vendor - If applicable, enter the name of the company/university that will be conducting the training/course</inlineHelpText>
+        <label>Vendor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Developmental Activity</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Create_Date__c</columns>
+        <columns>Activity_Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Assignment_Title__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>DA-{000000}</displayFormat>
+        <label>Developmental Activity</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Developmental Activities</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Activity</fullName>
+        <active>true</active>
+        <description>Record Type for all the Activities</description>
+        <label>Activity</label>
+        <picklistValues>
+            <picklist>Activity_Type_List__c</picklist>
+            <values>
+                <fullName>Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Higher Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On the Job Activities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shadowing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Structured Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Conference</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IDP_Activity_Status__c</picklist>
+            <values>
+                <fullName>Activity Request Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Activity Request Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary  Supervisor Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary  Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Supervisor Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Supervisor Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Coordinator Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Coordinator Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Need__c</picklist>
+            <values>
+                <fullName>Recommended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Developmental_Objective__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Assignment_Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Planned_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Planned_End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Activity_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Cost__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>IDP_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Developmental_Objective__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Assignment_Title__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Planned_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Planned_End_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Activity_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Cost__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Developmental_Objective__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Assignment_Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Planned_Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Planned_End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Activity_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Cost__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <fullName>Edit_IDP_Activity</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Update Activity Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!IDP_Developmental_Line_Item__c.Id}/e?retURL={!IDP_Developmental_Line_Item__c.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Flow_Fault_Email_Message</name>
+        <label>Flow Fault Email Message</label>
+        <locationX>662</locationX>
+        <locationY>560</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>ErrorFlowFaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Flow Error: G2 - Adjust Lump Sum Accruals</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>Galaxy2Help@unisys.com</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <name>Adjust_Amount_0</name>
+        <label>Adjust Amount 0</label>
+        <locationX>211</locationX>
+        <locationY>382</locationY>
+        <assignmentItems>
+            <assignToReference>dblAdjustedAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lump_Sum</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Adjust_Amount_Diff</name>
+        <label>Adjust Amount Diff</label>
+        <locationX>785</locationX>
+        <locationY>374</locationY>
+        <assignmentItems>
+            <assignToReference>dblAdjustedAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>dblDiffAmount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lump_Sum</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>This is a invalid business case scenario ... we want to exit the flow with no operations ...</description>
+        <name>MissingFundingPayment</name>
+        <label>Missing Funding Payment</label>
+        <locationX>719</locationX>
+        <locationY>170</locationY>
+        <assignmentItems>
+            <assignToReference>dblAdjustedAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>dblAmount</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>No adjustments need to happen for this Lump Sum ... No action needed ...</description>
+        <name>No_Adjustments_needed</name>
+        <label>No Adjustments needed</label>
+        <locationX>475</locationX>
+        <locationY>427</locationY>
+        <assignmentItems>
+            <assignToReference>dblAdjustedAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>dblAmount</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Adjust_the_Lump_Sum_Amount</name>
+        <label>Adjust the Lump Sum Amount</label>
+        <locationX>475</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>No_Accruals_Specified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAccrualAmountonDigest</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Adjustments_needed</targetReference>
+            </connector>
+            <label>No Accruals Specified</label>
+        </rules>
+        <rules>
+            <name>Accruals_Greater_than_equal_to_REXUS_amount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAccrualAmountonDigest</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>dblREXUSAmount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Adjust_Amount_0</targetReference>
+            </connector>
+            <label>Accruals Greater than equal to REXUS amount</label>
+        </rules>
+        <rules>
+            <name>Accruals_less_than_REXUS_amount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAccrualAmountonDigest</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>dblREXUSAmount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Adjust_Amount_Diff</targetReference>
+            </connector>
+            <label>Accruals less than REXUS amount</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Funding_Payment_Found</name>
+        <label>Funding Payment Found?</label>
+        <locationX>476</locationX>
+        <locationY>167</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>objFunding</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Adjust_the_Lump_Sum_Amount</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>objFunding</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>MissingFundingPayment</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>dblAccrualAmountonDigest</name>
+        <dataType>Currency</dataType>
+        <expression>{!objFunding.LeaseDigest__r.AccrualAmountForDigest__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>dblDiffAmount</name>
+        <dataType>Currency</dataType>
+        <expression>{!(dblREXUSAmount - objFunding.LeaseDigest__r.AccrualAmountForDigest__c)}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>strComments</name>
+        <dataType>String</dataType>
+        <expression>strCommentsInput &amp; &apos;  [** &apos; &amp;
+&apos;Record updated by the Accrual Process on &apos; &amp; Text(Today()) &amp; &apos;. &apos; &amp;
+&apos;Transaction ID = &apos; &amp; 
+{!objFunding.LeaseDigest__r.Transaction__r.Name} &amp; &apos;; &apos; &amp;
+&apos;PDN = &apos; &amp; 
+{!objFunding.LeaseDigest__r.PDNsForDigest__c} &amp; &apos;; &apos; &amp;
+&apos;Annual Amount before update = $&apos; &amp; 
+Text(dblAmount) &amp; &apos;; &apos; &amp;
+ &apos;**]&apos;</expression>
+    </formulas>
+    <formulas>
+        <description>This formula is used as a template only, in case of future needs. Its is currently not referenced in the flow.</description>
+        <name>strCommentsTemplate</name>
+        <dataType>String</dataType>
+        <expression>strCommentsInput &amp; &apos;  [** &apos; &amp;
+&apos;Record updated by the Accrual Process on &apos; &amp; Text(Today()) &amp; &apos;. &apos; &amp;
+&apos;Transaction ID = &apos; &amp; 
+{!objFunding.LeaseDigest__r.Transaction__r.Name} &amp; &apos;; &apos; &amp;
+&apos;PDN = &apos; &amp; 
+{!objFunding.LeaseDigest__r.PDNsForDigest__c} &amp; &apos;; &apos; &amp;
+&apos;Annual Amount before update = $&apos; &amp; 
+Text(dblAmount) &amp; &apos;; &apos; &amp;
+&apos;Rexus Amount = $&apos; &amp; 
+Text(dblREXUSAmount) &amp; &apos;; &apos; &amp;
+&apos;Accrual Amount on Digest = $&apos; &amp; 
+Text({!objFunding.LeaseDigest__r.AccrualAmountForDigest__c}) &amp; &apos;; &apos; &amp;
+&apos;Annual Amount after update = $&apos; &amp; 
+Text(dblAdjustedAmount) &amp; &apos;; &apos; &amp;
+ &apos;**]&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>strPaymentID</name>
+        <dataType>String</dataType>
+        <expression>Text({!intPaymentID})</expression>
+    </formulas>
+    <interviewLabel>Flow - Adjust Lump Sum Accruals {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Flow - Adjust Lump Sum Accruals</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Payment_Details</name>
+        <label>Get Payment Details</label>
+        <locationX>478</locationX>
+        <locationY>44</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Funding_Payment_Found</targetReference>
+        </connector>
+        <filters>
+            <field>PaymentID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>intPaymentID</elementReference>
+            </value>
+        </filters>
+        <object>Glxy_LeasePayment__c</object>
+        <outputReference>objFunding</outputReference>
+        <queriedFields>Digest_ID__c</queriedFields>
+        <queriedFields>LeaseDigest__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Lump_Sum</name>
+        <label>Update Lump Sum</label>
+        <locationX>478</locationX>
+        <locationY>560</locationY>
+        <faultConnector>
+            <targetReference>Flow_Fault_Email_Message</targetReference>
+        </faultConnector>
+        <filters>
+            <field>PaymentID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>strPaymentID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Amount__c</field>
+            <value>
+                <elementReference>dblAdjustedAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comments__c</field>
+            <value>
+                <elementReference>strComments</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Glxy_LumpSum__c</object>
+    </recordUpdates>
+    <startElementReference>Get_Payment_Details</startElementReference>
+    <textTemplates>
+        <name>ErrorFlowFaultMessage</name>
+        <text>Error: {!$Flow.FaultMessage}
+
+The flow encountered errors. Accrual amounts were not adjusted. This adjustment will need to be made manually.
+
+LS Payment ID: {!intPaymentID}
+Amount: {!dblAmount}
+REXUS Amount: {!dblREXUSAmount}
+Adjusted Amount: {!dblAdjustedAmount}{!intPaymentID}</text>
+    </textTemplates>
+    <variables>
+        <name>dblAdjustedAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>dblAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>dblREXUSAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>intPaymentID</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>objFunding</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Glxy_LeasePayment__c</objectType>
+    </variables>
+    <variables>
+        <name>strCommentsInput</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

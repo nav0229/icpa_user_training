@@ -1,0 +1,2128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Additional_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Capstone_Official__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Capstone Official</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Classified_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Classified By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PD_Libraries</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Classified_On__c</fullName>
+        <defaultValue>Now()</defaultValue>
+        <externalId>false</externalId>
+        <label>Classified On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cloned_from_Master__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cloned from Master</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Competitive_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitive Level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Drug_Test__c</fullName>
+        <externalId>false</externalId>
+        <label>Drug Test</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Position does not require drug test (L)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Position requires drug test (D)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FLSA__c</fullName>
+        <externalId>false</externalId>
+        <label>FLSA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Exempt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Exempt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>See Text Below</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FPL__c</fullName>
+        <externalId>false</externalId>
+        <label>FPL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Financial_Statement__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Statement</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGE-278</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGE-450</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Grade__c</fullName>
+        <externalId>false</externalId>
+        <label>Grade</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>00</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>01</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>06</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>07</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>08</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>09</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hide_Obsolete_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is a hidden field. When users select &quot;PD Status&quot; value as &quot;Obsolete&quot; or &quot;Historical Obsolete&quot;, &quot;Hide Obsolete Record&quot; field will become true &amp; vice versa.</description>
+        <externalId>false</externalId>
+        <label>Hide Obsolete Record</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>I_A__c</fullName>
+        <externalId>false</externalId>
+        <label>I/A</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Job_Analysis_Attachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>To determine if there is an attachment for Job Analysis. Check if attached. Uncheck if there is no attachment.</inlineHelpText>
+        <label>Job Analysis Attachment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Job_Analysis_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Vacancy Announcement Number</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Keywords__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter keywords to search the PD</inlineHelpText>
+        <label>Keywords</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Classified_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy - Classified By</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Master__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Master</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Occupational_Category_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Occupational Category Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blue Collar (B)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Professional (P)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Administrative (A)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Technical (T)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clerical (C)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other White Collar (O)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PD_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>PD Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PD_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>PD Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Obsolete</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Historical Obsolete</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PD_Template__c</fullName>
+        <externalId>false</externalId>
+        <label>Standard</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Master</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Regional</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pay_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Pay Plan</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Position_Sensitivity__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Sensitivity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non Designated</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-sensitive (1)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non Critical Sensitive (2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Critical Sensitive (3)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Special Sensitive (4)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Position_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Competitive Service (1)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Excepted Service (2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SES General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SES Career Reserved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Judicial DC Courts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Career DC Courts</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Position_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Public_Trust_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <label>Public Trust Indicator</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Level 1 - Low Risk (1)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Level 5 - Moderate Risk (5)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Level 6 - High Risk (6)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Regions__c</fullName>
+        <externalId>false</externalId>
+        <label>Servicing HR Office</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Central Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Executive Resources</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Capital Region</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 01</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 02</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 03</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 04</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 05</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 06</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 07</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 08</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 09</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Series__c</fullName>
+        <externalId>false</externalId>
+        <label>Series</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service__c</fullName>
+        <externalId>false</externalId>
+        <label>Service/Staff Office/Region</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Regions__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Board of Contract Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CAO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHCO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CIO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Citizen Service &amp; Innovative Technologies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Citizen Services and Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Civilian Board of Contract Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Communications &amp; Marketing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Congressional/Intergovernmental Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO Standard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CPC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CPO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Department of Homeland Security</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Executive Resources</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Finance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Financial Systems</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FSC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FSS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FTS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LEGAL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>-None-</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OAD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OED</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OERR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Administrative Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Childcare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of CitizenServices&amp;Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of CitizenServices&amp;InnovativeTechnologies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Communications and Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Communications and Public Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Congr&apos;l &amp; Intergovt&apos;l Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Customer Experience</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of GSA IT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Mission Assurance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Performance Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Small Business Utilization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Chief Acquisition Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OHRM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS/FAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS Building Block POD PDs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RA Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Regional Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Regional Standard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region NCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TTS</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <valueName>CPO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>FAS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>Finance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>FSS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <valueName>FTS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>LEGAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>OAD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Office of Inspector General</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>Office of GSA IT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>PBS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>PBS Building Block POD PDs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>Regional Administrator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>National Capital Region</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>Regional Standard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 07</controllingFieldValue>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 03</controllingFieldValue>
+                <controllingFieldValue>Region 04</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>Staff</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 08</controllingFieldValue>
+                <valueName>PBS/FAS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 09</controllingFieldValue>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>CIO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 10</controllingFieldValue>
+                <valueName>Executive Resources</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>CD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>CHCO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Civilian Board of Contract Appeals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>CO Standard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Region 01</controllingFieldValue>
+                <controllingFieldValue>Region 02</controllingFieldValue>
+                <controllingFieldValue>Region 05</controllingFieldValue>
+                <valueName>Department of Homeland Security</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>OCFO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>OCP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>OCS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>OED</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>OERR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Office of Administrative Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of Childcare</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of CitizenServices&amp;Communications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of CitizenServices&amp;InnovativeTechnologies</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of Civil Rights</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of Communications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of Communications and Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of Congr&apos;l &amp; Intergovt&apos;l Affairs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of Customer Experience</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of Mission Assurance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Office of Performance Improvement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Office of Small Business Utilization</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Office of the Administrator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>Office of the Chief Acquisition Officer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>OGC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>OGP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <valueName>OHRM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Central Office</controllingFieldValue>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>TTS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Board of Contract Appeals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>CAO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>CFO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Citizen Service &amp; Innovative Technologies</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Citizen Services and Communications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Civil Rights</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Communications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Communications &amp; Marketing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Congressional/Intergovernmental Affairs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <controllingFieldValue>Office of Inspector General</controllingFieldValue>
+                <valueName>Office of the Inspector General</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 10</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region 9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Executive Resources</controllingFieldValue>
+                <valueName>Region NCR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>CPC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>Financial Systems</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>FSC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Region 06</controllingFieldValue>
+                <valueName>RA Staff</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Supervisory_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Supervisory Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Supervisor or Manager (2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Supervisor CSRA (4)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Management Official CSRA (5)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Leader (6)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Team Leader (7)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-supervisory (8)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>PD</label>
+    <listViews>
+        <fullName>By_Grade</fullName>
+        <columns>NAME</columns>
+        <columns>Grade__c</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Master__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional,Master</value>
+        </filters>
+        <label>By Grade</label>
+    </listViews>
+    <listViews>
+        <fullName>By_PD</fullName>
+        <columns>NAME</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>Service__c</columns>
+        <columns>Master__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional,Master</value>
+        </filters>
+        <label>By PD #</label>
+    </listViews>
+    <listViews>
+        <fullName>By_Position</fullName>
+        <columns>NAME</columns>
+        <columns>Position_Status__c</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Master__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional,Master</value>
+        </filters>
+        <label>By Position</label>
+    </listViews>
+    <listViews>
+        <fullName>By_Series</fullName>
+        <columns>NAME</columns>
+        <columns>Series__c</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Master__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Master,Regional</value>
+        </filters>
+        <label>By Series</label>
+    </listViews>
+    <listViews>
+        <fullName>By_Service</fullName>
+        <columns>NAME</columns>
+        <columns>Service__c</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Series__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <columns>Master__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <label>By Service</label>
+    </listViews>
+    <listViews>
+        <fullName>Central_Office</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Central Office</value>
+        </filters>
+        <label>Central Office</label>
+    </listViews>
+    <listViews>
+        <fullName>Executive_Resources</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Executive Resources</value>
+        </filters>
+        <label>Executive Resources</label>
+    </listViews>
+    <listViews>
+        <fullName>Master_PDs_View</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Master__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Master__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Master</value>
+        </filters>
+        <label>Master PDs View</label>
+    </listViews>
+    <listViews>
+        <fullName>National_Capital_Region</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>National Capital Region</value>
+        </filters>
+        <label>National Capital Region</label>
+    </listViews>
+    <listViews>
+        <fullName>Office_of_the_Inspector_General</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Office of Inspector General</value>
+        </filters>
+        <label>Office of the Inspector General</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_1</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Series__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 01</value>
+        </filters>
+        <label>Region 1</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_10</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 10</value>
+        </filters>
+        <label>Region 10</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_2</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Series__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 02</value>
+        </filters>
+        <label>Region 2</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_3</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 03</value>
+        </filters>
+        <label>Region 3</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_4</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 04</value>
+        </filters>
+        <label>Region 4</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_5</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 05</value>
+        </filters>
+        <label>Region 5</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_6</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 06</value>
+        </filters>
+        <label>Region 6</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_7</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 07</value>
+        </filters>
+        <label>Region 7</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_8</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 08</value>
+        </filters>
+        <label>Region 8</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_9</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <filters>
+            <field>Regions__c</field>
+            <operation>equals</operation>
+            <value>Region 09</value>
+        </filters>
+        <label>Region 9</label>
+    </listViews>
+    <listViews>
+        <fullName>Regional_PD_View</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Position_Title__c</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Regions__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Master__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <label>Regional PD View</label>
+    </listViews>
+    <listViews>
+        <fullName>View_Historical_Obsolete_PDs</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Series__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Status__c</field>
+            <operation>equals</operation>
+            <value>Historical Obsolete</value>
+        </filters>
+        <label>View Historical Obsolete PDs</label>
+    </listViews>
+    <listViews>
+        <fullName>View_Obsolete_PDs</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Series__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PD_Status__c</field>
+            <operation>equals</operation>
+            <value>Obsolete</value>
+        </filters>
+        <filters>
+            <field>PD_Template__c</field>
+            <operation>equals</operation>
+            <value>Regional</value>
+        </filters>
+        <label>View Obsolete PDs</label>
+    </listViews>
+    <listViews>
+        <fullName>View_POD_PDs</fullName>
+        <columns>NAME</columns>
+        <columns>Pay_Plan__c</columns>
+        <columns>Series__c</columns>
+        <columns>Grade__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>PD_Number__c</columns>
+        <columns>Service__c</columns>
+        <columns>Job_Analysis_Attachment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Service__c</field>
+            <operation>equals</operation>
+            <value>PBS Building Block POD PDs</value>
+        </filters>
+        <label>View POD PDs</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PD-{00000}</displayFormat>
+        <label>PD Record ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>PD</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>PD_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PD_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Position_Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Grade__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Master__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>PD_Cannot_Check_Master_when_Regional</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( Master__c =TRUE &amp;&amp;  Cloned_from_Master__c =TRUE &amp;&amp;   ISPICKVAL(PD_Template__c , &apos;Regional&apos;) , TRUE,FALSE)</errorConditionFormula>
+        <errorMessage>Please do not check Master, when PD is Regional</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Checking_Is_New_Regional_PD</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(Master__c =FALSE &amp;&amp;  Cloned_from_Master__c =TRUE,TRUE, FALSE)  &amp;&amp;( NOT ISPICKVAL(  Service__c ,&quot;&quot;) )</errorConditionFormula>
+        <errorMessage>Please do not check cloned from Master.  (OR) Please do not select Service. If you are creating  a New Regional PD</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_FPL_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( Master__c == FALSE, TRUE, FALSE) &amp;&amp; ( FPL__c  = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>FPL__c</errorDisplayField>
+        <errorMessage>Please enter FPL</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_FPL_Validation_Cloned</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+(Master__c = TRUE),(Cloned_from_Master__c = TRUE) &amp;&amp; ( FPL__c = &quot;&quot;) 
+)</errorConditionFormula>
+        <errorDisplayField>FPL__c</errorDisplayField>
+        <errorMessage>Please enter FPL</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_New_Region_PD_Number_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(LEN (PD_Number__c) &lt;&gt; 7, TRUE, FALSE) &amp;&amp; (Master__c == FALSE)</errorConditionFormula>
+        <errorDisplayField>PD_Number__c</errorDisplayField>
+        <errorMessage>Please Enter 7 letter PD Number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_New_Region_PD_Region_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+             (Master__c == FALSE) &amp;&amp;  ( Cloned_from_Master__c  == FALSE) &amp;&amp; (ISPICKVAL( Regions__c ,&quot;&quot;) ) 
+        )</errorConditionFormula>
+        <errorDisplayField>Regions__c</errorDisplayField>
+        <errorMessage>Please select a Region</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_New_Region_PD_Service_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+             ( Master__c == FALSE) &amp;&amp; ( Cloned_from_Master__c  == FALSE)&amp;&amp;(ISPICKVAL(  Service__c  ,&quot;&quot;) ) 
+        )</errorConditionFormula>
+        <errorDisplayField>Service__c</errorDisplayField>
+        <errorMessage>Please select a Service</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_New_Regional_PD_Not_from_Cloned</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+           (Cloned_from_Master__c == TRUE) &amp;&amp; ISPICKVAL( PD_Template__c, &quot;&quot;) &amp;&amp; ( Master__c == FALSE) &amp;&amp; ISPICKVAL( PD_Template__c, &quot;Master&quot;)
+         
+)</errorConditionFormula>
+        <errorMessage>Not a valid scenario. Please uncheck Cloned from Master</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Not_Service_Validation_for_Cloned_PD</fullName>
+        <active>true</active>
+        <description>When creating a Cloned Master PD</description>
+        <errorConditionFormula>AND(
+          (Master__c = TRUE),(Cloned_from_Master__c = TRUE) &amp;&amp;  ( NOT ISPICKVAL(  Service__c  ,&quot;&quot;) )
+)</errorConditionFormula>
+        <errorDisplayField>Service__c</errorDisplayField>
+        <errorMessage>Regional PD copied from Master, please do not  select a Service</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Number_Validation_for_Cloned_PD</fullName>
+        <active>true</active>
+        <description>When creating a Cloned Master PD</description>
+        <errorConditionFormula>AND(
+          (Master__c = TRUE),(Cloned_from_Master__c = TRUE) &amp;&amp;  IF( LEN( PD_Number__c ) &lt;&gt;7, TRUE,FALSE)  
+)</errorConditionFormula>
+        <errorDisplayField>PD_Number__c</errorDisplayField>
+        <errorMessage>Regional PD copied from Master, please enter only 7 characters in PD Number.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Number_Validation_for_Cloned_PD_Edit</fullName>
+        <active>true</active>
+        <description>When creating a Cloned Master PD</description>
+        <errorConditionFormula>AND(
+          (Master__c = FALSE),(Cloned_from_Master__c = TRUE) &amp;&amp;  ISPICKVAL(Regions__c, &quot;&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Regions__c</errorDisplayField>
+        <errorMessage>Please select a Region</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Number_Validation_for_Master_PD</fullName>
+        <active>true</active>
+        <description>When creating a New Master PD</description>
+        <errorConditionFormula>AND(
+          (Master__c = TRUE),(Cloned_from_Master__c = FALSE) &amp;&amp;  IF( LEN( PD_Number__c ) &lt;&gt;4, TRUE,FALSE) 
+)</errorConditionFormula>
+        <errorDisplayField>PD_Number__c</errorDisplayField>
+        <errorMessage>For Master PD please enter only 4 characters in PD Number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Region_Validation_for_Cloned_PD</fullName>
+        <active>true</active>
+        <description>When creating a Cloned Master PD</description>
+        <errorConditionFormula>AND(
+          (Master__c = TRUE),(Cloned_from_Master__c = TRUE) &amp;&amp;  ISPICKVAL( Regions__c ,&quot;&quot;) 
+)</errorConditionFormula>
+        <errorDisplayField>Regions__c</errorDisplayField>
+        <errorMessage>Regional PD copied from Master, please select a Region</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Region_Validation_for_Master_PD</fullName>
+        <active>true</active>
+        <description>When creating a New Master PD</description>
+        <errorConditionFormula>AND(
+          (Master__c = TRUE),(Cloned_from_Master__c = FALSE) &amp;&amp;  ( NOT ISPICKVAL( Regions__c ,&quot;&quot;) )  
+)</errorConditionFormula>
+        <errorDisplayField>Regions__c</errorDisplayField>
+        <errorMessage>Please do not select a Region for Master PD</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PD_Series</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( LEN(Series__c)&lt;&gt; 4, TRUE, FALSE)</errorConditionFormula>
+        <errorDisplayField>Series__c</errorDisplayField>
+        <errorMessage>Please enter 4 digit Series</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Help_Text</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Help Text</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var txt = &quot;What does this tool do? \n \nThe PD Library is a tool that stores position descriptions across the enterprise.  The tool allows those in HR position classification to create and maintain position descriptions, and allows read-only users, primarily managers and HR Specialists, to search for and view PDs.\n Purpose: \n This tool was developed to reduce the time spent on position classification.  The tool allows Managers and Human Resources Specialists to view position descriptions and collaborate, which in turn increases consistency and efficiency.   \n Who will use this database? \n Human Resource Specialists, Managers, and other specifically approved people.\n For information on using the tool, please consult your servicing HR office. \n For system-related issues or questions, please contact the CHRIS Help Desk at gsa.chris@gsa.gov. \n&quot;;
+
+alert(txt);</url>
+    </webLinks>
+</CustomObject>

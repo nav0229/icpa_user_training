@@ -1,0 +1,78 @@
+<apex:page controller="GLXY_clsNewReplacingReductionReport" Title="New/Replacing VS Reduction Projects Report" readonly="true" sidebar="false">
+    <style>
+        table tr:nth-child(4n), table tr:nth-child(4n-1){
+            background: #e3f3ff;
+        }
+        
+        table tr:nth-child(4n-2), table tr:nth-child(4n-3) {
+        }
+    </style>  
+    
+    <table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">New/Replacing vs Reduction Projects</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+                <div style="background:White; border:2px outset #888888;">
+                <h2><font color="darkred" size="+1">
+                    Region: {!strRegion} &nbsp;&nbsp;&nbsp;
+                </font></h2>
+                </div>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>
+    <apex:pageBlock >
+      <apex:pageBlockTable value="{!leaseProjectList}" var="lease">
+      <apex:column value="{!lease.RegionCd__c}" HeaderValue="Region" />
+      <apex:column HeaderValue="Project Number">
+                <a href="/{!lease.id}"><apex:outputText value="{!lease.name}" /></a>
+      </apex:column> 
+      <apex:column value="{!lease.eEorA__c}" HeaderValue="Status Code" />
+      <apex:column value="{!lease.TeamCode__c}" HeaderValue="TeamCode" />
+      <apex:column value="{!lease.EffectiveDate__c}" HeaderValue="Effective Date" />
+      <apex:column value="{!lease.Project_Type__c }" HeaderValue="Project Type" />
+      <apex:column value="{!lease.ProjectStatus__c}" HeaderValue="Project Status" />
+      <apex:column value="{!lease.BDGFlag__c}" HeaderValue="Include in Budget" />
+      <apex:column style="word-wrap:break-word;" value="{!lease.Budget_Exclusion_Reason__c}" HeaderValue="Budget Exclusion Reason" />
+      <apex:column value="{!lease.NewLease__c}" HeaderValue="New Lease Number" />      
+      <apex:column HeaderValue="Old Lease Number/Lease Expiration Date">
+          <apex:outputPanel rendered="{!if(lease.Project_Type__c=='New/Replacing',true,false)}">
+          <apex:outputField value="{!lease.AssociatedLeases_lkup__c}" />
+          </apex:outputPanel>
+          <apex:outputPanel rendered="{!if(lease.Project_Type__c != 'New/Replacing',true,false)}">
+          <apex:outputField value="{!lease.NewLease__c}" />
+          </apex:outputPanel>
+      </apex:column>
+      <apex:column value="{!lease.AnnualRent__c}" HeaderValue="New Annual Rent" />
+      <apex:column value="{!lease.NOASquareFeet__c}" HeaderValue="New NOA SqFt" />
+      <apex:column value="{!lease.IASquareFeet__c}" HeaderValue="New IA SqFt" />
+      <apex:column HeaderValue="IA Impact">
+          <apex:outputPanel rendered="{!if(lease.Project_Type__c=='New/Replacing',true,false)}">
+          <apex:outputField value="{!lease.OldIASqFt__c}" />
+          </apex:outputPanel>
+          <apex:outputPanel rendered="{!if(lease.Project_Type__c != 'New/Replacing',true,false)}">
+          <apex:outputField value="{!lease.ChangeinIASQFt__c}" />
+          </apex:outputPanel>
+         <apex:facet name="footer">
+                   Total IA: <span class="t1">{!iaImpactSumFormatted}</span>   
+         </apex:facet>
+      </apex:column>
+            
+      <apex:column HeaderValue="NOA Impact" >
+          <apex:outputPanel rendered="{!if(lease.Project_Type__c=='New/Replacing',true,false)}">
+          <apex:outputField value="{!lease.OldNOASqFt__c}" />
+          </apex:outputPanel>
+          <apex:outputPanel rendered="{!if(lease.Project_Type__c != 'New/Replacing',true,false)}">
+          <apex:outputField value="{!lease.ChangeinNOASQFt__c}" />
+          </apex:outputPanel>
+            <apex:facet name="footer">
+                   Total NOA: <span class="t1">{!noaImpactSumFormatted}</span>  
+            </apex:facet>
+      </apex:column>
+      </apex:pageBlockTable>
+    </apex:pageBlock>  
+</apex:page>

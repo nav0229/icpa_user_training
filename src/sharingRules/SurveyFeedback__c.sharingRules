@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Survey_Feedback_HR_Mgrs_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grants read access to the Survey Feedback record for the HR Survey Group.</description>
+        <label>Survey Feedback_HR Mgrs Read</label>
+        <sharedTo>
+            <group>Contact_Manager_HRSurvey_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>VOE - Voice of the Employee</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

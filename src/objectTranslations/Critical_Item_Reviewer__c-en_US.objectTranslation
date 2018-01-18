@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Critical Item Reviewer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Critical Item Reviewers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Critical Item --></label>
+        <name>Critical_Item__c</name>
+        <relationshipLabel><!-- Critical Item Reviewers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reviewed --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewer Name --></label>
+        <name>Reviewer__c</name>
+        <relationshipLabel><!-- Critical Item Reviewers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reviewing Office --></label>
+        <name>Reviewing_Office__c</name>
+        <picklistValues>
+            <masterLabel>Administrative Office</masterLabel>
+            <translation><!-- Administrative Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audit Group</masterLabel>
+            <translation><!-- Audit Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO</masterLabel>
+            <translation><!-- CFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO</masterLabel>
+            <translation><!-- CIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Office</masterLabel>
+            <translation><!-- Central Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exec Sec</masterLabel>
+            <translation><!-- Exec Sec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS</masterLabel>
+            <translation><!-- FAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NCR</masterLabel>
+            <translation><!-- NCR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAS</masterLabel>
+            <translation><!-- OAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCIA</masterLabel>
+            <translation><!-- OCIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCM</masterLabel>
+            <translation><!-- OCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCR</masterLabel>
+            <translation><!-- OCR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT</masterLabel>
+            <translation><!-- OCSIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP</masterLabel>
+            <translation><!-- OGP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OHRM</masterLabel>
+            <translation><!-- OHRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMA</masterLabel>
+            <translation><!-- OMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSBU</masterLabel>
+            <translation><!-- OSBU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS</masterLabel>
+            <translation><!-- PBS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTS</masterLabel>
+            <translation><!-- TTS --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Critical Item Reviewer Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Sharing --></label>
+        <name>Sharing</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You are not authorized to change the Critical Item look up record. Please go to the Critical Item record and add the Critical Item Reviewer from the related list. --></errorMessage>
+        <name>Critical_Item_Reviewer_lookup_value</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,586 @@
+<apex:page docType="html-5.0" showHeader="true" sidebar="true" standardController="SF_182_Training__c" extensions="IDP_SF182RequestEditController" id="thePage">
+
+<head>
+	<link href="{!URLFOR($Resource.SRIDP, 'scripts/libs/bootstrap/IDP_Bootstrap.css')}" rel="stylesheet" media="all"/>
+	<link rel="stylesheet" href="{!URLFOR($Resource.SRIDP, 'styles/style.css')}" type="text/css"></link>
+
+	<style>
+
+		#customPopup {
+			position: fixed;
+			transform: translate(0,0);
+			width: auto; left: 0; right: 0;
+			height: auto; top: 0; bottom: 0;
+			z-index: 990; /* display above everything else */
+			padding: 20px; /* create padding for inner window - page under modal window will be still visible */
+		}
+
+		#thePage:theForm:outerVendor, #thePage:theForm:innerActivity {
+			box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -o-box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			z-index: 999;
+		}
+
+		#innerVendor, #innerActivity {
+			box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -o-box-sizing: border-box;
+			width: 100%;
+			height: auto;       /* allow to fit content (if smaller)... */
+			max-height: 100%;   /* ... but make sure it does not overflow browser window */
+
+			/* allow vertical scrolling if required */
+			overflow-x: auto;
+			overflow-y: auto;
+
+			/* definition of modal window layout */
+			background: #ffffff;
+			border: 2px solid #222222;
+			border-radius: 16px; /* some nice (modern) round corners */
+			padding: 16px;       /* make sure inner elements does not overflow round corners */
+		}
+
+	</style>
+		
+	<script>
+		//////////// 508 compliance functions START /////////
+		var dialogOpenActivity = false;
+		var dialogOpenVendor = false;
+
+		document.addEventListener("focus", function(event) {
+			var activityBox = document.getElementById("thePage:theForm:popupActivity");
+			var vendorBox = document.getElementById("thePage:theForm:popupVendor");
+			if (dialogOpenActivity && !activityBox.contains(event.target)) {
+				event.stopPropagation();
+				document.getElementById("thePage:theForm:activityPB1:activityPB2:activityPBTable:0:selectActivity").focus();
+			}
+			if (dialogOpenVendor && !vendorBox.contains(event.target)) {
+				event.stopPropagation();
+				document.getElementById("thePage:theForm:vendorPB:vendorPBSection:newVendorName").focus();
+			}
+		}, true);
+
+		function setFocusOnLoad() {
+			document.getElementById("thePage:theForm:mainPageBlock:activityPBSection:activityPBSectionItem:activityInput").focus();
+		}
+
+		function setFocusActivitiesPopup(){
+			dialogOpenActivity = true;
+			var pagebackground = document.getElementById("bg");
+			pagebackground.setAttribute("aria-hidden","true");
+			document.getElementById("thePage:theForm:activityPB1:activityPB2:activityPBTable:0:selectActivity").focus();
+		}
+
+		function setFocusVendorPopup(){
+			dialogOpenVendor = true;
+			var pagebackground = document.getElementById("bg");
+			pagebackground.setAttribute("aria-hidden","true");
+			document.getElementById("thePage:theForm:vendorPB:vendorPBSection:newVendorName").focus();
+		}
+
+		function restoreFocusFromActivitiesPopup(){
+			dialogOpenActivity = false;
+			var pagebackground = document.getElementById("bg");
+			pagebackground.setAttribute("aria-hidden","false");
+			document.getElementById("thePage:theForm:mainPageBlock:activityPBSection:activityPBSectionItem:activityInput").focus();
+		}
+
+		function restoreFocusFromVendorPopup(){
+			dialogOpenVendor = false;
+			var pagebackground = document.getElementById("bg");
+			pagebackground.setAttribute("aria-hidden","false");
+			document.getElementById("thePage:theForm:mainPageBlock:vendorPB:vendorPBS:inputVendor").focus();
+		}
+		//////////// 508 compliance functions END /////////
+	
+		function passSF182Name(){
+			var sf182name = document.getElementById("thePage:theForm:mainPageBlock:generalInformationSection:sf182Lookup");
+			if(sf182name.value == '' && sf182name.innerHTML == '') {
+				alert('Please select a SF 182 first.'); 
+				return;
+			} else {
+				if(sf182name.value == undefined) {
+					showPopupActivityAF(sf182name.innerHTML);
+					return;
+				}
+				if(sf182name.innerHTML == '') { 
+					showPopupActivityAF(sf182name.value);
+					return;
+				}
+			}
+		}
+	
+		function passActivityIds(Id, Name){
+			passActivityIdsAF(Id, Name);
+		}
+		
+		$(document).ready(function(){
+			$('#date').datepicker({
+				format: 'dd-mm-yyyy'
+			});
+
+			$('#date').datepicker('setValue', new Date());
+
+			$('#date').on('changeDate', function() {
+				$('#date').datepicker('hide'); 
+			});
+		});
+		 
+	</script>
+	
+</head>
+
+<apex:form html-novalidate="novalidate" id="theForm">
+
+<div class="IDP_Bootstrap">
+
+<div id="bg" aria-hidden="false">
+
+	<!-- STEP 2 OF PROCESS INDICATOR CODE START -->
+	<apex:outputPanel styleClass="wizardStep" layout="block" rendered="{!recordTypeName == 'SF 182 Training Request' 
+																		|| (recordTypeName == 'SF 182 Approval Process' && SF_182_Training__c.Request_Status__c != 'Approval Process in Progress')
+																		|| recordTypeName == 'SF 182 Purchase Card Holder'}">
+		<ul class="wizardStep-timeline mobile-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon"></div>
+				<div class="wizardStep-label">
+					<h2>Submit or Manage Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	
+		<ul class="wizardStep-timeline desktop-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to</h2>
+					<h2 class="completed-step">IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training</h2>
+					<h2 class="completed-step">Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon"></div>
+				<div class="wizardStep-label">
+					<h2>Submit or Manage</h2>
+					<h2>Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	</apex:outputPanel>
+	<!-- STEP 2 OF PROCESS INDICATOR CODE END -->
+	
+	<!-- STEP 4 OF PROCESS INDICATOR CODE START -->
+	<apex:outputPanel styleClass="wizardStep" layout="block" rendered="{!SF_182_Training__c.Request_Status__c == 'Approval Process in Progress'}">
+		<ul class="wizardStep-timeline mobile-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Submit or Manage Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	
+		<ul class="wizardStep-timeline desktop-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to</h2>
+					<h2 class="completed-step">IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training</h2>
+					<h2 class="completed-step">Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Submit or Manage</h2>
+					<h2 class="completed-step">Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	</apex:outputPanel>
+	<!-- STEP 4 OF PROCESS INDICATOR CODE END -->
+	
+	<!-- 
+		:::Record Type API Name:::                  :::Record Type Label Name:::                :::Page Layout Assigned:::
+		Sf_182_Approver_RecordType                  SF 182 Approval Process                     SF 182 Approver Layout
+		Purchasing_Training_Coordinator             SF 182 Purchase Card Holder                 Purchasing Training Coordinator
+		SF_182_Training_Completed                   SF 182 Training Completed                   SF 182 Training Completed
+		SF_182_Training_RecordType                  SF 182 Training Request                     SF 182 Training Layout
+	
+		Master Layout == SF 182 Training Layout
+	-->
+
+<apex:outputPanel rendered="{!!isApprover}">
+	<b>Record Locked</b>
+	<p/>
+	The record you are trying to edit has been locked. Please contact your administrator if access is necessary.
+	<p/>
+	Press the back button to navigate to the previous page.
+</apex:outputPanel>
+	
+<apex:outputPanel rendered="{!isApprover}">
+
+	<apex:actionRegion >
+	
+		<apex:sectionHeader title="{!$ObjectType.SF_182_Training__c.label}" subtitle="{!SF_182_Training__c.name}"/>
+	
+		<apex:pageBlock title="{!$ObjectType.SF_182_Training__c.label} Edit" mode="edit" id="mainPageBlock">
+			<apex:pageBlockButtons id="firstPageBlockButtons">
+					<apex:commandButton action="{!save}" value="Save"/>
+					<apex:commandButton action="{!saveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+			</apex:pageBlockButtons>
+
+			<apex:pageMessages ></apex:pageMessages>
+			
+			<!-- INSTRUCTIONS SECTION START -->
+			<apex:pageBlockSection showHeader="true" title="Instructions Section" columns="1">
+				
+				<apex:pageBlockSectionItem rendered="{!recordTypeName == 'SF 182 Training Request'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Requester_Instructions_General_Info__c.Label}"/>
+					<apex:outputText value="{!instrRequestor}"/>
+				</apex:pageBlockSectionItem>
+								
+				<apex:pageBlockSectionItem rendered="{!recordTypeName != 'SF 182 Training Completed'  && recordTypeName != 'SF 182 Approval Process' && recordTypeName != 'SF 182 Purchase Card Holder'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Purchase_Training_Coord_Instructions__c.Label}"/>
+					<apex:outputText value="{!instrContinuingSvc}"/>
+				</apex:pageBlockSectionItem>
+
+				<apex:pageBlockSectionItem rendered="{!recordTypeName == 'SF 182 Purchase Card Holder' || recordTypeName == 'SF 182 Training Completed'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Purchase_Training_Coord_Instructions__c.Label}"/>
+					<apex:outputText value="{!instrPurchaseTrainingCoord}"/>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem rendered="{!recordTypeName == 'SF 182 Approval Process'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Supervisor_Approver_Instructions__c.Label}"/>
+					<apex:outputText value="{!instrSupervisorApprover}"/>
+				</apex:pageBlockSectionItem>
+
+			</apex:pageBlockSection>
+			<!-- INSTRUCTIONS SECTION END -->
+	
+			<!-- GENERAL INFORMATION START -->
+			<apex:pageBlockSection showHeader="true" title="General Information" columns="2" id="generalInformationSection">
+				<apex:outputField value="{!SF_182_Training__c.Name}" />
+				<apex:outputField value="{!SF_182_Training__c.Request_Status__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.SF_182__c}" id="sf182Lookup"/>
+				<apex:outputField value="{!SF_182_Training__c.RecordTypeId}" rendered="{!recordTypeName == 'SF 182 Approval Process' || recordTypeName == 'SF 182 Training Request'}"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Completed__c}" rendered="{!recordTypeName == 'SF 182 Training Completed' || recordTypeName == 'SF 182 Purchase Card Holder'}"/>
+				<apex:outputField value="{!SF_182_Training__c.Terms_and_Conditions__c}"/>
+				<apex:outputPanel rendered="{!recordTypeName = 'SF 182 Approval Process' || recordTypeName == 'SF 182 Training Request' }"/>
+				<apex:outputField value="{!SF_182_Training__c.RecordTypeId}" rendered="{!recordTypeName == 'SF 182 Purchase Card Holder'}"/>
+				<apex:outputField value="{!SF_182_Training__c.RecordTypeId}" rendered="{!recordTypeName == 'SF 182 Training Completed'}"/>
+				<apex:outputField value="{!SF_182_Training__c.Continued_Srvc_Agreement_Accepted_Date__c}"/>
+			</apex:pageBlockSection>
+			
+			<!-- GENERAL INFORMATION END -->
+	
+			<!-- ACTIVITY INFORMATION START -->
+			<apex:pageBlockSection showHeader="true" title="Activity Information" columns="1">
+				<apex:pageBlockSectionItem >
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Requester_Instructions_Activity_Info__c.Label}"/>
+					<apex:outputText value="{!instrActivityInfo}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:outputPanel id="panelActivity">
+			<apex:pageBlockSection showHeader="false" columns="1" id="activityPBSection">
+				<apex:pageBlockSectionItem id="activityPBSectionItem" >
+					<apex:outputLabel value="Activity" for="activityInput"/>
+					<apex:outputPanel >
+						<div class="requiredInput">
+						<div class="requiredBlock"></div>
+							<apex:inputText value="{!selectedActivityName}" html-aria-label="*Select Activity" id="activityInput"/>
+							<a href="javascript:void();" onclick="passSF182Name();">
+								<img src="/s.gif" alt="Activity Lookup (New Window)" class="lookupIcon" onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" title="Activity Lookup (New Window)"/>
+							</a>
+						</div>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:actionFunction action="{!showPopupActivity}" name="showPopupActivityAF" rerender="popupActivity, panelActivity" immediate="true"  oncomplete="setFocusActivitiesPopup();">
+					<apex:param name="firstParam" assignTo="{!sf182Name}" value=""/>
+				</apex:actionFunction>
+			</apex:pageBlockSection>
+			</apex:outputPanel>
+			<!-- ACTIVITY INFORMATION END -->
+				
+			<!-- VENDOR INFORMATION START -->
+			<apex:pageBlockSection showHeader="true" title="Vendor Information" columns="1">
+				<apex:pageBlockSectionItem rendered="{!recordTypeName != 'SF 182 Training Completed' && recordTypeName != 'SF 182 Approval Process' && recordTypeName != 'SF 182 Purchase Card Holder'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Requester_Instructions_Vendor_Info__c.Label}"/>
+					<apex:outputText value="{!instrVendorInfo}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:outputPanel id="panelVendor">
+			<apex:pageBlockSection showHeader="false" columns="1" id="vendorPB">
+				<apex:pageBlockSectionItem id="vendorPBS">
+					<apex:outputLabel value="Vendor" for="inputVendor"/>
+					<apex:inputField html-aria-label="*Select Vendor" value="{!SF_182_Training__c.Training_Vendor_Name__c}" required="true" id="inputVendor"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<div><!-- Keep this so that the New Vendor button aligns correctly --></div>
+					<apex:commandButton action="{!showPopupVendor}" value="New Vendor" onclick="alert('Before you create a new Vendor please search for an existing one first.');" rerender="popupVendor, panelVendor" immediate="true" oncomplete="setFocusVendorPopup();"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			</apex:outputPanel>
+			<!-- VENDOR INFORMATION END -->
+				
+			<!-- TRAINING COURSE DATA START -->
+			<apex:pageBlockSection showHeader="true" title="Training Course Data" columns="1"> 
+				<apex:pageBlockSectionItem rendered="{!recordTypeName != 'SF 182 Training Completed' && recordTypeName != 'SF 182 Approval Process' && recordTypeName != 'SF 182 Purchase Card Holder'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Requester_Instructions_Training_Course__c.Label}"/>
+					<apex:outputText value="{!instrTrainingCourse}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection showHeader="false" columns="2">
+				<apex:inputField value="{!SF_182_Training__c.Course_Title_if_Diff_from_Activity_Name__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Duty_Hours__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Course_Number__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Non_Duty_Hours__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Credit__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Location__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Is_Vendor_Accredited__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.If_Offsite_list_City__c}"/>
+				<apex:inputField type="date"  value="{!SF_182_Training__c.Training_Start_Date__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.If_Offsite_list_State__c}"/>
+				<apex:inputField type="date"  value="{!SF_182_Training__c.Training_End_Date__c}" required="true"/>
+			</apex:pageBlockSection>
+			<!-- TRAINING COURSE DATA END -->
+			
+			<!-- TRAINING CODES START -->
+			<apex:pageBlockSection showHeader="true" title="Training Codes" columns="2"> 
+				<apex:inputField value="{!SF_182_Training__c.Training_Type_Code__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Designation_Type_Code__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Sub_Type_Code__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Source_Type_Code__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Purpose_Type__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Credit_Type_Code__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Training_Delivery_Type_Code__c}" required="true"/>
+			</apex:pageBlockSection>
+			<!-- TRAINING CODES END -->
+			
+			<!-- COSTS AND BILLING TRAINING REQUESTER INFORMATION START -->
+			<apex:pageBlockSection showHeader="true" title="Costs and Billing Information - Training Requester" columns="1">
+				<apex:pageBlockSectionItem rendered="{!recordTypeName != 'SF 182 Training Completed' && recordTypeName != 'SF 182 Approval Process' && recordTypeName != 'SF 182 Purchase Card Holder'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.Requester_Instructions_Costs_Billing__c.Label}"/>
+					<apex:outputText value="{!instrCostBilling}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:inputField value="{!SF_182_Training__c.Tuition_and_Fee__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Books_and_Materials__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Travel__c}" required="true"/>
+				<apex:inputField value="{!SF_182_Training__c.Per_Diem__c}" required="true"/>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:inputField value="{!SF_182_Training__c.Billing_Instructions_c__c}"/>       
+			</apex:pageBlockSection>
+			<!-- COSTS AND BILLING TRAINING REQUESTER INFORMATION END -->
+	
+			<!-- COSTS AND BILLING TRAINING PURCHASE CARD HOLDER START -->
+			<apex:pageBlockSection showHeader="true" title="Costs and Billing Information - Purchase Card Holder" columns="2" rendered="{!recordTypeName == 'SF 182 Training Completed' || recordTypeName == 'SF 182 Purchase Card Holder'}">
+				<apex:inputField value="{!SF_182_Training__c.Appropriation_Fund_Direct_Cost__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Document_PO_Requisition_Number__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Appropriation_Fund_InDirect_Cost__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Pegasys_Reference_QI__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Funding_Source__c}"/>
+			</apex:pageBlockSection>
+			<!-- COSTS AND BILLING TRAINING PURCHASE CARD HOLDER END -->
+
+			<!-- SUPERVISOR/APPROVER INSTRUCTIONS - HOW TO APPROVE/REJECT/CANCEL START -->
+			<apex:pageBlockSection showHeader="true" title="Supervisor/Approver Instructions - How to Approve/Reject/Cancel" columns="1" rendered="{!recordTypeName == 'SF 182 Approval Process'}">
+
+				<apex:pageBlockSectionItem >
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.How_to_Approve_and_Select_Next_Approver__c.Label}"/>
+					<apex:outputText value="{!instrApproveSelectApprover}"/>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem >
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.How_to_Approve_as_a_Final_Approver__c.Label}"/>
+					<apex:outputText value="{!instrApproveFinalApprover}"/>
+				</apex:pageBlockSectionItem>
+			
+
+				<apex:pageBlockSectionItem >
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.How_to_Reject_a_Request__c.Label}"/>
+					<apex:outputText value="{!instrRejectRequest}"/>
+				</apex:pageBlockSectionItem>
+
+
+				<apex:pageBlockSectionItem >
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.How_to_Cancel_a_Request_Supv_Only__c.Label}"/>
+					<apex:outputText value="{!instrCancelRequestSupv}"/>
+				</apex:pageBlockSectionItem>
+
+			</apex:pageBlockSection>
+			
+			<!-- SUPERVISOR/APPROVER INSTRUCTIONS - HOW TO APPROVE/REJECT/CANCEL END -->
+	
+			<!-- APPROVALS/CONCURRENCE START -->
+			<apex:pageBlockSection showHeader="true" title="Approvals/Concurrence" columns="1">
+				<apex:pageBlockSectionItem rendered="{!recordTypeName != 'SF 182 Training Completed' && recordTypeName != 'SF 182 Approval Process' && recordTypeName != 'SF 182 Purchase Card Holder'}">
+					<apex:outputText value="{!$ObjectType.SF_182_Training__c.fields.About_Approvals_Concurrence__c.Label}"/>
+					<apex:outputText value="{!instrAboutApprovalsConcurrence}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection> 
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:outputField value="{!SF_182_Training__c.Approval_Status__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Supervisor__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Approver_1__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Approver_2__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Approver_3__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Approver_4__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Final_Approver__c}" rendered="{!recordTypeName != 'SF 182 Training Request'}"/>
+				<apex:inputField value="{!SF_182_Training__c.Resubmit_Approval_Process__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Purchasing_Training_Coordinator__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Purchasing_Training_Coordinator_Group__c}" />
+			</apex:pageBlockSection>
+			<!-- APPROVALS/CONCURRENCE END -->
+
+			<!-- CANCEL TRAINING START -->
+			<apex:pageBlockSection showHeader="true" title="Cancel Training" columns="1" >
+				<apex:inputField value="{!SF_182_Training__c.Cancel_My_Training__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Was_Money_Obligated__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Is_the_Money_Refundable__c}"/>
+				<apex:inputField value="{!SF_182_Training__c.Deadline_for_requesting_a_refund_Date__c}"/>
+			</apex:pageBlockSection>
+			<!-- CANCEL TRAINING END -->
+	
+		</apex:pageBlock>
+	
+	</apex:actionRegion>	
+
+</apex:outputPanel>
+
+</div>
+
+<!-- THE ACTIVITIES POPUP START -->
+<apex:outputPanel id="popupActivity">
+	<apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopupActivity}" html-role="dialog" id="outerActivity">
+		<div id="innerActivity">
+			<apex:actionRegion >
+				<apex:sectionHeader title="Available Activities" subtitle="Activity Edit"/> 
+
+				<apex:pageBlock title="Available Activities" mode="edit" id="activityPB1">
+					<apex:pageBlockButtons >
+						<apex:commandButton value="Cancel" rerender="popupActivity, panelActivity" action="{!closePopupActivity}" immediate="true" oncomplete="restoreFocusFromActivitiesPopup();"/>
+					</apex:pageBlockButtons>
+
+					<!-- ACTIVITY TABLE START -->
+					<apex:pageBlock title="Activities" id="activityPB2">
+						<apex:pageBlockTable value="{!activityListForSelection}" var="activity" id="activityPBTable">
+							<apex:column id="something">
+								<apex:facet name="header">Activity</apex:facet>
+								<apex:commandButton value="{!activity.Name}" onclick="passActivityIds('{!activity.Id}', '{!activity.Name}'); return false;" id="selectActivity"/>
+							</apex:column>
+							<apex:column value="{!activity.Assignment_Title__c}"/>
+							<apex:column value="{!activity.Planned_Start_Date__c}"/>
+							<apex:column value="{!activity.Planned_End_Date__c}"/>
+							<apex:column value="{!activity.Activity_Type__c}"/>
+							<apex:column value="{!activity.Total_Cost__c}"/>
+						</apex:pageBlockTable>
+						<apex:actionFunction action="{!selectActivityFiltered}" name="passActivityIdsAF" rerender="popupActivity, panelActivity" immediate="true" oncomplete="restoreFocusFromActivitiesPopup();">
+							<apex:param name="firstParam" assignTo="{!activityId}" value=""/>
+							<apex:param name="secondParam" assignTo="{!selectedActivityName}" value=""/>
+						</apex:actionFunction>
+					</apex:pageBlock>
+					<!-- ACTIVITY TABLE END -->
+				</apex:pageBlock>
+			</apex:actionRegion>
+		</div>
+	</apex:outputPanel>
+</apex:outputPanel>
+<!-- THE ACTIVITIES POPUP END -->
+
+<!-- THE VENDOR POPUP START -->
+<apex:outputPanel id="popupVendor">
+	<apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopUpVendor}" html-role="dialog" id="outerVendor">
+		<div id="innerVendor">
+			<apex:actionRegion >
+				<apex:sectionHeader title="New Account" subtitle="Account Edit"/>   
+
+				<apex:pageBlock title="Account Edit" mode="edit" id="vendorPB">
+					<apex:pageBlockButtons >
+						<apex:commandButton value="Create" rerender="popupVendor, panelVendor" action="{!createNewVendor}" oncomplete="restoreFocusFromVendorPopup();"/>
+						<apex:commandButton value="Cancel" rerender="popupVendor, panelVendor" action="{!closePopupVendor}" immediate="true" oncomplete="restoreFocusFromVendorPopup();"/>
+					</apex:pageBlockButtons>
+
+					<!-- ACCOUNT INFORMATION START -->
+					<apex:pageBlockSection showHeader="true" title="Account Information" columns="2" id="vendorPBSection">
+						<apex:inputField value="{!newVendor.Name}" required="true" id="newVendorName"/>
+						<apex:outputText value="Vendor" label="Account Record Type"/>
+						<apex:inputField value="{!newVendor.Type}"/>
+						<apex:outputText value="{!currentUserName}" label="Account Owner"/>
+					</apex:pageBlockSection>
+					<!-- ACCOUNT INFORMATION END -->
+
+					<!-- ADDITIONAL INFORMATION START -->
+					<apex:pageBlockSection showHeader="true" title="Additional Information" columns="2">
+						<apex:inputField value="{!newVendor.Phone}" required="true"/>
+						<apex:inputField value="{!newVendor.Website}"/>
+						<apex:inputField value="{!newVendor.Public_Engagement_Classification__c}"/>
+						<apex:inputField value="{!newVendor.FedRAMP_Organization_Type__c}"/>
+						<apex:inputField value="{!newVendor.BillingStreet}"/>
+						<apex:inputField value="{!newVendor.BillingCity}"/>
+						<apex:inputField value="{!newVendor.BillingState}"/>
+						<apex:inputField value="{!newVendor.BillingPostalCode}"/>
+						<apex:inputField value="{!newVendor.BillingCountry}"/>
+					</apex:pageBlockSection>
+					<!-- ADDITIONAL INFORMATION END -->
+				</apex:pageBlock>
+			</apex:actionRegion>
+		</div>
+	</apex:outputPanel>
+</apex:outputPanel>
+<!-- THE VENDOR POPUP END -->
+
+</div>
+</apex:form>
+</apex:page>

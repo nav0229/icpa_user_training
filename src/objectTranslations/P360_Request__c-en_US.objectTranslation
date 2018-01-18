@@ -1,0 +1,2157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Requests</value>
+    </caseValues>
+    <fields>
+        <help><!-- Accomplishments from the latest pulse --></help>
+        <label><!-- Accomplishments --></label>
+        <name>Accomplishments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the application name pertaining to this request --></help>
+        <label><!-- Application --></label>
+        <name>ApplicationText__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this requires a BRG Approval, has this been approved (Yes or No) --></help>
+        <label><!-- BRG Approved --></label>
+        <name>BRGApproved__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Value --></label>
+        <name>Business_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provided by the Triage team after evaluation of the request --></help>
+        <label><!-- Costs --></label>
+        <name>Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do you have any cost information at this time? --></help>
+        <label><!-- Any current cost information? --></label>
+        <name>CurrentCostInformation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is your department leadership in support of the project and willing to budget for it? --></help>
+        <label><!-- Management Support? --></label>
+        <name>DeptLeadershipSupportBudget__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If yes to the previous question (Result of Federal Mandate?), provide a description of the mandate. --></help>
+        <label><!-- Description of Mandate --></label>
+        <name>DescriptionOfMandate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide a short description of this request (New or Enhancement) --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to select the Division that is managing the request. --></help>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>Application Systems Development Division</masterLabel>
+            <translation><!-- Application Systems Development Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAF - Staff Support Division</masterLabel>
+            <translation><!-- BAF - Staff Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAI - Information Technology Division</masterLabel>
+            <translation><!-- BAI - Information Technology Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAS - Resource Management Division</masterLabel>
+            <translation><!-- BAS - Resource Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBA - Appropriated Accounts Budget Division</masterLabel>
+            <translation><!-- BBA - Appropriated Accounts Budget Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBB - Budget Formulation Division</masterLabel>
+            <translation><!-- BBB - Budget Formulation Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBC - Budget Control, Oversight, and Formulation Division</masterLabel>
+            <translation><!-- BBC - Budget Control, Oversight, and Formulation Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBF - FAS Budget Division</masterLabel>
+            <translation><!-- BBF - FAS Budget Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBI - Strategic Planning &amp; Performance Measurement Division</masterLabel>
+            <translation><!-- BBI - Strategic Planning &amp; Performance Measurement Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBO - Budget Control &amp; Oversight Division</masterLabel>
+            <translation><!-- BBO - Budget Control &amp; Oversight Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBP - PBS Budget Division</masterLabel>
+            <translation><!-- BBP - PBS Budget Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBS - Staff Accounts Division</masterLabel>
+            <translation><!-- BBS - Staff Accounts Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBT - TTS Budget Division</masterLabel>
+            <translation><!-- BBT - TTS Budget Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBW - WCF Budget Division</masterLabel>
+            <translation><!-- BBW - WCF Budget Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCA - Financial Policy &amp; Operations Division</masterLabel>
+            <translation><!-- BCA - Financial Policy &amp; Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCB - Internal Control Division</masterLabel>
+            <translation><!-- BCB - Internal Control Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCC - Financial Reporting Division</masterLabel>
+            <translation><!-- BCC - Financial Reporting Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCE - Financial &amp; Payroll Services Division</masterLabel>
+            <translation><!-- BCE - Financial &amp; Payroll Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCF - Financial Services Division</masterLabel>
+            <translation><!-- BCF - Financial Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCP - PBS Financial Operations Division</masterLabel>
+            <translation><!-- BCP - PBS Financial Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGA - Accounting and Financial Reporting Division</masterLabel>
+            <translation><!-- BGA - Accounting and Financial Reporting Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGC - Consolidated Financial Services Division</masterLabel>
+            <translation><!-- BGC - Consolidated Financial Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGF - FAS Financial Services Division</masterLabel>
+            <translation><!-- BGF - FAS Financial Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGI - Internal Controls Division</masterLabel>
+            <translation><!-- BGI - Internal Controls Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGN - Financial Policy Division</masterLabel>
+            <translation><!-- BGN - Financial Policy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGP - PBS Financial Services Division</masterLabel>
+            <translation><!-- BGP - PBS Financial Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIA - GSA Analytics Division</masterLabel>
+            <translation><!-- BIA - GSA Analytics Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIB - OCFO Quality Division</masterLabel>
+            <translation><!-- BIB - OCFO Quality Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIC - Data Delivery and Management Division</masterLabel>
+            <translation><!-- BIC - Data Delivery and Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BID - PBS Analytics Division</masterLabel>
+            <translation><!-- BID - PBS Analytics Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIE - FAS Analytics Division</masterLabel>
+            <translation><!-- BIE - FAS Analytics Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIS - Strategic Planning and Performance Management Division</masterLabel>
+            <translation><!-- BIS - Strategic Planning and Performance Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BPA - PBS Financial &amp; Reporting Division</masterLabel>
+            <translation><!-- BPA - PBS Financial &amp; Reporting Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BPB - PBS Revenue Division</masterLabel>
+            <translation><!-- BPB - PBS Revenue Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR1 - Regional Financial Svcs - Zone 1</masterLabel>
+            <translation><!-- BR1 - Regional Financial Svcs - Zone 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR2 - Regional Financial Svcs - Zone 2</masterLabel>
+            <translation><!-- BR2 - Regional Financial Svcs - Zone 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR3 - Regional Financial Svcs - Zone 3</masterLabel>
+            <translation><!-- BR3 - Regional Financial Svcs - Zone 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR4 - Regional Financial Svcs - Zone 4</masterLabel>
+            <translation><!-- BR4 - Regional Financial Svcs - Zone 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAA - Account Support Division</masterLabel>
+            <translation><!-- CAA - Account Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAF - FAS Account Mgmt Division</masterLabel>
+            <translation><!-- CAF - FAS Account Mgmt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAP - PBS Account Mgmt Division</masterLabel>
+            <translation><!-- CAP - PBS Account Mgmt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAS - Staff Offices Account Mgmt Division</masterLabel>
+            <translation><!-- CAS - Staff Offices Account Mgmt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CDD - Workforce Development Office</masterLabel>
+            <translation><!-- CDD - Workforce Development Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CDW - Workforce Planning, Analysis &amp; Services Office</masterLabel>
+            <translation><!-- CDW - Workforce Planning, Analysis &amp; Services Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHM - Human Capital Strategic Planning Division</masterLabel>
+            <translation><!-- CHM - Human Capital Strategic Planning Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHS - Staffing &amp; Compensation Policy Division</masterLabel>
+            <translation><!-- CHS - Staffing &amp; Compensation Policy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHT - Training &amp; Organizational Development Division</masterLabel>
+            <translation><!-- CHT - Training &amp; Organizational Development Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHW - Performance &amp; Worklife Policy Division</masterLabel>
+            <translation><!-- CHW - Performance &amp; Worklife Policy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNA - Human Capital Analytics Division</masterLabel>
+            <translation><!-- CNA - Human Capital Analytics Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNB - Business &amp; Administrative Mgmt Division</masterLabel>
+            <translation><!-- CNB - Business &amp; Administrative Mgmt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNI - HR Innovation &amp; Integration Division</masterLabel>
+            <translation><!-- CNI - HR Innovation &amp; Integration Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNS - Strategy, Planning &amp; Portfolio Mgmt Division</masterLabel>
+            <translation><!-- CNS - Strategy, Planning &amp; Portfolio Mgmt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CP1 - HR Services Division</masterLabel>
+            <translation><!-- CP1 - HR Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPA - HR Services Center A</masterLabel>
+            <translation><!-- CPA - HR Services Center A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPB - HR Services Center B</masterLabel>
+            <translation><!-- CPB - HR Services Center B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPB - New England Division</masterLabel>
+            <translation><!-- CPB - New England Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPC - HR Services Center C</masterLabel>
+            <translation><!-- CPC - HR Services Center C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPD - HR Services Center D</masterLabel>
+            <translation><!-- CPD - HR Services Center D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPE - Mid-Atlantic Division</masterLabel>
+            <translation><!-- CPE - Mid-Atlantic Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPF - Southeast Sunbelt Division</masterLabel>
+            <translation><!-- CPF - Southeast Sunbelt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPG - Great Lakes Division</masterLabel>
+            <translation><!-- CPG - Great Lakes Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPH - Heartland Division</masterLabel>
+            <translation><!-- CPH - Heartland Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPI - Greater Southwest Division</masterLabel>
+            <translation><!-- CPI - Greater Southwest Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPJ - Rocky Mountain Division</masterLabel>
+            <translation><!-- CPJ - Rocky Mountain Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPK - Pacific Rim Division</masterLabel>
+            <translation><!-- CPK - Pacific Rim Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPL - Labor Relations Division</masterLabel>
+            <translation><!-- CPL - Labor Relations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPM - Northwest/Artic Division</masterLabel>
+            <translation><!-- CPM - Northwest/Artic Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPP - Talent Management Center</masterLabel>
+            <translation><!-- CPP - Talent Management Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPW - Washington Area Operations Center</masterLabel>
+            <translation><!-- CPW - Washington Area Operations Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPX - Executive Resources Division</masterLabel>
+            <translation><!-- CPX - Executive Resources Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPZ - National Classification Center Division</masterLabel>
+            <translation><!-- CPZ - National Classification Center Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSA - Center for Talent Acquisition</masterLabel>
+            <translation><!-- CSA - Center for Talent Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSC - Center for Human Capital Strategy</masterLabel>
+            <translation><!-- CSC - Center for Human Capital Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSD - Center for Talent Development</masterLabel>
+            <translation><!-- CSD - Center for Talent Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSE - Center for Talent Engagement</masterLabel>
+            <translation><!-- CSE - Center for Talent Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS - Office of HR Services</masterLabel>
+            <translation><!-- CSS - Office of HR Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS1C - National Classification Center</masterLabel>
+            <translation><!-- CSS1C - National Classification Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS1P - Consolidated Processing Center</masterLabel>
+            <translation><!-- CSS1P - Consolidated Processing Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS1R - National Recruitment Center</masterLabel>
+            <translation><!-- CSS1R - National Recruitment Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSA - HR Services Center A</masterLabel>
+            <translation><!-- CSSA - HR Services Center A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSB - HR Services Center B</masterLabel>
+            <translation><!-- CSSB - HR Services Center B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSC - HR Services Center C</masterLabel>
+            <translation><!-- CSSC - HR Services Center C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSD - HR Services Center D</masterLabel>
+            <translation><!-- CSSD - HR Services Center D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSX - Executive Resources Division</masterLabel>
+            <translation><!-- CSSX - Executive Resources Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1A - Operations &amp; Plans Division</masterLabel>
+            <translation><!-- D1A - Operations &amp; Plans Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1E - Eastern Regions Division</masterLabel>
+            <translation><!-- D1E - Eastern Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1H - Physical Security Division</masterLabel>
+            <translation><!-- D1H - Physical Security Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1P - Policy &amp; Performance Division</masterLabel>
+            <translation><!-- D1P - Policy &amp; Performance Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1R - Resilience &amp; Interagency Programs Division</masterLabel>
+            <translation><!-- D1R - Resilience &amp; Interagency Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1W - Western Regions Division</masterLabel>
+            <translation><!-- D1W - Western Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DT - Strategic Programs Division</masterLabel>
+            <translation><!-- DT - Strategic Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Information and Operations Division</masterLabel>
+            <translation><!-- Financial Information and Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Management Systems O&amp;M Division</masterLabel>
+            <translation><!-- Financial Management Systems O&amp;M Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Services Division</masterLabel>
+            <translation><!-- Financial Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1AA - Acquisition Operations Division</masterLabel>
+            <translation><!-- H1AA - Acquisition Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1AP - Acquisition Management &amp; Policy Division</masterLabel>
+            <translation><!-- H1AP - Acquisition Management &amp; Policy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1AW - Acquisition Workforce Development Division</masterLabel>
+            <translation><!-- H1AW - Acquisition Workforce Development Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1BD - DC Workplace Services Division</masterLabel>
+            <translation><!-- H1BD - DC Workplace Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1BO - Operational Support Division</masterLabel>
+            <translation><!-- H1BO - Operational Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1BW - Regional Workplace Services Division</masterLabel>
+            <translation><!-- H1BW - Regional Workplace Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1CC - Charge Card Division</masterLabel>
+            <translation><!-- H1CC - Charge Card Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1CT - Travel &amp; Event Program Division</masterLabel>
+            <translation><!-- H1CT - Travel &amp; Event Program Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IAG - Enterprise Application Division</masterLabel>
+            <translation><!-- IAG - Enterprise Application Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IAT - Training &amp; Usability Management Division</masterLabel>
+            <translation><!-- IAT - Training &amp; Usability Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBA - Financial Mgmt System Operations &amp; Maintenance Division</masterLabel>
+            <translation><!-- IBA - Financial Mgmt System Operations &amp; Maintenance Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBD - Application Development Division</masterLabel>
+            <translation><!-- IBD - Application Development Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBE - Enterprise Management Division</masterLabel>
+            <translation><!-- IBE - Enterprise Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBF - Financial Administrative Systems Division</masterLabel>
+            <translation><!-- IBF - Financial Administrative Systems Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBH - HR IT Services Division</masterLabel>
+            <translation><!-- IBH - HR IT Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBR - Customer Services Division</masterLabel>
+            <translation><!-- IBR - Customer Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBT - Infrastructure &amp; Technical Support Division</masterLabel>
+            <translation><!-- IBT - Infrastructure &amp; Technical Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICC - Corporate Support Division</masterLabel>
+            <translation><!-- ICC - Corporate Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICE - Enterprise Systems Support Division</masterLabel>
+            <translation><!-- ICE - Enterprise Systems Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICP - Enterprise Platform Solutions Division</masterLabel>
+            <translation><!-- ICP - Enterprise Platform Solutions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICS - FM &amp; HR IT Services Division</masterLabel>
+            <translation><!-- ICS - FM &amp; HR IT Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDI - Office of Enterprise Infrastructure Operations</masterLabel>
+            <translation><!-- IDI - Office of Enterprise Infrastructure Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDM - Enterprise Information and Data Management</masterLabel>
+            <translation><!-- IDM - Enterprise Information and Data Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDR - Office of Enterprise Planning and Governance</masterLabel>
+            <translation><!-- IDR - Office of Enterprise Planning and Governance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDS - Management Services Division</masterLabel>
+            <translation><!-- IDS - Management Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEA - Enterprise Architecture &amp; Planning Division</masterLabel>
+            <translation><!-- IEA - Enterprise Architecture &amp; Planning Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEB - Strategy &amp; Performance Management Division</masterLabel>
+            <translation><!-- IEB - Strategy &amp; Performance Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEC - Vendor Management Division</masterLabel>
+            <translation><!-- IEC - Vendor Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEE - IT Portfolio Management Division</masterLabel>
+            <translation><!-- IEE - IT Portfolio Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IOD - Center for Applied Solutions</masterLabel>
+            <translation><!-- IOD - Center for Applied Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IOI - Center for IT Customer Service</masterLabel>
+            <translation><!-- IOI - Center for IT Customer Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IOM - Mobile Workforce Staff</masterLabel>
+            <translation><!-- IOM - Mobile Workforce Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IOP - Program Management Division</masterLabel>
+            <translation><!-- IOP - Program Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IOW - Center for Network Operations</masterLabel>
+            <translation><!-- IOW - Center for Network Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IPB - Business Integration Division</masterLabel>
+            <translation><!-- IPB - Business Integration Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IPC - Building Technology Services Division</masterLabel>
+            <translation><!-- IPC - Building Technology Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IPO - Application Management Division</masterLabel>
+            <translation><!-- IPO - Application Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IPR - Regional IT Services Division</masterLabel>
+            <translation><!-- IPR - Regional IT Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IPS - Center for Building Information Programs</masterLabel>
+            <translation><!-- IPS - Center for Building Information Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0D - Applied Engineering Division</masterLabel>
+            <translation><!-- IQ0D - Applied Engineering Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0E - Asset &amp; Transportation Management Division</masterLabel>
+            <translation><!-- IQ0E - Asset &amp; Transportation Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0F - Planning &amp; Architecture Division</masterLabel>
+            <translation><!-- IQ0F - Planning &amp; Architecture Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0G - Information Security Division</masterLabel>
+            <translation><!-- IQ0G - Information Security Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0H - Contract Service Management Division</masterLabel>
+            <translation><!-- IQ0H - Contract Service Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0I - Business Intelligence &amp; Enterprise-wide Info Mgmt Div</masterLabel>
+            <translation><!-- IQ0I - Business Intelligence &amp; Enterprise-wide Info Mgmt Div --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0J - Contract Administration Division</masterLabel>
+            <translation><!-- IQ0J - Contract Administration Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ0K - Enterprise Acquisition Platforms Division</masterLabel>
+            <translation><!-- IQ0K - Enterprise Acquisition Platforms Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ1 - Office of the Chief Information Officer - Deputy</masterLabel>
+            <translation><!-- IQ1 - Office of the Chief Information Officer - Deputy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQG - Center for Global Supply, Asset, &amp; Transportation Systems Support</masterLabel>
+            <translation><!-- IQG - Center for Global Supply, Asset, &amp; Transportation Systems Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQS - Center for Acquisitions Systems Support</masterLabel>
+            <translation><!-- IQS - Center for Acquisitions Systems Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQT - Center for FAS Systems Transformation</masterLabel>
+            <translation><!-- IQT - Center for FAS Systems Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISE - Security Engineering Division</masterLabel>
+            <translation><!-- ISE - Security Engineering Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISO - Security Operations Division</masterLabel>
+            <translation><!-- ISO - Security Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISP - Policy and Compliance Division</masterLabel>
+            <translation><!-- ISP - Policy and Compliance Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISS - Services ISSO Support Division</masterLabel>
+            <translation><!-- ISS - Services ISSO Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IST - ISSO Support Division</masterLabel>
+            <translation><!-- IST - ISSO Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAA - Account Management Division</masterLabel>
+            <translation><!-- PAA - Account Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAB - Account Policy Division</masterLabel>
+            <translation><!-- PAB - Account Policy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAC - Client Intelligence Division</masterLabel>
+            <translation><!-- PAC - Client Intelligence Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBE - Strategic Plan Perf. &amp; Bus. Analytics Div.</masterLabel>
+            <translation><!-- PBE - Strategic Plan Perf. &amp; Bus. Analytics Div. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCA - Office of the Chief Architect</masterLabel>
+            <translation><!-- PCA - Office of the Chief Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCB - Office of Project Delivery</masterLabel>
+            <translation><!-- PCB - Office of Project Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDC - Executive Communications Office</masterLabel>
+            <translation><!-- PDC - Executive Communications Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDQ - Office of Acquisition Management</masterLabel>
+            <translation><!-- PDQ - Office of Acquisition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIA - Real Property Disposal Division</masterLabel>
+            <translation><!-- PIA - Real Property Disposal Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIB - Real Property Utilization Division</masterLabel>
+            <translation><!-- PIB - Real Property Utilization Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMA - Energy Division</masterLabel>
+            <translation><!-- PMA - Energy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMB - Building Operations &amp; Technical Division</masterLabel>
+            <translation><!-- PMB - Building Operations &amp; Technical Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMC - Child Care Center of Expertise</masterLabel>
+            <translation><!-- PMC - Child Care Center of Expertise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMD - Office of the Chief Greening Officer</masterLabel>
+            <translation><!-- PMD - Office of the Chief Greening Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PME - Commissioning Division</masterLabel>
+            <translation><!-- PME - Commissioning Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMF - Tenant Services Division</masterLabel>
+            <translation><!-- PMF - Tenant Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMG - Facility Risk Management Division</masterLabel>
+            <translation><!-- PMG - Facility Risk Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PQA - Acquisition Mgt. &amp; Policy Division</masterLabel>
+            <translation><!-- PQA - Acquisition Mgt. &amp; Policy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PQB - Industry Relations Division</masterLabel>
+            <translation><!-- PQB - Industry Relations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PQC - Acquisition Services Division</masterLabel>
+            <translation><!-- PQC - Acquisition Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRA - Center for Program Services</masterLabel>
+            <translation><!-- PRA - Center for Program Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRB - Lease Acquisition Policy &amp; Program Div.</masterLabel>
+            <translation><!-- PRB - Lease Acquisition Policy &amp; Program Div. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRC - Real Estate Admin. Division</masterLabel>
+            <translation><!-- PRC - Real Estate Admin. Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTA - Real Property Valuation Division</masterLabel>
+            <translation><!-- PTA - Real Property Valuation Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTB - Capital Assessment &amp; Alloc. Division</masterLabel>
+            <translation><!-- PTB - Capital Assessment &amp; Alloc. Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTC - Strategic Analysis Division</masterLabel>
+            <translation><!-- PTC - Strategic Analysis Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTD - Pricing Policy &amp; Tools Division</masterLabel>
+            <translation><!-- PTD - Pricing Policy &amp; Tools Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTH - Customer Planning Division</masterLabel>
+            <translation><!-- PTH - Customer Planning Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTN - Nat’l Client Executive Division</masterLabel>
+            <translation><!-- PTN - Nat’l Client Executive Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTO - Organizational Support Div.</masterLabel>
+            <translation><!-- PTO - Organizational Support Div. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTP - Customer Programs Division</masterLabel>
+            <translation><!-- PTP - Customer Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTS - Customer Supt. &amp; Operations Div.</masterLabel>
+            <translation><!-- PTS - Customer Supt. &amp; Operations Div. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTZ - Office of Real Property Utilization &amp; Disposal</masterLabel>
+            <translation><!-- PTZ - Office of Real Property Utilization &amp; Disposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC0A - Customer Analysis &amp; Research Division</masterLabel>
+            <translation><!-- QC0A - Customer Analysis &amp; Research Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC0B - Customer Outreach Division</masterLabel>
+            <translation><!-- QC0B - Customer Outreach Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC0C - Customer Relationship Management Division</masterLabel>
+            <translation><!-- QC0C - Customer Relationship Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC1D - Vendor Engagement Division</masterLabel>
+            <translation><!-- QC1D - Vendor Engagement Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC1E - Corporate Marketing &amp; Outreach Division</masterLabel>
+            <translation><!-- QC1E - Corporate Marketing &amp; Outreach Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC1F - Management and Program Support Division</masterLabel>
+            <translation><!-- QC1F - Management and Program Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD0A - IAE Program Planning, Analysis, &amp; Control Division</masterLabel>
+            <translation><!-- QD0A - IAE Program Planning, Analysis, &amp; Control Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD0B - IAE Business Operations Division</masterLabel>
+            <translation><!-- QD0B - IAE Business Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD0C - IAE Outreach &amp; Stakeholder Management Division</masterLabel>
+            <translation><!-- QD0C - IAE Outreach &amp; Stakeholder Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD1D - Program Management Division</masterLabel>
+            <translation><!-- QD1D - Program Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD1E - Transformation Division</masterLabel>
+            <translation><!-- QD1E - Transformation Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD1F - Operations Division</masterLabel>
+            <translation><!-- QD1F - Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD2A - Management &amp; Program Support Division</masterLabel>
+            <translation><!-- QD2A - Management &amp; Program Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD2B - Business Applications Operations Division</masterLabel>
+            <translation><!-- QD2B - Business Applications Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD2C - Outreach &amp; Stakeholder Engagement Division</masterLabel>
+            <translation><!-- QD2C - Outreach &amp; Stakeholder Engagement Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QDC - IAE Common Acquisition Platform Governance Division</masterLabel>
+            <translation><!-- QDC - IAE Common Acquisition Platform Governance Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QF0A - Business Operations Division</masterLabel>
+            <translation><!-- QF0A - Business Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QF0B - Center for FEDSIM</masterLabel>
+            <translation><!-- QF0B - Center for FEDSIM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QF0C - Program Management Division</masterLabel>
+            <translation><!-- QF0C - Program Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QMA - Office of Acquisition Operations</masterLabel>
+            <translation><!-- QMA - Office of Acquisition Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QMB - Office of Charge Card Management</masterLabel>
+            <translation><!-- QMB - Office of Charge Card Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QMC - Office of Travel, Employee Relocation, and Transportation</masterLabel>
+            <translation><!-- QMC - Office of Travel, Employee Relocation, and Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QMD - Office of Fleet Management</masterLabel>
+            <translation><!-- QMD - Office of Fleet Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QMD - Office of Motor Vehicle Management</masterLabel>
+            <translation><!-- QMD - Office of Motor Vehicle Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP0A - Continuous Process Improvement Division</masterLabel>
+            <translation><!-- QP0A - Continuous Process Improvement Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP0B - Strategic Planning and Performance Mgmt Division</masterLabel>
+            <translation><!-- QP0B - Strategic Planning and Performance Mgmt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP0D - Govt-wide Progr. Mgt. Office for Category Mgt</masterLabel>
+            <translation><!-- QP0D - Govt-wide Progr. Mgt. Office for Category Mgt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP0E - Acquisition Gateway Division</masterLabel>
+            <translation><!-- QP0E - Acquisition Gateway Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP1A - Management &amp; Program Support Division</masterLabel>
+            <translation><!-- QP1A - Management &amp; Program Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP1B - Stakeholder Engagement Division</masterLabel>
+            <translation><!-- QP1B - Stakeholder Engagement Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP1C - Strategy Execution Division</masterLabel>
+            <translation><!-- QP1C - Strategy Execution Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP1D - Strategic Planning &amp; Perf. Mgt. Division</masterLabel>
+            <translation><!-- QP1D - Strategic Planning &amp; Perf. Mgt. Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QRA - Office of Contracting Operations</masterLabel>
+            <translation><!-- QRA - Office of Contracting Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QRB - Office of Program Operations</masterLabel>
+            <translation><!-- QRB - Office of Program Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QRC - Office of Business Operations</masterLabel>
+            <translation><!-- QRC - Office of Business Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS0A - Enterprise Supply Chain Solutions Division</masterLabel>
+            <translation><!-- QS0A - Enterprise Supply Chain Solutions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS0B - Management Support Division</masterLabel>
+            <translation><!-- QS0B - Management Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS0C - FAS Program Office for Emergency Mgt.</masterLabel>
+            <translation><!-- QS0C - FAS Program Office for Emergency Mgt. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS0D - Mgt. &amp; Program Support Division</masterLabel>
+            <translation><!-- QS0D - Mgt. &amp; Program Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS0E - Portfolio Outreach Division</masterLabel>
+            <translation><!-- QS0E - Portfolio Outreach Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS0F - Business Operations Support Division</masterLabel>
+            <translation><!-- QS0F - Business Operations Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSA - Office of Acquisition Mgt.</masterLabel>
+            <translation><!-- QSA - Office of Acquisition Mgt. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSB - Office of Business Management</masterLabel>
+            <translation><!-- QSB - Office of Business Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSC - Office of Personal Property Mgt.</masterLabel>
+            <translation><!-- QSC - Office of Personal Property Mgt. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSD - Office of Supply Chain Mgt.</masterLabel>
+            <translation><!-- QSD - Office of Supply Chain Mgt. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSR - Office of Retail Operations</masterLabel>
+            <translation><!-- QSR - Office of Retail Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT0A - Management and Program Support Division</masterLabel>
+            <translation><!-- QT0A - Management and Program Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT1 - Deputy AC Office of IT Category</masterLabel>
+            <translation><!-- QT1 - Deputy AC Office of IT Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT2 - Deputy AC Acquisition</masterLabel>
+            <translation><!-- QT2 - Deputy AC Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT3 - Deputy AC Category Management</masterLabel>
+            <translation><!-- QT3 - Deputy AC Category Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QTA - Office of Acquisition Operations</masterLabel>
+            <translation><!-- QTA - Office of Acquisition Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QTC - Office of Network Services Programs</masterLabel>
+            <translation><!-- QTC - Office of Network Services Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QTD - Office of Planning and Portfolio Management</masterLabel>
+            <translation><!-- QTD - Office of Planning and Portfolio Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QTF - Office of IT Schedule Programs</masterLabel>
+            <translation><!-- QTF - Office of IT Schedule Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QTG - Office of Strategic Programs</masterLabel>
+            <translation><!-- QTG - Office of Strategic Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV0A - Acquisition Workforce Division</masterLabel>
+            <translation><!-- QV0A - Acquisition Workforce Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV0C - Supplier Management Division</masterLabel>
+            <translation><!-- QV0C - Supplier Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV0D - MAS Program Division</masterLabel>
+            <translation><!-- QV0D - MAS Program Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV0E - Acquisition Policy Division</masterLabel>
+            <translation><!-- QV0E - Acquisition Policy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV0F - Program Analysis Division</masterLabel>
+            <translation><!-- QV0F - Program Analysis Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV0G - Socio-Economic Programs Division</masterLabel>
+            <translation><!-- QV0G - Socio-Economic Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV0I - Acquisition Oversight Division</masterLabel>
+            <translation><!-- QV0I - Acquisition Oversight Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QVA - Management Support Staff</masterLabel>
+            <translation><!-- QVA - Management Support Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Services Division</masterLabel>
+            <translation><!-- Technical Services Division --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Help --></label>
+        <name>EBCHelp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide a title for the EBC. --></help>
+        <label><!-- EBC Title --></label>
+        <name>EBC_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the Enhancement request category is OTHER, this input field is used to record the value --></help>
+        <label><!-- Enhancement Request Category (other) --></label>
+        <name>EnhancementRequestCategoryOther__c</name>
+    </fields>
+    <fields>
+        <help><!-- What category does this enhancement request apply to? --></help>
+        <label><!-- Enhancement Request Category --></label>
+        <name>EnhancementRequestCategory__c</name>
+        <picklistValues>
+            <masterLabel>Customer Relationship Management</masterLabel>
+            <translation><!-- Customer Relationship Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data/Workflow Automation</masterLabel>
+            <translation><!-- Data/Workflow Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Services</masterLabel>
+            <translation><!-- Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR Services</masterLabel>
+            <translation><!-- HR Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Services</masterLabel>
+            <translation><!-- Other Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is yes, to the previous question (Current Cost Information), provide the estimated costs. --></help>
+        <label><!-- Estimated Costs --></label>
+        <name>EstimatedCosts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Executive Business Case --></label>
+        <name>ExecutiveBusinessCase__c</name>
+        <relationshipLabel><!-- Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter a number for this request to adjust its business value scoring. Note: value can be positive or negative. --></help>
+        <label><!-- Executive Points --></label>
+        <name>ExecutivePoints__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please describe how you accomplish this task today (if applicable). --></help>
+        <label><!-- How do you accomplish this task today? --></label>
+        <name>HowDoYouAccomplishThisTaskToday__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Benefits of Implementation is OTHER, this input field is used to record value --></help>
+        <label><!-- Implementation Benefits (other) --></label>
+        <name>ImplementationBenefitsOther__c</name>
+    </fields>
+    <fields>
+        <help><!-- What are the benefits of implementation? --></help>
+        <label><!-- Implementation Benefits --></label>
+        <name>ImplementationBenefits__c</name>
+        <picklistValues>
+            <masterLabel>Cost reduction</masterLabel>
+            <translation><!-- Cost reduction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eliminate manual or legacy business processes</masterLabel>
+            <translation><!-- Eliminate manual or legacy business processes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Increase employee productivity and/or engagement</masterLabel>
+            <translation><!-- Increase employee productivity and/or engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Increase revenue</masterLabel>
+            <translation><!-- Increase revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduce service calls/emails or service tickets</masterLabel>
+            <translation><!-- Reduce service calls/emails or service tickets --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Source of this request --></help>
+        <label><!-- Input Channel --></label>
+        <name>InputChannel__c</name>
+        <picklistValues>
+            <masterLabel>Data Load</masterLabel>
+            <translation><!-- Data Load --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether or not this request is converted into a project --></help>
+        <label><!-- Converted --></label>
+        <name>IsConverted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Issues from the latest pulse --></help>
+        <label><!-- Issues --></label>
+        <name>Issues__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please describe the level of effort to complete this request as either High, Medium, or Low --></help>
+        <label><!-- Level of Effort --></label>
+        <name>LevelOfEffort__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Management Contact Info --></label>
+        <name>ManagementContactInfo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please choose &apos;Add to Existing Project&apos; if a Corporate IT Service project already exists --></help>
+        <label><!-- New or Existing Project? --></label>
+        <name>NewOrExistingProject__c</name>
+        <picklistValues>
+            <masterLabel>Add to Existing Project</masterLabel>
+            <translation><!-- Add to Existing Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create New Project</masterLabel>
+            <translation><!-- Create New Project --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How many users are impacted by the implementation of this request? --></help>
+        <label><!-- Number of users impacted --></label>
+        <name>NumberOfUsersImpacted__c</name>
+        <picklistValues>
+            <masterLabel>1-100</masterLabel>
+            <translation><!-- 1-100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>101-5000</masterLabel>
+            <translation><!-- 101-5000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5000+</masterLabel>
+            <translation><!-- 5000+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Use this field to select the Office/Portfolio that is managing the request. --></help>
+        <label><!-- Office / Portfolio --></label>
+        <name>Office_Portfolio__c</name>
+        <picklistValues>
+            <masterLabel>AC - Office of the GSA Chief of Staff</masterLabel>
+            <translation><!-- AC - Office of the GSA Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AG - Office of the Associate Administrator</masterLabel>
+            <translation><!-- AG - Office of the Associate Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKA - EEO Program Division</masterLabel>
+            <translation><!-- AKA - EEO Program Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKB - Civil Rights Programs Division</masterLabel>
+            <translation><!-- AKB - Civil Rights Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKE – OCR External Programs Division</masterLabel>
+            <translation><!-- AKE – OCR External Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKN – OCR EEO Program Division</masterLabel>
+            <translation><!-- AKN – OCR EEO Program Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AKR – OCR Regional Operations Division</masterLabel>
+            <translation><!-- AKR – OCR Regional Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B - OCFO Front Office</masterLabel>
+            <translation><!-- B - OCFO Front Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BA - OCFO Staff Offices Financial Services</masterLabel>
+            <translation><!-- BA - OCFO Staff Offices Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BB - Office of Budget</masterLabel>
+            <translation><!-- BB - Office of Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BC - OCFO Office of Financial Policy &amp; Operations</masterLabel>
+            <translation><!-- BC - OCFO Office of Financial Policy &amp; Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BF - OCFO Office of FAS Financial Services</masterLabel>
+            <translation><!-- BF - OCFO Office of FAS Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BG - Office of Financial Management</masterLabel>
+            <translation><!-- BG - Office of Financial Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI - Office of Analytics, Performance and Improvement</masterLabel>
+            <translation><!-- BI - Office of Analytics, Performance and Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BP - OCFO Office of PBS Financial Services</masterLabel>
+            <translation><!-- BP - OCFO Office of PBS Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR - Office of Regional Financial Services</masterLabel>
+            <translation><!-- BR - Office of Regional Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA - Office of Account Management</masterLabel>
+            <translation><!-- CA - Office of Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CN - Office of Management &amp; Performance Improvement</masterLabel>
+            <translation><!-- CN - Office of Management &amp; Performance Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CP - Office of Human Resources Services</masterLabel>
+            <translation><!-- CP - Office of Human Resources Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CS - Office of Human Resources Strategy</masterLabel>
+            <translation><!-- CS - Office of Human Resources Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS - Office of HR Services</masterLabel>
+            <translation><!-- CSS - Office of HR Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1A - Operations &amp; Plans Division</masterLabel>
+            <translation><!-- D1A - Operations &amp; Plans Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1E - Eastern Regions Division</masterLabel>
+            <translation><!-- D1E - Eastern Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1H - Physical Security Division</masterLabel>
+            <translation><!-- D1H - Physical Security Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1P - Policy &amp; Performance Division</masterLabel>
+            <translation><!-- D1P - Policy &amp; Performance Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1R - Resilience &amp; Interagency Programs Division</masterLabel>
+            <translation><!-- D1R - Resilience &amp; Interagency Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1W - Western Regions Division</masterLabel>
+            <translation><!-- D1W - Western Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DA - OMA Northeast Regions Division</masterLabel>
+            <translation><!-- DA - OMA Northeast Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DB - OMA Southeast Regions Division</masterLabel>
+            <translation><!-- DB - OMA Southeast Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC - OMA Midwest Regions Division</masterLabel>
+            <translation><!-- DC - OMA Midwest Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - OMA Policy &amp; Plans Division</masterLabel>
+            <translation><!-- DD - OMA Policy &amp; Plans Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE - OMA Western Regions Division</masterLabel>
+            <translation><!-- DE - OMA Western Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DP - OMA Operations Division</masterLabel>
+            <translation><!-- DP - OMA Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS - OMA GSA Security Division</masterLabel>
+            <translation><!-- DS - OMA GSA Security Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DT - Strategic Programs Division</masterLabel>
+            <translation><!-- DT - Strategic Programs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EC - Office of Customer Care &amp; Outreach</masterLabel>
+            <translation><!-- EC - Office of Customer Care &amp; Outreach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP - Office of Policy &amp; Forecasting</masterLabel>
+            <translation><!-- EP - Office of Policy &amp; Forecasting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ES - Office of Regional Small Business Management</masterLabel>
+            <translation><!-- ES - Office of Regional Small Business Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA - CBCA Staff Support Division</masterLabel>
+            <translation><!-- GA - CBCA Staff Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GJ - CBCA Judicial Division</masterLabel>
+            <translation><!-- GJ - CBCA Judicial Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 - Office of the Deputy Chief Administrative Services Officer</masterLabel>
+            <translation><!-- H1 - Office of the Deputy Chief Administrative Services Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1A - Office of Internal Acquisition</masterLabel>
+            <translation><!-- H1A - Office of Internal Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1B - Office of Workplace Management &amp; Services</masterLabel>
+            <translation><!-- H1B - Office of Workplace Management &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1C - Office of Travel &amp; Charge Card Services</masterLabel>
+            <translation><!-- H1C - Office of Travel &amp; Charge Card Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1E - Executive Secretariat Division</masterLabel>
+            <translation><!-- H1E - Executive Secretariat Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1F - FOIA &amp; Records Management Division</masterLabel>
+            <translation><!-- H1F - FOIA &amp; Records Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1G - GAO/IG Audit Management Division</masterLabel>
+            <translation><!-- H1G - GAO/IG Audit Management Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - OCIO Office of Governmentwide and Enterprise Solutions</masterLabel>
+            <translation><!-- IA - OCIO Office of Governmentwide and Enterprise Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB - OCIO Office of Financial and HR IT Services</masterLabel>
+            <translation><!-- IB - OCIO Office of Financial and HR IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Office of Corporate IT Services</masterLabel>
+            <translation><!-- IC - Office of Corporate IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID - Office of the Deputy CIO</masterLabel>
+            <translation><!-- ID - Office of the Deputy CIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE - OCIO Office of Enterprise Planning and Governance</masterLabel>
+            <translation><!-- IE - OCIO Office of Enterprise Planning and Governance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IG - Digital Services Division</masterLabel>
+            <translation><!-- IG - Digital Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IH - Solutions Strategy Division</masterLabel>
+            <translation><!-- IH - Solutions Strategy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO - OCIO Office of Enterprise Infrastructure</masterLabel>
+            <translation><!-- IO - OCIO Office of Enterprise Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP - Office of Public Buildings IT Services</masterLabel>
+            <translation><!-- IP - Office of Public Buildings IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ - Office of Acquisition IT Services</masterLabel>
+            <translation><!-- IQ - Office of Acquisition IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR - OCIO Resource Management Staff</masterLabel>
+            <translation><!-- IR - OCIO Resource Management Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IS - Office of the Chief Information Security Officer</masterLabel>
+            <translation><!-- IS - Office of the Chief Information Security Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JA - Office of Audits</masterLabel>
+            <translation><!-- JA - Office of Audits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JC - Counsel to the Inspector General</masterLabel>
+            <translation><!-- JC - Counsel to the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JE - Office of Inspections &amp; Forensic Auditing</masterLabel>
+            <translation><!-- JE - Office of Inspections &amp; Forensic Auditing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JI - Office of Investigations</masterLabel>
+            <translation><!-- JI - Office of Investigations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JP - Office of Administration</masterLabel>
+            <translation><!-- JP - Office of Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD - Offices of Regional Counsel</masterLabel>
+            <translation><!-- LD - Offices of Regional Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD1 - OGC New England Division</masterLabel>
+            <translation><!-- LD1 - OGC New England Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD2 - OGC Northeast and Caribbean Division</masterLabel>
+            <translation><!-- LD2 - OGC Northeast and Caribbean Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD3 - OGC Mid-Atlantic Division</masterLabel>
+            <translation><!-- LD3 - OGC Mid-Atlantic Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD4 - OGC Southeast Sunbelt Division</masterLabel>
+            <translation><!-- LD4 - OGC Southeast Sunbelt Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD5 - OGC Great Lakes Division</masterLabel>
+            <translation><!-- LD5 - OGC Great Lakes Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD6 - OGC Heartland Division</masterLabel>
+            <translation><!-- LD6 - OGC Heartland Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD7 - OGC Greater Southwest Division</masterLabel>
+            <translation><!-- LD7 - OGC Greater Southwest Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD8 - OGC Rocky Mountain Division</masterLabel>
+            <translation><!-- LD8 - OGC Rocky Mountain Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD9 - OGC Pacific Rim Division</masterLabel>
+            <translation><!-- LD9 - OGC Pacific Rim Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDA - OGC Northwest/Arctic Division</masterLabel>
+            <translation><!-- LDA - OGC Northwest/Arctic Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDW - OGC National Capital Region</masterLabel>
+            <translation><!-- LDW - OGC National Capital Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LE - OGC Ethics Law Staff</masterLabel>
+            <translation><!-- LE - OGC Ethics Law Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG - General Law Division</masterLabel>
+            <translation><!-- LG - General Law Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LL - OGC Legal Support Staff</masterLabel>
+            <translation><!-- LL - OGC Legal Support Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP - Personal Property Division</masterLabel>
+            <translation><!-- LP - Personal Property Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LR - Real Property Division</masterLabel>
+            <translation><!-- LR - Real Property Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LS - OGC Administrative Support Staff</masterLabel>
+            <translation><!-- LS - OGC Administrative Support Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA - Office of Asset &amp; Transportation Mgmt</masterLabel>
+            <translation><!-- MA - Office of Asset &amp; Transportation Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD - Evidence &amp; Analysis Division</masterLabel>
+            <translation><!-- MD - Evidence &amp; Analysis Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME - Office of Information, Integrity &amp; Access</masterLabel>
+            <translation><!-- ME - Office of Information, Integrity &amp; Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG - Office of High-Performing Green Bldgs</masterLabel>
+            <translation><!-- MG - Office of High-Performing Green Bldgs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS - Evaluation Sciences Division</masterLabel>
+            <translation><!-- MS - Evaluation Sciences Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MV - Office of Acquisition Policy</masterLabel>
+            <translation><!-- MV - Office of Acquisition Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MX - Office of Executive Councils</masterLabel>
+            <translation><!-- MX - Office of Executive Councils --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MZ - Office of Unified Shared Services Mgmt</masterLabel>
+            <translation><!-- MZ - Office of Unified Shared Services Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA - PBS Office of Client Solutions</masterLabel>
+            <translation><!-- PA - PBS Office of Client Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PB - PBS Office of the Chief of Staff</masterLabel>
+            <translation><!-- PB - PBS Office of the Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC - PBS Office of Design and Construction</masterLabel>
+            <translation><!-- PC - PBS Office of Design and Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PD - PBS Office of the Deputy Commissioner</masterLabel>
+            <translation><!-- PD - PBS Office of the Deputy Commissioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PI - Office of Real Property Utiliz. &amp; Disposal</masterLabel>
+            <translation><!-- PI - Office of Real Property Utiliz. &amp; Disposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM - PBS Office of Facilities Management</masterLabel>
+            <translation><!-- PM - PBS Office of Facilities Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PQ - Office of Acquisition Management</masterLabel>
+            <translation><!-- PQ - Office of Acquisition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR - PBS Office of Leasing</masterLabel>
+            <translation><!-- PR - PBS Office of Leasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT - Office of Portfolio Mgt. &amp; Customer Engagement</masterLabel>
+            <translation><!-- PT - Office of Portfolio Mgt. &amp; Customer Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pegasys Financial Services</masterLabel>
+            <translation><!-- Pegasys Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q0A - FAS Office of the Chief of Staff</masterLabel>
+            <translation><!-- Q0A - FAS Office of the Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q1 - FAS Office of the Deputy Commissioner</masterLabel>
+            <translation><!-- Q1 - FAS Office of the Deputy Commissioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC - FAS Office of Customer and Stakeholder Engagement</masterLabel>
+            <translation><!-- QC - FAS Office of Customer and Stakeholder Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD - FAS Office of Systems Management</masterLabel>
+            <translation><!-- QD - FAS Office of Systems Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QF - FAS Office of Assisted Acquisition Services</masterLabel>
+            <translation><!-- QF - FAS Office of Assisted Acquisition Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QM - FAS Office of Travel, Transportation and Logistics Categories</masterLabel>
+            <translation><!-- QM - FAS Office of Travel, Transportation and Logistics Categories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP - Office of Enterprise Strategy Management</masterLabel>
+            <translation><!-- QP - Office of Enterprise Strategy Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QR - Office of Prof’l Services &amp; Human Cap. Categories</masterLabel>
+            <translation><!-- QR - Office of Prof’l Services &amp; Human Cap. Categories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS - Office of Gen’l Supplies &amp; Services Categories</masterLabel>
+            <translation><!-- QS - Office of Gen’l Supplies &amp; Services Categories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT - Office of Information Technology Category</masterLabel>
+            <translation><!-- QT - Office of Information Technology Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV - Office of Policy &amp; Compliance</masterLabel>
+            <translation><!-- QV - Office of Policy &amp; Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA - Office of Products &amp; Programs</masterLabel>
+            <translation><!-- TA - Office of Products &amp; Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC - Office of Acquisition</masterLabel>
+            <translation><!-- TC - Office of Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TD - Office of Presidential Innovation Fellows</masterLabel>
+            <translation><!-- TD - Office of Presidential Innovation Fellows --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TE - Office of 18F</masterLabel>
+            <translation><!-- TE - Office of 18F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TO - Office of Operations</masterLabel>
+            <translation><!-- TO - Office of Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZC - OCM Communications Division</masterLabel>
+            <translation><!-- ZC - OCM Communications Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZM - OCM Media Affairs Division</masterLabel>
+            <translation><!-- ZM - OCM Media Affairs Division --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Link --></label>
+        <name>ProjectLink__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose a Project Sponsor --></help>
+        <label><!-- Project Sponsor --></label>
+        <name>ProjectSponsor__c</name>
+        <relationshipLabel><!-- Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If approved, a project will be created from this request --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this field to select the Region that this request is being managed out of --></help>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>Central Office</masterLabel>
+            <translation><!-- Central Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Capital Region</masterLabel>
+            <translation><!-- National Capital Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Setting --></label>
+        <name>RequestSetting__c</name>
+        <relationshipLabel><!-- Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>RequestType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Requested enhancement completion date? --></help>
+        <label><!-- Requested Enhancement Completion Date --></label>
+        <name>RequestedEnhancementCompletionDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The requested solution completion date --></help>
+        <label><!-- Requested Solution Completion Date --></label>
+        <name>RequestedSolutionCompletionDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter a valid email address (example@gsa.gov) --></help>
+        <label><!-- Requestor Email --></label>
+        <name>RequestorEmail__c</name>
+    </fields>
+    <fields>
+        <help><!-- Requestor Full Name (i.e. Elizabeth Sanders) --></help>
+        <label><!-- Requestor Name --></label>
+        <name>RequestorName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter a valid phone number to contact --></help>
+        <label><!-- Requestor Phone --></label>
+        <name>RequestorPhone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Requestor Service or Staff Office (i.e. OCFO, GSA IT(OCIO, OCM) --></help>
+        <label><!-- Requestor Service or Staff Office --></label>
+        <name>RequestorSSO__c</name>
+        <picklistValues>
+            <masterLabel>A - Office of the Administrator</masterLabel>
+            <translation><!-- A - Office of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK - Office of Civil Rights</masterLabel>
+            <translation><!-- AK - Office of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B - Office of the Chief Financial Officer</masterLabel>
+            <translation><!-- B - Office of the Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C - Office of Human Resources Management</masterLabel>
+            <translation><!-- C - Office of Human Resources Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D - Office of Mission Assurance</masterLabel>
+            <translation><!-- D - Office of Mission Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E - Office of Small Business Utilization</masterLabel>
+            <translation><!-- E - Office of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G - Civilian Board of Contract Appeals</masterLabel>
+            <translation><!-- G - Civilian Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H - Office of Administrative Services</masterLabel>
+            <translation><!-- H - Office of Administrative Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I - Office of GSA IT</masterLabel>
+            <translation><!-- I - Office of GSA IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J - Office of Inspector General</masterLabel>
+            <translation><!-- J - Office of Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L - Office of the General Counsel</masterLabel>
+            <translation><!-- L - Office of the General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M - Office of Governmentwide Policy</masterLabel>
+            <translation><!-- M - Office of Governmentwide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P - Public Buildings Service</masterLabel>
+            <translation><!-- P - Public Buildings Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q - Federal Acquisition Service</masterLabel>
+            <translation><!-- Q - Federal Acquisition Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S - Office of Congressional &amp; Intergovernmental Affairs</masterLabel>
+            <translation><!-- S - Office of Congressional &amp; Intergovernmental Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T - Technology Transformation Service</masterLabel>
+            <translation><!-- T - Technology Transformation Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USDA – Office of the Chief Financial Officer</masterLabel>
+            <translation><!-- USDA – Office of the Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z - Office of Strategic Communications</masterLabel>
+            <translation><!-- Z - Office of Strategic Communications --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this request the result of a Federal Mandate? --></help>
+        <label><!-- Result of a Federal Mandate? --></label>
+        <name>ResultOfFederalMandate__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score Implementation Benefits --></label>
+        <name>ScoreImplementationBenefits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Number of users impacted --></label>
+        <name>ScoreNumberOfUsersImpacted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Type Of Users Impacted --></label>
+        <name>ScoreTypeOfUsersImpacted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status Update/Comments from the latest pulse --></help>
+        <label><!-- Status Update/Comments --></label>
+        <name>StatusUpdateOrComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current status of the request --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Analysis</masterLabel>
+            <translation><!-- Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting BRG Approval</masterLabel>
+            <translation><!-- Awaiting BRG Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Request</masterLabel>
+            <translation><!-- New Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scoping</masterLabel>
+            <translation><!-- Scoping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution/LOE Complete</masterLabel>
+            <translation><!-- Solution/LOE Complete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Submitted By --></label>
+        <name>SubmittedBy__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Type of Users Impacted is OTHER, input value is recorded here --></help>
+        <label><!-- Type of users impacted (other) --></label>
+        <name>TypeOfUsersImpactedOther__c</name>
+    </fields>
+    <fields>
+        <help><!-- What type of users are impacted by the implementation of this request? --></help>
+        <label><!-- Type of users impacted --></label>
+        <name>TypeOfUsersImpacted__c</name>
+        <picklistValues>
+            <masterLabel>Citizens</masterLabel>
+            <translation><!-- Citizens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Agency Customers</masterLabel>
+            <translation><!-- External Agency Customers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal GSA</masterLabel>
+            <translation><!-- Internal GSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendors</masterLabel>
+            <translation><!-- Vendors --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Application Enhancement (improvement, change, or new functionality for an existing application)</masterLabel>
+            <translation><!-- Application Enhancement (improvement, change, or new functionality for an existing application) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Application (an application does not currently exist)</masterLabel>
+            <translation><!-- New Application (an application does not currently exist) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Upcoming Action Items from the latest pulse --></help>
+        <label><!-- Upcoming Action Items --></label>
+        <name>UpcomingActionItems__c</name>
+    </fields>
+    <fields>
+        <label><!-- Converted to EBC --></label>
+        <name>isConvertedtoEBC__c</name>
+    </fields>
+    <layouts>
+        <layout>Enhancement Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Enhancement Request Information --></label>
+            <section>Enhancement Request Information</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Latest Request Updates --></label>
+            <section>Latest Request Updates</section>
+        </sections>
+        <sections>
+            <label><!-- Project/EBC Information (if applicable) --></label>
+            <section>Project/EBC Information (if applicable)</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>New Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Latest Request Updates --></label>
+            <section>Latest Request Updates</section>
+        </sections>
+        <sections>
+            <label><!-- Project/EBC Information (if applicable) --></label>
+            <section>Project/EBC Information (if applicable)</section>
+        </sections>
+        <sections>
+            <label><!-- Request Information --></label>
+            <section>Request Information</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Convert to EBC --></label>
+        <name>Convert_to_EBC</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Pulse --></label>
+        <name>NewPulse</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Enhancement --></label>
+        <name>P360_Enhancement</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- New Application --></label>
+        <name>P360_NewApplication</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- &apos;Costs&apos; and &apos;Level of Effort&apos; fields must be populated in order to proceed beyond &apos;Analysis&apos; --></errorMessage>
+        <name>P360_Analysis_CostAndLevelOfEffortReq</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- BRG Approval is required if the Costs are greater than $150,000 --></errorMessage>
+        <name>P360_BRGApprovedRequiredIfStatusApproved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Level of Effort must be selected in order to update Status to &apos;Awaiting BRG Approval&apos; or &apos;Approved&apos; --></errorMessage>
+        <name>P360_LOERequiredBRGApprovedOrConverted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Requests that cost less than $150,000 do not require BRG Approval --></errorMessage>
+        <name>P360_Request_BRGApprvlCostGreatrThan150k</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This request has already been converted into a project --></errorMessage>
+        <name>P360_Request_ConvertedAlready</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You do not have the necessary permission to create an EBC. Please contact your System Administrator to request access. --></errorMessage>
+        <name>P360_Request_CreateEBCPermissionRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Request does not meet the criteria to convert it to an EBC Concept. Please review the cost information and try again. --></errorMessage>
+        <name>P360_Request_EBCConversion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An EBC has already been created for this Request --></errorMessage>
+        <name>P360_Request_EBCMultipleConversion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A new project will be created automatically for this request. Please do not complete the Project field. --></errorMessage>
+        <name>P360_Request_ExistingProjectCreateNew</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please take ownership of this Request in order to convert it into a project --></errorMessage>
+        <name>P360_Request_OnlyOwnerCanConvert</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please choose an existing project --></errorMessage>
+        <name>P360_Request_ProjectMissingExisting</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Request cannot be BRG approved as the Costs is greater than $500,000. --></errorMessage>
+        <name>P360_RestrictBRGApprovalUpdate</name>
+    </validationRules>
+</CustomObjectTranslation>

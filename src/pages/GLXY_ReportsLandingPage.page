@@ -1,0 +1,723 @@
+<apex:page controller="GLXY_clsReportDetails" title="Galaxy Reports" sidebar="false">
+
+<apex:includeScript value="{!URLFOR($Resource.Calendar)}"/> 
+<apex:stylesheet value="{!URLFOR($Resource.CalendarCSS)}" /> 
+
+<style>
+    .disabled {
+       pointer-events: none;
+       cursor: default;
+       filter: alpha(opacity=30); 
+       -moz-opacity:0.3; 
+       opacity: 0.3
+    }
+</style>
+
+    <table style="width:100%" >
+        <tr>
+            <td align="center"><h1 ><font color="darkred" size="+2">Galaxy Reports</font></h1></td></tr>
+            <tr><td align="right"><a onClick="javascript:return fnAppendParametersHelpPage('HelpPage')" ID="HelpPage" href="GLXY_HelpPage">Help for this page</a></td>
+        </tr>
+    </table>
+
+    <apex:form id="frmList">
+        <table border="0" align="center">
+            <tr valign="top">
+                <td><b>Fiscal Year: </b>&nbsp;
+                    <apex:selectList value="{!CurrentFY}" multiselect="false" size="1" id="cmbFiscalyear" onchange="fnEnableOrDisable(this)">
+                        <apex:selectOptions value="{!FiscalYears}"/>
+                    </apex:selectList><p/>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><b>Region Code: </b> &nbsp;
+                    <apex:selectList value="{!UserRegionValue}"  multiselect="false" size="1" id="cmbRegion">
+                        <apex:selectOptions value="{!Regions}"/>
+                    </apex:selectList><p/>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><b>Delegated Flag: </b> &nbsp;
+                    <apex:selectList multiselect="false" size="1" id="cmbDelegatedFlag">
+                        <apex:selectOptions value="{!DelegatedTypes}"/>
+                    </apex:selectList><p/>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><b>Include in Budget:</b> &nbsp;
+                     <apex:selectList multiselect="false" size="1" id="cmbIncludeinBudgetFlag">
+                         <apex:selectOptions value="{!BudgetStatus}"/>
+                     </apex:selectList><p/>
+                </td>
+            </tr>
+        </table>
+        
+        <table border="0" align="center" width="98%">
+            <tr valign="top">
+                <td>
+                    <apex:pageBlock id="Leases">
+                        <font size="+1"><b>Leases</b></font>
+                        <apex:dataTable value="{!LeaseReportsBase}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled1"><a onClick="fnAppendParametersLeasesBase('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                        <apex:dataTable value="{!LeaseReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled2"><a onClick="fnAppendParametersLeases('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                        <apex:dataTable value="{!LeaseProjectsReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled3"><a onClick="fnAppendParametersLeaseProjects('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                        <hr/> 
+                        <table border="0" align="Left">
+                            <tr>
+                                <td nowrap="true">
+                                    <b>Start Date:</b>&nbsp;
+                                    <apex:inputText id="txtStartDate" size="10" onmouseover="initialiseCalendar(this, '{!$Component.frmList.Leases.txtStartDate}')"/>&nbsp;
+                                    <b>End Date:</b>&nbsp;
+                                    <apex:inputText id="txtEndDate" size="10" onmouseover="initialiseCalendar(this, '{!$Component.frmList.Leases.txtEndDate}')"/>
+                                </td>
+                            </tr>
+                        </table><br/><br/>
+                        <apex:dataTable value="{!LeaseReportsParamDate}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled4"><a onClick="fnAppendParametersLeasesDate('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="Charges">
+                        <font size="+1"><b>Charges</b></font><br/>
+                        <table border="0" align="Left">
+                            <tr>
+                                <td><b>Status Code:</b>&nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbChargesEA">
+                                        <apex:selectOptions value="{!EstimateActual}"/>
+                                    </apex:selectList>
+                                </td>
+                            </tr>
+                        </table><br/><br/>
+                        <apex:dataTable value="{!ChargesReports}" var="Report" cellPadding="4" border="0" >
+                           <apex:column ><a onClick="fnAppendParametersCharges('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="BudgetCall">
+                        <table cellPadding="3" border="0" >
+                            <tr><td><font size="+1"><b>Lease Summary</b></font><br/></td></tr>
+                            <tr>
+                                <td>
+                                    <b>Team Code:</b> &nbsp;<apex:inputText size="8" id="txtTeamCode"/>&nbsp;&nbsp;&nbsp;
+                                    <b>Lease #:</b> &nbsp;<apex:inputText size="8" id="txtLeaseNumberBC"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <apex:dataTable value="{!BudgetCallReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ><a onClick="fnAppendParametersBudgetCallStandard('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>   
+                    </apex:pageBlock>
+                    <apex:pageBlock id="PastDueUpcoming">
+                        <table cellPadding="3" border="0" >
+                            <tr><td><font size="+1"><b>Past Due/Upcoming</b></font><br/></td></tr>
+                        </table>
+                        <apex:dataTable value="{!PDUPReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled10"><a onClick="fnAppendParametersRegion('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>   
+                    </apex:pageBlock>
+                </td>
+                    
+                <td width="35%">
+                    <apex:pageBlock id="Projects">
+                    <font size="+1"><b>Projects</b></font><br/>
+                        <table border="0" align="Left">
+                            <tr>
+                                <td><b>Status Code:</b> &nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbProjectsEA">
+                                        <apex:selectOptions value="{!EstimateActual}"/>
+                                    </apex:selectList>
+                                </td>
+                            </tr>
+                        </table><br/><br/>
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <apex:dataTable value="{!ProjectsReports}" var="Report" cellPadding="4" border="0" >
+                                        <apex:column ><a onClick="fnAppendParametersProjects('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                                    </apex:dataTable>
+                                </td>
+                                <td>
+                                    <apex:dataTable value="{!ProjectsIAReports}" var="Report" cellPadding="4" border="0" >
+                                        <apex:column ><a onClick="fnAppendParametersProjects('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                                    </apex:dataTable>
+                                </td>
+                                <td>
+                                    <apex:dataTable value="{!ProjectsNOAReports}" var="Report" cellPadding="4" border="0" >
+                                        <apex:column ><a onClick="fnAppendParametersProjects('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                                    </apex:dataTable>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:dataTable value="{!ProjectsReportsMisc}" var="Report" cellPadding="4" border="0" >
+                                        <apex:column ><a onClick="fnAppendParametersProjects('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                                    </apex:dataTable>
+                                </td>
+                                 <td valign="top">
+                                    <apex:dataTable value="{!ProjectsReportsMisc2}" var="Report" cellPadding="4" border="0" >
+                                        <apex:column ><a onClick="fnAppendParametersProjects('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                                    </apex:dataTable>
+                                </td>
+                                 <td valign="top">
+                                    <apex:dataTable value="{!ProjectsReportsMisc3}" var="Report" cellPadding="4" border="0" >
+                                        <apex:column ><a onClick="fnAppendParametersProjects('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                                    </apex:dataTable>
+                                    <apex:dataTable value="{!ProjectsReportsMisc4}" var="Report" cellPadding="4" border="0" >
+                                        <apex:column ><a onClick="fnAppendParametersProjects2('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                                    </apex:dataTable>                                    
+                                </td>
+                            </tr>
+                        </table>
+                        <hr/> <br/>
+                            <a onClick="javascript:return fnAppendParametersNewReplacingReductionReport('NewReplacingReductionReport')" ID="NewReplacingReductionReport" href="GLXY_NewReplacingReduction">New/Replacing vs Reduction Projects</a>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="Delegated">
+                        <font size="+1"><b>Delegated and Non-Delegated</b></font><br/>
+                        <table border="0" align="Left">
+                            <tr>
+                                <td><b>Status Code:</b> &nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbDelegatedEA">
+                                        <apex:selectOptions value="{!EstimateActual}"/>
+                                    </apex:selectList>&nbsp;
+                                </td>
+                            </tr>
+                        </table><br/><br/>
+                        <apex:dataTable value="{!DelegatedReports}" var="Report" cellPadding="4" border="0" >
+                            <apex:column ><a onClick="fnAppendParametersDelegated('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="FYProjections">
+                        <font size="+1"><b>Fiscal Year Projections</b></font><br/>
+                        <table border="0" align="Left">
+                            <tr>
+                                <td nowrap="true">
+                                    <b>FY/Snapshot:</b> &nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbFYProjectionFYSS" onchange="toggleSnapShotDate(this.value,'snap','rptFYProjections','GLXY_rptFYProjectionsExcel','{!$Component.cmbFiscalyear}')">
+                                        <apex:selectOptions value="{!FYSnapshot}"/>
+                                    </apex:selectList>&nbsp;
+                                    <span id="snap" style="display:none" >
+                                    <b>Snapshot Date:</b>&nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbSnapshotDate">
+                                        <apex:selectOptions value="{!SnapshotDate}"/>
+                                    </apex:selectList><p/>
+                                    </span>
+                                </td>
+                             </tr>
+                        </table><br/><br/><br/>    
+                        <a onClick="javascript:return fnAppendParametersFYProjection('rptFYProjections')" ID="rptFYProjections" href="GLXY_rptFYProjections">Total Fiscal Year Projection (HTML)</a>&nbsp;
+                        <a onClick="javascript:return fnAppendParametersFYProjection('GLXY_rptFYProjectionsExcel')" ID="GLXY_rptFYProjectionsExcel" href="GLXY_rptFYProjectionsExcel">(Excel)</a><br/><br/>
+                        <!-- <a onClick="fnAppendParametersFYProjection('GLXY_PWCReport')" ID="GLXY_PWCReport" href="GLXY_PWCReport">PWC Report</a><br/><br/> -->
+                        <table border="0" align="Left">
+                             <tr>   
+                                <td>
+                                    <b>NOA/IA:</b> &nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbFYProjectionNOAOrIA">
+                                        <apex:selectOptions value="{!SpaceTypes}"/>
+                                    </apex:selectList>
+                                    <b>Status Code:</b> &nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbFYProjectionEA">
+                                        <apex:selectOptions value="{!EstimateActual}"/>
+                                    </apex:selectList>&nbsp;
+                                </td>
+                            </tr>
+                        </table><br/><br/><br/>
+                        <a onClick="javascript:return fnAppendParametersFYProjectionByLease('rptFYProjectionsByLease')" ID="rptFYProjectionsByLease" href="javascript:void(0)">{!CurrentFY} Lease Projections</a> for &nbsp; 
+                        <apex:inputText size="8" id="txtLeaseNumber"/>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="HighRisk">
+                        <font size="+1"><b>High Risk Projects</b></font><br/>
+                        <apex:dataTable value="{!HighRiskReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled5"><a onClick="fnAppendParametersHighRisk('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="FundCert">
+                        <font size="+1"><b>Fund Certification</b></font><br/>
+                        <apex:dataTable value="{!FundCertReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled5a"><a onClick="fnAppendParametersFundCert('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                </td>
+                <td>
+                    <apex:pageBlock id="Accurals">
+                        <font size="+1"><b>Accruals</b></font><br/>
+                        <apex:dataTable value="{!AccrualReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled6"><a onClick="fnAppendParametersAccruals('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                        &nbsp;<a onClick="fnAppendParametersAccruals('NextFYDisabled6b')" ID="NextFYDisabled6b" href="GLXY_AccrualReport">Project Accruals</a>
+                    </apex:pageBlock>
+                    
+                    <apex:pageBlock id="Agencies">
+                        <font size="+1"><b>Agencies</b></font><br/>
+                        <table border="0" align="Left">
+                            <tr>
+                                <td><b>Status Code:</b> &nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbAgenciesEA">
+                                        <apex:selectOptions value="{!EstimateActual}"/>
+                                    </apex:selectList>
+                                </td>
+                            </tr>
+                        </table><br/><br/>
+                        <apex:dataTable value="{!AgenciesReports}" var="Report" cellPadding="4" border="0" >
+                           <apex:column ID="NextFYDisabled6c"><a onClick="fnAppendParametersAgencies('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                    
+                    <apex:pageBlock id="Monthly">
+                        <font size="+1"><b>Monthly/Total</b></font><br/>
+                        <table border="0" align="Left">
+                            <tr>
+                                <td><b>Status Code:</b> &nbsp;
+                                    <apex:selectList multiselect="false" size="1" id="cmbMonthlyEA">
+                                        <apex:selectOptions value="{!EstimateActual}"/>
+                                    </apex:selectList>
+                                </td>
+                            </tr>
+                        </table><br/><br/>
+                        <apex:dataTable value="{!TotalReports}" var="Report" cellPadding="4" border="0" >
+                            <apex:column ID="NextFYDisabled7"><a onClick="fnAppendParametersProjectsMonthly('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                        &nbsp;<a onClick="fnAppendParametersSpendingPlan('rptSpendingPlan')" ID="rptSpendingPlan" href="GLXY_spendingPlanReport">Monthly Fiscal Year Projections (HTML)</a>
+                        &nbsp;&nbsp;
+                        <a onClick="fnAppendParametersSpendingPlan('rptSpendingPlanExcel')" ID="rptSpendingPlanExcel" href="GLXY_spendingPlanReportExcel">(Excel)</a>
+                        <br/><br/>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="PlaceHolder">
+                        <table cellPadding="3" border="0" >
+                            <!--<tr><td><font size="+1"><b>Placeholder vs Actual</b></font><br/></td></tr>-->
+                            <tr><td><font size="+1"><b>Duplicate Management</b></font><br/></td></tr>
+                            <tr><td><a onClick="fnAppendParametersPlaceHolder('rptDuplicateCPI')" ID="rptDuplicateCPI" href="GLXY_DuplicateCPI">Consumer Price Index</a><br/></td></tr>
+                            <tr><td><a onClick="fnAppendParametersPlaceHolder('rptDuplicateLumpSum')" ID="rptDuplicateLumpSum" href="GLXY_DuplicateLumpSum">Lump Sums</a><br/></td></tr>
+                            <tr><td><a onClick="fnAppendParametersPlaceHolder('rptDuplicateStepRent')" ID="rptDuplicateStepRent" href="GLXY_DuplicateStepRent">Step Rent</a><br/></td></tr>
+                            <tr><td><a onClick="fnAppendParametersPlaceHolder('rptDuplicateProjects')" ID="rptDuplicateProjects" href="GLXY_DuplicateProjects">Projects</a><br/></td></tr>
+                        </table>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="Snapshot">
+                        <font size="+1"><b>Snapshot Trends</b></font><br/>
+                        <apex:dataTable value="{!SnapshotReports}" var="Report" cellPadding="4" border="0" >
+                           <apex:column ID="NextFYDisabled8"><a onClick="fnAppendParametersRegion('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable><br/>
+                        <font size="+1"><b>Snapshot Data Files</b></font><br/>
+                        <apex:dataTable value="{!SnapshotDataReports}" var="Report" cellPadding="4" border="0" >
+                           <apex:column ID="NextFYDisabled8"><a onClick="fnAppendParametersRegion('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                    <!-- 
+                    <apex:pageBlock id="TrendAnalysis">
+                        <font size="+1"><b>Trend Analysis</b></font><br/>
+                        <apex:dataTable value="{!BudgetTrendReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ><a onClick="fnAppendParametersTrends('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                        <table border="0" align="Left">
+                            <tr><td><a onClick="fnAppendParametersBudgetTrend('rptBudgetTrends')" ID="rptBudgetTrends" href="Glxy_rptBudgetTrends">Budget Trends</a><br/></td></tr>
+                        </table><br/>   
+                    </apex:pageBlock>
+
+
+
+
+
+
+                     -->
+                    
+                </td>
+                <td>
+                    <apex:pageBlock id="Reconciliation">
+                        <font size="+1"><b>Reconciliation</b></font><br/>
+                        <table border="0" align="Left">
+                            <tr>
+                                <td><b>Month:</b> &nbsp;
+                                    <apex:selectList multiselect="false" value="{!PreviousMonth}" size="1" id="cmbMonths">
+                                        <apex:selectOptions value="{!Months}"/>
+                                    </apex:selectList>&nbsp;
+                                </td>
+                            </tr>
+                        </table><br/><br/>
+                        <apex:dataTable value="{!ReconciliationReports}" var="Report" cellPadding="4" border="0">
+                            <apex:column ID="NextFYDisabled9"><a onClick="fnAppendParametersReconciliation('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                    <apex:pageBlock id="DataFiles">
+                        <font size="+1"><b>Data Files</b></font>
+                        <apex:dataTable value="{!DataFileReports}" var="Report" cellPadding="4" border="0" >
+                           <apex:column ID="NextFYDisabled11"><a onClick="fnAppendParametersDataFile('{!Report.ID}')" ID="{!Report.ID}" href="../{!Report.ID}?">{!Report.Name}</a></apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlock>
+                </td>
+           </tr>
+        </table>
+    </apex:form>
+    
+    <script language = "Javascript">
+        
+        function fnEnableOrDisable(objSelect){
+            var elems = document.getElementsByTagName("*");
+            strFYSS = document.getElementById('{!$Component.frmList.FYProjections.cmbFYProjectionFYSS}').value;
+            
+            for (var i=0, m=elems.length; i<m; i++) {
+                if ((elems[i].id && elems[i].id.indexOf("NextFYDisabled") != -1) || (elems[i].id && elems[i].id.indexOf("rptFYProjections") != -1 && strFYSS =="Snapshot")|| (elems[i].id && elems[i].id.indexOf("rptSpendingPlan") != -1) || (elems[i].id && elems[i].id.indexOf("rptSpendingPlanExcel") != -1) || (elems[i].id && elems[i].id.indexOf("rptFYProjectionsByLease") != -1)) {
+                    if (objSelect.value != '{!CurrentFY}'){ 
+                        document.getElementById(elems[i].id).className = 'disabled';
+                    }else{
+                        document.getElementById(elems[i].id).className = '';
+                    }   
+                }else if(elems[i].id && elems[i].id.indexOf("rptFYProjections") != -1){
+                    if (objSelect.value != '{!CurrentFY}' && objSelect.value != '{!CurrentFY1}' && objSelect.value != '{!CurrentFY2}'){ 
+                        document.getElementById(elems[i].id).className = 'disabled';
+                    }else{
+                        document.getElementById(elems[i].id).className = '';
+                    }
+                }
+                
+            }   
+        }
+        
+        function toggleSnapShotDate(value,id,linkId,excelId,FYId) {
+            var FYvalue  =  document.getElementById(FYId).value;
+            if(value=="Snapshot"){
+            if (FYvalue != '{!CurrentFY}'){ 
+                document.getElementById(linkId).className = 'disabled';
+                 document.getElementById(excelId).className = 'disabled';
+                 }
+                document.getElementById(id).style.display="";
+            }else{
+                document.getElementById(excelId).className = '';
+                document.getElementById(linkId).className = '';
+                document.getElementById(id).style.display="none";
+            }                             
+        }
+                             
+        function fnAppendParametersRegion(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion);
+        }
+        
+        function fnAppendParametersLeasesBase(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strDelegatedFlag);
+        }
+        
+        function fnAppendParametersLeases(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strFiscalYear + '&pv2=' + strDelegatedFlag);
+        }
+        
+        function fnAppendParametersLeaseProjects(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strFiscalYear + '&pv2=' + strDelegatedFlag + '&pv3=' + strIncludeinBudgetFlag);
+        }
+        
+        function fnAppendParametersLeasesDate(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strStartDate = document.getElementById('{!$Component.frmList.Leases.txtStartDate}').value;
+            strEndDate = document.getElementById('{!$Component.frmList.Leases.txtEndDate}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strStartDate + '&pv2=' + strEndDate + '&pv3=' + strDelegatedFlag);
+        }
+        
+        function fnAppendParametersCharges(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strChargesEA = document.getElementById('{!$Component.frmList.Charges.cmbChargesEA}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strChargesEA + '&pv1=' + strFiscalYear + '&pv2=' + strRegion + '&pv3=' + strDelegatedFlag + '&pv4=' + strIncludeinBudgetFlag);
+        }
+        
+        function fnAppendParametersCutOff(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strFiscalYear + '&pv2=' + strDelegatedFlag + '&pv3=' + strIncludeinBudgetFlag);
+        }
+        
+        function fnAppendParametersBudgetCall(strURLID){
+            strReportingYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strSubmissionType = document.getElementById('{!$Component.frmList.BudgetCall.cmbSubmissionType}').value;
+            strDataFormat = document.getElementById('{!$Component.frmList.BudgetCall.cmbDataFormat}').value;
+            if (strRegion.length >= 6){
+                strRegion = '\'CO\'';
+            }
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?Region=' + strRegion + '&ReportingYear=' + strReportingYear  + '&SubmissionType=' + strSubmissionType + '&DataFormat=' + strDataFormat);
+        }
+        
+        function fnAppendParametersBudgetCallStandard(strURLID){
+            strTeamCodeParameter = '';
+            strReportingYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strTeamCode = document.getElementById('{!$Component.frmList.BudgetCall.txtTeamCode}').value;
+            strLeaseNum = document.getElementById('{!$Component.frmList.BudgetCall.txtLeaseNumberBC}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            
+            /*
+            if (strTeamCode != ''){
+                strTeamCodeParameter = '&pv2=' + strTeamCode;
+            }else{
+                strTeamCodeParameter = '&pc2=NoTeamCode&pn2=eq&pv2=NA';//this is a error condition for SF; this will basically take the TEAMCODE parameter off the report.
+            }
+            
+            if (strLeaseNum != ''){
+                strLeaseParameter = '&pv3=' + strLeaseNum;
+            }else{
+                strLeaseParameter = '&pc3=NoLeaseNum&pn3=eq&pv3=NA';//this is a error condition for SF; this will basically take the Lease Number parameter off the report.
+            }
+            
+             if (strDelegatedFlag != '\'True\',\'False\''){
+                strDelegatedFlagParameter = '&pv4=' + strDelegatedFlag;
+            }else{
+                strDelegatedFlagParameter = '&pc4=NoLeaseNum&pn4=eq&pv4=NA';//this is a error condition for SF; this will basically take the Lease Number parameter off the report.
+            }
+            */
+            strTeamCodeParameter = '&pv2=' + strTeamCode;
+            strLeaseParameter = '&pv3=' + strLeaseNum;
+            strDelegatedFlagParameter = '&pv4=' + strDelegatedFlag;
+            
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strReportingYear + strTeamCodeParameter + strLeaseParameter + strDelegatedFlagParameter);
+        }
+        
+        function fnAppendParametersTrends(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strFiscalYearStart = parseInt('{!CurrentFY}') - 2;
+            strFiscalYearEnd = parseInt('{!CurrentFY}') + 2;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strFiscalYearStart + '&pv2=' + strFiscalYearEnd);
+        }
+        
+        function fnAppendParametersBudgetTrend(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', 'GLXY_rptBudgetTrends?Region=' + strRegion);
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            return true;
+        }
+        
+        function fnAppendParametersProjects(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strProjectsEA = document.getElementById('{!$Component.frmList.Projects.cmbProjectsEA}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strFiscalYear + '&pv1=' + strRegion + '&pv2=' + strDelegatedFlag + '&pv3=' + strIncludeinBudgetFlag + '&pv4=' + strProjectsEA);
+        }
+        
+        function fnAppendParametersProjects2(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strProjectsEA = document.getElementById('{!$Component.frmList.Projects.cmbProjectsEA}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strFiscalYear + '&pv1=' + strRegion + '&pv2=' + strIncludeinBudgetFlag + '&pv3=' + strProjectsEA);
+        }          
+        
+        function fnAppendParametersDelegated(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strDelegatedEA = document.getElementById('{!$Component.frmList.Delegated.cmbDelegatedEA}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strFiscalYear + '&pv1=' + strRegion + '&pv2=' + strDelegatedFlag + '&pv3=' + strIncludeinBudgetFlag + '&pv4=' + strDelegatedEA);
+        }
+        
+        function fnAppendParametersNewReplacingReductionReport(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?Region=' + strRegion);
+        }
+        
+        function fnAppendParametersFYProjection(strURLID){
+            //strFiscalYear = '{!CurrentFY}';
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strFYSS = document.getElementById('{!$Component.frmList.FYProjections.cmbFYProjectionFYSS}').value;
+            strSnapshotDate = document.getElementById('{!$Component.frmList.FYProjections.cmbSnapshotDate}').value;
+            //linkHref = document.getElementById(strURLID).getAttribute('href');
+            var str = document.getElementById(strURLID).getAttribute('href');
+            if(str.indexOf('?') > -1)
+            linkHref = str.substring(0, str.indexOf('?'));
+            else
+            linkHref = str;
+            
+            if(strFYSS =='Snapshot') {
+                if(strSnapshotDate !=''){
+                    document.getElementById(strURLID).setAttribute('href', linkHref + '?FY=' + strFiscalYear + '&Region=' + strRegion + '&DelegatedFlag=' + strDelegatedFlag + '&IncludeInBudgetFlag=' + strIncludeinBudgetFlag + '&FiscalSSSelectedType=' + strFYSS + '&SelectedSnapShotDate=' + strSnapshotDate);
+                }
+            }
+            else{
+                document.getElementById(strURLID).setAttribute('href', linkHref + '?FY=' + strFiscalYear + '&Region=' + strRegion + '&DelegatedFlag=' + strDelegatedFlag + '&IncludeInBudgetFlag=' + strIncludeinBudgetFlag + '&FiscalSSSelectedType=' + strFYSS);
+            }
+            setTimeout(function(){window.location.reload();},15000);
+        }
+        
+        function fnAppendParametersFYProjectionByLease(strURLID){
+            strLease = '';
+            strFiscalYear = '{!CurrentFY}';
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strNOAIA = document.getElementById('{!$Component.frmList.FYProjections.cmbFYProjectionNOAOrIA}').value;
+            strEA = document.getElementById('{!$Component.frmList.FYProjections.cmbFYProjectionEA}').value;
+            strLease = document.getElementById('{!$Component.frmList.FYProjections.txtLeaseNumber}').value;
+            if (strLease == ''){ 
+                alert('Please enter a Lease Number');
+                document.getElementById('{!$Component.frmList.FYProjections.txtLeaseNumber}').focus();
+                return false;
+            }   
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', 'GLXY_rptFYProjectionsByLease?FY=' + strFiscalYear + '&Lease=' + strLease + '&NOAIA=' + strNOAIA + '&EA=' + strEA + '&DelegatedFlag=' + strDelegatedFlag + '&IncludeInBudgetFlag=' + strIncludeinBudgetFlag);
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            return true;
+        }
+        
+        function fnAppendParametersExceptions(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion);
+        } 
+        
+        function fnAppendParametersFundCert(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strFiscalYear);
+        } 
+        
+        function fnAppendParametersAccruals(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strFiscalYear + '&pv1=' + strRegion);
+        }
+        
+        function fnAppendParametersAgencies(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strAgenciesEA = document.getElementById('{!$Component.frmList.Agencies.cmbAgenciesEA}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strFiscalYear + '&pv1=' + strRegion + '&pv2=' + strDelegatedFlag + '&pv3=' + strIncludeinBudgetFlag + '&pv4=' + strAgenciesEA);
+        }
+       
+        function fnAppendParametersProjectsMonthly(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strMonthlyEA = document.getElementById('{!$Component.frmList.Monthly.cmbMonthlyEA}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strFiscalYear + '&pv1=' + strRegion + '&pv2=' + strDelegatedFlag + '&pv3=' + strIncludeinBudgetFlag + '&pv4=' + strMonthlyEA);
+        }
+        
+        function fnAppendParametersSpendingPlan(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            strMonthlyEA = document.getElementById('{!$Component.frmList.Monthly.cmbMonthlyEA}').value;
+            //console.log(strRegion+','+strRegion+','+strDelegatedFlag+','+strIncludeinBudgetFlag+','+strMonthlyEA);
+             var str = document.getElementById(strURLID).getAttribute('href');
+            if(str.indexOf('?') > -1)
+            linkHref = str.substring(0, str.indexOf('?'));
+            else
+            linkHref = str;
+            //linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?FY=' + strFiscalYear + '&Region=' + strRegion + '&DelegatedFlag=' + strDelegatedFlag + '&IncludeInBudgetFlag=' + strIncludeinBudgetFlag + '&StatusCode=' + strMonthlyEA);
+            //console.log("attr:="+document.getElementById(strURLID).setAttribute('href'));
+            setTimeout(function(){window.location.reload();},10000); 
+        }
+        
+        function fnAppendParametersPlaceHolder(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?Region=' + strRegion + '&FY=' + strFiscalYear);
+        }
+        
+        function fnAppendParametersHighRisk(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strIncludeinBudgetFlag = document.getElementById('{!$Component.frmList.cmbIncludeinBudgetFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strIncludeinBudgetFlag);
+        }
+        
+        function fnAppendParametersReconciliation(strURLID){
+            strFiscalYear = document.getElementById('{!$Component.frmList.cmbFiscalyear}').value;
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            strMonth = document.getElementById('{!$Component.frmList.Reconciliation.cmbMonths}').value;
+            strDelegatedFlag = document.getElementById('{!$Component.frmList.cmbDelegatedFlag}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&pv1=' + strMonth + '&pv2=' + strDelegatedFlag);
+        }
+        
+        function fnAppendParametersDataFile(strURLID){
+            strRegion = document.getElementById('{!$Component.frmList.cmbRegion}').value;
+            linkHref = document.getElementById(strURLID).getAttribute('href');
+            linkHref = linkHref.substring(0,linkHref.indexOf('?'));
+            document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion + '&export=1&enc=UTF-8&xf=csv')
+            //document.getElementById(strURLID).setAttribute('href', linkHref + '?pv0=' + strRegion);
+        }
+        
+        function fnSetDateFormat(oDateFormat){
+            oDateFormat['FullYear'];        //Example = 2007
+            oDateFormat['Year'];            //Example = 07
+            oDateFormat['FullMonthName'];   //Example = January
+            oDateFormat['MonthName'];       //Example = Jan
+            oDateFormat['Month'];           //Example = 01
+            oDateFormat['Date'];            //Example = 01
+            oDateFormat['FullDay'];         //Example = Sunday
+            oDateFormat['Day'];             //Example = Sun
+            oDateFormat['Hours'];           //Example = 01
+            oDateFormat['Minutes'];         //Example = 01
+            oDateFormat['Seconds'];         //Example = 01
+            var sDateString;                
+            
+            // Use MM/DD/YYYY format
+            sDateString = oDateFormat['Month'] + "/" + oDateFormat['Date'] + "/" + oDateFormat['FullYear'];
+            return sDateString; 
+        }
+
+        function initialiseCalendar(obj, eleId){
+
+            var element=document.getElementById(eleId);
+            var params='close=true';
+            if (null!=element){
+                if (element.value.length > 0){
+                    //date is formatted dd/mm/yyyy - pull out the month and year    
+                    var month=element.value.substr(3,2);
+                    var year=element.value.substr(6,4);
+                    params+=',month=' + month;
+                    params+=',year=' + year;
+                } 
+            }  
+                              
+            fnInitCalendar(obj, eleId, params);
+        }
+         
+    </script>
+    
+</apex:page>

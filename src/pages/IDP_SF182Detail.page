@@ -1,0 +1,12 @@
+<apex:page showHeader="true" sidebar="true" standardController="Form_SF_182__c" extensions="IDP_SF182DetailController">
+
+
+<head>
+	  <link href="{!URLFOR($Resource.SRIDP, 'scripts/libs/bootstrap/IDP_Bootstrap.css')}" rel="stylesheet" media="all"/>
+	  <link rel="stylesheet" href="{!URLFOR($Resource.SRIDP, 'styles/style.css')}" type="text/css"></link>
+</head>
+
+	<div class="IDP_Bootstrap">
+		<apex:detail relatedList="true" showChatter="true"/>
+	</div>
+</apex:page>

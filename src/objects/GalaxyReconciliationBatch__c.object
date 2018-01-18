@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>The Reconciliation jobs are run in a sequence. The finish method of the first job will schedule the next job. Since the job will still remain active in the system, we will see the error message about scheduling a job that is already existing. We will use this  field to delete the job as soon as we’re done executing that step in the process.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Apex_Jobs_Run_Date__c</fullName>
+        <description>The Date when all APEX jobs finished executing ...</description>
+        <externalId>false</externalId>
+        <label>Apex Jobs Run Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Cast_Iron_Jobs_Run_Date__c</fullName>
+        <description>Date when Cast Iron finished its data load ...</description>
+        <externalId>false</externalId>
+        <label>Cast Iron Jobs Run Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CustomRunDate__c</fullName>
+        <defaultValue>Null</defaultValue>
+        <externalId>false</externalId>
+        <label>Custom Run Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Schedule2_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule2 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule3B_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Schedule3B ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule3_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule3 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule4_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule4 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule5_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule5 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule6_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule6 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>GalaxyReconciliationBatch</label>
+    <visibility>Protected</visibility>
+</CustomObject>

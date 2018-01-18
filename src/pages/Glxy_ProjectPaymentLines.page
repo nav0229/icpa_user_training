@@ -1,0 +1,33 @@
+<apex:page standardController="Glxy_LeaseDigest__c" extensions="Glxy_extProjectLumpSums,Glxy_extProjectStepRents">
+
+   <apex:pageBlock title="Lease Project Lump Sums">
+        <apex:pageBlockTable value="{!objProjectLumpSums}" var="item">
+            <apex:column headerValue="Lump Sum ID">
+            	<apex:outputLink value="/{!item.ID}" target="_top"><apex:outputText value="{!item.Name}" /></apex:outputLink>
+           	</apex:column>
+           	<apex:column headerValue="Project Number" value="{!item.ProjectNumber__c}"/> 
+           	<apex:column headerValue="Region" value="{!item.RegionCD__c}"/>
+            <apex:column headerValue="Effective Date" value="{!item.EffectiveDate__c}"/>
+            <apex:column headerValue="Expiration Date" value="{!item.ExpirationDate__c}"/>
+            <apex:column headerValue="Process Date" value="{!item.ProcessedDate__c}"/>
+            <apex:column headerValue="Amount" value="{!item.Amount__c}"/>
+            <apex:column headerValue="Team Code" value="{!item.TeamCode__c}"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+  	
+  	<apex:pageBlock title="Lease Project Step Rents">
+        <apex:pageBlockTable value="{!objProjectStepRents}" var="item">
+            <apex:column headerValue="Step Rent ID">
+            	<apex:outputLink value="/{!item.ID}" target="_top"><apex:outputText value="{!item.Name}" /></apex:outputLink>
+           	</apex:column>
+           	<apex:column headerValue="Project Number" value="{!item.ProjectNumber__c}"/>
+            <apex:column headerValue="Region" value="{!item.RegionCD__c}"/>
+            <apex:column headerValue="Effective Date" value="{!item.EffectiveDate__c}"/>
+            <apex:column headerValue="Expiration Date" value="{!item.ExpirationDate__c}"/>
+            <apex:column headerValue="Process Date" value="{!item.ProcessedDate__c}"/>
+            <apex:column headerValue="Amount" value="{!item.Amount__c}"/>
+            <apex:column headerValue="Team Code" value="{!item.TeamCode__c}"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+    
+</apex:page>

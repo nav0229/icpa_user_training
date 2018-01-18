@@ -1,0 +1,1469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Approver</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <description>The status of the Approval Step. This value is set by the system and cannot be manually input by users.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The status of the Approval Step. This value is set by the system and cannot be manually input by users.</inlineHelpText>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Initiated</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Initiated</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved w Comments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Initiated/Closed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Initiated/Reopened</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Approval_Step_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Step Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Individual Approver</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group of Approvers - One Approval Needed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group of Approvers - All Must Approve</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assigned_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Approver assigned to this Approval Step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Approver assigned to this Approval Step.</inlineHelpText>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Approval_Steps</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <description>The date the Approval Step was completed (i.e., a decision was made).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the Approval Step was completed (i.e., a decision was made).</inlineHelpText>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Correspondence_Document__c</fullName>
+        <description>The Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Controlled Document</label>
+        <referenceTo>Controlled_Document__c</referenceTo>
+        <relationshipLabel>Approval Steps</relationshipLabel>
+        <relationshipName>Approval_Steps</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Correspondence_Type__c</fullName>
+        <description>The Document Type of the Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Correspondence_Document__r.Correspondence_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Document Type of the Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Document Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Open__c</fullName>
+        <description>The number of business days that elapse after this Approval Step was initiated and before it was completed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of business days that elapse after this Approval Step was initiated and before it was completed.</inlineHelpText>
+        <label>Days Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delegate__c</fullName>
+        <externalId>false</externalId>
+        <label>Delegate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Delegate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ExecSec</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approver</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Document_Due_Date__c</fullName>
+        <description>The Due Date of the Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <formula>Correspondence_Document__r.Due_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Due Date of the Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Document Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Document_Stage__c</fullName>
+        <description>The Stage of the Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Correspondence_Document__r.Stage__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Stage of the Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Document Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Document_Title__c</fullName>
+        <description>The Title of the Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <formula>Correspondence_Document__r.Title_Formula__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Title of the Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Document Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <description>The date this Approval Step is due.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date this Approval Step is due.</inlineHelpText>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exec_Sec_Proxy_Approval_Requested__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Exec Sec Proxy Approval Requested</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_Review_Party__c</fullName>
+        <description>When the &quot;Role of Approver&quot; is marked as &quot;External Review&quot;, this field indicates the external party that is conducting the review.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When the &quot;Role of Approver&quot; is marked as &quot;External Review&quot;, this field indicates the external party that is conducting the review.</inlineHelpText>
+        <label>External Review Party</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marked_for_Deletion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checking this field marks this Approval Step as no longer being needed. Approval Steps that have been initiated will be recalled. At a later time, this field can be unchecked to reinstate an Approval Step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field marks this Approval Step as no longer being needed. Approval Steps that have been initiated will be recalled. At a later time, this field can be unchecked to reinstate an Approval Step.</inlineHelpText>
+        <label>Deactivate Step</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Note_about_Approve_w_Comments__c</fullName>
+        <defaultValue>&quot;In order to mark this step with a status of Approved w Comments, you must first mark the step as Approved. On the following page, you will have the option to mark the step as Approved w Comments.&quot;</defaultValue>
+        <description>This field is a read-only field that displays text for the user instructing them to first Approve an Approval Step before attempting to set the status to &quot;Approved w Comments&quot;</description>
+        <externalId>false</externalId>
+        <label>Note:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Notification_History_Trigger__c</fullName>
+        <description>o	Description: This field is hidden from the end user and is used as a target field for other workflow field updates.   These updates will set this field to a specific value based on the type of Notification action to be logged.   An update to this field will result in a corresponding trigger to log an activity record on the related Controlled Document.</description>
+        <externalId>false</externalId>
+        <label>Notification History Trigger</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Step Overdue Notifications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Step Reminder Notification</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Status Change Notification</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approval Request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Access Granted</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Office_Portfolio__c</fullName>
+        <description>The Office/Portfolio indicated for the Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Correspondence_Document__r.Sub_Division__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Office/Portfolio indicated for the Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Office / Portfolio</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Office__c</fullName>
+        <description>The Service/Staff Office of the Approver.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Service/Staff Office of the Approver.</inlineHelpText>
+        <label>Approver&apos;s Service/Staff Office</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A - Office of the Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK - Office of Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>B - Office of the Chief Financial Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>C - Office of Human Resource Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>D - Office of Mission Assurance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>E - Office of Small Business Utilization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>G - Civilian Board of Contract Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H - Office of Administrative Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I - Office of the GSA IT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>J - Office of the Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L - Office of the General Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>M - Office of Governmentwide Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>O - Office of Customer Experience</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>P - Public Buildings Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Q - Federal Acquisition Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>S - Office of Congressional and Intergovernmental Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>T - Technology Transformation Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Y - Federal Permitting Improvement Steering Council</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Z - Office of Strategic Communication</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 1A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 1P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 1Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 11A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 11P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 11Q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AC - Office of the GSA Chief of Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AD - Office of the Deputy Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AKE – OCR External Programs Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AKN – OCR EEO Program Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AKR – OCR Regional Operations Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BB - Office of Budget</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BE - Office of Strategic Planning and Performance Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BG - Office of Financial Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BI - Office of Business and Financial Analytics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BR - Office of Regional Financial Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>B1 - Childcare Subsidy Administration Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA - OHRM Office of Account Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CM - OHRM Office of Management &amp; Performance Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CS - OHRM Office of HR Strategy &amp; Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DA - OMA Northeast Regions Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DB - OMA Southeast Regions Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DC - OMA Midwest Regions Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DD - OMA Policy &amp; Plans Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE - OMA Western Regions Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DP - OMA Operations Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DS - OMA GSA Security Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA - CBCA Staff Support Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GJ - CBCA Judicial Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H1A - Office of Internal Acquisition Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H1B - Office of Workplace Management and Services Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H1C - Charge Card Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H1E - Executive Secretariat Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H1F - FOIA &amp; Records Management Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H1G - GAO/IG Audit Response Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA - OCIO Office of Governmentwide and Enterprise Solutions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IB - OCIO Office of Financial and HR IT Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IC - OCIO Office of Supply, Travel, and Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID - OCIO Office of the Deputy Chief Info Officer &amp; Chief Technology Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IE - OCIO Office of Enterprise Planning and Governance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IEA - OCIO Enterprise Architecture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IEE - OCIO IT Portfolio Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IO - OCIO Office of Enterprise Infrastructure</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IP - OCIO Office of Public Building IT Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IQ - OCIO Office of Acquisition IT Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IR - OCIO Resource Management Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IS - OCIO Office of the Chief Information Security Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IST - Inaugural Support Team</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>JA - OIG Office of Audits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>JC - OIG Counsel of the Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>JE - OIG Office of Internal Evaluation &amp; Analysis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>JI - OIG Office of Investigations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>JP - OIG Office of Administration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD1 - OGC New England Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD2 - OGC Northeast and Caribbean Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD3 - OGC Mid-Atlantic Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD4 - OGC Southeast Sunbelt Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD5 - OGC Great Lakes Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD6 - OGC Heartland Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD7 - OGC Greater Southwest Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD8 - OGC Rocky Mountain Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD9 - OGC Pacific Rim Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LDA - OGC Northwest/Arctic Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LDW - OGC National Capital Region</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LE - OGC Ethics Law Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LG - OGC General Law Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LL - OGC Legal Support Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LP - OGC Personal Property Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LR - OGC Real Property Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LS - OGC Administrative Support Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA - OGP Office of Asset and Transportation Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME - OGP Office of Information, Integrity, &amp; Access</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MG - OGP Office of Federal High-Performance Green Buildings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MV - OGP Office of Acquisition Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MX - OGP Office of Executive Councils</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OST - Outgoing Team</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA - PBS Office of Client Solutions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PB - PBS Office of the Chief of Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PC - PBS Office of Design and Construction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PD - PBS Office of the Deputy Commissioner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PG - PBS Office of Acquisition Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PI - PBS Office of Real Property Utilization &amp; Disposal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PM - PBS Office of Facilities Management &amp; Services Programs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PR - PBS Office of Leasing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PT - PBS Office of Real Property Asset Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PTT - Presidential Transition Team</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PTST - Presidential Transition Support Team</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Q0A - FAS Chief of Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QC - FAS Office of Customer Accounts &amp; Research</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QD - FAS Office of Integrated Award Environment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QF - FAS Office of Assisted Acquisition Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QM - FAS Office of Travel, Motor Vehicle, &amp; Card Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QP - FAS Office of Strategy Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QR - FAS Office of Professional Services &amp; Human Capital</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QS - FAS Office of General Supplies &amp; Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QT - FAS Office of Information Technology Category</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QV - FAS Office of Acquisition Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TA - TTS Office of Products &amp; Programs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TB - TTS Office of Investment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TC - TTS Office of Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TD - TTS Office of Presidential Innovation Fellows</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TE - TTS Office of 18F</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ZC - OCM Communications Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ZM - OCM Media Affairs Division</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Originating_Service_Staff_Office__c</fullName>
+        <description>The Originating Service/Staff Office indicated for the Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Correspondence_Document__r.Originating_Office__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Originating Service/Staff Office indicated for the Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Originating Service/Staff Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>The Region indicated for the Controlled Document on which this Approval Step is listed.</description>
+        <externalId>false</externalId>
+        <formula>Text(Correspondence_Document__r.Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Region indicated for the Controlled Document on which this Approval Step is listed.</inlineHelpText>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Role_of_Approver__c</fullName>
+        <description>The role the Approver is playing for this Approval Step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The role the Approver is playing for this Approval Step.</inlineHelpText>
+        <label>Role of Approver</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approver</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Audit Analyst</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Close-Out</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Drafter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Editor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Exec Sec Reviewer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>External Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FYI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office POC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Signatory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Subject Matter Expert</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <description>The order in which this Approval Step will appear on the Controlled Document record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The order in which this Approval Step will appear on the Controlled Document record.</inlineHelpText>
+        <label>Sequence</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>17</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>18</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>19</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>20</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>21</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>22</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>23</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>24</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>25</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>26</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>27</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>28</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>29</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>31</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>32</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>33</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>34</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>35</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>36</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>37</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>38</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>39</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>40</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>41</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>42</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>43</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>44</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>45</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>46</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>47</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>48</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>49</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>50</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>99</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>The date this Approval Step was initiated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date this Approval Step was initiated.</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Approval Step</label>
+    <nameField>
+        <displayFormat>CC-Step{0000000}</displayFormat>
+        <label>Approval Step ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Approval Steps</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Due_Date_must_be_later_than_Start_Date</fullName>
+        <active>true</active>
+        <description>Due date must be later than start date.</description>
+        <errorConditionFormula>IF(ISNEW(), Due_Date__c &lt; Start_Date__c, 
+IF( 
+AND(NOT(ISPICKVAL(Approval_Status__c,&apos;Initiated/Closed&apos;)), 
+NOT(ISPICKVAL(Approval_Status__c,&apos;Initiated/Reopened&apos;))) , Due_Date__c &lt; Start_Date__c, false) 
+)</errorConditionFormula>
+        <errorDisplayField>Due_Date__c</errorDisplayField>
+        <errorMessage>The Due Date must be later than the Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_Specify_Ext_Review_Party</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (ISBLANK( External_Review_Party__c ),  ISPICKVAL(  Role_of_Approver__c  , &quot;External Review&quot;))</errorConditionFormula>
+        <errorDisplayField>External_Review_Party__c</errorDisplayField>
+        <errorMessage>If &quot;External Review&quot; is selected as the Role of Approver, you must input a value in the &quot;External Review Party&quot; field.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Approve_w_Comments</fullName>
+        <availability>online</availability>
+        <description>After controlled document is approved, clicking Approve w Comments changes the approval status and overall status to &quot;Approved w Comments&quot;</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Approve w Comments</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)} 
+
+try {
+var url = parent.location.href; 
+var updateRecords = []; 
+alert(&apos;You must approve this step before setting the status to &quot;Approve w Comments&quot;&apos;);
+var update_App = new sforce.SObject(&quot;Approval_Step__c&quot;); 
+update_App.Id =&quot;{!Approval_Step__c.Id}&quot;; 
+update_App.Approval_Status__c=&quot;Approved w Comments&quot;;
+updateRecords.push(update_App);
+
+//alert(url);
+result = sforce.connection.update(updateRecords); 
+//alert(result);
+parent.location.href = url; 
+} catch (e) {
+alert (e);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Proxy_Approval_by_Exec_Sec</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Proxy Approval by Exec Sec</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+
+var NOT_EXECSEC_ADMIN = -1; 
+
+var NOT_INITIATED = 0; 
+
+var ALLOWED = 1; 
+
+var ALREADY_EXISTS = 2; 
+
+
+var astepId = &quot;{!Approval_Step__c.Id}&quot;; 
+
+
+var callback_method = { 
+
+onSuccess: handleSuccess, 
+
+onFailure: handleFailure 
+
+}; 
+
+
+function handleSuccess(result) { 
+
+switch(parseInt(result)) { 
+
+case NOT_EXECSEC_ADMIN: 
+
+console.log(&apos;NOT_EXECSEC_ADMIN&apos;); 
+
+alert(&apos;You are not an ExecSec Admin. This action is not available to you.&apos;); 
+
+break; 
+
+case NOT_INITIATED: 
+
+console.log(&apos;NOT_INITIATED&apos;); 
+
+alert(&apos;The step needs to be initiated in order for this button to work.&apos;); 
+
+break; 
+
+case ALLOWED: 
+
+alert(&apos;Your request for Proxy Access is in process. You will receive an email once the request is complete.&apos;); 
+
+console.log(&apos;ALLOWED&apos;); 
+
+break; 
+
+case ALREADY_EXISTS: 
+
+alert(&apos;You already have a pending request to reassign this approval step. Please allow the system some time to process it.&apos;); 
+
+console.log(&apos;ALREADY_EXISTS&apos;); 
+
+break; 
+
+default: 
+
+alert(&apos;Unexpected error. Please contact an admin. (CDTBatchUtil.cls)&apos;); 
+
+console.log(&apos;This was not anticipated. Did someone change the constants?&apos;); 
+
+} 
+
+console.log(result); 
+
+} 
+
+
+function handleFailure(error) { 
+
+alert(&apos;There was an issue processing your request. Please contact a Salesforce admin. Error: &apos; + error); 
+
+} 
+
+sforce.apex.execute(&quot;CDTBatchUtil&quot;,&quot;reassignExecSecUsers&quot;,{astep:astepId}, callback_method);</url>
+    </webLinks>
+</CustomObject>

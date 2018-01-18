@@ -1,0 +1,22 @@
+<!---------------------------------------------------------------------------------------------------------------- -->
+<!-- OCIO CASE # 00002867                                                                                          -->
+<!-- Custom Visualforce Page to display the users count by permission set                                          -->
+<!---------------------------------------------------------------------------------------------------------------- -->  
+<!-- Author             |Date       |Version   | Description                                                       -->
+<!---------------------------------------------------------------------------------------------------------------- -->
+<!-- Rajakumar P         09/11/2012  1.0         Listing the users count by permission set                         -->
+<!---------------------------------------------------------------------------------------------------------------- --> 
+
+<apex:page controller="UserCountController" readOnly="true">
+   <apex:pageBlock title="OCIO Users Count by PermissionSet" >
+      <apex:pageBlockSection columns="1" >
+          <apex:outputLink style="float:right" value="{!sfhost}" id="theLink">
+              Export to Excel
+          </apex:outputLink>
+      </apex:pageBlockSection>     
+      <apex:pageBlockTable value="{!Results}" var="r">
+          <apex:column headerValue="Permission Set" value="{!r.PermSetName}"/>
+          <apex:column dir="RTL" headerValue="Number of Users" value="{!r.TotalUsers}"/> 
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:page>

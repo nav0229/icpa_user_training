@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contracts</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter the net amount of funds (in dollars and cents) obligated or de-obligated by this transaction. If the net amount is zero, enter zero. If the net amount is a de-obligation, enter a minus sign in addition to the net amount. --></help>
+        <label><!-- Action Obligation --></label>
+        <name>Action_Obligation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is an &apos;Alaskan Native Corporation&apos; or not. --></help>
+        <label><!-- Alaskan Native Corporation --></label>
+        <name>Alaskan_Native_Corporation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pegasys Doc. # --></label>
+        <name>Assigned_ACT_PDN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Award - Actual --></label>
+        <name>Award_Actual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Must be of type: BPA, IDC, Definitive Contract, Purchase Order.  If other, will set the record as Inactive --></help>
+        <label><!-- Award Type --></label>
+        <name>Award_Type__c</name>
+        <picklistValues>
+            <masterLabel>Definitive Contract</masterLabel>
+            <translation><!-- Definitive Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDC</masterLabel>
+            <translation><!-- IDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchase Order</masterLabel>
+            <translation><!-- Purchase Order --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the mutually agreed upon total estimated contract or order value for new awards, indefinite delivery vehicles or modifications. --></help>
+        <label><!-- Base and all Options --></label>
+        <name>Base_and_All_Options__c</name>
+    </fields>
+    <fields>
+        <help><!-- The contract value for the base contract and any options that have been exercised. --></help>
+        <label><!-- Base and Exercised --></label>
+        <name>Base_and_Exercised_Options_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- COR --></label>
+        <name>COR__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Contracting Officer&apos;s determination of whether the selected contractor meets the small business size standard for award to a small business for the NAICS code that is applicable to the contract. --></help>
+        <label><!-- CO Business Size Determination --></label>
+        <name>CO_Business_Size_Determination__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Officer (CO) --></label>
+        <name>CO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Specialist (CS) --></label>
+        <name>CS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the code that identifies the agency of the contracting office. --></help>
+        <label><!-- Contract Agency Code --></label>
+        <name>Contract_Agency_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the default code is not appropriate, enter the code for the contracting office that executed or is otherwise responsible for the transaction. --></help>
+        <label><!-- Contract Office Code --></label>
+        <name>Contract_Office_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Officer (CO) Link --></label>
+        <name>Contract_Officer_CO__c</name>
+        <relationshipLabel><!-- Contracts (Contract Officer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- COR Link --></label>
+        <name>Contract_Officer_Representative_COR__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Specialist (CS) Link --></label>
+        <name>Contract_Specialist_CS__c</name>
+        <relationshipLabel><!-- Contracts (Contract Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The completion date of the base contract plus options that have been exercised. --></help>
+        <label><!-- Current Completion Date --></label>
+        <name>Current_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Received --></label>
+        <name>Date_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Sent to Contracting --></label>
+        <name>Date_Sent_to_COCACQ_COPIER_CO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a brief description of the contract or award. --></help>
+        <label><!-- Description of Requirement --></label>
+        <name>Description_of_Requirement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the effective date agreed to by the parties. --></help>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is an Emerging Small Business Organization or not. It can be derived from the SAM data element, &apos;Business Types&apos;. --></help>
+        <label><!-- Emerging Small Business --></label>
+        <name>Emerging_Small_Business__c</name>
+    </fields>
+    <fields>
+        <help><!-- A code that represents the competitive nature of the contract. --></help>
+        <label><!-- Extent Compt. --></label>
+        <name>Extent_Compt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Report this code when awarding a non competitive task order or delivery order exceeding $2500.00 against an IDIQ contract. --></help>
+        <label><!-- Fair Opportunity --></label>
+        <name>Fair_Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- If funding for this transaction was provided by another agency, enter the code that identifies the agency that provided the preponderance of the obligated funds. --></help>
+        <label><!-- Fund Agency - Code --></label>
+        <name>Fund_Agency_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Obtain the code to report from the office (or other organizational entity) that is funding this transaction. --></help>
+        <label><!-- Fund Office - Code --></label>
+        <name>Funding_Office_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is a Historically Underutilized Business Zone (HUBZone) Firm or not. --></help>
+        <label><!-- HUBZone Firm --></label>
+        <name>HUBZone_Firm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this Award include Option Years? --></help>
+        <label><!-- Has Option Years? --></label>
+        <name>Has_Option_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Innovative --></label>
+        <name>Innovative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key Priorities --></label>
+        <name>Key_Priorities__c</name>
+        <picklistValues>
+            <masterLabel>Cloud First</masterLabel>
+            <translation><!-- Cloud First --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Services</masterLabel>
+            <translation><!-- Digital Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Information &amp; Data Management</masterLabel>
+            <translation><!-- Enterprise Information &amp; Data Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Cyber-Security</masterLabel>
+            <translation><!-- IT Cyber-Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OpenSource Software</masterLabel>
+            <translation><!-- OpenSource Software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Records Management</masterLabel>
+            <translation><!-- Records Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Sign-On</masterLabel>
+            <translation><!-- Single Sign-On --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Limited Sources --></label>
+        <name>Limited_Sources__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is a Manufacturer of Goods or not. --></help>
+        <label><!-- Manufacturer of Goods --></label>
+        <name>Manufacturer_of_Goods__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mark Inactive --></label>
+        <name>Mark_Inactive__c</name>
+    </fields>
+    <fields>
+        <help><!-- List characteristic of the contractor such as whether the selected contractor is a &apos;Minority Owned Business&apos; or not --></help>
+        <label><!-- Minority Owned Business --></label>
+        <name>Minority_Owned_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mission Critical --></label>
+        <name>Mission_Critical__c</name>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- When reporting modifications to contracts, agreements, or orders, report the modification number assigned by the reporting contracting office. For any given PIID, all Modification Numbers must be unique. --></help>
+        <label><!-- Mod # --></label>
+        <name>Modification_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Report the code that was used in the solicitation. --></help>
+        <label><!-- NAICS Code --></label>
+        <name>NAICS_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAICS Descrip --></label>
+        <name>NAICS_Descrip__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mark the record as Non-IT to identify this record as non-IT --></help>
+        <label><!-- Non-IT --></label>
+        <name>Non_IT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes or Comments --></label>
+        <name>Notes_or_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of actual offers/bids received in response to the solicitation. --></help>
+        <label><!-- # of offers --></label>
+        <name>Number_of_offers__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the code that most appropriately defines the reason the action was not competed. --></help>
+        <label><!-- Other than Full &amp; Open Competition --></label>
+        <name>Other_than_Full_and_Open_Competition__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Contract, Purchase Order, or Agreement number for the instant action. If you are reporting a delivery/task order, enter the order number. --></help>
+        <label><!-- PIID + Ref. Contract --></label>
+        <name>PIID_Ref_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR Amount --></label>
+        <name>PR_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR Number --></label>
+        <name>PR_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR Review Completed over SAT --></label>
+        <name>PR_Review_Completed_over_SAT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR Review Completed under SAT --></label>
+        <name>PR_Review_Completed_under_SAT__c</name>
+    </fields>
+    <fields>
+        <help><!-- The code that best identifies the product or service procured. Codes are defined in the Product and Service Codes Manual. --></help>
+        <label><!-- PSC Code --></label>
+        <name>PSC_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- A description of the product or service designated by the product code. --></help>
+        <label><!-- PSC Descrip --></label>
+        <name>PSC_Descrip__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents whether the end products procured by the contract are manufactured inside or outside the U.S. in accordance with the Buy American Act (see FAR 25.1) and any exceptions or reasons for waivers employed. --></help>
+        <label><!-- Place of Manu. --></label>
+        <name>Place_of_Manufacture__c</name>
+    </fields>
+    <fields>
+        <label><!-- PALT --></label>
+        <name>Procurement_Action_Lead_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- RBA Order ID Number --></label>
+        <name>RBA_Order_ID_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the code that most accurately describes the reason this modification was awarded. --></help>
+        <label><!-- Reason for Mod --></label>
+        <name>Reason_for_Modification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is &apos;Self-Certified Small Disadvantaged Business&apos; or not. --></help>
+        <label><!-- Self-Certified Small Disadvantaged Bus --></label>
+        <name>Self_Certified_Small_Disadvantaged_Bus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Disabled Veteran Owned Small Bus --></label>
+        <name>Service_Disabled_Veteran_Owned_Small_Bus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Description --></label>
+        <name>Short_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is a &apos;Small Disadvantaged Business Organization&apos; or not. --></help>
+        <label><!-- Small Disadvantaged Business --></label>
+        <name>Small_Disadvantaged_Business__c</name>
+    </fields>
+    <fields>
+        <help><!-- Report this code for the type of solicitation procedure used. --></help>
+        <label><!-- Solicitation Proc. --></label>
+        <name>Solicitation_Procedures__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stratification Rating Tracking --></label>
+        <name>Stratification_Rating_Tracking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stratification Score --></label>
+        <name>Stratification_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stratification Rating --></label>
+        <name>Stratification_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- TERP Number --></label>
+        <name>TERP_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The designator for type of set aside determined for the contract action. --></help>
+        <label><!-- Type Set Aside --></label>
+        <name>Type_Set_Aside__c</name>
+    </fields>
+    <fields>
+        <help><!-- The estimated or scheduled completion date including the base contract or order and all options (if any) whether the options have been exercised or not. --></help>
+        <label><!-- Ultimate Completion Date --></label>
+        <name>Ultimate_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The city of the contractor address --></help>
+        <label><!-- Vendor City --></label>
+        <name>Vendor_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- The DUNS number of the contractor. Used as a key to SAM. --></help>
+        <label><!-- Vendor DUNS Number --></label>
+        <name>Vendor_DUNS_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The DUNS number of the parent contractor. Used as a key to SAM. --></help>
+        <label><!-- Vendor Parent DUNS Number --></label>
+        <name>Vendor_Parent_DUNS_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Parent Vendor --></help>
+        <label><!-- Vendor Parent --></label>
+        <name>Vendor_Parent__c</name>
+    </fields>
+    <fields>
+        <help><!-- The state of the contractor address. --></help>
+        <label><!-- Vendor State --></label>
+        <name>Vendor_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- The street address for a contractor. --></help>
+        <label><!-- Vendor Street --></label>
+        <name>Vendor_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Zip Code --></label>
+        <name>Vendor_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Search the Vendor Name --></help>
+        <label><!-- Vendor --></label>
+        <name>Vendor__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is a &apos;Veteran Owned Small Business&apos; or not. --></help>
+        <label><!-- Veteran Owned Small Business --></label>
+        <name>Veteran_Owned_Small_Business__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is a &apos;Women Owned Small Business&apos; or not. --></help>
+        <label><!-- Women Owned Small Business --></label>
+        <name>Women_Owned_Small_Business__c</name>
+    </fields>
+    <fields>
+        <help><!-- Characteristic of the contractor such as whether the selected contractor is an &apos;8(a) Program Participant Organization&apos; or not. --></help>
+        <label><!-- 8(a) Program Participant --></label>
+        <name>X8_a_Program_Participant__c</name>
+    </fields>
+    <layouts>
+        <layout>Contract Layout</layout>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Pre-Award --></label>
+            <section>Pre-Award</section>
+        </sections>
+        <sections>
+            <label><!-- Socio-Economic Status --></label>
+            <section>Socio-Economic Status</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Information --></label>
+            <section>Vendor Information</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Stratification --></label>
+            <section>Vendor Stratification</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Contract --></label>
+        <name>Contract</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Inactive --></label>
+        <name>Inactive</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

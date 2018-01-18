@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Technical Assistance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Technical Assistances</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account ID --></label>
+        <name>OCR_Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Phone Number --></label>
+        <name>OCR_Contact_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Resolved --></label>
+        <name>OCR_Date_Resolved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details --></label>
+        <name>OCR_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Did Contractor have to be contacted? --></label>
+        <name>OCR_Did_Contractor_have_to_be_contacted__c</name>
+    </fields>
+    <fields>
+        <label><!-- GSA Region --></label>
+        <name>OCR_GSA_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incident Contact --></label>
+        <name>OCR_Incident_Contact__c</name>
+        <relationshipLabel><!-- Technical Assistances --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Incident Date --></label>
+        <name>OCR_Incident_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization ID --></label>
+        <name>OCR_Organization_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Type --></label>
+        <name>OCR_Organization_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>OCR_Organization__c</name>
+        <relationshipLabel><!-- Technical Assistances --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Resolution --></label>
+        <name>OCR_Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>OCR_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team Leader/AK mgt involved? --></label>
+        <name>OCR_Team_Leader_AK_mgt_involved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Problem --></label>
+        <name>OCR_Type_of_Problem__c</name>
+        <picklistValues>
+            <masterLabel>Demographic Charts</masterLabel>
+            <translation><!-- Demographic Charts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handicapped Accessibility</masterLabel>
+            <translation><!-- Handicapped Accessibility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEP</masterLabel>
+            <translation><!-- LEP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logging In</masterLabel>
+            <translation><!-- Logging In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCR Initiates - No Submission</masterLabel>
+            <translation><!-- OCR Initiates - No Submission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCR Replies</masterLabel>
+            <translation><!-- OCR Replies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Area</masterLabel>
+            <translation><!-- Service Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitting Error</masterLabel>
+            <translation><!-- Submitting Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verifying Receipt of Submission</masterLabel>
+            <translation><!-- Verifying Receipt of Submission --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Technical Assistance Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Resolution Detail --></label>
+            <section>Resolution Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- &quot;Date Resolved&quot; cannot be before &quot;Incident Date&quot;. --></errorMessage>
+        <name>Date_Resolved_Not_Earlier</name>
+    </validationRules>
+</CustomObjectTranslation>

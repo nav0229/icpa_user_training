@@ -1,0 +1,151 @@
+<apex:page id="SD_DocumentUpload_SuspAndDebarRecord" standardController="Suspension_and_Debarment_Case__c" extensions="SDDocumentUploadController">
+
+    <style>
+
+        .NewDocTableCell {
+            vertical-align:top;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+
+        .DescriptionInput {
+            width: 300px;
+            line-height:1.5em;
+            min-height:3em;
+            vertical-align:top;
+        }
+        .OrderInput {
+            width: 40px;
+            line-height:1.5em;
+            min-height:1.5em;
+            vertical-align:top;
+        }
+
+    </style>
+
+    <apex:form id="DocForm">
+
+        <apex:pageMessages />
+
+        <!-- Hidden elements START -->
+        <apex:inputHidden id="ApexHiddenBool" value="{!SHOWN_ADD_LINE_ITEM_WARNING}"/>
+        <input type="hidden" id="ShownAddItemWarningHiddenVariable" value="{!$Component.ApexHiddenBool}"/>
+        <!-- Hidden elements END -->
+
+        <apex:pageBlock id="NewDockBlock" rendered="{!renderUploadFunctionality}">
+
+            <apex:dataTable value="{!newDocs}" var="newDoc">
+
+                <apex:column styleClass="NewDocTableCell">
+                    <apex:inputFile value="{!newDoc.Attachment.Body}" filename="{!newDoc.Attachment.Name}"/>
+                </apex:column>
+                <apex:column styleClass="NewDocTableCell">
+                    <apex:facet name="header">Order</apex:facet>
+                    <apex:inputField styleClass="OrderInput" value="{!newDoc.SdDocumentUpload.Order__c}"/>
+                </apex:column>
+                <apex:column styleClass="NewDocTableCell">
+                    <apex:facet name="header">Description</apex:facet>
+                    <apex:inputField styleClass="DescriptionInput" value="{!newDoc.SdDocumentUpload.Description__c}"/>
+                </apex:column>
+
+            </apex:dataTable>
+
+            <apex:commandButton action="{!addNewDocumentLineItem}" value="Add new row" onClick="return confirmAddRow();"/>
+            <apex:commandButton action="{!saveNewDocumentLineItems}" value="Upload"/>
+
+        </apex:pageBlock>
+
+        <apex:pageBlock id="OldDocBlock" rendered="{!renderViewFunctionality}" >
+
+            <p>
+                Double-click a field to begin making changes. Click Save to ensure those changes persist.
+            </p>
+
+            <p>
+                &nbsp;
+            </p>
+
+            <apex:pageBlockTable value="{!allDocs}" var="item" id="DocTable">
+                <apex:inlineEditSupport />
+
+                <!-- COLUMN ONE -->
+                <apex:column headerValue="Action">
+                    <!-- DELETE LINK -->
+                    <apex:commandLink value="Del" action="{!deleteDocumentLineItem}" rendered="{!renderDeleteFunctionality}" onClick="return confirmDelete('{!item.AttachmentFileName}');">
+                        <apex:param name="docIdForDeletion" value="{!item.DocId}"/>
+                    </apex:commandLink>
+                    &nbsp;
+                    <!-- DETAILS LINK -->
+                    <!--<apex:outputLink target="_parent" value="/{!item.DocId}">Details</apex:outputLink>
+                    &nbsp;-->
+                    <!-- OPEN LINK -->
+                    <apex:outputLink target="_parent" value="/servlet/servlet.FileDownload?file={!item.AttachmentId}">Download</apex:outputLink>
+                </apex:column>
+
+                <!-- COLUMN TWO -->
+                <apex:column headerValue="Name">
+                    <apex:outputField value="{!item.Attachment.Name}">
+                        <apex:inlineEditSupport />
+                    </apex:outputField>
+                </apex:column>
+
+                <!-- COLUMN THREE -->
+                <apex:column headerValue="Description">
+                    <apex:outputField value="{!item.SdDocumentUpload.Description__c}">
+                        <apex:inlineEditSupport />
+                    </apex:outputField>
+                </apex:column>
+
+                <!-- COLUMN FOUR -->
+                <apex:column headerValue="Owner">
+                    <apex:outputLink target="_parent" value="/{!item.DocOwnerId}">
+                        <apex:outputText value="{!item.DocOwnerName}"/>
+                    </apex:outputLink>
+                </apex:column>
+
+                <!-- COLUMN FIVE -->
+                <apex:column headerValue="Uploaded">
+                    <apex:outputText value="{!item.DocCreatedDateFormatted}"/>
+                </apex:column>
+
+                <!-- COLUMN SIX -->
+                <apex:column headerValue="Order">
+                    <apex:outputField value="{!item.SdDocumentUpload.Order__c}">
+                        <apex:inlineEditSupport />
+                    </apex:outputField>
+                </apex:column>
+
+            </apex:pageBlockTable>
+
+            <p>&nbsp;</p>
+            <apex:commandButton value="Save Changes" action="{!saveChanges}"/>
+            <apex:commandButton value="Cancel" action="{!cancelChanges}"/>
+
+        </apex:pageBlock>
+
+        <apex:outputText rendered="{!!renderViewFunctionality}">You do not have permission to view the documents.</apex:outputText>
+
+    </apex:form>
+
+    <script type="text/javascript">
+        function confirmDelete(name){
+            if(name == null){ // I want this to be '==' so that checks 0, '', null, etc.
+                return confirm('Are you sure you want to delete this file?');
+            } else {
+                return confirm('Are you sure you want to delete the document named, "' + name + '"?');
+            }
+        }
+
+        function confirmAddRow(){
+            if(hasWarningShownBefore() === 'false'){
+                return confirm('Adding a new row means you will need to reselect the files you\'ve already added. Add as many rows as files you anticipate to upload and then begin selecting your files with the given \'Choose File\' buttons. Do you want to continue?');
+            }
+        }
+
+        function hasWarningShownBefore(){
+            var hiddenEleId = document.getElementById('ShownAddItemWarningHiddenVariable').value;
+            return document.getElementById(hiddenEleId).value;
+        }
+    </script>
+
+</apex:page>

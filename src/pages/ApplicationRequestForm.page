@@ -1,0 +1,371 @@
+<apex:page Controller="ApplicationRequestController" >
+    
+     <script>
+        window.onload=function(){
+         var dd = document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pageBlockSectionItemlevelType:lstType');
+         var strUser = dd.options[dd.selectedIndex].value; 
+        if (strUser != 'User Access') {
+        //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:txt1').style.display='none';
+        //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:txt2').style.display='none';
+        //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt3:noteInfo').style.display='none';
+        //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:lbl1').style.display='none';
+        //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:lbl2').style.display='none';
+        }
+        };
+        function removeValue(source, toRemove) 
+        {                                                 
+            var sourceArr = source.split(',');      
+            var toReturn  = '';                         
+            for (var i = 0; i < sourceArr.length; i++)     
+            {
+                if (sourceArr[i] != toRemove)             
+                    toReturn += sourceArr[i] + ',';    
+            }
+            return toReturn.substr(0, toReturn.length - 1);
+        }        
+        function preservePermissionSets(theId)
+        {
+            var sourceValue = document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPermissionSets}').value;
+            if(sourceValue  != null && sourceValue.length > 0)
+            {
+                if(sourceValue.indexOf(theId.value) == -1)
+                {
+                    sourceValue = sourceValue + ',' + theId.value;
+                    document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPermissionSets}').value = sourceValue;
+                }
+                else
+                    document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPermissionSets}').value = removeValue(sourceValue ,theId.value);
+            }
+            else
+            {
+                document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPermissionSets}').value = theId.value;  
+            } 
+            //alert(document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPermissionSets}').value);
+        }
+
+        function preservePublicGroups(theId)
+        {
+            var sourceValue = document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPublicGroups}').value;
+            if(sourceValue  != null && sourceValue.length > 0)
+            {
+                if(sourceValue.indexOf(theId.value) == -1)
+                {
+                    sourceValue = sourceValue + ',' + theId.value;
+                    document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPublicGroups}').value = sourceValue;
+                }
+                else
+                    document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPublicGroups}').value = removeValue(sourceValue ,theId.value);
+            }
+            else
+            {
+                document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenPublicGroups}').value = theId.value;  
+            }
+        }        
+        function preserveValues()
+        {
+            document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenAreaDescriptionId}').value = document.getElementById('{!$Component.pageblocklevel.appRequestPage.pageBlockSectionlevel.pageBlockSectionItemlevelDesc.description}').value;
+            //document.getElementById('{!$Component.attachBlockLevel.attachForm.txtHiddenSupervisor}').value = document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:txt1').value;
+        }
+        function validateForm() 
+        { 
+            var errorMessage = "Please fix the following errors: \n"; 
+            var errorFound = 0;   
+            alert('errorMessage:'+errorMessage);
+            alert(document.getElementById('{!$Component.pageblocklevel.appRequestPage.pageBlockSectionlevel.pageBlockSectionItemlevelUserAccess.permissionSets}').value);
+            /*
+            if (document.getElementById('{!$Component.pageblocklevel.appRequestPage.pageBlockSectionlevel.pageBlockSectionItemlevelselectedval.selectedval}').value == '') 
+            { 
+                errorMessage += "      -Select a Application Name\n"; errorFound = 1; 
+            } 
+            if (document.getElementById('{!$Component.pageblocklevel.appRequestPage.pageBlockSectionlevel.pageBlockSectionItemlevelPriority.lstPriority}').value == '') 
+            {
+                errorMessage += "      -Select a Priority\n"; errorFound = 1; 
+            } 
+            if (document.getElementById('{!$Component.pageblocklevel.appRequestPage.pageBlockSectionlevel.pageBlockSectionItemlevelType.lstType}').value == '') 
+            {
+                errorMessage += "      -Select a Type\n"; errorFound = 1; 
+            }    
+
+            if (errorFound == 1) 
+            {
+                alert(errorMessage);
+                return false;
+            } 
+            else 
+            {
+                save();
+            }   
+            */ 
+        }
+        //start();
+        function showhideValue() {
+            var dd = document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pageBlockSectionItemlevelType:lstType');
+            var strUser = dd.options[dd.selectedIndex].value; 
+            if (strUser == 'User Access') {
+                var txt = 'User(s) name and email address:\r\n\r\n';
+                document.getElementById('description').innerHTML=txt;
+                document.getElementById('description').focus();
+               
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:txt1').style.display='block';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:txt2').style.display='block';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt3:noteInfo').style.display='block';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:lbl1').style.display='block';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:lbl2').style.display='block';
+            }
+            else if (strUser == 'Support Deployment') {
+                var txt = 'Required:\n 1) high-level summary of changes being made; \n 2) all supporting documentation, as applicable (Design doc (TDD), Deployment Plan, etc.); \n 3) code coverage showing 90% or greater; \n 4) clean code scan on Dev box; \n 5) provide confirmation on fully-tested Deployment Plan; \n 6) provide confirmation on fully-tested data migration (if applicable); \n 7) identify any NEW privileges (permission set(s), public group(s), role(s), profile(s), etc.) \n created along with any users&#39; names and email addresses being assigned. \n\n NOTE:   Attach all applicable documents to this task upon submission.\n\r';
+                document.getElementById('description').innerHTML=txt;
+                document.getElementById('description').focus();
+            }
+            else if(strUser == 'Enhancement'){
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:txt1').style.display='block';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:txt2').style.display='block';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt3:noteInfo').style.display='block';                
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:lbl1').style.display='block';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:lbl2').style.display='block';
+                document.getElementById('description').innerHTML='';
+                document.getElementById('description').focus();
+            }    
+            else {
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:txt1').style.display='none';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:txt2').style.display='none';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt3:noteInfo').style.display='none';                
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt1:lbl1').style.display='none';
+                //document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:lbl2').style.display='none';
+                document.getElementById('description').innerHTML='';
+                document.getElementById('description').focus();
+            }
+        }
+        function limitText(limitField, limitNum) {
+    var charLength = document.getElementById('j_id0:pageblocklevel:appRequestPage:pageBlockSectionlevel:pbTxt2:txt2').value;
+    var charLeft = (limitNum +1)-charLength.length;
+    //alert(limitNum);
+   // alert(charLength.length);
+    if (limitField.value.length > limitNum) {
+        limitField.value = limitField.value.substring(0, limitNum);
+        //document.getElementById('showLimitChar').innerHTML = 'Total Remaining characters ' + limitField.Value.length;      
+            }      
+    document.getElementById('showLimitChar').innerHTML = 'Total Remaining characters ' + charLeft;     
+    }
+        
+        ////////////////////////
+        function doNothing() {  
+var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+    if( keyCode == 13 ) {
+
+
+    if(!e) var e = window.event;
+
+    e.cancelBubble = true;
+    e.returnValue = false;
+
+    if (e.stopPropagation) {
+        e.stopPropagation();
+        e.preventDefault();
+    }
+}
+}
+////////////////////////////////////////////
+                     
+    </script>
+        
+    <style>
+    .cke_contents{
+        height: 500px !important;
+    }
+    .cke_top {
+        display: none;
+    }
+    #submitButton{
+        position:relative;
+        left:185px;
+        
+    }
+    textarea {
+        width: 750px;
+        height: 400px;
+        font-family: Arial !important;
+        font-size: 14px !important;
+    }
+    #textareaDisplay {
+        position: relative;
+        left: 215px;
+        bottom: -50px;
+        height: 15px !important;
+    }
+    body .bPageBlock .pbBody .labelCol{
+        border: none !important;
+    }
+    body .bPageBlock .pbBody .labelCol, body .bPageBlock .pbBody .dataCol, body .bPageBlock .pbBody .data2Col {
+         border: none !important;
+    }
+    .txt2 {
+        width: 750px;
+        height: 100px;
+    }
+    .txt1 {
+        width: 375px;
+        height: 20px;
+         }
+      
+     .home{
+           padding:4px;
+          } 
+     .check{
+     
+             position: relative;
+             left: 240px;
+             font-size: 91%;
+             color: #4a4a56;
+           
+            }
+     .check1{
+     
+             position: relative;
+             left: 150px; !important;
+             font-size: 91%;
+             color: #4a4a56;
+            
+            }     
+    #sub {
+        text-align: center;
+    }       
+    .home {
+        position: relative;
+        top: -34px;
+        left: 55px;
+    }
+      
+    </style>
+    <apex:pageBlock id="pageblocklevel" title="Application Request Form">
+        
+        <apex:pageMessages id="err" ></apex:pageMessages>
+        <apex:form id="appRequestPage">
+            <apex:pageBlockSection id="pageBlockSectionlevel" columns="1" showHeader="false">
+                <apex:pageBlockSectionItem id="pageBlockSectionItemlevel">
+                    <apex:outputLabel value="Email Address: " for="theEmailInput"/> 
+                    <apex:outputText value="{!User}" id="theEmailInput"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem > 
+                <apex:outputLabel value="Type:"/>
+                   <apex:selectlist value="{!taskrelated}" id="taskrelated" multiselect="false" size="1" style="{!priorityStyle}">
+                        <apex:selectOption itemValue="Application" itemLabel="Application"/>
+                        <apex:selectOption itemValue="system" itemLabel="System"/>
+                        <apex:actionSupport event="onchange"  rerender="selectedval" />
+                    </apex:selectlist>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="pageBlockSectionItemlevelselectedval">
+                       <apex:outputLabel value="Name: " for="selectedval" />
+                          <apex:selectList id="selectedval" value="{!applicationName}" size="1" title="Project" style="{!appNameStyle}">
+                            <apex:selectOptions value="{!accts}"/>
+                            <apex:actionSupport event="onchange" action="{!onSelectChangeAppName}" rerender="new,out,supervisorOut" status="StatusChange"  />
+                        </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Description: " for="emptyValue" />
+                    <apex:outputpanel id="new">
+                        <apex:actionStatus startText="Updating page ..." id="StatusChange"/> 
+                        <apex:pageBlockSectionItem rendered="{!IF(applicationName != null, true, false)}"> 
+                            <apex:outputText id="appDesc" value="{!appdesc}"/>
+                        </apex:pageBlockSectionItem>  
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>        
+                <apex:pageBlockSectionItem id="pageBlockSectionItemlevelPriority">
+                    <apex:outputLabel value="Priority: " /> 
+                    <apex:selectlist value="{!listPriority}" id="lstPriority" multiselect="false" size="1" style="{!priorityStyle}">
+                        <apex:selectOption itemValue="Low" itemLabel="Low"/>
+                        <apex:selectOption itemValue="Medium" itemLabel="Medium"/>
+                        <apex:selectOption itemValue="High" itemLabel="High"/>
+                        <!--<apex:selectOptions value="{!priority}" />-->
+                    </apex:selectlist>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pageBlockSectionItemlevelType">
+                    <apex:outputLabel value="Type of Issue: " /> 
+                    <apex:selectlist value="{!typeOfIssue}" id="lstType" multiselect="false" size="1" style="{!typeStyle}" >
+                    <!--<apex:selectOptions value="{!items}" />-->
+                    <apex:selectOption itemValue="" itemLabel="-None-"/>
+                    <apex:selectOption itemValue="User Access" itemLabel="User Access"/>
+                    <apex:selectOption itemValue="Bug / Defect" itemLabel="Bug / Defect"/>
+                    <apex:selectOption itemValue="Enhancement" itemLabel="Enhancement"/>
+                    <apex:selectOption itemValue="Data Update" itemLabel="Data Update"/>    
+                    <apex:selectOption itemValue="Application Question" itemLabel="Question"/>
+                    <apex:selectOption itemValue="Support Deployment" itemLabel="Support Deployment"/>    
+                    <apex:actionSupport event="onchange" action="{!onSelectChangeReqType}" rerender="out,supervisorOut" status="StatusChange1"/>
+                     <!--<apex:actionFunction name="start" action="{!onSelectChangeReqType}" rerender="out" status="StatusChange1" oncomplete="showhideValue()"/>-->    
+                    </apex:selectlist>
+                </apex:pageBlockSectionItem>
+                
+                <!--<apex:pageBlockSectionItem id="pbTxt1" >
+                <apex:outputLabel value="Supervisor:" id="lbl1"/><apex:inputtext id="txt1" value="{!supEmail}" styleClass="txt1" onkeydown="doNothing();" onkeypress="doNothing();"/> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbTxt3" >
+                <apex:outputLabel id="note"/><apex:outputLabel id="noteInfo" value="NOTE: Supervisor field must be a valid GSA email address that is NOT your own."></apex:outputLabel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbTxt2">
+                <apex:outputLabel value="Justification:" id="lbl2"/><apex:inputTextarea id="txt2" value="{!justification}" styleClass="txt2" onkeydown="limitText(this,255);" onkeyup="limitText(this,255);"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel /><span id="showLimitChar"></span>
+                </apex:pageBlockSectionItem>
+                  <span id="textareaDisplay" style="display:none"></span>--> 
+                <apex:pageBlockSectionItem id="pageBlockSectionItemlevelDesc"> 
+                    
+                    <apex:outputLabel value="Description: "/>
+                    
+                     <!--<apex:inputTextarea value="{!txtAreaDescription }" id="description" richText="true" />-->
+                    <apex:pageBlockSectionItem >
+                   <textarea id="description" name="description" value="{!txtAreaDescription}"></textarea>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pageBlockSectionItemlevelUserAccess">
+                    <apex:outputpanel id="out">
+                            <script type="text/javascript">
+                                showhideValue();            
+                            </script>
+                        <apex:outputPanel id="outLevel1" rendered="{!IF(fields != null && fields.size > 0 , true, false)}">
+                            <apex:actionStatus startText="Updating page ..." id="StatusChange1"/>
+                           <b><apex:outputLabel value="Permission Sets: " for="permissionSets" styleClass="check1" /></b>
+                           <apex:selectCheckboxes id="permissionSets" value="{!listFields}" onchange="preservePermissionSets(this)" layout="pageDirection" styleClass="check">
+                               <apex:selectOptions value="{!fields}"/>
+                           </apex:selectCheckboxes>
+                           </apex:outputPanel>
+          
+                        <apex:outputPanel rendered="{!IF(groups != null, true, false)}">
+                            <b>
+                            <br/>
+                            <apex:outputLabel value="Public Groups: " styleClass="check1" /> 
+                            </b>
+                            <apex:selectCheckboxes value="{!listGroups}" id="groups"  onchange="preservePublicGroups(this)" layout="pageDirection" styleClass="check">
+                                <apex:selectOptions value="{!groups}"/>
+                            </apex:selectCheckboxes>
+                        </apex:outputPanel>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="" />
+                <apex:actionStatus id="mySaveStatus1">
+                <apex:facet name="stop">
+                <apex:commandButton value="Submit" id="sub" action="{!save}" reRender="err" status="mySaveStatus1"></apex:commandButton>
+                </apex:facet>
+                <apex:facet name="start">
+                <apex:commandButton onclick="window.scrollTo(0,0)" value="Processing..."  status="mySaveStatus1" disabled="true"/>
+                </apex:facet>
+                </apex:actionStatus>
+                  </apex:pageBlockSectionItem>   
+                  <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="" />
+                  <apex:commandButton value="Cancel" action="{!homePage}" styleClass="home"/>
+               <!----- button onclick="window.location='/home/home.jsp'" class="home">Cancel</button>----->
+                <!-----<apex:commandButton value="Cancel" onclick="window.open('/home/home.jsp')"/>----->
+                </apex:pageBlockSectionItem>
+                           
+            </apex:pageBlockSection>             
+         
+            </apex:form>   
+                          
+    </apex:pageBlock>
+   
+
+   </apex:page>

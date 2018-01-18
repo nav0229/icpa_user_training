@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Suspension and Debarment Record</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Suspension and Debarment Records</value>
+    </caseValues>
+    <fields>
+        <help><!-- Administrative Compliance Agreement Date --></help>
+        <label><!-- ACA Date --></label>
+        <name>ACA_Decision_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ARM 45-Day Date --></label>
+        <name>ARM_45_Day_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Administrative Record Sent Date --></help>
+        <label><!-- Administrative Record Sent Date --></label>
+        <name>Administrative_Record_Sent_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Started Before 45-Day Date ARM --></label>
+        <name>Approval_Before_ARM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Start Date --></label>
+        <name>Approval_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Basis --></help>
+        <label><!-- Basis --></label>
+        <name>Basis__c</name>
+        <picklistValues>
+            <masterLabel>Fact-Based</masterLabel>
+            <translation><!-- Fact-Based --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Basis Judicial</masterLabel>
+            <translation><!-- Primary Basis Judicial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voluntary Disclosure</masterLabel>
+            <translation><!-- Voluntary Disclosure --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Business or individual, if Business, categorize if it is a small business or not --></help>
+        <label><!-- Business / Individual --></label>
+        <name>Business__c</name>
+        <picklistValues>
+            <masterLabel>Business (Not Small)</masterLabel>
+            <translation><!-- Business (Not Small) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business (Small)</masterLabel>
+            <translation><!-- Business (Small) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business (Unknown)</masterLabel>
+            <translation><!-- Business (Unknown) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual</masterLabel>
+            <translation><!-- Individual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Closed --></label>
+        <name>Case_Closed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Case name of Suspension and Debarment case --></help>
+        <label><!-- Case Name --></label>
+        <name>Case_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- A cases status field that is updated by the approval process. --></help>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comments for SDO --></help>
+        <label><!-- Comments for SDO --></label>
+        <name>Comments_for_SDO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Record Complete --></label>
+        <name>Date_Record_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date case was transferred to Lead Agency --></help>
+        <label><!-- Date of Transfer --></label>
+        <name>Date_of_Transfer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Debarment/ACA Termination Date --></help>
+        <label><!-- Debarment/ACA Termination Date --></label>
+        <name>Debarment_ACA_Termination_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Debarment Date --></help>
+        <label><!-- Debarment Date --></label>
+        <name>Debarment_Decision_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Debarment FAR Cause --></help>
+        <label><!-- Debarment FAR Cause(s) --></label>
+        <name>Debarment__c</name>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(a)(1)</masterLabel>
+            <translation><!-- FAR 9.406-2(a)(1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(a)(2)</masterLabel>
+            <translation><!-- FAR 9.406-2(a)(2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(a)(3)</masterLabel>
+            <translation><!-- FAR 9.406-2(a)(3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(a)(4)</masterLabel>
+            <translation><!-- FAR 9.406-2(a)(4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(a)(5)</masterLabel>
+            <translation><!-- FAR 9.406-2(a)(5) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(b)(1)(i)</masterLabel>
+            <translation><!-- FAR 9.406-2(b)(1)(i) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(b)(1)(ii)</masterLabel>
+            <translation><!-- FAR 9.406-2(b)(1)(ii) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(b)(1)(iii)</masterLabel>
+            <translation><!-- FAR 9.406-2(b)(1)(iii) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(b)(1)(iv)</masterLabel>
+            <translation><!-- FAR 9.406-2(b)(1)(iv) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(b)(1)(v)</masterLabel>
+            <translation><!-- FAR 9.406-2(b)(1)(v) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(b)(1)(vi)</masterLabel>
+            <translation><!-- FAR 9.406-2(b)(1)(vi) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(b)(2)</masterLabel>
+            <translation><!-- FAR 9.406-2(b)(2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.406-2(c)</masterLabel>
+            <translation><!-- FAR 9.406-2(c) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Direct Imputed Affiliated --></help>
+        <label><!-- Direct / Imputed / Affiliated --></label>
+        <name>Direct_Imputed_Affiliated__c</name>
+        <picklistValues>
+            <masterLabel>Affliated</masterLabel>
+            <translation><!-- Affliated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imputed</masterLabel>
+            <translation><!-- Imputed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Early Termination Date --></help>
+        <label><!-- Early Termination Date --></label>
+        <name>Early_Termination_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- General Case Information --></label>
+        <name>General_Case_Information__c</name>
+        <relationshipLabel><!-- Suspension and Debarment Records (General Case Information) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Comma separated Other Ground(s) for Debarment --></help>
+        <label><!-- Other Ground(s) for Debarment --></label>
+        <name>Grounds_for_Debarment_Other__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated Other Ground(s) for Debarment. --></help>
+        <label><!-- Grounds for Debarment --></label>
+        <name>Grounds_for_Debarment__c</name>
+        <picklistValues>
+            <masterLabel>Bribery / Conspiracy to Commit Bribery</masterLabel>
+            <translation><!-- Bribery / Conspiracy to Commit Bribery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conspiracy, General</masterLabel>
+            <translation><!-- Conspiracy, General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Statements</masterLabel>
+            <translation><!-- False Statements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Falsification or Destruction of Records</masterLabel>
+            <translation><!-- Falsification or Destruction of Records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fraud</masterLabel>
+            <translation><!-- Fraud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hobbs Act Conspiracy</masterLabel>
+            <translation><!-- Hobbs Act Conspiracy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Fraud</masterLabel>
+            <translation><!-- Mail Fraud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Violations</masterLabel>
+            <translation><!-- Tax Violations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Theft</masterLabel>
+            <translation><!-- Theft --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Hearing Date --></help>
+        <label><!-- Hearing Date --></label>
+        <name>Hearing_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Initial SAM Check for all respondents --></help>
+        <label><!-- Initial SAM Check for all respondents --></label>
+        <name>Initial_SAM_Check_for_all_respondents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrity Officer Name --></label>
+        <name>Integrity_Officer_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The individual ultimately responsible for the work on a case. --></help>
+        <label><!-- Integrity Officer --></label>
+        <name>Integrity_Officer__c</name>
+        <relationshipLabel><!-- Suspension and Debarment Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field will be checked when the approval process is triggered. This is used to trigger the sharing of SD Document Upload records to the current approver. --></help>
+        <label><!-- Is Currently In Approval Approcess --></label>
+        <name>Is_Currently_In_Approval_Approcess__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Lead Agency action date for each action taken for each respondnet in the case. --></help>
+        <label><!-- Lead Agency Action Date --></label>
+        <name>Lead_Agency_Action_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Lead Agency actions taken for each respondent in the case. --></help>
+        <label><!-- Lead Agency Action --></label>
+        <name>Lead_Agency_Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is Lead Agency Determination Necessary? --></help>
+        <label><!-- Lead Agency Determination Necessary --></label>
+        <name>Lead_Agency_Determination_Necessary__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lead Agency Lookup --></label>
+        <name>Lead_Agency_Lookup__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Lead Agency for the Case. --></help>
+        <label><!-- Lead Agency --></label>
+        <name>Lead_Agency__c</name>
+        <picklistValues>
+            <masterLabel>Agency for International Development</masterLabel>
+            <translation><!-- Agency for International Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commerce</masterLabel>
+            <translation><!-- Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defense, Air Force</masterLabel>
+            <translation><!-- Defense, Air Force --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defense, Army</masterLabel>
+            <translation><!-- Defense, Army --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defense, Defense Logistics Agency</masterLabel>
+            <translation><!-- Defense, Defense Logistics Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defense, Navy</masterLabel>
+            <translation><!-- Defense, Navy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy</masterLabel>
+            <translation><!-- Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Protection Agency</masterLabel>
+            <translation><!-- Environmental Protection Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Services Administration</masterLabel>
+            <translation><!-- General Services Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health and Human Services</masterLabel>
+            <translation><!-- Health and Human Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Homeland Security</masterLabel>
+            <translation><!-- Homeland Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Homeland Security, Immigration and Customs Enforcement</masterLabel>
+            <translation><!-- Homeland Security, Immigration and Customs Enforcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Housing and Urban Development</masterLabel>
+            <translation><!-- Housing and Urban Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interior</masterLabel>
+            <translation><!-- Interior --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Justice</masterLabel>
+            <translation><!-- Justice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Aeronautics and Space Administration</masterLabel>
+            <translation><!-- National Aeronautics and Space Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Science Foundation</masterLabel>
+            <translation><!-- National Science Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuclear Regulatory Commission</masterLabel>
+            <translation><!-- Nuclear Regulatory Commission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Personnel Management</masterLabel>
+            <translation><!-- Office of Personnel Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small Business Administration</masterLabel>
+            <translation><!-- Small Business Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Security Administration</masterLabel>
+            <translation><!-- Social Security Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State</masterLabel>
+            <translation><!-- State --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treasury</masterLabel>
+            <translation><!-- Treasury --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veterans Affairs</masterLabel>
+            <translation><!-- Veterans Affairs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Look Up --></label>
+        <name>Look_Up__c</name>
+        <relationshipLabel><!-- Suspension and Debarment Records (Look Up) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- No Action Date --></help>
+        <label><!-- No Action Date --></label>
+        <name>No_Action_Decision_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of days in SDO Approval --></label>
+        <name>Number_of_days_in_SDO_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of days in SDO Legal Approval --></label>
+        <name>Number_of_days_in_SDO_Legal_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated Other Hearing Dates in mm/dd/yyyy format. --></help>
+        <label><!-- Other Hearing Dates --></label>
+        <name>Other_Hearing_Dates__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated Other Respondent Response Dates in mm/dd/yyyy format. --></help>
+        <label><!-- Other Respondent Response Dates --></label>
+        <name>Other_Respondent_Response_Dates__c</name>
+    </fields>
+    <fields>
+        <help><!-- Priority or Easy --></help>
+        <label><!-- Priority or Easy --></label>
+        <name>Priority_or_Easy__c</name>
+        <picklistValues>
+            <masterLabel>Easy</masterLabel>
+            <translation><!-- Easy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Priority</masterLabel>
+            <translation><!-- Priority --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Proposal for Debarment Date --></help>
+        <label><!-- Proposal for Debarment Date --></label>
+        <name>Proposal_for_Debarment_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Request for Information Date --></help>
+        <label><!-- Request for Information Date --></label>
+        <name>Request_for_Information_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The primary business or individual respondent for the case. Please format individual respondent names as Last name, First name, MI. --></help>
+        <label><!-- Respondent Name --></label>
+        <name>Respondent_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Respondent Notification Date --></label>
+        <name>Respondent_Notification_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Respondent Response Date --></label>
+        <name>Respondent_Response_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Respondent Response --></label>
+        <name>Respondent_Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDO Approval Date --></label>
+        <name>SDO_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of the most recent SDO Approval Rejection --></help>
+        <label><!-- SDO Approval Reject Date --></label>
+        <name>SDO_Approval_Reject_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDO Legal Approval Date --></label>
+        <name>SDO_Legal_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date a file was SDO Legal Rejected. --></help>
+        <label><!-- SDO Legal Reject Date --></label>
+        <name>SDO_Legal_Reject_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date recommendation was received by SDO --></help>
+        <label><!-- Date Received by SDO --></label>
+        <name>SDO_Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDO Submit for Approval --></label>
+        <name>SDO_Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field updated when Submit for Legal happens in the Approval processes. Hidden field used for email reminders. --></help>
+        <label><!-- SDO Submit for Legal --></label>
+        <name>SDO_Submit_for_Legal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Destruction Date should be six years and three months from the end of the Fiscal Year in which the final action was taken. Destruction happens on January 1 (10/1 plus 3 months) --></help>
+        <label><!-- Destruction Date --></label>
+        <name>SD_Destruction_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mark for Deletion --></help>
+        <label><!-- Mark for Deletion --></label>
+        <name>SD_Mark_for_Deletion__c</name>
+    </fields>
+    <fields>
+        <label><!-- SD RecType Destruction Date --></label>
+        <name>SD_RecType_Destruction_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Show Cause Letter Date --></help>
+        <label><!-- Show Cause Letter Date --></label>
+        <name>Show_Cause_Letter_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Suspension Date --></help>
+        <label><!-- Suspension Date --></label>
+        <name>Suspension_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Suspension FAR Cause --></help>
+        <label><!-- Suspension FAR Cause(s) --></label>
+        <name>Suspension__c</name>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(1)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(2)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(3)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(4)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(5)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(5) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(6)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(6) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(7)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(7) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(8)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(8) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(a)(9)</masterLabel>
+            <translation><!-- FAR 9.407-2(a)(9) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(b)</masterLabel>
+            <translation><!-- FAR 9.407-2(b) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAR 9.407-2(c)</masterLabel>
+            <translation><!-- FAR 9.407-2(c) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Terminate Preliminary Action Date --></help>
+        <label><!-- Terminate Preliminary Action Date --></label>
+        <name>Terminate_Preliminary_Action_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upload Disposition Report --></label>
+        <name>Upload_Disposition_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upload SAM/FAPIIS Screenshot --></label>
+        <name>Upload_SAM_FAPIIS_Screenshot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upload USPS Tracking Information --></label>
+        <name>Upload_USPS_Tracking_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- 21-Day Response Due Date --></help>
+        <label><!-- 21-Day Response Due Date --></label>
+        <name>X21_Day_Response_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- 30-Day Response Due Date --></help>
+        <label><!-- 30-Day Response Due Date --></label>
+        <name>X30_Day_Response_Due_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Suspension and Debarment Case</layout>
+        <sections>
+            <label><!-- Case Info --></label>
+            <section>Case Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Respondents --></label>
+            <section>Respondents</section>
+        </sections>
+        <sections>
+            <label><!-- SAM and Lead --></label>
+            <section>SAM and Lead</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Suspension and Debarment Respondent</layout>
+        <sections>
+            <label><!-- Case Info --></label>
+            <section>Case Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Documents --></label>
+            <section>Documents</section>
+        </sections>
+        <sections>
+            <label><!-- FAR Causes --></label>
+            <section>FAR Causes</section>
+        </sections>
+        <sections>
+            <label><!-- For each SDO Action, don&apos;t forget to: --></label>
+            <section>For each SDO Action, don&apos;t forget to:</section>
+        </sections>
+        <sections>
+            <label><!-- Lead --></label>
+            <section>Lead</section>
+        </sections>
+        <sections>
+            <label><!-- SDO Actions --></label>
+            <section>SDO Actions</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Suspension and Debarment Case --></label>
+        <name>Suspension_and_Debarment_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Suspension and Debarment Respondent --></label>
+        <name>Suspension_and_Debarment_Respondent</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The case cannot be closed if the case is still in the approval process flow. --></errorMessage>
+        <name>Case_Cannot_Be_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Record cannot be updated when Close Case is checked. --></errorMessage>
+        <name>CloseCaseCheck_Respondent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Record cannot be updated when Close Case is checked. --></errorMessage>
+        <name>CloseCaseCheck_SD</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Lead Agency selected is not General Services Administration, Please populate the Date of Transfer --></errorMessage>
+        <name>DateofTransferCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the Termination Date --></errorMessage>
+        <name>DebarmentACATerminationDateCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Must fill out Grounds for Debarment Other --></errorMessage>
+        <name>Grounds_for_Debarment_Other</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select the Grounds for Debarment value(s) when Debarment Date is entered. --></errorMessage>
+        <name>GroundsforDebarmentCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please populate both the Lead Agency Action and the Lead Agency Action Date --></errorMessage>
+        <name>LeadAgencyActionDateCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Record cannot be updated when Mark for Deletion is checked. --></errorMessage>
+        <name>MarkforDeletionCheck_Respondent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Record cannot be updated when Mark for Deletion is checked. --></errorMessage>
+        <name>MarkforDeletionCheck_SD</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must be assigned this record to edit. --></errorMessage>
+        <name>SD_Assigned_Approver</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You do not have the permissions to close or reopen this case. --></errorMessage>
+        <name>SD_Case_Close_Val_Rule_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Lead Agency Determination Necessary and Date of Transfer is required. --></errorMessage>
+        <name>SD_Case_Requirement</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Basis, Business / Individual, and Direct / Imputed / Affiliated should not be required fields. --></errorMessage>
+        <name>SD_Respondent_Requirement2</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Close_Case --></label>
+        <name>Close_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Respondent --></label>
+        <name>Create_Respondent</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mark_for_Deletion --></label>
+        <name>Mark_for_Deletion</name>
+    </webLinks>
+</CustomObjectTranslation>

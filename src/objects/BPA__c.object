@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>VMO - BPA</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Alaskan_Native_Corporation__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is an &apos;Alaskan Native Corporation&apos; or not.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Alaskan_Native_Corporation__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is an &apos;Alaskan Native Corporation&apos; or not.</inlineHelpText>
+        <label>Alaskan Native Corporation</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Available_Ceiling__c</fullName>
+        <externalId>false</externalId>
+        <formula>Base_and_All_Options__c -  Total_Value_of_BPA_Calls__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Available Ceiling of the BPA
+(Base and All Options minus Total Value of all BPA Calls)</inlineHelpText>
+        <label>Available Ceiling</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Award_Actual__c</fullName>
+        <externalId>false</externalId>
+        <label>Award - Actual</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Award_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Must be of type: BPA.  If other, will set the record as Inactive</inlineHelpText>
+        <label>Award Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BPA</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Base_and_All_Options__c</fullName>
+        <description>It is the mutually agreed upon total contract or order value including all options (if any). For Indefinite Delivery Vehicles, the estimated value for all orders expected to be placed against the vehicle. For modifications, the change (positive or negative, if any) in the mutually agreed upon total contract value.It is the mutually agreed upon total contract or order value including all options (if any). For Indefinite Delivery Vehicles, the estimated value for all orders expected to be placed against the vehicle. For modifications, the change (positive
+or negative, if any) in the mutually agreed upon total contract value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the mutually agreed upon total estimated contract or order value for new awards, indefinite delivery vehicles or modifications.</inlineHelpText>
+        <label>Base and all Options</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>COR__c</fullName>
+        <externalId>false</externalId>
+        <label>COR</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CO_Business_Size_Determination__c</fullName>
+        <description>The Contracting Officer&apos;s determination of whether the selected contractor meets the small business size standard for award to a small business for the NAICS code that is applicable to the contract.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.CO_Business_Size_Determination__c</formula>
+        <inlineHelpText>The Contracting Officer&apos;s determination of whether the selected contractor meets the small business size standard for award to a small business for the NAICS code that is applicable to the contract.</inlineHelpText>
+        <label>CO Business Size Determination</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CO__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Officer (CO)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CS__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Specialist (CS)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Agency_Code__c</fullName>
+        <description>The code for the agency of the contracting office that executed or is otherwise responsible for the transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the code that identifies the agency of the contracting office.</inlineHelpText>
+        <label>Contract Agency Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Office_Code__c</fullName>
+        <description>The agency supplied code of the contracting office that executes the transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the default code is not appropriate, enter the code for the contracting office that executed or is otherwise responsible for the transaction.</inlineHelpText>
+        <label>Contract Office Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Officer_CO__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract Officer (CO) Link</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>BPAs (Contract Officer (CO))</relationshipLabel>
+        <relationshipName>BPA_ContractOfficer</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Officer_Representative_COR__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contract Officer Representative (COR)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contract Officer Representative (COR)</inlineHelpText>
+        <label>COR Link</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>BPAs (COR)</relationshipLabel>
+        <relationshipName>BPAs_COR</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Specialist_CS__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract Specialist (CS) Link</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>BPAs (Contract Specialist (CS))</relationshipLabel>
+        <relationshipName>BPAs_ContractSpecialist</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Completion_Date__c</fullName>
+        <description>The completion date of the base contract plus options that have been exercised.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The completion date of the base contract plus options that have been exercised.</inlineHelpText>
+        <label>Current Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Sent_to_COCACQ_COPIER_CO__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Sent to Contracting</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description_of_Requirement__c</fullName>
+        <description>A brief description of the contract or award.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a brief description of the contract or award.</inlineHelpText>
+        <label>Description of Requirement</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <description>The date that the parties agree will be the starting date for the contract&apos;s requirements. The Effective Date cannot be earlier than the Signed Date on the base document.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the effective date agreed to by the parties.</inlineHelpText>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Emerging_Small_Business__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is an Emerging Small Business Organization or not. It can be derived from the SAM data element, &apos;Business Types&apos;.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Emerging_Small_Business__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is an Emerging Small Business Organization or not. It can be derived from the SAM data element, &apos;Business Types&apos;.</inlineHelpText>
+        <label>Emerging Small Business</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Extent_Compt__c</fullName>
+        <description>A code that represents the competitive nature of the contract.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A code that represents the competitive nature of the contract.</inlineHelpText>
+        <label>Extent Compt.</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fair_Opportunity__c</fullName>
+        <description>Report this code when awarding a non competitive task order or delivery order exceeding $2500.00 against an IDIQ contract.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Report this code when awarding a non competitive task order or delivery order exceeding $2500.00 against an IDIQ contract.</inlineHelpText>
+        <label>Fair Opportunity</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fund_Agency_Code__c</fullName>
+        <description>The code for the agency that provided the preponderance of the funds obligated by this transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If funding for this transaction was provided by another agency, enter the code that identifies the agency that provided the preponderance of the obligated funds.</inlineHelpText>
+        <label>Fund Agency - Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Funding_Office_Code__c</fullName>
+        <description>The funding agency provided code that identifies the office (or other organizational entity) that provided the preponderance of funds. If the Funding Agency is a non-DoD agency, the code is defined by the agency. If the Funding Agency is a DoD agency, the code is the DoD Activity Address Code (DODAAC).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Obtain the code to report from the office (or other organizational entity) that is funding this transaction.</inlineHelpText>
+        <label>Fund Office - Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HUBZone_Firm__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is a Historically Underutilized Business Zone (HUBZone) Firm or not. It can be derived from the SAM data element, &apos;Business Types&apos;</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.HUBZone_Firm__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is a Historically Underutilized Business Zone (HUBZone) Firm or not.</inlineHelpText>
+        <label>HUBZone Firm</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Date_to_Order__c</fullName>
+        <description>Last date on which an order may be placed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last date on which an order may be placed.</inlineHelpText>
+        <label>Last Date to Order</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Manufacturer_of_Goods__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is a Manufacturer of Goods or not.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Manufacturer_of_Goods__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is a Manufacturer of Goods or not.</inlineHelpText>
+        <label>Manufacturer of Goods</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mark_Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Mark Inactive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Minority_Owned_Business__c</fullName>
+        <description>List characteristic of the contractor such as whether the selected contractor is a &apos;Minority Owned Business&apos; or not</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Minority_Owned_Business__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>List characteristic of the contractor such as whether the selected contractor is a &apos;Minority Owned Business&apos; or not</inlineHelpText>
+        <label>Minority Owned Business</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Modification_Number__c</fullName>
+        <description>An identifier issued by an agency that uniquely identifies one modification for one contract, agreement, order, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When reporting modifications to contracts, agreements, or orders, report the modification number assigned by the reporting contracting office. For any given PIID, all Modification Numbers must be unique.</inlineHelpText>
+        <label>Mod #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAICS_Code__c</fullName>
+        <description>The North American Industry Classification System (NAICS) codes designate major sectors of the economies of Mexico, Canada, and the United States.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Report the code that was used in the solicitation.</inlineHelpText>
+        <label>NAICS Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAICS_Descrip__c</fullName>
+        <externalId>false</externalId>
+        <label>NAICS Descrip</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_IT__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Mark the record as Non-IT to identify this record as non-IT</inlineHelpText>
+        <label>Non-IT?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notes_or_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes or Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_offers__c</fullName>
+        <description>The number of actual offers/bids received in response to the solicitation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of actual offers/bids received in response to the solicitation.</inlineHelpText>
+        <label># of offers</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ordering_Eligibility__c</fullName>
+        <description>Ordering Eligibility</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Ordering Eligibility</inlineHelpText>
+        <label>Ordering Eligibility</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Only the agency awarding the contract may place orders</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>All Federal Government agencies may place orders against the contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Only civilian agencies may place orders against the contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_than_Full_and_Open_Competition__c</fullName>
+        <description>Enter the code that most appropriately defines the reason the action was not competed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the code that most appropriately defines the reason the action was not competed.</inlineHelpText>
+        <label>Other than Full &amp; Open Competition</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PIID_Ref_Contract__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This will be used as external ID to match BPAs with unique &apos;PIID + Ref. Contract&apos; numbers. Please note only BPAs will be matched, not BPA Calls. To match BPA Calls, there is another field called &quot;PIID&quot;</description>
+        <externalId>true</externalId>
+        <label>PIID + Ref. Contract</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PIID__c</fullName>
+        <description>When BPA Calls are inserted, this field will be used to match BPA Calls with BPA</description>
+        <externalId>true</externalId>
+        <label>PIID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSC_Code__c</fullName>
+        <description>The code that best identifies the product or service procured. Codes are defined in the Product and Service Codes Manual.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The code that best identifies the product or service procured. Codes are defined in the Product and Service Codes Manual.</inlineHelpText>
+        <label>PSC Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSC_Descrip__c</fullName>
+        <description>A description of the product or service designated by the product code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the product or service designated by the product code.</inlineHelpText>
+        <label>PSC Descrip</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Place_of_Manufacture__c</fullName>
+        <description>Represents whether the end products procured by the contract are manufactured inside or outside the U.S. in accordance with the Buy American Act (see FAR 25.1) and any exceptions or reasons for waivers employed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents whether the end products procured by the contract are manufactured inside or outside the U.S. in accordance with the Buy American Act (see FAR 25.1) and any exceptions or reasons for waivers employed.</inlineHelpText>
+        <label>Place of Manu.</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Procurement_Action_Lead_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>Effective_Date__c -  Date_Sent_to_COCACQ_COPIER_CO__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PALT</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RBA_Order_ID_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>RBA Order ID Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Modification__c</fullName>
+        <description>The type of modification to an award or IDV performed by this transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the code that most accurately describes the reason this modification was awarded.</inlineHelpText>
+        <label>Reason for Mod</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Referenced_Contract__c</fullName>
+        <description>Report the Contract or Agreement Number of the IDV against which the order is placed. When reporting the initial load of a BPA under a FSS, report the FSS contract number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When reporting orders under Indefinite Delivery Vehicles (IDV) such as a GWAC, IDC, FSS, BOA, or BPA, report the Procurement Instrument Identifier (Contract Number or Agreement Number) of the IDV.</inlineHelpText>
+        <label>Referenced Contract</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Certified_Small_Disadvantaged_Bus__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is &apos;Self-Certified Small Disadvantaged Business&apos; or not.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Self_Certified_Small_Disadvantaged_Busin__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is &apos;Self-Certified Small Disadvantaged Business&apos; or not.</inlineHelpText>
+        <label>Self-Certified Small Disadvantaged Bus</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Disabled_Veteran_Owned_Small_Bus__c</fullName>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Service_Disabled_Veteran_Owned_Small_Bus__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Disabled Veteran Owned Small Bus</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Short_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Short Description</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Small_Disadvantaged_Business__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is a &apos;Small Disadvantaged Business Organization&apos; or not.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Small_Disadvantaged_Business__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is a &apos;Small Disadvantaged Business Organization&apos; or not.</inlineHelpText>
+        <label>Small Disadvantaged Business</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Solicitation_Procedures__c</fullName>
+        <description>Report this code for the type of solicitation procedure used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Report this code for the type of solicitation procedure used.</inlineHelpText>
+        <label>Solicitation Proc.</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TERP_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>TERP Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_BPA_Calls__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Number of BPA Calls</label>
+        <summaryFilterItems>
+            <field>BPA_Call__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BPA Call</value>
+        </summaryFilterItems>
+        <summaryForeignKey>BPA_Call__c.BPA_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Value_of_BPA_Calls__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Value of BPA Calls</label>
+        <summarizedField>BPA_Call__c.Base_and_All_Options__c</summarizedField>
+        <summaryFilterItems>
+            <field>BPA_Call__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BPA Call</value>
+        </summaryFilterItems>
+        <summaryForeignKey>BPA_Call__c.BPA_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Type_Set_Aside__c</fullName>
+        <description>The designator for type of set aside determined for the contract action.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The designator for type of set aside determined for the contract action.</inlineHelpText>
+        <label>Type Set Aside</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ultimate_Completion_Date__c</fullName>
+        <description>The estimated or scheduled completion date including the base contract or order and all options (if any) whether the options have been exercised or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The estimated or scheduled completion date including the base contract or order and all options (if any) whether the options have been exercised or not.</inlineHelpText>
+        <label>Ultimate Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_City__c</fullName>
+        <description>The city of the contractor address</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.BillingCity</formula>
+        <inlineHelpText>The city of the contractor address</inlineHelpText>
+        <label>Vendor City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_DUNS_Number__c</fullName>
+        <description>Dun &amp; Bradstreet Data Universal Numbering System organization identification code</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.DUNS_Number__c</formula>
+        <inlineHelpText>The DUNS number of the contractor. Used as a key to SAM.</inlineHelpText>
+        <label>Vendor DUNS Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Parent_DUNS_Number__c</fullName>
+        <description>The DUNS number of the parent contractor. Used as a key to SAM.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Parent.DUNS_Number__c</formula>
+        <inlineHelpText>The DUNS number of the parent contractor. Used as a key to SAM.</inlineHelpText>
+        <label>Vendor Parent DUNS Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Parent__c</fullName>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Parent.Name</formula>
+        <inlineHelpText>Name of the Parent Vendor</inlineHelpText>
+        <label>Vendor Parent</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_State__c</fullName>
+        <description>The state of the contractor address.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.BillingState</formula>
+        <inlineHelpText>The state of the contractor address.</inlineHelpText>
+        <label>Vendor State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Street__c</fullName>
+        <description>The street address for a contractor.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.BillingStreet</formula>
+        <inlineHelpText>The street address for a contractor.</inlineHelpText>
+        <label>Vendor Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Vendor__r.BillingPostalCode</formula>
+        <label>Vendor Zip Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Vendor (Account) Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Search the Vendor Name</inlineHelpText>
+        <label>Vendor</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Vendor does not exist or does not match the filter criteria</errorMessage>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Vendor</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>BPAs</relationshipLabel>
+        <relationshipName>BPA</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Veteran_Owned_Small_Business__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is a &apos;Veteran Owned Small Business&apos; or not.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Veteran_Owned_Small_Business__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is a &apos;Veteran Owned Small Business&apos; or not.</inlineHelpText>
+        <label>Veteran Owned Small Business</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Women_Owned_Small_Business__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is a &apos;Women Owned Small Business&apos; or not.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Women_Owned_Small_Business__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is a &apos;Women Owned Small Business&apos; or not.</inlineHelpText>
+        <label>Women Owned Small Business</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X8_a_Program_Participant__c</fullName>
+        <description>Characteristic of the contractor such as whether the selected contractor is an &apos;8(a) Program Participant Organization&apos; or not.</description>
+        <externalId>false</externalId>
+        <formula>Vendor__r.X8_a_Program_Participant__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Characteristic of the contractor such as whether the selected contractor is an &apos;8(a) Program Participant Organization&apos; or not.</inlineHelpText>
+        <label>8(a) Program Participant</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>BPA</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>NAME</columns>
+        <columns>Referenced_Contract__c</columns>
+        <columns>Vendor__c</columns>
+        <columns>Available_Ceiling__c</columns>
+        <columns>Base_and_All_Options__c</columns>
+        <columns>Current_Completion_Date__c</columns>
+        <columns>Ultimate_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_BPAs</fullName>
+        <columns>NAME</columns>
+        <columns>Referenced_Contract__c</columns>
+        <columns>Vendor__c</columns>
+        <columns>Base_and_All_Options__c</columns>
+        <columns>Available_Ceiling__c</columns>
+        <columns>Current_Completion_Date__c</columns>
+        <columns>Ultimate_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>BPA__c.BPA</value>
+        </filters>
+        <label>All Active BPAs</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Inactive_Records</fullName>
+        <columns>NAME</columns>
+        <columns>Referenced_Contract__c</columns>
+        <columns>Vendor__c</columns>
+        <columns>Available_Ceiling__c</columns>
+        <columns>Base_and_All_Options__c</columns>
+        <columns>Current_Completion_Date__c</columns>
+        <columns>Ultimate_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>BPA__c.Inactive</value>
+        </filters>
+        <label>All Inactive Records</label>
+    </listViews>
+    <nameField>
+        <label>BPA Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>BPAs</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>BPA</fullName>
+        <active>true</active>
+        <description>Used for Blanket Purchase Agreement (BPA)</description>
+        <label>BPA</label>
+        <picklistValues>
+            <picklist>Award_Type__c</picklist>
+            <values>
+                <fullName>BPA</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ordering_Eligibility__c</picklist>
+            <values>
+                <fullName>All Federal Government agencies may place orders against the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Only civilian agencies may place orders against the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Only the agency awarding the contract may place orders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Inactive</fullName>
+        <active>true</active>
+        <description>Used for Contracts and BPAs that the VM office does not need to view.</description>
+        <label>Inactive</label>
+        <picklistValues>
+            <picklist>Award_Type__c</picklist>
+            <values>
+                <fullName>BPA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ordering_Eligibility__c</picklist>
+            <values>
+                <fullName>All Federal Government agencies may place orders against the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Only civilian agencies may place orders against the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Only the agency awarding the contract may place orders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Referenced_Contract__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Vendor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Base_and_All_Options__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Available_Ceiling__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Current_Completion_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Ultimate_Completion_Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Referenced_Contract__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Vendor__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Available_Ceiling__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Base_and_All_Options__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Current_Completion_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Ultimate_Completion_Date__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Referenced_Contract__c</searchFilterFields>
+        <searchFilterFields>Vendor__c</searchFilterFields>
+        <searchFilterFields>Available_Ceiling__c</searchFilterFields>
+        <searchFilterFields>Base_and_All_Options__c</searchFilterFields>
+        <searchFilterFields>Current_Completion_Date__c</searchFilterFields>
+        <searchFilterFields>Ultimate_Completion_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Referenced_Contract__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Vendor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Available_Ceiling__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Base_and_All_Options__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Current_Completion_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Ultimate_Completion_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

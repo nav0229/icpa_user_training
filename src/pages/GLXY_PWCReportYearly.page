@@ -1,0 +1,254 @@
+<apex:page controller="GLXY_clsSummaryReport" title="Total Fiscal Year Projections" readonly="true" sidebar="false" showheader="false">
+    
+    <apex:form id="frmList">
+    	
+    	<table border="0" align="center" cellspacing="0">
+            <tr>
+				<td align="center"><h2><font color="DarkBlue" size="+1">FY {!strFiscalYearUserInput}</font></h2></td>
+            </tr>
+        </table>
+        
+        <table border="0" align="center" cellspacing="0">
+            <tr>
+				<td><font color="DarkRed"><b>NOA Requirements</b></font></td>
+            </tr>
+        </table>
+            
+		<table border="1" align="center" cellspacing="1">
+            <tr>
+                <td><font color="DarkRed"><b>&nbsp;</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>Sq. Ft.</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>$</b></font></td>
+            </tr>
+            <tr>
+                <td><b>Base Rent</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(BaseSqFtNOA_A==null, 0, BaseSqFtNOA_A) + If(BaseSqFtNOA_E==null, 0, BaseSqFtNOA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(BasePYCostNOA_A==null, 0, BasePYCostNOA_A) + If(BasePYCostNOA_E==null, 0, BasePYCostNOA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Expansion</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(ExpanSqFtNOA_A==null, 0, ExpanSqFtNOA_A) + If(ExpanSqFtNOA_E==null, 0, ExpanSqFtNOA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpanPYCostNOA_A==null, 0, ExpanPYCostNOA_A) + If(ExpanPYCostNOA_E==null, 0, ExpanPYCostNOA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Cancellation</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(CancelSqFtNOA_A==null, 0, CancelSqFtNOA_A) + If(CancelSqFtNOA_E==null, 0, CancelSqFtNOA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancelPYCostNOA_A==null, 0, CancelPYCostNOA_A) + If(CancelPYCostNOA_E==null, 0, CancelPYCostNOA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Rent Increase</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalPYCostNOA_A==null, 0, EscalPYCostNOA_A) + If(EscalPYCostNOA_E==null, 0, EscalPYCostNOA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Operating Cost Escalation</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PYCostCPI_A==null, 0, PYCostCPI_A) + If(PYCostCPI_E==null, 0, PYCostCPI_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Step Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PYCostStepRent_A==null, 0, PYCostStepRent_A) + If(PYCostStepRent_E==null, 0, PYCostStepRent_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lump Sums</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PYCostLS_A==null, 0, PYCostLS_A) + If(PYCostLS_E==null, 0, PYCostLS_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>IBAA's</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PYCostIBAA_A==null, 0, PYCostIBAA_A) + If(PYCostIBAA_E==null, 0, PYCostIBAA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>RWA's</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(If(PYCostRWA_A==null, 0, PYCostRWA_A) + If(PYCostRWA_E==null, 0, PYCostRWA_E), 0)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Double Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(If(DoubleRentNOA_A==null, 0, DoubleRentNOA_A) + If(DoubleRentNOA_E==null, 0, DoubleRentNOA_E), 0)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lease Project Step Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PrjPYCostStepRent_A==null, 0, PrjPYCostStepRent_A) + If(PrjPYCostStepRent_E==null, 0, PrjPYCostStepRent_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lease Project Lump Sums</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PrjPYCostLS_A==null, 0, PrjPYCostLS_A) + If(PrjPYCostLS_E==null, 0, PrjPYCostLS_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Total NOA</b></td>
+                <td align="right">&nbsp;<b><apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!Round(NOATotalSqFt,0)}" /></apex:outputText></b></td>
+                <td align="right">&nbsp;<b><apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(NOATotalPYCost,0)}" /></apex:outputText></b></td>
+            </tr>
+            </table>
+            <br/>
+            
+            <table border="0" align="center" cellspacing="0">
+	            <tr>
+					<td><font color="DarkRed"><b>IA Requirements</b></font></td>
+	            </tr>
+        	</table>
+        
+            <table border="1" align="center" cellspacing="1">
+            <tr>
+                <td><font color="DarkRed"><b>&nbsp;</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>Sq. Ft.</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>$</b></font></td>
+            </tr>
+            <tr>
+                <td><b>Base Rent</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(BaseSqFtIA_A==null, 0, BaseSqFtIA_A) + If(BaseSqFtIA_E==null, 0, BaseSqFtIA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(BasePYCostIA_A==null, 0, BasePYCostIA_A) + If(BasePYCostIA_E==null, 0, BasePYCostIA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Expansion</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(ExpanSqFtIA_A==null, 0, ExpanSqFtIA_A) + If(ExpanSqFtIA_E==null, 0, ExpanSqFtIA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpanPYCostIA_A==null, 0, ExpanPYCostIA_A) + If(ExpanPYCostIA_E==null, 0, ExpanPYCostIA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Cancellation</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(CancelSqFtIA_A==null, 0, CancelSqFtIA_A) + If(CancelSqFtIA_E==null, 0, CancelSqFtIA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancelPYCostIA_A==null, 0, CancelPYCostIA_A) + If(CancelPYCostIA_E==null, 0, CancelPYCostIA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Rent Increase</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalPYCostIA_A==null, 0, EscalPYCostIA_A) + If(EscalPYCostIA_E==null, 0, EscalPYCostIA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Operating Cost Escalation</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostCPI_A==null, 0, IA_PYCostCPI_A) + If(IA_PYCostCPI_E==null, 0, IA_PYCostCPI_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Step Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostStepRent_A==null, 0, IA_PYCostStepRent_A) + If(IA_PYCostStepRent_E==null, 0, IA_PYCostStepRent_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lump Sums</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostLS_A==null, 0, IA_PYCostLS_A) + If(IA_PYCostLS_E==null, 0, IA_PYCostLS_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>IBAA's</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostIBAA_A==null, 0, IA_PYCostIBAA_A) + If(IA_PYCostIBAA_E==null, 0, IA_PYCostIBAA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>RWA's</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(If(IA_PYCostRWA_A==null, 0, IA_PYCostRWA_A) + If(IA_PYCostRWA_E==null, 0, IA_PYCostRWA_E), 0)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Double Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(If(DoubleRentIA_A==null, 0, DoubleRentIA_A) + If(DoubleRentIA_E==null, 0, DoubleRentIA_E), 0)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lease Project Step Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PrjIA_PYCostStepRent_A==null, 0, PrjIA_PYCostStepRent_A) + If(PrjIA_PYCostStepRent_E==null, 0, PrjIA_PYCostStepRent_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lease Project Lump Sums</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PrjIA_PYCostLS_A==null, 0, PrjIA_PYCostLS_A) + If(PrjIA_PYCostLS_E==null, 0, PrjIA_PYCostLS_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+            	<td><b>Total IA</b></td>
+                <td align="right">&nbsp;<b><apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!Round(IATotalSqFt,0)}" /></apex:outputText></b></td>
+                <td align="right">&nbsp;<b><apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(IATotalPYCost,0)}" /></apex:outputText></b></td>
+            </tr>    
+            </table>
+            <br/>
+            
+            <table border="0" align="center" cellspacing="0">
+	            <tr>
+					<td><font color="DarkRed"><b>Total Requirements</b></font></td>
+	            </tr>
+        	</table>
+        	
+            <table border="1" align="center" cellspacing="1">
+            <tr>
+                <td><font color="DarkRed"><b>&nbsp;</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>Sq. Ft.</b></font></td>
+                <td align="center"><font color="DarkBlue"><b>$</b></font></td>
+            </tr>
+            <tr>
+                <td><b>Base Rent</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(BaseSqFtNOA_A==null, 0, BaseSqFtNOA_A) + If(BaseSqFtNOA_E==null, 0, BaseSqFtNOA_E) + If(BaseSqFtIA_A==null, 0, BaseSqFtIA_A) + If(BaseSqFtIA_E==null, 0, BaseSqFtIA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(BasePYCostNOA_A==null, 0, BasePYCostNOA_A) + If(BasePYCostNOA_E==null, 0, BasePYCostNOA_E) + If(BasePYCostIA_A==null, 0, BasePYCostIA_A) + If(BasePYCostIA_E==null, 0, BasePYCostIA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Expansion</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(ExpanSqFtIA_A==null, 0, ExpanSqFtIA_A) + If(ExpanSqFtIA_E==null, 0, ExpanSqFtIA_E) + If(ExpanSqFtNOA_A==null, 0, ExpanSqFtNOA_A) + If(ExpanSqFtNOA_E==null, 0, ExpanSqFtNOA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpanPYCostIA_A==null, 0, ExpanPYCostIA_A) + If(ExpanPYCostIA_E==null, 0, ExpanPYCostIA_E) + If(ExpanPYCostNOA_A==null, 0, ExpanPYCostNOA_A) + If(ExpanPYCostNOA_E==null, 0, ExpanPYCostNOA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Cancellation</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!If(CancelSqFtIA_A==null, 0, CancelSqFtIA_A) + If(CancelSqFtIA_E==null, 0, CancelSqFtIA_E) + If(CancelSqFtNOA_A==null, 0, CancelSqFtNOA_A) + If(CancelSqFtNOA_E==null, 0, CancelSqFtNOA_E)}" /></apex:outputText></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancelPYCostIA_A==null, 0, CancelPYCostIA_A) + If(CancelPYCostIA_E==null, 0, CancelPYCostIA_E) + If(CancelPYCostNOA_A==null, 0, CancelPYCostNOA_A) + If(CancelPYCostNOA_E==null, 0, CancelPYCostNOA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Rent Increase</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalPYCostIA_A==null, 0, EscalPYCostIA_A) + If(EscalPYCostIA_E==null, 0, EscalPYCostIA_E) + If(EscalPYCostNOA_A==null, 0, EscalPYCostNOA_A) + If(EscalPYCostNOA_E==null, 0, EscalPYCostNOA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Operating Cost Escalation</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostCPI_A==null, 0, IA_PYCostCPI_A) + If(IA_PYCostCPI_E==null, 0, IA_PYCostCPI_E) + If(PYCostCPI_A==null, 0, PYCostCPI_A) + If(PYCostCPI_E==null, 0, PYCostCPI_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Step Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostStepRent_A==null, 0, IA_PYCostStepRent_A) + If(IA_PYCostStepRent_E==null, 0, IA_PYCostStepRent_E) + If(PYCostStepRent_A==null, 0, PYCostStepRent_A) + If(PYCostStepRent_E==null, 0, PYCostStepRent_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lump Sums</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostLS_A==null, 0, IA_PYCostLS_A) + If(IA_PYCostLS_E==null, 0, IA_PYCostLS_E) + If(PYCostLS_A==null, 0, PYCostLS_A) + If(PYCostLS_E==null, 0, PYCostLS_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>IBAA's</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(IA_PYCostIBAA_A==null, 0, IA_PYCostIBAA_A) + If(IA_PYCostIBAA_E==null, 0, IA_PYCostIBAA_E) + If(PYCostIBAA_A==null, 0, PYCostIBAA_A) + If(PYCostIBAA_E==null, 0, PYCostIBAA_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>RWA's</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(If(IA_PYCostRWA_A==null, 0, IA_PYCostRWA_A) + If(IA_PYCostRWA_E==null, 0, IA_PYCostRWA_E), 0) + Round(If(PYCostRWA_A==null, 0, PYCostRWA_A) + If(PYCostRWA_E==null, 0, PYCostRWA_E), 0)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Double Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(If(DoubleRentIA_A==null, 0, DoubleRentIA_A) + If(DoubleRentIA_E==null, 0, DoubleRentIA_E), 0) + Round(If(DoubleRentNOA_A==null, 0, DoubleRentNOA_A) + If(DoubleRentNOA_E==null, 0, DoubleRentNOA_E), 0)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lease Project Step Rent</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PrjIA_PYCostStepRent_A==null, 0, PrjIA_PYCostStepRent_A) + If(PrjIA_PYCostStepRent_E==null, 0, PrjIA_PYCostStepRent_E) + If(PrjPYCostStepRent_A==null, 0, PrjPYCostStepRent_A) + If(PrjPYCostStepRent_E==null, 0, PrjPYCostStepRent_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td><b>Lease Project Lump Sums</b></td>
+                <td align="right">&nbsp;</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(PrjIA_PYCostLS_A==null, 0, PrjIA_PYCostLS_A) + If(PrjIA_PYCostLS_E==null, 0, PrjIA_PYCostLS_E) + If(PrjPYCostStepRent_A==null, 0, PrjPYCostStepRent_A) + If(PrjPYCostStepRent_E==null, 0, PrjPYCostStepRent_E)}" /></apex:outputText></td>
+            </tr>
+            <tr>
+            	<td><b>Total</b></td>
+                <td align="right">&nbsp;<b><apex:outputText value="{0, number, ###,###,##0}"><apex:param value="{!Round(IATotalSqFt,0) + Round(NOATotalSqFt,0)}" /></apex:outputText></b></td>
+                <td align="right">&nbsp;<b><apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!Round(IATotalPYCost,0) + Round(NOATotalPYCost,0)}" /></apex:outputText></b></td>
+            </tr> 
+        </table>
+        
+        <br/><br/>
+
+    </apex:form>
+
+</apex:page>

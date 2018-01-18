@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Milestone</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Milestones</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual End Date --></label>
+        <name>Actual_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Start Date --></label>
+        <name>Actual_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days Remaining is the difference between today&apos;s date and the Estimated End Date. This field will not be calculated when the Milestone Progress is &quot;Completed&quot;. --></help>
+        <label><!-- Days Remaining --></label>
+        <name>Days_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated End Date --></label>
+        <name>Estimated_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>GPM_Project__c</name>
+        <relationshipLabel><!-- Milestones --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Milestone Name --></label>
+        <name>Milestone_Name_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Milestone Status Flag --></label>
+        <name>Milestone_Progress_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes the progress status of the Milestone. --></help>
+        <label><!-- Milestone Progress --></label>
+        <name>Milestone_Progress__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delayed</masterLabel>
+            <translation><!-- Delayed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Hold</masterLabel>
+            <translation><!-- On-Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Use this field to indicate the progress and health of each milestone --></help>
+        <label><!-- Milestone Status --></label>
+        <name>Milestone_Status__c</name>
+        <picklistValues>
+            <masterLabel>Blue</masterLabel>
+            <translation><!-- Blue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grey</masterLabel>
+            <translation><!-- Grey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Milestone Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The contact that this Milestone is assigned to. --></help>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Milestones (Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PMO Lead --></label>
+        <name>PMO_Lead__c</name>
+        <relationshipLabel><!-- Milestones (PMO Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this field to indicate the date that you anticipate the milestone to end. This date should serve as a baseline and remain unchanged once entered. --></help>
+        <label><!-- Planned End Date --></label>
+        <name>Planned_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to indicate the date that you anticipate the milestone to start. This date should serve as a baseline and remain unchanged once entered. --></help>
+        <label><!-- Planned Start Date --></label>
+        <name>Planned_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Milestones (Project Manager) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Milestone Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Standard Project Milestone --></label>
+        <name>Project_Milestone</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Actual End date cannot be earlier than Actual Start Date --></errorMessage>
+        <name>Actual_End_not_earlier_than_Actual_Start</name>
+    </validationRules>
+</CustomObjectTranslation>

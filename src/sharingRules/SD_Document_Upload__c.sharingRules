@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>SDDocument_SDORead</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grants SDO users read access</description>
+        <label>SDDocument SDORead</label>
+        <sharedTo>
+            <group>Suspension_Debarment_SDO</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SDODocument_APORead</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grants SD-Integrity Officer users read access</description>
+        <label>SDODocument APORead</label>
+        <sharedTo>
+            <group>Suspension_Debarment_Integrity_Officers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

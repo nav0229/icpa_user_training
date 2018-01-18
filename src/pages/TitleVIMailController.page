@@ -1,0 +1,31 @@
+<apex:page standardController="Campaign" extensions="TitleVIMailController" 
+        showheader="false" sidebar="false" action="{!addTitleVISubmissionsAndUpdateCampaign}">
+
+  
+
+    <apex:form >
+        <apex:actionFunction name="generateAndSendLetter" action="{!generateAndSendLetter}" rendered="{!!errorsFound}" status="status" />
+        <apex:actionStatus startText="Generating.." id="status" />
+    </apex:form>
+    <apex:outputPanel >
+        <apex:sectionHeader title="{!sectionHeaderTitle}"/>
+        <div style="padding:30px;" >
+            <apex:image url="{!$Resource.Loading32}" rendered="{!Not errorsFound}" /><br/>
+            <apex:outputText value="{!JSENCODE(errorMessage)}" />
+        </div>
+    </apex:outputPanel>
+    <script>
+        try {
+            window.setTimeout(generateAndSendLetter, 2000);
+        } catch (err) {
+            // Not sure why there is a javascript error error saying that it cannot find
+            // the js function generateAndSendLetter(). This code structure is exactly how
+            // salesforce instructs on how to use an action function:
+            // http://www.salesforce.com/us/developer/docs/pages/Content/pages_compref_actionFunction.htm
+
+            // If I uncomment the timeout code, the function doesn't run and emails and PDFs are
+            // not generated. When I catch the error and do nothing the error is handled and
+            // everything proceeds the way it was built.
+        }
+    </script>
+</apex:page>

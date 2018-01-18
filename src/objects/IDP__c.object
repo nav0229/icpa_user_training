@@ -1,0 +1,2822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>IDP_RecordSelectByPass</content>
+        <skipRecordTypeSelect>true</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a custom object to capture IDPs</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Am_I_Supervisor_of_Record__c</fullName>
+        <description>This is a formula field used for reporting purposes that allows for filtering of records that the current user is the Supervisor.</description>
+        <externalId>false</externalId>
+        <formula>IF (Supervisor__c = $User.Id, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Am I Supervisor of Record</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Career_Goals_Long_Run__c</fullName>
+        <description>Employee&apos;s long term career goals</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Long Term Career Goals (3+ Years) - Insert your Long-Term Career Goals here (3+ Years). Avoid using the following special characters: &gt;  &lt;  &amp;  &quot;  &apos; in the text boxes.</inlineHelpText>
+        <label>Long-Term Career Goals (3+ Years)</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Career_Goals_Short_Run__c</fullName>
+        <description>Employee&apos;s Short term career goals</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Short Term Career Goals (1-3 Years) - Insert your Short-Term Career Goals here (1-3 Years). Avoid using the following special characters: &gt;  &lt;  &amp;  &quot;  &apos; in the text boxes.</inlineHelpText>
+        <label>Short Term Career Goals (1-3 Years)</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Create_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Created Date - This field pre-populates with the date the IDP was created</inlineHelpText>
+        <label>Create Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Developmental_Objectives_del__c</fullName>
+        <description>Listed goals to develop employee skills and attain expertise</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Dev Objectives - The goals for this year related to skills, performance, enhancement and career. Ideally, dev activities should align to these goals
+Examples: 1. Enhance Selling Skills 
+2. Improve Communication Skills 
+3. Obtain/maintain certification</inlineHelpText>
+        <label>Developmental Objectives</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Director__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field that manually shares the record with the employees Director</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Other Viewer - Select another individual who should be able to view your IDP</inlineHelpText>
+        <label>Other Viewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>IDP1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Division_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Division</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Division Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Email</formula>
+        <inlineHelpText>Employee Email - This field pre-populates with your email address</inlineHelpText>
+        <label>Employee Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Employee Name - This field pre-populates with your first and last name</inlineHelpText>
+        <label>Employee Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_SF_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>OwnerId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Employee SF ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Fiscal Year</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Year_pick__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Fiscal Year - Select the fiscal year for the IDP</inlineHelpText>
+        <label>Fiscal Year</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FY 2011</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2012</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2013</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2014</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2015</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2016</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2017</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2018</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2019</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2020</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2021</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2022</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2023</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY 2024</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Formula_helper_text__c</fullName>
+        <externalId>false</externalId>
+        <label>Formula helper text</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSA_Organization__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.MAJOR_ORG_DESCRIPTION__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>GSA Organization - This field pre-populates based on the organization information provided on your user profile</inlineHelpText>
+        <label>GSA Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grade__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Grade - Reference CHRIS to see your Grade</inlineHelpText>
+        <label>Grade</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>00</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>01</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>06</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>07</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>08</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>09</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IDP_Fiscal_Year_Validation__c</fullName>
+        <description>validation rule used to check if IDP is from a prior year</description>
+        <externalId>false</externalId>
+        <label>IDP Fiscal Year Validation</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IDP_Names__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.FirstName &amp; &apos; &apos; &amp;  Owner:User.LastName &amp; &apos; &apos; &amp; &apos;-&apos; &amp; &apos; &apos; &amp; Text(Fiscal_Year_pick__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>IDP Name - This field will pre-populate your full name and the fiscal year</inlineHelpText>
+        <label>IDP Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IDP_Status__c</fullName>
+        <description>IDP Status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>IDP Status - This field indicates where your IDP stands (i.e. New, Supervisor Review, Needs Revision, Approved, Resubmit, Archived)</inlineHelpText>
+        <label>IDP Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Supervisor Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Needs Revision</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Resubmit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Archived</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Payplan__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Pay Plan - Reference CHRIS to see your Pay Plan</inlineHelpText>
+        <label>Payplan</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CA - Board of Contract Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ES - Senior Executive Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EX - Executive Schedule</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GL - Law Enforcement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GM - Former PMRS employees</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GS - General Schedule</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IG - Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SL - Senior level positions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WD - Wage Nonsupervisory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WG - Wage Grade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WL - Wage Leader</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WS - Wage Supervisor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Position_Levels__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.Supervisory_Status_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Position Level - This field displays your official position level. If the information is incorrect you must request a change in CHRIS by contacting your HR rep</inlineHelpText>
+        <label>Position Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <defaultValue>LEFT($User.Division, 2)</defaultValue>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Series__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Series - Select the position classification four digit series that is applicable to you (e.g., 0201)</inlineHelpText>
+        <label>Series</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0018 - Safety and Occupational Health Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0020 - Community Planning Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0028 - Environmental Protection Specialist Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0080 - Security Administration Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0086 - Security Clerical and Assistant Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0089 - Emergency Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0099 - General Student Trainee Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0110 - Economist Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0132 - Intelligence Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0201 - HR Specialist Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0203 - Human Resources Assistant Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0260 - Equal Employment Opportunity Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0299 - Human Resources Management Student Trainee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0301 - Miscellaneous Administration and Program Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0303 - Miscellaneous Clerk and Assistant Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0305 - Mail and File Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0306 - Government Information Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0308 - Records and Information Management Specialist</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0318 - Secretary Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0326 - Office Automation Clerical and Assistance Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0335 - Computer Clerk and Assistant Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0340 - Program Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0341 - Administrative Officer Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0342 - Support Services Administration Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0343 - Management and Program Analysis Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0344 - Management and Program Clerical and Assistance Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0350 - Equipment Operator Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0360 - Equal Opportunity Compliance Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0391 - Telecommunication Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0392 - General Telecommunication Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0399 - Administration and Office Support Student Trainee Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0414 - Entomology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0437 - Horticulture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0501 - Financial Administration and Program Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0503 - Financial Clerical and Technician Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0505 - Financial Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0510 - Accounting Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0511 - Auditing Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0525 - Accounting Technician</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0544 - Civilian Pay Technician</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0560 - Budget Analysis Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0561 - Budget Clerical and Assistance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0599 - Student Trainee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0601 - General Health Science Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0690 - Industrial Hygiene Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0801 - General Engineering and Architecture Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0802 - Engineering Technical Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0804 - Fire Protection Engineering Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0807 - Landscape Architecture Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0808 - Architecture Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0809 - Construction Control Technical Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0810 - Civil Engineering Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0819 - Environmental Engineering Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0828 - Construction Analyst Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0830 - Mechanical Engineering Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0850 - Electrical Engineering Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0855 - Electronics Engineer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0856 - Electronics Technical Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0899 - Engineering and Architecture Student Trainee Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0905 - General Attorney Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0950 - Paralegal Specialist Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0986 - Legal Clerical and Assistance Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1001 - General Arts and Information Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1008 - Interior Design Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1035 - Public Affairs Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1071 - Audio Visual Production Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1082 - Writing and Editing Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1084 - Visual Information Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1099 - Information and Arts Student Trainee Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1101 - General Business and Industry Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1102 - Contracting Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1104 - Property Disposal Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1105 - Purchasing Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1106 - Procurement Clerical and Technician Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1107 - Property Disposal Clerical and Technician Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1130 - Public Utilities Specialist Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1160 - Financial Analysis Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1170 - Realty Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1171 - Appraising Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1176 - Building Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1199 - Business and Industry Student Trainee Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1199 - Supervisory Building Manager</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1301 - General Physical Science Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1320 - Chemist</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1411 - Library Technician Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1515 - Computer Science Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1530 - Statistics Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1601 - Equipment, Facilities, and Services Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1640 - Facility Operations Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1654 - Printing Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1670 - Equipment Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1701 - General Education and Training Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1801 - General Inspection, Investigation, Enforcement, and Compliance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1811 - Criminal Investigation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1910 - Quality Assurance Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2001 - General Supply Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2003 - Supply Program Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2005 - Supply Clerical and Technician Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2010 - Inventory Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2030 - Distribution Facilities and Storage Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2032 - Packaging Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2099 - Supply Student Trainee Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2101 - Transportation Specialist Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2102 - Transportation Clerk and Assistance Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2130 - Traffic Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2131 - Freight Rate Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2150 - Transportation Operations Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2199 - Transportation Student Trainee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2210 - Information Technology Management Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2299 - Information Technology Management Student Trainee Series</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2604 - Electronics Mechanic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2801 - Electrical Installation and Maintenance Family</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2805 - Electrician</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3502 - Laboring</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3566 - Custodial Working</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3603 - Masonry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3610 - Insulating</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3806 - Sheet Metal Mechanic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4102 - Painting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4204 - Pipe Fitting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4206 - Plumbing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4604 - Wood Working</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4605 - Wood Crafting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4607 - Carpentry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4701 - General Operations and Maintenance Work Family</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4737 - Carpenter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4737 - General Equipment Mechanic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4742 - Utility Systems Repairing-Operating</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4749 - General Operations and Maintenance Work Student Trainee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4804 - Locksmithing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5003 - Gardening</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5306 - Air Conditioning Equipment Mechanic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5313 - Elevator Mechanic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5406 - Utility Systems Operating</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5703 - Motor Vehicle Operating</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5876 - Electromotive Equipment Mechanic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6907 - Materials Handling</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7002 - Packing</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Specialization__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Procurement Specialization - Please select any Procurement Specializations you currently hold. Please note, more than one specialization may be selected.</inlineHelpText>
+        <label>Procurement Specialization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FAC-C</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAC-COR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAC-P/PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAC-P/PM (IT)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO - Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO - Leasing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO - Real Property Disposal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO - Fleet Disposal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO - Personal Property Disposal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO - Telecom</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup for the approving supervisor</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Supervisor - Choose your Supervisor using the lookup function.  This field will indicate who your IDP should be sent to for approval.</inlineHelpText>
+        <label>Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>IDP</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Activity_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Activity Count</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Validation_one_idp_per_year__c</fullName>
+        <description>test validation for only 1 idp per user</description>
+        <externalId>false</externalId>
+        <label>Validation one idp per year</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>office_Symbol__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Division</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Office Symbol - This field pre-populates with your Office Symbol.  If the information is incorrect you must request a change in CHRIS by contacting your HR rep</inlineHelpText>
+        <label>Office Symbol</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Shared IDPs</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Employee_Name__c</columns>
+        <columns>Fiscal_Year_pick__c</columns>
+        <columns>IDP_Status__c</columns>
+        <columns>Create_Date__c</columns>
+        <columns>GSA_Organization__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>IDP-{0000000}</displayFormat>
+        <label>IDP Record Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Shared IDPs</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>IDP_Approved</fullName>
+        <active>true</active>
+        <description>Record type used when IDP has been approved.</description>
+        <label>IDP Approved</label>
+        <picklistValues>
+            <picklist>Fiscal_Year_pick__c</picklist>
+            <values>
+                <fullName>FY 2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FY 2019</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grade__c</picklist>
+            <values>
+                <fullName>00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IDP_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Revision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Resubmit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payplan__c</picklist>
+            <values>
+                <fullName>CA - Board of Contract Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ES - Senior Executive Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EX - Executive Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GL - Law Enforcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GM - Former PMRS employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GS - General Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IG - Inspector General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL - Senior level positions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WD - Wage Nonsupervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WG - Wage Grade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WL - Wage Leader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WS - Wage Supervisor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Series__c</picklist>
+            <values>
+                <fullName>0018 - Safety and Occupational Health Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0020 - Community Planning Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0028 - Environmental Protection Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0080 - Security Administration Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0086 - Security Clerical and Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0089 - Emergency Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0099 - General Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0110 - Economist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0132 - Intelligence Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0201 - HR Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0203 - Human Resources Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0260 - Equal Employment Opportunity Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0299 - Human Resources Management Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0301 - Miscellaneous Administration and Program Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0303 - Miscellaneous Clerk and Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0305 - Mail and File Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0306 - Government Information Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0308 - Records and Information Management Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0318 - Secretary Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0326 - Office Automation Clerical and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0335 - Computer Clerk and Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0340 - Program Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0341 - Administrative Officer Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0342 - Support Services Administration Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0343 - Management and Program Analysis Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0344 - Management and Program Clerical and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0350 - Equipment Operator Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0360 - Equal Opportunity Compliance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0391 - Telecommunication Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0392 - General Telecommunication Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0399 - Administration and Office Support Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0414 - Entomology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0437 - Horticulture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0501 - Financial Administration and Program Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0503 - Financial Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0505 - Financial Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0510 - Accounting Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0511 - Auditing Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0525 - Accounting Technician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0544 - Civilian Pay Technician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0560 - Budget Analysis Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0561 - Budget Clerical and Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0599 - Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0601 - General Health Science Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0690 - Industrial Hygiene Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0801 - General Engineering and Architecture Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0802 - Engineering Technical Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0804 - Fire Protection Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0807 - Landscape Architecture Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0808 - Architecture Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0809 - Construction Control Technical Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0810 - Civil Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0819 - Environmental Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0828 - Construction Analyst Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0830 - Mechanical Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0850 - Electrical Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0855 - Electronics Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0856 - Electronics Technical Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0899 - Engineering and Architecture Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0905 - General Attorney Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0950 - Paralegal Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0986 - Legal Clerical and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1001 - General Arts and Information Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1008 - Interior Design Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1035 - Public Affairs Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1071 - Audio Visual Production Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1082 - Writing and Editing Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1084 - Visual Information Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1099 - Information and Arts Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1101 - General Business and Industry Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1102 - Contracting Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1104 - Property Disposal Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1105 - Purchasing Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1106 - Procurement Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1107 - Property Disposal Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1130 - Public Utilities Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1160 - Financial Analysis Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1170 - Realty Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1171 - Appraising Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1176 - Building Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1199 - Business and Industry Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1199 - Supervisory Building Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1301 - General Physical Science Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1320 - Chemist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1411 - Library Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1515 - Computer Science Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1530 - Statistics Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1601 - Equipment%2C Facilities%2C and Services Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1640 - Facility Operations Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1654 - Printing Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1670 - Equipment Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1701 - General Education and Training Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1801 - General Inspection%2C Investigation%2C Enforcement%2C and Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1811 - Criminal Investigation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1910 - Quality Assurance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2001 - General Supply Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2003 - Supply Program Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2005 - Supply Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 - Inventory Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2030 - Distribution Facilities and Storage Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2032 - Packaging Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2099 - Supply Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2101 - Transportation Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2102 - Transportation Clerk and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2130 - Traffic Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2131 - Freight Rate Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2150 - Transportation Operations Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2199 - Transportation Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2210 - Information Technology Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2299 - Information Technology Management Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2604 - Electronics Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2801 - Electrical Installation and Maintenance Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2805 - Electrician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3502 - Laboring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3566 - Custodial Working</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3603 - Masonry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3610 - Insulating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3806 - Sheet Metal Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4102 - Painting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4204 - Pipe Fitting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4206 - Plumbing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4604 - Wood Working</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4605 - Wood Crafting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4607 - Carpentry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4701 - General Operations and Maintenance Work Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4737 - Carpenter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4737 - General Equipment Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4742 - Utility Systems Repairing-Operating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4749 - General Operations and Maintenance Work Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4804 - Locksmithing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5003 - Gardening</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5306 - Air Conditioning Equipment Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5313 - Elevator Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5406 - Utility Systems Operating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5703 - Motor Vehicle Operating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5876 - Electromotive Equipment Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6907 - Materials Handling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7002 - Packing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Specialization__c</picklist>
+            <values>
+                <fullName>CO - Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Fleet Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Leasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Personal Property Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Real Property Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-COR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-P%2FPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-P%2FPM %28IT%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>IDP_Standard</fullName>
+        <active>true</active>
+        <description>Standard record type for IDP</description>
+        <label>IDP Standard</label>
+        <picklistValues>
+            <picklist>Fiscal_Year_pick__c</picklist>
+            <values>
+                <fullName>FY 2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FY 2019</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grade__c</picklist>
+            <values>
+                <fullName>00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IDP_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Revision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Resubmit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payplan__c</picklist>
+            <values>
+                <fullName>CA - Board of Contract Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ES - Senior Executive Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EX - Executive Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GL - Law Enforcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GM - Former PMRS employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GS - General Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IG - Inspector General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL - Senior level positions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WD - Wage Nonsupervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WG - Wage Grade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WL - Wage Leader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WS - Wage Supervisor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Series__c</picklist>
+            <values>
+                <fullName>0018 - Safety and Occupational Health Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0020 - Community Planning Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0028 - Environmental Protection Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0080 - Security Administration Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0086 - Security Clerical and Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0089 - Emergency Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0099 - General Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0110 - Economist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0132 - Intelligence Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0201 - HR Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0203 - Human Resources Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0260 - Equal Employment Opportunity Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0299 - Human Resources Management Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0301 - Miscellaneous Administration and Program Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0303 - Miscellaneous Clerk and Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0305 - Mail and File Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0306 - Government Information Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0308 - Records and Information Management Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0318 - Secretary Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0326 - Office Automation Clerical and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0335 - Computer Clerk and Assistant Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0340 - Program Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0341 - Administrative Officer Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0342 - Support Services Administration Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0343 - Management and Program Analysis Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0344 - Management and Program Clerical and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0350 - Equipment Operator Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0360 - Equal Opportunity Compliance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0391 - Telecommunication Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0392 - General Telecommunication Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0399 - Administration and Office Support Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0414 - Entomology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0437 - Horticulture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0501 - Financial Administration and Program Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0503 - Financial Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0505 - Financial Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0510 - Accounting Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0511 - Auditing Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0525 - Accounting Technician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0544 - Civilian Pay Technician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0560 - Budget Analysis Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0561 - Budget Clerical and Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0599 - Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0601 - General Health Science Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0690 - Industrial Hygiene Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0801 - General Engineering and Architecture Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0802 - Engineering Technical Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0804 - Fire Protection Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0807 - Landscape Architecture Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0808 - Architecture Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0809 - Construction Control Technical Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0810 - Civil Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0819 - Environmental Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0828 - Construction Analyst Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0830 - Mechanical Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0850 - Electrical Engineering Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0855 - Electronics Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0856 - Electronics Technical Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0899 - Engineering and Architecture Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0905 - General Attorney Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0950 - Paralegal Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0986 - Legal Clerical and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1001 - General Arts and Information Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1008 - Interior Design Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1035 - Public Affairs Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1071 - Audio Visual Production Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1082 - Writing and Editing Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1084 - Visual Information Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1099 - Information and Arts Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1101 - General Business and Industry Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1102 - Contracting Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1104 - Property Disposal Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1105 - Purchasing Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1106 - Procurement Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1107 - Property Disposal Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1130 - Public Utilities Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1160 - Financial Analysis Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1170 - Realty Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1171 - Appraising Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1176 - Building Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1199 - Business and Industry Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1199 - Supervisory Building Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1301 - General Physical Science Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1320 - Chemist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1411 - Library Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1515 - Computer Science Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1530 - Statistics Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1601 - Equipment%2C Facilities%2C and Services Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1640 - Facility Operations Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1654 - Printing Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1670 - Equipment Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1701 - General Education and Training Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1801 - General Inspection%2C Investigation%2C Enforcement%2C and Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1811 - Criminal Investigation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1910 - Quality Assurance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2001 - General Supply Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2003 - Supply Program Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2005 - Supply Clerical and Technician Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 - Inventory Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2030 - Distribution Facilities and Storage Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2032 - Packaging Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2099 - Supply Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2101 - Transportation Specialist Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2102 - Transportation Clerk and Assistance Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2130 - Traffic Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2131 - Freight Rate Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2150 - Transportation Operations Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2199 - Transportation Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2210 - Information Technology Management Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2299 - Information Technology Management Student Trainee Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2604 - Electronics Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2801 - Electrical Installation and Maintenance Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2805 - Electrician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3502 - Laboring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3566 - Custodial Working</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3603 - Masonry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3610 - Insulating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3806 - Sheet Metal Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4102 - Painting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4204 - Pipe Fitting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4206 - Plumbing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4604 - Wood Working</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4605 - Wood Crafting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4607 - Carpentry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4701 - General Operations and Maintenance Work Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4737 - Carpenter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4737 - General Equipment Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4742 - Utility Systems Repairing-Operating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4749 - General Operations and Maintenance Work Student Trainee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4804 - Locksmithing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5003 - Gardening</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5306 - Air Conditioning Equipment Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5313 - Elevator Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5406 - Utility Systems Operating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5703 - Motor Vehicle Operating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5876 - Electromotive Equipment Mechanic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6907 - Materials Handling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7002 - Packing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Specialization__c</picklist>
+            <values>
+                <fullName>CO - Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Fleet Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Leasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Personal Property Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Real Property Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO - Telecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-COR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-P%2FPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAC-P%2FPM %28IT%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Employee_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Fiscal_Year_pick__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Create_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supervisor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Director__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDP_Status__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Employee_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Fiscal_Year_pick__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IDP_Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Employee_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Fiscal_Year_pick__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDP_Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Employee_Name__c</searchFilterFields>
+        <searchFilterFields>Fiscal_Year_pick__c</searchFilterFields>
+        <searchFilterFields>IDP_Status__c</searchFilterFields>
+        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
+        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+        <searchResultsAdditionalFields>IDP_Names__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Fiscal_Year_pick__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>GSA_Organization__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDP_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Create_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Other_Viewer_Access__c</fullName>
+        <label>Other Viewer Access</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>Supervisor_Access__c</fullName>
+        <label>Supervisor Access</label>
+    </sharingReasons>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <fullName>ClonePlus</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/ClonePlus?id={!IDP__c.Id}&amp;childobjecttypes=Developmental_Objective__c</url>
+    </webLinks>
+</CustomObject>

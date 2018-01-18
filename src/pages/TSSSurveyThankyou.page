@@ -1,0 +1,80 @@
+<!-- TSS Action Planning Application -------------------------->
+<!------------------------------------------------------------->
+<!-- Created By      | Version |  Date    | Description ------->
+<!------------------------------------------------------------->
+<!-- Raja Kumar        1.0      05/19/2015  Created          -->
+<!-- Raja Kumar        1.1      08/21/2015  Changed title    -->
+<!-- Raja Kumar        1.2      08/31/2015  O&M Case# 00019575 -End of survey message from 9/11/2015 COB to 9/18/2015 COB-->
+<!---Ramesh Dugar       1.3      05/3/2016  Mobile Compatile>
+<!-- Raja Kumar        1.4      07/06/2016  O&M Case# 26481 -update the thank you message and signature -->
+<!-- Raja Kumar        1.5      07/07/2016  O&M Case# 26516 -update the criteria to display the different thank you message -->
+<!-- Raja Kumar        1.6      07/29/2016  O&M Case# 26957 -update thankyou message criteria based on extended survey end date i.e. 8/9/2016 11:59pm ET -->
+<!------------------------------------------------------------->
+<apex:page sidebar="false" showheader="false" title="GSA" standardstylesheets="false" doctype="html-5.0" id="TSSthanks">
+<apex:stylesheet value="{!URLFOR($Resource.wds, '/uswds-0.9.0/css/uswds.min.css')}"/>
+
+    <style type="text/css">
+        body {
+          margin: 10px;
+
+        }
+        #TSSthanks:j_id3{
+            background-color:#fff;!important
+        }
+        div.bpageHeader {
+            display: none;
+        }
+        body.bpageFooter {
+            display: none;
+        }
+        body #AppBodyHeader { display: none; }
+
+
+    </style>
+
+  <apex:image url="{!URLFOR($Resource.GSATSSLogo)}" alt="GSA seal" width="286" height="50" />
+  <!-- THANK YOU MESSAGE BETWEEN 7/29/2015 and 9/11/2015 COB -->
+  <!-- THANK YOU MESSAGE BETWEEN <06/28/2016> and <07/18/2016> COB edited by KP -->
+  <!-- O&M Case# 26516 - Raja Kumar - criteria effective FROM 06/28/2016 to 08/02/2016 COB -->
+  <!-- O&M Case# 26957 - Raja Kumar - criteria effective FROM 06/28/2016 to 08/09/2016 COB -->
+  <div id="msg1">
+  <apex:outputPanel id="msg" layout="block"  rendered="{!IF(OR(AND( DAY(TODAY()) > 9, MONTH(TODAY()) == 8, YEAR(TODAY()) == 2016 ),
+                                                              AND( MONTH(TODAY()) > 8, YEAR(TODAY()) == 2016),
+                                                              AND( YEAR(TODAY()) > 2016)),
+                                                              false, true)}">
+
+      <apex:pageBlock >
+          <p style="font-style:Arial;font-size:1.7rem;text-align:left;margin-left:25px;margin-top:25px;margin-bottom:25px;">
+              On behalf of GSA, thank you for your feedback. This survey provides us with actionable information that we will utilize to 
+              improve your experience in Federal buildings.
+              <br/><br/>
+              Thank you,
+              <br/><br/>
+              <apex:image url="{!URLFOR($Resource.TSSThankyouSignature)}" alt="TSS Signature" width="163" height="94" />
+              <br/><br/>
+              Norman Dong<br/>
+              GSA Public Buildings Service Commissioner
+          </p>
+      </apex:pageBlock>
+  </apex:outputPanel>
+  </div>
+
+  <!-- END OF SURVEY MESSAGE FROM 9/12/2015 to 9/18/2015 COB -->
+  <!-- END OF SURVEY MESSAGE FROM <7/19/2016> to <TBD> COB edited by KP -->
+  <!-- O&M Case# 26516 - Raja Kumar - criteria effective FROM 08/03/2016 TO <TBD> -->
+  <!-- O&M Case# 26957 - Raja Kumar - criteria effective FROM 08/10/2016 TO <TBD> -->
+  <apex:outputPanel id="msg2" layout="block" rendered="{!IF(OR(AND( DAY(TODAY()) > 9, MONTH(TODAY()) == 8, YEAR(TODAY()) == 2016 ),
+                                                              AND( MONTH(TODAY()) > 8, YEAR(TODAY()) == 2016),
+                                                              AND( YEAR(TODAY()) > 2016)),
+                                                              true, false)}">
+      <apex:pageBlock >
+          <p style="font-style:Arial;font-size:1.7rem;text-align:left;margin-left:25px;margin-top:25px;margin-bottom:25px;">
+              Thank you for your interest in the FY16 Federal Tenant Satisfaction Survey. This survey has closed and no additional feedback is being accepted at this time. <br/><br/>
+              Thank you again for your interest and we look forward to hearing from you next year.  <br/><br/>
+          </p>
+      </apex:pageBlock>
+  </apex:outputPanel>
+  <footer style="text-align:center;color:gray;margin-top:370px">
+   <p style="text-align:center;font-size:medium;">Proudly built using <a href="https://standards.usa.gov/" style="color:blue">U.S. Web Design Standards</a></p>
+  </footer>
+</apex:page>

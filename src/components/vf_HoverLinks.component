@@ -1,0 +1,55 @@
+<apex:component >
+    <div class="RLPanelShadow" id="RLPanelShadow"><div class="rls_top"><div class="rls_tl"></div>
+    <div class="rls_tr"></div></div><div class="rls_l"></div><div class="rls_r"></div>
+    <div class="RLPanel" id="RLPanel" onblur="sfdcPage.getRelatedListPanel('RLPanel').hideRLDelayed(null, 100)" onfocus="sfdcPage.getRelatedListPanel('RLPanel').showRL()" onmouseout="sfdcPage.getRelatedListPanel('RLPanel').hideRLDelayed(null, 100)" onmouseover="sfdcPage.getRelatedListPanel('RLPanel').showRL()"><iframe  frameborder="0" id="RLPanelFrame" name="RLPanelFrame" src="/emptyHtmlDoc.html" title="Hidden Frame - Ignore"></iframe></div><div class="rls_bottom"><div class="rls_bl"></div><div class="rls_br"></div></div></div><div class="listHoverLinks"><span  class="invisibleMinHeight">|</span></div><script  type="text/javascript">try { sfdcPage.registerRelatedListPanel('RLPanel',false);} catch(e) {}</script><script  type="text/javascript">function twistSection(twisty, sectionId) {
+   var parentDiv = twisty;
+   while (parentDiv.tagName != 'DIV') { parentDiv = parentDiv.parentNode; }
+   var headerId = sectionId || (parentDiv.id.split('_'))[1];
+   var div = parentDiv.nextSibling;
+   var elemWasOn = false;
+   if (div.style.display != 'none') {
+       div.style.display = 'none';
+       twisty.className ='showListButton';
+       twisty.alt = twisty.title = 'Show Section - '+twisty.name;
+       elemWasOn = true;
+   } else {
+       div.style.display = 'block';
+       twisty.className = 'hideListButton';
+       twisty.alt = twisty.title = 'Hide Section - '+twisty.name;
+   }
+addTwistCookie('Twister', headerId, elemWasOn);
+  return !elemWasOn;
+}
+var registeredSections = new Array();
+function registerTwistableSection(headerId, mainTableId) {
+   var obj = new Object();
+   obj.headerId = headerId;
+   obj.mainTableId = mainTableId;
+   registeredSections[registeredSections.length] = obj;
+}
+function twistAllSections(on) {
+   for (var i = 0; i < registeredSections.length; i++) {
+      var obj = registeredSections[i];
+      var img;
+      img = document.getElementById('img_' + obj.headerId);
+    if (on && 'showListButton' == img.className) {
+         twistSection(img, obj.headerId, obj.mainTableId);
+     } else if (!on && 'hideListButton' == img.className) {
+         twistSection(img, obj.headerId, obj.mainTableId);
+       }
+   }
+}
+function toggleSection(headerId, on){
+    var sectionHead = document.getElementById('head_'+headerId+'_ep');
+    var body = sectionHead.nextSibling;
+    var disp = on ? 'block' : 'none';
+    sectionHead.style.display = disp;
+    body.style.display = disp;
+}
+function registerTwistableSections_ep() {
+registerTwistableSection('OCIO_Title_VI_Reviews__r', 'ep');
+}
+registerTwistableSections_ep();
+ 
+</script>
+</apex:component>

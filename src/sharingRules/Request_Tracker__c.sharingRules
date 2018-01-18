@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Category_Close_Date_Company_Name_Complaintant_Name_Complaintant_email_Complaint</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Category Close Date Company Name Complaintant Name Complaintant email Complaint</label>
+        <sharedTo>
+            <group>Request_Tracker_Complaint_Tracker_Read</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Complaint Tracker</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Complaint_Tracker</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Complaint Tracker</label>
+        <sharedTo>
+            <group>Request_Tracker_Complaint_Tracker_User</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Complaint Tracker</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Request_Tracker_EPR_Admin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Request Tracker - EPR - Admin</label>
+        <sharedTo>
+            <group>Request_Tracker_EPR_Admin</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Evidence Preservation Requests</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Request_Tracker_EPR_Reader</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Request Tracker - EPR - Reader</label>
+        <sharedTo>
+            <group>Request_Tracker_EPR_Reader</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Evidence Preservation Requests</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Request_Tracker_EPR_ServerServices</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Request Tracker - EPR - ServerServices</label>
+        <sharedTo>
+            <group>Request_Tracker_EPR_ServerServices</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Evidence Preservation Requests</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Request_Tracker_ITS_Admin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Request Tracker - ITS - Admin</label>
+        <sharedTo>
+            <group>Request_Tracker_ITS_Admin</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Standard Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Request_Tracker_ITS_Reader</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Request Tracker - ITS - Reader</label>
+        <sharedTo>
+            <group>Request_Tracker_ITS_Reader</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Standard Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

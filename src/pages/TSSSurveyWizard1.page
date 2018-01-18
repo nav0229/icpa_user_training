@@ -1,0 +1,300 @@
+<!-- TSS Action Planning Application                         -->
+<!--  -----------------------------------------------------  -->
+<!-- Created By      | Version |  Date    | Description      -->
+<!--  -----------------------------------------------------  -->
+<!-- Raja Kumar        1.0      05/19/2015  Created          -->
+<!-- Raja Kumar        1.1      08/21/2015  Changed title    -->
+<!-- Todd Carlough     1.2      04/19/2016  UI/Mobile Update -->
+<!-- Khemvisoth Prum   1.3      05/03/2016  UI Update        -->
+<!-- Ramesh Dugar      1.4      05/03/2016  UI Updates, 508 compliance workaround,javascript validations -->
+<!-- Brad Smith        1.5      05/18/2016  Prevent resubmit -->
+<!-- Brad Smith        1.6      05/18/2016  Allow anon submit-->
+<!-- Ramesh Dugar      1.7      05/24/2016  Building not Listed & javascript validation  -->
+<!-- Raja Kumar P      1.8      06/14/2016  Update font-size and screen reader text/instructions -->
+<!-- Raja Kumar P      1.9      06/21/2016  Added an attribute i.e.cache=false -->
+<!--  -----------------------------------------------------  -->
+<apex:page controller="TSSSurveyController" sidebar="false" showheader="false" title="GSA"
+    standardStylesheets="false" id="Page1" doctype="html-5.0" cache="false">
+    <apex:stylesheet value="{!URLFOR($Resource.wds, '/uswds-0.9.0/css/uswds.min.css')}"/>
+
+      <style type="text/css">
+    .usa-heading-alt {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: rgb(91, 97, 107);
+    }
+
+    form {
+      max-width: 1400px;
+    }
+
+    label {
+      max-width: 1040px;
+      margin-top: 0px;
+    }
+
+    table th, table td {
+      border: 0px;
+      padding: 0px;
+      margin: 0px;
+
+    }
+
+    .question {
+      text-align: left;
+    }
+
+    .labelCol {
+      max-width: 300px;
+      max-height: 20px;
+    }
+
+
+    </style>
+
+  <div class="usa-grid">
+    <div class="usa-width-one-whole">
+  <apex:image url="{!URLFOR($Resource.GSATSSLogo)}" alt="GSA seal" width="286" height="50" />
+
+  <!-- added to prevent render of survey form if they've already taken the survey -Brad Smith -->
+  <apex:form id="Form1" rendered="{!!surveyfound}">
+  
+
+      <apex:pageBlock rendered="{!!flag}">
+          <!-- by Kumar - updated font-size and instructions --> 
+           <h6 style="font-size:1.5rem;text-transform:none;text-align:center"><strong>Note: </strong><i>Screen Reader users are encouraged to use this
+           <apex:commandLink value="accessible version" action="{!flagForDisabled}"/> to complete the survey.</i></h6>
+      </apex:pageBlock>
+
+      <apex:pageBlock rendered="{!flag}">               
+            <h6 style="font-size:1.7rem;text-transform:none;text-align:center"><strong>Note: </strong> <i>You are now viewing the screen reader accessible version of this page.</i></h6>
+      </apex:pageBlock>
+
+      <h1>Federal Tenant Satisfaction Survey</h1>
+      <h4>Page 1 of 2</h4>
+      <h2 class="usa-heading-alt">Welcome to the 2016 Federal Tenant Satisfaction Survey</h2>
+      <br />
+
+      <p style="color:white;font-size:0px">Instructions: Questions marked with asterisk (*) are required. Users of Assistive Technology such as Screen Readers are
+                                          encouraged to read the contents of each page by tabbing through or using the Down Arrow Key. All controls on this survey can be
+                                          navigated by use of the keyboard and selections can be made by pressing either the
+                                          Space Bar or Enter Key.</p>
+  <fieldset>
+      <apex:messages />
+      <apex:pageBlock mode="edit" id="Block1" >
+      <span> <b style="color:red">*</b>
+          <apex:outputLabel value=" Are you a 100% 'Virtual' or Remote Employee?</br>
+                                   <div style='font-style:italic;font-weight:normal;'>('Virtual/Remote Employee' is a federal worker
+                                   who teleworks full-time from a location other than a federally-owned or leased
+                                   building.)<br><br></div>" for="virtual" styleClass="question1" style="display:inline"
+                            html-aria-label="* Are you a 100% Virtual or Remote Employee?"
+                            title="Are you a 100% Virtual or Remote Employee?" escape="false"/>
+                            </span>
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <!--<div class="requiredBlock"></div> -->
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          <apex:actionRegion >
+          <apex:selectList size="1" value="{!telework}" id="virtual" required="true"
+                           title="Are you a 100% Virtual or Remote Employee?"
+                           html-aria-label="* Are you a 100% Virtual or Remote Employee?" html-aria-required="true">
+            <apex:selectOptions value="{!teleworktype}"/>
+            <apex:actionSupport event="onchange" rerender="buttons,state,panel1,panel2,test" />
+            <!--<apex:actionSupport event="onchange" reRender="homeform, out, msg"/> -->
+          </apex:selectList>
+          </apex:actionRegion>
+          </apex:outputPanel>
+
+        <apex:outputPanel id="panel1">
+        <apex:outputPanel styleClass="requiredInput" layout="block" rendered="{!telework=='No'}" >
+          <p>Please select the following:</p>
+
+          <span> <b style="color:red">*</b>
+          <apex:outputLabel value=" Department/Agency" title="Department/Agency" for="agency" styleClass="question" style="display:inline"/>
+          </span>
+
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          <apex:actionRegion >
+            <apex:selectList size="1" value="{!agency}" id="agency" required="false" title="Department/Agency"
+                             html-aria-label="* Department/Agency" html-aria-required="true">
+                <apex:selectOptions value="{!agencies}"/>
+                <apex:actionSupport event="onchange" reRender="bureau"/>
+            </apex:selectList>
+          </apex:actionRegion>
+
+
+          <br />
+          <span> <b style="color:red">*</b>
+          <apex:outputLabel value=" Bureau" title="Bureau" for="bureau" styleClass="question" style="display:inline"/></span>
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          <apex:actionRegion >
+            <apex:selectList size="1" value="{!bureau}" id="bureau" required="false" title="Bureau"
+                             html-aria-label="* Bureau" html-aria-required="true">
+                <apex:selectOptions value="{!bureaus}"/>
+                <apex:actionSupport event="onchange" reRender="state"/>
+            </apex:selectList>
+          </apex:actionRegion>
+          </apex:outputPanel>
+
+
+          <br />
+          <span> <b style="color:red">*</b>
+          <apex:outputLabel value=" State" for="state" title="State" styleClass="question" style="display:inline"/> </span>
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          <apex:actionRegion >
+            <apex:selectList size="1" value="{!state}" id="state" required="true" title="State"
+                             html-aria-label="* State" html-aria-required="true">
+                <apex:selectOptions value="{!states}"/>
+                <apex:actionSupport event="onchange" reRender="city, building"/>
+            </apex:selectList>
+          </apex:actionRegion>
+          </apex:outputPanel>
+
+
+          <br />
+          <span> <b style="color:red">*</b>
+          <apex:outputLabel value=" City" for="city" title="City" styleClass="question" style="display:inline"/> </span>
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          <apex:actionRegion >
+          <apex:selectList size="1" value="{!city}" id="city" title="City" html-aria-label="* City"
+                           html-aria-required="true">
+            <apex:selectOptions value="{!cities}"/>
+            <apex:actionSupport event="onchange" reRender="building"/>
+          </apex:selectList>
+          </apex:actionRegion>
+          </apex:outputPanel>
+
+          <br />
+          <span> <b style="color:red">*</b>
+          <apex:outputLabel value=" Building you work in" for="building" title="Building you work in" styleClass="question" style="display:inline"/> </span>
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          <apex:actionRegion >
+          <apex:selectList size="1" value="{!building}" id="building" title="Building you work in"
+                           html-aria-label="* Building you work in" html-aria-required="true">
+              <apex:selectOptions value="{!buildings}"/>
+              <apex:actionSupport event="onchange" rerender="panel2" />
+          </apex:selectList>
+          </apex:actionRegion>
+          </apex:outputPanel>
+
+          <br />
+          <apex:outputPanel id="panel2">
+            <apex:outputPanel styleClass="requiredInput" layout="block"  rendered="{!if(building==bldngntlistedvalue,true,false)}">
+              <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+              <span> <b style="color:red">*</b>
+              <apex:outputLabel value=" Please enter your building name</br>"
+                                      for="building2" title="Please enter your Building Name" styleClass="question" style="display:inline" escape="false"/> </span>
+              <div style='font-style:italic;font-weight:normal;'>(If you do not know your building name, please enter your street address in the field below [e.g., 123 Smith Street])<br></br><br></br></div>
+              <apex:outputPanel styleClass="requiredInput" layout="block">
+                <apex:inputText id="building2" value="{!bldngntlisted}" html-placeholder="e.g.,  Nakamura Courthouse"/>
+              </apex:outputPanel>
+            </apex:outputPanel>
+          </apex:outputPanel>
+
+          <div>
+            <p style="font-size:1.7rem;text-transform:none" tabindex="0">
+              <strong>Note:</strong>
+                <i>Please confirm that your selections above are correct before clicking "Next". If you have any questions, please contact us at
+                <a href='mailto:TSScustomerservice@gsa.gov?subject=Update TSS Building Information' >TSScustomerservice@gsa.gov.</a>
+                </i><br/>
+            </p>
+          </div>
+
+        </apex:outputpanel>
+    </apex:outputPanel>
+
+           <apex:outputpanel id="buttons">
+                <apex:commandButton value="Next" action="{!next}" rendered="{!telework<>'Yes'}"
+                                    title="next" onclick="return validatePage1();" />
+
+                <apex:commandButton value="Submit" action="{!save}" rendered="{!telework=='Yes'}" title="submit" />
+           </apex:outputpanel>
+
+     <!--
+        <apex:commandButton value="Next" action="{!next}" rendered="{!telework<>'Yes'}"
+                            title="next" onclick="return validatePage1();" />
+        <apex:commandButton value="Submit" action="{!save}" rendered="{!telework=='Yes'}" title="submit" /> -->
+
+    </apex:pageBlock>
+    </fieldset>
+  </apex:form>
+
+       <!-- added to notify the user that the reason the form isn't showing is because they have already taken the survey under this contact ID -Brad Smith. Updated the text as part of UAT feedback by Ramesh Dugar on 5/27-->
+       <apex:outputpanel rendered="{!surveyfound}" layout="block">
+            <apex:pageBlock >
+                <p style="font-style:Arial;font-size:18px;text-align:left;margin-left:-2px;margin-top:25px;margin-bottom:25px;">
+                    Hello! It looks like you've already submitted your survey - thanks for your feedback.  If you have any questions, please contact us at 
+                    <a href="mailto:TSScustomerservice@gsa.gov" tabindex="-1">TSScustomerservice@gsa.gov.</a>
+                    <br/>
+                </p>
+            </apex:pageBlock>
+       </apex:outputpanel>
+
+   </div>
+  </div>
+  <footer style="text-align:center;color:gray;margin-top:250px">
+   <p style="text-align:center;font-size:medium;">Proudly built using <a href="https://standards.usa.gov/" style="color:blue">U.S. Web Design Standards</a></p>
+  </footer>
+   <script type="text/javascript">
+      function validatePage1() {
+          var virttxt = document.getElementById('{!$Component.Page1.Form1.Block1.virtual}').value;
+
+          if(virttxt !== "No" && virttxt !=="Yes") {
+              alert('Please indicate if you are a "virtual" or remote employee.');
+              document.getElementById('{!$Component.Page1.Form1.Block1.virtual}').focus();
+              return false;
+          }
+          if (virttxt == 'No') {
+              var agencytxt = document.getElementById('{!$Component.Page1.Form1.Block1.agency}').value;
+              var bureautxt = document.getElementById('{!$Component.Page1.Form1.Block1.bureau}').value;
+              var statetxt = document.getElementById('{!$Component.Page1.Form1.Block1.state}').value;
+              var citytxt = document.getElementById('{!$Component.Page1.Form1.Block1.city}').value;
+              var bldgtxt = document.getElementById('{!$Component.Page1.Form1.Block1.building}').value;
+
+          }
+          if (virttxt =='No' && (agencytxt == '--Select Agency--' || agencytxt =='' || agencytxt==null)) {
+              alert('Please select the Department/Agency.');
+              document.getElementById('{!$Component.Page1.Form1.Block1.agency}').focus();
+              return false;
+          }
+          if (virttxt =='No' && (bureautxt == '--Select Bureau--' || bureautxt =='' || bureautxt==null)) {
+              alert('Please select the Bureau.');
+              document.getElementById('{!$Component.Page1.Form1.Block1.bureau}').focus();
+              return false;
+          }
+
+          else if (virttxt =='No' && (statetxt == '--Select State--' || statetxt =='' || statetxt==null)) {
+              alert('Please select the State.');
+              document.getElementById('{!$Component.Page1.Form1.Block1.state}').focus();
+              return false;
+          }
+          else if (virttxt =='No' && (citytxt == '--Select City--' || citytxt =='' || citytxt==null)) {
+              alert('Please select the City.');
+              document.getElementById('{!$Component.Page1.Form1.Block1.city}').focus();
+              return false;
+          }
+          else if (virttxt =='No' && (bldgtxt == '--Select Building--' || bldgtxt =='' || bldgtxt==null)) {
+              alert('Please select the Building.');
+              document.getElementById('{!$Component.Page1.Form1.Block1.building}').focus();
+              return false;
+          }
+          else if (virttxt =='No' && (bldgtxt != '--Select Building--' || bldgtxt !='' || bldgtxt!=null)) {
+              var bldgntlstdtxt = document.getElementById('{!$Component.Page1:Form1:Block1:building2}').value;
+              if(bldgntlstdtxt == '' || bldgtxt==null){
+                alert('Please enter your building name. If you do not know your building name, please enter your street address.');
+                document.getElementById('{!$Component.Page1:Form1:Block1:building2}').focus();
+                return false;
+              }
+          }
+
+          else {
+              return true;
+          }
+      }
+  </script>
+  <apex:includeScript value="{!URLFOR($Resource.wds, '/uswds-0.9.0/js/uswds.min.js')}"/>
+
+</apex:page>

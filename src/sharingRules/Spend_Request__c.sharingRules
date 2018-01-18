@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Spend_Tracker_All_GSA_Employees</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Spend Tracker All GSA Employees</label>
+        <sharedTo>
+            <group>GSA_Employees</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Spend_Tracker_Contractors</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Spend Tracker Contractors</label>
+        <sharedTo>
+            <group>Spend_Tracker_Contractors</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Spend_Tracker_FAS_Approvers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Spend Tracker-FAS-Approvers</label>
+        <sharedTo>
+            <group>Spend_Tracker_FAS_Approvers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Spend Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Spend_Tracker_OCFO_Approvers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Spend Tracker-OCFO-Approvers</label>
+        <sharedTo>
+            <group>Spend_Tracker_OCFO_Approvers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Spend Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Spend_Tracker_PBS_Approvers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Spend Tracker-PBS-Approvers</label>
+        <sharedTo>
+            <group>Spend_Tracker_PBS_Approvers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Spend Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

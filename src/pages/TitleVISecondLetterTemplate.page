@@ -1,0 +1,67 @@
+<apex:page renderAs="pdf" standardStylesheets="false" showHeader="false" controller="TitleVISendLetterController">
+        <head>
+        <style>
+            @page {
+                margin-bottom: 100px ; 
+                @bottom-right { 
+                    content: element(footer);
+                }
+            }
+            div.footer {                
+                display: block;                           
+                position: running(footer);    
+                color:#C0C0C0;      
+                margin-top:0px;
+                text-align:right;
+                font-family:arial;
+            }   
+        </style>
+    </head>
+<div class="footer">
+U.S. General Services Administration <br /> 1800 F Street, NW <br /> Washington, DC 20405 <br /> www.gsa.gov
+</div>
+    <apex:form >
+        <apex:repeat value="{!contactsToMail}" var="currContact" >
+            <div style="width:100%;height:120px;">
+                <div style="float:left;">
+                    <apex:image url="{!$Resource.headerLogo}" />
+                </div>
+                <div style="float:right;color:#C0C0C0;font-family:arial;">
+                    GSA Office of Civil Rights
+                </div>
+            </div>
+            
+            {!todaysDate}<br/>
+            <br/>
+            
+            {!currContact.Contact.Salutation} {!currContact.Contact.Name}<br/>
+            {!currContact.Contact.Account.Name}<br/>
+            {!currContact.Contact.Account.BillingStreet}<br/>
+            {!currContact.Contact.Account.BillingCity}, {!currContact.Contact.Account.BillingState} {!currContact.Contact.Account.BillingPostalCode}
+            <br/><br/>
+        Dear {!currContact.Contact.Salutation} {!currContact.Contact.Name}:<br/>
+        
+        <p>This is a follow-up request for your organization’s civil rights compliance data
+        submission as a recipient of Federal surplus personal property through your State Agency 
+        for Surplus Property.  The General Services Administration’s (GSA) Office of Civil 
+        Rights (OCR) sent a letter more than 60 days ago requesting your organization’s submission.  
+        Based on a review of submissions received, our records do not reflect having received your 
+        organization’s submission.  Please provide OCR with your submission within ten (10) days from the date of this letter.</p> 
+        
+        <p>You must complete the compliance submission previously mailed to you.  Completed submissions must be mailed to the following address: </p>
+        <p>General Services Administration <br/>Office of Civil Rights (AK) <br/>1275 First Street, NE <br/>Room 513A <br/>Washington, DC, 20417</p>  
+        
+        <p>OCR is available to assist you with any questions you have regarding your organization’s submission.  You may reach us by email at civilrights@gsa.gov or by telephone at (202) 501-0767.</p>
+        <p>If your organization has recently provided our office with your submission, we thank you and please disregard this request.</p> 
+        
+        <br/>
+        Sincerely,
+        <br/>
+        Dennis Oden<br/>
+        Director, Civil Rights Division<br/>
+        Office of Civil Rights<br/>
+        General Services Administration<br/>
+        <div style="page-break-before:always;"></div>
+    </apex:repeat>
+  </apex:form>
+</apex:page>

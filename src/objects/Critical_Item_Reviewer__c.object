@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Critical_Item_Reviewer_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Critical Item Reviewers</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Critical_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Critical Item</label>
+        <referenceTo>Critical_Issues__c</referenceTo>
+        <relationshipName>Reviewers</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reviewed</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Reviewer Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Reviewers</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reviewing_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Reviewing Office</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Administrative Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Audit Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CIO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Exec Sec</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCIA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCSIT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OHRM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OMA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OSBU</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Central Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TTS</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Critical Item Reviewer</label>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>Reviewer#</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Critical Item Reviewers</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Reviewer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reviewing_Office__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reviewed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Critical_Item__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Reviewer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reviewing_Office__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reviewed__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Critical_Item_Reviewer_lookup_value</fullName>
+        <active>true</active>
+        <description>Need to validate the Critical Item look up shouldn&apos;t be changed from EDIT page.</description>
+        <errorConditionFormula>IF( ISNEW() , false,  ISCHANGED( Critical_Item__c ) )</errorConditionFormula>
+        <errorDisplayField>Critical_Item__c</errorDisplayField>
+        <errorMessage>You are not authorized to change the Critical Item look up record. Please go to the Critical Item record and add the Critical Item Reviewer from the related list.</errorMessage>
+    </validationRules>
+</CustomObject>

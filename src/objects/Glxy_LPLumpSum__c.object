@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains the lump sum changes to lease project payments for a single or successive months that are not changes to the annual rental rate.  These are one-time non-recurring payments such as annual tax adjustments, claims, or project buy-outs.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>APR_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>APR IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>APR_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>APR NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AUG_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>AUG IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AUG_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>AUG NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Acceptance620Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectNumber__r.Acceptance620Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Date 620 approved - sent to FW</inlineHelpText>
+        <label>620 to R7 Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AccrualType__c</fullName>
+        <externalId>false</externalId>
+        <label>Accrual Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Partial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Full</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Accrual__c</fullName>
+        <externalId>false</externalId>
+        <label>Accrual Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Annual Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BDGFlag__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Checkmark indicates item is included in budget projection</inlineHelpText>
+        <label>Include in Budget Flag</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Exclusion_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Exclusion Reason</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CurrentFYCalculatedValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+   (Text(LumSumType__c) == &apos;Broker Commission Credit&apos; || Text(LumSumType__c) == &apos;Rent Free Period&apos;), 
+         CASE(
+            MONTH(DateValue(Now())), 
+            10, (OCT_IA__c + OCT_NOA__c),
+            11, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c),
+            12, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c +  DEC_NOA__c),
+             1, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c),
+             2, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c + FEB_IA__c + FEB_NOA__c),
+             3, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c + FEB_IA__c + FEB_NOA__c + MAR_IA__c + MAR_NOA__c),
+             4, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c + FEB_IA__c + FEB_NOA__c + MAR_IA__c + MAR_NOA__c + APR_IA__c + 
+                 APR_NOA__c),
+             5, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c + FEB_IA__c + FEB_NOA__c + MAR_IA__c + MAR_NOA__c + APR_IA__c + APR_NOA__c  
+                 + MAY_IA__c + MAY_NOA__c),
+             6, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c + FEB_IA__c + FEB_NOA__c + MAR_IA__c + MAR_NOA__c + APR_IA__c + APR_NOA__c  
+                 + MAY_IA__c + MAY_NOA__c + JUN_IA__c + JUN_NOA__c),
+             7, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c + FEB_IA__c + FEB_NOA__c + MAR_IA__c + MAR_NOA__c + APR_IA__c + APR_NOA__c  
+                 + MAY_IA__c + MAY_NOA__c + JUN_IA__c + JUN_NOA__c + JUL_IA__c + JUL_NOA__c),
+             8, (OCT_IA__c + OCT_NOA__c + NOV_IA__c + NOV_NOA__c + DEC_IA__c + DEC_NOA__c + JAN_IA__c +  
+                 JAN_NOA__c + FEB_IA__c + FEB_NOA__c + MAR_IA__c + MAR_NOA__c + APR_IA__c + APR_NOA__c  
+                 + MAY_IA__c + MAY_NOA__c + JUN_IA__c + JUN_NOA__c + JUL_IA__c + JUL_NOA__c + OCT_IA__c  
+                 + OCT_NOA__c),
+             9, (FY_Obligation__c),
+            0
+         ), 
+      0
+   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Amount of transaction attributable to current FY</inlineHelpText>
+        <label>Current FY Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DEC_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DEC IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DEC_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DEC NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Delegated_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ProjectNumber__r.DelegatedProject__c=True, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Delegated Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDateFY__c</fullName>
+        <description>Calculates the FY of the Effective Date.</description>
+        <externalId>false</externalId>
+        <formula>Text(YEAR( EffectiveDate__c + 92 ))</formula>
+        <label>Effective Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExpirationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date_FY__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(ExpirationDate__c), Text(YEAR(EffectiveDate__c + 92 )), Text(YEAR(ExpirationDate__c + 92 )))</formula>
+        <label>Expiration Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FEB_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FEB IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FEB_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FEB NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FY_Obligation_IA__c</fullName>
+        <externalId>false</externalId>
+        <label>FY Obligation IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FY_Obligation_NOA__c</fullName>
+        <externalId>false</externalId>
+        <label>FY Obligation NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FY_Obligation__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FY Obligation</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IA_Sq_Ft__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>IA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsExpirationAndProcessedDateFYMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Expiration_Date_FY__c == Text(YEAR(ProcessedDate__c + 92 )), &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsExpirationAndProcessedDateFYMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsUserRegionMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(RegionCD__c==$User.Glxy_Region_Code__c,$User.Glxy_Region_Code__c==&quot;CO&quot;), &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsUserRegionMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JAN_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JAN IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JAN_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JAN NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUL_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUL IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUL_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUL NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUN_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUN IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUN_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUN NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LumSumType__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>In the drop down menu, choose the category that best describes the type of lump sum you&apos;re entering, such as rent free period, buyout, claim, etc</inlineHelpText>
+        <label>Lump Sum Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bid Tax</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Broker Commission Credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Buyout</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Catch Up Payment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Claim</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Debits &amp; Credits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Interest</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Paragraph 15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recovery Act</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rent Free Period</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tax Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Termination</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MAR_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAR IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAR_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAR NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAY_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAY IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAY_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAY NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MonthlyAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This field only applies to the Lump Sum Types &quot;Broker Commission Credit&quot;, and &quot;Rent Free Period&quot;.</inlineHelpText>
+        <label>Monthly Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOA_Sq_Ft__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOV_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOV IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOV_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOV NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Next_FY_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Amount__c -  FY_Obligation__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Next FY Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OCT_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>OCT IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OCT_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>OCT NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PaymentID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <inlineHelpText>Unique identifier from Rexus. This helps in finding the record in Rexus.</inlineHelpText>
+        <label>Payment ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessedDateFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(YEAR(ProcessedDate__c + 92 ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Process Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessedDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date completed</inlineHelpText>
+        <label>Process Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ProjectNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Number</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <errorMessage>Region value specified is outside your region</errorMessage>
+            <filterItems>
+                <field>$User.Glxy_Region_Code__c</field>
+                <operation>equals</operation>
+                <valueField>Glxy_LeaseProjects__c.RegionCd__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>$User.Glxy_Region_Code__c</field>
+                <operation>equals</operation>
+                <value>CO</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Glxy_LeaseProjects__c</referenceTo>
+        <relationshipLabel>Lease Proj Lump Sums</relationshipLabel>
+        <relationshipName>LP_Lump_Sums</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>RealtySpecialist__c</fullName>
+        <externalId>false</externalId>
+        <label>Realty Specialist Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RegionCD__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(ProjectNumber__r.RegionCd__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rexus_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Rexus Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SEP_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>SEP IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SEP_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>SEP NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>StatusCd__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Estimate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Voided</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TeamCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectNumber__r.TeamCode__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Team Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WithholdMonths__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This field only applies to the following Lump Sum Types: &quot;Broker Commission Credit&quot;, and &quot;Rent Free Period&quot;.</inlineHelpText>
+        <label>Withhold Months</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lease Proj Lump Sum</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>ProjectNumber__c</columns>
+        <columns>RegionCD__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>ExpirationDate__c</columns>
+        <columns>Amount__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Regions_Lump_Sums</fullName>
+        <columns>NAME</columns>
+        <columns>ProjectNumber__c</columns>
+        <columns>RegionCD__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>ExpirationDate__c</columns>
+        <columns>Amount__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <label>My Region&apos;s Lease Projects Lump Sums</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LPLS-{000000}</displayFormat>
+        <label>LP Lump Sum ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Lease Proj Lump Sums</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Placeholder</fullName>
+        <active>true</active>
+        <description>Record entered in Galaxy</description>
+        <label>Placeholder</label>
+        <picklistValues>
+            <picklist>AccrualType__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LumSumType__c</picklist>
+            <values>
+                <fullName>Bid Tax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Commission Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Buyout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Catch Up Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debits %26 Credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paragraph 15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recovery Act</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent Free Period</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tax Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>StatusCd__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Rexus</fullName>
+        <active>true</active>
+        <description>Record imported from Rexus</description>
+        <label>Rexus</label>
+        <picklistValues>
+            <picklist>AccrualType__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LumSumType__c</picklist>
+            <values>
+                <fullName>Bid Tax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Commission Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Buyout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Catch Up Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debits %26 Credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paragraph 15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recovery Act</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent Free Period</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tax Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>StatusCd__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>ProjectNumber__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RegionCD__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EffectiveDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ExpirationDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TeamCode__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>ProjectNumber__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RegionCD__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EffectiveDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ExpirationDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>SumOfNOAandIA</fullName>
+        <active>true</active>
+        <description>Sum of NOA and IA Sq. Ft. cannot exceed the total square feet of the Lease Project</description>
+        <errorConditionFormula>IF(AND(!CONTAINS($User.FirstName, &apos;CastIron&apos;), ProjectNumber__r.SquareFeet__c  &lt;&gt; 0), (IA_Sq_Ft__c + NOA_Sq_Ft__c &gt; ProjectNumber__r.SquareFeet__c), FALSE)</errorConditionFormula>
+        <errorDisplayField>NOA_Sq_Ft__c</errorDisplayField>
+        <errorMessage>Sum of NOA and IA Sq. Ft. cannot exceed the total square feet of the Lease Project</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_Budget_exclude_Comments</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(BDGFlag__c =False,ISBLANK( Budget_Exclusion_Reason__c ))</errorConditionFormula>
+        <errorDisplayField>Budget_Exclusion_Reason__c</errorDisplayField>
+        <errorMessage>Please provide a reason for exclusion of this record from the Budget</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,40 @@
+<apex:component controller="GLXY_FundApprover">
+	
+	<script>
+    	onload = function() {
+        	getFundApproverDetails();
+    	}
+	</script>
+	
+    <apex:attribute description="Pass the SF Object Name" name="ObjectID" type="String" required="true" assignTo="{!strObjectID}"/>
+    <apex:attribute description="Pass the SF Field Name"  name="FieldID"  type="String" required="true" assignTo="{!strFieldID}"/>
+    
+    <apex:pageBlock >
+      	<apex:outputPanel id="div1">
+      		<table border="0" align="left" width="100%">
+      			<tr>
+      				<td align="left"><b>Transaction ID&nbsp;&nbsp;&nbsp;</b></td>
+      				<td align="left"><b>Transaction Processed Date&nbsp;&nbsp;&nbsp;</b></td>
+      				<td align="left"><b>BA53 Approver&nbsp;&nbsp;&nbsp;</b></td>
+      				<td align="left"><b>Comments&nbsp;&nbsp;&nbsp;</b></td>
+      			</tr>
+      			<tr>
+      				<td><a target="_new" href="/{!strTransactionID}">{!strTransactionName}</a></td>
+      				<td>{!strApprovedDate}</td>
+					<td>{!strBA53Approver}</td>
+      				<td>{!strApprovalComments}</td>
+      			</tr>
+      		</table>
+      	</apex:outputPanel>
+	</apex:pageBlock>
+
+    <apex:form >
+    	<apex:pageBlock rendered="{!(ObjectID <> 'Glxy_LeaseProjects__c')}">
+    		<apex:actionFunction name="getFundApproverDetails" action="{!getFundApproverDetails}" rerender="div1"/>
+    	</apex:pageBlock>
+    	<apex:pageBlock rendered="{!(ObjectID == 'Glxy_LeaseProjects__c')}">
+    		<apex:actionFunction name="getFundApproverDetails" action="{!getFundApproverDetailsProj}" rerender="div1"/>
+    	</apex:pageBlock>
+    </apex:form>
+    
+</apex:component>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Benefits Realization</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Benefits Realizations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Benefit Measure --></label>
+        <name>Benefit_Measure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefit Owner --></label>
+        <name>Benefit_Owner__c</name>
+        <relationshipLabel><!-- Benefits Realizations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Benefit or Change Title --></label>
+        <name>Benefit_or_Change_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefit or Change? --></label>
+        <name>Benefit_or_Change__c</name>
+        <picklistValues>
+            <masterLabel>Benefit</masterLabel>
+            <translation><!-- Benefit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change</masterLabel>
+            <translation><!-- Change --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Benefits_Realization_Project__c</name>
+        <relationshipLabel><!-- Benefits Realizations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Realized --></label>
+        <name>Date_Realized__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exposure --></label>
+        <name>Exposure__c</name>
+        <picklistValues>
+            <masterLabel>High Profile (e.g., government-wide impact)</masterLabel>
+            <translation><!-- High Profile (e.g., government-wide impact) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low Profile (e.g., portfolio specific impact)</masterLabel>
+            <translation><!-- Low Profile (e.g., portfolio specific impact) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Profile (e.g., GSA-wide impact)</masterLabel>
+            <translation><!-- Medium Profile (e.g., GSA-wide impact) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Realization or Change Mgmt Approach --></label>
+        <name>Realization_or_Change_Mgmt_Approach__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed / Realized</masterLabel>
+            <translation><!-- Completed / Realized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Yet Started</masterLabel>
+            <translation><!-- Not Yet Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Date --></label>
+        <name>Target_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Benefit Type: Financial</masterLabel>
+            <translation><!-- Benefit Type: Financial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Type: Intangible</masterLabel>
+            <translation><!-- Benefit Type: Intangible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Type: Nonfinancial</masterLabel>
+            <translation><!-- Benefit Type: Nonfinancial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Type: Tangible</masterLabel>
+            <translation><!-- Benefit Type: Tangible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Type: IT Enabling Change</masterLabel>
+            <translation><!-- Change Type: IT Enabling Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Type: Organization Enabling Change</masterLabel>
+            <translation><!-- Change Type: Organization Enabling Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Type: Process Enabling Change</masterLabel>
+            <translation><!-- Change Type: Process Enabling Change --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Benefits Realization Layout</layout>
+        <sections>
+            <label><!-- Benefits Realization Description --></label>
+            <section>Benefits Realization Description</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Date Realized must be later than the Target Date --></errorMessage>
+        <name>Date_Realized_later_than_Target_Date</name>
+    </validationRules>
+</CustomObjectTranslation>

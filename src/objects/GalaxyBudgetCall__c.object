@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>The Budget Call jobs are run in a sequence. The finish method of the first job will schedule the next job. Since the job will still remain active in the system, we will see the error message about scheduling a job that is already existing. We will use this field to delete the job as soon as we’re done executing that step in the process.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AdjustFiscalYear__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Fiscal Year () function always return FY value one less than the current FY. If this changes in the future, this value should be set to &apos;0&apos;.</description>
+        <externalId>false</externalId>
+        <label>AdjustFiscalYear</label>
+        <precision>12</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apex_Jobs_Run_Date__c</fullName>
+        <description>The Date when all APEX jobs finished executing ...</description>
+        <externalId>false</externalId>
+        <label>Apex Jobs Run Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DataToStoreforXFYs__c</fullName>
+        <defaultValue>3</defaultValue>
+        <description>Budget Call Data - Calculate and save data for +- &quot;X&quot; years.</description>
+        <externalId>false</externalId>
+        <label>DataToStoreforXFYs</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysSinceLastLoad__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Pick up records from the data object for the last &quot;X&quot; days specified ...</description>
+        <externalId>false</externalId>
+        <label>DaysSinceLastLoad</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule10_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule10 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule11_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule11 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule12_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule12 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule13_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule13 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule14_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule14 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule2_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule2 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule3_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule3 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule4_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule4 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule5_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule5 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule6_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule6 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule7_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule7 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule8_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule8 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule9_ID__c</fullName>
+        <defaultValue>&apos;0&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule9 ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>GalaxyBudgetCall</label>
+    <visibility>Public</visibility>
+</CustomObject>

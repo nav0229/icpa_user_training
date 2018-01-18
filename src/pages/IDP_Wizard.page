@@ -1,0 +1,2446 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" Controller="IDP_WizardExtension" wizard="true" standardstylesheets="true" tabstyle="IDP__c">
+
+<style type="text/css">
+    .alignleft {
+        float: left;
+    }
+
+    .alignright {
+        float: right;
+    }
+
+    #surveyStyle {
+        background-color: #0084C9;
+    }
+
+    .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        background-color: #0084C9;
+        border-top: 0 none;
+    }
+    
+    .vfHelpText a {
+        position:relative;
+    }
+
+    .vfHelpText a span {
+        display: none;
+    }
+
+    .vfHelpText a:hover span {
+        display: block;
+        position:absolute;
+        top:1.25em;
+        padding:2px 5px;
+        left:-15em; width:15em;
+        z-index:100;
+        border:1px solid orange;
+        background-color:#FEFDB9;
+        color:black;
+    }
+
+    .close {
+        text-decoration: underline 
+    }
+
+    #overlay, #overlayActivities, #overlayCompetencies {
+        visibility: hidden;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align:center;
+        z-index: 9;
+        background-color: black;
+        opacity:1;
+         
+    }
+
+    #overlay div, #overlayActivities div, #overlayCompetencies div {
+        width:950px;
+        height:500px;
+        margin: 100px auto;
+        background-color: #f8f8f8;
+        border:1px solid #000;
+        padding:15px;
+        text-align:center;
+        opacity:0.9;
+        border-radius: 10px;
+    }
+    
+    #objInfo {
+        width: 100%;
+        background-color: #5B9BD5;
+        font-size: 1.2em;
+    }
+
+    .btn {
+         text-decoration:none !important;
+    }
+
+    #objOverlay {
+        text-align: left;
+        text-wrap:normal;
+    }
+
+    #objRow {
+        vertical-align:text-top;
+    }
+
+    #objLabel{
+        font-weight: bold;
+        vertical-align:text-top;
+        width: 125px;
+    }
+
+    #objData {
+        vertical-align:text-top;
+        width: 225px;
+    }
+
+    .closeImage{
+        position: relative;
+        left: 485px;
+        bottom: 34px;
+    }
+
+    .objName, #objName, .actName, #actName, .compName, #compName{
+        display: none;
+    }
+
+    .requriedBlock {
+        background-color: #c00;
+        position: absolute;
+        left: -4px;
+        width: 3px;
+        top: 1px;
+        bottom: 1px;
+        color:#c00 !important;
+    }
+
+    #datePicker{
+        top:621px; !important
+    }   
+</style>
+
+<script type="text/javascript">
+/*Changes as part of IDP Iteration 1.2 fixes -- Raja Nangunoori */
+
+    function checkSupervisor() {
+
+        var supervisor = '{!JSENCODE(newIDP.Supervisor__c)}'
+        var execute;
+        if(supervisor == ''){
+            alert('In order to submit your IDP you must update your Supervisor within the "Supervisor" field on the IDP information page.');
+            execute = false;
+            return execute;
+        } else {
+            execute = true;
+            return execute;
+        } 
+        
+    }
+
+    function onloadCondition()  {
+        
+        var status = '{!JSENCODE(newIDP.IDP_Status__c)}';
+        var idpID = '{!JSENCODE(newIDP.Id)}';
+        var operation;
+        var url = window.location.href;
+        var query_string = url.split("?");
+        
+        // make array of all name/value pairs in query string
+        var params = query_string[1].split("&");
+        
+        // loop through the parameters
+        var i = 0;
+        while (i < params.length) {
+            // compare param name against arg passed in
+            var param_item = params[i].split("=");
+            if (param_item[0] == operation) {
+                // if they match, return the value
+                return param_item[1];
+                
+            }
+            i++;
+        }
+         
+        if(status == 'Approved' && param_item[1] != 'Review'){
+            window.location = '/apex/IDP_Wizard?id='+idpID+'&operation=Review';
+        }
+             
+        // Christian's changes START
+        var obj = document.getElementById('j_id0:scwform:formBlock:actBlock:selObjective').value;
+        // Christian's changes END
+        var actName = document.getElementById('{!$Component.scwform.formBlock.actBlock.actName}').value;
+        var actType = document.getElementById('{!$Component.scwform.formBlock.actBlock.actType}').value;
+        var totalAct = '{!actCount}'
+
+        if(totalAct == 0 && param_item[1] != 'Review') {
+            //document.getElementById('{!$Component.scwform.formBlock.actBlock.savenull}').style.display = "none";
+            //document.getElementById('{!$Component.scwform.formBlock.actBlock.saveValue}').style.display = "inline";
+        }  
+         
+        if(totalAct != 0 && param_item[1] != 'Review'){
+            if(obj == '' || actName == '' || actType == ''){
+                document.getElementById('{!$Component.scwform.formBlock.actBlock.saveValue}').style.display = "none";
+                document.getElementById('{!$Component.scwform.formBlock.actBlock.savenull}').style.display = "inline";
+            }
+        }
+        
+    }
+         
+    function limitText(limitField, limitNum) {
+
+        var charLength = document.getElementById('{!$Component.scwform.formBlock.objBlock.objectiveTitle}').value;
+        var charLeft = limitNum-charLength.length;
+        if (limitField.value.length > limitNum) {
+            limitField.value = limitField.value.substring(0, limitNum);   
+        }   
+                
+        document.getElementById('showLimitChar').innerHTML = 'Total Remaining characters ' + charLeft;
+
+    }
+
+    function overlay(name){   
+
+        var title = document.getElementById(name+'title').innerHTML;
+        var desc = document.getElementById(name+'text').innerHTML;
+        document.getElementById("OTitle").innerHTML = title;
+        document.getElementById("OText").innerHTML = desc;
+        el = document.getElementById("overlay");
+        el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+        return false;
+
+    }
+
+    function formattedDate(date) {
+
+        var date = new Date(date);
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var showDay
+        var showMonth;
+        if(getDay == 31){
+            showDay = 1;
+            showMonth = getMonth + 1;
+        } else {
+            day = day + 1;
+            showDay = day;
+            showMonth = getMonth;
+        }
+
+        var year = date.getFullYear();
+        return [showmonth, showday, year].join('/');
+
+    }
+
+    function getFormattedDate(date){
+
+        var date = new Date(date);
+
+    }
+
+    function overlayActivity(acttitle){
+
+        var objId = document.getElementById(acttitle+'objId').innerHTML;
+        var actId = document.getElementById(acttitle+'actId').innerHTML;
+        var otitle = document.getElementById(acttitle+'title').innerHTML;  
+        var aname = document.getElementById(acttitle+'name').innerHTML;           
+        var atype = document.getElementById(acttitle+'type').innerHTML;
+        var sdate =  document.getElementById(acttitle+'sDate').innerHTML;  
+
+        var asdate;
+        if(!Date.parse(sdate)){
+            asdate = '';
+        } else {
+            var getDate = new Date(sdate);
+            var getMonth = getDate.getMonth() + 1;
+            var getDay = getDate.getDate();
+            var getYear = getDate.getFullYear();    
+            var showDay
+            var showMonth;
+            if(getDay == 31){
+                getDay = getDay + 1;
+                showDay = 1;
+                showMonth = getMonth + 1;
+            } else {
+                getDay = getDay + 1;
+                showDay = getDay;
+                showMonth = getMonth;       
+            }
+            asdate = [showMonth, showDay, getYear].join('/');
+        }
+
+        var edate = document.getElementById(acttitle+'eDate').innerHTML;
+        var aedate;
+        if(!Date.parse(edate)){
+            aedate = '';
+        } else {
+            var getDate = new Date(edate);
+            var getMonth = getDate.getMonth() + 1;
+            var getDay = getDate.getDate();
+            var getYear = getDate.getFullYear();    
+            var showDay
+            var showMonth;
+            if(getDay == 31){
+                getDay = getDay + 1;
+                showDay = 1;
+                showMonth = getMonth + 1;
+            } else {
+                getDay = getDay + 1;
+                showDay = getDay;
+                showMonth = getMonth;       
+            }
+            aedate = [showMonth, showDay, getYear].join('/');
+        }
+
+        var atrainingNeed = document.getElementById(acttitle+'trainingNeed').innerHTML;
+        var rdate = document.getElementById(acttitle+'rDate').innerHTML;
+        var ardate;
+        if(!Date.parse(rdate)){
+            ardate = '';
+        } else {
+            var getDate = new Date(rdate);
+            var getMonth = getDate.getMonth() + 1;
+            var getDay = getDate.getDate();
+            var getYear = getDate.getFullYear();    
+            var showDay
+            var showMonth;
+            if(getDay == 31){
+                getDay = getDay + 1;
+                showDay = 1;
+                showMonth = getMonth + 1;
+            } else {
+                getDay = getDay + 1;
+                showDay = getDay;
+                showMonth = getMonth;       
+            }
+            ardate = [showMonth, showDay, getYear].join('/');
+        }
+
+        var status = '{!JSENCODE(newIDP.IDP_Status__c)}';
+        if(status == 'Approved'){
+            var cdate = document.getElementById(acttitle+'cDate').innerHTML;
+            var acdate;
+            if(!Date.parse(cdate)){
+                acdate = '';
+            } else {
+                acdate = formattedDate(cdate);
+            }
+        }
+
+        var showDate;
+        if(!Date.parse(cdate)){
+            showDate = '';
+        } else {
+            var getDate = new Date(cdate);
+            var getMonth = getDate.getMonth() + 1;
+            var getDay = getDate.getDate();
+            var getYear = getDate.getFullYear();    
+            var showDay
+            var showMonth;
+            if(getDay == 31){
+                getDay = getDay + 1;
+                showDay = 1;
+                showMonth = getMonth + 1;
+            } else {
+                getDay = getDay + 1;
+                showDay = getDay;
+                showMonth = getMonth;       
+            }
+            showDate = [showMonth, showDay, getYear].join('/');
+        }
+
+        var apriority = document.getElementById(acttitle+'priority').innerHTML;
+        var abmcost = document.getElementById(acttitle+'books').innerHTML;
+        var aperdiem = document.getElementById(acttitle+'perDiem').innerHTML;
+        var atravel = document.getElementById(acttitle+'travel').innerHTML;
+        var atution = document.getElementById(acttitle+'tution').innerHTML;
+        var avendor = document.getElementById(acttitle+'vendor').innerHTML;
+        var alocation = document.getElementById(acttitle+'location').innerHTML;
+        var acomments = document.getElementById(acttitle+'comments').innerHTML;    
+        var aoutcomes = document.getElementById(acttitle+'outcomes').innerHTML;
+        var ascomments = document.getElementById(acttitle+'supervisor').innerHTML;   
+
+        document.getElementById("OATitle").innerHTML = otitle;
+        document.getElementById("AId").innerHTML = acttitle; 
+        document.getElementById("AName").innerHTML = aname;   
+        document.getElementById("AType").innerHTML = atype;
+        document.getElementById("ASDate").innerHTML = asdate;
+        document.getElementById("AEDate").innerHTML = aedate;
+        document.getElementById("ARequired").innerHTML = atrainingNeed;
+        document.getElementById("ARDate").innerHTML = ardate;
+        document.getElementById("APriority").innerHTML = apriority;
+        document.getElementById("ABooksCost").innerHTML = abmcost;
+        document.getElementById("APerDiem").innerHTML = aperdiem;
+        document.getElementById("AETCost").innerHTML = atravel;
+        document.getElementById("AFee").innerHTML = atution;            
+        document.getElementById("AVendor").innerHTML = avendor;
+        document.getElementById("ALocation").innerHTML = alocation;
+        document.getElementById("AComments").innerHTML = acomments;
+        document.getElementById("AOutcomes").innerHTML = aoutcomes;
+        document.getElementById("ASComments").innerHTML = ascomments;   
+        document.getElementById("{!$Component.scwform.formBlock.showStep07.hdnObjective}").value = objId;
+        document.getElementById("{!$Component.scwform.formBlock.showStep07.hdnActivity}").value = actId;    
+
+        if(status == 'Approved'){
+            document.getElementById("{!$Component.scwform.formBlock.showStep07.completedDate}").value = showDate;       
+        }
+
+        el = document.getElementById("overlayActivities");
+        el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+
+        return false;
+
+    }
+ 
+    function overlayCompetency(name){
+
+        var actName = document.getElementById(name+'name').innerHTML;
+        var model = document.getElementById(name+'model').innerHTML;
+        var area = document.getElementById(name+'area').innerHTML;
+        var comp = document.getElementById(name+'comp').innerHTML;        
+        document.getElementById("CName").innerHTML = actName;
+        document.getElementById("CModel").innerHTML = model;
+        document.getElementById("CArea").innerHTML = area;
+        document.getElementById("CComp").innerHTML = comp;
+        el = document.getElementById("overlayCompetencies");
+        el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+        return false;
+
+    }
+
+    function formattedDate(date) {
+
+        var date = new Date(date);
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        day = day + 1;
+        var year = date.getFullYear();
+        return [month, day, year].join('/');
+
+    }
+ 
+    function close() {
+
+        document.getElementById("overlay").style.visibility = 'hidden';
+
+    }
+
+    function closeActivity() {
+
+        document.getElementById("overlayActivities").style.visibility = 'hidden';
+
+    }
+
+    function closeCompetency(){
+    
+        document.getElementById("overlayCompetencies").style.visibility = 'hidden'; 
+    
+    }
+    
+    function gotoField(){
+
+        var acttitle = document.getElementById('{!$Component.scwform.formBlock.objBlock.objectiveTitle}').value;
+        if(acttitle != ''){
+            window.location.reload();
+        }
+        document.getElementById('{!$Component.scwform.formBlock.objBlock.objectiveTitle}').focus();
+
+    }
+    
+    function gotoActField(){
+
+        // Christian's changes START
+        var selObj = document.getElementById('j_id0:scwform:formBlock:actBlock:selObjective').value;
+        if(selObj =='') {
+            document.getElementById('j_id0:scwform:formBlock:actBlock:selObjective').focus();
+        } else {
+            window.open('/apex/IDP_Wizard?id={!newIDP.id}&operation=Activities','_self');
+            document.getElementById('j_id0:scwform:formBlock:actBlock:selObjective').focus();
+        }
+        // Christian's changes END
+
+    }
+
+    function ReloadCKEditor() {
+
+        for(name in CKEDITOR.instances) {
+            delete CKEDITOR.instances[name];
+        }
+        CKEDITOR.replaceAll();
+
+    }
+
+    function confirmDeleteObjective() {
+
+        return confirm('Are you sure you want to delete this Objective? Any associated Activities will also be deleted.');
+
+    }
+    
+    function confirmDeleteActivity() {
+
+      return confirm('Are you sure you want to delete this Activity?');
+      
+    }
+    
+    function confirmCancel() {
+
+        return confirm('Are you sure you want to navigate away from this page?  Any unsaved data will be lost.');
+
+    }
+    
+    function confirmClearLongTermGoal() {
+
+        return confirm('Are you sure you want to clear Long Term Goal?');
+
+    }
+    
+    function confirmClearShortTermGoal() {
+
+        return confirm('Are you sure you want to clear Short Term Goal?');
+
+    }
+
+    function reloadPage(){
+    
+        location.reload()
+    
+    }
+
+    function reloadObjectives(){
+
+        var val = document.getElementById('{!$Component.scwform.formBlock.errorMessages}').innerHTML;       
+        if(val == null || val == '') {
+            window.open('/apex/IDP_Wizard?id={!newIDP.id}&operation=Objective','_self');
+        }
+
+    }
+
+    function reloadActivities(){
+
+        var val = document.getElementById('{!$Component.scwform.formBlock.errorMessages}').innerHTML;       
+        if(val == null || val == '') {
+            window.open('/apex/IDP_Wizard?id={!newIDP.id}&operation=Activities','_self');
+        }
+
+    }
+
+    function reloadReview(){
+
+        var val = document.getElementById('{!$Component.scwform.formBlock.errorMessages}').innerHTML;
+        if(val == null || val == '') { 
+            window.open('/apex/IDP_Wizard?id={!newIDP.id}&operation=review','_self');
+        }
+
+    }
+
+    function reloadCompetencies(){
+
+        var val = document.getElementById('{!$Component.scwform.formBlock.errorMessages}').innerHTML;
+        if(val == null || val == '') { 
+            window.open('/apex/IDP_Wizard?id={!newIDP.id}&operation=Competencies','_self');
+        }
+
+    }
+
+    function delayReloadReview(){
+
+        setTimeout(reloadReview, 1000);
+
+    }
+    
+    function checkReload() {
+
+        alert('Clicked');
+
+    }
+    
+    function clearTextArea(){
+
+        document.getElementById("clearTxt").value="";
+
+    }
+    
+    function checkValue(){
+
+        // Christian's changes START
+        var obj = document.getElementById('j_id0:scwform:formBlock:actBlock:selObjective').value;
+        // Christian's changes END
+        var actName = document.getElementById('{!$Component.scwform.formBlock.actBlock.actName}').value;
+        var actType = document.getElementById('{!$Component.scwform.formBlock.actBlock.actType}').value;
+        var totalAct = '{!actCount}'        
+        if(totalAct == 0){
+            document.getElementById('{!$Component.scwform.formBlock.actBlock.savenull}').style.display = "none";
+        }
+        if(totalAct != 0){
+            if(obj != '' || actName != '' || actType != ''){
+                document.getElementById('{!$Component.scwform.formBlock.actBlock.saveValue}').style.display = "inline";
+                document.getElementById('{!$Component.scwform.formBlock.actBlock.savenull}').style.display = "none";
+            }
+            if(obj == '' && actName == '' && actType == ''){
+                document.getElementById('{!$Component.scwform.formBlock.actBlock.saveValue}').style.display = "none";
+                document.getElementById('{!$Component.scwform.formBlock.actBlock.savenull}').style.display = "inline";
+            }
+        }
+
+    }
+
+</script>
+
+<BODY onLoad="onloadCondition()"/>
+
+<apex:form id="scwform" >
+<div id="bg" aria-hidden="false">
+    <apex:pageBlock title="Individual Development Plan" id="formBlock">
+        <table width="100%" border="0" id="errorTable">
+            <tr>
+                <td width="25%">&nbsp;</td>
+                <td height="2px" id="errorRow">
+                    <apex:outputPanel id="messages">
+                    <apex:pagemessages id="errorMessages" />                    
+                    </apex:outputPanel>
+                </td>
+                
+            </tr> 
+            <tr>
+                <td width="25%" valign="top">
+                    <apex:outputPanel id="LeftSideBar" >
+                        <apex:outputPanel >
+                            <apex:pageBlock >
+                            
+                           <apex:image style="display:block; margin-left; margin-right:auto;" id="GSA" value="{!$Resource.GSALogo}" width="100"/>  <br/>  
+                                
+                                <!-- Nithin 09/17/2012 -->
+                                <h1 style="font-size: Medium; font-weight:bold;">IDP STEPS</h1>
+                                <br/>
+                                <br/>
+                                <apex:outputLabel value="IDP Name:  " style="font-weight: bold;"/>
+                                <apex:outputText value="{!newIDP.IDP_Names__c}" style="font-weight: Normal;"/><br/>
+                                
+                                <!-- Nithin 09/16/2012 -->
+                                <apex:outputLabel value="IDP ID:  " style="font-weight: bold;"/>
+                                <apex:outputText value="{!newIDP.Name}" style="font-weight: Normal;"/><br/><br/> 
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputPanel style="font-weight:{!IF(showStep01==true,'bold','normal')};" id="LStep01a"><apex:inputcheckbox id="Lchkbox01a"  value="{!chkbxStp01}" disabled="true" />
+                                <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=IDPInformation" id="theLink1" disabled="{!NOT(chkbxStp01)}"> 1. IDP Information<br/> </apex:outputLink> </apex:outputPanel>
+                                
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputPanel style="font-weight:{!IF(showStep02==true,'bold','normal')};" id="LStep02a"><apex:inputcheckbox id="Lchkbox02a" value="{!chkbxStp02}" disabled="true"/>
+                                <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=LongTermGoals" id="theLink2" disabled="{!NOT(chkbxStp02)}"> 2. Long-Term Goals<br/> </apex:outputLink> </apex:outputPanel>
+                                
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputPanel style="font-weight:{!IF(showStep03==true,'bold','normal')};" id="LStep03a"><apex:inputcheckbox id="Lchkbox03a" value="{!chkbxStp03}" disabled="true"/> 
+                                <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=ShortTermGoals" id="theLink3" disabled="{!NOT(chkbxStp03)}"> 3. Short-Term Goals<br/> </apex:outputLink> </apex:outputPanel>
+                                
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputPanel style="font-weight:{!IF(showStep04==true,'bold','normal')};" id="LStep04a"><apex:inputcheckbox id="Lchkbox04a" value="{!chkbxStp04}" disabled="true"/> 
+                                <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=Objective" id="theLink4" disabled="{!NOT(chkbxStp04)}"> 4. Objectives<br/> </apex:outputLink> </apex:outputPanel>
+                                
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputPanel style="font-weight:{!IF(showStep05==true,'bold','normal')};" id="LStep05a"><apex:inputcheckbox id="Lchkbox05a" value="{!chkbxStp05}" disabled="true"/> 
+                                <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=Activities" id="theLink5" disabled="{!NOT(chkbxStp05)}"> 5. Activities<br/> </apex:outputLink> </apex:outputPanel> 
+                                
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputPanel style="font-weight:{!IF(showStep06==true,'bold','normal')};" id="LStep06a"><apex:inputcheckbox id="Lchkbox06a" value="{!chkbxStp06}" disabled="true"/> 
+                                <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=Competencies" id="theLink6" disabled="{!NOT(chkbxStp06)}"> 6. Competencies<br/></apex:outputLink> </apex:outputPanel>
+                                
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputPanel style="font-weight:{!IF(showStep07==true,'bold','normal')};" id="LStep07a"><apex:inputcheckbox id="Lchkbox07a" value="{!chkbxStp07}" disabled="true"/> 
+                                <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=Review" id="theLink7" disabled="{!NOT(chkbxStp07)}"> 7. Review &amp; Submit <br/></apex:outputLink> </apex:outputPanel>
+                            
+                                
+                                <br/><br/><br/>
+                                 <apex:outputPanel style="font-weight: normal;font-size: Medium; bold;" id="Ltips"><big>Navigation Tips:</big></apex:outputPanel><br/>
+                                
+                                <apex:outputPanel rendered="{!showStep01}" id="LStep01tip">
+                                    <br/>Once you have completed a page you can return to that step by clicking the hyperlinks above.
+
+                                    <p> The 'Save and Continue' button will save your progress and take you to the next Step.</p>
+
+                                    <p> The 'Cancel' button will not save progress and will take you back to the Welcome page. From there, you can use 'Edit' to resume progress on your IDP.</p>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel rendered="{!showStep02}" id="LStep02tip">
+                                    <br/>Use the 'Save' button to save information without advancing. Use 'Save and Continue' to save and advance to the Short-Term Goals Step.
+
+                                    <p>The 'Cancel' button will not save progress and will take you back to the Welcome page. From there, you can use 'Edit' to resume progress on your IDP.</p>
+                                    
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel rendered="{!showStep03}" id="LStep03tip">
+                                    <br/> Use the 'Save' button to save information without advancing. Use 'Save and Continue' to save and advance to the Objectives Step.
+
+                                    <p>The 'Cancel' button will not save progress and will take you back to the Welcome page. From there, you can use 'Edit' to resume progress on your IDP.</p>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel rendered="{!showStep04}" id="LStep04tip">
+                                    <br/>Use the 'Save' button to save each new or modified Objective. Use 'Save and Continue' to save and advance to the next Step.
+
+                                    <p>The 'Cancel' button will not save progress and will take you back to the Welcome page. From there, you can use 'Edit' to resume progress on your IDP.</p>
+                                </apex:outputPanel>
+                                 
+                                <apex:outputpanel rendered="{!showstep05}" id="LStep05tip">
+                                <br/> Use the 'Save' button to save each new or modified Activity. Use 'Save and Continue' when you are ready to advance to the next step.
+
+                                <p>If you are editing an Activity and wish to Cancel the edit, simply click on another Activity's 'Edit' button or use the 'Activities' hyperlink above to refresh the page.</p>
+                                <p>The 'Cancel' button will not save progress and will take you back to the Welcome page. From there, you can use 'Edit' to resume progress on your IDP.</p>
+                                </apex:outputpanel>
+                                
+                                <apex:outputpanel rendered="{!showstep06}" id="LStep06tip">
+                                <br/>Use the 'Save' button to save each new Competency. Use 'Save and Continue' when you are ready to advance to the next step.
+                                <p>The 'Cancel' button will not save progress and will take you back to the Welcome page. From there, you can use 'Edit' to resume progress on your IDP.</p>                                
+                                </apex:outputpanel>
+                                
+                                <apex:outputpanel rendered="{!showstep07}" id="LStep07tip">
+                                <br/>The 'Edit' buttons will return you to the respective Step for editing.
+
+                                <p>The 'Save for Later' button will save your work and take you back to the Welcome page.</p>
+                                
+                                <p>After you Submit for Approval, you will only be able to Review your IDP, but not make edits. Unless it is in 'Review/Revision' status --OR-- you select 'Recall' before the supervisor approves your IDP.</p>
+                                </apex:outputpanel>
+                                
+                                
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                    </apex:outputPanel><!-- End of LeftSide-->
+                </td>
+               
+                <td valign="top">
+                    <apex:outputPanel id="RightSide" >
+                        <apex:outputPanel id="Step_01" rendered="{!showStep01}">
+                            <apex:pageBlock >
+                                <table width="100%" align="center">
+                                    <tr>
+                                        <td align="center"  style="font-size: Medium; font-weight:bold;">STEP 1: IDP Information</td>
+                                    </tr>
+                                </table>
+                                <div id="Step_01_Title">
+                                    <h2 class="alignleft">Instructions:</h2> &nbsp; Complete the fields below.  Mandatory fields are marked with a vertical red bar and asterisk.<br />
+                                    <br /><li> If there is any incorrect information in the pre-populated fields below, you must request a change in <apex:outputlink target="_Blank" value="https://hrprod.hr.gsa.gov:4443/OA_HTML/AppsLogin"> CHRIS</apex:outputlink> by contacting your HR representative.</li>
+                                    <li> If you don't know your Series, Grade or Payplan information login to CHRIS using the link above. (Optional) Select any Procurement Specializations that you currently hold.</li>
+                                    <li>Select your approving Supervisor using the lookup function in the 'Supervisor' field. (Optional) Select another individual who should be able to view your IDP in the 'Other Viewer' field.</li>
+                                    
+                                    <div style="clear: both;"></div>
+                                </div>
+                                <hr style="height: 0px;" />
+                                <table width="100%" align="center">
+                                    
+                                    <tr>
+                                        <td align="left"  height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">IDP Information</td>
+                                    </tr>
+ 
+                                    <tr>
+                                        <td>
+                                            <table width="90%" cellspacing="10px">
+                                                <tr> 
+                                                    <td align="right" width="25%"><apex:outputlabel value="IDP Name:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.IDP_Names__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.IDP_Names__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                   <apex:outputtext value="{!newIDP.IDP_Names__c}" html-aria-label="&#42;{!newIDP.IDP_Names__c}"/>                                                    
+                                                    </td>
+                                                    <td align="right" width="25%"><apex:outputLabel value="IDP Status:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.IDP_Status__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.IDP_Status__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                        <span id="status">                                                          
+                                                            <apex:outputText value="{!newIDP.IDP_Status__c}"/>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr> 
+                                                    <td align="right" width="25%"><apex:outputlabel value="Fiscal Year:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Fiscal_Year_pick__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Fiscal_Year_pick__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%" >
+                                                       <div style="display:inline;">
+                                                        
+                                                        <apex:inputfield value="{!newIDP.Fiscal_Year_pick__c}" required="true" label="*" html-aria-label="&#42;Fiscal Year" />                                                     
+                                                        </div>                                       
+                                                    </td>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Created Date:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Create_Date__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Create_Date__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                       <apex:outputtext value="{0,date,MM/dd/yyyy}">
+                                                          <apex:param value="{!newIDP.Create_Date__c}" />
+                                                        </apex:outputtext>    
+                                                    </td>  
+                                                </tr>   
+                                                <tr>
+                                                    <td align="right" width="25%"><apex:outputLabel value="Series:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Series__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Series__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%"><apex:inputfield value="{!newIDP.Series__c}" required="true" html-aria-label="&#42;Series"/></td>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Employee Name:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Employee_Name__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Employee_Name__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                        <apex:outputtext value="{!newIDP.Employee_Name__c}" title="{!newIDP.Employee_Name__c}"/>                                                     
+                                                    </td>
+                                                    
+                                                    
+                                                  </tr>
+                                                 <tr>
+                                                    <td align="right" width="25%">
+                                                        <apex:outputlabel value="Supervisor:" />
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Supervisor__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Supervisor__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    
+                                                    <td align="left" width="25%">             
+                                                                                           
+                                                    <apex:inputField value="{!newIDP.Supervisor__c}" required="{!deleteUponCancelOnlyFristTime}" label="*" html-aria-label="&#42;Supervisor"/>
+                                                    
+                                                    </td>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Employee Email:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Employee_Email__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Employee_Email__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                        <apex:outputtext value="{!newIDP.Employee_Email__c}" title="{!newIDP.Employee_Email__c}"/>                                                      
+                                                    </td>
+                                                    
+                                                    
+                                                 </tr>
+                                                 <tr>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Other Viewer:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Director__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Director__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%"><apex:inputfield value="{!newIDP.Director__c}" html-aria-label="&#42;Other Viewer"/></td>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Office Symbol:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.office_Symbol__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.office_Symbol__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                        <apex:outputtext value="{!newIDP.office_Symbol__c}" title="{!newIDP.office_Symbol__c}"/>                                                        
+                                                    </td>                   
+                                                </tr>
+                                                <tr>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Grade:"/>
+                                                     <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Grade__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Grade__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%"><apex:inputfield value="{!newIDP.Grade__c}" required="true" html-aria-label="&#42;Grade"/></td>
+                                                    
+                                                    <td align="right" width="25%"><apex:outputlabel value="GSA Organization:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.GSA_Organization__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.GSA_Organization__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                        <apex:outputtext value="{!newIDP.GSA_Organization__c}" title="{!newIDP.GSA_Organization__c}"/>                                                      
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Pay Plan:"/>
+                                                    <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Payplan__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Payplan__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%"><apex:inputfield value="{!newIDP.Payplan__c}" required="true" html-aria-label="&#42;Pay Plan"/></td>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Position Level:"/>
+                                                        <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Position_Levels__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Position_Levels__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%">
+                                                        <apex:outputtext value="{!newIDP.Position_Levels__c}" title="{!newIDP.Position_Levels__c}"/>                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right" width="25%"><apex:outputlabel value="Procurement Specialization:"/>
+                                                      <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Specialization__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.IDP__c.fields.Specialization__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                                        </span>
+                                                    </td>
+                                                    <td align="left" width="25%"><apex:inputfield value="{!newIDP.Specialization__c}" html-aria-label="Procurement Specialization"/></td>
+                                                </tr>
+                                            </table>   
+                                        </td>
+                                   
+                                    </tr>
+                                  
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr> 
+                                      
+                              </table> 
+        
+                               <div align="center">                                
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;" action="{!cancel}" onclick="if(!confirmCancel()){return}" immediate="true" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                     <apex:commandLink styleClass="btn"  style="text-decoration:none;" action="{!next}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Continue&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step01" />
+                                    </apex:commandLink>
+                                    
+                                </div>
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                         
+                        <apex:outputPanel id="Step_02" rendered="{!showStep02}">
+                            <apex:pageBlock >
+                                <table width="100%" align="center">
+                                    <tr>
+                                        <td align="center"  style="font-size: Medium; font-weight:bold;">STEP 2: Long-Term Goals</td>
+                                    </tr>
+                                </table>
+                             
+                             <div id="Step_01_Title">
+                                    <h1 class="alignleft">Instructions:</h1> &nbsp; Fill in your Long-Term Goals. If you do not have Long-Term Goals at this time, type 'NONE'.
+                                    <br/><br/><h2>Examples:</h2>
+                                    &nbsp; 'Become an SESer in ITS by 20XX' --OR-- 'Get my FAC-C III by FY20XX'
+                                    
+                                    <div style="clear: both;"></div>
+                                </div>
+                                <hr style="height: 0px;" />
+                                <table width="100%" align="center">
+                                    
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Long-Term Career Goals</td>
+                                    </tr>
+                                     
+                                    <tr>
+                                        <td valign="left"><apex:outputLabel value="Long-Term Career Goals (3+ Years):"/>
+                                            <span class="vfHelpText">
+                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Career_Goals_Long_Run__c.inlineHelpText}">
+                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                    <span>{!$ObjectType.IDP__c.fields.Career_Goals_Long_Run__c.inlineHelpText}</span>
+                                                </apex:outputLink>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="left"><apex:inputTextArea value="{!newIDP.Career_Goals_Long_Run__c}" cols="100" rows="10" required="false" html-aria-label="Long-Term Career Goals" /></td>
+                                    </tr>
+                                                <tr>
+                                                    <td align="left" >
+                                                        
+                                                    </td>
+                                                </tr>
+
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>   
+                                </table>
+                                
+                                <div align="center">
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!save}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step02" />
+                                    </apex:commandLink>
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" immediate="true" action="{!cancel}" onclick="if(!confirmCancel()){return}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                    
+                                      <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!next}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Continue&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step02" />
+                                    </apex:commandLink>
+                                    
+                                </div>
+                                
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel id="Step_03" rendered="{!showStep03}">
+                         
+                         <apex:pageBlock >
+                                <table width="100%" align="center">
+                                    <tr>
+                                        <td align="center"  style="font-size: Medium; font-weight:bold;">STEP 3: Short-Term Goals</td>
+                                    </tr>
+                                </table>
+                                <div id="Step_01_Title">
+                                    <h1 class="alignleft">Instructions: </h1> &nbsp; Fill in your Short-Term Goals. You are required to list at least one Short-Term Goal because Goals are the basis for your measurable Objectives (next page) and Activities.
+                                    <br/><br/><h2>Examples:</h2>
+                                    &nbsp;'Become the Supervisor of my current branch by December 20XX' --OR-- 'Get my FAC-C II by January FYXX' 
+                                    <div style="clear: both;"></div>
+                                </div>
+                                <hr style="height: 0px;" />
+                                <table width="100%" align="center">
+                                    
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Short-Term Career Goals</td>
+                                    </tr>
+                                     
+                                    <tr>
+                                        <td valign="left"><apex:outputLabel value="Short-Term Career Goals (1-3 Years):"/>
+                                            <span class="vfHelpText">
+                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP__c.fields.Career_Goals_Short_Run__c.inlineHelpText}">
+                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                    <span>{!$ObjectType.IDP__c.fields.Career_Goals_Short_Run__c.inlineHelpText}</span>
+                                                </apex:outputLink>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="left"><apex:inputTextArea value="{!newIDP.Career_Goals_Short_Run__c}" cols="100" rows="10" required="false" styleClass="true" html-aria-label="Short-Term Career Goals" /></td> 
+                                    </tr>
+                                       
+                                    <tr>
+                                           <td align="left" >
+                                               
+                                           </td>
+                                                </tr>
+                                           
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </table>
+                                
+                                <div align="center">
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!save}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step03" />
+                                    </apex:commandLink>
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!cancel}" onclick="if(!confirmCancel()){return}" immediate="true" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                    
+                                     <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!next}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Continue&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step03" />
+                                    </apex:commandLink>
+                                    
+                                    
+                                </div>
+                                
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel id="Step_04" rendered="{!showStep04}">
+                            <apex:pageBlock id="objBlock">
+                                <table width="100%" align="center">
+                                    <tr>
+                                        <td align="center"  style="font-size: Medium; font-weight:bold;">STEP 4: Objectives</td>
+                                    </tr>
+                                </table>
+                                <div id="step_04_Title">
+                                    <h1 class ="alignleft">Instructions:</h1> &nbsp; 
+                                        <br />
+                                        <br />
+                                            <li>To create a new Objective, click the 'Create New Objective' button, you will be redirected to the Objective Information section.</li>
+                                            <li> Within the Objective Information section, type your Objective Title and Description in the appropriate fields and then click 'Save' to add it to your IDP.</li> 
+                                            <li>You can create additional Objectives by selecting the 'Create New Objective' button again - just remember to select 'Save'.</li>
+
+                                            <li>After 'Save', each new Objective will show up in the 'List of Current IDP Objectives' table.</li>
+                                            
+                                            <li>Select the 'Edit' button from the 'List of Current IDP Objectives' table to review all of the fields within an existing Objective.</li>
+                                            
+                                            <li>To modify an Objective, click 'Edit' from the 'List of Current IDP Objectives' table, modify the text, then click 'Save' to save your edits.</li>
+                                            
+                                            <li>To delete an Objective, click 'Delete' next to the Objective you want to delete in the 'List of Current IDP Objectives' table. A delete confirmation will appear.</li>
+                                            
+                                            <li>When you are finished adding your Objectives, the 'Save and Continue' will save any objectives that you are currently creating or modifying and will advance you to the Activities Step.</li>
+                                        
+                                        <br/><h2>Examples:</h2>
+                                    &nbsp; 'Complete an approved introductory leadership development course by December 20XX' --OR-- 
+                                    'Pass the six core courses for my FAC-C level 1, by January FY20XX'
+                                    
+                                    <div style="clear:both;"></div>
+                                </div>
+                                <hr style="height: 0px;" />
+                                <br />
+                                <div><a href="" id="newObjective" onclick="gotoField();" class="btn" style="text-decoration:none">Create New Objective</a></div>
+                                <br />
+                                <table width="100%" align="center">
+
+                                    <tr><td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">List of Current IDP Objectives</td></tr>
+                                    
+                                    <tr width="100%">
+                                        <td width="100%">
+                                            <apex:pageBlockTable value="{!objectiveWrapperList}" var="objectiveWrap" id="objectivesTable">
+                                                 <apex:column headerValue="Edit" width="5%">
+
+                                                     <apex:commandLink action="{!editObjective}" styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" reRender="RightSide,messages">
+                                                        Edit
+                                                       <apex:param name="editIndex"  assignTo="{!editObjectiveIndex}" value="{!objectiveWrap.index}" />
+                                                      </apex:commandLink> 
+                                                  </apex:column> 
+                                                  <apex:column headerValue="Delete" width="5%">
+                                                      <apex:commandLink action="{!deleteObjective}" onclick="if(!confirmDeleteObjective()){return};" styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" reRender="LeftSideBar,RightSide,messages" oncomplete="reloadObjectives();">
+                                                        Delete
+                                                      <apex:param name="deleteIndex"  assignTo="{!deleteObjectiveIndex}" value="{!objectiveWrap.index}" /> 
+                                                      </apex:commandLink> 
+                                                          
+                                                </apex:column> 
+                                                
+                                                <apex:column headerValue="Objective Title" width="80%">                                                 
+                                                  <apex:outputtext value="{!objectiveWrap.objective.Objective_Title__c}">
+                                                  </apex:outputtext>
+                                                </apex:column>
+
+                                                <apex:column headerValue="Created Date" width="10%">
+                                                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                      <apex:param value="{!objectiveWrap.objective.CreatedDate}"/>
+                                                    </apex:outputText> 
+                                                </apex:column>
+                                                
+                                            </apex:pageBlockTable> 
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td align="left" height="20px" style="background-color:#5B9BD5;font-weight:bold; color:white;">Objective Information</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="left">
+                                        <apex:outputlabel value="Objective Title:" style="font-weight: bold;"/>&nbsp;<span id ="objectiveName">{!newObjective.name}</span>
+                                            <span class="vfHelpText">
+                                                            <apex:outputLink value="javascript:return false;" title="{!$ObjectType.Developmental_Objective__c.fields.Objective_Title__c.inlineHelpText}">
+                                                                <img src="/s.gif" alt="" class="helpOrb" />
+                                                                <span>{!$ObjectType.Developmental_Objective__c.fields.Objective_Title__c.inlineHelpText}</span>
+                                                            </apex:outputLink>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="left">
+                                        <div style="background-color:#c00;color:#c00;width:3px;position:absolute;height:23px;">.</div>&nbsp;&nbsp;
+                                            <apex:inputField value="{!newObjective.Objective_Title__c}" id="objectiveTitle" onkeydown="limitText(this,128);" onkeyup="limitText(this,128);" html-aria-label="&#42;Objective Title"/>
+                                            <span id="showLimitChar">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="left"><apex:outputlabel value="Objective Description:" style="font-weight: bold;"/>
+                                            <span class="vfHelpText">
+                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.Developmental_Objective__c.fields.Objective__c.inlineHelpText}">
+                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                    <span>{!$ObjectType.Developmental_Objective__c.fields.Objective__c.inlineHelpText}</span>
+                                                </apex:outputLink>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                   
+                                   <tr> <td valign="left">
+                                    <apex:actionSupport rerender="Step_04" oncomplete="ReloadCkEditor();">  
+                                                                                                        
+                                   <apex:InputTextArea value="{!newObjective.Objective__c}" cols="100" rows="5" id="objectiveText" html-aria-label="*Objective Description"/ >
+                                   </apex:actionSupport>
+                                   
+                                   </td></tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                    </tr>   
+                                    
+                                </table>
+                                
+                                <div align="center">
+                                      <apex:actionStatus id="objSave">
+                                     <apex:facet name="stop">
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!save}" reRender="LeftSideBar,RightSide,messages" status="objSave" oncomplete="reloadObjectives();">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step04" />
+                                    </apex:commandLink>
+                                    </apex:facet>
+                                    <apex:facet name="start">
+                                    <apex:commandButton value="Saving Objective..." status="objSave" disabled="true"/>
+                                    </apex:facet>
+                                    </apex:actionStatus>
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!cancel}" onclick="if(!confirmCancel()){return}" immediate="true" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                    
+                                     <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!next}" reRender="LeftSideBar,RightSide,messages" id="scObjective">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Continue&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step04" />
+                                    </apex:commandLink>
+                                </div>    
+                            </apex:pageBlock>
+                            <apex:actionFunction name="selectObjective" action="{!selectObjective}" rerender="RightSide,messages">
+                                <apex:param name="checked"   assignTo="{!objetiveSelected}" value=""/>
+                                <apex:param name="index"   assignTo="{!objectiveSelectedIndex}" value=""/>
+                            </apex:actionFunction> 
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel id="Step_05" rendered="{!showStep05}">
+                            <apex:pageBlock id="actBlock">
+                                <table width="100%" align="center">
+                                    <tr>
+                                        <td align="center"  style="font-size: Medium; font-weight:bold;">STEP 5: Activities</td>
+                                    </tr>
+                                </table>
+                                <table width="100%" align="center">
+                                    
+                                    <tr>
+                                        <td align="left" ><h1>Instructions:</h1> &nbsp; 
+                                            <li>To create a new Activity, click the 'Create New Activity' button, within the Activity Information section select the Objective that it belongs to, enter your Activity Name and select your Activity Type.</li> 
+                                            <li>Within the Activity Information section continue to fill out the Activity fields below. When you are finished entering your information click 'Save'.</li> 
+                                            <li>You can create additional Activities for as many Objectives as you want - just remember to select 'Save'.</li>
+                                            <li>The 'Required Date' field will only be mandatory if you select 'Required' from the 'Is This Activity Required?' field.</li>
+                                            <li>After you click 'Save', each new Activity will show up in the 'List of Current IDP Activities' table.</li>
+                                            <li>Select the 'Edit' button from the 'List of Current IDP Activities' table to review all of the fields within an existing Activity.</li>
+                                            <li>To modify an Activity, click 'Edit' next to that Activity in the 'List of Current IDP Activities' table, modify the Activity fields, then click 'Save' to save your edits.</li>
+                                            <li>To delete an Activity, click 'Delete' next to the Activity you want to delete in the 'List of Current IDP Activities' table. A delete confirmation will appear.</li>
+                                            <li>When you are finished adding your Activities, click 'Save' and then 'Save and Continue' to go to the next step.</li>
+                                            <li>Activities are not required for every Objective, but you must have at least one Activity to Submit your IDP.</li>
+                                            <li>To view the different types of group trainings available so that you can better develop specific IDP Activities as well as record the average costs associated with the training opportunity click <a href="https://docs.google.com/a/gsa.gov/spreadsheets/d/1fEHGM-7nPDJz_EQxTnJLrOsyLzLPTdqAne8ovAG1cq4/edit#gid=1797120196" target="_blank" title="Course Pricing">Course Pricing</a>.</li>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td><hr style="height: 0px;" /></td>
+                                    </tr>
+                                    <tr>
+                                    <td><div style="margin-bottom: 10px;"><a href="" id="newObjective" onclick="gotoActField();" class="btn" style="text-decoration:none; margin-bottom: 10px;">Create New Activity</a></div></td>                                    
+                                    </tr>
+                                                                                                      
+                                  
+                                    <!----------------------------------- List of All Associated Activity in Activity page ------------------------------------------>
+  
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">List of Current IDP Activities</td>
+                                    </tr>
+                                   
+                                    <td width="100%">
+                                        
+                                        <apex:pageBlockTable value="{!activityWrapperList}" var="ActivityWrap" id="activitiestabel1" >
+                                             
+                                            <apex:column headerValue="Edit" width="5%"
+                                                rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}">
+
+                                                <apex:commandlink action="{!editActivity}" immediate="true"
+                                                    StyleClass="btn" Style="text-decoration:none;padding-top:2px;padding-bottom:2px;" reRender="RightSide,messages" >
+                                                    Edit
+                                                    <apex:param name="editIndex" assignTo="{!editActivityIndex}" value="{!ActivityWrap.index}"/> 
+                                                </apex:commandlink>
+                                              </apex:column>
+                                              <apex:column headerValue="Delete" width="5%"
+                                                rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}">
+                                                <apex:commandlink action="{!deleteActivity}" immediate="true" onclick="if(!confirmDeleteActivity()){return};"
+                                                    StyleClass="btn" Style="text-decoration:none;padding-top:2px;padding-bottom:2px;" reRender="LeftSideBar,RightSide,messages" oncomplete="reloadActivities();">
+                                                    Delete
+                                                    <apex:param name="deleteIndex" assignTo="{!deleteActivityIndex}" value="{!ActivityWrap.index}"/> 
+                                                </apex:commandlink>
+                                                
+                                            </apex:column>
+                                            
+                                            <apex:column headerValue="Related Objective Title" width="10%" >
+                                                <apex:outputtext value="{!ActivityWrap.Activity.Developmental_Objective__r.Objective_Title__c}"/>
+                                            </apex:column>
+
+                                            <apex:column headervalue="Activity Name" width="25%" value="{!ActivityWrap.Activity.Assignment_Title__c}"/>
+                                            
+                                            <apex:column headerValue="Start Date" width="9%">
+                                             <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                 <apex:param value="{!ActivityWrap.Activity.Planned_Start_Date__c}"/>
+                                                 </apex:outputText> 
+                                            </apex:column>
+                                            
+                                            <apex:column headerValue="End Date" width="9%">
+                                                 <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                     <apex:param value="{!ActivityWrap.Activity.Planned_End_Date__c}"/>
+                                                 </apex:outputText> 
+                                            </apex:column>
+                                            
+                                            <apex:column headerValue="Required Date" width="9%">
+                                                 <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                     <apex:param value="{!ActivityWrap.Activity.Required_Date__c}"/>
+                                                 </apex:outputText> 
+                                            </apex:column>
+                                            
+                                            <apex:column headervalue="Type" width="17%" value="{!ActivityWrap.Activity.Activity_Type_List__c}"/>
+                                            
+                                            <apex:column headervalue="Total Cost" value="{!ActivityWrap.Activity.Total_Cost__c}"/>
+                                        
+                                        </apex:pageBlockTable>
+                                    </td>
+                                    <!------------------------------------------------------------------------------------------------------------>
+                                    
+                                     <tr>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                    </tr>
+                                                                       
+                                    
+                                    <!----------------------------------- Creating New/Edit Activity Info ------------------------------------------>
+                                    
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Activity Information</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td colspan="2">
+                                            <table width="100%" cellspacing="7px"> 
+                                                <tr>                                                                                                    
+                                                    <tr> 
+                                                        <td align="Left"><apex:outputlabel value="Select Objective:" for="selObjective"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Developmental_Objective__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Developmental_Objective__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left">
+                                                            <!-- START Christian's changes for story #20 -->
+                                                            <!-- <apex:inputfield value="{!newActivity.Developmental_Objective__c}" required="true" id="selObjective" onchange="checkValue();" html-aria-label="&#42;Select Objective"/> -->
+                                                            <apex:outputPanel id="objectivePanel">
+                                                                <div class="requiredInput">
+                                                                    <div class="requiredBlock"></div>
+                                                                    <input aria-label="*Select Objective" type="text" id="j_id0:scwform:formBlock:actBlock:selObjective" value="{!selectedObjectiveName}" required="true" onchange="checkValue();" />
+                                                                    <a href="javascript:void(0);" onclick="showPopupObjective();">
+                                                                        <img src="/s.gif" alt="Objective Lookup (New Window)" class="lookupIcon" onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" title="Objective Lookup (New Window)"/>
+                                                                    </a>
+                                                                </div>
+                                                                <apex:actionFunction action="{!showPopupObjective}" name="showPopupObjective" rerender="objectivePopup, objectivePanel" immediate="true" oncomplete="setFocusObjectivePopup();"/>
+                                                            </apex:outputPanel>
+                                                            <!-- END Christian's changes for story #20 -->
+                                                        </td>
+                                                        
+                                                        <td align="left">
+                                                            <apex:outputPanel rendered="{!activityEditMode}">
+                                                                <td align="left"><apex:outputlabel value="Activity ID:"/></td>
+                                                                <td align="left"><apex:outputText value="{!newActivity.Name}" id="actId" title="{!newActivity.Name}"/></td>
+                                                            </apex:outputPanel>
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td align="left"><apex:outputlabel value="Activity Name:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Assignment_Title__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Assignment_Title__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Assignment_Title__c}" required="true" id="actName" onblur="checkValue();" html-aria-label="&#42;Activity Name"/></td>
+                                                        <td align="left">&nbsp;</td>       
+                                                        <td align="left"><apex:outputlabel value="Planned Start Date:"/>
+                                                                <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Planned_Start_Date__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Planned_Start_Date__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Planned_Start_Date__c}" id="actPSDate" html-aria-label="Planned Start Date"/></td>
+                                                        
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td align="left"><apex:outputlabel value="Activity Type:"/>
+                                                           <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="Activity Type - Select the option that most closely fits your activity. Higher education is not degree focused, list each course individually. In person training includes workshops, classroom training, facilitated meetings, etc. On the job activities include rotations, development assignments, Project Network, etc. Structured development programs include leadership and other development programs that occur over an extended period of time">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>Activity Type - Select the option that most closely fits your activity.
+                                                                        Higher education is not degree focused, list each course individually.                                                                        
+                                                                        In person training includes workshops, classroom training, facilitated meetings, etc.                                                                        
+                                                                        On the job activities include rotations, development assignments, Project Network, etc.                                                                        
+                                                                        Structured development programs include leadership and other development programs that occur over an extended period of time
+                                                                    </span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="Left">
+                                                        
+                                                        <apex:inputfield value="{!newActivity.Activity_Type_List__c}" required="true" id="actType" onchange="checkValue();" html-aria-label="&#42;Activity Type"/>                                                        
+                                                        </td>                                                         
+                                                        <td align="left">&nbsp;</td>
+                                                        <td align="left"><apex:outputlabel value="Planned End Date:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Planned_End_Date__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Planned_End_Date__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Planned_End_Date__c}" html-aria-label="Planned End Date"/></td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td align="left"><apex:outputlabel value="Is this Activity Required?:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Training_Need__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Training_Need__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield id="trainingNeed" value="{!newActivity.Training_Need__c}" html-aria-label="Is this Activity Required?"/></td>
+                                                        <td align="left">&nbsp;</td>
+                                                        <td align="left"><apex:outputlabel value="Required Date:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Required_Date__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Required_Date__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left" >                                                           
+                                                            <apex:inputfield value="{!newActivity.Required_Date__c}" id="required" html-aria-label="Required Date"/>
+                                                      </td>                                                       
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td align="left"><apex:outputlabel value="Priority:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Priority__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Priority__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Priority__c}" html-aria-label="Priority"/></td>
+                                                        <td align="Left">&nbsp;</td>
+                                                        <td align="left"><apex:outputlabel value="Completed Date:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Completed_Date__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Completed_Date__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Completed_Date__c}" rendered="{!newIDP.IDP_Status__c == 'Approved'}" html-aria-label="Completed Date"/></td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td align="left"><apex:outputlabel value="Estimated Books & Material Cost:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Books_Material_Costs__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Books_Material_Costs__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Books_Material_Costs__c}" html-aria-label="Estimated Books and Material Cost"/></td>
+                                                        <td align="Left">&nbsp;</td>
+                                                        <td align="Left"><apex:outputlabel value="Estimated Per Diem:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Per_Diem__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Per_Diem__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Per_Diem__c}" html-aria-label="Estimated Per Diem"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left"><apex:outputlabel value="Estimated Travel Cost:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Cost_Travel__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Cost_Travel__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Cost_Travel__c}" html-aria-label="Estimated Travel Cost"/></td>
+                                                        <td align="Left">&nbsp;</td>
+                                                        <td align="Left"><apex:outputlabel value="Estimated Tuition & Fees: "/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Tuition_Fees__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Tuition_Fees__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield value="{!newActivity.Tuition_Fees__c}" html-aria-label="Estimated Tuition & Fees"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left"><apex:outputlabel id="vendorLabel" value="Vendor:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Vendor__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Vendor__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield id="vendor" value="{!newActivity.Vendor__c}" html-aria-label="Vendor"/></td>
+                                                        <td align="Left">&nbsp;</td>
+                                                        <td align="left"><apex:outputlabel id="trLocationLabel" value="Activity Location:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Location__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Location__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield id="trLocation" value="{!newActivity.Location__c}" html-aria-label="Activity Location"/> </td>
+                                                    </tr>
+                                                    <tr>                                                        
+                                                                                                              
+                                                        <td align="left"><apex:outputlabel id="expectedOutcomesLabel" value="Expected Outcomes:"/>
+                                                         <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Expected_Outcomes__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Expected_Outcomes__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                                        </td>
+                                                        <td align="left"><apex:inputfield id="expectedOutcomes" value="{!newActivity.Expected_Outcomes__c}" style="width:250px;" html-aria-label="Expected Outcomes"/> </td>
+                                                        <td align="Left">&nbsp;</td>  
+                                                         <td align="left"><apex:outputlabel value="Comments:"/>
+                                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Comments__c.inlineHelpText}">
+                                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                                        <span>{!$ObjectType.IDP_Developmental_Line_Item__c.fields.Comments__c.inlineHelpText}</span>
+                                                                    </apex:outputLink>
+                                                            </span>
+                                                         </td>
+                                                        <td align="left"><apex:InputField value="{!newActivity.Comments__c}"  style="width:250px;"  html-aria-label="Comments"/></td>
+                                                    </tr>                                                                                                        
+                                                </tr>
+                                            </table>
+                                        </td> 
+                                    </tr>                                  
+                                    <tr>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                                
+                                
+                                
+                                <div align="center">                                    
+                                            <apex:actionStatus id="actSave">
+                                     <apex:facet name="stop">
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!addActivity}" reRender="LeftSideBar,RightSide,messages" status="actSave" oncomplete="reloadActivities();">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step05" />
+                                    </apex:commandLink>                                    
+                                    </apex:facet>
+                                    <apex:facet name="start">
+                                    <apex:commandButton value="Saving Activity..." status="actSave" disabled="true"/>
+                                    </apex:facet>
+                                    </apex:actionStatus>
+                                                                       
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!cancel}" immediate="true" onclick="if(!confirmCancel()){return false;}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                   
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;display:none" id="saveNull" action="{!next}" immediate="true" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Continue&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step05" />
+                                    </apex:commandLink>   
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" id="saveValue" action="{!next}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Continue&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step05" />
+                                    </apex:commandLink>                                                       
+
+                                </div>
+                                
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                        <!--------------------------------------------- Competency Section Begin---------------------------------------------->
+                          <apex:outputPanel id="Step_06" rendered="{!showStep06}">
+                          <apex:pageBlock id="showStep06">
+                          <table width="100%" align="center">
+                                    <tr>
+                                        <td align="center"  style="font-size: Medium; font-weight:bold;">STEP 6: Competencies</td>
+                                    </tr>
+                          </table>
+                          <table width="100%" align="center">
+                                    
+                                    <tr>
+                                        <td align="left" ><h1>Instructions:</h1> &nbsp; 
+                                            <li>For a detailed description about each of the Competency Models, Competency Areas and Competencies please refer to the <a href="/a2p/o" target="_blank" title="Competency Models">Competency Models</a>. </li>
+                                            <li>Please note,  the Competencies section is optional, to proceed to the next page without adding a Competency please select the ‘Save and Continue’ button.</li> 
+                                            <li>To add a new Competency, first select an Activity (specific to this IDP) that pertains to a Competency Model, Competency Area and/or Competency; in order to create a Competency the ‘Activity’ field is required.</li> 
+                                            <li>After selecting your associated Activity, select a Competency Model from within the ‘Competency Model’ picklist field; in order to create a Competency the Competency Model field is required.</li>
+                                            <li>The ‘Competency Area’ field will only include picklist values after you select a Competency Model. Once you have selected a ‘Competency Model’ the ‘Competency Area’ will include a list of areas related to the model you selected; if applicable, choose one of the related areas that pertain to your activity. This field is optional.</li>
+                                            <li>The ‘Competency’ field will only include picklist values after you select a Competency Area.</li>
+                                            <li> Please note that not all Competency Areas have an associated Competency so depending on the Competency Area you choose the field may or may not include picklist values; if applicable, choose one of the related competencies that pertain to your activity. This field is optional.</li>
+                                            <li>Select ‘Save’, to add your Competency to the ‘List of Current Competencies’ table; to create another Competency follow the steps listed above again.</li>
+                                            <li>You can create additional Competencies for as many Activities as you want - just remember to select 'Save'.</li>
+                                            <li>To delete a Competency, click 'Delete' next to the Competency you want to delete in the 'List of Current Competencies' table.</li>
+                                            <li>When you are finished adding your Competencies click ‘Save and Continue’ to go to the next step.</li>
+                                        </td>
+                          </tr>
+                          </table>
+                          <table width="100%" align="center">
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">List of Current Competencies</td>
+                                    </tr>
+                                </table>                                
+                                <apex:pageBlockTable value="{!competencyWrapperList}" var="competencyWrap" id="competencies">
+                                <apex:column headerValue="Delete" width="5%">      
+                                    <apex:commandLink action="{!deleteCompetency}" immediate="true" styleClass="btn"  style="text-decoration:none;padding-top:2px;padding-bottom:2px;" reRender="LeftSideBar,RightSide,messages," oncomplete="reloadCompetencies();">
+                                                        Delete
+                                    <apex:param name="deleteIndex"  assignTo="{!deleteCompetencyIndex}" value="{!competencyWrap.index}" /> 
+                                    </apex:commandLink>                                         
+                                </apex:column>
+                                <apex:column headerValue="Activity Name" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Activity_Name__c}" />                                                       
+                                </apex:column>
+                                <apex:column headerValue="Competency Model" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Competency_Model__c}" />                                                        
+                                </apex:column>
+                                 <apex:column headerValue="Competency Area" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Competency_Area__c}" />                                                     
+                                </apex:column>
+                                 <apex:column headerValue="Competency" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Competency__c}" />                                                      
+                                </apex:column>
+                                <apex:column headerValue="HTML" styleClass="objName" headerClass="objName">
+                                <div id="editComp">
+                                <span id="act">{!competencyWrap.Competency.Developmental_Activity__r.Name}</span>
+                                <span id="model">{!competencyWrap.Competency.Competency_Model__c}</span>
+                                <span id ="area">{!competencyWrap.Competency.Competency_Area__c}</span>
+                                <span id="comp">{!competencyWrap.Competency.Competency__c}</span>
+                                </div>
+                                </apex:column>
+                                </apex:pageBlockTable>
+                                    <br />                                                              
+                             </apex:pageBlock>
+                             <apex:pageBlock id="showComp">
+                             <table width="100%" align="center">  
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Create Competencies</td>
+                                    </tr>    
+                             </table>
+                               <table width="100%" align="center">                                          
+                                    <tr>
+                                        <td align="left"><apex:outputlabel value="Select Activity:" for="activity"/>
+                                            <span class="vfHelpText">
+                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.Developmental_Competency__c.fields.Developmental_Activity__c.inlineHelpText}">
+                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                    <span>{!$ObjectType.Developmental_Competency__c.fields.Developmental_Activity__c.inlineHelpText}</span>
+                                                </apex:outputLink>
+                                            </span>
+                                        </td>
+                                        <td align="left">
+                                            <!-- START Christian's changes for story #20 -->
+                                            <!-- <apex:InputField value="{!competency.Developmental_Activity__c}" style="width:300px;" id="activity" html-aria-label="&#42;Select Activity">
+                                                <apex:actionSupport event="onchange" reRender="Step_06" action="{!getActivityName}"/>
+                                            </apex:InputField> -->
+                                            <apex:outputPanel id="activityPanel">
+                                                <div class="requiredInput">
+                                                    <div class="requiredBlock"></div>
+                                                    <input aria-label="*Select Activity" type="text" value="{!selectedActivityName}" id="activity" required="true"/>
+                                                    <a href="javascript:void(0);" onclick="showPopupActivity();">
+                                                        <img src="/s.gif" alt="Activity Lookup (New Window)" class="lookupIcon" onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" title="Activity Lookup (New Window)"/>
+                                                    </a>
+                                                </div>
+                                                <apex:actionFunction action="{!showPopupActivity}" name="showPopupActivity" rerender="activityPopup, activityPanel, Step_06" immediate="true" oncomplete="setFocusActivitiesPopup();"/>
+                                            </apex:outputPanel>
+                                            <!-- END Christian's changes for story #20 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><apex:outputlabel value="Activity Name:" rendered="{!showActivityName != ''}" />
+                                                    <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="Selected Activity Name" rendered="{!showActivityName != ''}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>Selected Activity Name</span>
+                                                                </apex:outputLink>
+                                                    </span>
+                                        </td>
+                                        <td align="left"><apex:outputlabel value="{!showActivityName}" rendered="{!showActivityName != ''}" title="{!showActivityName}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">                                           
+                                            <apex:outputlabel value="Competency Model:"/>
+                                            <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.Developmental_Competency__c.fields.Competency_Model__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.Developmental_Competency__c.fields.Competency_Model__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                        </span>
+                                            </td>
+                                        <td style="position:relative;left:-4px;">                      
+                                            <div style="background-color:#c00;color:#c00;width:3px;position:absolute;height:19px;">.</div>&nbsp;                                                                            
+                                            <apex:selectList value="{!selectModel}" id="selectModel" size="1" html-aria-label="*Competency Model" style="position: relative;right: -1px;">                                             
+                                                <apex:selectOptions value="{!CompetencyModel}"/>
+                                                <apex:actionSupport event="onchange" reRender="showComp">
+                                                
+                                                </apex:actionSupport>
+                                            </apex:selectList>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td align="left"><apex:outputlabel value="Competency Area:"/>
+                                        <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.Developmental_Competency__c.fields.Competency_Area__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.Developmental_Competency__c.fields.Competency_Area__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                        </span>
+                                        </td>
+                                        <td>
+                                            <apex:selectList value="{!selectArea}" id="compArea" size="1" html-aria-label="Comptency Area">
+                                                <apex:selectOptions value="{!CompetencyArea}"/>
+                                                <apex:actionSupport event="onchange" reRender="showComp" />
+                                            </apex:selectList>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td align="left"><apex:outputlabel value="Competency:"/>
+                                        <span class="vfHelpText">
+                                                                <apex:outputLink value="javascript:return false;" title="{!$ObjectType.Developmental_Competency__c.fields.Competency__c.inlineHelpText}">
+                                                                    <img src="/s.gif" alt="" class="helpOrb" />
+                                                                    <span>{!$ObjectType.Developmental_Competency__c.fields.Competency__c.inlineHelpText}</span>
+                                                                </apex:outputLink>
+                                                            </span>
+                                        </td>
+                                        <td>
+                                            
+                                            <apex:selectList value="{!selectComp}" id="competencyName" size="1" html-aria-label="Competency" style="position: relative;right: -4px;">
+                                                <apex:selectOptions value="{!Competencies}"/>
+                                            </apex:selectList>
+                                        </td>
+                                        
+                                    </tr>
+                                    </table>
+                                    <br />
+                                    <div align="center">                                    
+                                    <apex:actionStatus id="compSave">
+                                     <apex:facet name="stop">
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!addComp}" reRender="LeftSideBar,RightSide,messages" status="compSave" oncomplete="reloadCompetencies();">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step06" />
+                                    </apex:commandLink>                                    
+                                    </apex:facet>
+                                    <apex:facet name="start">
+                                    <apex:commandButton value="Saving Competency..." status="compSave" disabled="true"/>
+                                    </apex:facet>
+                                    </apex:actionStatus>
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!cancel}" immediate="true" onclick="if(!confirmCancel()){return false;}" reRender="LeftSideBar,RightSide,messages">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                    <apex:commandLink styleClass="btn" style="text-decoration:none;padding-top:4px;padding-bottom:4px;" id="saveComp" action="{!next}" reRender="LeftSideBar,RightSide,messages" rendered="{!showActivityName != ''}" oncomplete="delayReloadReview();">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Continue&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step06" />
+                                        <apex:param name="compAct" assignTo="{!compAct}" value="Yes" />
+                                    </apex:commandLink>
+                                      <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&Operation=Review" styleClass="btn" style="padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px;" id="saveCompNull" rendered="{!showActivityName == ''}">Save and Continue</apex:outputLink>                                                                
+                                    </div>
+                            
+                            </apex:pageBlock>
+                            
+                        </apex:outputPanel>
+                        <!--------------------------------------------- Competency Section End---------------------------------------------->
+                        <apex:outputPanel id="Step_07" rendered="{!showStep07}">
+                            <apex:pageBlock id="showStep07">
+                                <table width="100%" align="center">
+                                    <tr>
+                                        <td align="center"  style="font-size: Medium; font-weight:bold;">STEP 7: Review and Submit</td>
+                                    </tr>
+                                </table>
+                                <div id="step_07_Title">
+                                     <h1>Instructions:</h1> &nbsp; 
+                                        <li>Review all of your Objectives, Activities and Competencies below. If you are satisfied, click 'Submit for Approval' to send your IDP to your Supervisor for approval.</li>
+                                        <li>If you wish to modify any of the content of your IDP prior to Submitting for Approval, use the 'Edit' button on each section of the table below, or the hyperlinks to the left.</li>                                        
+                                        <li>Select 'View Details' to review the full details of  an 'Objective' or 'Activity' or 'Competency'.</li>                                        
+                                        <li>Select 'Print' to print your IDP.</li> 
+                                        <li>After submitting your IDP for approval your Supervisor has the option of adding comments about each of the Activities you have listed. To view your Supervisor’s comments view the ‘Activities’ table.</li>
+                                        <li>Once you have completed an Activity for an Approved IDP you can add the Completed Date by selecting ‘View Details’ within the ‘Activities’ table, adding a date within the ‘Completed Date’ field and selecting ‘Save and Close’.</li>
+                                        <li>If you have an Approved IDP (for the current or upcoming fiscal year) that contains an Activity with a cost associated with it you are required to create an SF 182.</li>
+                                        <li>The form can be accessed  from the <a href="/a2r/e?retURL=%2Fa2r%2Fo" title="SF 182">SF 182</a> tab at any time.</li>
+                                     <div style="clear:both;"></div>
+                                 </div>
+                                <hr style="height: 0px;" />
+                                <table width="100%" align="center">
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">IDP Information
+                                            &nbsp;&nbsp;&nbsp;
+                                            <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=IDPInformation" id="theLink1" disabled="{!NOT(chkbxStp01)}"> 
+                                               <apex:image rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}" height="70%" value="{!$Resource.IDPEditButton}" alt="Edit IDP Information Section"/>
+                                            </apex:outputLink>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <table width=" 70%" cellspacing="10px" style="table-layout: fixed;">
+                                                <tr> 
+                                                    <td align="right"><apex:outputLabel value="IDP ID:" title="IDP ID"/></td>
+                                                    
+                                                    <td align="left"><apex:outputText value="{!newIDP.Name}" title="{!newIDP.Name}"/></td>
+                                                    
+                                                </tr>   
+                                                <tr> 
+                                                    <td align="right"><apex:outputlabel value="IDP Name:" title="IDP Name"/></td>
+                                                    <td align="left"><apex:outputtext value="{!newIDP.IDP_Names__c}" title="{!newIDP.IDP_Names__c}"/></td>
+                                                    <td align="right"><apex:outputLabel value="Fiscal Year:" title="Fiscal Year"/></td>
+                                                    <td align="left">
+                                                    <apex:outputText value="{!newIDP.Fiscal_Year_pick__c}" title="{!newIDP.Fiscal_Year_pick__c}"/>                                                    
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"><apex:outputLabel value="IDP Status:" title="IDP Status"/></td>
+                                                    <td align="left"><apex:outputText value="{!newIDP.IDP_Status__c}" title="{!newIDP.IDP_Status__c}"/></td>
+                                                    <td align="right"><apex:outputLabel value="Series:" title="Series"/></td>
+                                                    <td align="left"><apex:outputText value="{!newIDP.Series__c}" title="{!newIDP.Series__c}"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"><apex:outputlabel value="Created Date:" title="Created Date"/></td>
+                                                    <td align="left">
+                                                       <apex:outputtext value="{0,date,MM/dd/yyyy}" title="{!newIDP.Create_Date__c}">
+                                                         <apex:param value="{!newIDP.Create_Date__c}" />
+                                                       </apex:outputtext>  
+                                                    </td>
+                                                    <td align="right"><apex:outputLabel value="Supervisor:" title="Supervisor"/></td>
+                                                    <td align="left"><apex:outputText value="{!newIDP.Supervisor__r.FirstName} {!newIDP.Supervisor__r.LastName}" title="{!newIDP.Supervisor__r.FirstName} {!newIDP.Supervisor__r.LastName}"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"><apex:outputLabel value="Grade:" title="Grade"/></td>
+                                                    <td align="left"><apex:outputText value="{!newIDP.Grade__c}" title="{!newIDP.Grade__c}"/></td>
+                                                    <td align="right"><apex:outputLabel value="Other Viewer:" title="Other Viewer"/></td>
+                                                    <td align="left"><apex:outputText value="{!newIDP.Director__r.FirstName} {!newIDP.Director__r.LastName}" title="{!newIDP.Director__r.FirstName} {!newIDP.Director__r.LastName}"/></td>
+                                                    
+                                                </tr>
+                                                   
+                                                   <!-- Nithin 09/15/2013 -->
+                                                <tr>
+                                                    <td align="right"><apex:outputLabel value="Pay Plan:" title="Payplan"/></td>
+                                                    <td align="left"><apex:outputText value="{!newIDP.Payplan__c}" title="{!newIDP.Payplan__c}"/></td>
+                                                    <td align="right"><apex:outputLabel value="Procurement Specialization:" title="Procurement Specialization"/></td>
+                                                    <td align="left"><apex:outputText value="{!newIDP.Specialization__c}" title="{!newIDP.Specialization__c}"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right" valign="top"><apex:outputLabel value="Activity Total Cost:" title="Activity Total Cost"/></td>
+                                                    <td align="left" style="word-wrap:break-word"><apex:outputText value="${!activityTotalCost}" title="${!activityTotalCost}"/></td>
+                                                   
+                                                </tr>
+                                                   
+                                            </table>   
+                                        </td>
+                                  
+                                  
+                                  </tr>
+                                  
+                                    
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Long-Term Goals
+                                            &nbsp;&nbsp;&nbsp;
+                                            <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=LongTermGoals" id="theLink2" disabled="{!NOT(chkbxStp02)}"> 
+                                               <apex:image rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}" height="70%" value="{!$Resource.IDPEditButton}" alt="Edit Long-Term Goals Section"/>
+                                            </apex:outputLink>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td align="left" style="word-wrap:break-word"><apex:outputText value="{!newIDP.Career_Goals_Long_Run__c}"/></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Short-Term Goals
+                                            &nbsp;&nbsp;&nbsp;
+                                            <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=ShortTermGoals" id="theLink3" disabled="{!NOT(chkbxStp03)}"> 
+                                                <apex:image rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}" height="70%" value="{!$Resource.IDPEditButton}" alt="Edit Short-Term Goals Section"/>
+                                            </apex:outputLink>
+                                        </td>   
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td align="left" style="word-wrap:break-word"><apex:outputText value="{!newIDP.Career_Goals_Short_Run__c}" /></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                    </tr>
+                                    
+                                    <!----------------------------------- Objective Information ------------------------------------------>
+                                  
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Objectives
+                                            &nbsp;&nbsp;&nbsp;
+                                            <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=Objective" id="theLink4" disabled="{!NOT(chkbxStp04)}"> 
+                                               <apex:image rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}" height="70%" value="{!$Resource.IDPEditButton}" alt="Edit Objectives Section"/>
+                                            </apex:outputLink>
+                                        </td>
+                                    </tr>
+                                  
+                                    <tr>
+                                        <td width="100%">
+                                         
+                                            <apex:pageBlockTable value="{!objectiveWrapperList}" var="objectiveWrap" id="objectivesTable1">
+                                                <apex:column headervalue="View Details"  width="5%">
+                                                  <apex:commandButton value="View Details" id="viewObjective" styleClass="btn" onclick=" return overlay('{!objectiveWrap.Objective.Name}');" />                                                                                                                                        
+                                                </apex:column>
+                                                <apex:column headervalue="Objective Title"  width="80%">
+                                                    <apex:outputText value="{!objectiveWrap.Objective.Objective_Title__c}"/>
+                                                </apex:column>                                                
+                                                <apex:column headervalue="Created Date" width="10%">
+                                                    <apex:outputtext value="{0,date,MM/dd/yyyy}">
+                                                      <apex:param value="{!objectiveWrap.Objective.CreatedDate}" />
+                                                    </apex:outputtext>
+                                                </apex:column>             
+                                                <apex:column styleClass="objName" id="objName" headerClass="objName">
+                                                    <div id="{!objectiveWrap.Objective.Name}title">{!objectiveWrap.Objective.Objective_Title__c}</div>
+                                                    <div id="{!objectiveWrap.Objective.Name}text">{!objectiveWrap.Objective.Objective__c}</div>
+                                                </apex:column>                                       
+                                            </apex:pageBlockTable>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td width="100%">
+                                        <div id="overlay">
+                                            <div width="100%">
+                                                <a href="javascript:close()" style="text-decoration:none;" class="closeImage"><apex:image value="{!$Resource.close}" width="42" height="42" alt="Close"/></a>                                                    
+                                                <table align="center" id="objInfo">
+                                                    <tr><td id="objLabel" sytle="text-align: center;">Objective Information</td></tr>
+                                                </table>
+                                                <table id="objOverlay" align="center" width="100%">                                                 
+                                                    <tr id="objRow">                                
+                                                        <td width="25%" id="objLabel">Objective Title:</td>                       
+                                                        <td width="75%" id="objData"><span id="OTitle"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%" id="objLabel">Objective Description:</td>
+                                                        <td width="75%" id="objData"><span id="OText"></span></td>
+                                                    </tr>
+                                                </table>  
+                                                <br />
+                                                <br />
+                                                <span align="center">
+                                                    <a href="javascript:close()" class="btn" style="text-decoration:none;">Close</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    </tr>
+                                    <!------------------------------------------------------------------------------------------------------------>
+                                    
+                                    <tr>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                    </tr>
+                                    
+                                    <!----------------------------------- Activity Informaiton ------------------------------------------>
+                                  
+                                    <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Activities
+                                            &nbsp;&nbsp;&nbsp;
+                                            <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=Activities" id="theLink5" disabled="{!NOT(chkbxStp05)}"> 
+                                               <apex:image rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}" height="70%" value="{!$Resource.IDPEditButton}" alt="Edit Activities Section"/>
+                                            </apex:outputLink>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td width="100%">
+                                      
+                                            <apex:pageBlockTable value="{!activityWrapperList}" var="ActivityWrap" id="activitiestabel" >                                                                                               
+                                                <apex:column headervalue="View Details"  width="5%">                                                                                                  
+                                                  <apex:commandButton value="View Details" id="viewActivity" styleClass="btn" onclick="return overlayActivity('{!ActivityWrap.Activity.Name}');" />                                                                                         
+                                                </apex:column>
+                                                <apex:column headerValue="Related Objective Text" width="10%" >
+                                                    <apex:outputtext value="{!ActivityWrap.Activity.Developmental_Objective__r.Objective_Title__c}"/>
+                                                </apex:column>
+                                                <apex:column headervalue="Activity Name" width="25%" value="{!ActivityWrap.Activity.Assignment_Title__c}"/>
+                                                
+                                                <apex:column headerValue="Completed Date" width="9%">
+                                                 <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                     <apex:param value="{!ActivityWrap.Activity.Completed_Date__c}"/>
+                                                     </apex:outputText> 
+                                                </apex:column>
+                                                
+                                                <apex:column headerValue="Supervisor Comments" width="40%">                                                     
+                                                         <apex:outputText value="{!ActivityWrap.Activity.Supervisor_Comments__c}" />
+                                                </apex:column>
+                                                
+                                                <apex:column headervalue="Type" width="10%" value="{!ActivityWrap.Activity.Activity_Type_List__c}"/>
+                                                
+                                                <apex:column headervalue="Total Cost" width="10%" value="{!ActivityWrap.Activity.Total_Cost__c}"/>
+                                                 <apex:column styleClass="actName" id="actName" headerClass="actName">
+                                                    <div id="{!ActivityWrap.Activity.Name}objId">{!ActivityWrap.Activity.Developmental_Objective__r.Id}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}title">{!ActivityWrap.Activity.Developmental_Objective__r.Objective_Title__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}actId">{!ActivityWrap.Activity.Id}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}name">{!ActivityWrap.Activity.Assignment_Title__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}type">{!ActivityWrap.Activity.Activity_Type_List__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}trainingNeed">{!ActivityWrap.Activity.Training_Need__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}sDate">{!ActivityWrap.Activity.Planned_Start_Date__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}eDate">{!ActivityWrap.Activity.Planned_End_Date__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}rDate">{!ActivityWrap.Activity.Required_Date__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}cDate">{!ActivityWrap.Activity.Completed_Date__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}books">{!ActivityWrap.Activity.Books_Material_Costs__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}perDiem">{!ActivityWrap.Activity.Per_Diem__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}travel">{!ActivityWrap.Activity.Cost_Travel__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}tution">{!ActivityWrap.Activity.Tuition_Fees__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}vendor">{!ActivityWrap.Activity.Vendor__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}location">{!ActivityWrap.Activity.Location__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}comments">{!ActivityWrap.Activity.Comments__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}training">{!ActivityWrap.Activity.Training_Name__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}outcomes">{!ActivityWrap.Activity.Expected_Outcomes__c}</div>
+                                                    <div id="{!ActivityWrap.Activity.Name}supervisor">{!ActivityWrap.Activity.Supervisor_Comments__c}</div>  
+                                                    <div id="{!ActivityWrap.Activity.Name}priority">{!ActivityWrap.Activity.Priority__c}</div>
+                                                </apex:column>           
+                                            </apex:pageBlockTable>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                      <td width="100%">
+                                          <div id="overlayActivities">
+                                                   <div width="100%">
+                                                   <a href="javascript:closeActivity()" style="text-decoration:none;" class="closeImage"><apex:image value="{!$Resource.close}" width="42" height="42" alt="Close"/></a>
+                                                   <table align="center" id="objInfo">
+                                                        <tr><td id="objLabel" sytle="text-align: center;">Objective Information</td></tr>
+                                                   </table>
+                                                   <table id="objOverlay" align="center" width="100%">
+                                                        <tr id="objRow">
+                                                                        <td width="25%" id="objLabel">Objective Title:</td>
+                                                                        <td width="75%" id="objData"><span id="OATitle"></span></td>
+                                                        </tr>
+                                                    </table>
+                                                    <table align="center" id="objInfo">
+                                                        <tr>
+                                                            <td id="objLabel" sytle="text-align: center;">Activity Information</td>
+                                                        </tr>
+                                                    </table>
+                                                    <table id="objOverlay" align="center" width="100%">  
+                                                            <tr>
+                                                            </tr>         
+                                                                 <td id="objLabel">Activity ID</td>
+                                                                 <td id="objData"><span id="AId"></span></td>                                      
+                                                            <tr>
+                                                                 <td id="objLabel">Activity Name</td>
+                                                                 <td id="objData"><span id="AName"></span></td>
+                                                                 <td id="objLabel">Activity Start Date:</td>
+                                                                 <td id="objData"><span id="ASDate"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                 <td id="objLabel">Activity Type</td>
+                                                                 <td id="objData"><span id="AType"></span></td>
+                                                                 <td id="objLabel">Activity End Date:</td>
+                                                                 <td id="objData"><span id="AEDate"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                 <td id="objLabel">Is this Activity Required?:</td>
+                                                                 <td id="objData"><span id="ARequired"></span></td>
+                                                                 <td id="objLabel">Required Date:</td>
+                                                                 <td id="objData"><span id="ARDate"></span></td>
+                                                            </tr>
+                                                             <tr>
+                                                                 <td id="objLabel">Priority:</td>
+                                                                 <td id="objData"><span id="APriority"></span></td>
+                                                                 
+                                                                 <td id="objLabel">Completed Date</td>
+                                                                 <td align="left"><apex:inputfield value="{!newActivity.Completed_Date__c}" id="completedDate" rendered="{!newIDP.IDP_Status__c == 'Approved'}"  html-aria-label="Completed Date"/></td>
+                                                            </tr>
+                                                             <tr>
+                                                                 <td id="objLabel">Estimated Books &amp; Material Cost:</td>
+                                                                 <td id="objData"><span id="ABooksCost"></span></td>
+                                                                 <td id="objLabel">Estimated Per Diem:</td>
+                                                                 <td id="objData"><span id="APerDiem"></span></td>
+                                                            </tr>
+                                                             <tr>
+                                                                 <td id="objLabel">Estimated Travel Cost:</td>
+                                                                 <td id="objData"><span id="AETCost"></span></td>
+                                                                 <td id="objLabel">Estimated Tuition &amp; Fees:</td>
+                                                                 <td id="objData"><span id="AFee"></span></td>
+                                                            </tr>                                                             
+                                                            <tr>
+                                                                 <td id="objLabel">Vendor:</td>
+                                                                 <td id="objData"><span id="AVendor"></span></td>
+                                                                 <td id="objLabel">Activity Location</td>
+                                                                 <td id="objData"><span id="ALocation"></span></td>
+                                                            </tr>
+                                                            <tr>                                                                 
+                                                                 <td id="objLabel">Expected Outcomes:</td>
+                                                                 <td id="objData"><span id="AOutcomes"></span></td>
+                                                                 <td id="objLabel">Comments:</td>
+                                                                 <td id="objData"><span id="AComments"></span></td>
+                                                                 
+                                                            </tr>
+                                                            <tr>
+                                                                                                                                    
+                                                                 <td id="objLabel">Supervisor Comments:</td>
+                                                                 <td id="objData"><span id="ASComments"></span></td>                                                                                                                                                                                                                                                           
+                                                            </tr>    
+                                                           <apex:inputHidden id="hdnObjective" value="{!devObjId}" />
+                                                           <apex:inputHidden id="hdnActivity" value="{!devActId}" />
+                                                                                                             
+                                                      </table>  
+                                                      <br />
+                                                      <br />
+                                                      <span align="center">
+                                                            <a href="javascript:closeActivity()" class="btn" style="text-decoration:none;padding-top:4px;padding-bottom:4px;">Close</a>
+                                                             &nbsp;&nbsp;&nbsp;
+                                                            <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!next}" reRender="LeftSideBar,RightSide,messages" rendered="{!newIDP.IDP_Status__c == 'Approved'}" status="actSave" onComplete="reloadReview();">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save and Close&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="stepSequence"   assignTo="{!stepSequence}" value="Step05" />
+                                    </apex:commandLink>  
+                                                      </span>                                                 
+                                                  </div>
+                                            </div>
+                                    </td>
+                                    </tr>
+                                    <!------------------------------------------------------------------------------------------------------------>
+                                    
+                                  
+                                   <tr> 
+                                        <td>&nbsp;</td>
+                                   </tr>
+                                   <!---------------------------------------- Competencies Begin ---------------------------------------------------->
+                                   <tr>
+                                        <td align="left" height="20px" style="background-color: #5B9BD5;font-weight:  bold; color:white;">Competencies
+                                            &nbsp;&nbsp;&nbsp;
+                                            <apex:outputLink value="/apex/IDP_Wizard?id={!newIDP.Id}&operation=Competencies" id="theLink6" disabled="{!NOT(chkbxStp06)}"> 
+                                               <apex:image rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}" height="70%" value="{!$Resource.IDPEditButton}" alt="Edit Competencies Section"/>
+                                            </apex:outputLink>
+                                        </td>
+                                    </tr>         
+                                <tr>
+                                        <td width="100%">                     
+                                <apex:pageBlockTable value="{!competencyWrapperList}" var="competencyWrap" id="competencies">    
+                                <apex:column headervalue="View Details"  width="5%">                                                                                                  
+                                                  <apex:commandButton value="View Details" id="viewCompentency" styleClass="btn" onclick="return overlayCompetency('{!competencyWrap.Competency.Name}');" />
+                                </apex:column>
+                                <apex:column headerValue="Activity Name" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Activity_Name__c}" />
+                                </apex:column>
+                                <apex:column headerValue="Competency Model" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Competency_Model__c}" />
+                                </apex:column>
+                                 <apex:column headerValue="Competency Area" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Competency_Area__c}" />
+                                </apex:column>
+                                 <apex:column headerValue="Competency" width="9%">
+                                        <apex:outputText value="{!competencyWrap.Competency.Competency__c}" />
+                                </apex:column>
+                                <apex:column headerValue="HTML" styleClass="objName" headerClass="objName">
+                                <div id="editComp">
+                                <span id="act">{!competencyWrap.Competency.Developmental_Activity__r.Name}</span>
+                                <span id="model">{!competencyWrap.Competency.Competency_Model__c}</span>
+                                <span id ="area">{!competencyWrap.Competency.Competency_Area__c}</span>
+                                <span id="comp">{!competencyWrap.Competency.Competency__c}</span>
+                                </div>
+                                </apex:column>
+                                <apex:column styleClass="compName" id="compName" headerClass="compName">  
+                                            <div id="{!competencyWrap.Competency.Name}name">{!competencyWrap.Competency.Activity_Name__c}</div>
+                                            <div id="{!competencyWrap.Competency.Name}model">{!competencyWrap.Competency.Competency_Model__c}</div>
+                                            <div id ="{!competencyWrap.Competency.Name}area">{!competencyWrap.Competency.Competency_Area__c}</div>
+                                            <div id="{!competencyWrap.Competency.Name}comp">{!competencyWrap.Competency.Competency__c}</div>                                                                                                                  
+                                </apex:column> 
+                                </apex:pageBlockTable>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td width="100%">
+                                    <div id="overlayCompetencies">
+                                        <div width="100%">
+                                            <a href="javascript:closeCompetency()" style="text-decoration:none;" class="closeImage"><apex:image value="{!$Resource.close}" width="42" height="42" alt="Close"/></a>  
+                                            <table align="center" id="objInfo">
+                                                <tr>
+                                                    <td id="objLabel" sytle="text-align: center;">Competency Information</td>
+                                                </tr>
+                                            </table>
+                                            <table id="objOverlay" align="center" width="100%">                                                 
+                                                <tr>
+                                                    <td id="compLabel">Activity Name</td>
+                                                    <td id="compData"><span id="CName"></span></td>
+                                                    <td id="compLabel">Competency Model:</td>
+                                                    <td id="compData"><span id="CModel"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="compLabel">Competency Area</td>
+                                                    <td id="compData"><span id="CArea"></span></td>
+                                                    <td id="compLabel">Competency:</td>
+                                                    <td id="compData"><span id="CComp"></span></td>
+                                                </tr>
+                                            </table>
+                                                <br />
+                                            <br />
+                                            <span align="center">
+                                                <a href="javascript:closeCompetency()" class="btn" style="text-decoration:none;">Close</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <!-- --------------------------------------Competencies End ------------------------------------------------------>
+                                </table>
+                                
+                                <div align="center">                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!cancel}" reRender="LeftSideBar,RightSide,messages"
+                                    rendered="{!((newIDP.IDP_Status__c!='New') && (newIDP.IDP_Status__c!='Needs Revision') && (newIDP.IDP_Status__c!='Resubmit'))}">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Exit&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!recallApproval}" 
+                                    rendered="{!(newIDP.IDP_Status__c == 'Supervisor Review') && (loggedUser == newIDP.OwnerId)}" onclick="if(!confirm('Are you sure you want to Recall Approval Request?')) return false;">
+                                    Recall                                    
+                                    </apex:commandLink>
+                                    
+                                    
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!cancel}" reRender="LeftSideBar,RightSide,messages"
+                                        rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit'))}">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Save for Later&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </apex:commandLink>
+                                    <apex:actionStatus id="status">
+                                    <apex:facet name="stop">
+                                    <apex:commandButton value="Submit for Approval"  style="text-decoration:none;text-decoration:none;padding-top:4px;padding-bottom:4px;" action="{!submit}" reRender="messages" onclick="if(!checkSupervisor()){return execute;}" 
+                                        rendered="{!((newIDP.IDP_Status__c=='New') || (newIDP.IDP_Status__c=='Needs Revision') || (newIDP.IDP_Status__c=='Resubmit')) && (loggedUser == newIDP.OwnerId)}" status="status">
+                                     </apex:commandButton>
+                                     </apex:facet>
+                                     <apex:facet name="start">
+                                       <apex:commandButton value="Please wait while we process your request..." status="status" disabled="true"/>
+                                     </apex:facet>
+                                    </apex:actionStatus>  
+                                    <apex:commandLink styleClass="btn" style="text-decoration:none;padding:4px;" onClick="window.print(); return false;">
+                                    Print                                    
+                                    </apex:commandLink>                               
+                                </div>
+                            </apex:pageBlock>
+                        </apex:outputPanel> 
+                          
+                    </apex:outputPanel>
+                </td>          
+            </tr>
+        </table>
+    </apex:pageBlock>
+</div>
+
+<!-- START Christian's changes for story #20 -->
+<style>
+    .customPopup{
+        background-color: white;
+        border-style: solid;
+        border-width: 2px;
+        padding:20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        overflow: auto; /* Enable scroll if needed */
+    }
+
+    .customPopup > div {
+        width: auto;
+        position: relative;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+</style>
+<script>
+    //////////// 508 compliance functions START /////////
+    var dialogOpenObjective = false;
+    var dialogOpenActivity = false;
+
+    document.addEventListener("focus", function(event) {
+        var objectiveBox = document.getElementById("j_id0:scwform:objectivePopup");
+        var activityBox = document.getElementById("j_id0:scwform:activityPopup");
+        if (dialogOpenObjective && !objectiveBox.contains(event.target)) {
+            event.stopPropagation();
+            document.getElementById("j_id0:scwform:objectivePB1:objectivePB2:objectivePBT:0:objectiveSelected").focus();
+        }
+        if (dialogOpenActivity && !activityBox.contains(event.target)) {
+            event.stopPropagation();
+            document.getElementById("j_id0:scwform:activityPB1:activityPB2:activityPBT:0:activitySelected").focus();
+        }
+    }, true);
+
+    function setFocusObjectivePopup(){
+        dialogOpenObjective = true;
+        var pagebackground = document.getElementById("bg");
+        pagebackground.setAttribute("aria-hidden","true");
+        document.getElementById("j_id0:scwform:objectivePB1:objectivePB2:objectivePBT:0:objectiveSelected").focus();
+    }
+
+    function setFocusActivitiesPopup(){
+        dialogOpenActivity = true;
+        var pagebackground = document.getElementById("bg");
+        pagebackground.setAttribute("aria-hidden","true");
+        document.getElementById("j_id0:scwform:activityPB1:activityPB2:activityPBT:0:activitySelected").focus();
+    }
+
+    function restoreFocusFromObjectivePopup(){
+        dialogOpenObjective = false;
+        var pagebackground = document.getElementById("bg");
+        pagebackground.setAttribute("aria-hidden","false");
+        document.getElementById("j_id0:scwform:formBlock:actBlock:selObjective").focus();
+    }
+
+    function restoreFocusFromActivitiesPopup(){
+        dialogOpenActivity = false;
+        var pagebackground = document.getElementById("bg");
+        pagebackground.setAttribute("aria-hidden","false");
+        document.getElementById("activity").focus();
+    }
+
+    function passObjectiveIds(Id, Name){
+        passObjectiveIdsAF(Id, Name);
+    }
+
+    function passActivityIds(Id, Name){
+        passActivityIdsAF(Id, Name);
+    }
+    
+    function closeObjectivePopup(){
+        document.getElementById('j_id0:scwform:customPopup').style.visibility = 'hidden';
+    }
+        //////////// 508 compliance functions END /////////
+</script>
+
+<!-- THE OBJECTIVES POPUP START -->
+<apex:outputPanel id="objectivePopup">
+    <apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopupObjective}" id="customPopup">
+        <div>
+            <apex:actionRegion >
+                <apex:sectionHeader title="Available Objectives" subtitle="Objective Select"/>  
+
+                <apex:pageBlock title="Available Objectives" mode="edit" id="objectivePB1">
+                    <apex:pageBlockButtons >
+                        <apex:commandButton value="Cancel" rerender="objectivePopup, objectivePanel" action="{!closePopupObjective}" immediate="true" onclick="closeObjectivePopup();"/>
+                    </apex:pageBlockButtons>
+
+                    <!-- OBJECTIVE TABLE START -->
+                    <apex:pageBlock title="Objectives" id="objectivePB2">
+                        <apex:pageBlockTable value="{!objectiveListForSelection}" var="objective" id="objectivePBT">
+                            <apex:column >
+                                <apex:facet name="header">Objective</apex:facet>
+                                <apex:commandButton id="objectiveSelected" value="{!objective.Name}" onclick="passObjectiveIds('{!objective.Id}', '{!objective.Objective_Title__c}'); return false;"/>
+                            </apex:column>
+                            <apex:column value="{!objective.Objective_Title__c}"/>
+                            <apex:column value="{!objective.Objective__c}"/>
+                            <apex:column value="{!objective.CreatedDate}"/>
+                        </apex:pageBlockTable>
+                        <apex:actionFunction action="{!selectObjectiveFiltered}" name="passObjectiveIdsAF" rerender="objectivePopup, objectivePanel" immediate="true" oncomplete="restoreFocusFromObjectivePopup();">
+                            <apex:param name="firstParam" assignTo="{!objectiveId}" value="" />
+                            <apex:param name="secondParam" assignTo="{!selectedObjectiveName}" value=""/>
+                        </apex:actionFunction>
+                    </apex:pageBlock>
+                    <!-- OBJECTIVE TABLE END -->
+                </apex:pageBlock>
+            </apex:actionRegion>
+        </div>
+    </apex:outputPanel>
+</apex:outputPanel>
+<!-- THE OBJECTIVES POPUP END -->
+
+<!-- THE ACTIVITIES POPUP START -->
+<apex:outputPanel id="activityPopup">
+    <apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopupActivity}">
+        <div>
+            <apex:actionRegion >
+                <apex:sectionHeader title="Available Activities" subtitle="Activity Edit"/> 
+
+                <apex:pageBlock title="Available Activities" mode="edit" id="activityPB1">
+                    <apex:pageBlockButtons >
+                        <apex:commandButton value="Cancel" rerender="activityPopup, activityPanel" action="{!closePopupActivity}" immediate="true"/>
+                    </apex:pageBlockButtons>
+
+                    <!-- ACTIVITY TABLE START -->
+                    <apex:pageBlock title="Activities" id="activityPB2">
+                        <apex:pageBlockTable value="{!activityListForSelection}" var="activity" id="activityPBT">
+                            <apex:column >
+                                <apex:facet name="header">Activity</apex:facet>
+                                <apex:commandButton value="{!activity.Name}" onclick="passActivityIds('{!activity.Id}', '{!activity.Assignment_Title__c}'); return false;" id="activitySelected"/>
+                            </apex:column>
+                            <apex:column value="{!activity.Assignment_Title__c}"/>
+                            <apex:column value="{!activity.Planned_Start_Date__c}"/>
+                            <apex:column value="{!activity.Planned_End_Date__c}"/>
+                            <apex:column value="{!activity.Activity_Type__c}"/>
+                            <apex:column value="{!activity.Total_Cost__c}"/>
+                        </apex:pageBlockTable>
+                        <apex:actionFunction action="{!selectActivityFiltered}" name="passActivityIdsAF" rerender="activityPopup, activityPanel" immediate="true" oncomplete="restoreFocusFromActivitiesPopup();">
+                            <apex:param name="firstParam" assignTo="{!activityId}" value="" />
+                            <apex:param name="secondParam" assignTo="{!selectedActivityName}" value=""/>
+                        </apex:actionFunction>
+                    </apex:pageBlock>
+                    <!-- ACTIVITY TABLE END -->
+                </apex:pageBlock>
+            </apex:actionRegion>
+        </div>
+    </apex:outputPanel>
+</apex:outputPanel>
+<!-- THE ACTIVITIES POPUP END -->
+<!-- END Christian's changes for story #20 -->
+</apex:form>
+
+</apex:page>

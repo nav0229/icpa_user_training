@@ -1,0 +1,58 @@
+<apex:page standardcontroller="Glxy_LeaseAccrual__c" title="New Lease Accrual" extensions="Glxy_AddAccruals" showHeader="true">
+    <apex:form id="frmEdit"> 
+        <apex:pageBlock id="PB" title="Lease Accrual Edit" mode="edit">
+            <apex:pageMessages ></apex:pageMessages> 
+            <apex:pageBlockButtons > 
+                <apex:commandButton action="{!save}" value="Save"/> 
+                <apex:commandButton action="{!quicksave}" value="Save & New"/> 
+                <apex:commandButton action="{!cancel}" value="Cancel"/> 
+            </apex:pageBlockButtons> 
+
+            <apex:pageBlockSection id="PS" title="Information" columns="1"> 
+                <apex:inputField required="true" value="{!Glxy_LeaseAccrual__c.LeaseDigest__c}"/> 
+                <apex:inputField ID="G2PDN" required="true" value="{!Glxy_LeaseAccrual__c.PDN__c}"/> 
+                <apex:inputField required="true" value="{!Glxy_LeaseAccrual__c.Accrual_Type__c}"/> 
+                <apex:inputField ID="G2Amount" required="true" value="{!Glxy_LeaseAccrual__c.Accrual_Amount__c}"/> 
+             </apex:pageBlockSection> 
+        </apex:pageBlock> 
+   
+        <apex:pageBlock mode="edit">
+        	<b><font size="+1" color = "DarkRed">Accruals established in FMIS for Lease {!strLeaseNumber}</font></b><br/>
+            <apex:pageBlockTable value="{!PDNForlease}" var="item">        
+                <apex:column headerValue="Select">
+                    <input type = "radio" Name="SelectOption" onclick="LoadForm(this)" value="{!item.PEG_DOC_NUM__c}*{!item.AMT__c}"/>
+                </apex:column>  
+                <apex:column headerValue="PDN" value="{!item.PEG_DOC_NUM__c}"/> 
+                <apex:column headerValue="Amount" value="{!item.AMT__c}"/>
+                <apex:column headerValue="Function Code" value="{!item.FUNC_CD__c}"/>
+                <apex:column headerValue="Function Name" value="{!item.Function_Name__c}"/>
+                <apex:column headerValue="Description" value="{!item.DESCRIPTION__c}"/>
+            </apex:pageBlockTable>   
+        </apex:pageBlock>
+        
+         <apex:pageBlock mode="edit">
+         	<b><font size="+1" color = "DarkRed">Accruals used previously in Galaxy2 for Lease {!strLeaseNumber}</font></b><br/>
+            <apex:pageBlockTable value="{!UsedPDNsForlease}" var="item">
+                <apex:column headerValue="Transaction ID" value="{!item.LeaseDigest__r.Transaction__r.Name}"/>            
+                <apex:column headerValue="Lease Digest" value="{!item.LeaseDigest__c}"/> 
+                <apex:column headerValue="PDN" value="{!item.PDN__c}"/>
+                <apex:column headerValue="Accrual Type" value="{!item.Accrual_Type__c}"/>
+                <apex:column headerValue="Accrual Amount" value="{!item.Accrual_Amount__c}"/>
+                <apex:column headerValue="Created Date" value="{!item.CreatedDate}"/>
+                <apex:column headerValue="Created By" value="{!item.CreatedByID}"/>
+            </apex:pageBlockTable>   
+        </apex:pageBlock>
+
+    </apex:form> 
+    
+    <script>
+        function LoadForm(radioBtn){
+            if (radioBtn.checked){
+            	var strSplits = radioBtn.value.split("*");
+                document.getElementById('{!$Component.frmEdit.PB.PS.G2PDN}').value= strSplits[0];
+                document.getElementById('{!$Component.frmEdit.PB.PS.G2Amount}').value= strSplits[1];
+            }
+        }
+    </script>
+    
+</apex:page>

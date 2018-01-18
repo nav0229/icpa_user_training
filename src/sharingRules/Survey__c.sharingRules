@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Automotive_Service_Survey</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Automotive Service Survey</label>
+        <sharedTo>
+            <group>Contact_Manager_Automotive_Survey</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Automotive Service Survey</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Employee_Survey</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Employee Survey</label>
+        <sharedTo>
+            <group>Employee_Survey_Managers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Employee Email Survey</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

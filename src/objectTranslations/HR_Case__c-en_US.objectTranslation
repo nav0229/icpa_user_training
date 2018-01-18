@@ -1,0 +1,3625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HR Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HR Cases</value>
+    </caseValues>
+    <fields>
+        <help><!-- Caution - Limit to 250 characters and may be viewed by others. --></help>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disposition --></label>
+        <name>Disposition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Appealed --></label>
+        <name>HRM_Action_Appealed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PO Case # --></label>
+        <name>HRM_Arbitration_Case_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Legal Counsel --></label>
+        <name>HRM_Assigned_Legal_Counsel__c</name>
+        <relationshipLabel><!-- HR Cases (Assigned Legal Counsel) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Assigned Office Code --></label>
+        <name>HRM_Assigned_Office_Code__c</name>
+        <picklistValues>
+            <masterLabel>10A	Ofc of the Regional Admn. - 10</masterLabel>
+            <translation><!-- 10A	Ofc of the Regional Admn. - 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10P	PBS/Ofc Reg&apos;l Commsr - 10</masterLabel>
+            <translation><!-- 10P	PBS/Ofc Reg&apos;l Commsr - 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10Q	FAS/Ofc Reg&apos;l Commsr - 10</masterLabel>
+            <translation><!-- 10Q	FAS/Ofc Reg&apos;l Commsr - 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1A	Ofc of the Regional Admn. - 1</masterLabel>
+            <translation><!-- 1A	Ofc of the Regional Admn. - 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1P	PBS/Ofc Reg&apos;l Commsr - 1</masterLabel>
+            <translation><!-- 1P	PBS/Ofc Reg&apos;l Commsr - 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1Q	FAS/Ofc Reg&apos;l Commsr - 1</masterLabel>
+            <translation><!-- 1Q	FAS/Ofc Reg&apos;l Commsr - 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2A	Ofc of the Regional Admn. - 2</masterLabel>
+            <translation><!-- 2A	Ofc of the Regional Admn. - 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2P	PBS/Ofc Reg&apos;l Commsr - 2</masterLabel>
+            <translation><!-- 2P	PBS/Ofc Reg&apos;l Commsr - 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2Q	FAS/Ofc Reg&apos;l Commsr - 2</masterLabel>
+            <translation><!-- 2Q	FAS/Ofc Reg&apos;l Commsr - 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3A	Ofc of the Regional Admn. - 3</masterLabel>
+            <translation><!-- 3A	Ofc of the Regional Admn. - 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3P	PBS/Ofc Reg&apos;l Commsr - 3</masterLabel>
+            <translation><!-- 3P	PBS/Ofc Reg&apos;l Commsr - 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3Q	FAS/Ofc Reg&apos;l Commsr - 3</masterLabel>
+            <translation><!-- 3Q	FAS/Ofc Reg&apos;l Commsr - 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4A	Ofc of the Regional Admn. - 4</masterLabel>
+            <translation><!-- 4A	Ofc of the Regional Admn. - 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4P	PBS/Ofc Reg&apos;l Commsr - 4</masterLabel>
+            <translation><!-- 4P	PBS/Ofc Reg&apos;l Commsr - 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4Q	FAS/Ofc Reg&apos;l Commsr - 4</masterLabel>
+            <translation><!-- 4Q	FAS/Ofc Reg&apos;l Commsr - 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5A	Ofc of the Regional Admn. - 5</masterLabel>
+            <translation><!-- 5A	Ofc of the Regional Admn. - 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5P	PBS/Ofc Reg&apos;l Commsr - 5</masterLabel>
+            <translation><!-- 5P	PBS/Ofc Reg&apos;l Commsr - 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5Q	FAS/Ofc Reg&apos;l Commsr - 5</masterLabel>
+            <translation><!-- 5Q	FAS/Ofc Reg&apos;l Commsr - 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6A	Ofc of the Regional Admn. - 6</masterLabel>
+            <translation><!-- 6A	Ofc of the Regional Admn. - 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6P	PBS/Ofc Reg&apos;l Commsr - 6</masterLabel>
+            <translation><!-- 6P	PBS/Ofc Reg&apos;l Commsr - 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6Q	FAS/Ofc Reg&apos;l Commsr - 6</masterLabel>
+            <translation><!-- 6Q	FAS/Ofc Reg&apos;l Commsr - 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7A	Ofc of the Regional Admn. - 7</masterLabel>
+            <translation><!-- 7A	Ofc of the Regional Admn. - 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7P	PBS/Ofc Reg&apos;l Commsr - 7</masterLabel>
+            <translation><!-- 7P	PBS/Ofc Reg&apos;l Commsr - 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7Q	FAS/Ofc Reg&apos;l Commsr - 7</masterLabel>
+            <translation><!-- 7Q	FAS/Ofc Reg&apos;l Commsr - 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8A	Ofc of the Regional Admn. - 8</masterLabel>
+            <translation><!-- 8A	Ofc of the Regional Admn. - 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8P	PBS/Ofc Reg&apos;l Commsr - 8</masterLabel>
+            <translation><!-- 8P	PBS/Ofc Reg&apos;l Commsr - 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8Q	FAS/Ofc Reg&apos;l Commsr - 8</masterLabel>
+            <translation><!-- 8Q	FAS/Ofc Reg&apos;l Commsr - 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9A	Ofc of the Regional Admn. - 9</masterLabel>
+            <translation><!-- 9A	Ofc of the Regional Admn. - 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9P	PBS/Ofc Reg&apos;l Commsr - 9</masterLabel>
+            <translation><!-- 9P	PBS/Ofc Reg&apos;l Commsr - 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9Q	FAS/Ofc Reg&apos;l Commsr - 9</masterLabel>
+            <translation><!-- 9Q	FAS/Ofc Reg&apos;l Commsr - 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A	Ofc of the Administrator</masterLabel>
+            <translation><!-- A	Ofc of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AC	Ofc of the Admin./Office of the Chief of Staff</masterLabel>
+            <translation><!-- AC	Ofc of the Admin./Office of the Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AD	Ofc of the Admin./Office of the Deputy Administrator</masterLabel>
+            <translation><!-- AD	Ofc of the Admin./Office of the Deputy Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK	OCR-Ofc of Civil Rights</masterLabel>
+            <translation><!-- AK	OCR-Ofc of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B	CFO-Ofc of the Chief Financial Officer</masterLabel>
+            <translation><!-- B	CFO-Ofc of the Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BB	CFO/Office of Budget</masterLabel>
+            <translation><!-- BB	CFO/Office of Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BC	CFO/Ofc of Financial Policy &amp; Operations</masterLabel>
+            <translation><!-- BC	CFO/Ofc of Financial Policy &amp; Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BF	CFO/Office of FAS Financial Services</masterLabel>
+            <translation><!-- BF	CFO/Office of FAS Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI	CFO/Ofc of Financial Info &amp; Data Analytics</masterLabel>
+            <translation><!-- BI	CFO/Ofc of Financial Info &amp; Data Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BP	CFO/Office of PBS Financial Services</masterLabel>
+            <translation><!-- BP	CFO/Office of PBS Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C	OHRM-Ofc of HR Mgmt</masterLabel>
+            <translation><!-- C	OHRM-Ofc of HR Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD	OHRM/Office of Program Performance</masterLabel>
+            <translation><!-- CD	OHRM/Office of Program Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH	OHRM/Office of Human Capital Management</masterLabel>
+            <translation><!-- CH	OHRM/Office of Human Capital Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CP	OHRM/Office of Human Resources Services</masterLabel>
+            <translation><!-- CP	OHRM/Office of Human Resources Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CX	OHRM/Office of Executive Resources</masterLabel>
+            <translation><!-- CX	OHRM/Office of Executive Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D	OMA-Ofc of Mission Assurance</masterLabel>
+            <translation><!-- D	OMA-Ofc of Mission Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DA	OMA/Northeast Regions Division</masterLabel>
+            <translation><!-- DA	OMA/Northeast Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DB	OMA/Southeast Regions Division</masterLabel>
+            <translation><!-- DB	OMA/Southeast Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC	OMA/Mid-West Regions Division</masterLabel>
+            <translation><!-- DC	OMA/Mid-West Regions Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD	OMA/Policy &amp; Plans Division</masterLabel>
+            <translation><!-- DD	OMA/Policy &amp; Plans Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE	OMA/Western Regions Divison</masterLabel>
+            <translation><!-- DE	OMA/Western Regions Divison --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DP	OMA/Operations Division</masterLabel>
+            <translation><!-- DP	OMA/Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS	OMA/GSA Security Division</masterLabel>
+            <translation><!-- DS	OMA/GSA Security Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E	OSBU-Ofc of Small Business Utilization</masterLabel>
+            <translation><!-- E	OSBU-Ofc of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G	CBCA/GSA Board of Contract Appeals</masterLabel>
+            <translation><!-- G	CBCA/GSA Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA	CBCA/Staff Support Division</masterLabel>
+            <translation><!-- GA	CBCA/Staff Support Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GJ	CBCA/Judicial Division</masterLabel>
+            <translation><!-- GJ	CBCA/Judicial Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H	OAS/Ofc of Admin Services</masterLabel>
+            <translation><!-- H	OAS/Ofc of Admin Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1	OAS/Deputy</masterLabel>
+            <translation><!-- H1	OAS/Deputy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I	CIO-Ofc of the Chief Info Officer</masterLabel>
+            <translation><!-- I	CIO-Ofc of the Chief Info Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA	CIO/Office of Enterprise Solutions</masterLabel>
+            <translation><!-- IA	CIO/Office of Enterprise Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB	CIO/Ofc of Financial and HR IT Services</masterLabel>
+            <translation><!-- IB	CIO/Ofc of Financial and HR IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID	CIO/Office of the Deputy CIO</masterLabel>
+            <translation><!-- ID	CIO/Office of the Deputy CIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE	CIO/Office of Enterprise Mngt Services</masterLabel>
+            <translation><!-- IE	CIO/Office of Enterprise Mngt Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO	CIO/Office of Enterprise Infrastructure</masterLabel>
+            <translation><!-- IO	CIO/Office of Enterprise Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP	CIO/Ofc of Public Bldg IT Services</masterLabel>
+            <translation><!-- IP	CIO/Ofc of Public Bldg IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ	CIO/Ofc of Acquisition IT Services</masterLabel>
+            <translation><!-- IQ	CIO/Ofc of Acquisition IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR	CIO/Resources Management Staff</masterLabel>
+            <translation><!-- IR	CIO/Resources Management Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IS	CIO/Ofc of the Chief Info Security Officer</masterLabel>
+            <translation><!-- IS	CIO/Ofc of the Chief Info Security Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J	OIG-Ofc of Inspector General</masterLabel>
+            <translation><!-- J	OIG-Ofc of Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JA	OIG/Office of Audits</masterLabel>
+            <translation><!-- JA	OIG/Office of Audits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JC	OIG/Counsel to the Inspector General</masterLabel>
+            <translation><!-- JC	OIG/Counsel to the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JE	OIG/Ofc of Internal Evaluation &amp; Analysis</masterLabel>
+            <translation><!-- JE	OIG/Ofc of Internal Evaluation &amp; Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JI	OIG/Office of Investigations</masterLabel>
+            <translation><!-- JI	OIG/Office of Investigations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JP	OIG/Office of Administration</masterLabel>
+            <translation><!-- JP	OIG/Office of Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L	OGC-Ofc of General Counsel</masterLabel>
+            <translation><!-- L	OGC-Ofc of General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LD1	OGC/Regional Divisions</masterLabel>
+            <translation><!-- LD1	OGC/Regional Divisions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG	OGC/General Law Division</masterLabel>
+            <translation><!-- LG	OGC/General Law Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP	OGC/Personal Property Division</masterLabel>
+            <translation><!-- LP	OGC/Personal Property Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LR	OGC/Real Property Division</masterLabel>
+            <translation><!-- LR	OGC/Real Property Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M	OGP-Ofc of Gov&apos;twide Policy</masterLabel>
+            <translation><!-- M	OGP-Ofc of Gov&apos;twide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M1	OGP/Deputy Assoc. Admin</masterLabel>
+            <translation><!-- M1	OGP/Deputy Assoc. Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M1A	OGP/Deputy Assoc. Admin/Ofc of Asset &amp; Transportation Mgmt</masterLabel>
+            <translation><!-- M1A	OGP/Deputy Assoc. Admin/Ofc of Asset &amp; Transportation Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M1E	OGP/Deputy Assoc. Admin/Ofc of Information,Integrity, &amp; Access</masterLabel>
+            <translation><!-- M1E	OGP/Deputy Assoc. Admin/Ofc of Information,Integrity, &amp; Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M1G	OGP/Deputy Assoc. Admin/Ofc of High-Performing Green Bldgs</masterLabel>
+            <translation><!-- M1G	OGP/Deputy Assoc. Admin/Ofc of High-Performing Green Bldgs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M1V	OGP/Deputy Assoc. Admin/Office of Acquisition Policy</masterLabel>
+            <translation><!-- M1V	OGP/Deputy Assoc. Admin/Office of Acquisition Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M1X	OGP/Deputy Assoc. Admin/Executive Councils</masterLabel>
+            <translation><!-- M1X	OGP/Deputy Assoc. Admin/Executive Councils --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P	PBS/Office of the Commissioner</masterLabel>
+            <translation><!-- P	PBS/Office of the Commissioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA	PBS/Office of Client Solutions</masterLabel>
+            <translation><!-- PA	PBS/Office of Client Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PB	PBS/Office of Chief of Staff</masterLabel>
+            <translation><!-- PB	PBS/Office of Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC	PBS/Office of Design and Construction</masterLabel>
+            <translation><!-- PC	PBS/Office of Design and Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PD	PBS/Deputy Commissioner</masterLabel>
+            <translation><!-- PD	PBS/Deputy Commissioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PH	PBS/Office of the Chief Greening Officer</masterLabel>
+            <translation><!-- PH	PBS/Office of the Chief Greening Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM	PBS/Ofc of Facilities Mgmt &amp; Svcs Prgm</masterLabel>
+            <translation><!-- PM	PBS/Ofc of Facilities Mgmt &amp; Svcs Prgm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PN	PBS/PBS Project Management Office</masterLabel>
+            <translation><!-- PN	PBS/PBS Project Management Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR	PBS/Office of Leasing</masterLabel>
+            <translation><!-- PR	PBS/Office of Leasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT	PBS/Office of Real Property Asset Mgmt</masterLabel>
+            <translation><!-- PT	PBS/Office of Real Property Asset Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q	FAS/Ofc of FAS Commsr</masterLabel>
+            <translation><!-- Q	FAS/Ofc of FAS Commsr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q0A	FAS/Ofc of FAS Commsr/Chief of Staff</masterLabel>
+            <translation><!-- Q0A	FAS/Ofc of FAS Commsr/Chief of Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q0B	FAS/Ofc of FAS Commsr/Office of Strategic Innovations</masterLabel>
+            <translation><!-- Q0B	FAS/Ofc of FAS Commsr/Office of Strategic Innovations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q1	FAS/Ofc of FAS Commsr/Deputy Commissioner</masterLabel>
+            <translation><!-- Q1	FAS/Ofc of FAS Commsr/Deputy Commissioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC	FAS/Ofc of Cust Accounts &amp; Research</masterLabel>
+            <translation><!-- QC	FAS/Ofc of Cust Accounts &amp; Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD	FAS/Ofc of Integrated Award Environment</masterLabel>
+            <translation><!-- QD	FAS/Ofc of Integrated Award Environment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QF	FAS/Ofc of Assisted Acquisition Svs</masterLabel>
+            <translation><!-- QF	FAS/Ofc of Assisted Acquisition Svs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QM	FAS/Ofc of Trvl,Motor Vech &amp; Card Svcs</masterLabel>
+            <translation><!-- QM	FAS/Ofc of Trvl,Motor Vech &amp; Card Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP	FAS/Ofc of Strategy Management</masterLabel>
+            <translation><!-- QP	FAS/Ofc of Strategy Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS	FAS/Ofc of General Supplies &amp; Svcs</masterLabel>
+            <translation><!-- QS	FAS/Ofc of General Supplies &amp; Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT	FAS/Ofc of Integrated Technology Svcs</masterLabel>
+            <translation><!-- QT	FAS/Ofc of Integrated Technology Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV	FAS/Ofc of Acquisition Management</masterLabel>
+            <translation><!-- QV	FAS/Ofc of Acquisition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S	OCIA-Ofc of Congress&apos;l&amp;Intergovt&apos;l Affairs</masterLabel>
+            <translation><!-- S	OCIA-Ofc of Congress&apos;l&amp;Intergovt&apos;l Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WA	Ofc of the Regional Admn. - 11</masterLabel>
+            <translation><!-- WA	Ofc of the Regional Admn. - 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WP	PBS/Ofc Reg&apos;l Commsr - 11</masterLabel>
+            <translation><!-- WP	PBS/Ofc Reg&apos;l Commsr - 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WQ	FAS/Ofc Reg&apos;l Commsr - 11</masterLabel>
+            <translation><!-- WQ	FAS/Ofc Reg&apos;l Commsr - 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>X	OCSIT-Ofc of Citizen Svcs&amp;Innov.Tech</masterLabel>
+            <translation><!-- X	OCSIT-Ofc of Citizen Svcs&amp;Innov.Tech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XB	OCSIT/Office of Business Management</masterLabel>
+            <translation><!-- XB	OCSIT/Office of Business Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XC	OCSIT/Office of Citizen Services</masterLabel>
+            <translation><!-- XC	OCSIT/Office of Citizen Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XI	OCSIT/Office of Innovative Technologies</masterLabel>
+            <translation><!-- XI	OCSIT/Office of Innovative Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XT	OCSIT/Ofc of Info Tech Svces &amp; Solutions</masterLabel>
+            <translation><!-- XT	OCSIT/Ofc of Info Tech Svces &amp; Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z	OCM-Ofc of Comms&amp;Marketing</masterLabel>
+            <translation><!-- Z	OCM-Ofc of Comms&amp;Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZC	OCM/Communications Division</masterLabel>
+            <translation><!-- ZC	OCM/Communications Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZM	OCM/Media Affairs Division</masterLabel>
+            <translation><!-- ZM	OCM/Media Affairs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>tbd</masterLabel>
+            <translation><!-- tbd --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned Organization Code --></label>
+        <name>HRM_Assigned_Organization_Code__c</name>
+        <picklistValues>
+            <masterLabel>ADM</masterLabel>
+            <translation><!-- ADM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CBCA</masterLabel>
+            <translation><!-- CBCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO</masterLabel>
+            <translation><!-- CFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIO</masterLabel>
+            <translation><!-- CIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS</masterLabel>
+            <translation><!-- FAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 1</masterLabel>
+            <translation><!-- FAS-RC 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 10</masterLabel>
+            <translation><!-- FAS-RC 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 11</masterLabel>
+            <translation><!-- FAS-RC 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 2</masterLabel>
+            <translation><!-- FAS-RC 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 3</masterLabel>
+            <translation><!-- FAS-RC 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 4</masterLabel>
+            <translation><!-- FAS-RC 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 5</masterLabel>
+            <translation><!-- FAS-RC 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 6</masterLabel>
+            <translation><!-- FAS-RC 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 7</masterLabel>
+            <translation><!-- FAS-RC 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 8</masterLabel>
+            <translation><!-- FAS-RC 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAS-RC 9</masterLabel>
+            <translation><!-- FAS-RC 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAS</masterLabel>
+            <translation><!-- OAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCIA</masterLabel>
+            <translation><!-- OCIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCM</masterLabel>
+            <translation><!-- OCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCR</masterLabel>
+            <translation><!-- OCR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSIT</masterLabel>
+            <translation><!-- OCSIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGP</masterLabel>
+            <translation><!-- OGP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OHRM</masterLabel>
+            <translation><!-- OHRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIG</masterLabel>
+            <translation><!-- OIG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMA</masterLabel>
+            <translation><!-- OMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSBU</masterLabel>
+            <translation><!-- OSBU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS</masterLabel>
+            <translation><!-- PBS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 1</masterLabel>
+            <translation><!-- PBS-RC 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 10</masterLabel>
+            <translation><!-- PBS-RC 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 11</masterLabel>
+            <translation><!-- PBS-RC 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 2</masterLabel>
+            <translation><!-- PBS-RC 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 3</masterLabel>
+            <translation><!-- PBS-RC 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 4</masterLabel>
+            <translation><!-- PBS-RC 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 5</masterLabel>
+            <translation><!-- PBS-RC 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 6</masterLabel>
+            <translation><!-- PBS-RC 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 7</masterLabel>
+            <translation><!-- PBS-RC 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 8</masterLabel>
+            <translation><!-- PBS-RC 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBS-RC 9</masterLabel>
+            <translation><!-- PBS-RC 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-1</masterLabel>
+            <translation><!-- RA-1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-10</masterLabel>
+            <translation><!-- RA-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-11</masterLabel>
+            <translation><!-- RA-11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-2</masterLabel>
+            <translation><!-- RA-2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-3</masterLabel>
+            <translation><!-- RA-3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-4</masterLabel>
+            <translation><!-- RA-4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-5</masterLabel>
+            <translation><!-- RA-5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-6</masterLabel>
+            <translation><!-- RA-6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-7</masterLabel>
+            <translation><!-- RA-7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-8</masterLabel>
+            <translation><!-- RA-8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA-9</masterLabel>
+            <translation><!-- RA-9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned Point of Contact --></label>
+        <name>HRM_Assigned_Point_of_Contact__c</name>
+        <relationshipLabel><!-- HR Cases (HSSO Point of Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Assigned Specialist --></label>
+        <name>HRM_Assigned_Specialist__c</name>
+        <relationshipLabel><!-- HR Cases (Assigned Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BU Status --></label>
+        <name>HRM_BU_Status__c</name>
+        <picklistValues>
+            <masterLabel>AFGE</masterLabel>
+            <translation><!-- AFGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NFFE</masterLabel>
+            <translation><!-- NFFE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Bargaining Unit --></label>
+        <name>HRM_Bargaining_Unit__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Type --></label>
+        <name>HRM_Case_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Caution - Limit to 1500 characters and may be viewed by others. --></help>
+        <label><!-- Charge/Violation Description --></label>
+        <name>HRM_Charge_Violation_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge/Violation Type --></label>
+        <name>HRM_Charge_Violation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Conduct – Absence without Leave</masterLabel>
+            <translation><!-- Conduct – Absence without Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Alcohol Abuse</masterLabel>
+            <translation><!-- Conduct – Alcohol Abuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Conflict of Interest</masterLabel>
+            <translation><!-- Conduct – Conflict of Interest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Credit Card Misuse/Payment</masterLabel>
+            <translation><!-- Conduct – Credit Card Misuse/Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Credit Card Misuse/Purchase</masterLabel>
+            <translation><!-- Conduct – Credit Card Misuse/Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Credit Card Misuse/Travel</masterLabel>
+            <translation><!-- Conduct – Credit Card Misuse/Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Denial of Security Clearance</masterLabel>
+            <translation><!-- Conduct – Denial of Security Clearance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Disorderly Conduct</masterLabel>
+            <translation><!-- Conduct – Disorderly Conduct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Driving under the Influence</masterLabel>
+            <translation><!-- Conduct – Driving under the Influence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Ethics Violation</masterLabel>
+            <translation><!-- Conduct – Ethics Violation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Failure to Report Fraud/W/A</masterLabel>
+            <translation><!-- Conduct – Failure to Report Fraud/W/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Failure to follow instructions</masterLabel>
+            <translation><!-- Conduct – Failure to follow instructions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Falsification</masterLabel>
+            <translation><!-- Conduct – Falsification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Furloughs less than 30 days</masterLabel>
+            <translation><!-- Conduct – Furloughs less than 30 days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Illegal Drug Use</masterLabel>
+            <translation><!-- Conduct – Illegal Drug Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Improper Contracting Practices</masterLabel>
+            <translation><!-- Conduct – Improper Contracting Practices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Inability to Perform</masterLabel>
+            <translation><!-- Conduct – Inability to Perform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Inappropriate Behavior</masterLabel>
+            <translation><!-- Conduct – Inappropriate Behavior --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Inappropriate Dress</masterLabel>
+            <translation><!-- Conduct – Inappropriate Dress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Indebtedness</masterLabel>
+            <translation><!-- Conduct – Indebtedness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Insubordination</masterLabel>
+            <translation><!-- Conduct – Insubordination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Lack of Candor/False Statement</masterLabel>
+            <translation><!-- Conduct – Lack of Candor/False Statement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Leave Abuse</masterLabel>
+            <translation><!-- Conduct – Leave Abuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Misuse Government Funds</masterLabel>
+            <translation><!-- Conduct – Misuse Government Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Misuse of Government Vehicle</masterLabel>
+            <translation><!-- Conduct – Misuse of Government Vehicle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Misuse of Public Office</masterLabel>
+            <translation><!-- Conduct – Misuse of Public Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Misuse/Loss of Govt. Property</masterLabel>
+            <translation><!-- Conduct – Misuse/Loss of Govt. Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Neglect of Duty</masterLabel>
+            <translation><!-- Conduct – Neglect of Duty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Off Duty Misconduct</masterLabel>
+            <translation><!-- Conduct – Off Duty Misconduct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Retaliation</masterLabel>
+            <translation><!-- Conduct – Retaliation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Safety Violation</masterLabel>
+            <translation><!-- Conduct – Safety Violation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Security Violation</masterLabel>
+            <translation><!-- Conduct – Security Violation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Sexual Harassment</masterLabel>
+            <translation><!-- Conduct – Sexual Harassment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Tardiness</masterLabel>
+            <translation><!-- Conduct – Tardiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Theft</masterLabel>
+            <translation><!-- Conduct – Theft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Unacceptable Prob/Trial Period</masterLabel>
+            <translation><!-- Conduct – Unacceptable Prob/Trial Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Violation of last chance agmt</masterLabel>
+            <translation><!-- Conduct – Violation of last chance agmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct – Workplace Violence</masterLabel>
+            <translation><!-- Conduct – Workplace Violence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conduct–Failure to Participate w/Investn</masterLabel>
+            <translation><!-- Conduct–Failure to Participate w/Investn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Draft Concurrence Received from MGMT --></label>
+        <name>HRM_Concurrence_Recd_from_MGMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Card Case --></label>
+        <name>HRM_Credit_Card_Case__c</name>
+        <picklistValues>
+            <masterLabel>Purchase</masterLabel>
+            <translation><!-- Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date Additional Medical Received --></label>
+        <name>HRM_Date_Additional_Medical_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Additional Medical Requested --></label>
+        <name>HRM_Date_Additional_Medical_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Admin Investigation Begins --></label>
+        <name>HRM_Date_Admin_Investigation_Begins__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Admin Investigation Ends --></label>
+        <name>HRM_Date_Admin_Investigation_Ends__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Admin Investigation to MGMT --></label>
+        <name>HRM_Date_Admin_Investigation_to_MGMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Case Closed --></label>
+        <name>HRM_Date_Case_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Employee Response Due --></label>
+        <name>HRM_Date_Employee_Response_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date FOH Medical Returned --></label>
+        <name>HRM_Date_FOH_Medical_Returned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date FOH Medical Submitted --></label>
+        <name>HRM_Date_FOH_Medical_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Initial Draft to MGMT --></label>
+        <name>HRM_Date_Initial_Draft_to_MGMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Initial Proposal Draft to MGMT --></label>
+        <name>HRM_Date_Initial_Prop_Draft_to_MGMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date LRO Notified --></label>
+        <name>HRM_Date_LRO_Notified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date HR and Management agree to proceed with action. --></help>
+        <label><!-- Date MGMT &amp; HR Agree to Decided Action --></label>
+        <name>HRM_Date_MGMT_HR_Agree_to_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date MGMT &amp; HR Agree to Proposed Action --></label>
+        <name>HRM_Date_MGMT_HR_Agree_to_Prop_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Medical Received --></label>
+        <name>HRM_Date_Medical_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Medical Requested --></label>
+        <name>HRM_Date_Medical_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date OGC Returned Draft --></label>
+        <name>HRM_Date_OGC_Returned_Draft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date OGC Returned Proposal Draft --></label>
+        <name>HRM_Date_OGC_Returned_Prop_Draft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date PIN Ends --></label>
+        <name>HRM_Date_PIN_Ends__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date PIN Issued --></label>
+        <name>HRM_Date_PIN_Issued__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date PIP Ends --></label>
+        <name>HRM_Date_PIP_Ends__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date PIP Issued --></label>
+        <name>HRM_Date_PIP_Issued__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Proposal Final Letter to Supervisor --></label>
+        <name>HRM_Date_Proposal_Final_Letter_to_Sup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date ROI Issued by OIG --></label>
+        <name>HRM_Date_ROI_Issued_by_OIG__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date received by CPO. --></help>
+        <label><!-- Date Case Received --></label>
+        <name>HRM_Date_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date received by management, if applicable. --></help>
+        <label><!-- Date Received by MGMT --></label>
+        <name>HRM_Date_Received_by_MGMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Reconsideration Decision Issued --></label>
+        <name>HRM_Date_Reconsideration_Decision_Issued__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Reconsideration Received --></label>
+        <name>HRM_Date_Reconsideration_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date WIGI Due --></label>
+        <name>HRM_Date_WIGI_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Appeal --></label>
+        <name>HRM_Date_of_Appeal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Appeal Decision --></label>
+        <name>HRM_Date_of_Arbitration_Decision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Appeal Hearing --></label>
+        <name>HRM_Date_of_Arbitration_Hearing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date submitted to supervisor for issuance to employee/union. --></help>
+        <label><!-- Date Final Decision Letter to Supervisor --></label>
+        <name>HRM_Date_of_Final_Letter_to_Supervisor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date to OGC for Concurrence --></label>
+        <name>HRM_Date_to_OGC_for_Concurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date to OGC for Proposal Concurrence --></label>
+        <name>HRM_Date_to_OGC_for_Prop_Concurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decided Type of Action --></label>
+        <name>HRM_Decided_Type_of_Action__c</name>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demotion</masterLabel>
+            <translation><!-- Demotion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denial WIGI</masterLabel>
+            <translation><!-- Denial WIGI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIN</masterLabel>
+            <translation><!-- PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIP</masterLabel>
+            <translation><!-- PIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reassignment</masterLabel>
+            <translation><!-- Reassignment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removal</masterLabel>
+            <translation><!-- Removal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reprimand</masterLabel>
+            <translation><!-- Reprimand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspension</masterLabel>
+            <translation><!-- Suspension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warning Notice</masterLabel>
+            <translation><!-- Warning Notice --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter Last Name, First Name --></help>
+        <label><!-- Deciding Official/RMO --></label>
+        <name>HRM_Deciding_Official_RMO__c</name>
+        <relationshipLabel><!-- HR Cases (Deciding Official/RMO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Disposition of Appeal --></label>
+        <name>HRM_Disposition_of_Appeal__c</name>
+        <picklistValues>
+            <masterLabel>Remanded</masterLabel>
+            <translation><!-- Remanded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settled</masterLabel>
+            <translation><!-- Settled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustained</masterLabel>
+            <translation><!-- Sustained --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Draft Proposal Concur Received from MGMT --></label>
+        <name>HRM_Draft_P_Concurrence_Received_from_MG__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cite type (a-m based on ethical regulations) --></help>
+        <label><!-- Is this an Ethical Conduct Violation? --></label>
+        <name>HRM_Ethical_Conduct_Violation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expedited Grievance --></label>
+        <name>HRM_Expedited_Greviance__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Final Decision Letter to Employee/Union --></label>
+        <name>HRM_Final_Decision_Letter_to_Emp_Union__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Proposal Letter to Employee/Union --></label>
+        <name>HRM_Final_Proposal_Ltr_to_Employee_Union__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grievance/Arbitration Issue --></label>
+        <name>HRM_Grievance_Arbitration_Issue__c</name>
+        <picklistValues>
+            <masterLabel>Absence without Leave (AWOL)</masterLabel>
+            <translation><!-- Absence without Leave (AWOL) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Administrative Leave</masterLabel>
+            <translation><!-- Administrative Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alternative Work Schedule</masterLabel>
+            <translation><!-- Alternative Work Schedule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Award</masterLabel>
+            <translation><!-- Award --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change in Working Condition</masterLabel>
+            <translation><!-- Change in Working Condition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denial of Within Grade Increase</masterLabel>
+            <translation><!-- Denial of Within Grade Increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drug Testing/Fitness for Duty</masterLabel>
+            <translation><!-- Drug Testing/Fitness for Duty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Formal Discussion</masterLabel>
+            <translation><!-- Formal Discussion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Furlough for less than 30 days</masterLabel>
+            <translation><!-- Furlough for less than 30 days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Furlough for more than 30 days</masterLabel>
+            <translation><!-- Furlough for more than 30 days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave Issue</masterLabel>
+            <translation><!-- Leave Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave Restriction</masterLabel>
+            <translation><!-- Leave Restriction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter of Reprimand</masterLabel>
+            <translation><!-- Letter of Reprimand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter of Warning</masterLabel>
+            <translation><!-- Letter of Warning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Related Issue</masterLabel>
+            <translation><!-- Pay Related Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Improvement Notice</masterLabel>
+            <translation><!-- Performance Improvement Notice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Improvement Plan</masterLabel>
+            <translation><!-- Performance Improvement Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Plan/Elements</masterLabel>
+            <translation><!-- Performance Plan/Elements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Rating/Appraisal</masterLabel>
+            <translation><!-- Performance Rating/Appraisal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personnel Action</masterLabel>
+            <translation><!-- Personnel Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reasonable Accommodation</masterLabel>
+            <translation><!-- Reasonable Accommodation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removal</masterLabel>
+            <translation><!-- Removal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retaliation/Reprisal</masterLabel>
+            <translation><!-- Retaliation/Reprisal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safety Issue</masterLabel>
+            <translation><!-- Safety Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Clearance</masterLabel>
+            <translation><!-- Security Clearance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settlement/Last Chance</masterLabel>
+            <translation><!-- Settlement/Last Chance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sexual Harassment</masterLabel>
+            <translation><!-- Sexual Harassment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspension less than 14 days</masterLabel>
+            <translation><!-- Suspension less than 14 days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspension more than 14 days</masterLabel>
+            <translation><!-- Suspension more than 14 days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telework</masterLabel>
+            <translation><!-- Telework --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workers Compensation</masterLabel>
+            <translation><!-- Workers Compensation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- If &quot;Decision - Suspension,&quot; # of Days --></label>
+        <name>HRM_If_Decision_Suspension_No_of_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- If Other Ethical Violation --></label>
+        <name>HRM_If_Other_Ethical_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- If &quot;Proposed - Suspension,&quot; # of Days --></label>
+        <name>HRM_If_Proposed_Suspension_No_of_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is the Employee a Supervisor? --></label>
+        <name>HRM_Is_the_Employee_a_Supervisor__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NO FEAR Act Case --></label>
+        <name>HRM_NO_FEAR_Act_Case__c</name>
+        <picklistValues>
+            <masterLabel>Federal Court</masterLabel>
+            <translation><!-- Federal Court --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Federal Court</masterLabel>
+            <translation><!-- Non-Federal Court --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Name of AJ/Arbitrator --></label>
+        <name>HRM_Name_of_Arbitrator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Named Employee --></label>
+        <name>HRM_Named_Employee__c</name>
+        <relationshipLabel><!-- HR Cases (Named Employee) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OIG Case # --></label>
+        <name>HRM_OIG_Case_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- OIG Point of Contact --></label>
+        <name>HRM_OIG_Point_of_Contact__c</name>
+        <relationshipLabel><!-- HR Cases (OIG Point of Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Offense --></label>
+        <name>HRM_Offense__c</name>
+        <picklistValues>
+            <masterLabel>1st</masterLabel>
+            <translation><!-- 1st --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd</masterLabel>
+            <translation><!-- 2nd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3rd</masterLabel>
+            <translation><!-- 3rd --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HR Office --></label>
+        <name>HRM_Office__c</name>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAA</masterLabel>
+            <translation><!-- CAA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAF</masterLabel>
+            <translation><!-- CAF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAP</masterLabel>
+            <translation><!-- CAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH</masterLabel>
+            <translation><!-- CH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHS</masterLabel>
+            <translation><!-- CHS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHT</masterLabel>
+            <translation><!-- CHT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHW</masterLabel>
+            <translation><!-- CHW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CM</masterLabel>
+            <translation><!-- CM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMA</masterLabel>
+            <translation><!-- CMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMB</masterLabel>
+            <translation><!-- CMB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMI</masterLabel>
+            <translation><!-- CMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMS</masterLabel>
+            <translation><!-- CMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CP</masterLabel>
+            <translation><!-- CP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPB</masterLabel>
+            <translation><!-- CPB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPD</masterLabel>
+            <translation><!-- CPD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPE</masterLabel>
+            <translation><!-- CPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPF</masterLabel>
+            <translation><!-- CPF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPG</masterLabel>
+            <translation><!-- CPG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPH</masterLabel>
+            <translation><!-- CPH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPI</masterLabel>
+            <translation><!-- CPI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPJ</masterLabel>
+            <translation><!-- CPJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPK</masterLabel>
+            <translation><!-- CPK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPL</masterLabel>
+            <translation><!-- CPL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPM</masterLabel>
+            <translation><!-- CPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPW</masterLabel>
+            <translation><!-- CPW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CS</masterLabel>
+            <translation><!-- CS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSA</masterLabel>
+            <translation><!-- CSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSC</masterLabel>
+            <translation><!-- CSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSD</masterLabel>
+            <translation><!-- CSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSE</masterLabel>
+            <translation><!-- CSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS</masterLabel>
+            <translation><!-- CSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS1</masterLabel>
+            <translation><!-- CSS1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSA</masterLabel>
+            <translation><!-- CSSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSB</masterLabel>
+            <translation><!-- CSSB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSC</masterLabel>
+            <translation><!-- CSSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSW</masterLabel>
+            <translation><!-- CSSW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSX</masterLabel>
+            <translation><!-- CSSX --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HR Office of Assigned Specialist --></label>
+        <name>HRM_Office_of_Assigned_Specialist__c</name>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAA</masterLabel>
+            <translation><!-- CAA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAF</masterLabel>
+            <translation><!-- CAF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAP</masterLabel>
+            <translation><!-- CAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH</masterLabel>
+            <translation><!-- CH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHS</masterLabel>
+            <translation><!-- CHS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHT</masterLabel>
+            <translation><!-- CHT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHW</masterLabel>
+            <translation><!-- CHW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CM</masterLabel>
+            <translation><!-- CM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMA</masterLabel>
+            <translation><!-- CMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMB</masterLabel>
+            <translation><!-- CMB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMI</masterLabel>
+            <translation><!-- CMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMS</masterLabel>
+            <translation><!-- CMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CP</masterLabel>
+            <translation><!-- CP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPB</masterLabel>
+            <translation><!-- CPB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPD</masterLabel>
+            <translation><!-- CPD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPE</masterLabel>
+            <translation><!-- CPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPF</masterLabel>
+            <translation><!-- CPF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPG</masterLabel>
+            <translation><!-- CPG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPH</masterLabel>
+            <translation><!-- CPH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPI</masterLabel>
+            <translation><!-- CPI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPJ</masterLabel>
+            <translation><!-- CPJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPK</masterLabel>
+            <translation><!-- CPK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPL</masterLabel>
+            <translation><!-- CPL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPM</masterLabel>
+            <translation><!-- CPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPW</masterLabel>
+            <translation><!-- CPW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CS</masterLabel>
+            <translation><!-- CS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSA</masterLabel>
+            <translation><!-- CSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSC</masterLabel>
+            <translation><!-- CSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSD</masterLabel>
+            <translation><!-- CSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSE</masterLabel>
+            <translation><!-- CSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS</masterLabel>
+            <translation><!-- CSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSS1</masterLabel>
+            <translation><!-- CSS1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSA</masterLabel>
+            <translation><!-- CSSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSB</masterLabel>
+            <translation><!-- CSSB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSC</masterLabel>
+            <translation><!-- CSSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSW</masterLabel>
+            <translation><!-- CSSW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSSX</masterLabel>
+            <translation><!-- CSSX --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Organization Code/Sub-Code --></label>
+        <name>HRM_Organization_Code_Sub_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Grievance/Arbitration --></label>
+        <name>HRM_Other_Grievance_Arbitration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Plan --></label>
+        <name>HRM_Pay_Plan__c</name>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ES</masterLabel>
+            <translation><!-- ES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EX</masterLabel>
+            <translation><!-- EX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GL</masterLabel>
+            <translation><!-- GL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GM</masterLabel>
+            <translation><!-- GM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GS</masterLabel>
+            <translation><!-- GS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IG</masterLabel>
+            <translation><!-- IG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SL</masterLabel>
+            <translation><!-- SL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WD</masterLabel>
+            <translation><!-- WD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WG</masterLabel>
+            <translation><!-- WG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WL</masterLabel>
+            <translation><!-- WL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WS</masterLabel>
+            <translation><!-- WS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Position Grade --></label>
+        <name>HRM_Position_Grade__c</name>
+        <picklistValues>
+            <masterLabel>00</masterLabel>
+            <translation><!-- 00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01</masterLabel>
+            <translation><!-- 01 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02</masterLabel>
+            <translation><!-- 02 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03</masterLabel>
+            <translation><!-- 03 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04</masterLabel>
+            <translation><!-- 04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05</masterLabel>
+            <translation><!-- 05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06</masterLabel>
+            <translation><!-- 06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>07</masterLabel>
+            <translation><!-- 07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08</masterLabel>
+            <translation><!-- 08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09</masterLabel>
+            <translation><!-- 09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Position Series --></label>
+        <name>HRM_Position_Series__c</name>
+        <picklistValues>
+            <masterLabel>0018</masterLabel>
+            <translation><!-- 0018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0020</masterLabel>
+            <translation><!-- 0020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0028</masterLabel>
+            <translation><!-- 0028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0080</masterLabel>
+            <translation><!-- 0080 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0086</masterLabel>
+            <translation><!-- 0086 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0089</masterLabel>
+            <translation><!-- 0089 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0099</masterLabel>
+            <translation><!-- 0099 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0110</masterLabel>
+            <translation><!-- 0110 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0132</masterLabel>
+            <translation><!-- 0132 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0201</masterLabel>
+            <translation><!-- 0201 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0203</masterLabel>
+            <translation><!-- 0203 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0260</masterLabel>
+            <translation><!-- 0260 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0299</masterLabel>
+            <translation><!-- 0299 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0301</masterLabel>
+            <translation><!-- 0301 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0303</masterLabel>
+            <translation><!-- 0303 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0305</masterLabel>
+            <translation><!-- 0305 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0306</masterLabel>
+            <translation><!-- 0306 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0318</masterLabel>
+            <translation><!-- 0318 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0326</masterLabel>
+            <translation><!-- 0326 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0335</masterLabel>
+            <translation><!-- 0335 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0340</masterLabel>
+            <translation><!-- 0340 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0341</masterLabel>
+            <translation><!-- 0341 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0342</masterLabel>
+            <translation><!-- 0342 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0343</masterLabel>
+            <translation><!-- 0343 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0344</masterLabel>
+            <translation><!-- 0344 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0350</masterLabel>
+            <translation><!-- 0350 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0360</masterLabel>
+            <translation><!-- 0360 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0391</masterLabel>
+            <translation><!-- 0391 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0392</masterLabel>
+            <translation><!-- 0392 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0399</masterLabel>
+            <translation><!-- 0399 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0414</masterLabel>
+            <translation><!-- 0414 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0437</masterLabel>
+            <translation><!-- 0437 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0501</masterLabel>
+            <translation><!-- 0501 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0503</masterLabel>
+            <translation><!-- 0503 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0505</masterLabel>
+            <translation><!-- 0505 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0510</masterLabel>
+            <translation><!-- 0510 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0511</masterLabel>
+            <translation><!-- 0511 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0525</masterLabel>
+            <translation><!-- 0525 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0544</masterLabel>
+            <translation><!-- 0544 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0560</masterLabel>
+            <translation><!-- 0560 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0561</masterLabel>
+            <translation><!-- 0561 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0599</masterLabel>
+            <translation><!-- 0599 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0601</masterLabel>
+            <translation><!-- 0601 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0690</masterLabel>
+            <translation><!-- 0690 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0801</masterLabel>
+            <translation><!-- 0801 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0802</masterLabel>
+            <translation><!-- 0802 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0804</masterLabel>
+            <translation><!-- 0804 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0807</masterLabel>
+            <translation><!-- 0807 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0808</masterLabel>
+            <translation><!-- 0808 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0809</masterLabel>
+            <translation><!-- 0809 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0810</masterLabel>
+            <translation><!-- 0810 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0819</masterLabel>
+            <translation><!-- 0819 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0828</masterLabel>
+            <translation><!-- 0828 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0830</masterLabel>
+            <translation><!-- 0830 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0850</masterLabel>
+            <translation><!-- 0850 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0855</masterLabel>
+            <translation><!-- 0855 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0856</masterLabel>
+            <translation><!-- 0856 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0899</masterLabel>
+            <translation><!-- 0899 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0905</masterLabel>
+            <translation><!-- 0905 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0950</masterLabel>
+            <translation><!-- 0950 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0986</masterLabel>
+            <translation><!-- 0986 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1001</masterLabel>
+            <translation><!-- 1001 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1008</masterLabel>
+            <translation><!-- 1008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1035</masterLabel>
+            <translation><!-- 1035 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1071</masterLabel>
+            <translation><!-- 1071 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1082</masterLabel>
+            <translation><!-- 1082 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1084</masterLabel>
+            <translation><!-- 1084 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1099</masterLabel>
+            <translation><!-- 1099 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1101</masterLabel>
+            <translation><!-- 1101 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1102</masterLabel>
+            <translation><!-- 1102 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1104</masterLabel>
+            <translation><!-- 1104 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1105</masterLabel>
+            <translation><!-- 1105 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1106</masterLabel>
+            <translation><!-- 1106 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1107</masterLabel>
+            <translation><!-- 1107 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1130</masterLabel>
+            <translation><!-- 1130 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1160</masterLabel>
+            <translation><!-- 1160 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1170</masterLabel>
+            <translation><!-- 1170 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1171</masterLabel>
+            <translation><!-- 1171 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1176</masterLabel>
+            <translation><!-- 1176 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1199</masterLabel>
+            <translation><!-- 1199 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1301</masterLabel>
+            <translation><!-- 1301 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1320</masterLabel>
+            <translation><!-- 1320 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1411</masterLabel>
+            <translation><!-- 1411 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1515</masterLabel>
+            <translation><!-- 1515 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1530</masterLabel>
+            <translation><!-- 1530 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1601</masterLabel>
+            <translation><!-- 1601 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1640</masterLabel>
+            <translation><!-- 1640 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1670</masterLabel>
+            <translation><!-- 1670 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1701</masterLabel>
+            <translation><!-- 1701 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1801</masterLabel>
+            <translation><!-- 1801 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1811</masterLabel>
+            <translation><!-- 1811 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1910</masterLabel>
+            <translation><!-- 1910 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2001</masterLabel>
+            <translation><!-- 2001 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2003</masterLabel>
+            <translation><!-- 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2005</masterLabel>
+            <translation><!-- 2005 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2030</masterLabel>
+            <translation><!-- 2030 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2032</masterLabel>
+            <translation><!-- 2032 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2099</masterLabel>
+            <translation><!-- 2099 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2101</masterLabel>
+            <translation><!-- 2101 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2102</masterLabel>
+            <translation><!-- 2102 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2130</masterLabel>
+            <translation><!-- 2130 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2131</masterLabel>
+            <translation><!-- 2131 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2150</masterLabel>
+            <translation><!-- 2150 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2199</masterLabel>
+            <translation><!-- 2199 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2210</masterLabel>
+            <translation><!-- 2210 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2299</masterLabel>
+            <translation><!-- 2299 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2604</masterLabel>
+            <translation><!-- 2604 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2801</masterLabel>
+            <translation><!-- 2801 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2805</masterLabel>
+            <translation><!-- 2805 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3502</masterLabel>
+            <translation><!-- 3502 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3566</masterLabel>
+            <translation><!-- 3566 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3603</masterLabel>
+            <translation><!-- 3603 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3610</masterLabel>
+            <translation><!-- 3610 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3806</masterLabel>
+            <translation><!-- 3806 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4102</masterLabel>
+            <translation><!-- 4102 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4204</masterLabel>
+            <translation><!-- 4204 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4206</masterLabel>
+            <translation><!-- 4206 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4604</masterLabel>
+            <translation><!-- 4604 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4605</masterLabel>
+            <translation><!-- 4605 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4607</masterLabel>
+            <translation><!-- 4607 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4701</masterLabel>
+            <translation><!-- 4701 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4737</masterLabel>
+            <translation><!-- 4737 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4742</masterLabel>
+            <translation><!-- 4742 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4749</masterLabel>
+            <translation><!-- 4749 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4804</masterLabel>
+            <translation><!-- 4804 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5003</masterLabel>
+            <translation><!-- 5003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5306</masterLabel>
+            <translation><!-- 5306 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5313</masterLabel>
+            <translation><!-- 5313 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5406</masterLabel>
+            <translation><!-- 5406 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5703</masterLabel>
+            <translation><!-- 5703 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5876</masterLabel>
+            <translation><!-- 5876 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6907</masterLabel>
+            <translation><!-- 6907 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7002</masterLabel>
+            <translation><!-- 7002 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Position Title --></label>
+        <name>HRM_Position_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Type of Action --></label>
+        <name>HRM_Proposed_Type_of_Action__c</name>
+        <picklistValues>
+            <masterLabel>Demotion</masterLabel>
+            <translation><!-- Demotion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denial WIGI</masterLabel>
+            <translation><!-- Denial WIGI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIN</masterLabel>
+            <translation><!-- PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIP</masterLabel>
+            <translation><!-- PIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reassignment</masterLabel>
+            <translation><!-- Reassignment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removal</masterLabel>
+            <translation><!-- Removal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reprimand</masterLabel>
+            <translation><!-- Reprimand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspension</masterLabel>
+            <translation><!-- Suspension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warning Notice</masterLabel>
+            <translation><!-- Warning Notice --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter Last Name, First --></help>
+        <label><!-- Proposing Official/RMO --></label>
+        <name>HRM_Proposing_Offical_RMO__c</name>
+        <relationshipLabel><!-- HR Cases (Proposing Offical/RMO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RA Action Appealed --></label>
+        <name>HRM_RA_Action_Appealed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA BU Status --></label>
+        <name>HRM_RA_BU_Status__c</name>
+        <picklistValues>
+            <masterLabel>AFGE</masterLabel>
+            <translation><!-- AFGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NFFE</masterLabel>
+            <translation><!-- NFFE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA Bargaining Unit --></label>
+        <name>HRM_RA_Bargaining_Unit__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Caution - Limit to 250 characters and may be viewed by others. --></help>
+        <label><!-- RA Comments --></label>
+        <name>HRM_RA_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only number characters are accepted; units: USD --></help>
+        <label><!-- RA Cost of Equipment --></label>
+        <name>HRM_RA_Cost_of_Equipment__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Additional Medical Received --></label>
+        <name>HRM_RA_Date_Additional_Medical_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Additional Medical Requested --></label>
+        <name>HRM_RA_Date_Additional_Medical_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date CAP Response Received --></label>
+        <name>HRM_RA_Date_CAP_Response_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Employee Response Due --></label>
+        <name>HRM_RA_Date_Employee_Response_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date FOH Medical Returned --></label>
+        <name>HRM_RA_Date_FOH_Medical_Returned__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date FOH Medical Submitted --></label>
+        <name>HRM_RA_Date_FOH_Medical_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Final Decision Ltr to Supervisor --></label>
+        <name>HRM_RA_Date_Final_Letter_to_Supervisor__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Initial Draft to MGMT --></label>
+        <name>HRM_RA_Date_Initial_Draft_to_MGMT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date HR and Management agree to proceed with action. --></help>
+        <label><!-- RA Date MGMT &amp; HR Agree to Decided Actn --></label>
+        <name>HRM_RA_Date_MGMT_HR_Agree_to_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Medical Received --></label>
+        <name>HRM_RA_Date_Medical_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Medical Requested --></label>
+        <name>HRM_RA_Date_Medical_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date OGC Returned Draft --></label>
+        <name>HRM_RA_Date_OGC_Returned_Draft__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Reconsideration Received --></label>
+        <name>HRM_RA_Date_Reconsideration_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Sent to CAP --></label>
+        <name>HRM_RA_Date_Sent_to_CAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date of Appeal --></label>
+        <name>HRM_RA_Date_of_Appeal__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date to OGC for Concurrence --></label>
+        <name>HRM_RA_Date_to_OGC_for_Concurrence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Last Name, First --></help>
+        <label><!-- RA Deciding Official/RMO --></label>
+        <name>HRM_RA_Deciding_Official_RMO__c</name>
+        <relationshipLabel><!-- HR Cases (RA Deciding Official/RMO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RA Decision --></label>
+        <name>HRM_RA_Decision__c</name>
+        <picklistValues>
+            <masterLabel>Approved with Modification (AM)</masterLabel>
+            <translation><!-- Approved with Modification (AM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied (D)</masterLabel>
+            <translation><!-- Denied (D) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Approved (A)</masterLabel>
+            <translation><!-- Request Approved (A) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA Description Other --></label>
+        <name>HRM_RA_Description_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Description of Denial --></label>
+        <name>HRM_RA_Description_of_Denial__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Disposition of Appeal --></label>
+        <name>HRM_RA_Disposition_of_Appeal__c</name>
+        <picklistValues>
+            <masterLabel>Remanded</masterLabel>
+            <translation><!-- Remanded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settled</masterLabel>
+            <translation><!-- Settled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustained</masterLabel>
+            <translation><!-- Sustained --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA Draft Concurrence Received from MGMT --></label>
+        <name>HRM_RA_Draft_Concurrence_Recieved_MGMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA FOH Control # --></label>
+        <name>HRM_RA_FOH_Control_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Final Decision Ltr to Employee/Union --></label>
+        <name>HRM_RA_Final_Letter_to_Employee_Union__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Approved, description of approved accommodation. --></help>
+        <label><!-- RA If &quot;Approved,&quot; Accommodation Desc. --></label>
+        <name>HRM_RA_If_Approved_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA If &quot;Denied,&quot; Reason for Denial --></label>
+        <name>HRM_RA_If_Denied_Reason_for_Denial__c</name>
+        <picklistValues>
+            <masterLabel>Direct Threat</masterLabel>
+            <translation><!-- Direct Threat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient medical documentation</masterLabel>
+            <translation><!-- Insufficient medical documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lowers standards</masterLabel>
+            <translation><!-- Lowers standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Qualified</masterLabel>
+            <translation><!-- Not Qualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removal of essential function</masterLabel>
+            <translation><!-- Removal of essential function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undue hardship</masterLabel>
+            <translation><!-- Undue hardship --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA Other Reason for Denial --></label>
+        <name>HRM_RA_Other_Reason_for_Denial__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Is Request Associated w/Application? --></label>
+        <name>HRM_RA_Request_Associated_with_App__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA Requested Accommodation Type --></label>
+        <name>HRM_RA_Requested_Accomm_Type__c</name>
+        <picklistValues>
+            <masterLabel>Adjustment/Change</masterLabel>
+            <translation><!-- Adjustment/Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisted Technology</masterLabel>
+            <translation><!-- Assisted Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Furniture</masterLabel>
+            <translation><!-- Furniture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interpreter</masterLabel>
+            <translation><!-- Interpreter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modification</masterLabel>
+            <translation><!-- Modification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Assessment</masterLabel>
+            <translation><!-- Needs Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reader</masterLabel>
+            <translation><!-- Reader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff Assistant</masterLabel>
+            <translation><!-- Staff Assistant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA Result of Reconsideration --></label>
+        <name>HRM_RA_Result_of_Reconsideration__c</name>
+        <picklistValues>
+            <masterLabel>Remanded</masterLabel>
+            <translation><!-- Remanded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reversed</masterLabel>
+            <translation><!-- Reversed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustained</masterLabel>
+            <translation><!-- Sustained --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RA Type of Appeal Action --></label>
+        <name>HRM_RA_Type_of_Appeal_Action__c</name>
+        <picklistValues>
+            <masterLabel>EEO</masterLabel>
+            <translation><!-- EEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grievance</masterLabel>
+            <translation><!-- Grievance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSPB</masterLabel>
+            <translation><!-- MSPB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Responsible Office Official or Action Officer --></help>
+        <label><!-- ROO/AO --></label>
+        <name>HRM_ROO_AO__c</name>
+        <relationshipLabel><!-- HR Cases (ROO/AO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>HRM_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Result of PIP --></label>
+        <name>HRM_Result_of_PIP__c</name>
+        <picklistValues>
+            <masterLabel>Extended</masterLabel>
+            <translation><!-- Extended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Result of Reconsideration --></label>
+        <name>HRM_Result_of_Reconsideration__c</name>
+        <picklistValues>
+            <masterLabel>Remanded</masterLabel>
+            <translation><!-- Remanded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reversed</masterLabel>
+            <translation><!-- Reversed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustained</masterLabel>
+            <translation><!-- Sustained --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Name of Representative --></label>
+        <name>HRM_T_Name_of_Representative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Days: Initial Prop Draft to OGC --></label>
+        <name>HRM_Total_Days_Initial_Prop_Draft_to_OGC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Days: Prop Issuance to Employee --></label>
+        <name>HRM_Total_Days_Prop_Issuance_to_Employee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Days: Prop Submitted to Supervisor --></label>
+        <name>HRM_Total_Days_Prop_Submitted_to_Sup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Days: Proposal in OGC --></label>
+        <name>HRM_Total_Days_Proposal_in_OGC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Days in Process --></label>
+        <name>HRM_Total_Days_in_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Days: Initial Draft to OGC --></label>
+        <name>HRM_Total_No_Days_Initial_Draft_to_OGC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Days: Issuance to Employee --></label>
+        <name>HRM_Total_No_Days_Issuance_to_Employee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Days: Submitted to Supervisor --></label>
+        <name>HRM_Total_No_Days_Submitted_to_Sup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Days: In OGC --></label>
+        <name>HRM_Total_No_Days_in_OGC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # Remaining Days to Close Case --></label>
+        <name>HRM_Total_Remaining_Days_to_Close_Case__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Action --></label>
+        <name>HRM_Type_of_Action__c</name>
+        <picklistValues>
+            <masterLabel>Adverse</masterLabel>
+            <translation><!-- Adverse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FMLA</masterLabel>
+            <translation><!-- FMLA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fitness for Duty</masterLabel>
+            <translation><!-- Fitness for Duty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual</masterLabel>
+            <translation><!-- Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional</masterLabel>
+            <translation><!-- Institutional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Adverse</masterLabel>
+            <translation><!-- Non Adverse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Appeal Action --></label>
+        <name>HRM_Type_of_Appeal_Action__c</name>
+        <picklistValues>
+            <masterLabel>Arbitration</masterLabel>
+            <translation><!-- Arbitration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEO</masterLabel>
+            <translation><!-- EEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grievance</masterLabel>
+            <translation><!-- Grievance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSPB</masterLabel>
+            <translation><!-- MSPB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If yes to ethical conduct --></help>
+        <label><!-- Type of Ethical Violation --></label>
+        <name>HRM_Type_of_Ethical_Violation__c</name>
+        <picklistValues>
+            <masterLabel>Any of the 14 Principles of Ethical Conduct</masterLabel>
+            <translation><!-- Any of the 14 Principles of Ethical Conduct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compensation for teaching, speaking, and writing Indebtedness</masterLabel>
+            <translation><!-- Compensation for teaching, speaking, and writing Indebtedness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conflicting financial interests</masterLabel>
+            <translation><!-- Conflicting financial interests --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conflicting outside activities</masterLabel>
+            <translation><!-- Conflicting outside activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gifts between employees</masterLabel>
+            <translation><!-- Gifts between employees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gifts from outside sources</masterLabel>
+            <translation><!-- Gifts from outside sources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Impartiality in performance of official duties</masterLabel>
+            <translation><!-- Impartiality in performance of official duties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Misuse of position, Government resources, and information</masterLabel>
+            <translation><!-- Misuse of position, Government resources, and information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provision(s) in GSA supplemental regulation</masterLabel>
+            <translation><!-- Provision(s) in GSA supplemental regulation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seeking other employment</masterLabel>
+            <translation><!-- Seeking other employment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mark for Deletion --></label>
+        <name>Marked_for_Deletion__c</name>
+    </fields>
+    <fields>
+        <label><!-- OIG Case Subtype --></label>
+        <name>OIG_Case_Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Hotline Complaint</masterLabel>
+            <translation><!-- Hotline Complaint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report of Investigation</masterLabel>
+            <translation><!-- Report of Investigation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Parent HR Case # --></label>
+        <name>Parent_HR_Case_No__c</name>
+        <relationshipLabel><!-- HR Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Low: (default) Routine case processing.
+ 
+Medium: Some level of sensitivity, urgency, or heightened level of awareness.  
+ 
+High: Higher level of visibility, extenuating circumstances, may require immediate attention, or be highly sensitive. --></help>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Private --></label>
+        <name>Private__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Date Reconsideration Decision Issued --></label>
+        <name>RA_Date_Reconsideration_Decision_Issued__c</name>
+    </fields>
+    <fields>
+        <label><!-- RA Name of Representative --></label>
+        <name>RA_Name_of_Representative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Assigned to Action Officer</masterLabel>
+            <translation><!-- Assigned to Action Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assigned to Assigned Specialist</masterLabel>
+            <translation><!-- Assigned to Assigned Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assigned to Responsible Office Official</masterLabel>
+            <translation><!-- Assigned to Responsible Office Official --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Action Officer to View</masterLabel>
+            <translation><!-- Ready for Action Officer to View --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed by Action Officer</masterLabel>
+            <translation><!-- Reviewed by Action Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>With Intake Reviewer</masterLabel>
+            <translation><!-- With Intake Reviewer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - In Appeal</masterLabel>
+            <translation><!-- Closed - In Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total # Days Adverse Decided SLA --></label>
+        <name>Total_Days_Adverse_Decided_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # Days Adverse Proposed SLA --></label>
+        <name>Total_Days_Adverse_Proposed_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # Days for RA SLA --></label>
+        <name>Total_Days_for_RA_SLA__c</name>
+    </fields>
+    <layouts>
+        <layout>Disciplinary Layout</layout>
+        <sections>
+            <label><!-- Additional Case Details --></label>
+            <section>Additional Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Administrative Investigation Dates --></label>
+            <section>Administrative Investigation Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Appeal --></label>
+            <section>Appeal</section>
+        </sections>
+        <sections>
+            <label><!-- Case --></label>
+            <section>Case</section>
+        </sections>
+        <sections>
+            <label><!-- Case Comments --></label>
+            <section>Case Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Case Details --></label>
+            <section>Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Decided Action Dates --></label>
+            <section>Decided Action Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Named Employee Details --></label>
+            <section>Named Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Proposed Action Dates --></label>
+            <section>Proposed Action Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Reconsideration --></label>
+            <section>Reconsideration</section>
+        </sections>
+        <sections>
+            <label><!-- Total Days Proposal/Decision --></label>
+            <section>Total Days Proposal/Decision</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Grievances &amp; Arbitration Layout</layout>
+        <sections>
+            <label><!-- Additional Case Details --></label>
+            <section>Additional Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Administrative Investigation Dates --></label>
+            <section>Administrative Investigation Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Appeal --></label>
+            <section>Appeal</section>
+        </sections>
+        <sections>
+            <label><!-- Case --></label>
+            <section>Case</section>
+        </sections>
+        <sections>
+            <label><!-- Case Comments --></label>
+            <section>Case Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Case Details --></label>
+            <section>Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Important Dates --></label>
+            <section>Important Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Named Employee Details --></label>
+            <section>Named Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Total Days --></label>
+            <section>Total Days</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Medical Layout</layout>
+        <sections>
+            <label><!-- Appeal --></label>
+            <section>Appeal</section>
+        </sections>
+        <sections>
+            <label><!-- Case --></label>
+            <section>Case</section>
+        </sections>
+        <sections>
+            <label><!-- Case Comments --></label>
+            <section>Case Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Case Details --></label>
+            <section>Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Important Dates --></label>
+            <section>Important Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Medical Dates --></label>
+            <section>Medical Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Named Employee Details --></label>
+            <section>Named Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Total Days --></label>
+            <section>Total Days</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>OIG Layout</layout>
+        <sections>
+            <label><!-- Additional Case Details --></label>
+            <section>Additional Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Administrative Investigation Dates --></label>
+            <section>Administrative Investigation Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Case --></label>
+            <section>Case</section>
+        </sections>
+        <sections>
+            <label><!-- Case Comments --></label>
+            <section>Case Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Case Details --></label>
+            <section>Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Important Dates --></label>
+            <section>Important Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Named Employee Details --></label>
+            <section>Named Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Total Days --></label>
+            <section>Total Days</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Performance Layout</layout>
+        <sections>
+            <label><!-- Additional Case Details --></label>
+            <section>Additional Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Appeal --></label>
+            <section>Appeal</section>
+        </sections>
+        <sections>
+            <label><!-- Case --></label>
+            <section>Case</section>
+        </sections>
+        <sections>
+            <label><!-- Case Comments --></label>
+            <section>Case Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Case Details --></label>
+            <section>Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Decided Action Dates --></label>
+            <section>Decided Action Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Named Employee Details --></label>
+            <section>Named Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Proposed Action Dates --></label>
+            <section>Proposed Action Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Total Days Proposal/Decision --></label>
+            <section>Total Days Proposal/Decision</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RA Layout</layout>
+        <sections>
+            <label><!-- Additional Case Details --></label>
+            <section>Additional Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Appeal --></label>
+            <section>Appeal</section>
+        </sections>
+        <sections>
+            <label><!-- Case --></label>
+            <section>Case</section>
+        </sections>
+        <sections>
+            <label><!-- Case Comments --></label>
+            <section>Case Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Case Details --></label>
+            <section>Case Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Important Dates --></label>
+            <section>Important Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Medical --></label>
+            <section>Medical</section>
+        </sections>
+        <sections>
+            <label><!-- Named Employee Details --></label>
+            <section>Named Employee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Reconsideration --></label>
+            <section>Reconsideration</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Disciplinary Case --></label>
+        <name>HRM_Disciplinary_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Grievances and Arbitration Case --></label>
+        <name>HRM_Grievances_and_Arbitration_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Medical Case --></label>
+        <name>HRM_Medical_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OIG Case --></label>
+        <name>HRM_OIG_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Performance Case --></label>
+        <name>HRM_Performance_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Reasonable Accommodation (RA) Case --></label>
+        <name>HRM_Reasonable_Accommodation_RA_Case</name>
+    </recordTypes>
+    <sharingReasons>
+        <label><!-- AS_Access --></label>
+        <name>AS_Access</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- ROO_AO_Access --></label>
+        <name>ROO_AO_Access</name>
+    </sharingReasons>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Case should not be private when parent case is non-private. --></errorMessage>
+        <name>Child_Case_Cant_Be_Private</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This date is required for chosen &quot;Proposed Type of Action&quot; (Warning Notice or Reprimand) while opening the case --></errorMessage>
+        <name>Date_MGMT_n_HR_Agree_to_Decided_Actions</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This date is required for chosen &quot;Proposed Type of Action&quot; while opening the case --></errorMessage>
+        <name>Date_MGMT_n_HR_Agree_to_Proposed_Actions</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case can only be set to &quot;Closed - In Appeal&quot; if &quot;Action Appealed&quot; is Yes. --></errorMessage>
+        <name>HRM_Action_Appealed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Assigned_Office_Code</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Assigned_Organization_Code</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Assigned_Point_of_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- BU Status is required if Bargaining Unit is Yes. --></errorMessage>
+        <name>HRM_BU_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Bargaining Unit is required if Named Employee has been filled in. --></errorMessage>
+        <name>HRM_Bargaining_Unit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Bargaining_Unit_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Charge_Violation_Description</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A value is required in &quot;Credit Card Case&quot; if Charge/Violation Type is &quot;Conduct - Credit Card....&quot; --></errorMessage>
+        <name>HRM_Credit_Card_Case</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;Date PIN Ends&apos; and &apos;Result of PIN/PIP&apos; should be required fields to CLOSE a case if the field &apos;Date PIN/PIP issued&apos; is not null. --></errorMessage>
+        <name>HRM_DatePINIssuedNotNull</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;Date PIP Ends&apos; and &apos;Result of PIN/PIP&apos; should be required fields to CLOSE a case if the field &apos;Date PIP issued&apos; is not null. --></errorMessage>
+        <name>HRM_DatePIPIssuedNotNull</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Date_MGMT_HR_Agree_to_Action</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This date should change when &quot;Proposed Type of Action&quot; changes from None to one of the proposed type of actions. --></errorMessage>
+        <name>HRM_Date_MGMT_HR_Agree_to_Prop_Action</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Date_Medical_Received</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Date_PIN_Ends</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Date_PIP_Ends</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Date WIGI Due is required if Proposed/Decided Type of Action is Denial WIGI. --></errorMessage>
+        <name>HRM_Date_WIGI_Due</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Date of Appeal is required if Action Appealed is Yes. --></errorMessage>
+        <name>HRM_Date_of_Appeal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Date_of_Final_Letter_to_Supervisor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Decided Type of Action is not &quot;NONE&quot;, then the fields (Date MGMT &amp; HR Agree to Proposed Action and Date Initial Proposal Draft to MGMT) must be filled. --></errorMessage>
+        <name>HRM_DecidedTypeofAction_NotNull</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case cannot be re-closed without a value in &quot;Disposition of Appeal&quot;. --></errorMessage>
+        <name>HRM_Disposition_of_Appeal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Ethical_Conduct_Violation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a positive whole number only when “Decided Type of Action” is Suspension. --></errorMessage>
+        <name>HRM_If_Decision_Suspension_No_of_Days</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A value is required in &quot;If Other Ethical Violation&quot; if Other is selected for &quot;Type of Ethical Violation&quot;. --></errorMessage>
+        <name>HRM_If_Other_Ethical_Violation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a positive whole number only when “Proposed Type of Action” is Suspension. --></errorMessage>
+        <name>HRM_If_Proposed_Suspension_No_of_Days</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This date is required for chosen &quot;Proposed Type of Action&quot; while closing the case --></errorMessage>
+        <name>HRM_Initial_Draft_MGMT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This date is required for chosen &quot;Proposed Type of Action&quot;  while Closing the Case --></errorMessage>
+        <name>HRM_Initial_Prop_Draft_MGMT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A value is required in &quot;Other Grievance/Arbitration&quot; if Other is selected for &quot;Grievance/Arbitration Issue.&quot; --></errorMessage>
+        <name>HRM_Other_Grievance_Arbitration</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- BU Status is required if Bargaining Unit is Yes. --></errorMessage>
+        <name>HRM_RA_BU_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_RA_Date_Final_Letter_to_Supervisor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_RA_Date_MGMT_HR_Agree_to_Action</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case cannot be re-closed without a value in &quot;Date Reconsideration Decision Issued&quot; --></errorMessage>
+        <name>HRM_RA_Date_Reconsideration_Decision</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Date of Appeal is required if Action Appealed is Yes. --></errorMessage>
+        <name>HRM_RA_Date_of_Appeal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case cannot be re-closed without Disposition of Appeal value if  Action Appealed is Yes. --></errorMessage>
+        <name>HRM_RA_Disposition_of_Appeal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A value is required in &quot;If Denied, Reason for Denial&quot; if &quot;Decision&quot; is &quot;Denied (D)&quot; --></errorMessage>
+        <name>HRM_RA_If_Denied_Reason_for_Denial</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A value is required in &quot;Other Reason for Denial&quot; if Reason for Denial is &quot;Other&quot; --></errorMessage>
+        <name>HRM_RA_Other_Reason_for_Denial</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case cannot be re-closed without a value in &quot;Result of Reconsideration&quot; --></errorMessage>
+        <name>HRM_RA_Result_of_Reconsideration</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Type of Appeal Action is required if Action Appealed is Yes. --></errorMessage>
+        <name>HRM_RA_Type_of_Appeal_Action</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field has to be filled in before the case can be closed. --></errorMessage>
+        <name>HRM_Result_of_PIP</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Result of PIP is required if Proposed Type of Action is Removal, Demotion, or Reassignment. --></errorMessage>
+        <name>HRM_Result_of_PIP_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Result of Recosideration is required if Date Reconsideration Received has been filled in --></errorMessage>
+        <name>HRM_Result_of_Reconsideration</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Type of Appeal Action is required if Action Appealed is Yes. --></errorMessage>
+        <name>HRM_Type_of_Appeal_Action</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Type of Ethical Violation is required if &quot;Is this an Ethical Conduct Violation?&quot; is Yes. --></errorMessage>
+        <name>HRM_Type_of_Ethical_Violation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Action Appealed&quot; should be &quot;Yes&quot; OR &quot;Date Reconsideration Received&quot; should be filled in before status of the Case can be changed to &quot;Closed – In Appeal&quot;. --></errorMessage>
+        <name>HRM_Validation_RA_Closed_In_Appeal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A value is required in &quot;If Approved, Accommodation Desc.&quot; if &quot;Decision&quot; is &quot;Request Approved (A)&quot; --></errorMessage>
+        <name>RA_Approved_AccomodationDescription</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please choose a decision before the case can be closed. --></errorMessage>
+        <name>RA_Closed_Decision</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please choose a type before the case can be closed. If desired type is not available, please complete &apos;Description Other&apos; field below. --></errorMessage>
+        <name>RA_Closed_RequestedAccommodationType</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- ROO/Action Officer field cannot be blank. --></errorMessage>
+        <name>Validate_AO_IsNotNull</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Assigned Specialist field cannot be blank. --></errorMessage>
+        <name>Validate_AS_IsNotNull</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- HR Office of Assigned Specialist field cannot be blank when an Assigned Specialist is selected. --></errorMessage>
+        <name>Validate_AS_Office_IsNotNull</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot change Status or Stage for records marked as Deleted. --></errorMessage>
+        <name>Validate_Deleted_Records</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to &quot;Assigned to Action Officer&quot; stage from the current stage. --></errorMessage>
+        <name>Validate_Entry_Into_AO_Stage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to &quot;Assigned to Assigned Specialist&quot; stage from the current stage. --></errorMessage>
+        <name>Validate_Entry_Into_AS_Stage_NonPrivate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to &quot;Assigned to Assigned Specialist&quot; stage from the current stage. --></errorMessage>
+        <name>Validate_Entry_Into_AS_Stage_Private</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please close the case before moving Status to &quot;Closed - In Appeal&quot;. --></errorMessage>
+        <name>Validate_Entry_Into_Closed_In_Appeal_Sta</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move Status to &quot;Closed&quot; from the current stage. --></errorMessage>
+        <name>Validate_Entry_Into_Closed_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to &quot;Assigned to Responsible Office Official&quot; stage from the current stage. --></errorMessage>
+        <name>Validate_Entry_Into_ROO_Stage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to &quot;Ready for Action Officer to View&quot; stage from the current stage. --></errorMessage>
+        <name>Validate_Entry_Into_Ready_For_AO_Stage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- New cases cannot go directly to the selected stage.  A ROO/AO should be assigned first. --></errorMessage>
+        <name>Validate_New_Cases</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to &quot;With Intake Reviewer&quot; stage from the current stage. --></errorMessage>
+        <name>Validate_With_Intake_Reviewer_Stage</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Disciplinary_Case --></label>
+        <name>New_Disciplinary_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Grievance_Case --></label>
+        <name>New_Grievance_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Performance_Case --></label>
+        <name>New_Performance_Case</name>
+    </webLinks>
+</CustomObjectTranslation>

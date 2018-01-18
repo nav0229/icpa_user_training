@@ -1,0 +1,78 @@
+<apex:page controller="GLXY_clsDuplicates" Title="Potential Duplicate Lump Sums" readonly="true" sidebar="false">
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />  
+    
+    <script>
+    function HightlightDups() {
+        var flag= 'true';
+        var mySet = [];
+        var elements= document.getElementsByClassName('leaseNumber');
+        for(var i=0;i<elements.length;i++) {
+            var Leases = elements[i].innerHTML;
+            if(mySet.indexOf(Leases) == -1)
+            mySet.push(Leases);
+        } 
+        for(var i=0;i<mySet.length;i++) {
+            var elements= document.getElementsByClassName(mySet[i]);
+            
+            for(var j=0;j<elements.length;j++) {
+                if(flag=='true')
+                document.getElementById(elements[j].id).style.backgroundColor = 'white';
+                else
+                document.getElementById(elements[j].id).style.backgroundColor = '#e3f3ff'; 
+            }
+            if(flag=='false')
+            flag='true';
+            else
+            flag='false';
+        }  
+    }
+     window.onload = HightlightDups;       
+    </script>
+    
+    <table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">Potential Duplicate Lump Sums</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+                <h2><font color="darkred" size="+1">
+                    Fiscal Year: {!strFiscalYear} &nbsp;&nbsp;&nbsp;
+                    Region: {!strRegionDisplay}
+                </font></h2>
+           </td><br/>
+        </tr>
+    </table>
+    <br/> 
+    <apex:pageBlock >
+        <table border="0" width="100%">
+            <tr>
+                <th>Region</th>
+                <th>Team Code</th>
+                <th>Lease Number</th>
+                <th>Lump Sum Type</th>
+                <th>Effective Date</th>
+                <th>Processed Date</th>
+                <th>Record Type</th>
+                <th>Annual Amount</th>
+                <th>Status Code</th>
+            </tr>
+             <apex:variable var="count" value="{!1}"   />  
+             <apex:repeat value="{!DatasetLumpSumDups}" var="DataSet">
+            <tr class="{!DataSet.GroupByCriteria1}" id="{!DataSet.GroupByCriteria1}{!count}">
+                <td >{!DataSet.GroupByCriteria5}</td>
+                <td>{!DataSet.GroupByCriteria6}</td>
+                <td><a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" styleclass="leaseNumber" /></a></td>
+                <td>{!DataSet.GroupByCriteria2}</td>
+                <td>{!DataSet.GroupByCriteria4}</td>
+                <td>{!DataSet.GroupByCriteria3}</td>
+                <td>{!DataSet.GroupByCriteria8}</td>
+                <td>${!DataSet.GroupByCriteria7}</td>
+                <td>{!DataSet.GroupByCriteria9}</td>
+            </tr>
+            <apex:variable value="{!count+1}" var="count"/>  <!--increment-->
+            </apex:repeat>   
+        </table>
+    </apex:pageBlock>
+</apex:page>

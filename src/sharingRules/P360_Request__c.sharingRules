@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>P360_Request_AllRequestsWithTriage_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>P360 - Share all requests with the Triage public group</description>
+        <label>P360-Request-AllRequestsWithTriage-RW</label>
+        <sharedTo>
+            <group>P360_Triage</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Enhancement,New Application</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>P360_Request_AllRequests_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>P360 - Share all requests with all internal users with read only access</description>
+        <label>P360-Request-AllRequests-R</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Enhancement,New Application</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

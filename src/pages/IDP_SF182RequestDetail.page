@@ -1,0 +1,126 @@
+<apex:page showHeader="true" sidebar="true" standardController="SF_182_Training__c" extensions="IDP_SF182RequestDetailController">
+
+<head>
+	<link href="{!URLFOR($Resource.SRIDP, 'scripts/libs/bootstrap/IDP_Bootstrap.css')}" rel="stylesheet" media="all"/>
+	<link rel="stylesheet" href="{!URLFOR($Resource.SRIDP, 'styles/style.css')}" type="text/css"></link>
+</head>
+
+<div class="IDP_Bootstrap">
+	<!-- STEP 3 OF PROCESS INDICATOR CODE START -->
+	<apex:outputPanel styleClass="wizardStep" layout="block" rendered="{!SF_182_Training__c.Request_Status__c != 'Final Approval' && 
+																										SF_182_Training__c.Request_Status__c != 'Rejected' &&
+																										SF_182_Training__c.Request_Status__c != 'Approval Process in Progress'}">
+		<ul class="wizardStep-timeline mobile-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Submit or Manage Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	
+		<ul class="wizardStep-timeline desktop-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to</h2>
+					<h2 class="completed-step">IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training</h2>
+					<h2 class="completed-step">Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Submit or Manage</h2>
+					<h2 class="completed-step">Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	</apex:outputPanel>
+	<!-- STEP 3 OF PROCESS INDICATOR CODE END -->
+	
+	
+	<!-- STEP 4 OF PROCESS INDICATOR CODE START -->
+	<apex:outputPanel styleClass="wizardStep" layout="block" rendered="{!SF_182_Training__c.Request_Status__c == 'Approval Process in Progress'}">
+		<ul class="wizardStep-timeline mobile-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Submit or Manage Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	
+		<ul class="wizardStep-timeline desktop-hide">
+			<li class="wizard-step-first">
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Link SF182 to</h2>
+					<h2 class="completed-step">IDP</h2>
+				</div>
+			</li>
+			<li class='wizard-step-middle'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Training</h2>
+					<h2 class="completed-step">Request</h2>
+				</div>
+			</li>
+			<li class='wizard-step-last'>
+				<div class="line"></div>
+				<div class="wizardStep-icon completed-step"></div>
+				<div class="wizardStep-label">
+					<h2 class="completed-step">Submit or Manage</h2>
+					<h2 class="completed-step">Approvals</h2>
+				</div>
+			</li>
+		</ul>
+	</apex:outputPanel>
+	<!-- STEP 4 OF PROCESS INDICATOR CODE END -->
+	
+	<apex:detail relatedList="true" showChatter="true"/>
+	
+</div>
+
+</apex:page>

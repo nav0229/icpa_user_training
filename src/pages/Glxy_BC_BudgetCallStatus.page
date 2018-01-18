@@ -1,0 +1,18 @@
+<apex:page >
+
+<br/><br/>
+
+<table align="center" border="1">
+	<tr>
+		<td align="center">
+			<h1>Budget Call - Recalculate</h1>
+			<br/><br/>
+			{! If (($CurrentPage.parameters.Msg == 'DataRefreshed'), 'This Budget Submission numbers have been recalculated.','')} 
+			{! If (($CurrentPage.parameters.Msg == 'RecordLocked'), 'This Budget Submission record is locked. The data can be recalculated only for unlocked submissions.','')}
+			<br/><br/>
+			Click <a href="/{!$CurrentPage.parameters.ID}">here</a> to go back to the previous page.
+		</td>
+	</tr>
+</table>
+
+</apex:page>

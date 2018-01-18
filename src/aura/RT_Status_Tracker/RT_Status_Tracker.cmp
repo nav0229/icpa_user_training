@@ -1,0 +1,67 @@
+<aura:component controller="RT_StatusTrackerController" implements="flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId" access="global">
+  <ltng:require styles="/resource/SLDS/assets/styles/salesforce-lightning-design-system.css,/resource/SLDS/assets/styles/salesforce-lightning-design-system.min.css"/>
+  <aura:attribute name="recordId" type="Id"/>
+  <aura:attribute name="ExValue" type="string"/>
+  <aura:attribute name="PerValue" type="double"/>
+  <aura:attribute name="lival1" type="string"/>
+  <aura:attribute name="lival2" type="string"/>
+  <aura:attribute name="lival3" type="string"/>
+  <aura:attribute name="lisubvalClassone" type="string"/>
+  <aura:attribute name="lisubvalClasstwo" type="string"/>
+  <aura:attribute name="lisubvalClassthree" type="string"/>
+  <aura:attribute name="phaseclassone" type="string"/>
+  <aura:attribute name="phaseclasstwo" type="string"/>
+  <aura:attribute name="phaseclassthree" type="string"/>
+  <aura:attribute name="CurrentStatus1" type="string"/>  
+  <aura:attribute name="CurrentStatus2" type="string"/>  
+  <aura:attribute name="CurrentStatus3" type="string"/>
+  <aura:attribute name="CurrentNode1" type="string"/> 
+  <aura:attribute name="CurrentNode2" type="string"/> 
+  <aura:attribute name="CurrentNode3" type="string"/> 
+  <aura:attribute name="StatusColor" type="string"/> 
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+  <aura:handler event="force:refreshView" action="{!c.doInit}" />
+  <br></br><br></br>
+  
+<!--Request Tracker component starts here-->
+  <div class="slds-wizard" role="navigation" style ="padding-left: 28px;
+   padding-right: 25px;">
+    <ol class="slds-wizard__list">
+      <!--Initial node-->
+      <li class="{!v.CurrentNode1}" id="li1">
+        <a href="javascript:void(0);" class="slds-wizard__link">
+          <span class="slds-wizard__marker" id="PhaseOne">
+          </span>
+          <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="PhaseOne" style="line-height: 4.25;margin-top: -62px;">{!v.CurrentStatus1} 
+           <br/>
+            <b class="approvedphase">{!v.lival1}</b>
+          </span>
+        </a>
+      </li>
+      <!--second stage node-->
+      <li class="{!v.CurrentNode2}" id="li2">
+        <a href="javascript:void(0);" class="slds-wizard__link">
+          <span class="slds-wizard__marker" id="PhaseTwo" >
+           </span>
+          <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="PhaseTwo" style="line-height: 4.25;margin-top: -62px;">{!v.CurrentStatus2}<br/>
+             <b class="{!v.phaseclasstwo}">{!v.lival2}</b>
+          </span>
+        </a>
+      </li>
+      <!--Final Status node-->
+      <li class="{!v.CurrentNode3}" id="li3">
+        <a href="javascript:void(0);" class="slds-wizard__link">
+          <span class="slds-wizard__marker" id="PhaseThree" style="{!'background:'+v.StatusColor}">
+          </span>
+          <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Final Status" style="line-height:4.25;margin-top: -62px;">
+            {!v.CurrentStatus3} <br/>&nbsp;
+            <b class="{!v.phaseclassthree}">{!v.lival3}</b>
+          </span>
+        </a>
+      </li>
+  	  </ol>
+    <span class="slds-wizard__progress" id="progressbar" >
+      <span class="slds-wizard__progress-bar progress" style="{!'width:'+v.PerValue+'%'}"></span>
+    </span>
+  </div> 
+</aura:component>

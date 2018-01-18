@@ -1,0 +1,2054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Business_Function_Detail__c</fullName>
+        <description>Level two of the EA Business Function taxonomy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please choose a more detailed GSA business function based on the same criteria as above. The business function list is dependent on what you chose above.</inlineHelpText>
+        <label>Business Function Detail</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Business_Function__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Acquisition Planning and Market Research</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Asset Accounting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Audit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Automobile Fleet Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Automobile Vehicle Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefits Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cash Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Citizen Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Compensation Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Congressional Relations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Construction Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contract Administration and Performance Monitoring</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contract Award</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contract Closeout</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cost Allocation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Customer Care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Customer Information Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Customer Order Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deliveries/ Transportation Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employee Relations Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Enterprise Applications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Enterprise Support Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal Asset Sales</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal IT Solutions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Financial Planning</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Financial Reporting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Funds Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General Ledger</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HR Strategy Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Human Resources Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Infrastructure Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inventory Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Labor Relations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Legal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operations Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Organization and Position Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Payables Accounting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Performance Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Planning &amp; Governance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policy Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Property/ Facility Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Property Acquisition and Disposal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Asset Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Receivables Accounting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Requirements Definition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Returns/ Disposals/ Surplus Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Security</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Separation Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Solicitation Writing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Source Selection</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Space Delivery</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Staff Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Stores Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Customer/Account Relationship Planning and Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Planning</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Supplier Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transportation Management and Auditing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Travel Management</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Acquisition</controllingFieldValue>
+                <valueName>Acquisition Planning and Market Research</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Acquisition</controllingFieldValue>
+                <valueName>Contract Administration and Performance Monitoring</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Acquisition</controllingFieldValue>
+                <valueName>Contract Award</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Acquisition</controllingFieldValue>
+                <valueName>Contract Closeout</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Acquisition</controllingFieldValue>
+                <valueName>Requirements Definition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Acquisition</controllingFieldValue>
+                <valueName>Solicitation Writing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Acquisition</controllingFieldValue>
+                <valueName>Source Selection</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Management</controllingFieldValue>
+                <valueName>Audit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Management</controllingFieldValue>
+                <valueName>Congressional Relations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Management</controllingFieldValue>
+                <valueName>Legal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Management</controllingFieldValue>
+                <valueName>Operations Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Management</controllingFieldValue>
+                <valueName>Strategic Planning</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Management</controllingFieldValue>
+                <valueName>Customer Care</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Management</controllingFieldValue>
+                <valueName>Customer Information Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Management</controllingFieldValue>
+                <valueName>Marketing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Management</controllingFieldValue>
+                <valueName>Strategic Customer/Account Relationship Planning and Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Asset Accounting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Cash Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Cost Allocation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Financial Planning</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Financial Reporting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Funds Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>General Ledger</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Payables Accounting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Financial Management</controllingFieldValue>
+                <valueName>Receivables Accounting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Benefits Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Compensation Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Employee Relations Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>HR Strategy Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Human Resources Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Labor Relations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Organization and Position Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Performance Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Separation Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Human Resources Management</controllingFieldValue>
+                <valueName>Staff Acquisition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Information Technology</controllingFieldValue>
+                <valueName>Enterprise Applications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Information Technology</controllingFieldValue>
+                <valueName>Enterprise Support Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Information Technology</controllingFieldValue>
+                <valueName>Infrastructure Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Information Technology</controllingFieldValue>
+                <valueName>Planning &amp; Governance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Information Technology</controllingFieldValue>
+                <valueName>Security</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Supply Chain Management</controllingFieldValue>
+                <valueName>Customer Order Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Supply Chain Management</controllingFieldValue>
+                <valueName>Deliveries/ Transportation Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Supply Chain Management</controllingFieldValue>
+                <valueName>Inventory Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Supply Chain Management</controllingFieldValue>
+                <valueName>Returns/ Disposals/ Surplus Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Supply Chain Management</controllingFieldValue>
+                <valueName>Stores Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Supply Chain Management</controllingFieldValue>
+                <valueName>Supplier Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Travel and Transportation</controllingFieldValue>
+                <valueName>Automobile Fleet Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Travel and Transportation</controllingFieldValue>
+                <valueName>Automobile Vehicle Acquisition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Travel and Transportation</controllingFieldValue>
+                <valueName>Transportation Management and Auditing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Travel and Transportation</controllingFieldValue>
+                <valueName>Travel Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Workspaces</controllingFieldValue>
+                <valueName>Construction Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Workspaces</controllingFieldValue>
+                <valueName>Property/ Facility Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Workspaces</controllingFieldValue>
+                <valueName>Property Acquisition and Disposal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Workspaces</controllingFieldValue>
+                <valueName>Real Asset Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Workspaces</controllingFieldValue>
+                <valueName>Space Delivery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Public and Government-wide Solutions</controllingFieldValue>
+                <valueName>Citizen Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Public and Government-wide Solutions</controllingFieldValue>
+                <valueName>Federal Asset Sales</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Public and Government-wide Solutions</controllingFieldValue>
+                <valueName>Federal IT Solutions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Public and Government-wide Solutions</controllingFieldValue>
+                <valueName>Policy Management</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Business_Function__c</fullName>
+        <description>Level one of the EA Business Function taxonomy.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please choose the GSA business function that may require and/or produce the document you are uploading. In cases where multiple are appropriate, pick the best option.</inlineHelpText>
+        <label>Business Function</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Customer Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Financial Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Human Resources Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Information Technology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Supply Chain Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Travel and Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Workspaces</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Public and Government-wide Solutions</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ContentSize</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FAS_Portfolio__c</fullName>
+        <externalId>false</externalId>
+        <label>FAS Portfolio</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CAR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GSS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Acquisition Mgmt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ITS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CIO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TMVCS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Innovations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategy Mgmt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Commissioner’s Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Controller’s Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Administration</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FileExtension</fullName>
+    </fields>
+    <fields>
+        <fullName>FileType</fullName>
+    </fields>
+    <fields>
+        <fullName>Information_Technology_Functions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please choose any detailed IT-related business functions that may require and/or produce the document you are uploading. Choose all that apply.</inlineHelpText>
+        <label>Information Technology Functions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Building Monitoring &amp; Control Devices</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Information</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Relationship Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Compliance and Audit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Education and Awareness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Emerging Technologies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>End User Device Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Enterprise Architecture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Enterprise IT Policies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Enterprise IT Strategic Planning</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Identity and Access Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IT Asset Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IT Portfolio Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IT Resource Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Monitoring and Control</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Network Resources Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Server Resources Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Service Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Solution Consulting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vendor Management</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IsAssetEnabled</fullName>
+    </fields>
+    <fields>
+        <fullName>Language</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SharingOption</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SharingPrivacy</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TagCsv</fullName>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <recordTypes>
+        <fullName>EKB</fullName>
+        <active>true</active>
+        <label>EKB</label>
+        <picklistValues>
+            <picklist>Business_Function_Detail__c</picklist>
+            <values>
+                <fullName>Acquisition Planning and Market Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile Fleet Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile Vehicle Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Citizen Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congressional Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Administration and Performance Monitoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Closeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Information Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Order Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deliveries%2F Transportation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Relations Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Asset Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal IT Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Ledger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HR Strategy Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Resources Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labor Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization and Position Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payables Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning %26 Governance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Acquisition and Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property%2F Facility Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Asset Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receivables Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requirements Definition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Returns%2F Disposals%2F Surplus Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Separation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitation Writing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Selection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Space Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stores Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Customer%2FAccount Relationship Planning and Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplier Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation Management and Auditing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Function__c</picklist>
+            <values>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public and Government-wide Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workspaces</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FAS_Portfolio__c</picklist>
+            <values>
+                <fullName>AAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commissioner%E2%80%99s Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Controller%E2%80%99s Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ITS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Innovations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategy Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMVCS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_Technology_Functions__c</picklist>
+            <values>
+                <fullName>Application Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Building Monitoring %26 Control Devices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Relationship Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance and Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education and Awareness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emerging Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End User Device Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise IT Policies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise IT Strategic Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Asset Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Portfolio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Resource Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Identity and Access Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring and Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Server Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solution Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FAS</fullName>
+        <active>true</active>
+        <label>FAS</label>
+        <picklistValues>
+            <picklist>Business_Function_Detail__c</picklist>
+            <values>
+                <fullName>Acquisition Planning and Market Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile Fleet Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile Vehicle Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Citizen Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congressional Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Administration and Performance Monitoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Closeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Information Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Order Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deliveries%2F Transportation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Relations Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Asset Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal IT Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Ledger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HR Strategy Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Resources Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labor Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization and Position Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payables Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning %26 Governance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Acquisition and Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property%2F Facility Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Asset Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receivables Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requirements Definition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Returns%2F Disposals%2F Surplus Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Separation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitation Writing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Selection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Space Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stores Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Customer%2FAccount Relationship Planning and Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplier Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation Management and Auditing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Function__c</picklist>
+            <values>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public and Government-wide Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workspaces</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FAS_Portfolio__c</picklist>
+            <values>
+                <fullName>AAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commissioner%E2%80%99s Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Controller%E2%80%99s Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ITS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Innovations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategy Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMVCS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_Technology_Functions__c</picklist>
+            <values>
+                <fullName>Application Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Building Monitoring %26 Control Devices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Relationship Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance and Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education and Awareness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emerging Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End User Device Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise IT Policies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise IT Strategic Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Asset Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Portfolio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Resource Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Identity and Access Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring and Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Server Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solution Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PD_Library</fullName>
+        <active>true</active>
+        <label>PD Library</label>
+        <picklistValues>
+            <picklist>Business_Function_Detail__c</picklist>
+            <values>
+                <fullName>Acquisition Planning and Market Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile Fleet Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile Vehicle Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Citizen Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congressional Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Administration and Performance Monitoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Closeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Information Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Order Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deliveries%2F Transportation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Relations Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Asset Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal IT Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Ledger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HR Strategy Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Resources Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labor Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization and Position Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payables Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning %26 Governance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Acquisition and Disposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property%2F Facility Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Asset Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receivables Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requirements Definition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Returns%2F Disposals%2F Surplus Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Separation Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitation Writing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Selection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Space Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stores Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Customer%2FAccount Relationship Planning and Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplier Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation Management and Auditing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Function__c</picklist>
+            <values>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public and Government-wide Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workspaces</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FAS_Portfolio__c</picklist>
+            <values>
+                <fullName>AAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commissioner%E2%80%99s Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Controller%E2%80%99s Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ITS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Innovations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategy Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMVCS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_Technology_Functions__c</picklist>
+            <values>
+                <fullName>Application Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Building Monitoring %26 Control Devices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Relationship Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance and Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education and Awareness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emerging Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End User Device Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise IT Policies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise IT Strategic Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Asset Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Portfolio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Resource Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Identity and Access Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring and Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Server Resources Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solution Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>VERSION.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.CONTENT_SIZE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.FILE_EXTENSION</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.LAST_UPDATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.OWNER</searchResultsAdditionalFields>
+    </searchLayouts>
+</CustomObject>

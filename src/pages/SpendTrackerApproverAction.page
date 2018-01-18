@@ -1,0 +1,43 @@
+<apex:page controller="SpendTrackerApproverActionController" tabStyle="Items__c" sidebar="false" showHeader="false" >
+
+
+
+    <!---<apex:detail subject="{!Test_Object__c}" relatedList="false" title="false"/> --->
+<apex:relatedList list="ProcessSteps" />
+<apex:form >
+
+<apex:pageMessages escape="false"/>
+   <apex:sectionHeader subtitle="{!objLead.Name}"/>
+   <apex:pageBlock title="Approve/Reject Approval Request">
+       <apex:pageBlockButtons location="bottom">
+           <apex:commandButton value="Approve" action="{!approve}"/>
+           <apex:commandButton value="Reject" action="{!reject}"/>
+           <apex:commandButton value="Cancel" action="{!cancel}"/>
+       </apex:pageBlockButtons>  
+       <apex:pageBlockSection columns="1">
+           <!----<apex:pageBlockSectionItem >
+               Name <apex:outputField value="{!objLead.Name}"/>
+           </apex:pageBlockSectionItem>------>
+           <apex:pageBlockSectionItem >
+            Item Id<apex:outputField value="{!objLead.Name}"/>
+           </apex:pageBlockSectionItem>
+           <apex:pageBlockSectionItem >
+            Spend Request Number<apex:outputField value="{!objLead.Spend_Request_Number__c}"/>
+           </apex:pageBlockSectionItem>
+           <apex:pageBlockSectionItem >
+            Approval Status<apex:outputField value="{!objLead.Approval_Status__c}"/>
+           </apex:pageBlockSectionItem>
+           <apex:pageBlockSectionItem >
+            Total Cost<apex:outputField value="{!objLead.Total_Cost__c}"/>
+           </apex:pageBlockSectionItem>
+           
+           <apex:pageBlockSectionItem >
+              Comments <br/><font color="red"> Comments are required upon rejection </font> <apex:inputTextArea value="{!objLead.Comments__c}"  rows="5" cols="100" />
+           </apex:pageBlockSectionItem>
+       </apex:pageBlockSection>
+   </apex:pageBlock>
+   </apex:form>
+
+
+  
+</apex:page>

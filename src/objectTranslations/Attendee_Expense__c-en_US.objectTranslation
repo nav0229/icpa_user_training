@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Attendee Expense</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Attendee Expenses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attendee --></label>
+        <name>Attendee__c</name>
+        <relationshipLabel><!-- Attendee Expenses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If you&apos;ve chosen &quot;Other&quot; as an expense category, please describe here. --></help>
+        <label><!-- Description of Other --></label>
+        <name>Description_of_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Amount --></label>
+        <name>Estimated_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expense Category --></label>
+        <name>Expense_Category__c</name>
+        <picklistValues>
+            <masterLabel>Conference Registration Fee</masterLabel>
+            <translation><!-- Conference Registration Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exhibit Fees</masterLabel>
+            <translation><!-- Exhibit Fees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lodging</masterLabel>
+            <translation><!-- Lodging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meals</masterLabel>
+            <translation><!-- Meals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expense Detail --></label>
+        <name>Expense_Detail__c</name>
+        <picklistValues>
+            <masterLabel>Air</masterLabel>
+            <translation><!-- Air --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audio Visual</masterLabel>
+            <translation><!-- Audio Visual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Booth Rental</masterLabel>
+            <translation><!-- Booth Rental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Breakfast</masterLabel>
+            <translation><!-- Breakfast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinner</masterLabel>
+            <translation><!-- Dinner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Displays</masterLabel>
+            <translation><!-- Displays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exhibit Cost</masterLabel>
+            <translation><!-- Exhibit Cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incidental</masterLabel>
+            <translation><!-- Incidental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lunch</masterLabel>
+            <translation><!-- Lunch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POV</masterLabel>
+            <translation><!-- POV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parking</masterLabel>
+            <translation><!-- Parking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Per Diem</masterLabel>
+            <translation><!-- Per Diem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Transit</masterLabel>
+            <translation><!-- Public Transit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rail</masterLabel>
+            <translation><!-- Rail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration Fee</masterLabel>
+            <translation><!-- Registration Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rental Car</masterLabel>
+            <translation><!-- Rental Car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Room</masterLabel>
+            <translation><!-- Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shuttle or Taxi</masterLabel>
+            <translation><!-- Shuttle or Taxi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxes</masterLabel>
+            <translation><!-- Taxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toll</masterLabel>
+            <translation><!-- Toll --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gratuities</masterLabel>
+            <translation><!-- gratuities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If you are getting a rental car, a justification is needed in this field. You have 255 characters to enter this justification --></help>
+        <label><!-- Justification --></label>
+        <name>Justification__c</name>
+    </fields>
+    <layouts>
+        <layout>Attendee Expense Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Your Estimated Amount cannot be a negative amount. --></errorMessage>
+        <name>Estimated_Expenses_cannot_be_less_than_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must provide a description of why &quot;Other&quot; was chosen --></errorMessage>
+        <name>Expense_category_equals_other</name>
+    </validationRules>
+</CustomObjectTranslation>

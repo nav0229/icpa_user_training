@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Related contacts and litigation hold details for OGC Case Tracking.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Address_OGC_Case_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name_OGC_Case_Contact__r.MailingStreet  &amp; BR() &amp; Name_OGC_Case_Contact__r.MailingCity &amp;&quot;,  &quot; &amp; Name_OGC_Case_Contact__r.MailingState &amp;&quot; &quot;&amp;  Name_OGC_Case_Contact__r.MailingPostalCode &amp; BR() &amp; Name_OGC_Case_Contact__r.MailingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Notes__c</fullName>
+        <description>Notes for contact.</description>
+        <externalId>false</externalId>
+        <label>Contact Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact_s_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name_OGC_Case_Contact__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact&apos;s Account</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_OGC_Case_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name_OGC_Case_Contact__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Litigation_Hold_Issued_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Litigation Hold Issued Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Mediator_Expert_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Mediator/Expert Rating</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Relationship_OGC_Case_Contact__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Not Recommended</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Acceptable, Some Reservations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Acceptable, Neutral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Recommended</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Highly Recommended</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Mediator</controllingFieldValue>
+                <controllingFieldValue>Expert Witness/Consultant</controllingFieldValue>
+                <valueName>1 - Not Recommended</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mediator</controllingFieldValue>
+                <controllingFieldValue>Expert Witness/Consultant</controllingFieldValue>
+                <valueName>2 - Acceptable, Some Reservations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mediator</controllingFieldValue>
+                <controllingFieldValue>Expert Witness/Consultant</controllingFieldValue>
+                <valueName>3 - Acceptable, Neutral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mediator</controllingFieldValue>
+                <controllingFieldValue>Expert Witness/Consultant</controllingFieldValue>
+                <valueName>4 - Recommended</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mediator</controllingFieldValue>
+                <controllingFieldValue>Expert Witness/Consultant</controllingFieldValue>
+                <valueName>5 - Highly Recommended</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mediator_Expert_Subject_Matter__c</fullName>
+        <externalId>false</externalId>
+        <label>Mediator/Expert Subject Matter</label>
+        <length>64</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_OGC_Case_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contact Name</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>OGC Case Contacts/ Litigation Holds</relationshipLabel>
+        <relationshipName>Case_Contacts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OGC_CASE__c</fullName>
+        <externalId>false</externalId>
+        <label>OGC Matter Title/Name</label>
+        <referenceTo>OCIO_OGC_Case_Tracking__c</referenceTo>
+        <relationshipLabel>OGC Case Contacts/ Litigation Holds</relationshipLabel>
+        <relationshipName>Case_Contacts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Phone_OGC_Case_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name_OGC_Case_Contact__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Custodian_for_Litigation_Hold__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Record Custodian for Litigation Hold</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_OGC_Case_Contact__c</fullName>
+        <description>OGC Case related contacts and their relationship</description>
+        <externalId>false</externalId>
+        <label>Relationship</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Claimant/Adverse Party</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Client Contact</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Co-Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contracting Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DOJ Attorney</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expert Witness/Consultant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fact Witness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GAO Attorney</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Judge</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Opposing Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lead Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mediator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Intervenor&apos;s Counsel</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>OGC Case Contact/ Litigation Hold</label>
+    <nameField>
+        <displayFormat>OGC Case Contact-{0000}</displayFormat>
+        <label>OGC Case Contacts ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>OGC Case Contacts/ Litigation Holds</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Litigation_Hold_Issued_Date_Required</fullName>
+        <active>true</active>
+        <description>The &quot;Litigation Hold Issued Date&quot; must be required if the contact relationship is &quot;record custodian for litigation hold.&quot;</description>
+        <errorConditionFormula>AND (Record_Custodian_for_Litigation_Hold__c=TRUE, ISBLANK(Litigation_Hold_Issued_Date__c ))</errorConditionFormula>
+        <errorDisplayField>Litigation_Hold_Issued_Date__c</errorDisplayField>
+        <errorMessage>Litigation Hold Issued Date must be filled in if the contact relationship is &quot;Record Custodian for Litigation Hold.&quot;</errorMessage>
+    </validationRules>
+</CustomObject>

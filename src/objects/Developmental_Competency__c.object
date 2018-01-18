@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Activity_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Developmental_Activity__r.Assignment_Title__c</formula>
+        <inlineHelpText>Activity Name - Select an Activity for this IDP that pertains to a Competency Model, Competency Area or Competency</inlineHelpText>
+        <label>Activity Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competency_Area__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Competency Area - Here you drill deeper in the model to show what you want to develop with this activity</inlineHelpText>
+        <label>Competency Area</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competency_Model__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Competency Model - What area are you trying to develop with this activity? Your leadership skills, your contracting skills?</inlineHelpText>
+        <label>Competency Model</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competency__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Competency - Here you drill even deeper in the model to show what you want to develop with this activity</inlineHelpText>
+        <label>Competency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Developmental_Activity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select Activity - Select an Activity for this IDP that pertains to a Competency Model, Competency Area or Competency</inlineHelpText>
+        <label>Developmental Activity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>IDP_Developmental_Line_Item__c.Developmental_Objective__c</field>
+                <operation>equals</operation>
+                <valueField>IDP_Developmental_Line_Item__c.Developmental_Objective__r.Id</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>IDP_Developmental_Line_Item__c</referenceTo>
+        <relationshipLabel>Developmental Competencies</relationshipLabel>
+        <relationshipName>Developmental_Competencies</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Related_IDP__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Developmental_Activity__r.Developmental_Objective__r.IDP__r.Id)</formula>
+        <label>Related IDP</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Developmental Competency</label>
+    <nameField>
+        <displayFormat>DC-{000000}</displayFormat>
+        <label>Developmental Competency Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Developmental Competencies</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

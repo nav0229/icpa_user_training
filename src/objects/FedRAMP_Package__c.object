@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Package object for FedRAMP application to track Packages</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Agency_ATO_Contract__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If previous ATO had a contract - list contract #</inlineHelpText>
+        <label>Agency ATO Contract</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Contact_Email__c</fullName>
+        <description>Agency/Contract Vehicle Contact  Email - renamed as Agency Contract Email</description>
+        <externalId>false</externalId>
+        <label>Agency Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Contact_Name__c</fullName>
+        <description>Agency/Contract Vehicle Contact Name  - renamed as Agency Contact</description>
+        <externalId>false</externalId>
+        <label>Agency Contact Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Contact_Phone__c</fullName>
+        <description>Agency/Contract Vehicle Contact Phone - Renamed as Agency Contact Phone</description>
+        <externalId>false</externalId>
+        <label>Agency Contact Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Attended_FedRAMP_Document_Training__c</fullName>
+        <externalId>false</externalId>
+        <label>Attended FedRAMP Document Training</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Backup_ISSO__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Backup ISSO</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Packages</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CSP_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>CSP__r.BillingStreet &amp; BR() &amp;  CSP__r.BillingCity &amp; BR() &amp;  CSP__r.BillingState  &amp; BR() &amp;  CSP__r.BillingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CSP Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSP_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CSP__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CSP Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSP_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>CSP Size</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Small</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Large</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CSP_Website__c</fullName>
+        <externalId>false</externalId>
+        <label>CSP Website</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>CSP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>CSP</description>
+        <externalId>false</externalId>
+        <label>CSP</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Packages (CSP)</relationshipLabel>
+        <relationshipName>Packages1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cloud_Deployment_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Cloud Deployment Model</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Public</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Private</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hybrid</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Community</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cloud_Service_Model__c</fullName>
+        <description>Cloud Service Model</description>
+        <externalId>false</externalId>
+        <label>Cloud Service Model</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Software as a Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Infrastructure as a Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Platform as a Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Denied_Removed_Reason__c</fullName>
+        <description>Denied/Removed Reason</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Notes on significant events that affect the CSP&apos;s Status</inlineHelpText>
+        <label>Reason Removed or Suspended</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Authorization_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Authorization Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FIPS_199_Categorization__c</fullName>
+        <description>FIPS-199 Categorization</description>
+        <externalId>false</externalId>
+        <label>FIPS-199 Categorization</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low Impact Level</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Moderate Impact Level</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FedRAMP_Readiness__c</fullName>
+        <externalId>false</externalId>
+        <label>FedRAMP Readiness</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Kickoff_Meeting_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Kickoff Meeting Total Days</label>
+        <summarizedField>FedRAMP_Package_Stage__c.Total_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Stages__c</field>
+            <operation>equals</operation>
+            <value>Kick Off Meeting</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Process</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Package_Stage__c.Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Old_Package_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Package ID</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Cloud_Service_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Cloud Service Model</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PATO_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date JAB approves P-ATO</inlineHelpText>
+        <label>P-ATO Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Package_Complexity__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Complexity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Moderate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Package_Cost_Savings__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter total package cost savings in USD. Please use only numbers; special characters are not accepted.</inlineHelpText>
+        <label>Package Cost Savings (USD)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Package_Progress__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Progress</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In queue</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Readiness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SSP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SAP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SAR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ConMon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Package_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Readiness</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Process</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Authorized</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ATO Cancelled</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Removed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Package Exception</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Prelimnary_SSP_Readiness_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Prelimnary SSP Readiness Rating</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Previous_ATO_Date__c</fullName>
+        <description>Date ATO/Provisional Authorization Granted - Renamed as ATO Date</description>
+        <externalId>false</externalId>
+        <label>Previous ATO Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Previous_ATO_Federal_Agency__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Agency that may have issued an ATO to the CSP</inlineHelpText>
+        <label>Previous ATO Federal Agency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_ISSO__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary ISSO</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Packages_ISSO_Primary</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Readiness_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>Value(TEXT(Prelimnary_SSP_Readiness_Rating__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Readiness Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Readiness_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Readiness Total Days</label>
+        <summarizedField>FedRAMP_Package_Stage__c.Total_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Stages__c</field>
+            <operation>equals</operation>
+            <value>Readiness</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Process</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Package_Stage__c.Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Review_Category__c</fullName>
+        <description>Review Category</description>
+        <externalId>false</externalId>
+        <label>Review Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CSP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>JAB</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SAP_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP Total Days</label>
+        <summarizedField>FedRAMP_Package_Stage__c.Total_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Stages__c</field>
+            <operation>equals</operation>
+            <value>SAP</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Process</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Package_Stage__c.Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SAR_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>SAR Total Days</label>
+        <summarizedField>FedRAMP_Package_Stage__c.Total_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Stages__c</field>
+            <operation>equals</operation>
+            <value>SAR</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Process</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Package_Stage__c.Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SSP_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>SSP Total Days</label>
+        <summarizedField>FedRAMP_Package_Stage__c.Total_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Stages__c</field>
+            <operation>equals</operation>
+            <value>SSP</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Package_Stage__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Process</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Package_Stage__c.Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SSP_Training_Confirmation__c</fullName>
+        <externalId>false</externalId>
+        <label>SSP Training Confirmation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Secure_Repository_Account_Created__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date</inlineHelpText>
+        <label>Secure Repository Account Created</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Secure_Repository_Account_Max__c</fullName>
+        <externalId>false</externalId>
+        <label>Secure Repository Account (Max)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_Provided_Description__c</fullName>
+        <description>Service Provided Description</description>
+        <externalId>false</externalId>
+        <label>Service Provided Description</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Submitted_Documents__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted Documents</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>System_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>System Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Owner__c</fullName>
+        <description>System Owner</description>
+        <externalId>false</externalId>
+        <label>System Owner</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Previously_Authorized__c</fullName>
+        <description>System Previously Authorized</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Did the CSP have an Agency ATO before coming to FedRAMP?</inlineHelpText>
+        <label>System Previously Authorized</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Was_an_Accredited_3PAO_Assessor_used__c</fullName>
+        <description>Was a 3PAO Assessor used?</description>
+        <externalId>false</externalId>
+        <label>Was an Accredited 3PAO Assessor used?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>X3PAO_Used__c</fullName>
+        <externalId>false</externalId>
+        <label>3PAO Used</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Package</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CSP__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Prelimnary_SSP_Readiness_Rating__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>FedRAMP_Director</fullName>
+        <columns>NAME</columns>
+        <filterScope>Queue</filterScope>
+        <label>FedRAMP Director</label>
+        <queue>FedRAMP_Director</queue>
+    </listViews>
+    <nameField>
+        <displayFormat>F{YY}{MM}{DD}{0000}</displayFormat>
+        <label>Package ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Packages</pluralLabel>
+    <searchLayouts>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>CSP__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>FedRAMP_Cost_Savings_needs_PATO_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( NOT(ISNULL( Package_Cost_Savings__c )), ISNULL(PATO_Approved_Date__c) )</errorConditionFormula>
+        <errorMessage>Please enter P-ATO Approved Date before adding Package Cost Savings</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FedRAMP_Reason_Removed_Susp_required</fullName>
+        <active>true</active>
+        <description>Reason Removed or Suspended is required when package is Removed, ATO Cancelled, or Package Exception.</description>
+        <errorConditionFormula>AND(
+OR(ISPICKVAL(Package_Status__c , &quot;Removed&quot;), ISPICKVAL(Package_Status__c , &quot;ATO Cancelled&quot;), ISPICKVAL(Package_Status__c , &quot;Package Exception&quot;)),
+ISBLANK( Denied_Removed_Reason__c ) )</errorConditionFormula>
+        <errorMessage>Reason Removed or Suspended is required when Package Status is Removed, ATO Cancelled, or Package Exception</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FedRAMP_SSP_Score_only_w_Submitted_Docs</fullName>
+        <active>true</active>
+        <description>Preliminary SSP Score can only be set if Submitted Documents are YES</description>
+        <errorConditionFormula>AND( ISPICKVAL( Review_Category__c  , &quot;JAB&quot;), 
+NOT(ISPICKVAL(  Submitted_Documents__c , &quot;Yes&quot;)), 
+NOT(ISPICKVAL( Prelimnary_SSP_Readiness_Rating__c, &quot;&quot; )) 
+)</errorConditionFormula>
+        <errorDisplayField>Submitted_Documents__c</errorDisplayField>
+        <errorMessage>Please check for Submitted Documents before assigning a Preliminary SSP Score to the package</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FedRAMP_needs_PATO_Date_to_Authorize</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Review_Category__c  , &quot;JAB&quot;), ISPICKVAL( Package_Status__c , &quot;Authorized&quot;),   ISNULL(PATO_Approved_Date__c) )</errorConditionFormula>
+        <errorMessage>Please enter P-ATO Approved Date to Authorize this package</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,107 @@
+<apex:page standardController="SF_182_Training__c" sidebar="false" standardStylesheets="true">
+<apex:includeScript value="{!URLFOR($Resource.jQueryTables, '/js/jquery1102min.js')}"/>
+
+<script>
+var recordId = "";
+var approvalStatus = "";
+var requestStatus;
+var finalApprover;
+var approver1;
+var approver2;
+var approver3;
+var approver4;
+var returnStatus;
+var purchasingCoordinator
+//=========================
+approvalStatus = '{!JSENCODE(SF_182_Training__c.Approval_Status__c)}';
+
+ApprovalStatus1="Pending Supervisor Review";
+ApprovalStatus2="Reviewed by Supervisor";
+ApprovalStatus3="Pending Approver 1 Review";
+ApprovalStatus4="Reviewed by Approver 1";
+ApprovalStatus5="Pending Approver 2 Review";
+ApprovalStatus6="Reviewed by Approver 2";
+ApprovalStatus7="Pending Approver 3 Review";
+ApprovalStatus8="Reviewed by Approver 3";
+ApprovalStatus9="Pending Approver 4 Review";
+ApprovalStatus10="Reviewed by Approver 4";
+function navigateToUrl(url) {
+    url = url.replace("%2Fapex%2FSf182ApprovalProcess%3Finline%3D1%26core.apexpages.devmode.url%3D1%26id%3D", " ");
+    window.parent.location.href = url;
+    window.close();
+  }
+$( document ).ready(function() {
+ $(".btn").attr('target', '_parent');
+ $( "a" ).each(function( index ) {
+          $( this ).attr('target', '_parent');    
+    });
+  $(".actionLink").click(function() { 
+                  recordId = '{!JSENCODE(Id)}';
+                  approvalStatus = '{!JSENCODE(SF_182_Training__c.Approval_Status__c)}';
+                  requestStatus = '{!JSENCODE(SF_182_Training__c.Request_Status__c)}';
+                  finalApprover = '{!JSENCODE(SF_182_Training__c.Final_Approves_Flag__c)}';
+                  approver1 = '{!JSENCODE(SF_182_Training__c.Approver_1__c)}';
+                  approver2 = '{!JSENCODE(SF_182_Training__c.Approver_2__c) }';
+                  approver3 = '{!JSENCODE(SF_182_Training__c.Approver_3__c) }';
+                  approver4 = '{!JSENCODE(SF_182_Training__c.Approver_4__c)}';
+                  purchasingCoordinator = '{!JSENCODE(SF_182_Training__c.Purchasing_Training_Coordinator__c)}';
+                
+                 //alert(recordId+","+approvalStatus+","+requestStatus+","+finalApprover );
+                //alert(approvalStatus+"=============="+ApprovalStatus1+","+ApprovalStatus2+","+finalApprover+"approver1 ="+approver1  );
+                
+                //Business Rule 1
+                //=============
+                if((finalApprover == 'false') && (approvalStatus == ApprovalStatus1)){
+                
+                        if(approver1 == ""){
+                        //alert(1);
+                         alert("Attention: If you are the Final Approver please select 'Edit', select the 'I am the Final Approver' checkbox, and select 'Save'. If you are NOT the Final Approver, please select 'Edit', add 'Approver 1', and select 'Save'.");
+                        alert("Attention: After you have updated the request with the next Approver or have marked that you are the Final Approver please be sure to select the Approve/Reject link again.");
+                         returnStatus = false;
+                         }
+                        }else if((finalApprover == 'false') && ((approvalStatus == ApprovalStatus2)||(approvalStatus == ApprovalStatus3))){
+                
+                        if(approver2 == ""){
+                        //alert(2);
+                         alert("Attention: If you are the Final Approver please select 'Edit', select the 'I am the Final Approver' checkbox, and select 'Save'. If you are NOT the Final Approver, please select 'Edit', add 'Approver 2', and select 'Save'.");
+                         alert("Attention: After you have updated the request with the next Approver or have marked that you are the Final Approver please be sure to select the Approve/Reject link again.");
+                         returnStatus = false;
+                         }
+                        } else if((finalApprover == 'false') && ((approvalStatus == ApprovalStatus4)||(approvalStatus == ApprovalStatus5))){
+                
+                        if(approver3 == ""){
+                        //alert(3);
+                         alert("Attention: If you are the Final Approver please select 'Edit', select the 'I am the Final Approver' checkbox, and select 'Save'. If you are NOT the Final Approver, please select 'Edit', add 'Approver 3', and select 'Save'.");
+                         alert("Attention: After you have updated the request with the next Approver or have marked that you are the Final Approver please be sure to select the Approve/Reject link again.");
+                         returnStatus = false;
+                         }
+                        }else if((finalApprover == 'false') && ((approvalStatus == ApprovalStatus6) ||(approvalStatus == ApprovalStatus7))){
+                
+                        if(approver4 == ""){
+                        //alert(4);
+                         alert("Attention: If you are the Final Approver please select 'Edit', select the 'I am the Final Approver' checkbox, and select 'Save'. If you are NOT the Final Approver, please select 'Edit', add 'Approver 4', and select 'Save'.");
+                         alert("Attention: After you have updated the request with the next Approver or have marked that you are the Final Approver please be sure to select the Approve/Reject link again.");
+                         returnStatus = false;
+                         }
+                        }else if((finalApprover == 'false') && (approver4 != "")){
+                
+                        if(purchasingCoordinator == ""){
+                        //alert(4);
+                         alert("Attention: Please enter a Purchase Card Holder for this request. Select 'Edit', add the 'Purchase Card Holder' and select 'Save'. The 'Purchase Card Holder' is the individual within your office/region who is responsible for training payment.");
+                          alert("Attention: After you have updated the request with the Purchase Card Holder please be sure to select the Approve/Reject link again.");
+                         returnStatus = false;
+                         }
+                        }else{
+                   //alert("Final Approval is true, Ready for submission");
+                   returnStatus = true; 
+                }
+
+                //alert(returnStatus);
+                return returnStatus;
+               
+    }); 
+    });
+    
+</script>
+<apex:relatedList list="ProcessSteps" pageSize="500" />
+</apex:page>

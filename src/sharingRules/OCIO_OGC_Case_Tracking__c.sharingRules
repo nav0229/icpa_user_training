@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>OGC_Non_Personnel_Case_Tracking_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Non Personnel Case Tracking Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Case_Central_Office_Leader</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Case Central Office Leader</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>CO</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Case_Central_Office_Leader_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Case Central Office Leader</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Central_Office_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Central Office Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Managers_all_access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Managers(all access)</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case,Non-Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Personnel Case,Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_10_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 10 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_10_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 10 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_10_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 10 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_1_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 1 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_1_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 1 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_1_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 1 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_2_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 2 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_2_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 2 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_2_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 2 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_3_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 3 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_3_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 3 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_3_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 3 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_4_Leader</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 4 Leader</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_4_Leader_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 4 Leader</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>4</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_4_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 4 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_5_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 5 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>5</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_5_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 5 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_5_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 5 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_6_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 6 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_6_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 6 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>6</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_6_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 6 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_7_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 7 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_7_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 7 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>7</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_7_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 7 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_8_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 8 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_8_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 8 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>8</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_8_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 8 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_9_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 9 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_9_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 9 Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>9</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_9_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region 9 Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_NCR_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region NCR Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_NCR_Leaders_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region NCR Leaders</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>NCR</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OGC_Personnel_Cases_Region_NCR_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OGC Personnel Cases Region NCR Users</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Non-Personnel Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,52 @@
+<apex:page Controller="AttachmentUtlity" extensions="ApplicationRequestController">
+    <style>
+    .file{
+            font-size:12px;
+            color: Black;
+         }
+    .done{
+         font-weight: bold;
+         } 
+         
+         
+    </style>
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pagemessages >
+        </apex:pagemessages>
+        <apex:outputPanel styleClass="file">
+        
+        <apex:outputText value="A task has been successfully created." styleClass="file"> </apex:outputText><br/><br/>
+        <apex:outputText value="If you have any file attachments or screenshots for this request, please identify below." styleClass="file"></apex:outputText><br/><br/>
+        <apex:outputText value="Click"></apex:outputText><apex:outputText value=" Upload" styleClass="done"></apex:outputText><apex:outputText value=" to upload any files you need and once completed, then"></apex:outputText><br/><br/>
+        <apex:outputText value="Click"></apex:outputText><apex:outputText value=" Done" styleClass="done"></apex:outputText><apex:outputText value=" to complete this request process."></apex:outputText><br/><br/>
+        </apex:outputPanel>
+        </apex:pageBlock>
+          <apex:pageBlock id="attachBlockLevel" title="Attach Files to Task">
+           <apex:inputHidden value="{!parentId}"/><br/>
+            <apex:outputText value="Attach File:  "/><apex:inputFile value="{!filebody}" filename="{!fileName}"/>
+            <br/>
+            <br/>
+         <!-------<apex:commandButton value="Upload" action="{!upload}" >
+         
+         </apex:commandButton> ----->
+         <apex:commandLink action="{!upload}" value="Upload" style="text-decoration:none; background-color:#e8e8e9;padding:4px;" styleClass="btn">
+     <!----- The functionality of automatically setting uploaded files to Private is removed CASE #00022005
+         <apex:param name="IsPrivate" assignTo="{!IsPrivate}" value="true"/>  -->
+         </apex:commandLink>
+         <br/>
+         <br/>
+        <apex:commandButton value="DONE" action="{!doneAttaching}"/>
+        </apex:pageBlock>
+        
+       
+        <div style="display:none" id="responseErrors"></div>
+        <apex:outputPanel rendered="{!IF(attachName.size>0,true,false)}">
+        <apex:pageBlock >
+       File:<br/> <b><apex:pageblockTable value="{!attachName}" var="rec"><apex:column headerValue="Name" value="{!rec.strName}"/><apex:column headerValue="Size" value="{!rec.intSize}"/></apex:pageblockTable></b>
+       
+       </apex:pageBlock>
+       </apex:outputPanel>
+    </apex:form>
+     
+</apex:page>

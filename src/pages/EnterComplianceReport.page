@@ -1,0 +1,29 @@
+<apex:page standardController="OCIO_Title_VI_Submission__c" extensions="TitleVISubmissionController" tabStyle="Enter_Compliance_Report__tab">
+    <apex:form >
+        <apex:pageBlock id="mySubmittedBlock">
+            <apex:pageBlockTable value="{!EditableRecords}" var="sub">
+                <apex:column headerValue="Title VI Submission ID">
+                   <apex:outputLink value="/apex/TitleVISubmissionEditForm?id={!sub.Id}" styleClass="actionLink">{!sub.name}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Donee Account">
+                    {!sub.OCR_Donee_Account__r.Name}
+                </apex:column>
+                <apex:column headerValue="Donee Contact">
+                    {!sub.OCR_Donee_Contact__r.Name}
+                </apex:column>
+                <apex:column headerValue="Rollout">
+                    {!sub.OCR_Rollout_Name__c}
+                </apex:column>
+                <apex:column headerValue="Preparation Date">
+                    {!sub.OCR_Preparation_Date__c}
+                </apex:column>
+                <apex:column headerValue="Submission Status">
+                    {!sub.OCR_Submission_Status__c}
+                </apex:column>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+         
+    </apex:form>
+</apex:page>

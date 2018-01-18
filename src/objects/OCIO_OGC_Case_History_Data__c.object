@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Case History Data objects will be child records to OGC Case Tracking record.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ADR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>ADR</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Affirmative_Claim_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Affirmative Claim Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Claim_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If you have an affirmative claim, put zero for the claim amount.</inlineHelpText>
+        <label>Claim Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Corrective_Action_Protest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Corrective Action (Protest)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_Closed_Case_History_Data__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Closed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Opened_OGC_Case_History_Data__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Filed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Decision__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use &quot;Dismissed&quot; if decision was based on a procedural matter (e.g., jurisdiction); use &quot;In Government&apos;s Favor&quot; if the decision was on the merits.</inlineHelpText>
+        <label>Decision</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Disposition__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dismissed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Government&apos;s Favor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Adverse Party&apos;s Favor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partially in Government&apos;s Favor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Decision</controllingFieldValue>
+                <valueName>Dismissed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision</controllingFieldValue>
+                <valueName>In Government&apos;s Favor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision</controllingFieldValue>
+                <valueName>In Adverse Party&apos;s Favor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision</controllingFieldValue>
+                <valueName>Partially in Government&apos;s Favor</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Disposition__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Do not use &quot;Deemed Denial&quot; except for contracting officer final decisions.</inlineHelpText>
+        <label>Disposition</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Deemed Denial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Decision</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Settled</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Docket_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Docket Number</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Attorney_Fees__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Attorney Fees</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Total_Interest_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Total Interest Amount</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Forum_Case_History_Data__c</fullName>
+        <externalId>false</externalId>
+        <label>Forum</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Administrative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency Protest Official</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Arbitration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CBCA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contracting Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Court of Federal Claims</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EEOC - AJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EEOC - OFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FLRA - Hearing Examiner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FLRA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GAO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MSPB - AJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MSPB - FB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Special Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Public Utility Commission</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>State Court</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. Bankruptcy Court</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. District Court</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. Court of Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. Supreme Court</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Forum</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Forum_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>OGC_Matter_Title_Name__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Forum Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Handling_Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Handling Division</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LG</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LDA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LDW</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NTC</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Include_in_Affirmative_Claim__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include in Affirmative Claim</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Include_in_Loss_Amount__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include in Loss Amount</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Include_in_Total_Amount_Claimed__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include in Total Amount Claimed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Interest_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Loss_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Loss Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>No_Claim_Amount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>No Claim Amount</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OGC_Matter_Title_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>OGC Matter Title/Name</label>
+        <referenceTo>OCIO_OGC_Case_Tracking__c</referenceTo>
+        <relationshipLabel>OGC Case History Data</relationshipLabel>
+        <relationshipName>Case_History_Data</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Personnel_Forum_Case_History_Data__c</fullName>
+        <externalId>false</externalId>
+        <label>Personnel Forum</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Administrative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Arbitration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Court of Federal Claims</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EEOC - AJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EEOC - OFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FLRA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FLRA - Hearing Examiner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MSPB - AJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MSPB - FB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Special Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. Court of Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. District Court</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. Supreme Court</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Forum</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Personnel_Handling_Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Personnel Handling Division</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LG</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LD9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LDA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LDW</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Recovery_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Recovery Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Remarks_OGC_Case_History_Data__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Transferred_to_Agency__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide name of agency to which case was transferred.</inlineHelpText>
+        <label>Transferred to Agency</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>OGC Case History Data</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>OGC Case Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>OGC Case History Data</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>OGC_Case_Matter_History_Data</fullName>
+        <active>true</active>
+        <description>This is used to track case history data for cases that are not personnel related cases.</description>
+        <label>Non-Personnel Case History Data</label>
+        <picklistValues>
+            <picklist>Decision__c</picklist>
+            <values>
+                <fullName>Dismissed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Adverse Party%27s Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Government%27s Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially in Government%27s Favor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition__c</picklist>
+            <values>
+                <fullName>Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deemed Denial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Settled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Forum_Case_History_Data__c</picklist>
+            <values>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency Protest Official</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arbitration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CBCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracting Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court of Federal Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GAO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Utility Commission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Bankruptcy Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Court of Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E District Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Supreme Court</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Handling_Division__c</picklist>
+            <values>
+                <fullName>L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NTC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Personnel_Forum_Case_History_Data__c</picklist>
+            <values>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arbitration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEOC - AJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEOC - OFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSPB - AJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSPB - FB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Court of Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E District Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Supreme Court</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Personnel_Handling_Division__c</picklist>
+            <values>
+                <fullName>L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OGC_Personnel_Case_History_Data</fullName>
+        <active>true</active>
+        <description>This is used to track case history data for cases that are personnel related cases.</description>
+        <label>Personnel Case History Data</label>
+        <picklistValues>
+            <picklist>Decision__c</picklist>
+            <values>
+                <fullName>Dismissed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Adverse Party%27s Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Government%27s Favor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially in Government%27s Favor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition__c</picklist>
+            <values>
+                <fullName>Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Settled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Forum_Case_History_Data__c</picklist>
+            <values>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arbitration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court of Federal Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEOC - AJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEOC - OFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLRA - Hearing Examiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSPB - AJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSPB - FB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Special Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Court of Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E District Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Supreme Court</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Handling_Division__c</picklist>
+            <values>
+                <fullName>L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NTC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Personnel_Forum_Case_History_Data__c</picklist>
+            <values>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arbitration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court of Federal Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEOC - AJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEOC - OFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLRA - Hearing Examiner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSPB - AJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSPB - FB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Special Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Court of Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E District Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Supreme Court</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Personnel_Handling_Division__c</picklist>
+            <values>
+                <fullName>L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LD9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Date_Closed_Mandatory_Status_Closed</fullName>
+        <active>true</active>
+        <description>Date Closed field is Mandatory, when Status field value is Closed. If status is &quot;Open&quot; then leave this field blank.</description>
+        <errorConditionFormula>AND( ISPICKVAL (Status__c , &quot;Closed&quot;),   ISNULL(Date_Closed_Case_History_Data__c ) )||
+AND (ISPICKVAL(Status__c, &quot;Open&quot;),  NOT( ISNULL(Date_Closed_Case_History_Data__c) ))</errorConditionFormula>
+        <errorDisplayField>Date_Closed_Case_History_Data__c</errorDisplayField>
+        <errorMessage>Date Closed field is Mandatory, when Status field value is Closed. If status is &quot;Open&quot; then leave this field blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_Closed_cannot_be_prior_to_Date_Open</fullName>
+        <active>true</active>
+        <description>Date Closed cannot be earlier than Date Opened</description>
+        <errorConditionFormula>Date_Closed_Case_History_Data__c &lt;  Date_Opened_OGC_Case_History_Data__c</errorConditionFormula>
+        <errorDisplayField>Date_Closed_Case_History_Data__c</errorDisplayField>
+        <errorMessage>Date Closed cannot be earlier than Date Opened.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Estimated_Claim_Amount_greater_than_zero</fullName>
+        <active>false</active>
+        <description>If no claim amount is blank.</description>
+        <errorConditionFormula>AND(NOT( No_Claim_Amount__c ), OR((ISNULL( Claim_Amount__c  )),  Claim_Amount__c  =0))</errorConditionFormula>
+        <errorMessage>An Estimated Claim Amount must be entered or you must identify No Claim Amount.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoClaimAmount_or_EstimatedClaimAmount</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(  No_Claim_Amount__c ,  Claim_Amount__c &lt;&gt;0)</errorConditionFormula>
+        <errorDisplayField>Claim_Amount__c</errorDisplayField>
+        <errorMessage>Enter a Value in &quot;Claim Amount&quot; or Check &quot;No Claim Amount&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Negative_Recovery_Amount</fullName>
+        <active>true</active>
+        <errorConditionFormula>Recovery_Amount__c &lt; 0</errorConditionFormula>
+        <errorMessage>Recovery Amount cannot be negative.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Case_History_Data</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Case History Data</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>if (window.top!=window.self) { 
+    window.parent.location=&apos;/apex/OGCCaseHistoryRedirect?parentId={!OCIO_OGC_Case_Tracking__c.Id}&apos;;
+} else {
+    window.location=&apos;/apex/OGCCaseHistoryRedirect?parentId={!OCIO_OGC_Case_Tracking__c.Id}&apos;;
+}</url>
+    </webLinks>
+</CustomObject>

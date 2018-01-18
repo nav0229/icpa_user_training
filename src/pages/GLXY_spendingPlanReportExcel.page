@@ -1,0 +1,225 @@
+<apex:page controller="GLXY_SpendingPlanReport" title="Spending Plan Report" readonly="true" sidebar="false" cache="true" contentType="application/vnd.ms-excel#ProjectionsReport.xls">
+
+    
+    <table align="center" border="0" width="100%">
+        <tr>
+           <td align="center" width="100%" colspan="14">
+                <h1><font color="darkred" size="+2">Monthly Fiscal Year Projections</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center" width="100%" colspan="14">
+                <div style="background:White; border:2px outset #888888;">
+                <h2><font color="darkred" size="+1">
+                     Fiscal Year: {!strFiscalYearUserInput}<br/>
+                    Region: {!strRegion} <br/>
+                    Delegated Flag: {!strDelegatedFlag}  <br/>
+                    Status Code: {!strStatusCode}<br/>
+                    Include in Budget: {!strIncludeinBudgetFlag}
+                </font></h2>
+                </div>
+           </td>
+        </tr>
+    </table>
+    <br/>
+    <apex:form id="frmList">
+        <table border="1" align="center" cellspacing="1">
+            <tr> 
+                <td> </td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Oct Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Nov Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Dec Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Jan Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Feb Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Mar Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Apr Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">May Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Jun Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Jul Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Aug Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Sep Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Total Year</font></h2></td>
+            </tr>
+            <tr>
+                <td><b>Base Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA1" value="{0, number, $###,###,##0.00}"><apex:param value="{!BaseRentNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lease Projects NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA2" value="{0, number, $###,###,##0.00}"><apex:param value="{!LeaseProjectNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Operating Cost Escalation NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA3" value="{0, number, $###,###,##0.00}"><apex:param value="{!CPINOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Step Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA4" value="{0, number, $###,###,##0.00}"><apex:param value="{!StepRentNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lump Sums NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA5" value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>IBAA NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA6" value="{0, number, $###,###,##0.00}"><apex:param value="{!IBAANOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>RWA NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA7" value="{0, number, $###,###,##0.00}"><apex:param value="{!RWANOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Double Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA8" value="{0, number, $###,###,##0.00}"><apex:param value="{!DoubleRentNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lease Project Step Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA9" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPSRNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lease Project Lump Sums NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_NOA-10" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPLSNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr bgcolor="LightGrey">
+                <td><b>Total NOA</b></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTOCTNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalOct}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTNOVNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalNov}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTDECNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalDec}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJANNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalJan}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTFEBNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalFeb}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMARNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalMar}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAPRNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalApr}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAYNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalMay}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUNNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotaljun}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJULNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalJul}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAUGNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalAug}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTSEPNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalSep}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_NOATotal" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalOct+NOATotalNov+NOATotalDec+NOATotalJan+NOATotalFeb+NOATotalMar+NOATotalApr+NOATotalMay+NOATotalJun+NOATotalJul+NOATotalAug+NOATotalSep}"/></apex:outputText></td>
+            </tr>
+            
+            <tr>
+                <td colspan="14"></td>
+            </tr>
+            <tr>
+                <td><b>Base Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA1" value="{0, number, $###,###,##0.00}"><apex:param value="{!BaseRentIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lease Projects IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA2" value="{0, number, $###,###,##0.00}"><apex:param value="{!LeaseProjectIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Operating Cost Escalation IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA3" value="{0, number, $###,###,##0.00}"><apex:param value="{!CPIIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Step Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA4" value="{0, number, $###,###,##0.00}"><apex:param value="{!StepRentIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lump Sums IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA5" value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>IBAA IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA6" value="{0, number, $###,###,##0.00}"><apex:param value="{!IBAAIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>RWA IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA7" value="{0, number, $###,###,##0.00}"><apex:param value="{!RWAIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Double Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA8" value="{0, number, $###,###,##0.00}"><apex:param value="{!DoubleRentIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lease Project Step Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA9" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPSRIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr>
+                <td><b>Lease Project Lump Sums IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right"><apex:outputText ID="GLXY_IA-10" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPLSIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+            </tr>
+            <tr bgcolor="LightGrey">
+                <td><b>Total IA</b></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTOCTIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTNOVIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalNov}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTDECIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalDec}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJANIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotaljan}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTFEBIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalFeb}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMARIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMar}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAPRIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalApr}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAYIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMay}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUNIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJun}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJULIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJul}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAUGIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalAug}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTSEPIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalSep}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_IATotal" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct+IATotalNov+IATotalDec+IATotalJan+IATotalFeb+IATotalMar+IATotalApr+IATotalMay+IATotalJun+IATotalJul+IATotalAug+IATotalSep
+                }"/></apex:outputText></td>
+            </tr>
+            <tr>
+                <td colspan="14"></td>
+            </tr>
+            <tr bgcolor="LightGrey">
+                <td><b>Total NOA and IA</b></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTOCT" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct+NOATotalOct}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTNOV" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalNov+NOATotalNov}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTDEC" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalDec+NOATotalDec}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJAN" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJan+NOATotalJan}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTFEB" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalFeb+NOATotalFeb}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAR" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMar+NOATotalMar}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAPR" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalApr+NOATotalApr}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAY" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMay+NOATotalMay}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUN" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJun+NOATotalJun}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUL" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJul+NOATotalJul}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAUG" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalAug+NOATotalAug}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTSEP" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalSep+NOATotalSep}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_Total" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct+IATotalNov+IATotalDec+IATotalJan+IATotalFeb+IATotalMar+IATotalApr+IATotalMay+IATotalJun+IATotalJul+IATotalAug+IATotalSep+NOATotalOct+NOATotalNov+NOATotalDec+NOATotalJan+NOATotalFeb+NOATotalMar+NOATotalApr+NOATotalMay+NOATotalJun+NOATotalJul+NOATotalAug+NOATotalSep}"/></apex:outputText></td>
+            </tr>       
+        </table>
+
+       
+    
+    </apex:form>      
+    
+</apex:page>

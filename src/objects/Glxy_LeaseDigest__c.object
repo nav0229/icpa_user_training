@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Lease Digest object, child of Transaction object for galaxy</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AcceptanceDT__c</fullName>
+        <externalId>false</externalId>
+        <label>Acceptance Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmountForDigest__c</fullName>
+        <externalId>false</externalId>
+        <label>Accrual Amount For Digest</label>
+        <summarizedField>Glxy_LeaseAccrual__c.Accrual_Amount__c</summarizedField>
+        <summaryForeignKey>Glxy_LeaseAccrual__c.LeaseDigest__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Agreement_RSF__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Agreement Sq Ft</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Rent__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Rent</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Award_DT__c</fullName>
+        <externalId>false</externalId>
+        <label>Award Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_Accruals__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Accruals</label>
+        <summaryForeignKey>Glxy_LeaseAccrual__c.LeaseDigest__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>DigestID__c</fullName>
+        <externalId>true</externalId>
+        <label>Digest ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Digest_Approval_DT__c</fullName>
+        <externalId>false</externalId>
+        <label>Digest Approval Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Digest_Effective_DT__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Effective Date of the Action executed by the digest. (Can be Retro Active)</inlineHelpText>
+        <label>Digest Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Digest_Num__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Assigned by REXUS once Lease Digest action (R620) processed.</inlineHelpText>
+        <label>Digest Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IA_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>IA Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IA_NOA_Conversion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>IA/NOA Conversion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IA_RSF__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>IA Sq Ft</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Include_Accrual__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicator box that is selected when referencing an accrual associated with the digest action.</inlineHelpText>
+        <label>Include Accrual</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Include_Interest_Ind__c</fullName>
+        <externalId>false</externalId>
+        <label>Include Interest Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Interest_Due_IF_Paid_After__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Due (if paid after)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LeaseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Number</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lease_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Action</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monthly_Rent__c</fullName>
+        <externalId>false</externalId>
+        <formula>Annual_Rent__c /12</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Monthly Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOA_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>NOA Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOA_SQFT__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOA Sq Ft</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PDNsForDigest__c</fullName>
+        <externalId>false</externalId>
+        <label>PDN&apos;s for Digest</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R620Link2__c</fullName>
+        <externalId>false</externalId>
+        <label>R620Link2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>R620Link__c</fullName>
+        <externalId>false</externalId>
+        <label>R620Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>R620__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;http://&quot;&amp;(RIGHT( R620Link__c,(LEN(R620Link__c)-FIND(&quot;://&quot;,R620Link__c)-2))&amp; R620Link2__c ),&quot;Click here for R620&quot;)</formula>
+        <inlineHelpText>Actual Digest Action in PDF format that is uploaded into REXUS and linked to G2.</inlineHelpText>
+        <label>R620</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SLA_Num__c</fullName>
+        <externalId>false</externalId>
+        <label>SLA Number</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Special_Funding_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Funding Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suspend_Ind__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Suspend Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Transaction__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction</label>
+        <referenceTo>Glxy_Transaction__c</referenceTo>
+        <relationshipLabel>Lease Digests</relationshipLabel>
+        <relationshipName>Lease_Digests</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Urgent_Ind__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Urgent Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Void_Digest_IND__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Void Digest</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Lease Digest</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Lease Digest ID</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Lease Digests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Acceptance_Date_on_Include_Interest</fullName>
+        <active>true</active>
+        <description>System shall validate that if ‘Include Interest’ has a value of ‘Yes’, a value is returned for the Acceptance Date and the system shall confirm that the Acceptance Date is less than or equal to the Date and Time of the audit information returned by system</description>
+        <errorConditionFormula>AND(ISPICKVAL(Include_Interest_Ind__c, &quot;YES&quot;),OR( ISBLANK(AcceptanceDT__c), AcceptanceDT__c&gt;NOW()),$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>The Lease Digest Acceptance Date cannot be NULL or Greater than current Date/Time when Include Interest is set to YES.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Acceptance_Date_on_Include_interest_NO</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Include_Interest_Ind__c ,&quot;NO&quot;),NOT(ISBLANK( AcceptanceDT__c )),$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>Acceptance Date must be NULL when Include interest is set to NO.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ISF_Less_than_Agreement_RSF</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(IA_RSF__c&lt;0,IA_RSF__c &gt; Agreement_RSF__c),$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>IA RSF Must be greater than 0 and  less than or equal to Lease Agreement RSF</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Included_Interest_NOT_NULL</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(OR(ISPICKVAL( Include_Interest_Ind__c , &quot;YES&quot;),ISPICKVAL( Include_Interest_Ind__c , &quot;NO&quot;)))</errorConditionFormula>
+        <errorMessage>Include Interest Indicator cannot be NULL</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoChange_on_Accrual_on_NO</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISCHANGED(Include_Accrual__c) ,ISPICKVAL(PRIORVALUE(Include_Accrual__c), &apos;NO&apos;) )</errorConditionFormula>
+        <errorMessage>You cannot change Include Accrual value from &apos;NO&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_if_Urgent_on_Suspend_off</fullName>
+        <active>true</active>
+        <description>Verifies that if IUgent is set to True, suspend must be false.</description>
+        <errorConditionFormula>AND(ISCHANGED(Urgent_Ind__c), Suspend_Ind__c =True, $User.Alias &lt;&gt; &quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>Urgent Indicator cannot be changed if Suspend Flag is True.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_no_existing_Accruals_on_No_value</fullName>
+        <active>true</active>
+        <description>Check that if Include Accrual is set to no, no accrual child records exist</description>
+        <errorConditionFormula>AND( OR(ISPICKVAL(Include_Accrual__c ,&quot;NO&quot;),ISPICKVAL(Include_Accrual__c ,&quot;&quot;)), Count_of_Accruals__c &gt;0,$User.Alias &lt;&gt;&quot;castiron&quot;)</errorConditionFormula>
+        <errorMessage>Must remove existing Accrual records before setting this field to No or blank.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Open_R620</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Open R620</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>{!Glxy_LeaseDigest__c.R620Link__c}</url>
+    </webLinks>
+</CustomObject>

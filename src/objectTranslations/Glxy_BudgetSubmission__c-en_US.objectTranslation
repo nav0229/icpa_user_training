@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Budget Submission</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Budget Submission</value>
+    </caseValues>
+    <fields>
+        <label><!-- IsUserRegionMatch --></label>
+        <name>IsUserRegionMatch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lock Adjustment Data --></label>
+        <name>LockAdjustmentData__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lock RAW Data --></label>
+        <name>LockRAWData__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Key --></label>
+        <name>RecordKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region Code --></label>
+        <name>RegionCD__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reporting Fiscal Year --></label>
+        <name>ReportingFiscalYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submission Type --></label>
+        <name>SubmissionType__c</name>
+        <picklistValues>
+            <masterLabel>Budget Call</masterLabel>
+            <translation><!-- Budget Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congressional Justification</masterLabel>
+            <translation><!-- Congressional Justification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMB</masterLabel>
+            <translation><!-- OMB --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Budget Submission Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Invalid Fiscal Year Range --></errorMessage>
+        <name>GLXY_BudgetSubmissionCheckFiscalYear</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Glxy_BCRecalculate --></label>
+        <name>Glxy_BCRecalculate</name>
+    </webLinks>
+</CustomObjectTranslation>

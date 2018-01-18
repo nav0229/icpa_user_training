@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Leasing</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Leasing</value>
+    </caseValues>
+    <fields>
+        <label><!-- AB Code --></label>
+        <name>AB_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Award Date --></label>
+        <name>Actual_Award_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Effective Date --></label>
+        <name>Actual_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Number of Employees --></label>
+        <name>Actual_Number_of_Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Requirements Finalized --></label>
+        <name>Actual_Requirements_Finalized__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe any anticipated or actual delays caused by the agency --></help>
+        <label><!-- Agency Delays --></label>
+        <name>Agency_Delays__c</name>
+    </fields>
+    <fields>
+        <label><!-- Anticipated RWA Funds --></label>
+        <name>Anticipated_RWA_Funds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula: (Current RSF * Proposed Rental Rate) - (Proposed RSF * Proposed Rental Rate) --></help>
+        <label><!-- Anticipated Savings --></label>
+        <name>Anticipated_Savings__c</name>
+    </fields>
+    <fields>
+        <help><!-- Insert proposed/anticipated FBO solicitation date --></help>
+        <label><!-- Advertisement Date --></label>
+        <name>Anticipated_Solicitation_Notification_Re__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Manager --></label>
+        <name>Asset_Manager__c</name>
+        <relationshipLabel><!-- Leasing (Asset Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Authorized Annual Cost --></label>
+        <name>Authorized_Annual_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Delineated area authorized by approved prospectus --></help>
+        <label><!-- Authorized Delineated Area --></label>
+        <name>Authorized_Delineated_Area__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lease term authorized by approved prospectus --></help>
+        <label><!-- Authorized Lease Term (in years) --></label>
+        <name>Authorized_Lease_Term_in_years__c</name>
+    </fields>
+    <fields>
+        <help><!-- RSF authorized by approved prospectus --></help>
+        <label><!-- Authorized RSF --></label>
+        <name>Authorized_RSF__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rental rate authorized by approved prospectus --></help>
+        <label><!-- Authorized Rental Rate --></label>
+        <name>Authorized_Rental_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- USF authorized by approved prospectus --></help>
+        <label><!-- Authorized USF/Per Person (all-in) --></label>
+        <name>Authorized_USF_Per_Person_all_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awarded Annual Rate --></label>
+        <name>Awarded_Annual_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awarded RSF --></label>
+        <name>Awarded_RSF__c</name>
+    </fields>
+    <fields>
+        <help><!-- Insert Bureau name if applicable --></help>
+        <label><!-- Sub Agency/Bureau --></label>
+        <name>Bureau__c</name>
+    </fields>
+    <fields>
+        <label><!-- CILP FY --></label>
+        <name>Cilp_FY__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Congressional District(s) --></label>
+        <name>Congressional_District_s__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total value of lease payments over term of lease --></help>
+        <label><!-- Cost at Full Term --></label>
+        <name>Cost_at_Full_Term__c</name>
+    </fields>
+    <fields>
+        <help><!-- If multiple leases, insert blended rate --></help>
+        <label><!-- Current Annual Rate --></label>
+        <name>Current_Annual_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current number of employees, including other agency leases --></help>
+        <label><!-- Current Number of Employees --></label>
+        <name>Current_Number_of_Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Office Utilization Rate --></label>
+        <name>Current_Office_Utilization_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Requirements Development, Presolicitation, Solicitation, or Postaward --></help>
+        <label><!-- Current Project Phase --></label>
+        <name>Current_Project_Phase__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Execution</masterLabel>
+            <translation><!-- Execution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Identification</masterLabel>
+            <translation><!-- Identification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiation</masterLabel>
+            <translation><!-- Initiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Occupancy</masterLabel>
+            <translation><!-- Occupancy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planning</masterLabel>
+            <translation><!-- Planning --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Include total RSF all of leases, including non-GSA space if part of consolidation --></help>
+        <label><!-- Current RSF --></label>
+        <name>Current_RSF__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current total annual cost, including other agency leases if applicable --></help>
+        <label><!-- Current Total Annual Cost --></label>
+        <name>Current_Total_Annual_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current USF/Per Person (all-in) --></label>
+        <name>Current_USF_Per_Person_all_in__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current USF from expiring leases, including non-GSA leases --></help>
+        <label><!-- Current USF --></label>
+        <name>Current_USF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Cleared by OMB --></label>
+        <name>Date_Cleared_by_OMB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Sent to Congress --></label>
+        <name>Date_Sent_to_Congress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Sent to OMB --></label>
+        <name>Date_Sent_to_OMB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of House Approval --></label>
+        <name>Date_of_House_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Senate Approval --></label>
+        <name>Date_of_Senate_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Insert estimated rent start date; update frequently as more project information is available --></help>
+        <label><!-- RLP Issuance Date --></label>
+        <name>Effective_Rent_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If multiple leases, enter all dates --></help>
+        <label><!-- Expiration Date of Current Lease --></label>
+        <name>Expiration_Date_of_Current_Lease__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extension Rate --></label>
+        <name>Extension_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extension Required --></label>
+        <name>Extension_Required__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Extension Term --></label>
+        <name>Extension_Term__c</name>
+    </fields>
+    <fields>
+        <help><!-- (Current RSF x Awarded Annual Rate) – (Awarded RSF x Awarded Annual Rate) --></help>
+        <label><!-- Final Cost Savings --></label>
+        <name>Final_Cost_Savings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final USF/person (all in) --></label>
+        <name>Final_USF_person_all_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final USF/person (office) --></label>
+        <name>Final_USF_person_office__c</name>
+    </fields>
+    <fields>
+        <label><!-- Holdover Likely --></label>
+        <name>Holdover_Likely__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describe interim actions that have or will occur prior to project award and completion (i.e., extensions, holdovers, etc.) --></help>
+        <label><!-- Interim Action Details --></label>
+        <name>Interim_Actions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key Properties --></label>
+        <name>Key_Properties__c</name>
+        <picklistValues>
+            <masterLabel>Needs Review</masterLabel>
+            <translation><!-- Needs Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lease CO --></label>
+        <name>LCO__c</name>
+        <relationshipLabel><!-- Leasing (Lease CO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lease Construction --></label>
+        <name>Lease_Construction__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Insert current building name and address --></help>
+        <label><!-- Existing Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Rental Rate --></label>
+        <name>Market_Rental_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPV/FMV % --></label>
+        <name>NPV_FMV__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Lease Number --></label>
+        <name>New_Lease_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Total Annual Cost --></label>
+        <name>New_Total_Annual_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual new USF --></help>
+        <label><!-- Awarded USF --></label>
+        <name>New_USF__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide details/notes about the project and its status --></help>
+        <label><!-- Notes/Background --></label>
+        <name>Notes_Background__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inside Parking Spaces --></label>
+        <name>Number_Of_Inside_Parking_Spaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outside Parking Spaces --></label>
+        <name>Number_Of_Outside_Parking_Spaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- Official Parking Spaces --></label>
+        <name>Official_Parking_Spaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR Zone Exec --></label>
+        <name>PR_Zone_Exec__c</name>
+        <relationshipLabel><!-- Leasing (PR Zone Exec) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Part Of Consolidation Project --></label>
+        <name>Part_Of_Consolidation_Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe any anticipated or actual political issues or concerns with the procurement --></help>
+        <label><!-- Political Issues? --></label>
+        <name>Political_Issues__c</name>
+    </fields>
+    <fields>
+        <help><!-- Insert all lease numbers for all expiring leases included in the project, including non-GSA leases if known --></help>
+        <label><!-- Prior Lease Number --></label>
+        <name>Prior_Lease_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe any anticipated or actual procurement issues or concerns --></help>
+        <label><!-- Procurement Issues --></label>
+        <name>Procurement_Issues__c</name>
+    </fields>
+    <fields>
+        <help><!-- New, New/Replacing, Succeeding, Extension, Expansion, Renewal --></help>
+        <label><!-- Project Action/Lease Type --></label>
+        <name>Project_Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe any actual or anticipated project delays and cause --></help>
+        <label><!-- Project Delays --></label>
+        <name>Project_Delays__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Health Flag --></label>
+        <name>Project_Health_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Health --></label>
+        <name>Project_Health__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Leasing (Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Number --></label>
+        <name>Project_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide current project status updates as needed --></help>
+        <label><!-- Project Status Update --></label>
+        <name>Project_Status_Update__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe/provide overview of the project --></help>
+        <label><!-- Project Summary --></label>
+        <name>Project_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Projected Requirements Finalized --></label>
+        <name>Projected_Requirements_Finalized__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Delineated Area --></label>
+        <name>Proposed_Delineated_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Lease Award Date --></label>
+        <name>Proposed_Lease_Award_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Lease Term (in years) --></label>
+        <name>Proposed_Lease_Term_in_years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Number of Employees --></label>
+        <name>Proposed_Number_of_Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Office Utilization Rate --></label>
+        <name>Proposed_Office_Utilization_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed RSF --></label>
+        <name>Proposed_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Rental Rate --></label>
+        <name>Proposed_Rental_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Proposed total annual cost --></help>
+        <label><!-- Proposed Total Annual Cost --></label>
+        <name>Proposed_Total_Annual_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Total Annual Parking Cost --></label>
+        <name>Proposed_Total_Annual_Parking_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed USF/Per Person (all-in) --></label>
+        <name>Proposed_USF_Per_Person_all_in__c</name>
+    </fields>
+    <fields>
+        <help><!-- Proposed/anticipated USF --></help>
+        <label><!-- Proposed USF --></label>
+        <name>Proposed_USF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prospectus Level --></label>
+        <name>Prospectus_Level__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Prospectus Number, or pre-prospectus number. Format as follows: XPYY-ZZ-AACC where YY = FY of lease expiration, ZZ is a “counter” field e.g., 01, 02, 03, AA = State code, and CC = anticipated CILP program year --></help>
+        <label><!-- Prospectus Number --></label>
+        <name>Prospectus_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prospectus Type --></label>
+        <name>Prospectus_Type__c</name>
+        <picklistValues>
+            <masterLabel>Extension</masterLabel>
+            <translation><!-- Extension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacing</masterLabel>
+            <translation><!-- Replacing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Succeeding</masterLabel>
+            <translation><!-- Succeeding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Formula: Current RSF - Proposed RSF --></help>
+        <label><!-- Change in RSF --></label>
+        <name>RSF_Reduction_Expansion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- Insert regional contact&apos;s email address --></help>
+        <label><!-- Regional POC --></label>
+        <name>Regional_POC__c</name>
+        <relationshipLabel><!-- Leasing (Regional POC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Scoring Result --></label>
+        <name>Scoring_Result__c</name>
+        <picklistValues>
+            <masterLabel>Capital</masterLabel>
+            <translation><!-- Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operating</masterLabel>
+            <translation><!-- Operating --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Market --></label>
+        <name>Sub_Market__c</name>
+    </fields>
+    <layouts>
+        <layout>Leasing Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Authorization --></label>
+            <section>Authorization</section>
+        </sections>
+        <sections>
+            <label><!-- Completed Project Information --></label>
+            <section>Completed Project Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Status Update --></label>
+            <section>Status Update</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please select the Proposed Lease Award Date value. --></errorMessage>
+        <name>Lease_Award_date_rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select the Anticipated FBO Solicit/Notification Date value. --></errorMessage>
+        <name>Lease_Solicitation_date_rule</name>
+    </validationRules>
+</CustomObjectTranslation>

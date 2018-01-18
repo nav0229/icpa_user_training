@@ -1,0 +1,14 @@
+<apex:page standardController="IDP__c" extensions="IDP_ClonePlusController">
+
+<script>
+           window.onload=function()
+           {
+             doInit();
+           };
+</script> 
+  
+        <apex:form >
+           <apex:actionFunction name="doInit" action="{!initialiseObjectsForCloning}"/> 
+        </apex:form> 
+        
+</apex:page>

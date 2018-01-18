@@ -1,0 +1,244 @@
+<apex:page controller="GLXY_clsDuplicates" Title="Potential Duplicate Projects" readonly="true" sidebar="false">
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />   
+     
+    <script>
+    function HightlightDups() {
+        var flag= 'true';
+        var mySet = [];
+        var elements= document.getElementsByClassName('leaseNumber');
+        for(var i=0;i<elements.length;i++) {
+            var Leases = elements[i].innerHTML;
+            if(mySet.indexOf(Leases) == -1)
+            mySet.push(Leases);
+        } 
+        for(var i=0;i<mySet.length;i++) {
+            var elements= document.getElementsByClassName(mySet[i]);
+            
+            for(var j=0;j<elements.length;j++) {
+                if(flag=='true')
+                document.getElementById(elements[j].id).style.backgroundColor = 'white';
+                else
+                document.getElementById(elements[j].id).style.backgroundColor = '#e3f3ff'; 
+            }
+            if(flag=='false')
+            flag='true';
+            else
+            flag='false';
+        }  
+        
+        var flag1= 'true';
+        var mySet1 = [];
+        var elements= document.getElementsByClassName('leaseNumber1');
+        for(var i=0;i<elements.length;i++) {
+            var Leases = elements[i].innerHTML;
+            if(mySet1.indexOf(Leases) == -1)
+            mySet1.push(Leases);
+        } 
+        for(var i=0;i<mySet1.length;i++) {
+            var className = mySet1[i]+'1';
+            var elements= document.getElementsByClassName(className);
+            
+            for(var j=0;j<elements.length;j++) {
+                if(flag1=='true')
+                document.getElementById(elements[j].id).style.backgroundColor = 'white';
+                else
+                document.getElementById(elements[j].id).style.backgroundColor = '#e3f3ff'; 
+            }
+            if(flag1=='false')
+            flag1='true';
+            else
+            flag1='false';
+        }
+        
+        var flag2= 'true';
+        var mySet2 = [];
+        var elements= document.getElementsByClassName('leaseNumber2');
+        for(var i=0;i<elements.length;i++) {
+            var Leases = elements[i].innerHTML;
+            if(mySet2.indexOf(Leases) == -1)
+            mySet2.push(Leases);
+        } 
+        for(var i=0;i<mySet2.length;i++) {
+            var className = mySet2[i]+'2';
+            var elements= document.getElementsByClassName(className);
+            
+            for(var j=0;j<elements.length;j++) {
+                if(flag2=='true')
+                document.getElementById(elements[j].id).style.backgroundColor = 'white';
+                else
+                document.getElementById(elements[j].id).style.backgroundColor = '#e3f3ff'; 
+            }
+            if(flag2=='false')
+            flag2='true';
+            else
+            flag2='false';
+        }
+    }
+     window.onload = HightlightDups;       
+    </script> 
+    
+    <table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">Potential Duplicate Projects</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+                <h2><font color="darkred" size="+1">
+                    Fiscal Year: {!strFiscalYear} &nbsp;&nbsp;&nbsp;
+                    Region: {!strRegionDisplay}
+                </font></h2>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>  
+    <!-- 
+    <apex:pageBlock >
+        <apex:pageMessage severity="info" strength="2" summary="Potential duplicates based on - Project ID, Project Type, Processed Date, and same associated lease"/>
+        <apex:pageBlockTable value="{!DatasetProject}" var="DataSet">
+            <apex:column HeaderValue="Project Number">
+                <a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" /></a>
+            </apex:column>
+            <apex:column value="{!DataSet.GroupByCriteria2}" HeaderValue="Project Type" />
+            <apex:column value="{!DataSet.GroupByCriteria3}" HeaderValue="Processed Date" />
+            <apex:column value="{!DataSet.GroupByCriteria4}" HeaderValue="Associated Lease" />
+            <apex:column value="{!DataSet.AggregateRowCount}" HeaderValue="Record Count" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+     
+   <apex:pageBlock >
+        <apex:pageMessage severity="info" strength="2" summary="Potential duplicates based upon the same associated lease, and project effective date"/>
+        <apex:pageBlockTable value="{!DatasetProjectDups1}" var="DataSet">
+            <apex:column value="{!DataSet.GroupByCriteria8}" HeaderValue="Region" />
+            <apex:column value="{!DataSet.GroupByCriteria9}" HeaderValue="Team Code" />
+            <apex:column value="{!DataSet.GroupByCriteria3}" HeaderValue="Associated Lease Number" />
+            <apex:column value="{!DataSet.GroupByCriteria4}" HeaderValue="Effective Date" />
+            <apex:column value="{!DataSet.GroupByCriteria6}" HeaderValue="Processed Date" />
+            <apex:column HeaderValue="Project Number">
+                <a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" /></a>
+            </apex:column>
+            <apex:column value="{!DataSet.GroupByCriteria2}" HeaderValue="Project Type" /> 
+        </apex:pageBlockTable>
+   </apex:pageBlock>
+    -->
+   <apex:pageBlock >
+        <apex:pageMessage severity="info" strength="2" summary="Potential duplicates based upon the same associated lease, and project effective date"/>
+        <table border="0" width="100%">
+            <tr>
+                <th>Region</th>
+                <th>Team Code</th>
+                <th>Associated Lease Number</th>
+                <th>Effective Date</th>
+                <th>Processed Date</th>
+                <th>Project Number</th>
+                <th>Project Type</th>
+            </tr>
+             <apex:variable var="count" value="{!1}"   />  
+             <apex:repeat value="{!DatasetProjectDups1}" var="DataSet">
+            <tr class="{!DataSet.GroupByCriteria3}" id="{!DataSet.GroupByCriteria3}{!count}">
+                <td>{!DataSet.GroupByCriteria8}</td>
+                <td>{!DataSet.GroupByCriteria9}</td>
+                <td><apex:outputText value="{!DataSet.GroupByCriteria3}" styleclass="leaseNumber"/></td>
+                <td>{!DataSet.GroupByCriteria4}</td>
+                <td>{!DataSet.GroupByCriteria6}</td>
+                <td><a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" /></a></td>
+                <td>{!DataSet.GroupByCriteria2}</td>
+            </tr>
+            <apex:variable value="{!count+1}" var="count"/>  <!--increment-->
+            </apex:repeat>   
+        </table>
+   </apex:pageBlock>
+     
+   <apex:pageBlock >
+        <apex:pageMessage severity="info" strength="2" summary="SF Variance based upon the associated lease number, project effective date and total SF"/>
+      <!--  <apex:pageBlockTable value="{!DatasetProjectDups2}" var="DataSet">
+            <apex:column value="{!DataSet.GroupByCriteria8}" HeaderValue="Region" />
+            <apex:column value="{!DataSet.GroupByCriteria9}" HeaderValue="Team Code" />
+            <apex:column value="{!DataSet.GroupByCriteria3}" HeaderValue="Associated Lease Number" />
+            <apex:column value="{!DataSet.GroupByCriteria5}" HeaderValue="Effective Date" />
+            <apex:column value="{!DataSet.GroupByCriteria6}" HeaderValue="Processed Date" />
+            <apex:column HeaderValue="Project Number">
+                <a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" /></a>
+            </apex:column>  
+            <apex:column value="{!DataSet.GroupByCriteria2}" HeaderValue="Project Type" />
+            <apex:column value="{!DataSet.GroupByCriteria4}" HeaderValue="New Sq. Ft." />
+            <apex:column value="{!DataSet.AggregateRowCount}" HeaderValue="Old Sq. Ft." /> 
+        </apex:pageBlockTable> -->
+      <table border="0" width="100%">
+            <tr>
+                <th>Region</th>
+                <th>Team Code</th>
+                <th>Associated Lease Number</th>
+                <th>Effective Date</th>
+                <th>Processed Date</th>
+                <th>Project Number</th>
+                <th>Project Type</th>
+                <th>New Sq. Ft.</th>
+                <th>Old Sq. Ft.</th>
+            </tr>
+             <apex:variable var="count" value="{!1000}"   />  
+             <apex:repeat value="{!DatasetProjectDups2}" var="DataSet">
+            <tr class="{!DataSet.GroupByCriteria3}1" id="{!DataSet.GroupByCriteria3}{!count}">
+                <td>{!DataSet.GroupByCriteria8}</td>
+                <td>{!DataSet.GroupByCriteria9}</td>
+                <td><apex:outputText value="{!DataSet.GroupByCriteria3}" styleclass="leaseNumber1"/></td>
+                <td>{!DataSet.GroupByCriteria5}</td>
+                <td>{!DataSet.GroupByCriteria6}</td>
+                <td><a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" /></a></td>
+                <td>{!DataSet.GroupByCriteria2}</td>
+                <td>{!DataSet.GroupByCriteria4}</td>
+                <td>{!DataSet.AggregateRowCount}</td>
+            </tr>
+            <apex:variable value="{!count-1}" var="count"/>  
+            </apex:repeat>   
+        </table> 
+    </apex:pageBlock>
+     
+    <apex:pageBlock >
+        <apex:pageMessage severity="info" strength="2" summary="AR Variance based upon the associated lease number, project effective date and total AR"/>
+       <!-- <apex:pageBlockTable value="{!DatasetProjectDups3}" var="DataSet">
+            <apex:column value="{!DataSet.GroupByCriteria8}" HeaderValue="Region" />
+            <apex:column value="{!DataSet.GroupByCriteria9}" HeaderValue="Team Code" />
+            <apex:column value="{!DataSet.GroupByCriteria3}" HeaderValue="Associated Lease Number" />
+            <apex:column value="{!DataSet.GroupByCriteria5}" HeaderValue="Effective Date" />
+            <apex:column value="{!DataSet.GroupByCriteria6}" HeaderValue="Processed Date" />
+            <apex:column HeaderValue="Project Number">
+                <a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" /></a>
+            </apex:column>  
+            <apex:column value="{!DataSet.GroupByCriteria2}" HeaderValue="Project Type" />
+            <apex:column value="{!DataSet.GroupByCriteria4}" HeaderValue="New Annual Rent" />
+            <apex:column value="{!DataSet.AggregateRowCount}" HeaderValue="Old Annual Rent" />
+        </apex:pageBlockTable>  -->
+        <table border="0" width="100%">
+            <tr>
+                <th>Region</th>
+                <th>Team Code</th>
+                <th>Associated Lease Number</th>
+                <th>Effective Date</th>
+                <th>Processed Date</th>
+                <th>Project Number</th>
+                <th>Project Type</th>
+                <th>New Annual Rent</th>
+                <th>Old Annual Rent</th>
+            </tr>
+             <apex:variable var="count" value="{!2000}"   />  
+             <apex:repeat value="{!DatasetProjectDups3}" var="DataSet">
+            <tr class="{!DataSet.GroupByCriteria3}2" id="{!DataSet.GroupByCriteria3}{!count}">
+                <td>{!DataSet.GroupByCriteria8}</td>
+                <td>{!DataSet.GroupByCriteria9}</td>
+                <td><apex:outputText value="{!DataSet.GroupByCriteria3}" styleclass="leaseNumber2"/></td>
+                <td>{!DataSet.GroupByCriteria5}</td>
+                <td>{!DataSet.GroupByCriteria6}</td>
+                <td><a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.GroupByCriteria1}" /></a></td>
+                <td>{!DataSet.GroupByCriteria2}</td>
+                <td>{!DataSet.GroupByCriteria4}</td>
+                <td>{!DataSet.AggregateRowCount}</td>
+            </tr>
+            <apex:variable value="{!count+1}" var="count"/>  
+            </apex:repeat>   
+        </table> 
+        
+    </apex:pageBlock>
+    
+</apex:page>

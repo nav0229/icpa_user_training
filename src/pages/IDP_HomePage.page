@@ -1,0 +1,107 @@
+<apex:page docType="html-5.0" showChat="false" title="IDP" standardStyleSheets="true" controller="IDP_HomePageController" sidebar="true" showHeader="true" >
+
+  <head>
+     <link href="{!URLFOR($Resource.SRIDP, 'scripts/libs/bootstrap/IDP_Bootstrap.css')}" rel="stylesheet" media="all"/>
+     <link rel="stylesheet" href="{!URLFOR($Resource.SRIDP, 'styles/style.css')}" type="text/css"></link>
+  </head>
+  
+ <div class="IDP_Bootstrap">
+   <apex:detail showChatter="true"/>
+    <apex:form >
+        <div class="container home__container">
+        <div class="col-xs-12 content-block home__welcome">
+            <h3 class="home__welcome-title">Welcome to your Individual Development Plan (IDP)</h3>
+            <p class="home__welcome-blurb">
+                An IDP is a guide or road map to help employees reach career goals within the context of organizational objectives. 
+                It is a developmental "action" plan to move employees from where they are to where they want to be. It provides
+                the systematic steps to improve in areas that are not strengths and build on strengths as individuals improve job
+                performance and pursue career goals. IDPs also help supervisors guide and encourage employees to build skills  
+                through continuous development discussions. These discussions help by giving a forum for feedback on strengths and 
+                development needs as well as guidance in developing your plan.
+            </p>
+        </div>
+        
+          <div class="col-xs-8 pull-left">
+             <div class="content-block">
+               
+               
+               <div class="home__section-panel top-section">
+	                <h3><img class="home__section-img" src="{!URLFOR($Resource.SRIDP, 'img/down-arrow.gif')}"/>IDP Actions</h3>
+	                <p><apex:commandLink target="_top" action="{!createIDP}" value="Create New IDP"/></p>
+	                <p><apex:outputLink target="_top" value="/apex/IDP_ViewPage">Clone, Edit, Review Existing IDPs</apex:outputLink></p>
+	                <p><apex:outputLink target="_top" value="/apex/IDP_Supervisor_View">IDP Supervisor View</apex:outputLink></p>
+	                <p><apex:outputLink target="_top" value="/apex/IDP_Shared_View">IDP Shared View</apex:outputLink></p>
+               </div>
+               
+               
+               <div class="home__section-panel">
+	                <h4><img class="home__section-img" src="{!URLFOR($Resource.SRIDP, 'img/down-arrow.gif')}"/>SF-182 Step 1: Create and Link SF-182</h4>
+	                <div class="home__subsection-panel">
+		                <p>Once your IDP is approved, if a class or training activity is needed, please first create an SF-182 form and link it to your 
+		                		IDP (SF-182 Step 1) . Then create a new Training Request for each Class or Training you will attend (SF-182 Step 2).</p>
+	                </div>
+	                <div class="home__subsection-panel">
+     	            	<p><apex:outputLink target="_top" value="/apex/IDP_SF182Edit">Create and Link SF-182</apex:outputLink></p>
+	                </div>
+               </div>
+               
+            
+            		<div class="home__section-panel">
+                  <h4><img class="home__section-img" src="{!URLFOR($Resource.SRIDP, 'img/down-arrow.gif')}"/>SF-182 Step 2: Create New Training Requests</h4>
+            			<div class="home__subsection-panel">
+                    <p>To use this option you must have&nbsp;<apex:outputLink target="_top" value="/apex/IDP_SF182Edit">created your SF-182 and linked it</apex:outputLink> to your IDP (SF-182 Step 1).</p>
+            			</div>
+            			<div class="home__subsection-panel">
+                    <p><apex:outputLink target="_top" value="/apex/IDP_SF182RequestEdit">Add New Training Request to Existing SF-182</apex:outputLink></p>
+                  </div>
+								</div>
+               
+               
+               
+
+             </div>
+          </div>
+          
+          
+          
+           <div class="col-xs-4 pull-right">
+               <div class="content-block">
+                   
+                   
+                  <div class="home__section-panel">
+							      <h5>View Existing SF-182 Forms</h5>
+	                  <p><a target="_top" href="{!urlMySF182s}">View my SF-182s</a></p>
+	                  <p><a target="_top" href="{!urlOtherRequests}">In Progress SF-182 Training Requests</a></p>
+	                  <p><a target="_top" href="{!urlApprovedRequests}">Approved SF-182 Training Requests</a></p>
+	                  <p><a target="_top" href="{!urlRequestsToApprove}">SF-182 Approver/Supervisor View</a></p>
+	                  <p><a target="_top" href="{!urlSharedWithMe}">SF-182 Shared View</a></p>
+									</div>
+                   
+                   
+                  <div class="home__section-panel top-section has-background">
+		                <h3>Help Center</h3>
+		                <div class="home__subsection-panel bottom-spacing">
+   		                <p><a target="_blank" href="https://insite.gsa.gov/portal/category/533326">Need help completing your IDP or SF-182?</a></p>
+			                <p><a target="_blank" href="https://insite.gsa.gov/portal/content/669006">Event Tracker FAQs</a></p>
+			                <p><a target="_blank" href="https://insite.gsa.gov/portal/content/676438">IDP/SF-182 Training Videos</a></p>
+			                <p><a target="_blank" href="https://insite.gsa.gov/portal/category/530311">Review Training Policy</a></p>
+		                </div>
+ 		                <div class="home__subsection-panel">
+			                <p>For technical issues or questions related to the enterprise IDP tool, 
+			                contact the IT Service Desk at <a href="mailto:itservicedesk@gsa.gov">itservicedesk@gsa.gov. </a></p> 
+		                </div>
+		                <div class="home__subsection-panel">
+			                <p>For non-technical questions, contact the Enterprise IDP Team at <a href="mailto:IDPTeam@gsa.gov"> IDPTeam@gsa.gov.</a></p>
+			              </div>
+                  </div>
+                   
+
+               </div>
+           </div> <!--  /col-xs-4 -->
+
+
+
+         </div> <!-- /home-page -->
+       </apex:form>      
+     </div>
+</apex:page>

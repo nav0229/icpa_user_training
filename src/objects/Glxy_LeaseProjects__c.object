@@ -1,0 +1,3635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>GLXY_HelpPage</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This table contains information on all the New, Renewal, Extension, Succeeding, Superseding, Terminating, Chg in SF, and New/Replacing leases associated with a Project.  The Project is the starting point for new leases or changes to existing leases.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>APR_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>APR IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>APR_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>APR NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AUG_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>AUG IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AUG_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>AUG NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Acceptance620Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date contracting officer approves lease action</inlineHelpText>
+        <label>Date 620</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmountCurrentFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(
+    (AccrualEndDate__c &gt; AccrualStartDateCY__c &amp;&amp;  Text(eEorA__c)  == &apos;Estimate&apos; &amp;&amp;
+         EffectiveDate__c &lt;= Today ()),
+    ( 
+      (
+        ((EscalationAnnualRent__c + CancellationAnnualRent__c + ExpansionAnnualRent__c)/12) 
+        * 
+        ((12 * (YEAR(AccrualEndDate__c) - YEAR(AccrualStartDateCY__c))) +
+          (MONTH(AccrualEndDate__c) - MONTH(AccrualStartDateCY__c)) + 1)
+      )
+      +
+      (
+         If(((YEAR(TODAY()+ 92) - Value(EffectiveDateFY__c)) == 0),
+            ( 
+               (DAY(DATE(YEAR(EffectiveDate__c), MONTH(EffectiveDate__c), 1))
+                   - Day(EffectiveDate__c)) 
+               * 
+               AccrualAmountEffectiveMonthRate__c  
+            ),
+            0
+         )
+      )
+    ),
+   0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Impact on the current year budget - this will have a non zero value if the project is past due with effective in current fiscal year project.</inlineHelpText>
+        <label>Current FY Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmountEffectiveMonthRate__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <label>Accrual Amount Effective Month Rate</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmountPriorFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( (Value(EffectiveDateFY__c) &lt; YEAR(TODAY()+ 92)),
+     
+     If( ((YEAR(TODAY()+ 92) - Value(EffectiveDateFY__c)) == 1),
+         (
+            (  ((12 * (YEAR(DATE(YEAR(EffectiveDate__c + 92),09,30)) - YEAR(EffectiveDate__c))) +
+               (MONTH(DATE(YEAR(EffectiveDate__c + 92),09,30))- MONTH(EffectiveDate__c)) + 1) 
+                * 
+               ((EscalationAnnualRent__c + CancellationAnnualRent__c + ExpansionAnnualRent__c)/12) 
+            )
+            +
+            (
+                (DAY(DATE(YEAR(EffectiveDate__c), MONTH(EffectiveDate__c), 1))
+                       - Day(EffectiveDate__c)) 
+                * 
+                AccrualAmountEffectiveMonthRate__c   
+            )
+         ),
+         (EscalationAnnualRent__c + CancellationAnnualRent__c + ExpansionAnnualRent__c)
+     ),
+
+    0
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total retroactive amount - this will have a non zero value only if the project has effective date in prior fiscal year.</inlineHelpText>
+        <label>Prior FY Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualAmt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Accrual Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AccrualEndDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( 
+ (If(IsNull(Acceptance620Date__c), TODAY(), Acceptance620Date__c) &gt; EffectiveDate__c), 
+ If(IsNull(Acceptance620Date__c), TODAY(), Acceptance620Date__c), 
+ EffectiveDate__c 
+ )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Accrual End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AccrualNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Accrual Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccrualStartDateCY__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(EffectiveDateFY__c==Text(YEAR(TODAY()+ 92)),EffectiveDate__c,DATE((YEAR(TODAY())-1),10,01))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Accrual Start Date CY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AccrualType__c</fullName>
+        <externalId>false</externalId>
+        <label>Accrual Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Partial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Full</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AnnualRent__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New Annual Rent</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Antennas__c</fullName>
+        <externalId>false</externalId>
+        <label>New Antennas</label>
+        <summarizedField>Glxy_ProjectAgency__c.NewAntennas__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AssociatedLeasesCount__c</fullName>
+        <description>We found that Sales Force does a so called “silent delete” on a junction object when one of the parent is deleted. In other words, the trigger is not executed. To circumvent this issue, we have to create a rollup summary on the Project object, and make sure to validate for any associated leases on this project before a delete.</description>
+        <externalId>false</externalId>
+        <label>Associated Leases Count</label>
+        <summaryForeignKey>Glxy_AssociatedLeases__c.Project__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AssociatedLeases_lkup__c</fullName>
+        <description>Since SF cannot handle multiple child objects, this field is designed to aggregate all the Associated Leases that are tied to this project. This field is updated via a trigger on the Associated Lease object. This field is used across all the Reports.</description>
+        <externalId>false</externalId>
+        <label>Associated Leases (Expiration Date)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AwardDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Award Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BA53RealtyAnalyst__c</fullName>
+        <externalId>false</externalId>
+        <label>BA53 Budget Analyst</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BDGFlag__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include In Budget Flag</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BaseStructParkSpaces__c</fullName>
+        <externalId>false</externalId>
+        <label>New Base Structured Parking Spaces</label>
+        <summarizedField>Glxy_ProjectAgency__c.BaseStructuredParkingSpaces__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BaseSurfParkSpaces__c</fullName>
+        <externalId>false</externalId>
+        <label>New Base Surface Parking Spaces</label>
+        <summarizedField>Glxy_ProjectAgency__c.BaseSurfaceParkingSpace__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Exclusion_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Exclusion Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CY_Obligation_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Effective Year Obligation IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CY_Obligation_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Effective Year Obligation  NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CalculateAccruals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Calculate Accruals</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CalculatedOldIASqFt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>System calculated value for the Old IA SQ Ft.</inlineHelpText>
+        <label>Calculated Old IA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CalculatedOldNOASqFt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>System calculated value for the Old NOA SQ Ft.</inlineHelpText>
+        <label>Calculated Old NOA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CancelARentIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation Annual Rent IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CancelARentNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation Annual Rent NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CancelPYCostIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation Part Year Cost IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CancelPYCostNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation Part Year Cost NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CancelSqFtIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation Sq Ft IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CancelSqFtNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation Sq Ft NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CancellationAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>CancelARentIA__c  +  CancelARentNOA__c</formula>
+        <label>Cancellation Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CancellationPartYearCost__c</fullName>
+        <externalId>false</externalId>
+        <formula>CancelPYCostIA__c  +  CancelPYCostNOA__c</formula>
+        <label>Cancellation Part Year Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CancellationSqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>CancelSqFtIA__c  +  CancelSqFtNOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cancellation Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ChangeinIASQFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>IASquareFeet__c - OldIASqFt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Change in IA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ChangeinNOASQFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOASquareFeet__c - OldNOASqFt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Change in NOA Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CheckCOApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>If
+(     
+    (
+       (
+            TEXT(ProjectStatus__c) = &apos;Completed&apos; &amp;&amp; 
+            !(ISBLANK(Acceptance620Date__c)) &amp;&amp;
+            Acceptance620Date__c &lt; DATE( 
+                                  IF(MONTH(TODAY()) &lt;= 9, (YEAR(TODAY()) -1 ),(YEAR(TODAY()))), 10, 1
+                                         )
+         )
+     )
+     ,true,false
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Check CO Approval</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DEC_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DEC IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DEC_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DEC NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DelegatedProject__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This designation is determined as &apos;yes&apos;  if authority has been delegated to a client agency.</inlineHelpText>
+        <label>Delegated Project</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DelegatedReturn__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This designation is determined by Leasing for budget call purposes. Identifies a project is a result of a prior delegation that is now being returned to the GSA inventory.</inlineHelpText>
+        <label>Delegated Return</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delegated_Project_Rep_lkp__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( DelegatedProject__c =true, &apos;True&apos;, &apos;False&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Delegated Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DoubleRent__c</fullName>
+        <externalId>false</externalId>
+        <label>Double Rent</label>
+        <summarizedField>Glxy_AssociatedLeases__c.Double_Rent__c</summarizedField>
+        <summaryForeignKey>Glxy_AssociatedLeases__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveDateFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(YEAR( EffectiveDate__c + 92 ))</formula>
+        <label>Effective Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDateMonth__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(MONTH(EffectiveDate__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Effective Date Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EscalARentIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Escalation Annual Rent IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EscalARentNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Escalation Annual Rent NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EscalPYCostIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Escalation Part Year Cost IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EscalPYCostNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Escalation Part Year Cost NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EscalSqFtIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Escalation Sq Ft IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EscalSqFtNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Escalation Sq Ft NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EscalationAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>EscalARentIA__c  +  EscalARentNOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Escalation Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EscalationPartYearCost__c</fullName>
+        <externalId>false</externalId>
+        <formula>EscalPYCostIA__c  +  EscalPYCostNOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Escalation Part Year Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EscalationSqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>EscalSqFtIA__c  +  EscalSqFtNOA__c</formula>
+        <label>Escalation Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpanARentIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Expansion Annual Rent IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpanARentNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Expansion Annual Rent NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpanPYCostIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Expansion Part Year Cost IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpanPYCostNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Expansion Part Year Cost NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpanPYCostTotal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Expansion Part Year Cost</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpanSqFtIA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Expansion Sq Ft IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpanSqFtNOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Expansion Sq Ft NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpansionAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>ExpanARentIA__c + ExpanARentNOA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expansion Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpansionSqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>ExpanSqFtIA__c + ExpanSqFtNOA__c</formula>
+        <label>Expansion Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FEB_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FEB IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FEB_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>FEB NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinalCertificationDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date project receives final certification by BA53 analyst</inlineHelpText>
+        <label>Final Certification Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FinanceProcessedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Processed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IAConversionDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date IA RSF will convert to NOA RSF</inlineHelpText>
+        <label>IA/NOA Conversion Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IAConverstionFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(IAConversionDate__c), 
+&quot;2099&quot;, 
+Text(YEAR(IAConversionDate__c  + 92))
+)</formula>
+        <label>IAConverstionFY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IASquareFeet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New IA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsEffectiveAndProcessedDateFYMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Text(YEAR(EffectiveDate__c + 92 ))==Text(YEAR(ProcessedDate__c+ 92 )), &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsEffectiveAndProcessedDateFYMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsUserRegionMatch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(TEXT(RegionCd__c)==$User.Glxy_Region_Code__c,$User.Glxy_Region_Code__c==&quot;CO&quot;), &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsUserRegionMatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JAN_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JAN IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JAN_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JAN NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUL_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUL IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUL_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUL NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUN_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUN IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JUN_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>JUN NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LandOnly__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(
+    (
+       BaseStructParkSpaces__c == 0 &amp;&amp;
+       BaseSurfParkSpaces__c == 0 &amp;&amp;  
+       NOASquareFeet__c == 0 &amp;&amp;
+       IASquareFeet__c == 0 &amp;&amp;
+       SquareFeet__c == 0 &amp;&amp; 
+       Antennas__c == 0 &amp;&amp;
+       OBaseStructParkSpaces__c == 0 &amp;&amp; 
+       OBaseSurfParkSpaces__c == 0 &amp;&amp;
+       OldNOASqFt__c == 0 &amp;&amp;    
+       OldIASqFt__c == 0 &amp;&amp;    
+       OAntennas__c == 0 &amp;&amp; 
+       Old_Square_Feet__c == 0
+    ),
+True,
+False
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Land Only</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Land__c</fullName>
+        <externalId>false</externalId>
+        <label>New Land</label>
+        <summarizedField>Glxy_ProjectAgency__c.NewLand__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>MAR_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAR IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAR_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAR NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAY_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAY IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MAY_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MAY NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOAOrIA__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(ParkingOnly__c != &apos;Yes&apos;, (If 
+ ((NOASquareFeet__c &gt; 0  &amp;&amp; IASquareFeet__c &gt; 0), 
+   &quot;BOTH&quot;, 
+   (
+     If (NOASquareFeet__c &gt; 0, 
+       &quot;NOA&quot;, 
+       If (IASquareFeet__c &gt; 0, &quot;IA&quot;, &quot;&quot;)
+      )
+   )
+ )), IF(AND((OBaseStructParkSpaces__c + OBaseSurfParkSpaces__c) ==0,(BaseStructParkSpaces__c + BaseSurfParkSpaces__c)&gt;(OBaseStructParkSpaces__c + OBaseSurfParkSpaces__c)), &quot;IA&quot;, 
+     IF(AND((OBaseStructParkSpaces__c + OBaseSurfParkSpaces__c) &lt;&gt; 0,(BaseStructParkSpaces__c + BaseSurfParkSpaces__c)&gt;(OBaseStructParkSpaces__c + OBaseSurfParkSpaces__c)), &quot;BOTH&quot;,
+	 IF((BaseStructParkSpaces__c + BaseSurfParkSpaces__c)&lt;(OBaseStructParkSpaces__c + OBaseSurfParkSpaces__c),&quot;NOA&quot;,&quot;&quot;))))</formula>
+        <label>NOA or IA*</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOASquareFeet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New NOA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOA_or_IA__c</fullName>
+        <externalId>false</externalId>
+        <label>NOA or IA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NOA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BOTH</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NOV_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOV IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NOV_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>NOV NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NetChangeInAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <formula>AnnualRent__c -  Old_Annual_Rent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Change In Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NetChngInSqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>SquareFeet__c  -  Old_Square_Feet__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Change In Square Feet</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NewLease__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>New lease numbers to be assigned by REXUS for Succeeding, Superseding, and New/Replacing actions.  For Extensions, Renewal, Expansion, Reduction, and Other actions, this field will reflect existing lease number (Old Lease Number).</inlineHelpText>
+        <label>New Lease Number</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NewRate__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New Rate</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NewStructuredParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New Structured Parking Spaces</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NewSurfaceParkingSpaces__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New Surface Parking Spaces</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NoBA53Impact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Galaxy Release 1.1</description>
+        <externalId>false</externalId>
+        <label>No BA53 Impact</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NumberofAssociatedAgencies__c</fullName>
+        <description>Galaxy Release 1.1 - Used by Exception Report - Project with no Associated Agency</description>
+        <externalId>false</externalId>
+        <label>Number of Associated Agencies</label>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OAntennas__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Antennas</label>
+        <summarizedField>Glxy_ProjectAgency__c.OldAntennasRollUp__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OBaseStructParkSpaces__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Base Structured Parking Spaces</label>
+        <summarizedField>Glxy_ProjectAgency__c.OldBaseStructuredParkingSpacesRollup__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OBaseSurfParkSpaces__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Base Surface Parking Spaces</label>
+        <summarizedField>Glxy_ProjectAgency__c.OldBaseSurfaceParkingSpacesRollUp__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OCT_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>OCT IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OCT_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>OCT NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OLand__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Land</label>
+        <summarizedField>Glxy_ProjectAgency__c.OldLandRollUp__c</summarizedField>
+        <summaryForeignKey>Glxy_ProjectAgency__c.ProjectNumber__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OldAnnualRent__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Annual Rent</label>
+        <summarizedField>Glxy_AssociatedLeases__c.Lease_Annual_Rent__c</summarizedField>
+        <summaryForeignKey>Glxy_AssociatedLeases__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OldIASqFt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Old IA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OldNOASqFt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Old NOA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OldRate__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Old Rate</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Old_Annual_Rent__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Old Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Old_Square_Feet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Old Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParkingOnly__c</fullName>
+        <defaultValue>&quot;No&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Parking-Only</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PastDueIndicator__c</fullName>
+        <description>Definition: 1) Projects with Effective Date Status = Estimate. 2) If effective date is 1st - 15th of month, then project R620 is to be processed in REXUS by 15th of the month or considered past due. 3) If effective date is 16th-31st of the month, project R620 is to be processed by the 15th of the following month, or it is considered past due.</description>
+        <externalId>false</externalId>
+        <formula>IF(
+(
+    AND(
+          (RecordType.DeveloperName = &apos;Rexus&apos;),
+          (BDGFlag__c == true),
+          (Text(eEorA__c) == &apos;Estimate&apos;),
+          (Text(ProjectStatus__c) &lt;&gt; &apos;Cancelled&apos;),
+          (
+               IF(
+                    (DAY(EffectiveDate__c) &lt;= 15 &amp;&amp; 
+                    TODAY() &gt; DATE(YEAR(EffectiveDate__c), MONTH(EffectiveDate__c), 15)
+                ),
+                true, false
+               )
+
+              ||
+
+              IF(
+                    (DAY(EffectiveDate__c) &gt; 15 &amp;&amp; 
+                    TODAY() &gt; DATE(if(MONTH(EffectiveDate__c) == 12 ,YEAR(EffectiveDate__c)+1,YEAR(EffectiveDate__c)), if(MONTH(EffectiveDate__c) == 12 ,1,MONTH(EffectiveDate__c)+1), 15)
+                ),
+                true, false
+               )
+
+          )
+
+       )
+)
+,
+true, false)</formula>
+        <label>Past Due Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Past_Due_Bucket_Description__c</fullName>
+        <description>Past Due Bucket Description</description>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Past_Due_Bucket__c) = &apos;Agency - Construction Delay&apos;,&apos;Lease has been awarded.  Agency has changed requirements, or delayed in approving Design Intent Drawings (DIDs) or Construction Drawings (CDs), or failed to provide appropriate funding via RWA or updated OA.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;Agency - Postal Service (USPS) Holdover&apos;,&apos;Protracted negotiations with US Postal Service.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;Agency Post-Occupancy Delay&apos;,&apos;Lease awarded, space completed and accepted.  Agency has not signed updated (final) OA, preventing PBS from processing lease amendment for commencement.&apos;, IF(TEXT(Past_Due_Bucket__c) = &apos;Lessor - Construction Delay&apos;,&apos;Lessor is delayed  in completing DID’s, Construction Drawings, or actual construction.&apos;, 
+IF(TEXT(Past_Due_Bucket__c) = &apos;Lessor - Document Delays&apos;,&apos;Lessor has submitted incomplete or incorrect documents, documents with changes, or delayed in signing.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;Lessor - Post-Occupancy Reconciliation&apos;,&apos;Space accepted and occupied.  Reconciliation of T.I. costs, square footage, commencement date, punch list or other terms is underway.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;Lessor - State/City/County or Quasi-Govt Lessor&apos;,&apos;Includes airport authorities.  Protracted negotiations for new, succeeding, extension or expansion lease.  The government’s needs have been identified (location, space, terms, pricing, etc) and lessor has not responded or protracted negotiations are underway.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;PBS - Construction Delay&apos;,&apos;The lessor and agency have completed all necessary steps to keep design &amp; construction phase on schedule.  PBS has not proceeded promptly.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;PBS - Post Occupancy Delay&apos;,&apos;Lease awarded, space completed and accepted.  PBS’s failure or delay in creating or sending accurate final OA to the agency, or accurate final lease commencement amendment to the lessor, or initiating the R620 promptly.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;PBS - Administrative&apos;,&apos;PBS error that does not fall under Construction Delay or Post Occupancy Delay.  An example would be a system or data processing error.&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;Agency - Administrative&apos;,&apos;Agency Delay that does not fall under Construction or Post-Occupancy Delay&apos;,
+IF(TEXT(Past_Due_Bucket__c) = &apos;Lessor - Administrative&apos;,&apos;Lessor delay that does not fall under any of the other Lessor Delays&apos;,&apos;&apos;))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Past Due Bucket Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Past_Due_Bucket__c</fullName>
+        <description>Past Due Bucket</description>
+        <externalId>false</externalId>
+        <label>Past Due Bucket</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agency - Administrative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency - Construction Delay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency - Postal Service (USPS) Holdover</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency Post-Occupancy Delay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - Administrative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - Construction Delay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - Document Delays</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - Extension- Protracted Negotiations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - Post-Occupancy Reconciliation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - State/City/County or Quasi-Govt Lessor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - Succeeding Lease- Protracted Negotiations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lessor - Tribal Lease</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS - Administrative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS - Construction Delay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PBS - Post Occupancy Delay</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Past_Due_Reason__c</fullName>
+        <description>Past Due Reason</description>
+        <externalId>false</externalId>
+        <label>Past Due Reason</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PreCertificationDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date project receives pre certification by BA53 analyst</inlineHelpText>
+        <label>Pre Certification Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Preval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Preval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProcessedDateFY__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(YEAR(ProcessedDate__c + 92 ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Process Date FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessedDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date project goes from estimated to actual status</inlineHelpText>
+        <label>Process Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ProjectID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Project ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Type</inlineHelpText>
+        <label>Project Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Change in Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change in SF</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change To External Contacts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expansion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Extension</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Holdover</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New/Replacing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating Cost Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Estate Tax Escalation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reduction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Step Rent Decrease</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Step Rent Increase</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Succeeding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Superseding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Termination</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Prospectus_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Prospectus Indicator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Prospectus_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Prospectus Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate_Diff_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OldRate__c = 0.00, 1, abs(NewRate__c - OldRate__c)/OldRate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is the percentage of change between the old and new project  rates.</inlineHelpText>
+        <label>Rate Diff. %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Diff_Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please provide a reason if Rate Diff. &gt;= 30.  Reason for the rate change.  This will remain even if the rates change.</inlineHelpText>
+        <label>Rate Diff. Reason</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Rate_Diff__c</fullName>
+        <externalId>false</externalId>
+        <formula>ABS(NewRate__c - OldRate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rate Diff.</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RealtySpecialist__c</fullName>
+        <externalId>false</externalId>
+        <label>Realty Specialist Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReasonForProject__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Project</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Expansion</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RegionCd__c</fullName>
+        <externalId>false</externalId>
+        <label>Region Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RentEstOnly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Galaxy Release 1.1</description>
+        <externalId>false</externalId>
+        <label>RentEst Only</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rent_Difference__c</fullName>
+        <externalId>false</externalId>
+        <formula>AnnualRent__c - Old_Annual_Rent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rent Difference</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RexusNewIASqFt__c</fullName>
+        <externalId>false</externalId>
+        <label>Rexus New IA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RexusNewNOASqFt__c</fullName>
+        <externalId>false</externalId>
+        <label>Rexus New NOA Sq Ft</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rexus_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Rexus Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rexus_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Rexus Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SEP_IA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>SEP IA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SEP_NOA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>SEP NOA</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SquareFeet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>New Sq Ft</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GU</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WY</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TeamCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Team Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_IA_PYC__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total IA PYC</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Impact_on_Total_Year_Obligation__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Impact on Total Year Obligation</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_NOA_PYC__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total NOA PYC</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TriggerUpdateField__c</fullName>
+        <description>This is a dummy field that we will use to fire the trigger on this (parent) object when a child (e.g. Project Agency) record is updated.</description>
+        <externalId>false</externalId>
+        <label>Trigger Update Field</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Upcoming_Project__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+
+   AND (
+        (Text(eEorA__c) == &apos;Estimate&apos;),
+        (BDGFlag__c == true),
+        (Text(ProjectStatus__c) &lt;&gt; &apos;Cancelled&apos;)
+   )
+
+, true, false   
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Upcoming Project</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UpdateOldNOAIA__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If box is checked, then update the Old NOA/IA from Calculated Old NOA/IA. If the box is not checked, then do not update the Old NOA/IA from Calculated Old NOA/IA.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Allows manual redistribution of NOA/IA rentable SF</inlineHelpText>
+        <label>Allow REXUS Overwrites on Old NOA/IA</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Variance_between_SqFt__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NOASquareFeet__c + IASquareFeet__c)- SquareFeet__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Variance between SqFt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Verified_Past_Due__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Verified Past Due</description>
+        <externalId>false</externalId>
+        <label>Verified Past Due</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Verified_Rate_Diff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>rate variance is over 30% +/- and has been verified by the BA53 analyst. If the rates verified change this checkmark will be removed.</inlineHelpText>
+        <label>Verified Rate Diff.</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>aEorA__c</fullName>
+        <externalId>false</externalId>
+        <label>Award Date Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Estimate</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>eEorA__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated or Actual</inlineHelpText>
+        <label>Effective Date Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Estimate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Voided</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Lease Project</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>NewLease__c</columns>
+        <columns>Project_Type__c</columns>
+        <columns>RegionCd__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>Old_Annual_Rent__c</columns>
+        <columns>AnnualRent__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BDGFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Projects_not_included_in_budget</fullName>
+        <columns>NAME</columns>
+        <columns>NewLease__c</columns>
+        <columns>Project_Type__c</columns>
+        <columns>RegionCd__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>OldAnnualRent__c</columns>
+        <columns>AnnualRent__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BDGFlag__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Projects (not included in budget)</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Region_s_Projects</fullName>
+        <columns>NAME</columns>
+        <columns>NewLease__c</columns>
+        <columns>Project_Type__c</columns>
+        <columns>RegionCd__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>Old_Annual_Rent__c</columns>
+        <columns>AnnualRent__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>BDGFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Region&apos;s Projects</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Region_s_Projects_not_included_in_B</fullName>
+        <columns>NAME</columns>
+        <columns>NewLease__c</columns>
+        <columns>Project_Type__c</columns>
+        <columns>RegionCd__c</columns>
+        <columns>EffectiveDate__c</columns>
+        <columns>OldAnnualRent__c</columns>
+        <columns>AnnualRent__c</columns>
+        <columns>TeamCode__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsUserRegionMatch__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>BDGFlag__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Region&apos;s Projects (not incl. in Bdgt)</label>
+    </listViews>
+    <nameField>
+        <label>Project Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Lease Projects</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Placeholder</fullName>
+        <active>true</active>
+        <description>Galaxy created record</description>
+        <label>Placeholder</label>
+        <picklistValues>
+            <picklist>AccrualType__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NOA_or_IA__c</picklist>
+            <values>
+                <fullName>BOTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Past_Due_Bucket__c</picklist>
+            <values>
+                <fullName>Agency - Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency - Construction Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency - Postal Service %28USPS%29 Holdover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency Post-Occupancy Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Construction Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Document Delays</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Extension- Protracted Negotiations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Post-Occupancy Reconciliation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - State%2FCity%2FCounty or Quasi-Govt Lessor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Succeeding Lease- Protracted Negotiations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Tribal Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS - Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS - Construction Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS - Post Occupancy Delay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProjectStatus__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Change To External Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in SF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Holdover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New%2FReplacing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Succeeding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Superseding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReasonForProject__c</picklist>
+            <values>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RegionCd__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>aEorA__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>eEorA__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Rexus</fullName>
+        <active>true</active>
+        <description>Rexus created record</description>
+        <label>Rexus</label>
+        <picklistValues>
+            <picklist>AccrualType__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NOA_or_IA__c</picklist>
+            <values>
+                <fullName>BOTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Past_Due_Bucket__c</picklist>
+            <values>
+                <fullName>Agency - Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency - Construction Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency - Postal Service %28USPS%29 Holdover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency Post-Occupancy Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Construction Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Document Delays</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Extension- Protracted Negotiations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Post-Occupancy Reconciliation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - State%2FCity%2FCounty or Quasi-Govt Lessor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Succeeding Lease- Protracted Negotiations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lessor - Tribal Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS - Administrative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS - Construction Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS - Post Occupancy Delay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProjectStatus__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Change To External Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in SF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change in Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Holdover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New%2FReplacing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Cost Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Tax Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Rent Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Succeeding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Superseding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReasonForProject__c</picklist>
+            <values>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RegionCd__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>aEorA__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>eEorA__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>NewLease__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RegionCd__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EffectiveDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AnnualRent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Old_Annual_Rent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TeamCode__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>NewLease__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RegionCd__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AnnualRent__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Old_Annual_Rent__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>NewLease__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EffectiveDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AnnualRent__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Old_Annual_Rent__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ProjectStatus__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>eEorA__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BDGFlag__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Change_of_Project_Number</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISCHANGED( Name ),  RecordType.DeveloperName =&quot;Rexus&quot;)</errorConditionFormula>
+        <errorMessage>Project Number Cannot be Changed. Please save as is.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LP_Process_Date_FY</fullName>
+        <active>true</active>
+        <description>Process Date cannot be in a prior Fiscal Year</description>
+        <errorConditionFormula>TEXT(eEorA__c) == &apos;Estimate&apos;
+&amp;&amp;
+YEAR(ProcessedDate__c + 92) &lt; YEAR(TODAY() + 92)
+&amp;&amp;
+!CONTAINS($User.FirstName, &apos;CastIron&apos;)</errorConditionFormula>
+        <errorDisplayField>ProcessedDate__c</errorDisplayField>
+        <errorMessage>Process Date cannot be in a prior Fiscal Year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LP_Process_Date_Validation</fullName>
+        <active>false</active>
+        <description>Process Date cannot be less than the Effective Date</description>
+        <errorConditionFormula>TEXT(eEorA__c) == &apos;Estimate&apos;
+&amp;&amp;
+ProcessedDate__c &lt; EffectiveDate__c</errorConditionFormula>
+        <errorDisplayField>ProcessedDate__c</errorDisplayField>
+        <errorMessage>Process Date cannot be less than the Effective Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Preval_on_Effective_data_and_amount</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR( ISCHANGED(EffectiveDate__c),ISCHANGED(  AnnualRent__c )), Preval__c =True, RecordType.DeveloperName =&quot;Rexus&quot;)</errorConditionFormula>
+        <errorMessage>Effective Date or New Annual Rent cannot be edited when Preval Flag is set to True. You may not edit this record at this time.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_Budget_exclude_Comments</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( BDGFlag__c =False, ISBLANK(Budget_Exclusion_Reason__c))</errorConditionFormula>
+        <errorMessage>Please provide a Reason for Exclusion of this record from the budget.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Verify_Rate_Diff_Reason</fullName>
+        <active>true</active>
+        <description>A rate diff reason must be provided if the Rate Diff % changes</description>
+        <errorConditionFormula>AND(
+  Verified_Rate_Diff__c  = True, 
+  ISBLANK(Rate_Diff_Reason__c)
+)</errorConditionFormula>
+        <errorMessage>Rate Diff. Reason must be provided when the Verified Rate Diff. field is checked</errorMessage>
+    </validationRules>
+</CustomObject>

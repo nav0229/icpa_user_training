@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Survey_Master_to_All_Internal_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Survey Master to All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>VOE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

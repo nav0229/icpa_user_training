@@ -1,0 +1,88 @@
+<apex:page controller="Glxy_BC_3ColumnChart" title="RENTAL OF SPACE" readonly="true" sidebar="false">
+
+	<table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">RENTAL OF SPACE</font></h1><br/>
+                <h1><font color="darkred" size="+2">Explanation of Budget Changes</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+           		<div style="background:White; border:2px outset #888888;">
+                <h2><font color="darkred" size="+1">
+                    Reporting Fiscal Year: {!strReportingYear} &nbsp;&nbsp;&nbsp;
+                    Region: {!strRegion} &nbsp;&nbsp;&nbsp;
+                    Submission Type: {!strSubmissionType} &nbsp;&nbsp;&nbsp;
+                    Data Format: {!strDataFormat}
+                </font></h2>
+                </div>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>  
+    
+    <apex:form id="frmList">
+    
+    	<table border="1" align="center" cellspacing="1">
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center"><h2><font color="DarkBlue">New Obligational Authority<br/>(NOA)</font></h2></td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td><b>Fiscal Year&nbsp;<apex:outputText value="{!FiscalYear2}" />&nbsp;Request</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!NOAObligations2}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;FY&nbsp;<apex:outputText value="{!FiscalYear2}" />&nbsp;Program Changes</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CurrentYearCostAmount2 - NOAObligations2}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td><b>Fiscal Year&nbsp;<apex:outputText value="{!FiscalYear2}" />&nbsp;Current</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CurrentYearCostAmount2}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp; Annualization of remaining FY&nbsp;<apex:outputText value="{!FiscalYear2}" />&nbsp;Program Changes</td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!PriorYearCostAmount3 + AnnualRentIncreaseAmount3 + AnnualCancellationsAmount3 + AnnualExpansionNOAAmount3 + IAToNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td><b>Fiscal Year&nbsp;<apex:outputText value="{!FiscalYear3}" />&nbsp;Base</b></td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CurrentYearCostAmount2 + PriorYearCostAmount3 + AnnualRentIncreaseAmount3 + AnnualCancellationsAmount3 + AnnualExpansionNOAAmount3 + IAToNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;Rental Rate Increases</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!RentIncreaseNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;Lump Sum Payments for real estate taxes and lease buyouts</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;Lease Cancellations</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CancellationsNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;Lease Expansions</td>
+                <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!ExpansionNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td><b>Fiscal Year&nbsp;<apex:outputText value="{!FiscalYear3}" />&nbsp;Request</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0.00}"><apex:param value="{!CurrentYearCostAmount2 + PriorYearCostAmount3 + AnnualRentIncreaseAmount3 + AnnualCancellationsAmount3 + AnnualExpansionNOAAmount3 + IAToNOAAmount3 + RentIncreaseNOAAmount3 + LumpSumNOAAmount3 + CancellationsNOAAmount3 + ExpansionNOAAmount3}" /></apex:outputText></td>
+            </tr>
+            
+    	</table>
+   </apex:form>
+    
+</apex:page>

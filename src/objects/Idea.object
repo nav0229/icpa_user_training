@@ -1,0 +1,2478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Categories</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>If_Your_Idea_Receives_Support_Would_You__c</fullName>
+        <description>If Your Idea Receives Support, Would You Like to Participate in the Heartland Champions for Change Council? *</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Your Idea Receives Support, Would You Like to Participate in the Heartland Champions for Change Council? *</inlineHelpText>
+        <label>If Your Idea Receives Support, Would You</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No, I would rather someone else take lead</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yes, but only for my idea</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yes, I would like to be on the council full time to help evaluate ideas</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Most_applicable_offices__c</fullName>
+        <externalId>false</externalId>
+        <label>Most applicable offices</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PBS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCSIT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OMA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GSA IT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OHRM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCIA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OSBU</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Office_best_able_to_help_with_this_idea__c</fullName>
+        <externalId>false</externalId>
+        <label>Office best able to help with this idea</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PBS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCSIT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OMA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GSA IT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OHRM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OGC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OCIA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OSBU</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Accident Management Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Acquisition Operations Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Customer Accounts and Research</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Facilities Maintenance and Hardware Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fleet Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FSSI Print Management Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Heartland Supply Operations Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IT Schedules Operations Branch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Customer Service Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Network Services Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Property Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Relocation Services Branch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Small Business Acquisition Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Communications and Marketing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Government-wide Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R10 PBS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4 PBS</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Priorities__c</fullName>
+        <externalId>false</externalId>
+        <label>Priorities</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Building a Stronger GSA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delivering Better Value &amp; Savings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expanding Opportunities for Small Businesses</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Leading with Innovation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Making a More Sustainable Government</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Serving our Partners</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>Ideas_Last_7_Days</fullName>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.CREATED_BY_NICKNAME</columns>
+        <columns>VOTE_STATS.WEIGHTED_SUM</columns>
+        <columns>IDEA.NUM_COMMENTS</columns>
+        <columns>IDEA.STATUS</columns>
+        <columns>IDEA.CATEGORIES</columns>
+        <columns>COMMUNITY.NAME</columns>
+        <columns>IDEA.IDEA_THEME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Last 7 Days</label>
+    </listViews>
+    <recordTypes>
+        <fullName>InternalIdeasIdeaRecordType</fullName>
+        <active>true</active>
+        <description>Record Type used to associate ideas with a specific community</description>
+        <label>Internal Community: Idea Record Type</label>
+        <picklistValues>
+            <picklist>If_Your_Idea_Receives_Support_Would_You__c</picklist>
+            <values>
+                <fullName>No%2C I would rather someone else take lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C I would like to be on the council full time to help evaluate ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but only for my idea</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Accident Management Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Operations Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Accounts and Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FSSI Print Management Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities Maintenance and Hardware Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fleet Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heartland Supply Operations Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Schedules Operations Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Customer Service Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Services Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation Services Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Business Acquisition Division</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Businesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a More Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Coming Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Do It Now</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Launched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000K0hFAAS_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific community</description>
+        <label>The Great Idea Hunt (ARCHIVE ONLY): Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Better Manage GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deliver Savings to Other Fed Agencies</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Improve Service Delivery to Partners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Save Money Internally</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_Your_Idea_Receives_Support_Would_You__c</picklist>
+            <values>
+                <fullName>No%2C I would rather someone else take lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C I would like to be on the council full time to help evaluate ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but only for my idea</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Accident Management Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Operations Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Accounts and Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FSSI Print Management Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities Maintenance and Hardware Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fleet Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heartland Supply Operations Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Schedules Operations Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Customer Service Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Services Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation Services Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Business Acquisition Division</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Businesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a More Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>A Great Idea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In The Hunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LB0aAAG_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific community</description>
+        <label>R10 Perfect Customer Experience: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Ease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expertise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Respect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_Your_Idea_Receives_Support_Would_You__c</picklist>
+            <values>
+                <fullName>No%2C I would rather someone else take lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C I would like to be on the council full time to help evaluate ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but only for my idea</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Accident Management Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Operations Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Accounts and Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FSSI Print Management Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities Maintenance and Hardware Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fleet Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heartland Supply Operations Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Schedules Operations Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Customer Service Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Services Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation Services Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Business Acquisition Division</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Businesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a More Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Finalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key Idea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LCxIAAW_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific community</description>
+        <label>Great Ideas Hunt : Best Places To Work: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Career Development %26 Succession Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connecting to GSA%27s Mission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diversity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Effective Leadership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance Management %26 Recognition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teamwork</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work %2F Life Balance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_Your_Idea_Receives_Support_Would_You__c</picklist>
+            <values>
+                <fullName>No%2C I would rather someone else take lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C I would like to be on the council full time to help evaluate ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but only for my idea</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Accident Management Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Operations Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Accounts and Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FSSI Print Management Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities Maintenance and Hardware Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fleet Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heartland Supply Operations Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Schedules Operations Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Customer Service Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Services Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation Services Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Business Acquisition Division</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Businesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a More Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Coming Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In The Hunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Launched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LHUOAA4_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific community</description>
+        <label>R6 Heartland Champions for Change: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Cost Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cycle Time Reduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improved Morale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improved Transparency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improvement to a Current Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Process%2FSolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Technology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_Your_Idea_Receives_Support_Would_You__c</picklist>
+            <values>
+                <fullName>No%2C I would rather someone else take lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C I would like to be on the council full time to help evaluate ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but only for my idea</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Accident Management Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acquisition Operations Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Accounts and Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FSSI Print Management Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilities Maintenance and Hardware Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fleet Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heartland Supply Operations Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Schedules Operations Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Customer Service Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Services Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Division</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation Services Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Business Acquisition Division</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Businesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a More Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Implemented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LHxwAAG_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>Great Ideas Hunt: Build a Better Government: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Economic Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Effectiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficiency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>People %26 Culture</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>A Great Idea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In The Hunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LI29AAG_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>OCM: Mission Possible: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Client Service Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improved Collaboration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improved Morale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improved Transparency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improvement to a Current Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Process%2FSolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Reduction</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Office of Communications and Marketing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Finalist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Immediate Implementation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selected for Implementation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LIAjAAO_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>OGP Ideas Challenge: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Improvement to Current Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Policy%2FSolution</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Office of Government-wide Policy</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Businesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a More Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LIAoAAO_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>R10 PBS Town Hall Ideas Quest: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>R10 PBS</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000LIF1AAO_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>Great Ideas Hunt LIVE!: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Economic Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Effectiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficiency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>People %26 Culture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workspaces</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Coming Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In The Hunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Launched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000Pc5BAAS_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>R4 PBS Blueprint Ideas Hunt: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Busi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a more Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Region 4 PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priorities__c</picklist>
+            <values>
+                <fullName>Building a Stronger GSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivering Better Value %26 Savings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanding Opportunities for Small Businesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leading with Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Making a More Sustainable Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serving our Partners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Implemented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selected for Implementation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000Pcq3AAC_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>GSA IT Recognition Program: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Performance Management %26 Recognition</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>In The Hunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Launched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09a30000000PcyXAAS_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>Bringing GSA&apos;s Vision to Life: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Economic Catalyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operational Excellence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive Federal Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Most_applicable_offices__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>In The Hunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Launched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09at0000000CajQAAS_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific zone</description>
+        <label>GSA Vision Great Ideas Hunt: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>Acquisition Excellence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data-Driven Decisions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Easier for Suppliers to Work With Gov%E2%80%99t</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancing Real Estate Community Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improving Federal IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reducing and Modernizing the Footprint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strengthen Performance Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong Service for Agency Customers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong%2C Diverse %26 Optimized Workforce</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Office_best_able_to_help_with_this_idea__c</picklist>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSA IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OHRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSBU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PBS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>In The Hunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>IDEA.TITLE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.BODY</customTabListAdditionalFields>
+        <customTabListAdditionalFields>COMMUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.CREATED_BY_NICKNAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.NUM_COMMENTS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VOTE.HAS_VOTED</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.CATEGORIES</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.LAST_COMMENT_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.TITLE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>COMMUNITY.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.TITLE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>COMMUNITY.NAME</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.BODY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>COMMUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.NUM_COMMENTS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.CREATED_BY_NICKNAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.CATEGORIES</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

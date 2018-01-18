@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Galaxy Transaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Galaxy Transactions</value>
+    </caseValues>
+    <fields>
+        <help><!-- The Actual Date the Lease or Lease Action was Awarded --></help>
+        <label><!-- Actual Lease Award Date --></label>
+        <name>ActualLeaseAwardDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The actual day the lease starts.  Either the day the government starts paying rent or the start of the free rent period at the beginning of the lease term. --></help>
+        <label><!-- Actual Lease Term Commencement Date --></label>
+        <name>ActualLeaseTermCommencementDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- BA53 Analyst that acutally approves the most recent Lease Action. --></help>
+        <label><!-- BA53 Approver --></label>
+        <name>BA53Approver__c</name>
+    </fields>
+    <fields>
+        <help><!-- BA53 Analyst that the associated Lease is assigned to in REXUS --></help>
+        <label><!-- BA53 User --></label>
+        <name>BA53_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Accruals --></label>
+        <name>Count_of_Accruals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of digests w/ Accrual --></label>
+        <name>Count_of_digests_w_Accrual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digest Effective Date --></label>
+        <name>Digest_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digest IA/NOA Conversion date --></label>
+        <name>Digest_IA_NOA_Conversion_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digest IA Sq Ft --></label>
+        <name>Digest_IA_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Estimated Annual Rent that appears in the &quot;Budget Info&quot; field in REXUS --></help>
+        <label><!-- Estimated Annual Rent (Budget) --></label>
+        <name>EstimatedAnnualAmount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Initial Annual Rent that appears in the &quot;Budget Info&quot; field in REXUS. It sums the payment lines. --></help>
+        <label><!-- Estimated Annual Rent (Funding Payment) --></label>
+        <name>EstimatedAnnualRentFundingPayment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated IA Amount (Funding Payment) --></label>
+        <name>EstimatedIAAmountFundingPayment__c</name>
+    </fields>
+    <fields>
+        <label><!-- EstimatedIAAmount --></label>
+        <name>EstimatedIAAmount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The estimated day the lease starts.  Either the day the government starts paying rent or the start of the free rent period at the beginning of the lease term. --></help>
+        <label><!-- Estimated Lease Term Commencement Date --></label>
+        <name>EstimatedLeaseTermCommencementDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated NOA Amount (Funding Payment) --></label>
+        <name>EstimatedNOAAmountFundingPayment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated NOA Amount (Budget) --></label>
+        <name>EstimatedNOAAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated IA Amount (Budget) --></label>
+        <name>Estimated_IA_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The estimated day the lease starts.  Either the day the government starts paying rent or the start of the free rent period at the beginning of the lease term. --></help>
+        <label><!-- Estimated Lease Award Date --></label>
+        <name>Estimated_Lease_Award_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fully Service Lease --></label>
+        <name>Fully_Service_Lease__c</name>
+        <picklistValues>
+            <masterLabel>Blank</masterLabel>
+            <translation><!-- Blank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IA/NOA Conversion Date --></label>
+        <name>IA_NOA_Conversion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total New IA Sq Ft --></label>
+        <name>IA_RSF_RLLUP__c</name>
+    </fields>
+    <fields>
+        <label><!-- IA Sq Ft --></label>
+        <name>IA_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsUserEmailMatch --></label>
+        <name>IsUserEmailMatch__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsUserRegionMatch --></label>
+        <name>IsUserRegionMatch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease Number --></label>
+        <name>LeaseNumber__c</name>
+        <relationshipLabel><!-- Galaxy Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lease Action --></label>
+        <name>Lease_Action__c</name>
+        <picklistValues>
+            <masterLabel>Change To External Contacts</masterLabel>
+            <translation><!-- Change To External Contacts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change in SF</masterLabel>
+            <translation><!-- Change in SF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change in Services</masterLabel>
+            <translation><!-- Change in Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalation</masterLabel>
+            <translation><!-- Escalation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion</masterLabel>
+            <translation><!-- Expansion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extension</masterLabel>
+            <translation><!-- Extension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holdover</masterLabel>
+            <translation><!-- Holdover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New/Replacing</masterLabel>
+            <translation><!-- New/Replacing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operating Cost Escalation</masterLabel>
+            <translation><!-- Operating Cost Escalation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Tax Escalation</masterLabel>
+            <translation><!-- Real Estate Tax Escalation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduction</masterLabel>
+            <translation><!-- Reduction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step Rent Decrease</masterLabel>
+            <translation><!-- Step Rent Decrease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step Rent Increase</masterLabel>
+            <translation><!-- Step Rent Increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Succeeding</masterLabel>
+            <translation><!-- Succeeding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superseding</masterLabel>
+            <translation><!-- Superseding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminating</masterLabel>
+            <translation><!-- Terminating --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lease Agreement RSF --></label>
+        <name>Lease_Agreement_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease CO Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- Contact not matched to this region. --></errorMessage>
+        </lookupFilter>
+        <name>Lease_CO_Contact__c</name>
+        <relationshipLabel><!-- Galaxy Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lease Term (In Months) --></label>
+        <name>Lease_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total New NOA Sq Ft --></label>
+        <name>NOA_RSF_RLLUP__c</name>
+    </fields>
+    <fields>
+        <label><!-- NOA Sq Ft --></label>
+        <name>NOA_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Rate Per Sq Ft (Funding Payment) --></label>
+        <name>NewRatePerSqFtFunding_Payment__c</name>
+    </fields>
+    <fields>
+        <help><!-- LXXNNNNN - L &apos;State Code&apos; 00000. This is an eight character identifier for a specific lease. With the first character being &quot;L&quot;, the second two characters being the state code, and the final five characters being a unique set of numeric values. --></help>
+        <label><!-- New Lease Number --></label>
+        <name>New_Lease_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies that the Project will not impact BA53 funding. --></help>
+        <label><!-- No BA53 Impact --></label>
+        <name>NoImpactonBA53__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email address of the CO for the lease. --></help>
+        <label><!-- OID User Name --></label>
+        <name>OID_UserName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Rate Per Sq Ft --></label>
+        <name>Old_Rate_Per_Sq_Ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Contract Services Amount --></label>
+        <name>OtherContractServicesAmount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date the pre-certification of funds for the Project was approved. --></help>
+        <label><!-- Pre Certification Date --></label>
+        <name>Pre_Certification_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Location --></label>
+        <name>Primary_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Description --></label>
+        <name>ProjectDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Number --></label>
+        <name>Project_Number__c</name>
+        <relationshipLabel><!-- Galaxy Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Status --></label>
+        <name>Project_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prospectus Indicator --></label>
+        <name>Prospectus_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prospectus Number --></label>
+        <name>Prospectus_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Rate Per Sq Ft (Budget) --></label>
+        <name>RatePerSquareFoot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Realty Specialist Email --></label>
+        <name>RealtySpecialist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Lookup --></label>
+        <name>Record_Type_Lookup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reason for Rejection --></help>
+        <label><!-- Reject Reason --></label>
+        <name>Reject_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Data Mismatch</masterLabel>
+            <translation><!-- Data Mismatch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid Data</masterLabel>
+            <translation><!-- Invalid Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Documentation</masterLabel>
+            <translation><!-- Missing Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Rejection Remarks --></help>
+        <label><!-- Rejection Remarks --></label>
+        <name>Rejection_Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>Remarks__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies that the Project is to estimate the rent only. --></help>
+        <label><!-- RentEst Only --></label>
+        <name>RentEstOnly__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State_CD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Status of the transaction --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted by REXUS</masterLabel>
+            <translation><!-- Accepted by REXUS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved by BA53</masterLabel>
+            <translation><!-- Approved by BA53 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected by BA53</masterLabel>
+            <translation><!-- Rejected by BA53 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected by REXUS</masterLabel>
+            <translation><!-- Rejected by REXUS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Team Code --></label>
+        <name>Team_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Change in Sq Ft --></label>
+        <name>Total_Change_in_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Change in Structured Parking --></label>
+        <name>Total_Change_in_Structured_Parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Change in Surface Parking --></label>
+        <name>Total_Change_in_Surface_Parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total New Annual Rent --></label>
+        <name>Total_New_Annual_Rent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total New Sq Ft --></label>
+        <name>Total_New_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Old Annual Rent --></label>
+        <name>Total_Old_Annual_Rent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Old Sq Ft --></label>
+        <name>Total_Old_RSF_RLLUP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Request Sq Ft --></label>
+        <name>Total_Request_RSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Request Structured Parking --></label>
+        <name>Total_Request_Structured_Parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Request Surface Parking --></label>
+        <name>Total_Request_Surface_Parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Date --></label>
+        <name>TransactionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rexus Transaction ID --></label>
+        <name>TransactionID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Processed Date FY --></label>
+        <name>TransactionProcessedDateFY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Processed Date --></label>
+        <name>TransactionProcessedDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Transaction Created By --></help>
+        <label><!-- Transaction Created By --></label>
+        <name>Transaction_Created_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- USF Variance --></help>
+        <label><!-- USF Variance --></label>
+        <name>USF_Variance__c</name>
+    </fields>
+    <layouts>
+        <layout>Final Certification Transaction Layout</layout>
+        <sections>
+            <label><!-- Budget Information --></label>
+            <section>Budget Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Estimated BA53 Funding --></label>
+            <section>Estimated BA53 Funding</section>
+        </sections>
+        <sections>
+            <label><!-- Lease/Project Information --></label>
+            <section>Lease/Project Information</section>
+        </sections>
+        <sections>
+            <label><!-- OCS Funding --></label>
+            <section>OCS Funding</section>
+        </sections>
+        <sections>
+            <label><!-- Project Summary Information --></label>
+            <section>Project Summary Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Lease Action Transaction Layout</layout>
+        <sections>
+            <label><!-- Existing Lease data --></label>
+            <section>Existing Lease data</section>
+        </sections>
+        <sections>
+            <label><!-- FMIS Accruals --></label>
+            <section>FMIS Accruals</section>
+        </sections>
+        <sections>
+            <label><!-- Lease Information --></label>
+            <section>Lease Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Pre-Certification Transaction Layout</layout>
+        <sections>
+            <label><!-- Budget Information --></label>
+            <section>Budget Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Estimated BA53 Funding --></label>
+            <section>Estimated BA53 Funding</section>
+        </sections>
+        <sections>
+            <label><!-- Lease/Project Information --></label>
+            <section>Lease/Project Information</section>
+        </sections>
+        <sections>
+            <label><!-- OCS Funding --></label>
+            <section>OCS Funding</section>
+        </sections>
+        <sections>
+            <label><!-- Project Summary Information --></label>
+            <section>Project Summary Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Lease Action --></label>
+        <name>Lease_Action</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Project Final Certification --></label>
+        <name>Project_Final_Certification</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Project Pre-Certification --></label>
+        <name>Project_Pre_Certification</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- IA Conversion Date should be NULL when IA Sq Ft is Zero --></errorMessage>
+        <name>IA_Sq_Ft_Not_Blank_on_Date_LA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Lease Number Cannot be Null --></errorMessage>
+        <name>Lease_Number_NOT_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Project Number Cannot be NULL --></errorMessage>
+        <name>Project_Number_NOT_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Region cannot be left blank. --></errorMessage>
+        <name>RequiredRegion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot Change Transaction ID --></errorMessage>
+        <name>TransactionIDChanged</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Estimated IA Rent cannot be greater than Estimated Annual Amount or Less than Zero --></errorMessage>
+        <name>Verify_Estimated_IA_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- IA/NOA Conversion Date must be filled in if IA RSF is greater than 0 and Date  must be Oct 1. --></errorMessage>
+        <name>Verify_IANOA_Conversion_date_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- IA/NOA Conversion Date must be as of 10/1 and must be greater than Max effective date of All Digests. --></errorMessage>
+        <name>Verify_IANOA_Conversion_date_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- IA RSF must be greater than 0 but less than the Maximum Agreement value from the digests. --></errorMessage>
+        <name>Verify_IA_RSF_is_valid</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Approve --></label>
+        <name>Approve</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Open_Lease --></label>
+        <name>Open_Lease</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Open_Project --></label>
+        <name>Open_Project</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reject --></label>
+        <name>Reject</name>
+    </webLinks>
+</CustomObjectTranslation>

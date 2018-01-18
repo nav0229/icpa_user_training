@@ -1,0 +1,41 @@
+<apex:page standardController="Items__c" sidebar="false" standardStylesheets="true">
+<apex:includeScript value="{!URLFOR($Resource.jQueryTables, '/js/jquery1102min.js')}"/>
+<script>
+var recordId = '{!Id}';
+
+$( document ).ready(function() {
+$('input[name="piSubmit"]').hide();
+    $('input[name="piRemove"]').hide();
+    
+    
+    $( "a" ).each(function( index ) {
+          $( this ).attr('target', '_parent');
+    });
+    var processId;
+        processId = $("a.actionLink").attr("href");
+        processId = processId.match(".com/(.*)/e");
+        processId = processId[1];
+       //alert(processId);
+    
+    
+    
+    $("a[title^='Approve']").each(function(ix) {
+        $(this).attr("href", "/apex/SpendTrackerApproverAction?LeadId="+recordId+"&Id="+processId);
+        var txt = $(this).parent().html();
+        txt = txt.replace('|', '');
+        $(this).parent().html(txt);
+    });
+    
+    $("a[title^='Reassign']").each(function(ix) {
+        $(this).hide();    
+    });
+    
+});
+</script>
+
+
+    <!---<apex:detail subject="{!Test_Object__c}" relatedList="false" title="false"/> --->
+<apex:relatedList list="ProcessSteps" pageSize="500" />
+
+  
+</apex:page>

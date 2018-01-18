@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>TSSActionItemLanding</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is created for TSS Application - Action Items</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Action_Item_Deferred_Justification__c</fullName>
+        <externalId>false</externalId>
+        <label>Deferred Justification</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Action_Item_Instructions__c</fullName>
+        <defaultValue>&quot;If you have questions on how to correctly create an Action Item or Plan please see the User Guide for the Property Manager, Supervisor, and Superuser - TSS Action Planning Application (https://gsa.my.salesforce.com/06930000004IVsq) or contact your Region’s TSS Superuser.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Action Item Instructions</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Action_Plan_FY__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(TSS_Result_Action_Plan__r.Fiscal_Year__c)</formula>
+        <label>Action Plan FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Addresses_a_Comment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Mark &quot;Checked&quot; if this Action Item addresses a specific comment from TSS</inlineHelpText>
+        <label>Addresses a Comment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Agency_Consulted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Agency Consulted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deferred_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Deferred Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Explanation_of_Cancellation__c</fullName>
+        <externalId>false</externalId>
+        <label>Explanation of Cancellation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extent_of_Issue__c</fullName>
+        <externalId>false</externalId>
+        <label>Extent of Issue</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Building</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tenant(Agency)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Issue_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Issue_Resolution__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Resolution</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Item_Deferred__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Item Deferred</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Location_Code_Plus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TSS_Result_Action_Plan__r.Location_Code_Plus__c</formula>
+        <label>Location Code Plus</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Service_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Service Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quality of Cleanliness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Condition of Facility (functional, repairs needed)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Personal Workspace</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Elevators</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Know who to call on Building issues</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overall Satisfaction</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TSS_Result_Action_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>TSS Result and Action Plan</label>
+        <referenceTo>TSS_Result_Action_Plan__c</referenceTo>
+        <relationshipLabel>TSS Action Items</relationshipLabel>
+        <relationshipName>TSS_Action_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>TSS Action Item</label>
+    <listViews>
+        <fullName>Action_Items_PAST_DUE</fullName>
+        <columns>NAME</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Service_Category__c</columns>
+        <columns>Issue_Description__c</columns>
+        <columns>TSS_Result_Action_Plan__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Estimated_Completion_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <label>Action Items PAST DUE</label>
+    </listViews>
+    <listViews>
+        <fullName>Action_Items_THIS_WEEK</fullName>
+        <columns>NAME</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Service_Category__c</columns>
+        <columns>Issue_Description__c</columns>
+        <columns>TSS_Result_Action_Plan__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Estimated_Completion_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <label>Action Items: THIS WEEK</label>
+    </listViews>
+    <listViews>
+        <fullName>Action_Items_for_NEXT_WEEK</fullName>
+        <columns>NAME</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Service_Category__c</columns>
+        <columns>Issue_Description__c</columns>
+        <columns>TSS_Result_Action_Plan__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Estimated_Completion_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>NEXT_WEEK</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <label>Action Items for NEXT WEEK</label>
+    </listViews>
+    <listViews>
+        <fullName>Action_Items_in_TWO_WEEKS</fullName>
+        <columns>NAME</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Service_Category__c</columns>
+        <columns>Issue_Description__c</columns>
+        <columns>TSS_Result_Action_Plan__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Estimated_Completion_Date__c</field>
+            <operation>notEqual</operation>
+            <value>NEXT_WEEK</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <filters>
+            <field>Estimated_Completion_Date__c</field>
+            <operation>equals</operation>
+            <value>NEXT_N_WEEKS:2</value>
+        </filters>
+        <label>Action Items in TWO WEEKS</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Current_Fiscal_Year</fullName>
+        <columns>NAME</columns>
+        <columns>Location_Code_Plus__c</columns>
+        <columns>Status__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Service_Category__c</columns>
+        <columns>TSS_Result_Action_Plan__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Action_Plan_FY__c</field>
+            <operation>equals</operation>
+            <value>FY16</value>
+        </filters>
+        <label>All Current Fiscal Year</label>
+    </listViews>
+    <listViews>
+        <fullName>My_TSS_Action_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Location_Code_Plus__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Service_Category__c</columns>
+        <columns>TSS_Result_Action_Plan__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Action_Plan_FY__c</field>
+            <operation>equals</operation>
+            <value>FY16</value>
+        </filters>
+        <label>My TSS Action Items</label>
+    </listViews>
+    <nameField>
+        <label>TSS Action Item Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>TSS Action Items</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Location_Code_Plus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Estimated_Completion_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Service_Category__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Action_Plan_FY__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>TSS_Result_Action_Plan__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Action_Plan_FY__c</lookupFilterFields>
+        <lookupFilterFields>Service_Category__c</lookupFilterFields>
+        <lookupFilterFields>Status__c</lookupFilterFields>
+        <lookupFilterFields>Estimated_Completion_Date__c</lookupFilterFields>
+        <lookupFilterFields>TSS_Result_Action_Plan__c</lookupFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Action_Plan_FY__c</searchFilterFields>
+        <searchFilterFields>Service_Category__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>TSS_Result_Action_Plan__c</searchFilterFields>
+        <searchResultsAdditionalFields>Action_Plan_FY__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TSS_Result_Action_Plan__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Issue_Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Actual_Completion_can_not_be_future</fullName>
+        <active>true</active>
+        <description>Actual completion date can not be further than 2 days out</description>
+        <errorConditionFormula>IF( Actual_Completion_Date__c  &gt;  (TODAY() +2), TRUE, FALSE)</errorConditionFormula>
+        <errorDisplayField>Actual_Completion_Date__c</errorDisplayField>
+        <errorMessage>Actual Completion Date can be no more than two days in the future. Please choose a different date or update this date after the Actual Completion Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Action_Item_Deferred_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (Item_Deferred__c, OR (ISBLANK(Deferred_Completion_Date__c), ISBLANK(Action_Item_Deferred_Justification__c  )))</errorConditionFormula>
+        <errorDisplayField>Item_Deferred__c</errorDisplayField>
+        <errorMessage>Please provide justification and completion date if action item is deferred.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Action_Item_Name_length_limitation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(LEN( Name ) &gt; 40, true, false)</errorConditionFormula>
+        <errorMessage>The Action Item name must be less than 40 characters</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Completed_Date_is_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISCHANGED(Status__c), AND(ISBLANK(Actual_Completion_Date__c ), ISPICKVAL(Status__c,&apos;Completed&apos;)), false)</errorConditionFormula>
+        <errorDisplayField>Actual_Completion_Date__c</errorDisplayField>
+        <errorMessage>Actual Completed Date is required to complete an Action Item.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Est_Completion_Date_Validation</fullName>
+        <active>true</active>
+        <description>As of 10/10/2017, the FY17 TSS action plans, to include all action items must be completed on or before 06/01/2018 per Rob Lacey (case# 31243)</description>
+        <errorConditionFormula>If( Estimated_Completion_Date__c  &gt; DATE(2018, 6, 1), True, false)</errorConditionFormula>
+        <errorDisplayField>Estimated_Completion_Date__c</errorDisplayField>
+        <errorMessage>Action Items MUST be completed on or before 06/01/2018</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Estimated_date_must_be_future</fullName>
+        <active>true</active>
+        <description>Must be a future date</description>
+        <errorConditionFormula>OR(AND(ISNEW(), Estimated_Completion_Date__c &lt; TODAY()), AND(ISCHANGED(Estimated_Completion_Date__c), Estimated_Completion_Date__c &lt; DATEVALUE(CreatedDate)))</errorConditionFormula>
+        <errorMessage>Estimated Completion Date must be a future date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Explan_for_Cancellation_is_required</fullName>
+        <active>true</active>
+        <description>Explanation for Cancellation is required when we select the status as &apos;Cancelled&apos;</description>
+        <errorConditionFormula>IF(ISCHANGED(Status__c), AND(ISPICKVAL(Status__c, &apos;Cancelled&apos;), ISBLANK( Explanation_of_Cancellation__c)), false)</errorConditionFormula>
+        <errorDisplayField>Explanation_of_Cancellation__c</errorDisplayField>
+        <errorMessage>Explanation of Cancellation is required to Cancel an Action Item.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_No_access_to_modify_the_action_items</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISCHANGED( Service_Category__c ), 
+ISCHANGED( Addresses_a_Comment__c ), 
+ISCHANGED( Estimated_Completion_Date__c ), 
+ISCHANGED( Actual_Completion_Date__c ), 
+ISCHANGED( Extent_of_Issue__c ), 
+ISCHANGED( Name ), 
+ISCHANGED( TSS_Result_Action_Plan__c ), 
+ISCHANGED( Other_Service_Category__c ), 
+ISCHANGED( Agency_Consulted__c ), 
+ISCHANGED( Issue_Description__c ), 
+ISCHANGED( Issue_Resolution__c ), AND(ISCHANGED( Status__c ), OR(ISPICKVAL(Status__c, &apos;In Progress&apos;), ISPICKVAL(Status__c, &apos;Completed&apos;)))),
+IF(( TSS_Result_Action_Plan__r.Property_Manager__r.Id  != $User.Id), true, false))</errorConditionFormula>
+        <errorMessage>You don&apos;t have permissions to modify/change the Action Item details for this Action Plan. Please contact the Property Manager of the Action Plan.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Not_able_to_create_the_action_items</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( ISNEW() ,  IF(TSS_Result_Action_Plan__r.Property_Manager__r.Id !=  $User.Id, true, false), false)</errorConditionFormula>
+        <errorMessage>You don&apos;t have permissions to create a new Action Items for this Action Plan. Please contact the Property Manager of the Action Plan.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Other_Service_Category_is_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISCHANGED(Service_Category__c),AND(ISPICKVAL(Service_Category__c , &apos;Other&apos;), ISBLANK(Other_Service_Category__c )), false)</errorConditionFormula>
+        <errorMessage>Other Service Category is required if Service Category is Other.</errorMessage>
+    </validationRules>
+</CustomObject>

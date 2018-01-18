@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Point of Contact</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Point of Contacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assignee --></label>
+        <name>Assignee__c</name>
+    </fields>
+    <fields>
+        <label><!-- OCM Tracker Identifier --></label>
+        <name>OCM_Tracker_Identifier__c</name>
+        <relationshipLabel><!-- Point of Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Each assignee should enter the amount of time they spent on the task. Example: If it takes 1 hour 15 minutes, then 1.25 should be entered here. --></help>
+        <label><!-- Point of Contact Time --></label>
+        <name>POC_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- POC Update Status --></label>
+        <name>POC_Update_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact Email --></label>
+        <name>Point_of_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact Master Org --></label>
+        <name>Point_of_Contact_Master_ORG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact Name --></label>
+        <name>Point_of_Contact_Name__c</name>
+        <relationshipLabel><!-- Point of Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact Org --></label>
+        <name>Point_of_Contact_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact Phone --></label>
+        <name>Point_of_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact Type --></label>
+        <name>Point_of_Contact_Type__c</name>
+        <picklistValues>
+            <masterLabel>External</masterLabel>
+            <translation><!-- External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Principal</masterLabel>
+            <translation><!-- Principal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requester</masterLabel>
+            <translation><!-- Requester --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Point of Contact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- &quot;Point of Contact Type&quot; and &quot;Assignee&quot; fields cannot be filled together. --></errorMessage>
+        <name>Point_Of_Contact_Type_One</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Either &quot;Point of Contact Type&quot; field Or &quot;Assignee&quot; field should be filled. --></errorMessage>
+        <name>Point_Of_Contact_Type_Or_Assignee</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Point of Contact Type&quot; field value &quot;Principal&quot; is only available for &quot;Media Affairs &amp; Public Engagement&quot; record. --></errorMessage>
+        <name>Point_of_Contact_Type_Principal</name>
+    </validationRules>
+</CustomObjectTranslation>

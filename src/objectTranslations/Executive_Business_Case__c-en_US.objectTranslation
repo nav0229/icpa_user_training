@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Executive Business Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Executive Business Cases</value>
+    </caseValues>
+    <fields>
+        <help><!-- Provide a summary of the Executive Business Case --></help>
+        <label><!-- Project Statement Abstract --></label>
+        <name>Abstract__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the project code which the OCFO team can attribute the approved new, revised or increased funding to a line item in FPA. Enter &quot;N/A&quot; if EBC is not funded or rejected. --></help>
+        <label><!-- Associated Project Code --></label>
+        <name>Associated_Project_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from BRG Review.  BRG Comments or Recommendations are required if a BRG Review Date is entered. The BRG Review is part of the Governance Review process. --></help>
+        <label><!-- EBC - BRG Comments --></label>
+        <name>BRG_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the BRG Review. BRG Comments or Recommendations are required if an BRG Review Date is entered. --></help>
+        <label><!-- EBC - BRG Recommendations --></label>
+        <name>BRG_Recommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the BRG Review. BRG Comments or Recommendations are required if an IRB Review Date is enteredEither select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- EBC - BRG Review Date --></label>
+        <name>BRG_Review_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from CFO Review.This is required if a CFO Review date is entered. The CFO Review is part of the Quality Review process --></help>
+        <label><!-- EBC - CFO Comments --></label>
+        <name>CFO_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the CFO Review. This is required if a CFO comment is entered. Either select from the Date Picker or key in the date directly into the fields. The format is MM/DD/YYYY --></help>
+        <label><!-- EBC - CFO Review Date --></label>
+        <name>CFO_Review_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines if Part - I of the EBC, i.e. the Concept Phase has been approved or not --></help>
+        <label><!-- Concept Approved? --></label>
+        <name>ConceptApproved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from BRG Review.  BRG Comments or Recommendations are required if a BRG Review Date is entered. The BRG Review is part of the Governance Review process. --></help>
+        <label><!-- Concept - BRG Comments --></label>
+        <name>ConceptBRGComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the BRG Review. BRG Comments or Recommendations are required if an BRG Review Date is entered. --></help>
+        <label><!-- Concept - BRG Recommendations --></label>
+        <name>ConceptBRGRecommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the BRG Review. BRG Comments or Recommendations are required if an IRB Review Date is enteredEither select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- Concept - BRG Review Date --></label>
+        <name>ConceptBRGReviewDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from CFO Review. This is required if a CFO Review date is entered. The CFO Review is part of the Quality Review process --></help>
+        <label><!-- Concept - CFO Comments --></label>
+        <name>ConceptCFOComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the CFO Review of the concept. This is required if a CFO comment is entered. Either select from the Date Picker or key in the date directly into the fields. The format is MM/DD/YYYY --></help>
+        <label><!-- Concept - CFO Review Date --></label>
+        <name>ConceptCFOReviewDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from System Architecture Review. GSA IT Comments or Recommendations are required if GSA IT Review Date is entered. The GSA IT Review is part of the Internal Review process. --></help>
+        <label><!-- Concept - GSA IT Comments --></label>
+        <name>ConceptGSAITComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the GSA IT Review. GSA IT Comments or Recommendations are required if GSA IT Review Date is entered. --></help>
+        <label><!-- Concept - GSA IT Recommendations --></label>
+        <name>ConceptGSAITRecommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the System Architecture Review. This is required if SA Comments or Recommendations are entered. Either select from the Date Picker or key in the date directly into the fields. The format is MM/DD/YYYY --></help>
+        <label><!-- Concept - GSA IT Review Completed Date --></label>
+        <name>ConceptGSAITReviewCompletedDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the highest review required for this Concept Phase; it will be either CFO, BRG, PAB or IRB --></help>
+        <label><!-- Concept - Highest Review --></label>
+        <name>ConceptHighestReview__c</name>
+        <picklistValues>
+            <masterLabel>BRG</masterLabel>
+            <translation><!-- BRG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO</masterLabel>
+            <translation><!-- CFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IRB</masterLabel>
+            <translation><!-- IRB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAB</masterLabel>
+            <translation><!-- PAB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from IRB Review. IRB Comments or Recommendations are required if an IRB Review Date is entered. The IRB Review is part of the Governance Review process. --></help>
+        <label><!-- Concept - IRB Comments --></label>
+        <name>ConceptIRBComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the IRB Review. IRB Comments or Recommendations are required if an IRB Review Date is entered. --></help>
+        <label><!-- Concept - IRB Recommendations --></label>
+        <name>ConceptIRBRecommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the IRB Review. This is required if IRB Comments or Recommendations are entered. Either select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- Concept - IRB Review Date --></label>
+        <name>ConceptIRBReviewDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from PAB Review.  PAB Comments or Recommendations are required if a PAB Review Date is entered. The PAB Review is part of the Governance Review process --></help>
+        <label><!-- Concept - PAB Comments --></label>
+        <name>ConceptPABComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the PAB Review. PAB Comments or Recommendations are required if a PAB Review Date is entered. The PAB Review is part of the Governance Review process. --></help>
+        <label><!-- Concept - PAB Recommendations --></label>
+        <name>ConceptPABRecommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the PAB Review. IRB Comments or Recommendations are required if an IRB Review Date is enteredEither select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- Concept - PAB Review Date --></label>
+        <name>ConceptPABReviewDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether or not this EBC was converted from a request from Project 360 app. --></help>
+        <label><!-- Converted From Request --></label>
+        <name>ConvertedFromRequest__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a description for this Executive Business Case --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from Enterprise Architecture Review. EARC Comments or Recommendations are required if an EARC Review Date is entered. The EARC Review is part of the Internal Review process --></help>
+        <label><!-- EBC - EARC Comments --></label>
+        <name>EA_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the EARC Review. EARC Comments or Recommendations are required if an EARC Review Date is entered --></help>
+        <label><!-- EBC - EARC Recommendations --></label>
+        <name>EA_Recommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the Enterprise Architecture Review. This is required if EA Comments or Recommendations are entered. Either select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- EBC - EARC Review Completed Date --></label>
+        <name>EA_Review_Completed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- First select the User Type and then the User name then enter the name of the Executive Sponsor or their Delegate, for this Executive Business Case. You can enter the name in directly or use the lookup feature to search for and then select the name --></help>
+        <label><!-- Executive Sponsor/Delegate --></label>
+        <name>Executive_Sponsor_Delegate__c</name>
+        <relationshipLabel><!-- Executive Business Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Choose &apos;Attached&apos; only when Part-II of the EBC Request Template is completed and uploaded to this EBC --></help>
+        <label><!-- EBC Attachment Status --></label>
+        <name>File_Attached__c</name>
+        <picklistValues>
+            <masterLabel>Attached</masterLabel>
+            <translation><!-- Attached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Attached</masterLabel>
+            <translation><!-- Not Attached --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the base Fiscal Year for this Business Case --></help>
+        <label><!-- Fiscal Year --></label>
+        <name>Fiscal_Year__c</name>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019</masterLabel>
+            <translation><!-- 2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- As a CFO Approver, you should enter the amount for first fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount funded for 2016 --></help>
+        <label><!-- Funded Amount 1st Fiscal Year --></label>
+        <name>Funded_Amount_1st_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a CFO Approver, you should enter the amount for second fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount funded for 2017 --></help>
+        <label><!-- Funded Amount 2nd Fiscal Year --></label>
+        <name>Funded_Amount_2nd_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a CFO Approver, you should enter the amount for third fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount funded for 2018 --></help>
+        <label><!-- Funded Amount 3rd Fiscal Year --></label>
+        <name>Funded_Amount_3rd_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a CFO Approver, you should enter the amount for fourth fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount funded for 2019 --></help>
+        <label><!-- Funded Amount 4th Fiscal Year --></label>
+        <name>Funded_Amount_4th_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a CFO Approver, you should enter the amount for fifth fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount funded for 2020 --></help>
+        <label><!-- Funded Amount 5th Fiscal Year --></label>
+        <name>Funded_Amount_5th_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Funded Total Amount 5 Years --></label>
+        <name>Funded_Total_Amount_5_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Funding Comments --></label>
+        <name>Funding_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the highest review required for this EBC Phase; it will be either CFO, BRG, PAB or IRB --></help>
+        <label><!-- EBC - Highest Review --></label>
+        <name>Highest_Review__c</name>
+        <picklistValues>
+            <masterLabel>BRG</masterLabel>
+            <translation><!-- BRG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFO</masterLabel>
+            <translation><!-- CFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IRB</masterLabel>
+            <translation><!-- IRB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAB</masterLabel>
+            <translation><!-- PAB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from IRB Review. IRB Comments or Recommendations are required if an IRB Review Date is entered. The IRB Review is part of the Governance Review process. --></help>
+        <label><!-- EBC - IRB Comments --></label>
+        <name>IRB_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to record the Prioritization Score from the IRB Review --></help>
+        <label><!-- EBC - IRB Priority Score --></label>
+        <name>IRB_Priority_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the IRB Review. IRB Comments or Recommendations are required if an IRB Review Date is entered. --></help>
+        <label><!-- EBC - IRB Recommendations --></label>
+        <name>IRB_Recommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the IRB Review. This is required if IRB Comments or Recommendations are entered. Either select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- EBC - IRB Review Date --></label>
+        <name>IRB_Review_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will indicate if an IRB Review is required. --></help>
+        <label><!-- EBC - IRB Review Needed --></label>
+        <name>IRB_Review_Needed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Files are to be attached via the Chatter feed, NOT the &quot;Upload Files&quot; option at the bottom of the page. --></help>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose an Investment name related to the Amendment or Major Enhancement --></help>
+        <label><!-- Original EBC --></label>
+        <name>Investment_Name__c</name>
+        <relationshipLabel><!-- Amendments/Major Enhancements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Choose &apos;Attached&apos; only when Part-I of the EBC Request Template is completed and uploaded to this EBC. --></help>
+        <label><!-- Concept Attachment Status --></label>
+        <name>Is_Concept_Attached__c</name>
+        <picklistValues>
+            <masterLabel>Attached</masterLabel>
+            <translation><!-- Attached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Attached</masterLabel>
+            <translation><!-- Not Attached --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- &quot;A major investment requires special management attention because of the initiative’s importance to agency mission&quot;. --></help>
+        <label><!-- Is this an existing CPIC investment? --></label>
+        <name>Is_it_a_Major_Investment__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Existing IT Investments --></label>
+        <name>Major_IT_Investments__c</name>
+        <picklistValues>
+            <masterLabel>Acquisition Gateway</masterLabel>
+            <translation><!-- Acquisition Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analytics Service Platform</masterLabel>
+            <translation><!-- Analytics Service Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisted Services Shared Information SysTem (ASSIST)</masterLabel>
+            <translation><!-- Assisted Services Shared Information SysTem (ASSIST) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Writing System (CWS)</masterLabel>
+            <translation><!-- Contract Writing System (CWS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D2D</masterLabel>
+            <translation><!-- D2D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal PKI Bridge</masterLabel>
+            <translation><!-- Federal PKI Bridge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Real Property Asset Management</masterLabel>
+            <translation><!-- Federal Real Property Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Supply Service 19 (FSS-19)</masterLabel>
+            <translation><!-- Federal Supply Service 19 (FSS-19) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSA Advantage</masterLabel>
+            <translation><!-- GSA Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSA Conexus</masterLabel>
+            <translation><!-- GSA Conexus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSA Real Estate Exchange (G-REX)</masterLabel>
+            <translation><!-- GSA Real Estate Exchange (G-REX) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Capital Information Technology Services</masterLabel>
+            <translation><!-- Human Capital Information Technology Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Award Environment (IAE)</masterLabel>
+            <translation><!-- Integrated Award Environment (IAE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Hosting Center (NHC)</masterLabel>
+            <translation><!-- Network Hosting Center (NHC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Services Ordering &amp; Billing System (NSOBS)</masterLabel>
+            <translation><!-- Network Services Ordering &amp; Billing System (NSOBS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Management Service (OMS)</masterLabel>
+            <translation><!-- Order Management Service (OMS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Across the US (REXUS)</masterLabel>
+            <translation><!-- Real Estate Across the US (REXUS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulatory Information Service Center (ROCIS II)</masterLabel>
+            <translation><!-- Regulatory Information Service Center (ROCIS II) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>cloud.gov</masterLabel>
+            <translation><!-- cloud.gov --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>consumer identity platform</masterLabel>
+            <translation><!-- consumer identity platform --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Classification Help --></label>
+        <name>Non_IT_IT_Help__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to designate whether this Executive Business Case will require the IT related reviews --></help>
+        <label><!-- Request Classification --></label>
+        <name>Non_IT_IT__c</name>
+        <picklistValues>
+            <masterLabel>Both IT and Non-IT</masterLabel>
+            <translation><!-- Both IT and Non-IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-IT</masterLabel>
+            <translation><!-- Non-IT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- OrgID --></label>
+        <name>OrgID__c</name>
+    </fields>
+    <fields>
+        <help><!-- EBC&apos;s prior to FY 16 will not be in the original EBC list. Please write in the Original EBC --></help>
+        <label><!-- Other EBC --></label>
+        <name>Other_EBC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from PAB Review.  PAB Comments or Recommendations are required if a PAB Review Date is entered. The PAB Review is part of the Governance Review process --></help>
+        <label><!-- EBC - PAB Comments --></label>
+        <name>PAB_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to record the Prioritization Score from the PAB Review --></help>
+        <label><!-- EBC - PAB Priority Score --></label>
+        <name>PAB_Priority_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the PAB Review. PAB Comments or Recommendations are required if a PAB Review Date is entered. The PAB Review is part of the Governance Review process. --></help>
+        <label><!-- EBC - PAB Recommendations --></label>
+        <name>PAB_Recommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the PAB Review. IRB Comments or Recommendations are required if an IRB Review Date is enteredEither select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- EBC - PAB Review Date --></label>
+        <name>PAB_Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase --></label>
+        <name>Phase__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Service of Staff Office (SSO) for this Business Case --></help>
+        <label><!-- Service of Staff Office (SSO) --></label>
+        <name>Portfolio__c</name>
+        <picklistValues>
+            <masterLabel>A - Office of the Administrator</masterLabel>
+            <translation><!-- A - Office of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK - Office of Civil Rights</masterLabel>
+            <translation><!-- AK - Office of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B - Office of the Chief Financial Officer</masterLabel>
+            <translation><!-- B - Office of the Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C - Office of the Human Resource Management</masterLabel>
+            <translation><!-- C - Office of the Human Resource Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D - Office of Mission Assurance</masterLabel>
+            <translation><!-- D - Office of Mission Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E - Office of Small Business Utilization</masterLabel>
+            <translation><!-- E - Office of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G - Civilian Board of Contract Appeals</masterLabel>
+            <translation><!-- G - Civilian Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H - Office of Administrative Services</masterLabel>
+            <translation><!-- H - Office of Administrative Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I - Office of the Chief Information Officer (GSA IT)</masterLabel>
+            <translation><!-- I - Office of the Chief Information Officer (GSA IT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J - Office of the Inspector General</masterLabel>
+            <translation><!-- J - Office of the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L - Office of the General Counsel</masterLabel>
+            <translation><!-- L - Office of the General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M - Office of Governmentwide Policy</masterLabel>
+            <translation><!-- M - Office of Governmentwide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P - Public Buildings Service</masterLabel>
+            <translation><!-- P - Public Buildings Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q - Federal Acquisition Service</masterLabel>
+            <translation><!-- Q - Federal Acquisition Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S - Office of Congressional &amp; Intergovernental Affairs</masterLabel>
+            <translation><!-- S - Office of Congressional &amp; Intergovernental Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T - Technology Transformation Service</masterLabel>
+            <translation><!-- T - Technology Transformation Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z - Office of Strategic Communications</masterLabel>
+            <translation><!-- Z - Office of Strategic Communications --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the Program or Business Line for this Executive Business Case --></help>
+        <label><!-- Program/Business Line --></label>
+        <name>Program_Business_Line__c</name>
+        <picklistValues>
+            <masterLabel>(B) - Chief Financial Officer</masterLabel>
+            <translation><!-- (B) - Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(BB) - Office of Budget</masterLabel>
+            <translation><!-- (BB) - Office of Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(BE) - Office of Strategic Planning &amp; Performance Mgmt</masterLabel>
+            <translation><!-- (BE) - Office of Strategic Planning &amp; Performance Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(BG) - Office of Financial Management</masterLabel>
+            <translation><!-- (BG) - Office of Financial Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(BI) - Office of Business and Financial Analytics</masterLabel>
+            <translation><!-- (BI) - Office of Business and Financial Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(BR) - Office of Regional Financial Services</masterLabel>
+            <translation><!-- (BR) - Office of Regional Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(C) - Office of the Chief Human Capital Officer</masterLabel>
+            <translation><!-- (C) - Office of the Chief Human Capital Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(CA) - Account Management</masterLabel>
+            <translation><!-- (CA) - Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(CN) - Management &amp; Performance Improvement</masterLabel>
+            <translation><!-- (CN) - Management &amp; Performance Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(CS) - Office of HR Strategy &amp; Services</masterLabel>
+            <translation><!-- (CS) - Office of HR Strategy &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(D) - Office of Mission Assurance (Front Office)</masterLabel>
+            <translation><!-- (D) - Office of Mission Assurance (Front Office) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(DE) - Office of Mission Assurance - East Region</masterLabel>
+            <translation><!-- (DE) - Office of Mission Assurance - East Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(DP) - Office of Policy and Plans</masterLabel>
+            <translation><!-- (DP) - Office of Policy and Plans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(DS) - Office of the Chief Security Officer</masterLabel>
+            <translation><!-- (DS) - Office of the Chief Security Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(DW) - Office of Mission Assurance - West Region</masterLabel>
+            <translation><!-- (DW) - Office of Mission Assurance - West Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(DX) - Operations Division</masterLabel>
+            <translation><!-- (DX) - Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(H) - Immediate OAS</masterLabel>
+            <translation><!-- (H) - Immediate OAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(HA) - Executive Secretariat/Forms &amp; Directives</masterLabel>
+            <translation><!-- (HA) - Executive Secretariat/Forms &amp; Directives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(HC) - FOIA</masterLabel>
+            <translation><!-- (HC) - FOIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(HC) - IG/GAO Audit</masterLabel>
+            <translation><!-- (HC) - IG/GAO Audit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(HC) - Records Mgt</masterLabel>
+            <translation><!-- (HC) - Records Mgt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(HD) - Travel &amp; Purchase Card Mgt</masterLabel>
+            <translation><!-- (HD) - Travel &amp; Purchase Card Mgt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(HE) - Internal Acquisition Division</masterLabel>
+            <translation><!-- (HE) - Internal Acquisition Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(HF) - Internal Workplace Division</masterLabel>
+            <translation><!-- (HF) - Internal Workplace Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IA) - Office of Government-wide and Enterprise Solutions</masterLabel>
+            <translation><!-- (IA) - Office of Government-wide and Enterprise Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IB) - Office of Financial and HR IT Services</masterLabel>
+            <translation><!-- (IB) - Office of Financial and HR IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IC) - Office of Corporate IT Services</masterLabel>
+            <translation><!-- (IC) - Office of Corporate IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(ID) - Deputy Chief Information Officer</masterLabel>
+            <translation><!-- (ID) - Deputy Chief Information Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IE) - Office of Enterprise Planning &amp; Governance</masterLabel>
+            <translation><!-- (IE) - Office of Enterprise Planning &amp; Governance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IG) - Digital Services Division</masterLabel>
+            <translation><!-- (IG) - Digital Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IH) - Solutions Strategy Division</masterLabel>
+            <translation><!-- (IH) - Solutions Strategy Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IM) - Management Services Division</masterLabel>
+            <translation><!-- (IM) - Management Services Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IO) - Office of Enterprise Infrastructure Operations</masterLabel>
+            <translation><!-- (IO) - Office of Enterprise Infrastructure Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IP) - Office of PBS IT Services</masterLabel>
+            <translation><!-- (IP) - Office of PBS IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IQ) - Office of Acquisition IT Services</masterLabel>
+            <translation><!-- (IQ) - Office of Acquisition IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(IS) - Office of the Chief Information Security Officer</masterLabel>
+            <translation><!-- (IS) - Office of the Chief Information Security Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R00) Central Office</masterLabel>
+            <translation><!-- (R00) Central Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R01) New England</masterLabel>
+            <translation><!-- (R01) New England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R02) Northeast and Caribbean</masterLabel>
+            <translation><!-- (R02) Northeast and Caribbean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R03) Mid-Atlantic</masterLabel>
+            <translation><!-- (R03) Mid-Atlantic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R04) Southeast Sunbelt</masterLabel>
+            <translation><!-- (R04) Southeast Sunbelt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R05) Great Lakes</masterLabel>
+            <translation><!-- (R05) Great Lakes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R06) Heartland</masterLabel>
+            <translation><!-- (R06) Heartland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R07) Greater Southwest</masterLabel>
+            <translation><!-- (R07) Greater Southwest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R08) Rocky Mountain</masterLabel>
+            <translation><!-- (R08) Rocky Mountain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R09) Pacific Rim</masterLabel>
+            <translation><!-- (R09) Pacific Rim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R10) Northwest/Arctic</masterLabel>
+            <translation><!-- (R10) Northwest/Arctic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(R11) National Capital</masterLabel>
+            <translation><!-- (R11) National Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(X) - Associate Administrator &amp; Staff</masterLabel>
+            <translation><!-- (X) - Associate Administrator &amp; Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(XA) - OCSIT</masterLabel>
+            <translation><!-- (XA) - OCSIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(XAA) - Office of Innovative Technologies</masterLabel>
+            <translation><!-- (XAA) - Office of Innovative Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(XAB) - Office of Business Management</masterLabel>
+            <translation><!-- (XAB) - Office of Business Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(XAC) - Federal Citizen Information Center</masterLabel>
+            <translation><!-- (XAC) - Federal Citizen Information Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(XC) - Office of Customer Experience</masterLabel>
+            <translation><!-- (XC) - Office of Customer Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(XO) - Ecpic</masterLabel>
+            <translation><!-- (XO) - Ecpic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18F</masterLabel>
+            <translation><!-- 18F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A - Office of the Administrator</masterLabel>
+            <translation><!-- A - Office of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK - Office of Civil Rights</masterLabel>
+            <translation><!-- AK - Office of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisted Acquisition Services</masterLabel>
+            <translation><!-- Assisted Acquisition Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Common Acquisition Platform</masterLabel>
+            <translation><!-- Common Acquisition Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E - Office of Small Business Utilization</masterLabel>
+            <translation><!-- E - Office of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G - Civilian Board of Contract Appeals</masterLabel>
+            <translation><!-- G - Civilian Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Supplies and Services</masterLabel>
+            <translation><!-- General Supplies and Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Award Environment</masterLabel>
+            <translation><!-- Integrated Award Environment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Technology Services</masterLabel>
+            <translation><!-- Integrated Technology Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J - Office of the Inspector General</masterLabel>
+            <translation><!-- J - Office of the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L - Office of the General Counsel</masterLabel>
+            <translation><!-- L - Office of the General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M - Office of Governmentwide Policy</masterLabel>
+            <translation><!-- M - Office of Governmentwide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Acquisition Management</masterLabel>
+            <translation><!-- Office of Acquisition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Customer Accounts and Research</masterLabel>
+            <translation><!-- Office of Customer Accounts and Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Strategy Management</masterLabel>
+            <translation><!-- Office of Strategy Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Commissioner</masterLabel>
+            <translation><!-- Office of the Commissioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC - Office of Customer and Stakeholder Engagement (CASE)</masterLabel>
+            <translation><!-- QC - Office of Customer and Stakeholder Engagement (CASE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QD - Office of Systems Management (OSM)</masterLabel>
+            <translation><!-- QD - Office of Systems Management (OSM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QF - Office of Assisted Acquisition Services (AAS)</masterLabel>
+            <translation><!-- QF - Office of Assisted Acquisition Services (AAS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QM - Office of Travel, Transportation and Logistics Categories (TTL)</masterLabel>
+            <translation><!-- QM - Office of Travel, Transportation and Logistics Categories (TTL) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QP - Office of Enterprise Strategy Management (OESM)</masterLabel>
+            <translation><!-- QP - Office of Enterprise Strategy Management (OESM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QR - Office of Professional Services and Human Capital Categories (PSHC)</masterLabel>
+            <translation><!-- QR - Office of Professional Services and Human Capital Categories (PSHC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS - Office of General Supplies and Services Categories (GS&amp;S)</masterLabel>
+            <translation><!-- QS - Office of General Supplies and Services Categories (GS&amp;S) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT - Office of Information Technology Category (ITC)</masterLabel>
+            <translation><!-- QT - Office of Information Technology Category (ITC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QV - Office of Policy and Compliance (OPC)</masterLabel>
+            <translation><!-- QV - Office of Policy and Compliance (OPC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Acquisition Operations</masterLabel>
+            <translation><!-- Regional Acquisition Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Commissioners</masterLabel>
+            <translation><!-- Regional Commissioners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S - Office of Congressional &amp; Intergovernental Affairs</masterLabel>
+            <translation><!-- S - Office of Congressional &amp; Intergovernental Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA - Office of Products &amp; Programs</masterLabel>
+            <translation><!-- TA - Office of Products &amp; Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TB - Office of Investment</masterLabel>
+            <translation><!-- TB - Office of Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC - Office of Acquisition</masterLabel>
+            <translation><!-- TC - Office of Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TD - Office of Presidential Innovation Fellows</masterLabel>
+            <translation><!-- TD - Office of Presidential Innovation Fellows --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TE - Office of 18F</masterLabel>
+            <translation><!-- TE - Office of 18F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTS - Cloud.gov</masterLabel>
+            <translation><!-- TTS - Cloud.gov --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTS - Front Office</masterLabel>
+            <translation><!-- TTS - Front Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTS - Login.gov</masterLabel>
+            <translation><!-- TTS - Login.gov --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel, Motor Vehicles, and Card Services</masterLabel>
+            <translation><!-- Travel, Motor Vehicles, and Card Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z - Office of Communications and Marketing</masterLabel>
+            <translation><!-- Z - Office of Communications and Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZA - Corporate Communications Division</masterLabel>
+            <translation><!-- ZA - Corporate Communications Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZB - Regional Communication and Media Affairs Division</masterLabel>
+            <translation><!-- ZB - Regional Communication and Media Affairs Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZC - Public Engagement/ Speechwriting Division</masterLabel>
+            <translation><!-- ZC - Public Engagement/ Speechwriting Division --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the planned end date of the Executive Business Case. Either select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- Project End Date --></label>
+        <name>Project_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The project name should be the same Title as the attached EBC or Amendment document. --></help>
+        <label><!-- Project Name Help --></label>
+        <name>Project_Name_Help__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the planned start date of the Executive Business Case. Either select from the Date Picker or key in the date directly into the fields, The format is MM/DD/YYYY --></help>
+        <label><!-- Project Start Date --></label>
+        <name>Project_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Project in Project 360 app --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Executive Business Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Specify the type of the request, the drop down list will provide available values. For Amendments: &quot;Please include the additional amount requested, not the total amount after the adjustment. If you are requesting an additional $25k, just note the $25k&quot; --></help>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amendment</masterLabel>
+            <translation><!-- Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Enhancement</masterLabel>
+            <translation><!-- Major Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Investment (EBC)</masterLabel>
+            <translation><!-- New Investment (EBC) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- As an EBC Requestor, please include $0.00 for requested amount when submitting Part I: Concept Request. Please include five year requested amounts when submitting Part II: EBC Template. --></help>
+        <label><!-- Requested Amount 1st Fiscal Year --></label>
+        <name>Requested_Amount_1st_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a EBC Requestor, you should enter the amount requested for second fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount requested for 2017 --></help>
+        <label><!-- Requested Amount 2nd Fiscal Year --></label>
+        <name>Requested_Amount_2nd_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a EBC Requestor, you should enter the amount requested for third fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount requested for 2018 --></help>
+        <label><!-- Requested Amount 3rd Fiscal Year --></label>
+        <name>Requested_Amount_3rd_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a EBC Requestor, you should enter the amount requested for fourth fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount requested for 2019 --></help>
+        <label><!-- Requested Amount 4th Fiscal Year --></label>
+        <name>Requested_Amount_4th_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- As a EBC Requestor, you should enter the amount requested for fifth fiscal year of the approval period. For example if your stated Fiscal Year is 2016, then this field should hold the amount requested for 2020 --></help>
+        <label><!-- Requested Amount 5th Fiscal Year --></label>
+        <name>Requested_Amount_5th_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Requested Amount --></label>
+        <name>Requested_Total_Amount_5_Years__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Comments from System Architecture Review. GSA IT Comments or Recommendations are required if GSA IT Review Date is entered. The GSA IT Review is part of the Internal Review process. --></help>
+        <label><!-- EBC - GSA IT Comments --></label>
+        <name>SA_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record the recommendations made in the GSA IT Review. GSA IT Comments or Recommendations are required if GSA IT Review Date is entered. --></help>
+        <label><!-- EBC - GSA IT Recommendations --></label>
+        <name>SA_Recommendations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate this field with the date of the System Architecture Review. This is required if SA Comments or Recommendations are entered. Either select from the Date Picker or key in the date directly into the fields. The format is MM/DD/YYYY --></help>
+        <label><!-- EBC - GSA IT Review Completed Date --></label>
+        <name>SA_Review_Completed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Key Stakeholders impacted. The list box will provide valid values --></help>
+        <label><!-- Key Stakeholders Impacted --></label>
+        <name>Service_or_Staff_Office_SSO__c</name>
+        <picklistValues>
+            <masterLabel>A - Office of the Administrator</masterLabel>
+            <translation><!-- A - Office of the Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK - Office of Civil Rights</masterLabel>
+            <translation><!-- AK - Office of Civil Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B - Office of Chief Financial Officer</masterLabel>
+            <translation><!-- B - Office of Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C - Office of Human Resource Management</masterLabel>
+            <translation><!-- C - Office of Human Resource Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D - Office of Mission Assurance</masterLabel>
+            <translation><!-- D - Office of Mission Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E - Office of Small Business Utilization</masterLabel>
+            <translation><!-- E - Office of Small Business Utilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G - Civilian Board of Contract Appeals</masterLabel>
+            <translation><!-- G - Civilian Board of Contract Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H - Office of Administrative Services</masterLabel>
+            <translation><!-- H - Office of Administrative Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I - Office of the Chief Information Officer (GSA IT)</masterLabel>
+            <translation><!-- I - Office of the Chief Information Officer (GSA IT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J - Office of the Inspector General</masterLabel>
+            <translation><!-- J - Office of the Inspector General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L - Office of the General Counsel</masterLabel>
+            <translation><!-- L - Office of the General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M - Office of Governmentwide Policy</masterLabel>
+            <translation><!-- M - Office of Governmentwide Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P - Public Buildings Service</masterLabel>
+            <translation><!-- P - Public Buildings Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q - Federal Acquisition Service</masterLabel>
+            <translation><!-- Q - Federal Acquisition Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S - Office of Congressional and Intergovernmental Affairs</masterLabel>
+            <translation><!-- S - Office of Congressional and Intergovernmental Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T - Technology Transformation Service</masterLabel>
+            <translation><!-- T - Technology Transformation Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z - Office of Strategic Communications</masterLabel>
+            <translation><!-- Z - Office of Strategic Communications --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>BRG Review</masterLabel>
+            <translation><!-- BRG Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EBC</masterLabel>
+            <translation><!-- EBC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Sponsor Review</masterLabel>
+            <translation><!-- Executive Sponsor Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funding Approval</masterLabel>
+            <translation><!-- Funding Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Governance Review</masterLabel>
+            <translation><!-- Governance Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IRB Review</masterLabel>
+            <translation><!-- IRB Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Review</masterLabel>
+            <translation><!-- Internal Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAB Review</masterLabel>
+            <translation><!-- PAB Review --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total Funded Amount of all Amendments/Enhancements. --></help>
+        <label><!-- Total Fund Amt of Amendment/Enhancements --></label>
+        <name>Total_Fund_Amt_of_Amendment_Enhancements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Project Cost --></label>
+        <name>Total_Project_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Requested Amount of all Amendments/Enhancements. --></help>
+        <label><!-- Total Req Amt of Amendments/Enhancements --></label>
+        <name>Total_Req_Amt_of_Amendments_Enhancements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracker --></label>
+        <name>Tracker__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the type of funding allocated, the list box will contain your valid values --></help>
+        <label><!-- Type of Funding Allocated --></label>
+        <name>Type_of_Funding_Allocated__c</name>
+        <picklistValues>
+            <masterLabel>Fully Funded</masterLabel>
+            <translation><!-- Fully Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Funded</masterLabel>
+            <translation><!-- Not Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Funded</masterLabel>
+            <translation><!-- Partially Funded --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>CFO Page Layout</layout>
+        <sections>
+            <label><!-- Abstract --></label>
+            <section>Abstract</section>
+        </sections>
+        <sections>
+            <label><!-- Approval Process --></label>
+            <section>Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- BRG Review --></label>
+            <section>BRG Review</section>
+        </sections>
+        <sections>
+            <label><!-- CFO Funding Approval --></label>
+            <section>CFO Funding Approval</section>
+        </sections>
+        <sections>
+            <label><!-- CFO Quality Review --></label>
+            <section>CFO Quality Review</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Governance and Technical Review --></label>
+            <section>Governance and Technical Review</section>
+        </sections>
+        <sections>
+            <label><!-- IRB Review --></label>
+            <section>IRB Review</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- PAB Review --></label>
+            <section>PAB Review</section>
+        </sections>
+        <sections>
+            <label><!-- Project Information (if applicable) --></label>
+            <section>Project Information (if applicable)</section>
+        </sections>
+        <sections>
+            <label><!-- Request Information --></label>
+            <section>Request Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Concept Initial Layout</layout>
+        <sections>
+            <label><!-- Abstract --></label>
+            <section>Abstract</section>
+        </sections>
+        <sections>
+            <label><!-- Approval Process --></label>
+            <section>Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Project Information (if applicable) --></label>
+            <section>Project Information (if applicable)</section>
+        </sections>
+        <sections>
+            <label><!-- Request Information --></label>
+            <section>Request Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Concept Review Layout</layout>
+        <sections>
+            <label><!-- Abstract --></label>
+            <section>Abstract</section>
+        </sections>
+        <sections>
+            <label><!-- Approval Process --></label>
+            <section>Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- BRG Review --></label>
+            <section>BRG Review</section>
+        </sections>
+        <sections>
+            <label><!-- CFO Quality Review --></label>
+            <section>CFO Quality Review</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Governance and Technical Review --></label>
+            <section>Governance and Technical Review</section>
+        </sections>
+        <sections>
+            <label><!-- IRB Review --></label>
+            <section>IRB Review</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- PAB Review --></label>
+            <section>PAB Review</section>
+        </sections>
+        <sections>
+            <label><!-- Project Information (if applicable) --></label>
+            <section>Project Information (if applicable)</section>
+        </sections>
+        <sections>
+            <label><!-- Request Information --></label>
+            <section>Request Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Initial Request Page Layout</layout>
+        <sections>
+            <label><!-- Abstract --></label>
+            <section>Abstract</section>
+        </sections>
+        <sections>
+            <label><!-- Approval History --></label>
+            <section>Approval History</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Project Information --></label>
+            <section>Project Information</section>
+        </sections>
+        <sections>
+            <label><!-- Request Information --></label>
+            <section>Request Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Planning and Governance Page Layout</layout>
+        <sections>
+            <label><!-- Abstract --></label>
+            <section>Abstract</section>
+        </sections>
+        <sections>
+            <label><!-- Approval Process --></label>
+            <section>Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- BRG Review --></label>
+            <section>BRG Review</section>
+        </sections>
+        <sections>
+            <label><!-- CFO Quality Review --></label>
+            <section>CFO Quality Review</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Governance and Technical Review --></label>
+            <section>Governance and Technical Review</section>
+        </sections>
+        <sections>
+            <label><!-- IRB Review --></label>
+            <section>IRB Review</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- PAB Review --></label>
+            <section>PAB Review</section>
+        </sections>
+        <sections>
+            <label><!-- Project Information (if applicable) --></label>
+            <section>Project Information (if applicable)</section>
+        </sections>
+        <sections>
+            <label><!-- Request Information --></label>
+            <section>Request Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Concept Initial --></label>
+        <name>Concept_Initial</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Concept Review --></label>
+        <name>Concept_Review</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EBC CFO Record Type --></label>
+        <name>EBC_CFO_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EBC Initial Request --></label>
+        <name>EBC_Initial_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EBC Planning and Governance --></label>
+        <name>EBC_Planning_and_Governance</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Do not enter an Original EBC or Other EBC when the Request Type is New Investment (EBC) --></errorMessage>
+        <name>Cannot_have_Parent_Investment_Name</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter CFO Comments --></errorMessage>
+        <name>Comments_needed_CFO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter either EARC Comments or EARC Recommendations --></errorMessage>
+        <name>Comments_or_Recommendations_needed_EA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter either IRB Comments or IRB Recommendations --></errorMessage>
+        <name>Comments_or_Recommendations_needed_IRB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter either PAB Comments or PAB Recommendations --></errorMessage>
+        <name>Comments_or_Recommendations_needed_PAB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter either GSA IT Comments or GSA IT Recommendations --></errorMessage>
+        <name>Comments_or_Recommendations_needed_SA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- EA or SA Review Dates must be populated --></errorMessage>
+        <name>EA_or_SA_required_if_request_is_IT_clone</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter CFO Comments --></errorMessage>
+        <name>EBCConceptCommentsNeededCFO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter either GSA IT Comments or GSA IT Recommendations --></errorMessage>
+        <name>EBCConceptCommentsOrRecommendNeededGSAIT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date CFO Review was completed --></errorMessage>
+        <name>EBCConceptReviewDateNeededCFO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date GSA IT Review was completed --></errorMessage>
+        <name>EBCConceptReviewDateNeededGSAIT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date IRB Review was completed --></errorMessage>
+        <name>EBCConceptReviewDateNeededIRB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date PAB Review was completed --></errorMessage>
+        <name>EBCConceptReviewDateNeededPAB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Select upto 3 Major IT Investments --></errorMessage>
+        <name>EBC_Choose_Major_IT_Investment</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Choose an Original EBC or Other EBC when Request type is Amendment or Major Enhancement --></errorMessage>
+        <name>EBC_Investment_name_Amendments_ME</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Major IT Investment cannot be blank when Is it a Major Investment is &quot;Yes&quot;. --></errorMessage>
+        <name>EBC_Is_it_Major_IT_Investment_Yes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have selected Partially Funded, please correct Funded Amounts as they should be less than Total Requested Amount --></errorMessage>
+        <name>Funded_Amount_less_than_Requested_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have selected Not Funded, please do not provide amounts for the Funded Fiscal Years fields --></errorMessage>
+        <name>Not_Funded_should_have_no_funded_amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter priority score between 0 and 100 --></errorMessage>
+        <name>Priority_Score_for_IRB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter priority score between 0 and 100 --></errorMessage>
+        <name>Priority_Score_for_PAB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Project Start Date must begin before the Project End Date --></errorMessage>
+        <name>Project_Start_Date_before_End_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Requested Amount Fiscal Years cannot be negative, value must be greater than or equal to 0 --></errorMessage>
+        <name>Requested_Amount_greater_than_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- As a requester of this business case, you cannot choose yourself as the Executive Sponsor. --></errorMessage>
+        <name>Requester_cannot_be_Executive_Sponsor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date CFO review was completed --></errorMessage>
+        <name>Review_Date_needed_CFO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date EA review was completed --></errorMessage>
+        <name>Review_Date_needed_EA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date IRB review was completed --></errorMessage>
+        <name>Review_Date_needed_IRB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date PAB review was completed --></errorMessage>
+        <name>Review_Date_needed_PAB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date SA review was completed --></errorMessage>
+        <name>Review_Date_needed_SA</name>
+    </validationRules>
+</CustomObjectTranslation>

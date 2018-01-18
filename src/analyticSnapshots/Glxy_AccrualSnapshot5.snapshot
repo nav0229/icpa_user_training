@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Load the Galaxy Step Rent Accrual Data.</description>
+    <mappings>
+        <sourceField>Glxy_StepRent__c.AccrualAmountCurrentFY__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.Amount__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>BucketField_5848691</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.DataCategory__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>Glxy_StepRent__c.PaymentID__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.DataPaymentID__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>CHILD_ID</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.DataRecordID__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>CUST_ID</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.Lease__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>Glxy_Lease__c.RegionCD__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Glxy_Accrual__c.Region__c</targetField>
+    </mappings>
+    <name>Galaxy Accrual Snapshot 5</name>
+    <runningUser>nkasala@gsa.gov</runningUser>
+    <sourceReport>Galaxy_Reports/glxy_AccrualsStepRent</sourceReport>
+    <targetObject>Glxy_Accrual__c</targetObject>
+</AnalyticSnapshot>

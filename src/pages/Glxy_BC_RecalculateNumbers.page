@@ -1,0 +1,34 @@
+<apex:page standardController="Glxy_BudgetSubmission__c" extensions="Glxy_BC_VFController"  action="{!autoRun}" Title="Recalculate Budget Call Data" sidebar="false" showHeader="false">
+
+<br/><br/><br/>
+<table border ="1" align="center">
+	<tr>
+		<td><div id="loading">Recalculating Budget Call numbers, please wait ...</div></td>
+	</tr>
+</table>
+
+
+<script language = "Javascript">
+	
+	/*if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)
+    	var t = setTimeout("resize()", 200);
+	else
+    	resize();
+
+	function resize() {
+	    var innerWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	    var innerHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	    var targetWidth = 400;
+	    var targetHeight = 400;
+	    window.resizeBy(targetWidth-innerWidth, targetHeight-innerHeight);
+	    window.moveTo(((screen.width - targetWidth) / 2), ((screen.height - targetHeight) / 2));      
+	    window.focus();
+	}
+	
+	window.onload=function(){
+		document.getElementById("loading").style.display="none";
+	}*/
+	
+</script>
+
+</apex:page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Costs &amp; Time</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Costs &amp; Time</value>
+    </caseValues>
+    <fields>
+        <label><!-- Cost --></label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Name --></label>
+        <name>Item_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- OCM Tracker Identifier --></label>
+        <name>OCM_Tracker_Identifier__c</name>
+        <relationshipLabel><!-- Costs &amp; Time --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time Spent in Hours. Example if it took 1 hour 15 minutes, then 1.25 should be entered here. --></help>
+        <label><!-- Time Spent --></label>
+        <name>Time_Spent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost * Quantity --></help>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <layouts>
+        <layout>Costs &amp; Time Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

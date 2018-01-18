@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Archived_OCIO_Task_Tracking</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Archived OCIO Task Tracking</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Archived OCIO Task Tracking</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>FTRD_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>FTRD Cases</label>
+        <sharedTo>
+            <group>FTRD_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>FTRD Web-to-Case</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OCIO_Task_Tracking_All_Internal_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>OCIO Task Tracking App Access to All GSA Users including Contractors.</description>
+        <label>OCIO Task Tracking All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>OCIO Task Tracking</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PDE_CPG_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>If the PDN Starts with 1B, RB, or EK it can be shared with the PDE - Budget Analysts or the PDE - CPG Users</description>
+        <label>PDE - CPG Rule</label>
+        <sharedTo>
+            <group>PDE_CPGUsers</group>
+        </sharedTo>
+        <booleanFilter>1 AND (2 OR 3 OR 4) AND NOT (5 AND 6)</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Pegasys Data Entry,Pegasys Data Entry - Locked</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>1B</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>RB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>EK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_Source_Document__c</field>
+            <operation>equals</operation>
+            <value>Order/Award,Amendment/Mod</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>Pending Budget Analyst Approval</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PDE_READ_ONLY_Sharing_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>READ ONLY sharing rule for all PDE Users</description>
+        <label>PDE - READ ONLY Sharing Rule</label>
+        <sharedTo>
+            <group>PDE_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Pegasys Data Entry,Pegasys Data Entry - Locked</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PDE_Sharing_Rule_with_PDE_Budget_Analysts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PDE - Sharing Rule with PDE - Budget Analysts</label>
+        <sharedTo>
+            <group>PDE_BudgetAnalystUsers</group>
+        </sharedTo>
+        <booleanFilter>1 AND 2 AND 6 AND (3 OR 4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Pegasys Data Entry,Pegasys Data Entry - Locked</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_Source_Document__c</field>
+            <operation>equals</operation>
+            <value>Order/Award,Amendment/Mod</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>1B</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>RB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>EK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>Pending Budget Analyst Approval</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_PDE_Cases_with_PDE_Users_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This rule shares cases with the Pegasys Data Entry Layout and Pegasys Data Entry Layout - Locked Record Types to users in the &quot;PDE Users&quot; Public Group and grants Read/Write access.</description>
+        <label>Share PDE Cases with PDE Users Group</label>
+        <sharedTo>
+            <group>PDE_Users</group>
+        </sharedTo>
+        <booleanFilter>1 AND NOT (2 OR 3 OR 4)</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Pegasys Data Entry,Pegasys Data Entry - Locked</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>1B</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>RB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDE_PDN__c</field>
+            <operation>startsWith</operation>
+            <value>EK</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

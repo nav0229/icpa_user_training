@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>CreatedDate</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>OCIO_Task_Tracking_Release_Managers</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>ReadyToDeploy</label>
+        <name>ReadyToDeploy</name>
+    </approvalStep>
+    <description>OCIO Task Tracking App - Mark Tier 2, 3 Cases as Ready to Deploy and then Completed.</description>
+    <emailTemplate>unfiled$public/CM_Case_Ready_to_Deploy_status</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Case.RecordType</field>
+            <operation>equals</operation>
+            <value>OCIO Task Tracking</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Current_State__c</field>
+            <operation>equals</operation>
+            <value>Development In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Task_Status__c</field>
+            <operation>equals</operation>
+            <value>Submit to Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Tier__c</field>
+            <operation>equals</operation>
+            <value>2,3</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Case_Owner_Deployment_Manager</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>OCIOTT_CurrentState_ReadyToDeploy</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>OCIOTT_DepMgrs_ReadyToDeploy</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>OCIOTT_CurrentState_DevInProgress</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>OCIOTT_TaskStatus_InProgress</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>OCIOTT_CurrentState_Pending_Rel_Mgr</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>OCIOTaskTracking Tier23 ReadyToDeploy</label>
+    <recallActions>
+        <action>
+            <name>OCIOTT_CurrentState_DevInProgress</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>OCIOTT_TaskStatus_InProgress</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

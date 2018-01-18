@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>CreatedDate</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>adhoc</type>
+            </approver>
+        </assignedApprover>
+        <description>Auto approve to complete</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.CaseNumber</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Tier2 3 Auto Approve to Complete</label>
+        <name>Tier2_3_Auto_Approve_to_Complete</name>
+    </approvalStep>
+    <description>OCIO Task Tracking App - Auto Approval to Mark Tier 2 and 3 Cases as Completed.</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Case.RecordType</field>
+            <operation>equals</operation>
+            <value>OCIO Task Tracking</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Current_State__c</field>
+            <operation>equals</operation>
+            <value>Ready To Deploy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Task_Status__c</field>
+            <operation>equals</operation>
+            <value>Submit to Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Tier__c</field>
+            <operation>equals</operation>
+            <value>2,3</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>OCIOTT_CurrentState_Completed</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>OCIOTaskTracking Tier 2 3 Completed</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

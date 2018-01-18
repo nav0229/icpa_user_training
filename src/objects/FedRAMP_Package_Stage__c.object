@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Package Stage object for FedRAMP application to track Stages</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CSP_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>CSP Total Days</label>
+        <summarizedField>FedRAMP_Stage_Activity__c.Total_Number_of_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Actors__c</field>
+            <operation>equals</operation>
+            <value>CSP</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Stage_Activity__c.Package_Stage__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Days_Past_Estimated_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Days_In_Process__c -  Estimated_Total_Days__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Past Estimated End Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Total Days</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ISSO_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>ISSO Total Days</label>
+        <summarizedField>FedRAMP_Stage_Activity__c.Total_Number_of_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Actors__c</field>
+            <operation>equals</operation>
+            <value>ISSO</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Stage_Activity__c.Package_Stage__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>JAB_TR_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>JAB TR Total Days</label>
+        <summarizedField>FedRAMP_Stage_Activity__c.Total_Number_of_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Actors__c</field>
+            <operation>equals</operation>
+            <value>JAB</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Stage_Activity__c.Package_Stage__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PMO_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>PMO Total Days</label>
+        <summarizedField>FedRAMP_Stage_Activity__c.Total_Number_of_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Actors__c</field>
+            <operation>equals</operation>
+            <value>PMO</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Stage_Activity__c.Package_Stage__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Package__c</fullName>
+        <externalId>false</externalId>
+        <label>Package</label>
+        <referenceTo>FedRAMP_Package__c</referenceTo>
+        <relationshipLabel>Package Stages</relationshipLabel>
+        <relationshipName>Package_Stages</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Stages__c</fullName>
+        <externalId>false</externalId>
+        <label>Stages</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Readiness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kick Off Meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SSP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SAP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SAR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3PAO Testing</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Process</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Days_In_Process__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( End_Date__c ), 
+(CASE(MOD( Start_Date__c - DATE(1985,6,24),7), 
+0 , CASE( MOD( TODAY()  - Start_Date__c ,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( TODAY()  - Start_Date__c ,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( TODAY()  - Start_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( TODAY()  - Start_Date__c ,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( TODAY()  - Start_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( TODAY()  - Start_Date__c ,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( TODAY()  - Start_Date__c ,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( TODAY()  - Start_Date__c )/7)*5)), 
+
+(CASE(MOD( Start_Date__c - DATE(1985,6,24),7), 
+0 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( End_Date__c - Start_Date__c )/7)*5))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Days In Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Start_Date__c - DATE(1985,6,24),7), 
+0 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( End_Date__c - Start_Date__c ,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( End_Date__c - Start_Date__c )/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X3PAO_Total_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>3PAO Total Days</label>
+        <summarizedField>FedRAMP_Stage_Activity__c.Total_Number_of_Days__c</summarizedField>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Actors__c</field>
+            <operation>equals</operation>
+            <value>3PAO</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>FedRAMP_Stage_Activity__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>FedRAMP_Stage_Activity__c.Package_Stage__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Package Stage</label>
+    <nameField>
+        <displayFormat>PS-{0000}</displayFormat>
+        <label>Package Stage Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Package Stages</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Check_End_Date_and_Status_complete</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR( 
+AND( ISPICKVAL(Status__c, &quot;In Process&quot;), NOT(ISNULL(End_Date__c))), 
+
+AND(ISBLANK(End_Date__c), NOT(ISPICKVAL(Status__c , &quot;In Process&quot;))) 
+)</errorConditionFormula>
+        <errorMessage>Check Status is Approved or Denied and End Date is filled in</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_cannot_be_after_today</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c  &gt;  TODAY()</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date cannot be a future date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_cannot_be_less_than_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c  &lt;  Start_Date__c</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date cannot be before Start Date</errorMessage>
+    </validationRules>
+</CustomObject>

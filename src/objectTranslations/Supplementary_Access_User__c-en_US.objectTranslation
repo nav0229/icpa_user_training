@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Supplementary Access User</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Supplementary Access History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Step (If Applicable) --></label>
+        <name>Approval_Step__c</name>
+        <relationshipLabel><!-- Supplementary Access History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Controlled Document --></label>
+        <name>Controlled_Document__c</name>
+        <relationshipLabel><!-- Supplementary Access History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inactivated By --></label>
+        <name>Inactivated_By__c</name>
+        <relationshipLabel><!-- Supplementary Access History (Inactivated By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inactivation Date --></label>
+        <name>Inactivation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Origin --></label>
+        <name>Origin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Originating User --></label>
+        <name>Originating_User__c</name>
+        <relationshipLabel><!-- Supplementary Access History (Originating User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Supplementary Access History (User) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>CD Add-on Sharing User Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

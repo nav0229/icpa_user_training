@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stage Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stage Activities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actors --></label>
+        <name>Actors__c</name>
+        <picklistValues>
+            <masterLabel>3PAO</masterLabel>
+            <translation><!-- 3PAO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSP</masterLabel>
+            <translation><!-- CSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISSO</masterLabel>
+            <translation><!-- ISSO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JAB</masterLabel>
+            <translation><!-- JAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMO</masterLabel>
+            <translation><!-- PMO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Date --></label>
+        <name>Event_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Types --></label>
+        <name>Event_Types__c</name>
+        <picklistValues>
+            <masterLabel>Architectural Briefing</masterLabel>
+            <translation><!-- Architectural Briefing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exec Meeting</masterLabel>
+            <translation><!-- Exec Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial Interview</masterLabel>
+            <translation><!-- Initial Interview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kick-Off</masterLabel>
+            <translation><!-- Kick-Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Misc Meeting</masterLabel>
+            <translation><!-- Misc Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAR Briefing</masterLabel>
+            <translation><!-- SAR Briefing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Stage --></label>
+        <name>Package_Stage__c</name>
+        <relationshipLabel><!-- Stage Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Number of Days --></label>
+        <name>Total_Number_of_Days__c</name>
+    </fields>
+    <layouts>
+        <layout>Stage Activity Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Stage Events Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Stage Activities --></label>
+        <name>Stage_Activities</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Stage Events --></label>
+        <name>Stage_Events</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- End Date must be filled in and Status set to “Complete” to save this record --></errorMessage>
+        <name>Check_End_Date_on_Activity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date must be filled in and Status set to “Complete” to save this record --></errorMessage>
+        <name>Check_Status_on_Activity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date cannot be a future date --></errorMessage>
+        <name>End_Date_cannot_be_after_today</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date cannot be before Start Date --></errorMessage>
+        <name>End_Date_cannot_be_before_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Event Date cannot be a future date --></errorMessage>
+        <name>Event_Date_cannot_be_after_today</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Activity --></label>
+        <name>Add_Activity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_Event --></label>
+        <name>Add_Event</name>
+    </webLinks>
+</CustomObjectTranslation>

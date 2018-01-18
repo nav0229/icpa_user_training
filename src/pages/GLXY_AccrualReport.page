@@ -1,0 +1,138 @@
+<apex:page controller="GLXY_AccrualReport" Title="Project Accruals" readonly="true" sidebar="false">
+   
+    <table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">Project Accrual Report</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+                <h2><font color="darkred" size="+1">
+                    Fiscal Year: {!strFiscalYear} &nbsp;&nbsp;&nbsp;
+                    Region: {!strRegionDisplay}
+                </font></h2>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>  
+    
+   <apex:pageBlock >
+    	<apex:pageBlockTable value="{!AccrualDataset}" var="DataSet">
+    		<apex:column value="{!DataSet.Region}" HeaderValue="Region" />
+            <apex:column HeaderValue="Project Number">
+                <a href="/{!DataSet.RecordLink}"><apex:outputText value="{!DataSet.ProjectNumber}" /></a>
+            </apex:column>
+            <apex:column value="{!DataSet.ProjectType}" HeaderValue="Project Type" />
+            <apex:column value="{!DataSet.ProjectStatus}" HeaderValue="Status" />
+			
+			<apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Effective Date" />
+				</apex:facet>
+				<apex:outputText value="{0,date,MM/dd/yyyy}">
+					<apex:param value="{!DataSet.EffectiveDate}" />
+				</apex:outputText>
+			</apex:column>
+			
+			<apex:column value="{!DataSet.EffectiveDateFY}" HeaderValue="Effective Date FY" />
+            <apex:column value="{!DataSet.LeaseNumber}" HeaderValue="Lease Number" />
+            <apex:column value="{!DataSet.BuildingNumber}" HeaderValue="Building Number" />
+            
+            <apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Project Accrual" />
+				</apex:facet>
+				<apex:outputText value="{0,number,$#,###,###.00}">
+					<apex:param value="{!DataSet.ProjectAccrual}" />
+				</apex:outputText>
+			</apex:column>
+			
+			<apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Lump Sum Accrual" />
+				</apex:facet>
+				<apex:outputText value="{0,number,$#,###,###.00}">
+					<apex:param value="{!DataSet.LumpSumAccrual}" />
+				</apex:outputText>
+			</apex:column>
+			
+			<apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Total Accrual" />
+				</apex:facet>
+				<apex:outputText value="{0,number,$#,###,###.00}">
+					<apex:param value="{!DataSet.ProjectAccrual + DataSet.LumpSumAccrual}" />
+				</apex:outputText>
+			</apex:column>
+            
+            <apex:column value="{!DataSet.TeamCode}" HeaderValue="Team Code" />
+            <apex:column value="{!DataSet.RealtySpecialist}" HeaderValue="Realty Specialist" />
+
+   			<apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Process Date" />
+				</apex:facet>
+				<apex:outputText value="{0,date,MM/dd/yyyy}">
+					<apex:param value="{!DataSet.ProcessDate}" />
+				</apex:outputText>
+			</apex:column>
+
+			<apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Old Annual Rent" />
+				</apex:facet>
+				<apex:outputText value="{0,number,$#,###,###.00}">
+					<apex:param value="{!DataSet.OldAnnualRent}" />
+				</apex:outputText>
+			</apex:column>
+			
+			<apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="New Annual Rent" />
+				</apex:facet>
+				<apex:outputText value="{0,number,$#,###,###.00}">
+					<apex:param value="{!DataSet.NewAnnualRent}" />
+				</apex:outputText>
+			</apex:column>
+			
+            <apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Old Sq. Ft." />
+				</apex:facet>
+				<apex:outputText value="{0,number,#,###,###.00}">
+					<apex:param value="{!DataSet.OldSqFt}" />
+				</apex:outputText>
+			</apex:column>
+			
+            <apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="New Sq. Ft." />
+				</apex:facet>
+				<apex:outputText value="{0,number,#,###,###.00}">
+					<apex:param value="{!DataSet.NewSqFt}" />
+				</apex:outputText>
+			</apex:column>
+			
+            <apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="Old Rate" />
+				</apex:facet>
+				<apex:outputText value="{0,number,$#,###,###.00}">
+					<apex:param value="{!DataSet.OldRate}" />
+				</apex:outputText>
+			</apex:column>
+			
+            <apex:column styleClass="numericalColumn">
+  				<apex:facet name="header">
+    				<apex:outputtext value="New Rate" />
+				</apex:facet>
+				<apex:outputText value="{0,number,$#,###,###.00}">
+					<apex:param value="{!DataSet.NewRate}" />
+				</apex:outputText>
+			</apex:column>
+        </apex:pageBlockTable>
+   </apex:pageBlock>
+   
+    
+</apex:page>

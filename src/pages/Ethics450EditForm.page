@@ -1,0 +1,105 @@
+<apex:page id="ethics450FormPage" standardController="OCIO_Ethics_450_Form_Review__c" extensions="OGC_Ethics450Controller" tabStyle="OCIO_Ethics_450_Form_Review__c">
+	<apex:form id="Ethics450Form" >
+		<apex:sectionHeader title="Ethics 450 Form Submission" subtitle="New/Edit" rendered="{!IF((thanksFlag == false) && (warningFlag == false), true, false)}"/>
+		
+		<apex:pageMessages ></apex:pageMessages>
+	
+		<apex:pageBlock id="ethics450SubmissionPageBlock" title="" mode="edit" rendered="{!IF((thanksFlag == false) && (warningFlag == false), true, false)}">
+			<apex:pageBlockButtons >
+						
+						<apex:commandButton action="{!submit}" value="Submit" />
+						
+				</apex:pageBlockButtons> 
+
+		<apex:pageBlockSection showHeader="true" title="Employee Information" columns="2" >
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Employee__c']}</apex:outputLabel>
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+							<apex:outputField value="{!currentContactForUser.FirstName}"/>&nbsp;<apex:outputField value="{!currentContactForUser.LastName}"/>
+						</apex:outputPanel> 
+					</apex:pageBlockSectionItem>
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Employee_Phone_Number__c']}</apex:outputLabel>						
+						<apex:outputField value="{!currentContactForUser.Phone}"/>							
+					</apex:pageBlockSectionItem>	
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Employee_s_Organization__c']}</apex:outputLabel>
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+						  <apex:inputField value="{!ethics450Review.Ethics450_Employee_s_Organization__c}"  required="true"/>
+						</apex:outputPanel> 
+					</apex:pageBlockSectionItem>	
+					
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Employee_Email__c']}</apex:outputLabel>
+						<apex:outputField value="{!currentContactForUser.Email}"/>
+					</apex:pageBlockSectionItem>
+					
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Region__c']}</apex:outputLabel>
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+						  <apex:inputField value="{!ethics450Review.Ethics450_Region__c}"  required="true"/>
+						</apex:outputPanel> 
+					</apex:pageBlockSectionItem>	 
+					
+					
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Central_Office_Staff_Offices__c']}</apex:outputLabel>
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+						  <apex:inputField value="{!ethics450Review.Ethics450_Central_Office_Staff_Offices__c}" />	
+						</apex:outputPanel> 
+					</apex:pageBlockSectionItem>	
+					
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Employee_Title__c']}</apex:outputLabel>
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+						  <apex:inputField value="{!ethics450Review.Ethics450_Employee_Title__c}"  required="true"/>
+						</apex:outputPanel> 
+					</apex:pageBlockSectionItem>
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_GS_Pay_Grade__c']}</apex:outputLabel>
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+						  <apex:inputField value="{!ethics450Review.Ethics450_GS_Pay_Grade__c}"  required="true"/>
+						</apex:outputPanel> 
+					</apex:pageBlockSectionItem>
+					
+					 <apex:pageBlockSectionItem >
+						<apex:outputLabel >{!fieldLabel['Ethics450_Supervisor_Name__c']}</apex:outputLabel>
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+						  <apex:inputField value="{!ethics450Review.Ethics450_Supervisor_Name__c}"  required="true"/>
+						</apex:outputPanel> 
+					</apex:pageBlockSectionItem>
+					
+					<apex:pageBlockSectionItem >
+					
+					</apex:pageBlockSectionItem> 
+				
+				</apex:pageBlockSection>
+				<apex:pageBlockSection showHeader="true" title="Upload Ethics 450 Form" >
+						<apex:outputPanel layout="block" styleClass="requiredInput">
+						<apex:outputPanel layout="block" styleClass="requiredBlock"/>
+						<apex:inputFile style="width:75%" filename="{!anAttach.Name}" value="{!anAttach.Body}" /><br/>
+						<!-- <apex:inputFile style="width:75%" filename="{!fileName}" value="{!attach.Body}" /><br/> -->
+						</apex:outputPanel> 
+					</apex:pageBlockSection>
+				</apex:pageBlock> 
+				<apex:pageBlock id="ThankYouPageBlock" rendered="{!thanksFlag}" >
+				<apex:pageBlockSection showHeader="true" title="Thank you!" collapsible="false">
+				<apex:outputText value="Thank you for submitting your Ethics 450 Form."/>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Package Stage</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Package Stages</value>
+    </caseValues>
+    <fields>
+        <label><!-- CSP Total Days --></label>
+        <name>CSP_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Past Estimated End Date --></label>
+        <name>Days_Past_Estimated_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated End Date --></label>
+        <name>Estimated_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Total Days --></label>
+        <name>Estimated_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- ISSO Total Days --></label>
+        <name>ISSO_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- JAB TR Total Days --></label>
+        <name>JAB_TR_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMO Total Days --></label>
+        <name>PMO_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package --></label>
+        <name>Package__c</name>
+        <relationshipLabel><!-- Package Stages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stages --></label>
+        <name>Stages__c</name>
+        <picklistValues>
+            <masterLabel>3PAO Testing</masterLabel>
+            <translation><!-- 3PAO Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kick Off Meeting</masterLabel>
+            <translation><!-- Kick Off Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Readiness</masterLabel>
+            <translation><!-- Readiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP</masterLabel>
+            <translation><!-- SAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAR</masterLabel>
+            <translation><!-- SAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSP</masterLabel>
+            <translation><!-- SSP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Days In Process --></label>
+        <name>Total_Days_In_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Days --></label>
+        <name>Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3PAO Total Days --></label>
+        <name>X3PAO_Total_Days__c</name>
+    </fields>
+    <layouts>
+        <layout>Package Stage Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Total Days For Each Actor --></label>
+            <section>Total Days For Each Actor</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Check Status is Approved or Denied and End Date is filled in --></errorMessage>
+        <name>Check_End_Date_and_Status_complete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date cannot be a future date --></errorMessage>
+        <name>End_Date_cannot_be_after_today</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date cannot be before Start Date --></errorMessage>
+        <name>End_Date_cannot_be_less_than_Start_Date</name>
+    </validationRules>
+</CustomObjectTranslation>

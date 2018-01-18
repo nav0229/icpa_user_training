@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Expense and Payment Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Expense and Payment Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount of Payment --></label>
+        <name>Amount_of_Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ethics Form --></label>
+        <name>Ethics_Form__c</name>
+        <relationshipLabel><!-- Expense and Payment Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Method of Payment --></label>
+        <name>Method_of_Payment__c</name>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation><!-- Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-kind</masterLabel>
+            <translation><!-- In-kind --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Nature of Expense --></label>
+        <name>Nature_of_Expense__c</name>
+        <picklistValues>
+            <masterLabel>Conference Fee</masterLabel>
+            <translation><!-- Conference Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lodging</masterLabel>
+            <translation><!-- Lodging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meals</masterLabel>
+            <translation><!-- Meals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration Fee</masterLabel>
+            <translation><!-- Registration Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <layouts>
+        <layout>Expense Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

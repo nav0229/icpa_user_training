@@ -1,0 +1,701 @@
+<apex:page controller="RT_TechnologyRequestFormController" showHeader="false" sidebar="False" standardStylesheets="true" id="RequestForm" doctype="html-5.0" language="en-US">
+    
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.wds, '/uswds-0.9.0/css/uswds.min.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.P360_IntakeForm_CSS)}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.RT_Tooltip)}"/>
+        <apex:includeScript value="https://use.fontawesome.com/26947385e0.js"/>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        
+        <!-- Mobile Specific Metas-->
+        <meta name="HandheldFriendly" content="True"/>
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- Title and meta description-->
+        <title>GSA Technology Request Form</title>
+        <meta property="og:title" content="GSA Technology Request Form" />
+        <meta name="description" content=""/>
+        <meta property="og:description" content="" />   
+        
+        <!--To display number of characters remaining in a text field -->
+        <script type="text/javascript">
+        function textCounter( field, countfield, maxlimit) {
+            if ( field.value.length > maxlimit ) {
+                field.value = field.value.substring( 0, maxlimit );
+                field.blur();
+                field.focus();
+                document.getElementById(countfield).innerHTML = ' '+maxlimit;
+                alert('You have reached the maximum limit of 32,000 characters. Please revise your input.');
+                return false;
+            } else {
+                countfield.value = maxlimit - field.value.length;
+                document.getElementById(countfield).innerHTML = ' '+(maxlimit - field.value.length);
+            }
+        }
+        </script>
+    </head>
+    
+    <body onload="removebuttoncss();">
+        
+        <!-- To display Logo and Header -->
+        <header class="header cf" role="banner">
+            <div class="wrap">
+                <a href="http://open.gsa.gov" target="_blank">
+                    <apex:image url="{!URLFOR($Resource.GSAITHire_Starlogo)}" styleclass="logo" alt="GSA IT Logo" id="gsaheaderlogo" style="width: 272px; height: 84px;margin-top: 18px;"/>
+                </a>
+                <h1>
+                    TECHNOLOGY REQUEST FORM
+                </h1>
+            </div>
+        </header>
+        
+        <div class="site-content">
+            <section class="slab-intro usa-grid" style="padding-top: 10px;text-align: left;font-size:20px;">
+                
+                <!--Welcome Message-->
+                <div style="line-height: 1.5em; padding-top: 2rem; padding-bottom: 2rem;">
+                    Welcome to the New Technology request form!  
+                    <br/><br/>
+                    Please answer the following questions and provide as much information as possible.  After reviewing your request, if additional information is needed, you will be contacted by the Solutions Strategy IT Standards Review team located in the Office of the Chief Technology Officer (GSA IT CTO). 
+                    <br/><br/>
+                    We are committed to processing your request in a timely manner. If you have any questions, feel free to contact us at <a href="mailto:it-standards@gsa.gov">it-standards@gsa.gov</a>.
+                    <br/>
+                </div>
+                <div class="usa-alert usa-alert-warning" style="max-width: 80rem;">
+                    <div class="usa-alert-body">
+                        <h3 class="usa-alert-heading" style="font-family: sans-serif;">
+                            GEAR IT Standards - Technology tools list
+                        </h3>
+                        <br/><br/>
+                        <p class="usa-alert-text" style="font-size: 15px; text-align: left;">
+                            The 1st step to complete in our new process is to review the current list of technology contained in the GEAR IT Standards list.
+                            <br/><br/>
+                            Please click on the GEAR link (<a class="usa-external_link" href="https://ea.gsa.gov/#!/itstandards" target="_blank">https://ea.gsa.gov/#!/itstandards</a>)
+                            to check if your technology already exists on the IT Standards list, or if a similar technology
+                            can fulfill your need. Review the status of your technology and take the appropriate steps below:
+                            <br/><br/>
+                            <strong>APPROVED:</strong> If your technology displays a status of 'Approved', click on this 
+                            <a class="usa-external_link" href="https://gsa.service-now.com/sp?id=sc_cat_item&sys_id=1bfdfdca78d3a400ce3ddff91a64940b" target="_blank">ServiceNow</a> 
+                            link to submit your request.
+                            <br/><br/>
+                            <strong>PROPOSED:</strong> If your technology displays a status of 'Proposed', the technology has already been submitted for review. 
+                            You do not need to submit a request, it is already in progress.
+                            <br/><br/>
+                            <strong>DENIED/SUNSETTING:</strong> If your technology displays a status of 'Denied', this technology is not allowed for use within GSA.
+                            If your technology displays a status of 'Sunsetting', this technology has reached 'end of life' and will be updated with a status of 'Denied'.
+                            <br/><br/>
+                            If your technology is not contained in the GEAR IT Standards list, please complete the new intake form and submit for processing.
+                        </p>
+                    </div>                                      
+                </div>
+                <div class="wrapper" style="border: solid 1px #eeeeee; padding: 3rem; margin-top: 2em; margin-bottom: 2em; max-width: 69rem; font-size: 1.7rem">               
+                    <apex:form styleClass="usa-form"  style="max-width: 66rem; text-align: left;">
+                        <apex:pageMessages />
+                        <legend class="usa-drop_text">Technology Request Form</legend>
+                        <br/><br/>
+                        <div style="display:inline">
+                            <apex:OutputText id="labelNameText" value="Requester Name:"/> &nbsp;
+                            <apex:OutputText id="Requestorname" value="{!currentuser.Name}" html-aria-label="Requester Name" style="font-size: 1.7rem;background-color: #e1f3f8;border-color: #ddd;padding:0.5rem;"/>
+                        </div>
+                        <br/>
+                        <br/>
+                        
+                        <div style="display:inline">
+                            <apex:OutputText id="labelEmailText" value="Requester Email Address:"/> &nbsp;
+                            <apex:OutputText id="RequestorEmail" value="{!currentuser.Email}" html-aria-label="Requester Email" style="font-size: 1.7rem;background-color: #e1f3f8;border-color: #ddd;padding:0.5rem;"/>
+                        </div>
+                        
+                        <div id="lookupComp" style="display:block;" >
+                            <label for="{!$Label.RT_508}gsaContactNameLookup">
+                                If you are requesting this technology on behalf of another person, please indicate their name and email address.
+                            </label>
+                            <!--<c:Typeahead searchBoxId="userSearchBox2" object="User" primaryField="Name" secondaryField="Email"  
+                                         searchScope="NAME" placeholder="Enter Name or Email." minSearchLength="2" 
+                                         destinationForSelectedId="gsaRequestorNameLookupID"  stealFocus="false" style="backgroundColor='' ;">
+                            </c:Typeahead>
+                            <apex:inputHidden id="gsaRequestorNameLookupID" value="{!reqTracker.Requesting_For__c}"></apex:inputHidden> -->
+                            <c:RT_Typeahead searchBoxId="userSearchBox2" object="Contact" primaryField="Name" secondaryField="Email"  
+                                         searchScope="NAME" placeholder="Enter Name or Email." minSearchLength="2" 
+                                         destinationForSelectedId="gsaRequestorNameLookupID"  stealFocus="false" style="backgroundColor='' ;">
+                            </c:RT_Typeahead>
+                            <apex:inputHidden id="gsaRequestorNameLookupID" value="{!reqTracker.RequestingFor__c}"></apex:inputHidden>
+                        </div>
+                        
+                        <label for="{!$Label.RT_508}qspokenwithgsa" class="usa-input-required">
+                            Did you speak with anyone within GSA IT organization prior to submitting this request?
+                        </label>
+                        
+                        <apex:inputField id="qspokenwithgsa" value="{!reqTracker.SpokenWithGSAIT__c}" onchange="Lookupdisplay(this);clear3();"></apex:inputField>
+                        
+                        <div class="usa-input-error" id="qspokenwithgsaError" style="display: none;">
+                            <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                Please select Yes or No.
+                            </span>
+                        </div>
+                        
+                        <div id="lookupComponent" style="display:none;" >
+                            <label for="{!$Label.RT_508}gsaContactNameLookupValue" class="usa-input-required">
+                                Please provide the name of the person in GSA IT you spoke with.
+                            </label>
+                            <!--<c:Typeahead searchBoxId="userSearchBox" object="User" primaryField="Name" secondaryField="Email"  
+                                         filterClause="Affiliation__c=\'Government\'" searchScope="SIDEBAR" placeholder="Enter Name or Email." minSearchLength="2" 
+                                         destinationForSelectedId="gsaContactNameLookupID"  stealFocus="false" style="background-color:none!important;">
+                            </c:Typeahead>
+                            
+                            <apex:inputHidden id="gsaContactNameLookupID" value="{!reqTracker.Org_Contact_Name__c}"></apex:inputHidden> -->
+                            
+                            <c:RT_Typeahead searchBoxId="userSearchBox" object="Contact" primaryField="Name" secondaryField="Email"  
+                                         searchScope="NAME" placeholder="Enter Name or Email." minSearchLength="2" 
+                                         destinationForSelectedId="gsaContactNameLookupID"  stealFocus="false" style="background-color:none!important;">
+                            </c:RT_Typeahead>
+                            
+                            <apex:inputHidden id="gsaContactNameLookupID" value="{!reqTracker.GSA_IT_Contact__c}"></apex:inputHidden>
+                            
+                            <div class="usa-input-error" id="userSearchBoxError" style="display: none;">
+                                <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                    Please enter a valid contact name for this request.
+                                </span>
+                            </div>
+                            
+                        </div>
+                        
+                        <div>
+                            <label for="{!$Label.RT_508}BusinessJustification" class="usa-input-required">
+                                Please provide us with a business justification of your technology need.
+                            </label>
+                            <span style="font-style: italic;font-size: 12px;color: black;">
+                                Answer the following 2 questions: <br/>
+                                Why do you need this technology?<br/>
+                                How will your organization implement this technology?
+                            </span>  
+                        </div> 
+                        
+                        <apex:inputField id="BusinessJustification" value="{!reqTracker.BusinessJustification__c}" onblur="textCounter(this, 'Size2',32000);" onkeyup="textCounter(this,'Size2',32000);" StyleClass="usa-input-required"/>
+                        
+                        <!-- Error Message -->
+                        <div class="usa-input-error" id="BusinessJustificationError" style="margin-top: 0.1em;display: none;">
+                            <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                Please enter a valid business justification for this request.
+                            </span>
+                        </div>
+                        
+                        <p style="margin-top: 0.1em; font-size:15px"> 
+                            Remaining Characters : 
+                            <span id="Size2" style="font-family: sans-serif; color:red">
+                                32000
+                            </span> 
+                        </p>
+                        
+                        
+                        <label for="{!$Label.RT_508}techToolIdentified" class="usa-input-required">
+                            Do you have a technology tool identified?
+                        </label>
+                        <apex:actionRegion >
+                            <apex:inputField id="techToolIdentified" value="{!reqTracker.TechnologyToolIdentified__c}">
+                                <apex:actionSupport event="onchange" action="{!validateform}" rerender="YesToolIdentified" />
+                            </apex:inputField>
+                        </apex:actionRegion>
+                        
+                        <!-- Error Message -->
+                        <div class="usa-input-error" id="techToolIdentifiedError" style="margin-top: 0.1em;display: none;">
+                            <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                Please select Yes or No.
+                            </span>
+                        </div>
+                        
+                        <!-- Beginning of section for Toolidentified = Yes -->
+                        
+                        <apex:outputPanel id="YesToolIdentified">
+                            <apex:outputPanel id="YesToolIdentified-2" rendered="{!reqTracker.TechnologyToolIdentified__c=='Yes'}">
+                                <label for="{!$Label.RT_508}isPilot" class="usa-input-required">
+                                    <span>Is this a pilot initiative?</span>
+                                    <span>
+                                        <div class="tooltip" tabindex="0">
+                                            <i class="fa fa-info-circle" aria-hidden="false"></i>
+                                            <span class="tooltiptext" style="top: -37px;">Pilots are used to test feasibility or experiment with a new technology
+                                                on a small-scale. These short-term experiments help us learn how a technology may work on an enterprise level.</span>
+                                        </div>                            
+                                    </span>
+                                </label>
+                                
+                                <apex:actionRegion >
+                                    <apex:inputField id="isPilot"
+                                                     value="{!reqTracker.pilot_initiative__c}"
+                                                     StyleClass="usa-input-required">
+                                        <apex:actionSupport event="onchange" rerender="YesPilot,NoPilot"/>
+                                    </apex:inputField>
+                                </apex:actionRegion>
+                                
+                                <!-- Error Message -->
+                                <div class="usa-input-error" id="isPilotError" style="margin-top: 0.1em;display: none;">
+                                    <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                        Please select Yes or No.
+                                    </span>
+                                </div>
+                                
+                                <!-- Beginning of section for Pilot = Yes -->
+                                
+                                <apex:outputPanel id="YesPilot">
+                                    <apex:outputPanel id="PilotAck" rendered="{!reqTracker.pilot_initiative__c=='Yes'}">          
+                                        <div class="usa-alert usa-alert-info" style="max-width: 46rem;">
+                                            <div class="usa-alert-body">
+                                                <h3 class="usa-alert-heading" style="font-family: sans-serif;">
+                                                    Terms of Service
+                                                </h3>
+                                                <br/><br/>
+                                                <p class="usa-alert-text" style="font-size: 15px">
+                                                    Please review and acknowledge below that you have read the 
+                                                    <a class="usa-external_link" href="https://insite.gsa.gov/portal/content/546745" target="_blank">
+                                                        IT Standards Policy Section 6.e.2
+                                                    </a>
+                                                </p>
+                                                <ul class="usa-alert-text" style="font-size: 15px; max-width: 46rem;">
+                                                    <li>The pilot won’t be on a GSA production environment.</li>
+                                                    <li>No Federal data or GSA PII will be used, only dummy info.</li>
+                                                    <li>The cost of the pilot will not exceed $25,000.</li>
+                                                    <li>The CTO has agreed to the number of people in the user pool.</li>
+                                                    <li>The pilot period will not exceed 90 days.</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div style="background-color: #e1f3f8;max-width: 46rem;">
+                                                <apex:inputCheckbox id="Ack" value="{!reqTracker.T_C__c}" style="width: 20px; height: 20px;"/>
+                                                <label for="{!$Label.RT_508}Ack" class="usa-input-required" style="font-size: 15px; max-width: 46rem;">
+                                                    I have read and agree to the above Terms of Service.
+                                                </label>
+                                            </div>                                      
+                                        </div>
+                                        
+                                        <!-- Error Message -->
+                                        <div class="usa-input-error" id="AckError" style="margin-top: 0.1em;display: none;">
+                                            <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                                You must agree to the Terms of Service in order to submit this pilot request.
+                                            </span>
+                                        </div>                                      
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                <br/>
+                                
+                                <!-- End of section for Pilot = Yes -->
+                                
+                                <label for="{!$Label.RT_508}toolName">
+                                    Please provide the technology tool name.
+                                </label>
+                                
+                                <apex:inputField id="toolName" type="text" value="{!reqTracker.Technology_Tool_Name__c}" StyleClass="usa-input-required"/>
+                                
+                                
+                                <label for="{!$Label.RT_508}companyName">
+                                    Please provide the company name.
+                                </label>
+                                
+                                <apex:inputField id="companyName" type="text" value="{!reqTracker.Company_Name__c}" StyleClass="usa-input-required"/>
+                                
+                                
+                                <label for="{!$Label.RT_508}supportEmail">
+                                    Please provide the customer support email.
+                                </label>
+                                
+                                <apex:inputField id="supportEmail" type="text" value="{!reqTracker.Customer_Support_Email__c}" StyleClass="usa-input-required"/>
+                                
+                                
+                                <!-- Error Message -->
+                                <div class="usa-input-error" id="supportEmailError" style="margin-top: 0.1em;display: none;">
+                                    <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                        Please enter a valid customer support email.
+                                    </span>
+                                </div>
+                                
+                                <apex:outputPanel id="NoPilot">
+                                    <apex:outputPanel id="NoPilotAck" rendered="{!reqTracker.pilot_initiative__c =='No'}">
+                                        <label for="{!$Label.RT_508}haveVPAT">
+                                            <span>Do you have a Voluntary Product Accessibility Template (VPAT) from the Vendor for this technology?</span>
+                                            <span>
+                                                <div class="tooltip" tabindex="0">
+                                                    <i class="fa fa-info-circle" aria-hidden="false"></i>
+                                                    <span class="tooltiptext" style="top: -60px;">The Voluntary Product Accessibility Template (VPAT) 
+                                                        is a document which evaluates how accessible a particular product is according to the Section 
+                                                        508 Standards. It is a self-disclosing document produced by the vendor which details each aspect
+                                                        of the Section 508 requirements and how the product supports each criteria.</span>
+                                                </div>
+                                            </span>                                        
+                                        </label>                               
+                                        <apex:inputField id="haveVPAT" value="{!reqTracker.VPAT__c}" StyleClass="usa-input-required"/>                            
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                <label for="{!$Label.RT_508}category">
+                                    <span>What category does this technology tool fall under?</span>
+                                    <span>
+                                        <div class="tooltip" tabindex="0">
+                                            <i class="fa fa-info-circle" aria-hidden="false"></i>
+                                            <span class="tooltiptext" style="top: -22px;">
+                                                If the technology tool being requested
+                                                does not fit into an existing category, 
+                                                select Other.
+                                            </span>
+                                        </div>
+                                    </span>
+                                </label>
+                                
+                                <apex:inputField id="category" type="text" value="{!reqTracker.Category__c}">
+                                    <apex:actionSupport event="onchange" rerender="OtherCat" oncomplete="clear();"/>
+                                </apex:inputField>
+                                
+                                <apex:outputPanel id="OtherCat">
+                                    <apex:outputPanel id="catgry" rendered="{!reqTracker.Category__c=='Other'}">
+                                        <label for="{!$Label.RT_508}Othercategory" class="usa-input-required">
+                                            Please specify the 'Other' category. 
+                                        </label>
+                                        <apex:inputfield type="text" id="Othercategory" value="{!reqTracker.CategoryOther__c}" StyleClass="usa-input-required"/>
+                                        
+                                        <!-- Error Message -->
+                                        <div class="usa-input-error" id="OthercategoryError" style="margin-top: 0.1em;display: none;">
+                                            <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                                Please enter the category your technology request falls under.
+                                            </span>
+                                        </div>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                
+                                <!-- End Section for ToolIdentified=Yes -->
+                                
+                                <label for="{!$Label.RT_508}techType" class="usa-input-required">
+                                    <span>What type of technology is this?</span>
+                                    <span>
+                                        <div class="tooltip" tabindex="0">
+                                            <i class="fa fa-info-circle" aria-hidden="false"></i>
+                                            <span class="tooltiptext" style="top: -83px; text-align: left;">
+                                                <b>Desktop:</b> A technology that runs stand-alone on a desktop or laptop computer.<br/>
+                                                <b>SaaS:</b> 'Software-as-a-Service'; managed by a third-party vendor and whose technology interface is accessed on the web.<br/>
+                                                <b>Server:</b> A type of technology that is designed to be used, operated, and managed on a Server.<br/><br/>
+                                                If you are unsure which type your technology falls under, select '<b>I don't know</b>'.</span>
+                                        </div>                    
+                                    </span>                                                
+                                </label>
+                                
+                                <apex:inputField id="techType" value="{!reqTracker.Type_of_Technology__c}">
+                                    <apex:actionSupport event="onchange" rerender="Othertech" oncomplete="clear2();"/>
+                                </apex:inputField>
+                                
+                                <!-- Error Message -->
+                                <div class="usa-input-error" id="techTypeError" style="margin-top: 0.1em;display: none;">
+                                    <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                        Please choose a technology type for your request.
+                                    </span>
+                                </div>
+                                
+                                <apex:outputPanel id="Othertech">
+                                    <apex:outputPanel id="techmisc" rendered="{!reqTracker.Type_of_Technology__c=='Other'}">
+                                        <label for="{!$Label.RT_508}techTypeOther" class="usa-input-required">
+                                            Please specify the 'Other' type of technology. 
+                                        </label>
+                                        
+                                        <apex:inputfield id="techTypeOther" value="{!reqTracker.Tech_other__c}"/>
+                                        
+                                        <!-- Error Message -->
+                                        <div class="usa-input-error" id="techTypeOtherError" style="margin-top: 0.1em;display: none;">
+                                            <span class="usa-input-error-message" id="input-error-message-type" role="alert">
+                                                Please enter the type of technology you are requesting.
+                                            </span>
+                                        </div>   
+                                    </apex:outputPanel>
+                                </apex:outputPanel>      
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                        
+                        
+                        <apex:commandButton id="Submitbutton" value="Submit" action="{!submit}" onclick="this.blur()" style="margin-top: 3em; margin-bottom: 0em;"/>
+                    </apex:form>
+                </div>
+            </section>
+        </div>
+        
+        
+        <!-- Section to display footer in page -->
+        <footer class="usa-footer usa-footer-big" role="contentinfo">
+            <div class="usa-grid usa-footer-return-to-top">
+                <a href="#">Return to top</a>
+            </div>
+            <div class="usa-footer-primary-section"  style="padding-top: 0rem;padding-bottom: 0rem;background-color: #3C547C;">
+                <div class="usa-grid" id="footercontent2">
+                    <div class="usa-footer-logo usa-width-one-whole">
+                        <p style="text-align:center;color:#eeeeee;">
+                            <a href="https://www.gsa.gov/" target="_blank">GSA.gov</a> | 
+                            <a href="https://tech.gsa.gov/" target="_blank">About Us</a>                           
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+        // globals
+        var j$ =  jQuery.noConflict();
+        var pgStructure1 =  '#RequestForm\\:j_id7\\:';
+        
+        
+        var disableEnterKey = function(){
+            j$(window).keydown(function(event){
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        };
+        
+        var hookFormSubmissionToForceValidation = function() {
+            j$( "form" ).submit(function() {
+                return validateForm();
+            });
+        };
+        
+        var FormObj = function () {
+            this.elementToScrollTo =    undefined;
+            this.errorsFound =          false;
+            this.firstErrorLoc =        100;
+            this.curErrorIndex =        0;
+            
+            this.qspokenwithgsa        = j$(pgStructure1+"qspokenwithgsa").val();
+            this.BusinessJustification = j$(pgStructure1+"BusinessJustification").val();
+            this.techToolIdentified    = j$(pgStructure1+"techToolIdentified").val();
+            this.techType              = j$(pgStructure1+"techType").val();
+            
+            this.propListOrder = ["qspokenwithgsa", "userSearchBox", 
+                                  "BusinessJustification", "techToolIdentified", 
+                                  "isPilot", "Ack", "supportEmail", "Othercategory",  
+                                  "techType", "techTypeOther" ];
+            
+            this.checkIfFieldsAreEmpty = function(){
+                for(var property in this){
+                    if(this.hasOwnProperty(property)){
+                        if(this[property] === ""){
+                            this.setErrorsFound(property);
+                        } else {
+                            j$( "#" + property + "Error" ).hide();
+                        }
+                    }
+                }
+            }
+            
+            this.setErrorsFound = function(propName){
+                j$( "#" + propName + "Error" ).show();
+                this.errorsFound = true;
+                this.curErrorIndex = this.getPropertyListIndex(propName);
+                if(this.firstErrorLoc > this.curErrorIndex){
+                    this.firstErrorLoc = this.curErrorIndex;
+                    this.setElementToScrollTo(propName);
+                }
+            }
+            
+            
+            this.getPropertyListIndex = function(propName){
+                var result = -1;
+                for(var i = 0; i < this.propListOrder.length; i++){
+                    if(this.propListOrder[i] == propName){
+                        result = i;
+                    }
+                }
+                return result;
+            }
+            
+            
+            this.setElementToScrollTo = function(propName){
+                this.elementToScrollTo = j$( pgStructure1 + propName);
+            }
+            
+            
+            this.scrollToFirstError = function() {
+                try {
+                    j$("html,body").animate({
+                        
+                        scrollTop: this.elementToScrollTo.offset().top
+                    });
+                } catch(err){
+                    window.scrollTo(0,0);
+                }
+            }
+            
+            /* validate Contact Name if SpokenWithGSAIT selection is Yes */
+            this.checkIfContactIsBlank = function(){
+                var gsaContactNameLookupID = j$(pgStructure1+"gsaContactNameLookupID").val();
+                if(this.qspokenwithgsa == "Yes" && gsaContactNameLookupID === ""){
+                    this.setErrorsFound("userSearchBox");
+                }
+                else {
+                    j$( "#" + "userSearchBox" + "Error" ).hide();
+                }
+            }
+            
+            /* validate if IsPilot selection is blank when Tech Tool is Identified */
+            this.checkIfPilotIsBlank = function(){
+                var isPilot = j$(pgStructure1+"isPilot").val();
+                if(this.techToolIdentified == "Yes" && isPilot === ""){
+                    this.setErrorsFound("isPilot");
+                }
+                else {
+                    j$( "#" + "isPilot" + "Error" ).hide();
+                }
+            }
+            
+            
+            /* validate if T&Cs are accepted when request is a Pilot Initiative */
+            this.checkIfTCAck = function(){
+                var Ack = j$(pgStructure1+"Ack").is(":checked");
+                var isPilot = j$(pgStructure1+"isPilot").val();
+                if(Ack != true && isPilot == "Yes"){
+                    this.setErrorsFound("Ack");
+                }
+                else {
+                    j$( "#" + "Ack" + "Error" ).hide();
+                }
+            }
+            
+            
+            /* validate technology customer support email */
+            this.checkIfTechCompanyEmailBlank = function(){
+                var supportEmail = j$(pgStructure1+"supportEmail").val();
+                if(this.techToolIdentified == "Yes" && supportEmail !== "" && !this.isValidEmail(supportEmail)){
+                    this.setErrorsFound("supportEmail");
+                }
+                else {
+                    j$( "#" + "supportEmail" + "Error" ).hide();
+                    //return false;
+                }
+            }
+            
+            /* validate if Category (other) is provided */
+            this.checkIfCategoryOtherBlank = function(){
+                var category = j$(pgStructure1+"category").val();
+                var Othercategory = j$(pgStructure1+"Othercategory").val();
+                if(this.techToolIdentified == "Yes" && category == "Other" && Othercategory === ""){
+                    this.setErrorsFound("Othercategory");
+                }
+                else {
+                    j$( "#" + "Othercategory" + "Error" ).hide();
+                }
+            }
+            
+            /* validate if technology (other) is provided */
+            this.checkIfTechOtherBlank = function(){
+                var techTypeOther = j$(pgStructure1+"techTypeOther").val();
+                if(this.techType == "Other" && techTypeOther === ""){
+                    this.setErrorsFound("techTypeOther");
+                }
+                else {
+                    j$( "#" + "techTypeOther" + "Error" ).hide();
+                }
+            }
+            
+            /* validate if Cost format
+            this.checkCostFormat = function(){
+                var cost = j$(pgStructure1+"Cost").val();
+                console.log('your cost is: '+cost);
+                if(!(cost === "") && !this.isValidCurrency(cost)){
+                    this.setErrorsFound("Cost");
+                    }
+                    else {
+                            j$( "#" + "Cost" + "Error" ).hide();
+                        }
+                }
+            */
+            
+            /* validate currency 
+                this.isValidCurrency = function(currencyValue) {
+                    console.log('currency Value: '+ currencyValue);
+                    return /(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|0)?(\.[0-9]{1,2})?$/.test(currencyValue);
+                }
+            */
+            
+            /* validate the format of technology customer support email */
+            this.isValidEmail = function(testemail) {
+                console.log('email'+testemail);
+                return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(testemail);
+            }
+        };
+        
+        var validateForm = function () {
+            var form = new FormObj();
+            form.checkIfFieldsAreEmpty();
+            form.checkIfContactIsBlank();
+            form.checkIfPilotIsBlank();
+            form.checkIfTCAck();
+            //form.checkIfTechToolNameBlank();
+            //form.checkIfTechCompanyNameBlank();
+            form.checkIfTechCompanyEmailBlank();
+            form.checkIfCategoryOtherBlank();
+            form.checkIfTechOtherBlank();
+            //form.checkCostFormat();
+            
+            if(form.errorsFound){
+                form.scrollToFirstError();
+                return false;
+            } else {
+                return true;
+            }
+        };
+        
+        (function(){
+            //disableEnterKey();
+            hookFormSubmissionToForceValidation();    
+        }());
+        </script>
+        
+        <script type="text/javascript">
+        
+        function removebuttoncss(){
+            var mybuttonclass = document.getElementById("RequestForm:j_id7:Submitbutton").classList;
+            mybuttonclass.remove('btn');
+        }  
+        
+        function Lookupdisplay(data){
+            var qspokenwithgsa = document.getElementById("RequestForm:j_id7:qspokenwithgsa").value ;
+            if(qspokenwithgsa=="Yes"){
+                
+                document.getElementById("lookupComponent").style.display='block' ;
+                setTimeout(function() {document.getElementById("userSearchBox").style.backgroundColor='' ;}, 1);   
+            }
+            else{
+                document.getElementById("lookupComponent").style.display='none' ;
+            }
+        }
+        
+        
+        function LookupdisplayRequestor(){
+            document.getElementById("lookupComp").style.display='block' ;
+            setTimeout(function() {document.getElementById("userSearchBox2").style.backgroundColor='' ;}, 1);
+        }
+        
+        if (window.addEventListener) {
+            window.addEventListener('load', LookupdisplayRequestor, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('onload', LookupdisplayRequestor);
+        }
+        
+        </script>
+        <script>
+        function clear(){  
+            var category = document.getElementById("RequestForm:j_id7:category").value ;
+            if("Other" == category){
+                document.getElementById("RequestForm:j_id7:Othercategory").value= "";
+            }else{}
+        }
+        function clear2(){
+            var techtool = document.getElementById("RequestForm:j_id7:techType").value ;
+            if("Other" == techtool ){
+                document.getElementById("RequestForm:j_id7:techTypeOther").value = "";
+            }else{}
+        }
+        function clear3(){
+            var spokentoGSA= document.getElementById("RequestForm:j_id7:qspokenwithgsa").value ;
+            if("Yes" == spokentoGSA){
+                document.getElementById("userSearchBox").value = "";
+            }else{}
+        }
+        </script>
+        
+        <apex:includeScript value="{!URLFOR($Resource.wds, '/uswds-0.9.0/js/uswds.min.js')}"/>
+        
+    </body>
+</apex:page>

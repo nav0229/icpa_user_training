@@ -1,0 +1,87 @@
+<!--------------------------------------------------------------------------------------------------------------------
+Original source code from: http://christopheralunlewis.blogspot.com/2012/04/clone-plus-clone-salesforce-objects.html
+Expanded by GSA IT
+----------------------------------------------------------------------------------------------------------------------->
+
+<apex:page controller="ClonePlusController" action="{!initialiseObjectsForCloning}">
+<script language="javascript">
+function unCheckAll(obj) {
+//alert(obj.name);
+var children = document.getElementsByTagName('input');
+    for(var j=0; j < children.length; j++) {
+        if(children[j].type == 'text') {
+            var val = null;
+            var checkboxes = new Array();
+            checkboxes = document.getElementsByTagName('input');
+                if(obj.name == children[j].value) {
+                    //alert( obj.name + ' ' + children[j].value);
+                        for (var i = 0; i < checkboxes.length; i++) {
+                                if (checkboxes[i].type == 'checkbox') {  
+                                        if(checkboxes[i].className == obj.name) {           
+                                                checkboxes[i].checked = val;                                                
+                                        }                                        
+                                    }
+                        }
+                        return false;
+                }
+         }
+    }
+}
+function checkAll(obj) {
+//alert(obj.name);
+var children = document.getElementsByTagName('input');
+    for(var j=0; j < children.length; j++) {
+        if(children[j].type == 'text') {           
+            var checkboxes = new Array();
+            checkboxes = document.getElementsByTagName('input');
+                if(obj.name == children[j].value) {
+                    //alert( obj.name + ' ' + children[j].value);
+                        for (var i = 0; i < checkboxes.length; i++) {
+                                if (checkboxes[i].type == 'checkbox') {  
+                                        if(checkboxes[i].className == obj.name) {           
+                                                checkboxes[i].checked = true;                                                
+                                        }                                        
+                                    }
+                        }
+                        return false;
+                }
+         }
+    }
+}
+
+
+</script>
+ <apex:sectionHeader title="Clone Plus: {!objectName}"/>
+   <apex:messages style="color:red;"/>
+   <apex:form id="theform" >
+   <apex:pageBlock rendered="{!IF((autoNumber == 'false'),true,false)}">
+     <b> {!objectLabelName}:
+     <!--<apex:outputLabel value="Name: " />-->&nbsp;&nbsp;</b>
+     <apex:inputText value="{!objectName}"/>&nbsp;&nbsp;Please update Project Name
+     </apex:pageBlock><br/><br/>
+     Please select the child objects you would like to clone.<br/><br/>
+        <apex:repeat value="{!objectChildren}" var="child">
+        <apex:PageBlock title="{!child.pluralLabel}" id="childName">
+        <button onclick="return checkAll(this);" name="{!child.pluralLabel}">Select All</button> 
+        <button onclick="return unCheckAll(this);" name="{!child.pluralLabel}">Deselect All</button>
+        <input type="text" value="{!child.pluralLabel}" id="child" style="display:none"/>
+        <apex:pageBlockTable value="{!child.objectRows}" var="objectRow">
+          <apex:column headerValue="Clone" width="5%">
+            <!--  <apex:inputCheckbox label="OR" value="{!objectRow.selected}" id="objectRow1" styleClass="{!child.pluralLabel}"/>-->
+            <apex:inputCheckbox label="OR" value="{!objectRow.selected}" id="objectRow1" styleClass="{!child.pluralLabel}"/>
+          </apex:column>
+         
+          <apex:column headerValue="Name" value="{!objectRow.name}" width="30%"/>
+          
+        <apex:column headerValue="{!child.customFieldName}" value="{!objectRow.fieldLabel}" width="30%"/>
+        <!-- <apex:column headerValue="Created Date" value="{!objectRow.createddate}" width="20%"/>-->
+        </apex:pageBlockTable>
+        
+      </apex:PageBlock>
+    </apex:repeat>
+      <apex:PageBlock >
+      <apex:commandButton action="{!doClone}" value="Clone" />
+     <apex:commandButton action="{!goBack}" value="Cancel"/>
+    </apex:PageBlock>
+  </apex:form>  
+</apex:page>

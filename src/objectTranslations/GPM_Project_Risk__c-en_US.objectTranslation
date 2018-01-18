@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Risk / Issue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Risks / Issues</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date Identified --></label>
+        <name>Date_Identified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Date the Risk/Issue was Resolved. --></help>
+        <label><!-- Date Resolved --></label>
+        <name>Date_Resolved__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Days to Resolve Risk --></label>
+        <name>Days_to_Resolve_Risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exposure Flag --></label>
+        <name>Exposure_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exposure --></label>
+        <name>Exposure__c</name>
+        <picklistValues>
+            <masterLabel>Green (Low)</masterLabel>
+            <translation><!-- Green (Low) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red (High)</masterLabel>
+            <translation><!-- Red (High) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow (Medium)</masterLabel>
+            <translation><!-- Yellow (Medium) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>GPM_Project__c</name>
+        <relationshipLabel><!-- Risks / Issues --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- 1- Negligible: Can Mitigate
+2- Minor: Probably Mitigate
+3- Moderate: May Mitigate
+4- Serious:Cannot Mitigate with current approach
+5- Critical: Cannot Mitigate No workaround --></help>
+        <label><!-- Impact --></label>
+        <name>Impact__c</name>
+        <picklistValues>
+            <masterLabel>1- Negligible</masterLabel>
+            <translation><!-- 1- Negligible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2- Minor</masterLabel>
+            <translation><!-- 2- Minor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3- Moderate</masterLabel>
+            <translation><!-- 3- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4- Serious</masterLabel>
+            <translation><!-- 4- Serious --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5- Critical</masterLabel>
+            <translation><!-- 5- Critical --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mitigation Approach --></label>
+        <name>Mitigation_Approach__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Risks / Issues --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Probability --></label>
+        <name>Probability__c</name>
+        <picklistValues>
+            <masterLabel>Even Likelihood</masterLabel>
+            <translation><!-- Even Likelihood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Likely</masterLabel>
+            <translation><!-- Likely --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unlikely</masterLabel>
+            <translation><!-- Unlikely --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Likely</masterLabel>
+            <translation><!-- Very Likely --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Unlikely</masterLabel>
+            <translation><!-- Very Unlikely --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk Title --></label>
+        <name>Risk_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Risk is uncertain event/condition that, if it occurs, has an effect on a project&apos;s objectives; 
+Issue is a risk that has occurred and cannot be managed by Project Manager --></help>
+        <label><!-- Risk or Issue? --></label>
+        <name>Risk_or_Issue__c</name>
+        <picklistValues>
+            <masterLabel>Issue</masterLabel>
+            <translation><!-- Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk</masterLabel>
+            <translation><!-- Risk --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Mitigation In Place - Closed</masterLabel>
+            <translation><!-- Mitigation In Place - Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitigation Pending - Open</masterLabel>
+            <translation><!-- Mitigation Pending - Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitigation Planned - In Progress</masterLabel>
+            <translation><!-- Mitigation Planned - In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <layouts>
+        <layout>Risk Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Risk Description --></label>
+            <section>Risk Description</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Date Resolved must later or equal to Date Identified. --></errorMessage>
+        <name>Date_Resolved_later_than_Date_Identified</name>
+    </validationRules>
+</CustomObjectTranslation>

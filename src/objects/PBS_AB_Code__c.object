@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>PBS A/B Codes Object</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AB_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is the 4-digit code that uniquely identifies the agency bureau for which the exception, exemption, administrative, or agency (including trust fund agency) adjustment was created.</description>
+        <externalId>true</externalId>
+        <label>AB Code</label>
+        <length>4</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Bureau_Name__c</fullName>
+        <description>The full name of the agency or bureau.</description>
+        <externalId>false</externalId>
+        <label>Agency Bureau Name</label>
+        <length>55</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Bureau_Short_Name__c</fullName>
+        <description>The 20-character agency bureau short name.</description>
+        <externalId>false</externalId>
+        <label>Agency Bureau Short Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Code__c</fullName>
+        <description>The first 2-digits of the A/B Code identifies the client agency.</description>
+        <externalId>false</externalId>
+        <label>Agency Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bureau_Code__c</fullName>
+        <description>The first 3 and fourth digits of the A/B Code identifies the client agency.</description>
+        <externalId>false</externalId>
+        <label>Bureau Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_Created_By__c</fullName>
+        <description>The User ID who first added the record to the database. This field is system generated and cannot be updated on-line.</description>
+        <externalId>false</externalId>
+        <label>Source Created By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_Created_Ts__c</fullName>
+        <description>The date the record was first added to the database. This field is system generated and cannot be updated on-line.</description>
+        <externalId>false</externalId>
+        <label>Source Created Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Source_Updated_By__c</fullName>
+        <description>The user id or ticket number that inserted or last updated the record.</description>
+        <externalId>false</externalId>
+        <label>Source Updated By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_Updated_Ts__c</fullName>
+        <description>The date and time the record was last updated or created.</description>
+        <externalId>false</externalId>
+        <label>Source Updated Ts</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>PBS AB Code</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PBSABCode-{0000000000}</displayFormat>
+        <label>PBS AB Code Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>PBS AB Codes</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>AB_Code__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

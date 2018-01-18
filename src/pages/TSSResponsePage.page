@@ -1,0 +1,42 @@
+<!-- TSS Action Planning Application -------------------------->
+<!------------------------------------------------------------->
+<!-- Created By      | Version |  Date    | Description ------->
+<!------------------------------------------------------------->
+<!-- Raja Kumar        1.0      05/19/2015  Created          -->
+<!-- Raja Kumar        2.0      09/14/2017  case#38030       -->
+<!------------------------------------------------------------->
+<!------------------------------------------------------------->
+<apex:page controller="TSSResultActionPlanHelper" readonly="true" showheader="false" showchat="false" sidebar="false">
+<!--
+<apex:page controller="TSSResponseCommentController" readonly="true" showheader="false" showchat="false" sidebar="false">    
+  -->
+    <apex:form > 
+    <apex:pageBlock title="Comments Report" id="display" rendered="{!found}" >
+        <apex:commandButton value="Print" style="float:right" onclick="window.print();" dir="RTL"/>
+        <apex:pageBlockTable value="{!responses}" var="o">
+            <apex:column headerValue="{!$ObjectType.TSS_Response__c.Fields.TSS_Survey__c.Label}">
+                <apex:outputLink value="/{!o.surveyrecordId}">{!o.survey}</apex:outputLink>
+        	</apex:column>
+            <!--
+            <apex:column headerValue="TSS Response Name">
+                <apex:outputLink value="/{!o.id}">{!o.Name}</apex:outputLink>
+            </apex:column>
+            -->
+            <apex:column headerValue="{!$ObjectType.TSS_Survey__c.Fields.Agency_txt__c.Label}" value="{!o.agency}" />
+            <apex:column headerValue="{!$ObjectType.TSS_Survey__c.Fields.Bureau_txt__c.Label}" value="{!o.bureau}" />
+            <!--
+            <apex:column value="{!o.Service_Category__c}"/>            
+            -->
+            <apex:column headerValue="{!$ObjectType.TSS_Response__c.Fields.Question__c.Label}" value="{!o.question}"/>
+            <apex:column headerValue="{!$ObjectType.TSS_Response__c.Fields.Response_Text__c.Label}" value="{!o.comment}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Comments Report" rendered="{!!found}">
+        <apex:outputpanel > 
+            <p style="font-weight:bold;font-style:Arial;text-align:left;margin-top:20px;margin-bottom:20px;margin-left:15px;">
+                There are no comments associated with this building.    
+            </p>            
+        </apex:outputpanel>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

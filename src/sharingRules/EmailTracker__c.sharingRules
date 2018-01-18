@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>EmailTracker_HR_Mgrs_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grants read access to the Email Tracker record for the HR Survey Group.</description>
+        <label>EmailTracker _HR Mgrs Read</label>
+        <sharedTo>
+            <group>Contact_Manager_HRSurvey_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>OHRM Survey</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Email_Tracker_Clicktools_User_access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Email records read/write access to clicktools user</description>
+        <label>Email Tracker_Clicktools_User_access</label>
+        <sharedTo>
+            <group>Contact_Manager_ClickTools_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>OHRM Survey</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

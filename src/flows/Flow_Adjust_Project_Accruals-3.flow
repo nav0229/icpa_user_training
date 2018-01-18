@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Flow_Fault_Email_Message</name>
+        <label>Flow Fault Email Message</label>
+        <locationX>562</locationX>
+        <locationY>796</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>ErrorFlowFaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Flow Error: G2 - Adjust Project Accruals</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>Galaxy2Help@unisys.com</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <description>1) Missing Digest/Transaction - This is a invalid business case scenario ... 
+
+2) Accrual Amount &gt; Prior Year Accrual amount - no adjustments needed ...
+
+we want to exit the flow with no operations ...</description>
+        <name>Exit_Flow_With_No_Adjustments</name>
+        <label>Exit Flow With No Adjustments</label>
+        <locationX>877</locationX>
+        <locationY>389</locationY>
+        <assignmentItems>
+            <assignToReference>dblAdjustedAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Lump_Sum_Amount_Prior_Year_Accrual_Amount</name>
+        <label>Lump Sum Amount = Prior Year Accrual Amount</label>
+        <locationX>175</locationX>
+        <locationY>522</locationY>
+        <assignmentItems>
+            <assignToReference>dblAdjustedAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>dblPYAccrualAmount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_the_Adjustment_Amount_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Lump_Sum_Amount_Prior_Year_Accrual_Amount_Digest_Amount</name>
+        <label>Lump Sum Amount = (Prior Year Accrual Amount - Digest Amount)</label>
+        <locationX>459</locationX>
+        <locationY>522</locationY>
+        <assignmentItems>
+            <assignToReference>dblAdjustedAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>dblDiffAmount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_the_Adjustment_Amount_0</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Adjust_the_Accruals</name>
+        <label>Adjust the Accruals</label>
+        <locationX>313</locationX>
+        <locationY>405</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>No_Accruals_Specified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAccrualAmountOnTransaction</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Lump_Sum_Amount_Prior_Year_Accrual_Amount</targetReference>
+            </connector>
+            <label>No Accruals Specified</label>
+        </rules>
+        <rules>
+            <name>Accruals_Amount_Greater_than_equal_to_Prior_Year_Accrual</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAccrualAmountOnTransaction</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>dblPYAccrualAmount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Exit_Flow_With_No_Adjustments</targetReference>
+            </connector>
+            <label>Accruals Amount Greater than equal to Prior Year Accrual</label>
+        </rules>
+        <rules>
+            <name>Accruals_Amount_less_than_Prior_Year_Accrual</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAccrualAmountOnTransaction</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>dblPYAccrualAmount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Lump_Sum_Amount_Prior_Year_Accrual_Amount_Digest_Amount</targetReference>
+            </connector>
+            <label>Accruals Amount less than Prior Year Accrual</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Digest_Found</name>
+        <label>Digest Found?</label>
+        <locationX>312</locationX>
+        <locationY>145</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ObjDigest</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Look_Up_Lump_Sum_Record_Type_ID</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ObjDigest</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Exit_Flow_With_No_Adjustments</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_the_Adjustment_Amount_0</name>
+        <label>Is the Adjustment Amount &gt; 0?</label>
+        <locationX>318</locationX>
+        <locationY>654</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Adj_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAdjustedAmount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Lump_Sum_to_adjust_the_Accruals</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+        <rules>
+            <name>Adj_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dblAdjustedAmount</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Exit_Flow_With_No_Adjustments</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>dblAccrualAmountOnTransaction</name>
+        <dataType>Currency</dataType>
+        <expression>{!ObjDigest.AccrualAmountForDigest__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>dblDiffAmount</name>
+        <dataType>Currency</dataType>
+        <expression>{!(dblPYAccrualAmount - ObjDigest.AccrualAmountForDigest__c)}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>strComments</name>
+        <dataType>String</dataType>
+        <expression>&apos;  [** &apos; &amp;
+&apos;Record created by the Accrual Process on &apos; &amp; Text(Today()) &amp; &apos;. &apos; &amp;
+&apos;Transaction ID = &apos; &amp; 
+{!ObjDigest.Transaction__r.Name} &amp; &apos;; &apos; &amp;
+&apos;PDN = &apos; &amp; 
+{!ObjDigest.PDNsForDigest__c} &amp; &apos;; &apos; &amp;
+ &apos;**]&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>strLeaseID</name>
+        <dataType>String</dataType>
+        <expression>{!ObjDigest.Transaction__r.LeaseNumber__c}</expression>
+    </formulas>
+    <interviewLabel>Flow - Adjust Project Accruals {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Flow - Adjust Project Accruals</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Lump_Sum_to_adjust_the_Accruals</name>
+        <label>Create Lump Sum to adjust the Accruals</label>
+        <locationX>320</locationX>
+        <locationY>803</locationY>
+        <faultConnector>
+            <targetReference>Flow_Fault_Email_Message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Amount__c</field>
+            <value>
+                <elementReference>dblAdjustedAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comments__c</field>
+            <value>
+                <elementReference>strComments</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EffectiveDate__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ExpirationDate__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeaseNumber__c</field>
+            <value>
+                <elementReference>strLeaseID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LumSumType__c</field>
+            <value>
+                <stringValue>Catch Up Payment</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ProcessedDate__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>ObjRecordType.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StatusCd__c</field>
+            <value>
+                <stringValue>Actual</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Glxy_LumpSum__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Digest_Details</name>
+        <label>Get Digest Details</label>
+        <locationX>312</locationX>
+        <locationY>21</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Digest_Found</targetReference>
+        </connector>
+        <filters>
+            <field>ProjectNumber__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>strProjectID</elementReference>
+            </value>
+        </filters>
+        <object>Glxy_LeaseDigest__c</object>
+        <outputReference>ObjDigest</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>DigestID__c</queriedFields>
+        <queriedFields>Transaction__c</queriedFields>
+        <queriedFields>AccrualAmountForDigest__c</queriedFields>
+        <queriedFields>PDNsForDigest__c</queriedFields>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <name>Look_Up_Lump_Sum_Record_Type_ID</name>
+        <label>Look Up Lump Sum Record Type ID</label>
+        <locationX>314</locationX>
+        <locationY>273</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Adjust_the_Accruals</targetReference>
+        </connector>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Placeholder</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Glxy_LumpSum__c</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputReference>ObjRecordType</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <startElementReference>Get_Digest_Details</startElementReference>
+    <textTemplates>
+        <name>ErrorFlowFaultMessage</name>
+        <text>Error: {!$Flow.FaultMessage}
+
+The flow encountered errors. Accrual amounts were not adjusted. This adjustment will need to be made manually.
+
+Project ID: {!strProjectID}
+Prior Year Acccrual Amount: {!dblPYAccrualAmount}
+Adjusted Amount: {!dblAdjustedAmount}</text>
+    </textTemplates>
+    <variables>
+        <name>dblAdjustedAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>dblPYAccrualAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>ObjDigest</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Glxy_LeaseDigest__c</objectType>
+    </variables>
+    <variables>
+        <name>ObjRecordType</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>RecordType</objectType>
+    </variables>
+    <variables>
+        <name>strProjectID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

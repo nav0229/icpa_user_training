@@ -1,0 +1,3621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Conference Planning application provides an automated request, audit , approval, and
+organization processes for Agency Conferences, Awards Ceremonies (with food), and Internal Management Meetings via the Salesforce cloud platform. This application is the required entry point for Event Coordinators, Finance, Contracting, Public Affairs, Procurement, and Leadership to coordinate requests submitted to the Office of Administrative Services; who will review and approve these requests, before an event can move forward.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Approval_Step__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Step</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Supervisor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HSSO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conference_Site__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name of the site where the conference is being held. Include the country if international travel is required.</inlineHelpText>
+        <label>Conference Venue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_GSA_Contractors__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Actual # GSA Contractors</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Grants__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout..</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please include all grants received.  If there were none, please enter a &quot;0&quot; in this field.</inlineHelpText>
+        <label>Actual Grants</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Non_GSA_Contractors__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Actual # Non GSA Contractors</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Non_GSA_Govt_Employees__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  will be on Conf Approval and awards ceremony layout</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Actual # Non GSA Govt. Employees</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Other_Attendees__c</fullName>
+        <description>Used on OAS Application for Event Approval object.   will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter &quot;0&quot; if no-one of this type is attending</inlineHelpText>
+        <label>Actual # Other Attendees</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Other_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Fill in actuals after the event has occurred.</inlineHelpText>
+        <label>Actual Other Revenue</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Registration_Fees_Collected__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout..</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please place a &quot;0&quot; if there is no value.</inlineHelpText>
+        <label>Actual Registration Fees Collected</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Vendor_Fees__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout..</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please include any Vendor Fees collected from a Vendor.  If there are no Vendor Fees, please place a &quot;0&quot; in this field.</inlineHelpText>
+        <label>Actual Vendor Fees</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_of_GSA_Employees__c</fullName>
+        <description>Used in the OAS application on the Event Approval object.  This will be a required field that resides on the Conference approval and Awards ceremony page layouts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Actual # of GSA Employees</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Alternate_Location_Considered__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please supply the Name Address and Phone number of two alternate locations</inlineHelpText>
+        <label>Alternate Location Considered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EA_Contract_Status__c</fullName>
+        <description>Used in the Event Approval Application on the Conference Approval layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If there is an existing contract attach a copy to this record.</inlineHelpText>
+        <label>Contract Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>EA_Contracting_Vehicle_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Existing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Proposal</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Internal With Contract</controllingFieldValue>
+                <controllingFieldValue>External, Third Party</controllingFieldValue>
+                <valueName>Existing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internal With Contract</controllingFieldValue>
+                <controllingFieldValue>External, Third Party</controllingFieldValue>
+                <valueName>Proposal</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EA_Contracting_Vehicle_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contracting Vehicle Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal, No Contract</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Internal With Contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>External, Third Party</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EA_End_Date__c</fullName>
+        <description>Used across all page layouts and record types for the Event Approval Application</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EA_Est_of_GSA_Attendees_That_Must_Travel__c</fullName>
+        <description>For the Event Approval Object in the OAS application.  This field spans across all page layouts and record types and is required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please fill in the Only the number of GSA participants that MUST travel</inlineHelpText>
+        <label>Est. # of GSA Attendees That Must Travel</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_GSA_Employees__c</fullName>
+        <description>used in the OAS application for the Event Approval Object.  These will be required fields that will appear on the Conference and Awards page layouts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Helptext: Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Estimated # GSA Employees</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_GSA_contractors__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Estimated # GSA contractors</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Grants__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout..</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please include any grants that you estimate that you will receive.  If there are none, please enter a &quot;0&quot; in this field.</inlineHelpText>
+        <label>Estimated Grants</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Non_GSA_Contractors__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <label>Estimated # Non GSA Contractors</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Non_GSA_Govt_Employees__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Helptext: Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Estimated # Non GSA Govt Employees</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Other_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Place a &quot;0&quot; here if there is no amount for this field.</inlineHelpText>
+        <label>Estimated Other Revenue</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Registration_Fees__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Input any Registration fees you estimate that you will collect.  If there are no registration fees, then please enter a &quot;0&quot; in this field.</inlineHelpText>
+        <label>Estimated Registration Fees</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Total_Travel_Cost__c</fullName>
+        <description>Used in the Event Approval application for the Travel Request to internal Meeting Layout</description>
+        <externalId>false</externalId>
+        <label>Estimated Total Travel Cost</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_VS_Actual__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout..</description>
+        <externalId>false</externalId>
+        <formula>EA_Total_Estimated_Revenue__c  -  EA_Total_Actual_Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimated VS Actual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Vendor_Fees__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout..</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please include any fees that will be charged to a vendor if attending the conference.  If there are no Vendor Fees, please place a &quot;0&quot; in this field.</inlineHelpText>
+        <label>Estimated Vendor Fees</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_of_Other_Attendees__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please fill in &quot;0&quot; if no one of this type is attending</inlineHelpText>
+        <label>Estimated # of Other Attendees</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Event_Name__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>For Event Approval Application this tracks Conference  name on the Conference Approval Page layout, The Ceremony Name on the Ceremony Layout, and the meeting name on the meeting layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Event Identifier is the Short Name of the event for example &quot;FOSE&quot;  
+The Event Name is the Long name of the event for example &quot;Federal Office Systems Expo&quot;</inlineHelpText>
+        <label>Event</label>
+        <length>255</length>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Event_POC_Email__c</fullName>
+        <description>Used to Auto Populate the email of the Point of contact</description>
+        <externalId>false</externalId>
+        <formula>EA_Event_Point_of_Contact__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event POC Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Event_Point_Of_Contact_Alternate_Phon__c</fullName>
+        <description>Used in the OAS application for the Event Approval Object.  This field is NOT required but will span all three page layouts.</description>
+        <externalId>false</externalId>
+        <label>Event Point Of Contact Alternate Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>EA_Event_Point_of_Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>For the Events Approval object in the OAS application.  This field will span all page layouts and record types and will be required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Event Point of Contact may not be the same as the submitter.  There may be someone who has attended the event previously or that has more knowledge of the event.  That Person should be populated here.</inlineHelpText>
+        <label>Event Point of Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Point of Contact must be a GSA employee.</errorMessage>
+            <filterItems>
+                <field>Contact.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>GSA</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Event Approvals</relationshipLabel>
+        <relationshipName>Event_Approvals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EA_Expected_Performance_or_Outcome__c</fullName>
+        <description>Used in the OAS application for the Event Approval object.  This field is required and spans all three page layouts.</description>
+        <externalId>false</externalId>
+        <label>Expected Performance or Outcome</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_IF_FEDROOMS_Not_Used_Why__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please explain reasons for not using FEDROOMS.</inlineHelpText>
+        <label>If not used, why not? If Yes, put N/A.</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_IF_Travel_MIS_Not_Used_Why__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please explain reasons for not using Travel MIS.</inlineHelpText>
+        <label>If not used, why not? If Yes, put N/A.</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_IF_Yes_Why__c</fullName>
+        <description>Used in the Event Approval Application for the</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe why you feel this is the best value to GSA.</inlineHelpText>
+        <label>IF Yes, Why?</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_If_No_Why__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is not the best value to GSA, describe why this location was chosen.</inlineHelpText>
+        <label>If No, Why?</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_Justification_for_meeting__c</fullName>
+        <description>Used in the Event Approval Application under the Travel Request for Internal management Meetings Page Layout</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate how activity relates to the mission of GSA</inlineHelpText>
+        <label>Justification for meeting</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_Office_Location__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.City &amp; &quot;,&quot; &amp; CreatedBy.State</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Office Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Percent_of_Estimated__c</fullName>
+        <description>Used on the Event Approval Application for Conference Approval and Award Ceremonies with food</description>
+        <externalId>false</externalId>
+        <formula>EA_Total_Actual_Expenses__c  /  EA_Total_Estimated_Expenses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percent of Estimated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>EA_Proposed_Location_Justification__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Briefly Describe justification for proposed city/location.  You have 255 characters.</inlineHelpText>
+        <label>Proposed Location Justification</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EA_Proposed_Travel_Start_Date__c</fullName>
+        <description>Used in the Event Approval Application under the Internal Management meeting request page layout.</description>
+        <externalId>false</externalId>
+        <label>Proposed Travel Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EA_Purpose_or_Objective__c</fullName>
+        <description>Used in the OAS application for the EA object.  This field is required and will Span All three page layouts.</description>
+        <externalId>false</externalId>
+        <label>Purpose or Objective</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_Sponsoring_Office__c</fullName>
+        <description>A common field used across all Page Layouts in the Events Approval Application that tracks the Sponsoring office of the Event.</description>
+        <externalId>false</externalId>
+        <label>Sponsoring Office</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AA - Office of the Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK - Office of Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>B - Office of the Chief Financial Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>C - Office of Human Resource Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>D - Office of Mission Assurance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>E - Office of Small Business Utilization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>G - Civilan Board of Contract Appeals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H - Office of Administrative Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I - Office of the Chief Information Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>J - Office of the Inspector General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L - Office of General Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>M - Office of Governmentwide Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>O - Office of Customer Experience</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>P - Public Buildings Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Q - Federal Acquisition Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>S - Office of Congressional &amp; Intergovernmental Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Z - Office of Strategic Communication</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EA_Stage__c</fullName>
+        <description>Used in the OAS application on the Event Approval object.  This is not a required field and will be used for time based workflow and for moving through approval process.</description>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting for Actuals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EA_Start_Date__c</fullName>
+        <description>used for across all layouts and record types for the Event Approval Application</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EA_Target_Audience__c</fullName>
+        <description>Used in the OAS application for the Event Approval object.  It will be used on the Conference approval and the awards ceremony page layout.  This is a required field for both layouts.</description>
+        <externalId>false</externalId>
+        <label>Target Audience</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Actual_Expenses__c</fullName>
+        <description>For the Event Approval Application.  Calculates the total Acutal Expenses after they have been entered by the user</description>
+        <externalId>false</externalId>
+        <label>Total Actual Expenses</label>
+        <summarizedField>Event_Expenses__c.EA_Total_Actual_Amount__c</summarizedField>
+        <summaryForeignKey>Event_Expenses__c.Event_Identifier__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Actual_Participants__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout</description>
+        <externalId>false</externalId>
+        <formula>EA_Actual_GSA_Contractors__c  +  EA_Actual_Non_GSA_Contractors__c  +  EA_Actual_Non_GSA_Govt_Employees__c  +  EA_Actual_of_GSA_Employees__c  +  EA_Actual_Other_Attendees__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Actual Participants</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Actual_Revenue__c</fullName>
+        <description>Used on OAS Application for Event Approval object. will be on Conf Approval layout..</description>
+        <externalId>false</externalId>
+        <formula>EA_Actual_Registration_Fees_Collected__c  +  EA_Actual_Grants__c  +  EA_Actual_Vendor_Fees__c +  EA_Actual_Other_Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Actual Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Estimated_Expenses__c</fullName>
+        <description>For the Event approval app.  Sums up all estimated expenses related to an event.</description>
+        <externalId>false</externalId>
+        <label>Total Estimated Expenses</label>
+        <summarizedField>Event_Expenses__c.EA_Total_Estimated_Amount__c</summarizedField>
+        <summaryForeignKey>Event_Expenses__c.Event_Identifier__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Estimated_Participants__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout</description>
+        <externalId>false</externalId>
+        <formula>EA_Estimated_GSA_contractors__c  +  EA_Estimated_GSA_Employees__c  +  EA_Estimated_Non_GSA_Contractors__c  +  EA_Estimated_Non_GSA_Govt_Employees__c  +  EA_Estimated_of_Other_Attendees__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Estimated Participants</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Estimated_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>EA_Estimated_Registration_Fees__c  +  EA_Estimated_Grants__c  +  EA_Estimated_Vendor_Fees__c +  EA_Estimated_Other_Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Estimated Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Travel_MIS_used__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <label>Was Travel MIS used to pick event site?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Estimated_Other_Participants__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Other Participants</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Participants__c</fullName>
+        <description>Used in the Event Approval Application only for the Internal Management meeting page layout.  There is no logic behind this field.</description>
+        <externalId>false</externalId>
+        <label>Estimated # GSA Employees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Canceled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If your conference or event has been cancelled, please check this box.</inlineHelpText>
+        <label>Event Canceled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Disclaimer__c</fullName>
+        <defaultValue>&quot;ALERT: PLEASE ENSURE THAT THE REQUESTED EVENT DOES NOT ALREADY EXIST IN EVENT TRACKER. Search for the event, including any possible variations in naming convention or abbreviation, to ensure it does not already exist in the application before creating a new event.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Disclaimer</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_POC_Phone__c</fullName>
+        <description>used in the Event Approval Application</description>
+        <externalId>false</externalId>
+        <formula>EA_Event_Point_of_Contact__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event POC Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Type_Hidden__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Status Hidden</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HSSO__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Who is my HSSO approver? 
+See GSA HSSO Approver Listing at https://insite.gsa.gov/portal/content/669402</inlineHelpText>
+        <label>HSSO</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Event_Approvals1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_this_Best_Value__c</fullName>
+        <description>Used on OAS Application for Event Approval object.  Required, will be on Conf Approval and awards ceremony layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the proposed site (Location and Venue) Represent the best value to the Government, cost and all relevant factors considered?</inlineHelpText>
+        <label>Is this Best Value</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Link_to_HSSO_Approver_List_page__c</fullName>
+        <defaultValue>&quot;https://insite.gsa.gov/portal/content/669402&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Link to HSSO Approver List page</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Other_State_Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please provide an 80 character or less description of why &quot;Other&quot; was chosen for the State.</inlineHelpText>
+        <label>Other State Reason</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Travel_End_Date__c</fullName>
+        <description>Used in the Event Approval Application for the Internal Management meeting only.</description>
+        <externalId>false</externalId>
+        <label>Proposed Travel End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select the region for the requesting event</inlineHelpText>
+        <label>Region</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Region 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Central Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>American Samoa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Guam</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Minor Outlying Islands</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Northern Mariana Islands</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Puerto Rico</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S. Virgin Islands</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Event_Approvals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Estimated_Attendee_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Estimated Attendee Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Was_FEDROOMS_used_to_pick_event_venue__c</fullName>
+        <externalId>false</externalId>
+        <label>Was FEDROOMS used to pick event venue?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Zip_code__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Approval</label>
+    <listViews>
+        <fullName>All</fullName>
+        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+        <columns>NAME</columns>
+        <columns>EA_Event_Name__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Stage__c</columns>
+        <columns>EA_Total_Estimated_Expenses__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_Awards_Ceremony_With_Food</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_GSA_Sponsored_Conference</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_Internal_Management_Meeting</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.Non_GSA_Sponsored_Conference</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Approved_Award_Ceremony</fullName>
+        <columns>NAME</columns>
+        <columns>Conference_Site__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Total_Estimated_Expenses__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_Awards_Ceremony_With_Food</value>
+        </filters>
+        <filters>
+            <field>EA_Stage__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Approved Award Ceremony</label>
+    </listViews>
+    <listViews>
+        <fullName>Approved_GSA_Conferences</fullName>
+        <columns>NAME</columns>
+        <columns>Conference_Site__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Total_Estimated_Expenses__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_GSA_Sponsored_Conference</value>
+        </filters>
+        <filters>
+            <field>EA_Stage__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Approved GSA Conferences</label>
+    </listViews>
+    <listViews>
+        <fullName>Approved_Regional_Management_Meetings</fullName>
+        <columns>NAME</columns>
+        <columns>Conference_Site__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Total_Estimated_Expenses__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_Internal_Management_Meeting</value>
+        </filters>
+        <filters>
+            <field>EA_Stage__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Approved Regional Management Meetings</label>
+    </listViews>
+    <listViews>
+        <fullName>Event_Tracker_Deputy_Admin</fullName>
+        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+        <columns>NAME</columns>
+        <columns>EA_Event_Name__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Stage__c</columns>
+        <columns>EA_Total_Estimated_Expenses__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_Awards_Ceremony_With_Food</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_GSA_Sponsored_Conference</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.EA_Internal_Management_Meeting</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.Non_GSA_Sponsored_Conference</value>
+        </filters>
+        <label>Event Tracker-Deputy Admin</label>
+        <queue>Event_Tracker_Deputy_Administrator</queue>
+    </listViews>
+    <listViews>
+        <fullName>Event_Tracker_OSC_Approvers_Event_Approval</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Event Tracker-OSC-Approvers</label>
+        <queue>Event_Tracker_OSC_Approvers</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Approved_Events</fullName>
+        <columns>NAME</columns>
+        <columns>EA_Event_Name__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Stage__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>EA_Stage__c</field>
+            <operation>equals</operation>
+            <value>Approved,Waiting for Actuals</value>
+        </filters>
+        <label>My Approved Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Non_GSA_Sponsored_Conferences</fullName>
+        <columns>NAME</columns>
+        <columns>Conference_Site__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Event_Approval__c.Non_GSA_Sponsored_Conference</value>
+        </filters>
+        <label>Non GSA Sponsored Conferences</label>
+    </listViews>
+    <listViews>
+        <fullName>Pending_HSSO_Approval</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>NAME</columns>
+        <columns>EA_Event_Name__c</columns>
+        <columns>Conference_Site__c</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Total_Estimated_Expenses__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Step__c</field>
+            <operation>equals</operation>
+            <value>HSSO</value>
+        </filters>
+        <label>Pending HSSO Approval</label>
+    </listViews>
+    <listViews>
+        <fullName>Pending_OAS_Approval</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>RECORDTYPE</columns>
+        <columns>NAME</columns>
+        <columns>EA_Event_Name__c</columns>
+        <columns>Conference_Site__c</columns>
+        <columns>EA_Start_Date__c</columns>
+        <columns>EA_End_Date__c</columns>
+        <columns>EA_Total_Estimated_Expenses__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Step__c</field>
+            <operation>equals</operation>
+            <value>OAS</value>
+        </filters>
+        <filters>
+            <field>EA_Stage__c</field>
+            <operation>equals</operation>
+            <value>Pending Approval</value>
+        </filters>
+        <label>Pending OAS Approval</label>
+    </listViews>
+    <nameField>
+        <label>Event Identifier</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Event Approvals</pluralLabel>
+    <recordTypeTrackFeedHistory>true</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>EA_Awards_Ceremony_With_Food</fullName>
+        <active>true</active>
+        <description>Use this to request approval for an award ceremony with cost</description>
+        <label>Awards Ceremony (With Cost)</label>
+        <picklistValues>
+            <picklist>Approval_Step__c</picklist>
+            <values>
+                <fullName>HSSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contract_Status__c</picklist>
+            <values>
+                <fullName>Existing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contracting_Vehicle_Type__c</picklist>
+            <values>
+                <fullName>External%2C Third Party</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal%2C No Contract</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Sponsoring_Office__c</picklist>
+            <values>
+                <fullName>AA - Office of the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AK - Office of Civil Rights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Office of the Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Office of Human Resource Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Office of Mission Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E - Office of Small Business Utilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G - Civilan Board of Contract Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H - Office of Administrative Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I - Office of the Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J - Office of the Inspector General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L - Office of General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Office of Governmentwide Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>O - Office of Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P - Public Buildings Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Federal Acquisition Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Office of Congressional %26 Intergovernmental Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z - Office of Strategic Communication</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting for Actuals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Travel_MIS_used__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_this_Best_Value__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>Central Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>American Samoa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Outlying Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern Mariana Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Puerto Rico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Virgin Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Was_FEDROOMS_used_to_pick_event_venue__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EA_GSA_Sponsored_Conference</fullName>
+        <active>true</active>
+        <description>Use this to submit an approval request for a conference, seminar, summit, etc.</description>
+        <label>GSA Sponsored Conference</label>
+        <picklistValues>
+            <picklist>Approval_Step__c</picklist>
+            <values>
+                <fullName>HSSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contract_Status__c</picklist>
+            <values>
+                <fullName>Existing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contracting_Vehicle_Type__c</picklist>
+            <values>
+                <fullName>External%2C Third Party</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal With Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal%2C No Contract</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Sponsoring_Office__c</picklist>
+            <values>
+                <fullName>AA - Office of the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AK - Office of Civil Rights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Office of the Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Office of Human Resource Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Office of Mission Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E - Office of Small Business Utilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G - Civilan Board of Contract Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H - Office of Administrative Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I - Office of the Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J - Office of the Inspector General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L - Office of General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Office of Governmentwide Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>O - Office of Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P - Public Buildings Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Federal Acquisition Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Office of Congressional %26 Intergovernmental Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z - Office of Strategic Communication</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting for Actuals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Travel_MIS_used__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_this_Best_Value__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>Central Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>American Samoa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Outlying Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern Mariana Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Puerto Rico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Virgin Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Was_FEDROOMS_used_to_pick_event_venue__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EA_Internal_Management_Meeting</fullName>
+        <active>true</active>
+        <description>Use this to request approval for a Internal Management Meeting</description>
+        <label>Internal Management Meeting</label>
+        <picklistValues>
+            <picklist>Approval_Step__c</picklist>
+            <values>
+                <fullName>HSSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contract_Status__c</picklist>
+            <values>
+                <fullName>Existing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contracting_Vehicle_Type__c</picklist>
+            <values>
+                <fullName>External%2C Third Party</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal%2C No Contract</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Sponsoring_Office__c</picklist>
+            <values>
+                <fullName>AA - Office of the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AK - Office of Civil Rights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Office of the Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Office of Human Resource Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Office of Mission Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E - Office of Small Business Utilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G - Civilan Board of Contract Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H - Office of Administrative Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I - Office of the Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J - Office of the Inspector General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L - Office of General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Office of Governmentwide Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>O - Office of Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P - Public Buildings Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Federal Acquisition Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Office of Congressional %26 Intergovernmental Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z - Office of Strategic Communication</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting for Actuals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Travel_MIS_used__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_this_Best_Value__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>Central Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>American Samoa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Outlying Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern Mariana Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Puerto Rico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Virgin Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Was_FEDROOMS_used_to_pick_event_venue__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Non_GSA_Sponsored_Conference</fullName>
+        <active>true</active>
+        <description>For Conferences that are not sponsored by GSA</description>
+        <label>Non GSA Sponsored Conference</label>
+        <picklistValues>
+            <picklist>Approval_Step__c</picklist>
+            <values>
+                <fullName>HSSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contract_Status__c</picklist>
+            <values>
+                <fullName>Existing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Contracting_Vehicle_Type__c</picklist>
+            <values>
+                <fullName>External%2C Third Party</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal With Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal%2C No Contract</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Sponsoring_Office__c</picklist>
+            <values>
+                <fullName>O - Office of Customer Experience</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EA_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting for Actuals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_this_Best_Value__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>American Samoa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Outlying Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern Mariana Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Puerto Rico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Virgin Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>EA_Event_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EA_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EA_End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EA_Total_Estimated_Expenses__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EA_Total_Actual_Expenses__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EA_Event_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EA_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EA_End_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>State__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Zip_code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EA_Total_Estimated_Expenses__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EA_Total_Actual_Expenses__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EA_Event_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>RECORDTYPE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>State__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Zip_code__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EA_Event_Name__c</searchFilterFields>
+        <searchFilterFields>RECORDTYPE</searchFilterFields>
+        <searchFilterFields>City__c</searchFilterFields>
+        <searchFilterFields>State__c</searchFilterFields>
+        <searchFilterFields>Zip_code__c</searchFilterFields>
+        <searchFilterFields>EA_Start_Date__c</searchFilterFields>
+        <searchFilterFields>EA_End_Date__c</searchFilterFields>
+        <searchFilterFields>EA_Total_Estimated_Expenses__c</searchFilterFields>
+        <searchFilterFields>EA_Total_Actual_Expenses__c</searchFilterFields>
+        <searchResultsAdditionalFields>EA_Event_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EA_Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EA_End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>State__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Actuals_For_Revenue_and_Attendees</fullName>
+        <active>true</active>
+        <description>Actuals for Revenue and Attendees cannot be filled in until the conference or meeting is over.</description>
+        <errorConditionFormula>AND(
+ OR(
+  EA_End_Date__c &gt;= TODAY(),
+  AND(
+       NOT(ISPICKVAL( EA_Stage__c,&quot;Approved&quot;)), 
+       NOT(ISPICKVAL( EA_Stage__c,&quot;Completed&quot;)), 
+       NOT(ISPICKVAL( EA_Stage__c,&quot;Waiting for Actuals&quot;))
+  )
+ ), 
+ OR(
+       NOT(ISBLANK( EA_Actual_of_GSA_Employees__c )),
+       NOT(ISBLANK( EA_Actual_GSA_Contractors__c)),
+       NOT(ISBLANK( EA_Actual_Non_GSA_Govt_Employees__c )), 
+       NOT(ISBLANK( EA_Actual_Non_GSA_Contractors__c )), 
+       NOT(ISBLANK( EA_Actual_Other_Attendees__c )), 
+       NOT(ISBLANK( EA_Actual_Registration_Fees_Collected__c )), 
+       NOT(ISBLANK( EA_Actual_Grants__c )), 
+       NOT(ISBLANK( EA_Actual_Vendor_Fees__c )),
+       NOT(ISBLANK( EA_Actual_Other_Revenue__c ))
+ )
+)</errorConditionFormula>
+        <errorMessage>You cannot fill in the actual amounts until the event has ended.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_cannot_be_before_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>EA_Start_Date__c  &gt;  EA_End_Date__c</errorConditionFormula>
+        <errorDisplayField>EA_End_Date__c</errorDisplayField>
+        <errorMessage>End Date cannot be before Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Estimated_Total_Trvl_cost_cannot_be_neg</fullName>
+        <active>true</active>
+        <description>Cannot Enter a negative value in this field</description>
+        <errorConditionFormula>EA_Estimated_Total_Travel_Cost__c   &lt;= 0</errorConditionFormula>
+        <errorDisplayField>EA_Estimated_Total_Travel_Cost__c</errorDisplayField>
+        <errorMessage>Estimated Total Travel Cost Cannot be a negative amount or &quot;0&quot;.  Please enter a valid amount</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_submit_reason_for_State_Other</fullName>
+        <active>true</active>
+        <description>Validates whether the state chose by the submitter is &quot;other&quot; and if so requires them to enter a reason for choosing.</description>
+        <errorConditionFormula>AND( ISPICKVAL(  State__c  ,&quot;Other&quot;) , ISBLANK( Other_State_Reason__c ) )</errorConditionFormula>
+        <errorDisplayField>Other_State_Reason__c</errorDisplayField>
+        <errorMessage>You must submit a reason for choosing &quot;Other&quot; for the Proposed Location State.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Number_cannot_be_negative</fullName>
+        <active>true</active>
+        <description>Will not allow negative number in fields.</description>
+        <errorConditionFormula>EA_Est_of_GSA_Attendees_That_Must_Travel__c  &lt; 0</errorConditionFormula>
+        <errorDisplayField>EA_Est_of_GSA_Attendees_That_Must_Travel__c</errorDisplayField>
+        <errorMessage>Estimated Number of GSA Attendees cannot be a negative number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Total_Est_Revenue_cannot_be_negative</fullName>
+        <active>true</active>
+        <description>Will not allow negative number in fields.</description>
+        <errorConditionFormula>EA_Total_Actual_Revenue__c &lt; 0</errorConditionFormula>
+        <errorMessage>Total Estimated Revenuecannot be a negative number. Please Review all estimated Revenue Entriesto determine if any have negative values.  If so, please correct to a positive value or &quot;o&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Total_Expenses_cannot_be_negative_or_0</fullName>
+        <active>true</active>
+        <description>Will not allow negative number in fields.</description>
+        <errorConditionFormula>EA_Total_Estimated_Expenses__c  &lt; 0</errorConditionFormula>
+        <errorMessage>Total Estimated Expenses cannot be a zero or a negative number. Please Review all estimated expenses to determine if any have negative values.  If so, please correct to a positive value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Trav_End_Date_cant_be_before_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>EA_Proposed_Travel_Start_Date__c  &gt;   Proposed_Travel_End_Date__c</errorConditionFormula>
+        <errorDisplayField>Proposed_Travel_End_Date__c</errorDisplayField>
+        <errorMessage>Proposed Travel End Date cannot be before Proposed Travel Start Date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Event_Expense</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Event Expense</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!$ObjectType.Event_Expenses__c}/e?CF00N30000009peyp={!Event_Approval__c.Name}&amp;retURL=%2F{!Event_Approval__c.Id}&amp;saveURL=%2F{!Event_Approval__c.Id}</url>
+    </webLinks>
+</CustomObject>

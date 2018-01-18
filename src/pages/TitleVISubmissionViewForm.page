@@ -1,0 +1,21 @@
+<apex:page id="titleVISubmission" standardController="OCIO_Title_VI_Submission__c" extensions="TitleVISubmissionController" tabStyle="Previous_Submissions__tab">
+   <c:vf_HoverLinks />
+    <style type="text/css">
+        [id*=nodisp] {display:none;}
+	</style>
+    <apex:form id="titleVISubmissionForm" >  
+        <apex:sectionHeader title="Title VI Submission" subtitle="View"/>
+       
+        <apex:pageBlock id="titleVISubmissionPageBlock" title="" mode="edit" >
+        		<apex:pageBlockButtons rendered="{!OR(NOT(isPortalUser),AND(isPortalUser,isEditable))}">
+                        <apex:commandButton action="{!edit}" value="Edit"/>
+                </apex:pageBlockButtons>
+                 <apex:include pageName="TitleVISubmissionViewFormInclude"/>
+                 
+      </apex:pageBlock>
+    </apex:form>
+
+  
+    <apex:detail relatedList="true" relatedListHover="true" id="nodisp"  rendered="{!NOT(isPortalUser)}"/>
+
+</apex:page>

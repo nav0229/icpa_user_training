@@ -1,0 +1,2265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>Suspension_Debarment_Field_Set</fullName>
+        <description>Suspension Debarment Field Set</description>
+        <displayedFields>
+            <field>Basis__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Business__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Direct_Imputed_Affiliated__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Grounds_for_Debarment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Lead_Agency__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Lead_Agency_Determination_Necessary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>Suspension Debarment Field Set</label>
+    </fieldSets>
+    <fields>
+        <fullName>ACA_Decision_Date__c</fullName>
+        <description>Administrative Compliance Agreement Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Administrative Compliance Agreement Date</inlineHelpText>
+        <label>ACA Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ARM_45_Day_Date__c</fullName>
+        <description>Will be 45 days (excluding non-business days and holidays) after the date the record is complete.</description>
+        <externalId>false</externalId>
+        <label>ARM 45-Day Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Administrative_Record_Sent_Date__c</fullName>
+        <description>Administrative Record Sent Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Administrative Record Sent Date</inlineHelpText>
+        <label>Administrative Record Sent Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Before_ARM__c</fullName>
+        <description>Yes or No formula field to determine if the Approval process started before the 45 Day Date ARM.</description>
+        <externalId>false</externalId>
+        <formula>IF(Approval_Start_Date__c &lt; ARM_45_Day_Date__c, &apos;Yes&apos;, &apos;No&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Started Before 45-Day Date ARM</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Start_Date__c</fullName>
+        <description>Date the approval process was started.</description>
+        <externalId>false</externalId>
+        <label>Approval Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Basis__c</fullName>
+        <description>Basis</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Basis</inlineHelpText>
+        <label>Basis</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary Basis Judicial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fact-Based</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Voluntary Disclosure</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Business__c</fullName>
+        <description>Business or individual, if Business, categorize if it is a small business or not</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Business or individual, if Business, categorize if it is a small business or not</inlineHelpText>
+        <label>Business / Individual</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Individual</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Business (Small)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business (Not Small)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business (Unknown)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case_Closed__c</fullName>
+        <description>Yes or No picklist based on if the record is closed.</description>
+        <externalId>false</externalId>
+        <label>Case Closed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case_Name__c</fullName>
+        <description>Case name of Suspension and Debarment case</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Case name of Suspension and Debarment case</inlineHelpText>
+        <label>Case Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Status__c</fullName>
+        <defaultValue>&quot;Pending Initial IO Review&quot;</defaultValue>
+        <description>A cases status field that is updated by the approval process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A cases status field that is updated by the approval process.</inlineHelpText>
+        <label>Case Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments_for_SDO__c</fullName>
+        <description>Comments for SDO</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments for SDO</inlineHelpText>
+        <label>Comments for SDO</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Date_Record_Complete__c</fullName>
+        <description>Date Record Complete</description>
+        <externalId>false</externalId>
+        <label>Date Record Complete</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Transfer__c</fullName>
+        <description>Date case was transferred to Lead Agency</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date case was transferred to Lead Agency</inlineHelpText>
+        <label>Date of Transfer</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Debarment_ACA_Termination_Date__c</fullName>
+        <description>Debarment/ACA Termination Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Debarment/ACA Termination Date</inlineHelpText>
+        <label>Debarment/ACA Termination Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Debarment_Decision_Date__c</fullName>
+        <description>Debarment Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Debarment Date</inlineHelpText>
+        <label>Debarment Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Debarment__c</fullName>
+        <description>Debarment FAR Cause dropdown</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Debarment FAR Cause</inlineHelpText>
+        <label>Debarment FAR Cause(s)</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FAR 9.406-2(a)(1)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(a)(2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(a)(3)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(a)(4)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(a)(5)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(b)(1)(i)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(b)(1)(ii)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(b)(1)(iii)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(b)(1)(iv)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(b)(1)(v)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(b)(1)(vi)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(b)(2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.406-2(c)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Direct_Imputed_Affiliated__c</fullName>
+        <description>Direct Imputed Affiliated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Direct Imputed Affiliated</inlineHelpText>
+        <label>Direct / Imputed / Affiliated</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Direct</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Imputed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Affliated</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Early_Termination_Date__c</fullName>
+        <description>Early Termination Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Early Termination Date</inlineHelpText>
+        <label>Early Termination Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>General_Case_Information__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>General Case Information</label>
+        <referenceTo>Suspension_and_Debarment_Case__c</referenceTo>
+        <relationshipName>Suspension_and_Debarment_Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Grounds_for_Debarment_Other__c</fullName>
+        <description>Field to capture comments if Other is selected for Grounds for Debarment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated Other Ground(s) for Debarment</inlineHelpText>
+        <label>Other Ground(s) for Debarment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Grounds_for_Debarment__c</fullName>
+        <description>Grounds for Debarment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated Other Ground(s) for Debarment.</inlineHelpText>
+        <label>Grounds for Debarment</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bribery / Conspiracy to Commit Bribery</fullName>
+                    <color>#0B6FCE</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Conspiracy, General</fullName>
+                    <color>#CC0000</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>False Statements</fullName>
+                    <color>#006600</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Falsification or Destruction of Records</fullName>
+                    <color>#A845DC</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fraud</fullName>
+                    <color>#33CCFF</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hobbs Act Conspiracy</fullName>
+                    <color>#E27001</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mail Fraud</fullName>
+                    <color>#66FFFF</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tax Violations</fullName>
+                    <color>#66FF99</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Theft</fullName>
+                    <color>#FF99FF</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <color>#FF6666</color>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Hearing_Date__c</fullName>
+        <description>Hearing Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hearing Date</inlineHelpText>
+        <label>Hearing Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Initial_SAM_Check_for_all_respondents__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Initial SAM Check for all respondents</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial SAM Check for all respondents</inlineHelpText>
+        <label>Initial SAM Check for all respondents</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Integrity_Officer_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Integrity_Officer__r.FirstName &amp; &quot; &quot; &amp;  Integrity_Officer__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Integrity Officer Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Integrity_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The individual ultimately responsible for the work on a case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The individual ultimately responsible for the work on a case.</inlineHelpText>
+        <label>Integrity Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Suspension_and_Debarment_Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_Currently_In_Approval_Approcess__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be checked when the approval process is triggered. This is used to trigger the sharing of SD Document Upload records to the current approver.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be checked when the approval process is triggered. This is used to trigger the sharing of SD Document Upload records to the current approver.</inlineHelpText>
+        <label>Is Currently In Approval Approcess</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Agency_Action_Date__c</fullName>
+        <description>The Lead Agency action date for each action taken for each respondnet in the case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Lead Agency action date for each action taken for each respondnet in the case.</inlineHelpText>
+        <label>Lead Agency Action Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Agency_Action__c</fullName>
+        <description>The Lead Agency actions taken for each respondent in the case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Lead Agency actions taken for each respondent in the case.</inlineHelpText>
+        <label>Lead Agency Action</label>
+        <length>256</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Lead_Agency_Determination_Necessary__c</fullName>
+        <description>Lead Agency Determination Necessary</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is Lead Agency Determination Necessary?</inlineHelpText>
+        <label>Lead Agency Determination Necessary</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead_Agency_Lookup__c</fullName>
+        <description>Look up of Lead Agency</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Look_Up__r.Lead_Agency__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Agency Lookup</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Agency__c</fullName>
+        <description>The Lead Agency for the Case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Lead Agency for the Case.</inlineHelpText>
+        <label>Lead Agency</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agency for International Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agriculture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Commerce</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Defense, Air Force</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Defense, Army</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Defense, Defense Logistics Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Defense, Navy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Energy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Environmental Protection Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General Services Administration</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Health and Human Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Homeland Security</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Homeland Security, Immigration and Customs Enforcement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing and Urban Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Interior</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Justice</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Labor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Aeronautics and Space Administration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Science Foundation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nuclear Regulatory Commission</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Personnel Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Small Business Administration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Social Security Administration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>State</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Treasury</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Veterans Affairs</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Look_Up__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Look Up</label>
+        <referenceTo>Suspension_and_Debarment_Case__c</referenceTo>
+        <relationshipLabel>Suspension and Debarment Records (Look Up)</relationshipLabel>
+        <relationshipName>Suspension_and_Debarment_Records</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>No_Action_Decision_Date__c</fullName>
+        <description>No Action Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No Action Date</inlineHelpText>
+        <label>No Action Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_days_in_SDO_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>Today() -  SDO_Submit_for_Approval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of days in SDO Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_days_in_SDO_Legal_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>Today() -  SDO_Approval_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of days in SDO Legal Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Hearing_Dates__c</fullName>
+        <description>Comma separated Other Hearing Dates in mm/dd/yyyy format.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated Other Hearing Dates in mm/dd/yyyy format.</inlineHelpText>
+        <label>Other Hearing Dates</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Respondent_Response_Dates__c</fullName>
+        <description>Comma separated Other Respondent Response Dates in mm/dd/yyyy format.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated Other Respondent Response Dates in mm/dd/yyyy format.</inlineHelpText>
+        <label>Other Respondent Response Dates</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority_or_Easy__c</fullName>
+        <description>Priority or Easy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Priority or Easy</inlineHelpText>
+        <label>Priority or Easy</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Priority</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Easy</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Proposal_for_Debarment_Date__c</fullName>
+        <description>Proposal for Debarment Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Proposal for Debarment Date</inlineHelpText>
+        <label>Proposal for Debarment Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Request_for_Information_Date__c</fullName>
+        <description>Request for Information Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Request for Information Date</inlineHelpText>
+        <label>Request for Information Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Respondent_Name__c</fullName>
+        <description>The primary business or individual respondent for the case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary business or individual respondent for the case. Please format individual respondent names as Last name, First name, MI.</inlineHelpText>
+        <label>Respondent Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Respondent_Notification_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Respondent Notification Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Respondent_Response_Date__c</fullName>
+        <description>Respondent Response Date</description>
+        <externalId>false</externalId>
+        <label>Respondent Response Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Respondent_Response__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Respondent Response</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Approval_Date__c</fullName>
+        <description>Field is updated when SDO Approval happens in the Approval processes. Hidden field used for email reminders.</description>
+        <externalId>false</externalId>
+        <label>SDO Approval Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Approval_Reject_Date__c</fullName>
+        <description>Date of the most recent SDO Approval Rejection</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date of the most recent SDO Approval Rejection</inlineHelpText>
+        <label>SDO Approval Reject Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Legal_Approval_Date__c</fullName>
+        <description>This field is updated when SDO Legal Approval happens in the Approval processes. Hidden field used for email reminders.</description>
+        <externalId>false</externalId>
+        <label>SDO Legal Approval Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Legal_Reject_Date__c</fullName>
+        <description>Date a file was SDO Legal Rejected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date a file was SDO Legal Rejected.</inlineHelpText>
+        <label>SDO Legal Reject Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Received_Date__c</fullName>
+        <description>Date recommendation was received by SDO</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date recommendation was received by SDO</inlineHelpText>
+        <label>Date Received by SDO</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Submit_for_Approval__c</fullName>
+        <description>Field updated when Submit for Approval happens in the Approval processes. Hidden field used for email reminders.</description>
+        <externalId>false</externalId>
+        <label>SDO Submit for Approval</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SDO_Submit_for_Legal__c</fullName>
+        <description>This field is updated when Submit for Legal happens in the Approval processes. Hidden field used for email reminders.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field updated when Submit for Legal happens in the Approval processes. Hidden field used for email reminders.</inlineHelpText>
+        <label>SDO Submit for Legal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SD_Destruction_Date__c</fullName>
+        <description>Destruction Date should be six years and three months from the end of the Fiscal Year in which the final action was taken. Destruction happens on January 1 (10/1 plus 3 months). 
+
+For S&amp;D case type it should be the same as the farthest respondent date (so if the respondent records were sorted ascending by destruction date it would be the same as the last one)
+
+For Respondent Case type, only one of the following fields would be populated, these are the final action dates:  
+No Action Date
+Debarment Date
+ACA Date</description>
+        <externalId>false</externalId>
+        <formula>IF
+(AND ( RecordType.Name == &apos;Respondent&apos;, NOT(ISBLANK( No_Action_Decision_Date__c )), month( No_Action_Decision_Date__c ) &gt;= 10 ), 
+Date (YEAR ( No_Action_Decision_Date__c ) +7, 10 ,1), 
+
+IF
+(AND ( RecordType.Name == &apos;Respondent&apos;, NOT(ISBLANK( No_Action_Decision_Date__c )), month( No_Action_Decision_Date__c ) &lt; 10 ),
+Date (YEAR ( No_Action_Decision_Date__c ) +6, 10, 1), 
+
+IF
+(AND ( RecordType.Name == &apos;Respondent&apos;, NOT(ISBLANK( Debarment_Decision_Date__c )), month( Debarment_Decision_Date__c ) &gt;= 10 ), 
+Date (YEAR ( Debarment_Decision_Date__c ) +7, 10 ,1), 
+
+IF
+(AND ( RecordType.Name == &apos;Respondent&apos;, NOT(ISBLANK( Debarment_Decision_Date__c )), month( Debarment_Decision_Date__c ) &lt; 10 ),
+Date (YEAR ( Debarment_Decision_Date__c ) +6, 10, 1), 
+
+IF
+(AND ( RecordType.Name == &apos;Respondent&apos;, NOT(ISBLANK( ACA_Decision_Date__c )), month( ACA_Decision_Date__c ) &gt;= 10 ), 
+Date (YEAR ( ACA_Decision_Date__c ) +7, 10 ,1),
+
+IF
+(AND (RecordType.Name == &apos;Respondent&apos;, NOT(ISBLANK( ACA_Decision_Date__c )), month( ACA_Decision_Date__c ) &lt; 10 ),
+Date (YEAR ( ACA_Decision_Date__c ) +6, 10, 1),  
+
+IF
+(RecordType.Name == &apos;Suspension and Debarment&apos;, SD_RecType_Destruction_Date__c, NULL
+
+) ) ) ) ) ) )</formula>
+        <inlineHelpText>Destruction Date should be six years and three months from the end of the Fiscal Year in which the final action was taken. Destruction happens on January 1 (10/1 plus 3 months)</inlineHelpText>
+        <label>Destruction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SD_Mark_for_Deletion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Mark for Deletion</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mark for Deletion</inlineHelpText>
+        <label>Mark for Deletion</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SD_RecType_Destruction_Date__c</fullName>
+        <description>Destruction Date field used to update the S&amp;D record type Destruction Date formula</description>
+        <externalId>false</externalId>
+        <label>SD RecType Destruction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Show_Cause_Letter_Date__c</fullName>
+        <description>Show Cause Letter Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Show Cause Letter Date</inlineHelpText>
+        <label>Show Cause Letter Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Suspension_Date__c</fullName>
+        <description>Suspension Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Suspension Date</inlineHelpText>
+        <label>Suspension Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Suspension__c</fullName>
+        <description>Suspension FAR Cause dropdown</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Suspension FAR Cause</inlineHelpText>
+        <label>Suspension FAR Cause(s)</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FAR 9.407-2(a)(1)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(3)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(4)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(5)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(6)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(7)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(8)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(a)(9)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(b)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAR 9.407-2(c)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Terminate_Preliminary_Action_Date__c</fullName>
+        <description>Terminate Preliminary Action Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Terminate Preliminary Action Date</inlineHelpText>
+        <label>Terminate Preliminary Action Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Upload_Disposition_Report__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Upload Disposition Report</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Upload_SAM_FAPIIS_Screenshot__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Upload SAM/FAPIIS Screenshot</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Upload_USPS_Tracking_Information__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Upload USPS Tracking Information</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X21_Day_Response_Due_Date__c</fullName>
+        <description>21-Day Response Due Date</description>
+        <externalId>false</externalId>
+        <formula>Respondent_Notification_Date__c  + 21</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>21-Day Response Due Date</inlineHelpText>
+        <label>21-Day Response Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X30_Day_Response_Due_Date__c</fullName>
+        <description>30-Day Response Due Date</description>
+        <externalId>false</externalId>
+        <formula>Respondent_Notification_Date__c + 30</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>30-Day Response Due Date</inlineHelpText>
+        <label>30-Day Response Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Suspension and Debarment Record</label>
+    <listViews>
+        <fullName>Marked_for_Deletion</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>SD_Destruction_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SD_Mark_for_Deletion__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Marked for Deletion</label>
+        <sharedTo>
+            <group>Suspension_Debarment_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Respondent_Records</fullName>
+        <columns>NAME</columns>
+        <columns>Respondent_Name__c</columns>
+        <columns>Priority_or_Easy__c</columns>
+        <columns>Business__c</columns>
+        <columns>Basis__c</columns>
+        <columns>General_Case_Information__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Suspension_and_Debarment_Case__c.Suspension_and_Debarment_Respondent</value>
+        </filters>
+        <label>Respondent Records</label>
+    </listViews>
+    <listViews>
+        <fullName>Suspension_and_Debarment_By_Main_Case</fullName>
+        <columns>NAME</columns>
+        <columns>Case_Name__c</columns>
+        <columns>Priority_or_Easy__c</columns>
+        <columns>Integrity_Officer__c</columns>
+        <columns>SDO_Received_Date__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Suspension_and_Debarment_Case__c.Suspension_and_Debarment_Case</value>
+        </filters>
+        <label>Suspension and Debarment By Main Case</label>
+        <sharedTo>
+            <group>Suspension_Debarment_Users</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>SD-{00000000}</displayFormat>
+        <label>Case Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Suspension and Debarment Records</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Suspension_and_Debarment_Case</fullName>
+        <active>true</active>
+        <description>Suspension and Debarment Case record shall be created to provide the primary details of a Suspension and Debarment case including the Integrity Officer assigned to the case, the date the case was received and whether Lead Agency Determination is necessary</description>
+        <label>Suspension and Debarment Case</label>
+        <picklistValues>
+            <picklist>Basis__c</picklist>
+            <values>
+                <fullName>Fact-Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Basis Judicial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voluntary Disclosure</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Business %28Small%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Closed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Debarment__c</picklist>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%281%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%283%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%284%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%285%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28i%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28ii%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28iii%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28iv%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28v%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28vi%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28c%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direct_Imputed_Affiliated__c</picklist>
+            <values>
+                <fullName>Affliated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Imputed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grounds_for_Debarment__c</picklist>
+            <values>
+                <fullName>Bribery %2F Conspiracy to Commit Bribery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conspiracy%2C General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>False Statements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falsification or Destruction of Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hobbs Act Conspiracy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Fraud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tax Violations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Theft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Agency_Determination_Necessary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Agency__c</picklist>
+            <values>
+                <fullName>Agency for International Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commerce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Air Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Army</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Defense Logistics Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Navy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Protection Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Services Administration</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Health and Human Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homeland Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homeland Security%2C Immigration and Customs Enforcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing and Urban Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Aeronautics and Space Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Science Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nuclear Regulatory Commission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Personnel Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Business Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Security Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Treasury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Veterans Affairs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority_or_Easy__c</picklist>
+            <values>
+                <fullName>Easy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Priority</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Suspension__c</picklist>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%281%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%283%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%284%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%285%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%287%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%288%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%289%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28b%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28c%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Suspension_and_Debarment_Respondent</fullName>
+        <active>true</active>
+        <description>The Suspension and Debarment Respondent record shall be created to provide details regarding Respondents in a case including the actions taken against the Respondents. Respondent record must contain a relationship to a Suspension and Debarment Case record</description>
+        <label>Suspension and Debarment Respondent</label>
+        <picklistValues>
+            <picklist>Basis__c</picklist>
+            <values>
+                <fullName>Fact-Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Basis Judicial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voluntary Disclosure</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Business %28Not Small%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business %28Small%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business %28Unknown%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Closed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Debarment__c</picklist>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%281%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%283%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%284%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28a%29%285%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28i%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28ii%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28iii%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28iv%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28v%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%281%29%28vi%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28b%29%282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E406-2%28c%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direct_Imputed_Affiliated__c</picklist>
+            <values>
+                <fullName>Affliated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Imputed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grounds_for_Debarment__c</picklist>
+            <values>
+                <fullName>Bribery %2F Conspiracy to Commit Bribery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conspiracy%2C General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>False Statements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falsification or Destruction of Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hobbs Act Conspiracy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Fraud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tax Violations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Theft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Agency_Determination_Necessary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Agency__c</picklist>
+            <values>
+                <fullName>Agency for International Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commerce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Air Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Army</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Defense Logistics Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2C Navy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Protection Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Services Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Human Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homeland Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homeland Security%2C Immigration and Customs Enforcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing and Urban Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Aeronautics and Space Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Science Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nuclear Regulatory Commission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Personnel Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Business Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Security Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Treasury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Veterans Affairs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority_or_Easy__c</picklist>
+            <values>
+                <fullName>Easy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Priority</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Suspension__c</picklist>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%281%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%283%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%284%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%285%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%287%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%288%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28a%29%289%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28b%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAR 9%2E407-2%28c%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Integrity_Officer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SDO_Received_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Lead_Agency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Priority_or_Easy__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SD_Mark_for_Deletion__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Case_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Integrity_Officer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SDO_Received_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Lead_Agency__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Priority_or_Easy__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>UPDATEDBY_USER</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>SDO_Received_Date__c</searchFilterFields>
+        <searchFilterFields>Integrity_Officer__c</searchFilterFields>
+        <searchFilterFields>Basis__c</searchFilterFields>
+        <searchFilterFields>Direct_Imputed_Affiliated__c</searchFilterFields>
+        <searchFilterFields>Lead_Agency__c</searchFilterFields>
+        <searchFilterFields>UPDATEDBY_USER</searchFilterFields>
+        <searchFilterFields>Respondent_Name__c</searchFilterFields>
+        <searchFilterFields>Business__c</searchFilterFields>
+        <searchFilterFields>Priority_or_Easy__c</searchFilterFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Respondent_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Integrity_Officer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SDO_Received_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Lead_Agency__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Priority_or_Easy__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Case_Cannot_Be_Closed</fullName>
+        <active>true</active>
+        <description>Validation rule where the case cannot be closed if the case is still in the approval process flow.</description>
+        <errorConditionFormula>And(
+Is_Currently_In_Approval_Approcess__c= TRUE,
+ISPICKVAL(Case_Closed__c, &apos;Yes&apos;))</errorConditionFormula>
+        <errorMessage>The case cannot be closed if the case is still in the approval process flow.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CloseCaseCheck_Respondent</fullName>
+        <active>true</active>
+        <description>Prevents changes to the Respondent record when the Case Closed checkbox is checked.</description>
+        <errorConditionFormula>RecordType.Name = &apos;Suspension and Debarment Respondent&apos;
+&amp;&amp; ISPICKVAL(Case_Closed__c, &apos;yes&apos;)
+&amp;&amp; NOT (ISCHANGED(Case_Closed__c )) 
+&amp;&amp; NOT (ISCHANGED( SD_Mark_for_Deletion__c ))
+&amp;&amp; NOT (ISCHANGED( SD_RecType_Destruction_Date__c ))
+&amp;&amp; NOT (ISCHANGED( SD_Destruction_Date__c ))</errorConditionFormula>
+        <errorMessage>Record cannot be updated when Close Case is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CloseCaseCheck_SD</fullName>
+        <active>true</active>
+        <description>Prevents changes to the S&amp;D record when the Case Closed checkbox is checked.</description>
+        <errorConditionFormula>RecordType.Name = &apos;Suspension and Debarment Case&apos;
+&amp;&amp; ISPICKVAL(Case_Closed__c, &apos;Yes&apos;)
+&amp;&amp; OR( ISCHANGED(Comments_for_SDO__c)
+       , ISCHANGED(Priority_or_Easy__c) 
+       , ISCHANGED(Case_Name__c) 
+       , ISCHANGED(Integrity_Officer__c) 
+       , ISCHANGED(SDO_Received_Date__c) 
+       , ISCHANGED(Initial_SAM_Check_for_all_respondents__c) 
+       , ISCHANGED(Lead_Agency_Determination_Necessary__c) 
+       , ISCHANGED(Date_of_Transfer__c) 
+      )</errorConditionFormula>
+        <errorMessage>Record cannot be updated when Close Case is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DateofTransferCheck</fullName>
+        <active>true</active>
+        <description>Date of Transfer must be entered if Lead Agency is not General Services Administration</description>
+        <errorConditionFormula>RecordType.DeveloperName == &apos;Suspension and Debarment Case&apos; &amp;&amp; 
+( 
+ISPICKVAL( Lead_Agency_Determination_Necessary__c , &apos;Yes&apos;)
+  &amp;&amp; NOT ( ISPICKVAL( Lead_Agency__c , &apos;General Services Administration&apos;) ||  ISPICKVAL( Lead_Agency__c , &apos;&apos;) ) 
+  &amp;&amp; ISBLANK( Date_of_Transfer__c) 
+)</errorConditionFormula>
+        <errorMessage>Lead Agency selected is not General Services Administration, Please populate the Date of Transfer</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DebarmentACATerminationDateCheck</fullName>
+        <active>true</active>
+        <description>Debarment_ACA_Termination_Date__c must not be blank if either Debarment_Decision_Date__c or ACA_Decision_Date__c are populated.</description>
+        <errorConditionFormula>RecordType.DeveloperName == &apos;Suspension and Debarment Respondent&apos; &amp;&amp; 
+(NOT( ISBLANK( Debarment_Decision_Date__c ))  || 
+NOT( ISBLANK(  ACA_Decision_Date__c  ) ) )
+&amp;&amp; ISBLANK( Debarment_ACA_Termination_Date__c )</errorConditionFormula>
+        <errorMessage>Please enter the Termination Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Grounds_for_Debarment_Other</fullName>
+        <active>true</active>
+        <description>If Other is chosen for Grounds for Debarment, the user will be able to add addition information in this field</description>
+        <errorConditionFormula>AND(
+         INCLUDES(Grounds_for_Debarment__c, &quot;Other&quot;),
+         ISBLANK( Grounds_for_Debarment_Other__c)
+)</errorConditionFormula>
+        <errorDisplayField>Grounds_for_Debarment_Other__c</errorDisplayField>
+        <errorMessage>Must fill out Grounds for Debarment Other</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>GroundsforDebarmentCheck</fullName>
+        <active>true</active>
+        <description>Grounds for Debarment must not be blank if Debarment Date is populated</description>
+        <errorConditionFormula>RecordType.DeveloperName == &apos;Suspension and Debarment Respondent&apos; &amp;&amp;
+NOT (ISBLANK( Debarment_Decision_Date__c )) &amp;&amp;
+ISBLANK(Grounds_for_Debarment__c)</errorConditionFormula>
+        <errorMessage>Please select the Grounds for Debarment value(s) when Debarment Date is entered.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LeadAgencyActionDateCheck</fullName>
+        <active>true</active>
+        <description>If Lead_Agency_Action_Date is not blank, Lead_Agency_Action must not be blank and vice versa.</description>
+        <errorConditionFormula>RecordType.DeveloperName == &apos;Suspension and Debarment Respondent&apos; &amp;&amp;
+(
+   (ISBLANK( Lead_Agency_Action__c ) &amp;&amp; NOT( ISBLANK(     Lead_Agency_Action_Date__c ) ) )
+  ||
+    (NOT (ISBLANK( Lead_Agency_Action__c )) &amp;&amp; ISBLANK( Lead_Agency_Action_Date__c ) )
+)</errorConditionFormula>
+        <errorMessage>Please populate both the Lead Agency Action and the Lead Agency Action Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MarkforDeletionCheck_Respondent</fullName>
+        <active>true</active>
+        <description>SD_Mark_for_Deletion__c = true
+&amp;&amp; NOT ((PRIORVALUE( SD_Mark_for_Deletion__c )) = false)</description>
+        <errorConditionFormula>RecordType.Name = &apos;Suspension and Debarment Respondent&apos;
+&amp;&amp; SD_Mark_for_Deletion__c = true
+&amp;&amp; NOT (ISCHANGED( Case_Closed__c )) 
+&amp;&amp; NOT (ISCHANGED( SD_Mark_for_Deletion__c ))
+&amp;&amp; NOT (ISCHANGED( SD_RecType_Destruction_Date__c ))
+&amp;&amp; NOT (ISCHANGED( SD_Destruction_Date__c ))</errorConditionFormula>
+        <errorMessage>Record cannot be updated when Mark for Deletion is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MarkforDeletionCheck_SD</fullName>
+        <active>true</active>
+        <description>RecordType.Name = &apos;Suspension and Debarment&apos;
+&amp;&amp; SD_Mark_for_Deletion__c = true</description>
+        <errorConditionFormula>RecordType.Name = &apos;Suspension and Debarment Case&apos;
+&amp;&amp; SD_Mark_for_Deletion__c = true 
+&amp;&amp; OR( ISCHANGED(Comments_for_SDO__c)
+       , ISCHANGED(Priority_or_Easy__c) 
+       , ISCHANGED(Case_Name__c) 
+       , ISCHANGED(Integrity_Officer__c) 
+       , ISCHANGED(SDO_Received_Date__c) 
+       , ISCHANGED(Initial_SAM_Check_for_all_respondents__c) 
+       , ISCHANGED(Lead_Agency_Determination_Necessary__c) 
+       , ISCHANGED(Date_of_Transfer__c) 
+      )</errorConditionFormula>
+        <errorMessage>Record cannot be updated when Mark for Deletion is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SD_Assigned_Approver</fullName>
+        <active>true</active>
+        <description>Restricts reviewers from accessing main record when the record is not assigned.</description>
+        <errorConditionFormula>NOT(
+     OR( $Permission.Suspension_Debarment_Super_User_CRED 
+         , $Permission.Suspension_Debarment_User_CRE 
+         , AND(  $Permission.Suspension_Debarment_Approval_User_RE
+                , NOT( Case_Status__c = &quot;With Integrity Officer&quot; )
+                , NOT( Case_Status__c = &quot;Pending Initial IO Review&quot; )
+              )
+       )
+   )
+
+&amp;&amp; ISCHANGED( Priority_or_Easy__c  )</errorConditionFormula>
+        <errorMessage>You must be assigned this record to edit.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SD_Case_Close_Val_Rule_1</fullName>
+        <active>true</active>
+        <description>Only Integrity Officers/Staff Users should be allowed to close cases, Legal or SDO users should not be able to do this.</description>
+        <errorConditionFormula>AND(  ISCHANGED( Case_Closed__c ),  (  $Permission.Suspension_Debarment_Approval_User_RE   ))</errorConditionFormula>
+        <errorMessage>You do not have the permissions to close or reopen this case.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SD_Case_Requirement</fullName>
+        <active>true</active>
+        <description>If Lead Agency is other than GSA, Lead Agency Determination Necessary and Date of Transfer should be required fields.</description>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;Suspension_and_Debarment_Case&apos;,
+OR(
+ISPICKVAL( Lead_Agency__c , &quot;Agency for International Development&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Agriculture&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Commerce&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Defense, Air Force&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Defense, Army&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Defense, Defense Logistics Agency&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Defense, Navy&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Education&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Energy&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Environmental Protection Agency&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Health and Human Services&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Homeland Security&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Homeland Security, Immigration and Customs&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Enforcement&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Housing and Urban Development&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Interior&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Justice&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Labor&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;National Aeronautics and Space Administration&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;National Science Foundation&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Nuclear Regulatory Commission&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Office of Personnel Management&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Small Business Administration&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Social Security Administration&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;State&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Transportation&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Treasury&quot;),
+ISPICKVAL( Lead_Agency__c , &quot;Veterans Affairs&quot;)),
+
+ISPICKVAL(Lead_Agency_Determination_Necessary__c,&quot;&quot;),
+        ISBLANK(Date_of_Transfer__c)
+)</errorConditionFormula>
+        <errorMessage>Lead Agency Determination Necessary and Date of Transfer is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SD_Respondent_Requirement2</fullName>
+        <active>true</active>
+        <description>Respondent records for which the S&amp;D case record lists a Lead Agency other than GSA, Basis, Business / Individual, and Direct / Imputed / Affiliated should not be required fields.</description>
+        <errorConditionFormula>AND( 
+RecordType.DeveloperName = &apos;Suspension_and_Debarment_Respondent&apos;, 
+OR( 
+Look_Up__r.Lead_Agency_Lookup__c= &apos;General Services Adminstration&apos;), 
+
+ISPICKVAL(Basis__c,&quot;&quot;), 
+ISPICKVAL(Business__c,&quot;&quot;),
+ISPICKVAL(Direct_Imputed_Affiliated__c,&quot;&quot;) 
+)</errorConditionFormula>
+        <errorMessage>Basis, Business / Individual, and Direct / Imputed / Affiliated should not be required fields.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Close_Case</fullName>
+        <availability>online</availability>
+        <description>Button to update Close Case and lock record.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Close Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+
+var SDC = new sforce.SObject(&quot;Suspension_and_Debarment_Case__c&quot;); 
+SDC.id = &quot;{!Suspension_and_Debarment_Case__c.Id}&quot;; 
+
+SDC.Close_Case__c = true; 
+result = sforce.connection.update([SDC]); 
+
+if ( result[0].getBoolean( &quot;success&quot; ) ) 
+{ 
+window.location.reload(); 
+} 
+else 
+{ 
+alert( result[0].errors.message); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Respondent</fullName>
+        <availability>online</availability>
+        <description>Create Respondent button</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Respondent</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!$Setup.Suspension_Debarment_Parameters__c.ReturnURL_Field_ID__c}/e?
+retURL=%2Fa1o%2Fo
+&amp;RecordType={!$Setup.Suspension_Debarment_Parameters__c.RecordTypeID__c}
+&amp;{!$Setup.Suspension_Debarment_Parameters__c.Case_Number_Field_ID__c}={! Suspension_and_Debarment_Case__c.Name }
+&amp;ent={!$Setup.Suspension_Debarment_Parameters__c.ENT_Field_ID__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mark_for_Deletion</fullName>
+        <availability>online</availability>
+        <description>Button to update Mark for Deletion Field</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mark for Deletion</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+
+var SDC = new sforce.SObject(&quot;Suspension_and_Debarment_Case__c&quot;); 
+SDC.id = &quot;{!Suspension_and_Debarment_Case__c.Id}&quot;; 
+
+  SDC.SD_Mark_for_Deletion__c = true; 
+  result = sforce.connection.update([SDC]); 
+
+  if ( result[0].getBoolean( &quot;success&quot; ) )
+          {
+               window.location.reload();
+          }
+          else
+          {
+               alert( result[0].errors.message);
+          }</url>
+    </webLinks>
+</CustomObject>

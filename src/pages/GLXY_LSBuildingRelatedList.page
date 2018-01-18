@@ -1,0 +1,24 @@
+<apex:page standardController="Glxy_LumpSum__c" extensions="GLXY_LSBuildingRelatedList">
+  <!-- Begin Default Content REMOVE THIS -->
+   <apex:pageBlock >
+
+        <apex:pageBlockTable value="{!leaseLocations}" var="item">
+           
+            <apex:column headerValue="PBS Building Name">
+              <apex:outputLink value="/{!item.BuildingNumber__c}" target="_top"><apex:outputText value="{!item.BuildingNumber__r.Name}" /></apex:outputLink>
+           </apex:column>
+            <apex:column headerValue="Lease Location ID">
+              <apex:outputLink value="/{!item.id}" target="_top"><apex:outputText value="{!item.Name}" /></apex:outputLink>
+           </apex:column>
+            
+            <apex:column value="{!item.Building_Name_lkp__c }"/> 
+            <apex:column value="{!item.Address_lkp__c }"/>
+            <apex:column value="{!item.City_lkp__c }"/>
+            <apex:column value="{!item.State_lkp__c }"/>
+            <apex:column value="{!item.Location_Code__c }"/>
+            <!--<apex:column value="{!item.Building_Number_lkp__c }"/>-->
+        </apex:pageBlockTable> 
+
+    </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

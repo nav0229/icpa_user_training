@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Pulse</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pulses</value>
+    </caseValues>
+    <fields>
+        <help><!-- Please enter individual Accomplishments on a separate line --></help>
+        <label><!-- Accomplishments --></label>
+        <name>Accomplishments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Help --></label>
+        <name>Help__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter individual Issues on a separate line --></help>
+        <label><!-- Issues --></label>
+        <name>Issues__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether or not the project is Private --></help>
+        <label><!-- Private --></label>
+        <name>Private__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose the Project for which you&apos;re providing this pulse --></help>
+        <label><!-- Project Name --></label>
+        <name>ProjectName__c</name>
+        <relationshipLabel><!-- Pulses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this field to identify the current status of the project. The project status should be updated as project situations change. --></help>
+        <label><!-- Project Status --></label>
+        <name>Project_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delayed</masterLabel>
+            <translation><!-- Delayed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Formative</masterLabel>
+            <translation><!-- Formative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Going</masterLabel>
+            <translation><!-- On-Going --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Hold</masterLabel>
+            <translation><!-- On-Hold --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Received Project Sponsor Approval? --></label>
+        <name>Received_Project_Sponsor_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Name --></label>
+        <name>RequestName__c</name>
+        <relationshipLabel><!-- Pulses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please enter comments for this pulse --></help>
+        <label><!-- Status Update/Comments --></label>
+        <name>StatusUpdateOrComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter individual Action Items on a separate line --></help>
+        <label><!-- Upcoming Action Items --></label>
+        <name>UpcomingActionItems__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Pulse Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Pulse Details --></label>
+            <section>Pulse Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Request Pulse Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Pulse Details --></label>
+            <section>Pulse Details</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Project Pulse --></label>
+        <name>ProjectPulse</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Request Pulse --></label>
+        <name>RequestPulse</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

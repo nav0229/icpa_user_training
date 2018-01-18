@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CIS Contact</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CIS Contacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- CIS Office --></label>
+        <name>CIS_Office__c</name>
+        <relationshipLabel><!-- CIS Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email Address --></label>
+        <name>Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hidden_Recordtype --></label>
+        <name>Hidden_Recordtype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hidden_Region --></label>
+        <name>Hidden_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact --></label>
+        <name>Primary_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Member of Congress</masterLabel>
+            <translation><!-- Member of Congress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Staff</masterLabel>
+            <translation><!-- Office Staff --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>CIS Contact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Member of Congress Type must not have an office entry on this record.  Please change the type, or remove the office reference. --></errorMessage>
+        <name>MOC_must_not_belong_to_an_office</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Office staff must belong to an office.  Please choose an office for this Office Staff. --></errorMessage>
+        <name>Office_staff_must_belong_to_an_office</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Phone must be 10 digits --></errorMessage>
+        <name>Phone_must_be_10_digits</name>
+    </validationRules>
+</CustomObjectTranslation>

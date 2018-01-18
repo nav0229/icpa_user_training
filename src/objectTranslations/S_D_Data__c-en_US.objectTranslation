@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>S&amp;D Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>S&amp;D Data</value>
+    </caseValues>
+    <fields>
+        <help><!-- Contains all the full action names that should be included on reports and all the full Grounds for Debarment that get included on reports. --></help>
+        <label><!-- SDO Actions --></label>
+        <name>Action_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Administrative Compliance Agreements</masterLabel>
+            <translation><!-- Administrative Compliance Agreements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bribery / Conspiracy to Commit Bribery</masterLabel>
+            <translation><!-- Bribery / Conspiracy to Commit Bribery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conspiracy, General</masterLabel>
+            <translation><!-- Conspiracy, General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debarments</masterLabel>
+            <translation><!-- Debarments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Statements</masterLabel>
+            <translation><!-- False Statements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Falsification or Destruction of Records</masterLabel>
+            <translation><!-- Falsification or Destruction of Records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fraud</masterLabel>
+            <translation><!-- Fraud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hearings</masterLabel>
+            <translation><!-- Hearings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hobbs Act Conspiracy</masterLabel>
+            <translation><!-- Hobbs Act Conspiracy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Agency Transfers</masterLabel>
+            <translation><!-- Lead Agency Transfers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Fraud</masterLabel>
+            <translation><!-- Mail Fraud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Actions</masterLabel>
+            <translation><!-- No Actions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposals for Debarment</masterLabel>
+            <translation><!-- Proposals for Debarment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requests for Information</masterLabel>
+            <translation><!-- Requests for Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Show Cause Letters</masterLabel>
+            <translation><!-- Show Cause Letters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspensions</masterLabel>
+            <translation><!-- Suspensions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Violations</masterLabel>
+            <translation><!-- Tax Violations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminations</masterLabel>
+            <translation><!-- Terminations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Theft</masterLabel>
+            <translation><!-- Theft --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Fiscal year of the action for each record where the category is action. --></help>
+        <label><!-- Government Fiscal Year --></label>
+        <name>Government_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- SDO Actions or (Grounds for Debarment) Reason of the record. --></help>
+        <label><!-- Report Category --></label>
+        <name>Report_Category__c</name>
+        <picklistValues>
+            <masterLabel>Action</masterLabel>
+            <translation><!-- Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reason</masterLabel>
+            <translation><!-- Reason --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Master-Detail Relationship with Suspension and Debarment Case&apos;s Respondent Records. --></help>
+        <label><!-- Respondent ID --></label>
+        <name>Respondent_ID__c</name>
+        <relationshipLabel><!-- S&amp;D Data --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>S&amp;D Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

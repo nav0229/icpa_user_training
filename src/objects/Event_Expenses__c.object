@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used on OAS Application for to track expenses related to the Event Approval object.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EA_Actual_Amount__c</fullName>
+        <description>Used for Conference Expense object attached to the OAS application and referenced in the Event Approval Object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>After the Conference or Ceremony is over, please enter the actual expenditure here.</inlineHelpText>
+        <label>Actual Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Service_Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Service Charges</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Actual_Taxes__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Taxes</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Amount__c</fullName>
+        <description>Used for Conference Expense object attached to the OAS application and referenced in the Event Approval Object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the estimated amount for this expense.</inlineHelpText>
+        <label>Estimated Amount</label>
+        <precision>10</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Service_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Service Charge</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Estimated_Taxes__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Taxes</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_IF_Other_Explain__c</fullName>
+        <description>Used in the Event Expense object under the Event Approval Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Other includes all other event support costs.</inlineHelpText>
+        <label>IF Other, Explain</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EA_Payee__c</fullName>
+        <description>Used for Conference Expense object attached to the OAS application and referenced in the Event Approval Object.</description>
+        <externalId>false</externalId>
+        <label>Payee</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Prohibited_Expenses__c</fullName>
+        <defaultValue>&quot;Including but not limited to ENTERTAINMENT - Spending government funds to pay for bands, comedians, clowns, and other entertainment purposes, including gambling, is prohibited.... GIFTS - Government funds may not be used to purchase items to be given away as gifts except when such items serve  as promotional....KEEPSAKES - Government funds may not be spent on keepsake items such as memory books, coins, and other similar mementos....CLOTHING - Unless provided for specifically by statute, government funds may not be used to purchase clothing....SPORTING EQUIPMENT- Government funds may not be used to purchase sporting equipment.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Prohibited Expenses</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Actual_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>EA_Actual_Amount__c  +  EA_Actual_Taxes__c  +  EA_Actual_Service_Charges__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Actual Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EA_Total_Estimated_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>EA_Estimated_Amount__c  +  EA_Estimated_Taxes__c  +  EA_Estimated_Service_Charge__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Estimated Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Event_Identifier__c</fullName>
+        <description>Used on the Event Expenses object to build a Master Detal relationship between Event Approvals and Event Expenses.</description>
+        <externalId>false</externalId>
+        <label>Event Identifier</label>
+        <referenceTo>Event_Approval__c</referenceTo>
+        <relationshipLabel>Event Expenses</relationshipLabel>
+        <relationshipName>Event_Expenses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Event_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event_Identifier__r.EA_Event_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Category__c</fullName>
+        <description>Used for Conference Expense object attached to the OAS application and referenced in the Event Approval Object.</description>
+        <externalId>false</externalId>
+        <label>Expense Category</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lodging</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Food or Beverages</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Audio-Visual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Venue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Sub_Category__c</fullName>
+        <description>Used for Conference Expense object attached to the OAS application and referenced in the Event Approval Object.</description>
+        <externalId>false</externalId>
+        <label>Expense Sub Category</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meeting Expenses</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Decorations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Breakfast</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lunch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dinner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brochures</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mailing Lists</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Postage</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Advertising</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Press Kits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Photographs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Media Room/Setup</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Audio-Visual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Entertainment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lodging For GSA Attendees</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meeting Rooms</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parking</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Travel For GSA Attendees</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shuttle/Taxi Costs for GSA Attendees</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Staff Travel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shipping</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Security</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Conference/Meeting Coordinator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mementos</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meal(S)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Light Refreshments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Signage</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Booth Rental</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Charter Bus Service for GSA Attendees</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Staff Lodging</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Justification__c</fullName>
+        <description>Used for Conference Expense object attached to the OAS application and referenced in the Event Approval Object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please supply a justification for this expense.</inlineHelpText>
+        <label>Justification</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Event Expenses</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Name__c</columns>
+        <columns>Event_Identifier__c</columns>
+        <columns>EA_Total_Estimated_Amount__c</columns>
+        <columns>EA_Total_Actual_Amount__c</columns>
+        <columns>EA_Payee__c</columns>
+        <columns>Justification__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Expense-{00000000}</displayFormat>
+        <label>Expense</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Expenses</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Event_Identifier__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Event_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EA_Payee__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EA_Estimated_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EA_Actual_Amount__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Event_Identifier__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Event_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EA_Payee__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Expense_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EA_Estimated_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EA_Actual_Amount__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Event_Identifier__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Event_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Expense_Category__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Event_Name__c</searchFilterFields>
+        <searchFilterFields>Event_Identifier__c</searchFilterFields>
+        <searchFilterFields>EA_Payee__c</searchFilterFields>
+        <searchFilterFields>Expense_Category__c</searchFilterFields>
+        <searchFilterFields>EA_Estimated_Amount__c</searchFilterFields>
+        <searchFilterFields>EA_Actual_Amount__c</searchFilterFields>
+        <searchResultsAdditionalFields>Event_Identifier__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EA_Payee__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Expense_Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EA_Estimated_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EA_Actual_Amount__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Actual_amount_fields_validation</fullName>
+        <active>true</active>
+        <description>Will not allow the user to enter actual values until after the conference end date.</description>
+        <errorConditionFormula>AND(Event_Identifier__r.EA_End_Date__c &gt; TODAY(),NOT(ISBLANK( EA_Actual_Amount__c )))</errorConditionFormula>
+        <errorMessage>You cannot enter Actual Amounts before the event end date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Estimated_amount_fields_validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISCHANGED(EA_Estimated_Amount__c),
+OR(ISPICKVAL(Event_Identifier__r.EA_Stage__c,&quot;Approved&quot;),
+ISPICKVAL(Event_Identifier__r.EA_Stage__c,&quot;Waiting for Actuals&quot;)))</errorConditionFormula>
+        <errorMessage>In order to change your estimated amounts yo must clone the conference and re-submit for approval</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_fill_in_reason_for_Other</fullName>
+        <active>true</active>
+        <description>users must fill in a reason for selecting the &quot;Other&quot; expense category</description>
+        <errorConditionFormula>AND(ISPICKVAL( Expense_Category__c , &quot;Other&quot;),  ISBLANK(EA_IF_Other_Explain__c ))</errorConditionFormula>
+        <errorMessage>You must provide an explanation of &quot;Other&quot; expense Categories</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_New_Expense_After_Approved</fullName>
+        <active>true</active>
+        <description>Will not allow a user to enter a new Event Expense once the conference has been approved or canceled</description>
+        <errorConditionFormula>AND( 
+OR( ISPICKVAL( Event_Identifier__r.EA_Stage__c ,&quot;Approved&quot;), 
+ISPICKVAL( Event_Identifier__r.EA_Stage__c ,&quot;Canceled&quot;)), ISNEW())</errorConditionFormula>
+        <errorMessage>You cannot add new expenses to an already approved or canceled conference</errorMessage>
+    </validationRules>
+</CustomObject>

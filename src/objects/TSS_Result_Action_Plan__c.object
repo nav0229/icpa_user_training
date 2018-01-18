@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>TSSResultActionPlanLanding</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is created for TSS Application - Consolidated object for Building, Survey Results, Action Plan</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Action_Plan_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Plan Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Action_Plan_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Plan Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Action_Plan_Instructions__c</fullName>
+        <defaultValue>&quot;If you have questions on how to correctly create an Action Item or Plan please see the User Guide for the Property Manager, Supervisor, and Superuser - TSS Action Planning Application (https://gsa.my.salesforce.com/06930000004IVsq) or contact your Region’s TSS Superuser.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Action Plan Instructions</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Action_Plan_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Plan Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assigned</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Action_Plan_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Plan Summary</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Assigned_to_me__c</fullName>
+        <description>Used for custom view</description>
+        <externalId>false</externalId>
+        <formula>IF(OR(Supervisor__r.Id = $User.Id, Property_Manager__r.Id = $User.Id), &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <label>Hidden Assigned to Me</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Associated_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Associated Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Building_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Building Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Building_Contact_Yes_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Yes Count - Building</label>
+        <summaryFilterItems>
+            <field>TSS_Survey__c.Building_Contact_Yes_Score__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Building_Contact_Yes__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Total_of_Responses__c &gt;0,  Building_Contact_Yes_Count__c / Total_of_Responses__c, 0)</formula>
+        <label>% Know Who to Call</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Building_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Building Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cleanliness_Avg_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c &gt;0,  Total_Cleanliness__c /Total_of_Responses__c ,0)</formula>
+        <label>Quality of Cleanliness - Mean</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completed_Action_Items__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Action Items</label>
+        <summaryFilterItems>
+            <field>TSS_Action_Item__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TSS_Action_Item__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Condition_Avg_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c &gt;0, Total_Condition__c /Total_of_Responses__c, 0)</formula>
+        <label>Condition of Facility - Mean</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Condition_of_Facility_Satisfied__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Total_of_Responses__c &gt;0,Max_Count_Condition__c&gt;0), Top_2_Condition_Count__c / (Total_of_Responses__c *  Max_Count_Condition__c ), 0)</formula>
+        <label>Condition of Facility - % Satisfied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Delegated_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Delegated Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Elevators_Avg_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c  &gt;0,   Total_Elevators__c /Total_of_Responses__c, 0)</formula>
+        <label>Elevators - Mean</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Elevators_Satisfied__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c &gt;0, Top_2_Elevator_Count__c / Total_of_Responses__c, 0)</formula>
+        <label>Elevators - % Satisfied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Deferred_Costs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total estimated costs of all deferred Action Items</inlineHelpText>
+        <label>Estimated Deferred Costs</label>
+        <summarizedField>TSS_Action_Item__c.Estimated_Cost__c</summarizedField>
+        <summaryFilterItems>
+            <field>TSS_Action_Item__c.Item_Deferred__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TSS_Action_Item__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Non_Deferred_Costs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total estimated costs of all non-deferred Action Items</inlineHelpText>
+        <label>Estimated Costs</label>
+        <summarizedField>TSS_Action_Item__c.Estimated_Cost__c</summarizedField>
+        <summaryFilterItems>
+            <field>TSS_Action_Item__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed, In Progress</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>TSS_Action_Item__c.Item_Deferred__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TSS_Action_Item__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Explanation_for_Cancellation__c</fullName>
+        <externalId>false</externalId>
+        <label>Explanation for Cancellation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FRPP_Agency__c</fullName>
+        <description>For OGP ONLY</description>
+        <externalId>false</externalId>
+        <label>Agency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FRPP_Bureau__c</fullName>
+        <description>For OGP ONLY</description>
+        <externalId>false</externalId>
+        <label>Bureau</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FRPP_Source__c</fullName>
+        <description>For OGP ONLY</description>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FRPP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TSS Corrected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY15 Add On</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FRPP_Zip_Code__c</fullName>
+        <description>FOR OGP ONLY</description>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Field Office</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Fiscal Year</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FY14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY16</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FY17</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>In_Progress_Action_Items__c</fullName>
+        <externalId>false</externalId>
+        <label>In Progress Action Items</label>
+        <summaryFilterItems>
+            <field>TSS_Action_Item__c.Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TSS_Action_Item__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Location_Code_Plus__c</fullName>
+        <externalId>false</externalId>
+        <label>Location Code Plus</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mark_for_Cancellation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Mark for Cancellation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Matching_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Matching Code</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Count_Cleanliness__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Max Count Cleanliness</label>
+        <summarizedField>TSS_Survey__c.Total_Count_Cleanliness__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Max_Count_Condition__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Max Count Condition</label>
+        <summarizedField>TSS_Survey__c.Total_Count_Condition__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Max_Count_Personal_Wkspace__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Max Count Personal Wkspace</label>
+        <summarizedField>TSS_Survey__c.Total_Count_Personal_WkSpace__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Max_Count_Security__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Max Count Security</label>
+        <summarizedField>TSS_Survey__c.Total_Count_Security__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>MeetingSpace_Avg_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c &gt;0, Total_MeetingSpace__c /Total_of_Responses__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Meeting Space - Mean</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MeetingSpace_Satisfied__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c &gt;0, Top_2_MeetingSpace_Count__c / Total_of_Responses__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Meeting Space - % Satisfied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Non_GSA__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Non-GSA</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Occupancy__c</fullName>
+        <externalId>false</externalId>
+        <label>Occupancy</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Satisfaction_Avg_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c &gt;0, Total_Overall_Satisfaction__c / Total_of_Responses__c,0)</formula>
+        <label>Overall Satisfaction - Mean</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Satisfaction_Satisfied__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c&gt;0, Top_2_Overall_Satisfaction_Count__c / Total_of_Responses__c, 0)</formula>
+        <label>Overall Satisfaction - % Satisfied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Name__c</fullName>
+        <description>formula field</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.FirstName &amp; &apos; &apos; &amp;  Owner:User.Middle_Name__c  &amp; &apos; &apos; &amp;  Owner:User.LastName</formula>
+        <label>Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PBS_Building__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PBS Building</label>
+        <referenceTo>PBS_Building__c</referenceTo>
+        <relationshipLabel>TSS Results and Action Plans</relationshipLabel>
+        <relationshipName>TSS_Result_Action_Plans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Personal_Workspace_Avg_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c  &gt;0,  Total_Personal_Workspace__c / Total_of_Responses__c, 0)</formula>
+        <label>Personal Workspace - Mean</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Personal_Workspace_Satisfied__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Total_of_Responses__c &gt;0,Max_Count_Personal_Wkspace__c&gt;0), Top_2_Personal_WkSpace_Count__c / (Total_of_Responses__c *  Max_Count_Personal_Wkspace__c ) ,0)</formula>
+        <label>Personal Workspace - % Satisfied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Property_Manager_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property_Manager__r.Email</formula>
+        <label>Property Manager Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Property_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Property Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TSS_Result_Action_Plans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Property_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Leased</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Owned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Postal</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quality_of_Cleanliness_Satisfied__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Total_of_Responses__c &gt;0,Max_Count_Cleanliness__c&gt;0),  Top_2_Cleanliness_Count__c /(Total_of_Responses__c *  Max_Count_Cleanliness__c ) , 0)</formula>
+        <label>Quality of Cleanliness - % Satisfied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RegReview_Approved_by_Supervisor__c</fullName>
+        <externalId>false</externalId>
+        <label>Approved by Supervisor</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RegReview_Justification__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Justification</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RegReview_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title for Review</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requires_Supervisor_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND (Response_Rate__c&gt;=0.20,Overall_Satisfaction_Satisfied__c &lt;=0.60, NOT(ISPICKVAL(Fiscal_Year__c,&quot;FY17&quot;))), true, false)</formula>
+        <label>Requires Supervisor Approval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Response_Rate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Total_of_Responses__c &gt; 0, Occupancy__c &gt;0), Total_of_Responses__c / Occupancy__c , 0)</formula>
+        <label>Response Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Security_Avg_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_of_Responses__c &gt;0, Total_Security__c /Total_of_Responses__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Security - Mean</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Security_Satisfied__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Total_of_Responses__c &gt;0,Max_Count_Security__c&gt;0), Top_2_Security_Count__c / (Total_of_Responses__c * Max_Count_Security__c), 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Security - % Satisfied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Service_Center__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Center</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Supervisor__r.Email</formula>
+        <label>Supervisor Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TSS_Result_Action_Plans1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Top_2_Cleanliness_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Top 2 - Cleanliness Count</label>
+        <summarizedField>TSS_Survey__c.Top_2_Count_Cleanliness__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Top_2_Condition_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Top 2 Condition Count</label>
+        <summarizedField>TSS_Survey__c.Top_2_Count_Condition__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Top_2_Elevator_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Top 2 - Elevator Count</label>
+        <summarizedField>TSS_Survey__c.Top_2_Count_Elevators__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Top_2_MeetingSpace_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Top 2 - MeetingSpace Count</label>
+        <summarizedField>TSS_Survey__c.Top_2_Count_MeetingSpace__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Top_2_Overall_Satisfaction_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Top 2 Overall Satisfaction Count</label>
+        <summarizedField>TSS_Survey__c.Top_2_Count_Overall_Satisfaction__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Top_2_Personal_WkSpace_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Top 2 - Personal WkSpace Count</label>
+        <summarizedField>TSS_Survey__c.Top_2_Count_Personal_WkSpace__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Top_2_Security_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Top 2 - Security Count</label>
+        <summarizedField>TSS_Survey__c.Top_2_Count_Security__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Action_Items__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Action Items</label>
+        <summaryFilterItems>
+            <field>TSS_Action_Item__c.Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress, Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TSS_Action_Item__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cleanliness__c</fullName>
+        <externalId>false</externalId>
+        <label>HiddenTotal Score Cleanliness</label>
+        <summarizedField>TSS_Survey__c.Cleanliness_Avg_Score__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Condition__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Total Score Condition</label>
+        <summarizedField>TSS_Survey__c.Condition_Avg_Score__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Elevators__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Total Score Elevators</label>
+        <summarizedField>TSS_Survey__c.Elevators_Score__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Estimated_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estimated_Non_Deferred_Costs__c + Estimated_Deferred_Costs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Estimated Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_MeetingSpace__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Total Score MeetingSpace</label>
+        <summarizedField>TSS_Survey__c.Meeting_Space_Score__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Overall_Satisfaction__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Total Score Overall Satisfaction</label>
+        <summarizedField>TSS_Survey__c.Overall_Satisfaction_Score__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Percent_Complete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_Action_Items__c &gt;0, Completed_Action_Items__c/  Total_Action_Items__c , 0)</formula>
+        <label>Total Percent Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Personal_Workspace__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Total Score Personal Workspace</label>
+        <summarizedField>TSS_Survey__c.Personal_WkSpace_Avg_Score__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Security__c</fullName>
+        <externalId>false</externalId>
+        <label>Hidden Total Score Security</label>
+        <summarizedField>TSS_Survey__c.Security_Survey_Avg__c</summarizedField>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_of_Responses__c</fullName>
+        <externalId>false</externalId>
+        <label>Total # of Responses</label>
+        <summaryForeignKey>TSS_Survey__c.TSS_Result_Action_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>TSS Result and Action Plan</label>
+    <listViews>
+        <fullName>All_Current_Fiscal_Year</fullName>
+        <columns>NAME</columns>
+        <columns>Action_Plan_Status__c</columns>
+        <columns>In_Progress_Action_Items__c</columns>
+        <columns>Location_Code_Plus__c</columns>
+        <columns>Property_Manager__c</columns>
+        <columns>Supervisor__c</columns>
+        <columns>Response_Rate__c</columns>
+        <columns>Fiscal_Year__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Fiscal_Year__c</field>
+            <operation>equals</operation>
+            <value>FY17</value>
+        </filters>
+        <label>All Current Fiscal Year</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Incomplete_Action_Plans</fullName>
+        <columns>NAME</columns>
+        <columns>Action_Plan_Status__c</columns>
+        <columns>In_Progress_Action_Items__c</columns>
+        <columns>Completed_Action_Items__c</columns>
+        <columns>Total_Action_Items__c</columns>
+        <columns>Action_Plan_Summary__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Assigned_to_me__c</field>
+            <operation>equals</operation>
+            <value>yes</value>
+        </filters>
+        <filters>
+            <field>Action_Plan_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <label>My Incomplete Action Plans</label>
+    </listViews>
+    <listViews>
+        <fullName>My_TSS_Result_Action_Plans</fullName>
+        <columns>NAME</columns>
+        <columns>Action_Plan_Status__c</columns>
+        <columns>In_Progress_Action_Items__c</columns>
+        <columns>Property_Manager__c</columns>
+        <columns>Supervisor__c</columns>
+        <columns>Overall_Satisfaction_Avg_Score__c</columns>
+        <columns>Overall_Satisfaction_Satisfied__c</columns>
+        <columns>Response_Rate__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Assigned_to_me__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Fiscal_Year__c</field>
+            <operation>equals</operation>
+            <value>FY17</value>
+        </filters>
+        <label>My TSS Result Action Plans</label>
+    </listViews>
+    <nameField>
+        <label>TSS Result and Action Plan Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>TSS Results and Action Plans</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Action_Plan_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>In_Progress_Action_Items__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Location_Code_Plus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Property_Manager__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supervisor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Overall_Satisfaction_Avg_Score__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Fiscal_Year__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Building_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Field_Office__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Fiscal_Year__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Occupancy__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PBS_Building__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Property_Manager__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Building_Name__c</searchFilterFields>
+        <searchFilterFields>Location_Code_Plus__c</searchFilterFields>
+        <searchFilterFields>PBS_Building__c</searchFilterFields>
+        <searchFilterFields>Property_Manager__c</searchFilterFields>
+        <searchFilterFields>Service_Center__c</searchFilterFields>
+        <searchFilterFields>Region__c</searchFilterFields>
+        <searchFilterFields>Field_Office__c</searchFilterFields>
+        <searchFilterFields>Fiscal_Year__c</searchFilterFields>
+        <searchResultsAdditionalFields>Building_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Property_Manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Property_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Center__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Location_Code_Plus__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Field_Office__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Fiscal_Year__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supervisor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Region__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>TSS_Field_Office_req_for_GSA_building</fullName>
+        <active>true</active>
+        <description>Field Office is required for GSA owned/lease buildings</description>
+        <errorConditionFormula>AND(Non_GSA__c =False ,   ISBLANK( Field_Office__c ))</errorConditionFormula>
+        <errorDisplayField>Field_Office__c</errorDisplayField>
+        <errorMessage>Field Office is required for every GSA owned or leased building.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Mark_for_Cancel_requires_expla</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  Mark_for_Cancellation__c , ISBLANK(Explanation_for_Cancellation__c ))</errorConditionFormula>
+        <errorDisplayField>Explanation_for_Cancellation__c</errorDisplayField>
+        <errorMessage>Explanation for Cancellation is required when Marking an Action Plan for Cancellation.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Marked_for_cancellation_cant_check</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISCHANGED( Mark_for_Cancellation__c ),  PRIORVALUE(Mark_for_Cancellation__c) = true)</errorConditionFormula>
+        <errorMessage>Once an Action Plan has been Marked for Cancellation, it can not be undone. Please contact your administrator.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Occupancy_req_for_GSA_building</fullName>
+        <active>true</active>
+        <description>Occupancy is required for GSA owned/lease buildings</description>
+        <errorConditionFormula>AND(Non_GSA__c =False ,   ISNULL( Occupancy__c ))</errorConditionFormula>
+        <errorDisplayField>Occupancy__c</errorDisplayField>
+        <errorMessage>Occupancy is required for every GSA owned or leased building.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Owner_can_change_the_action_plan_sum</fullName>
+        <active>true</active>
+        <description>validation to ensure that owner should change the action plan summary field</description>
+        <errorConditionFormula>AND(ISCHANGED(Action_Plan_Summary__c), IF((OwnerId != $User.Id), true, false))</errorConditionFormula>
+        <errorDisplayField>Action_Plan_Summary__c</errorDisplayField>
+        <errorMessage>You don&apos;t have permissions to modify/change the Action Plan Summary. Please contact the Property Manager of the Action Plan.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Property_Manager_required_for_GSA_bu</fullName>
+        <active>true</active>
+        <description>Property Manager is required for GSA owned/lease buildings</description>
+        <errorConditionFormula>AND(Non_GSA__c =False ,   ISBLANK(Property_Manager__c))</errorConditionFormula>
+        <errorDisplayField>Property_Manager__c</errorDisplayField>
+        <errorMessage>Property Manager is required for every GSA owned or leased building.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Property_Source_req_for_non_GSA</fullName>
+        <active>true</active>
+        <description>The Property Source is required for non GSA buildings</description>
+        <errorConditionFormula>AND(Non_GSA__c =True ,   ISBLANK( TEXT( FRPP_Source__c  )))</errorConditionFormula>
+        <errorDisplayField>FRPP_Source__c</errorDisplayField>
+        <errorMessage>The Property Source is required for every non GSA building.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Region_req_for_GSA_building</fullName>
+        <active>true</active>
+        <description>Region is required for GSA owned/lease buildings</description>
+        <errorConditionFormula>AND(Non_GSA__c =False ,   ISBLANK(   Region__c  ))</errorConditionFormula>
+        <errorDisplayField>Region__c</errorDisplayField>
+        <errorMessage>Region is required for every GSA owned or leased building.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Regional_Review_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+AND(NOT(ISBLANK(RegReview_Title__c)), OR(ISBLANK(Associated_Cost__c), ISBLANK(RegReview_Justification__c))),
+
+AND(NOT(ISBLANK(Associated_Cost__c)), OR(ISBLANK(RegReview_Title__c), ISBLANK(RegReview_Justification__c))),
+
+AND(NOT(ISBLANK(RegReview_Justification__c)), OR(ISBLANK(Associated_Cost__c), ISBLANK(RegReview_Title__c))))</errorConditionFormula>
+        <errorDisplayField>RegReview_Title__c</errorDisplayField>
+        <errorMessage>For Regional consideration, please provide a title, justification, and associated cost.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Service_Center_req_for_GSA_building</fullName>
+        <active>true</active>
+        <description>Service Center is required for GSA owned/lease buildings</description>
+        <errorConditionFormula>AND(Non_GSA__c =False ,   ISBLANK(  Service_Center__c  ))</errorConditionFormula>
+        <errorDisplayField>Service_Center__c</errorDisplayField>
+        <errorMessage>Service Center is required for every GSA owned or leased building.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TSS_Supervisor_required_for_GSA_building</fullName>
+        <active>true</active>
+        <description>Supervisor is required for GSA owned/lease buildings</description>
+        <errorConditionFormula>AND(Non_GSA__c =False ,   ISBLANK(Supervisor__c))</errorConditionFormula>
+        <errorDisplayField>Supervisor__c</errorDisplayField>
+        <errorMessage>Supervisor is required for every GSA owned or leased building.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Comments_Report</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Comments Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/TSSResponsePage?id={!TSS_Result_Action_Plan__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Action_Item</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Action Item</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!$ObjectType.TSS_Action_Item__c}/e?CF00N3000000Blbl4={!TSS_Result_Action_Plan__c.Name}&amp;retURL=%2F{!TSS_Result_Action_Plan__c.Id}&amp;saveURL=%2F{!TSS_Result_Action_Plan__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Overall_Satisfaction_Report</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Overall Satisfaction Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/{!$Setup.TSS_Reports_List__c.Overall_Satisfaction_Report__c}?pv1={!TSS_Result_Action_Plan__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Service_Categories_by_Agency</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Service Categories by Agency</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/{!$Setup.TSS_Reports_List__c.Agency_Report__c}?pv2={!TSS_Result_Action_Plan__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Validate_Action_Plan</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Validate Action Plan</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/34.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/34.0/apex.js&quot;)}
+var numActItems = &apos;{!TSS_Result_Action_Plan__c.Total_Action_Items__c}&apos;; 
+var txtPlanSummary = &apos;{!JSENCODE(TSS_Result_Action_Plan__c.Action_Plan_Summary__c)}&apos;;
+var approvaldate = &apos;{!TSS_Result_Action_Plan__c.Action_Plan_Approved_Date__c}&apos;;
+
+if(numActItems == 0 &amp;&amp; (txtPlanSummary == &apos;&apos; || txtPlanSummary == undefined)) {
+alert(&apos;Please create at least one Action Item and fill in the Action Plan Summary field&apos;);
+} 
+else if(numActItems == 0) {
+alert(&apos;Please create at least one Action Item before Submitting for Approval&apos;);
+}
+else if (txtPlanSummary == &apos;&apos; || txtPlanSummary == undefined) {
+alert(&apos;Action Plan Summary must be filled out before Submitting for Approval&apos;);
+}
+else if (approvaldate != &apos;&apos;) {
+alert(&apos;Action Plan was already approved, no action required&apos;);
+}
+else {  
+alert(&apos;Action Plan meets requirements, please click on the Submit for Approval&apos;);
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deliverable</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deliverables</value>
+    </caseValues>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>GPM_Project__c</name>
+        <relationshipLabel><!-- Deliverables --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Required? --></label>
+        <name>Required__c</name>
+    </fields>
+    <layouts>
+        <layout>Deliverable Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- PM Comment --></label>
+            <section>PM Comment</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

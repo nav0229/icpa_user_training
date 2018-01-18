@@ -1,0 +1,631 @@
+<apex:page controller="GLXY_SpendingPlanReport" title="Spending Plan Report" readonly="true" sidebar="false">
+
+     <table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">Monthly Fiscal Year Projections</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+                <div style="background:White; border:2px outset #888888;">
+                <h2><font color="darkred" size="+1">
+                    Fiscal Year: {!strFiscalYearUserInput} &nbsp;&nbsp;&nbsp;
+                    Region: {!strRegion} &nbsp;&nbsp;&nbsp;
+                    Delegated Flag: {!strDelegatedFlag} &nbsp;&nbsp;&nbsp;
+                    Status Code: {!strStatusCode} &nbsp;&nbsp;&nbsp;
+                    Include in Budget: {!strIncludeinBudgetFlag}
+                </font></h2>
+                </div>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>  
+    
+    <apex:form id="frmList">
+        <table border="1" align="center" cellspacing="1">
+            <tr> 
+                <td>&nbsp;</td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Oct Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Nov Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Dec Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Jan Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Feb Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Mar Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Apr Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">May Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Jun Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Jul Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Aug Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Sep Plan</font></h2></td>
+                <td align="center"><h2><font color="DarkBlue" size="+1">Total Year</font></h2></td>
+                
+            </tr>
+            <tr>
+                <td><b>Base Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA1" value="{0, number, $###,###,##0.00}"><apex:param value="{!BaseRentNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow1" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lease Projects NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA2" value="{0, number, $###,###,##0.00}"><apex:param value="{!LeaseProjectNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow2" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Operating Cost Escalation NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA3" value="{0, number, $###,###,##0.00}"><apex:param value="{!CPINOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow3" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Step Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA4" value="{0, number, $###,###,##0.00}"><apex:param value="{!StepRentNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow4" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lump Sums NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA5" value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow5" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>IBAA NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA6" value="{0, number, $###,###,##0.00}"><apex:param value="{!IBAANOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow6" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>RWA NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA7" value="{0, number, $###,###,##0.00}"><apex:param value="{!RWANOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow7" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Double Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA8" value="{0, number, $###,###,##0.00}"><apex:param value="{!DoubleRentNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow8" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lease Project Step Rent NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA9" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPSRNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow9" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lease Project Lump Sums NOA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_NOA-10" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPLSNOA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_NOATotalRow10" value=""/></td>-->
+            </tr>
+            <tr bgcolor="LightGrey">
+                <td><b>Total NOA</b></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTOCTNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalOct}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTNOVNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalNov}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTDECNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalDec}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJANNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalJan}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTFEBNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalFeb}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMARNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalMar}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAPRNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalApr}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAYNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalMay}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUNNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotaljun}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJULNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalJul}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAUGNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalAug}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTSEPNOA" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalSep}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_NOATotal" value="{0, number, $###,###,##0.00}"><apex:param value="{!NOATotalOct+NOATotalNov+NOATotalDec+NOATotalJan+NOATotalFeb+NOATotalMar+NOATotalApr+NOATotalMay+NOATotalJun+NOATotalJul+NOATotalAug+NOATotalSep}"/></apex:outputText></td>
+            </tr>
+            
+            <tr>
+                <td colspan="14">&nbsp;</td>
+            </tr>
+            <tr>
+                <td><b>Base Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA1" value="{0, number, $###,###,##0.00}"><apex:param value="{!BaseRentIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow1" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lease Projects IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA2" value="{0, number, $###,###,##0.00}"><apex:param value="{!LeaseProjectIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow2" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Operating Cost Escalation IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA3" value="{0, number, $###,###,##0.00}"><apex:param value="{!CPIIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow3" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Step Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA4" value="{0, number, $###,###,##0.00}"><apex:param value="{!StepRentIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow4" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lump Sums IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA5" value="{0, number, $###,###,##0.00}"><apex:param value="{!LumpSumIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow5" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>IBAA IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA6" value="{0, number, $###,###,##0.00}"><apex:param value="{!IBAAIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow6" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>RWA IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA7" value="{0, number, $###,###,##0.00}"><apex:param value="{!RWAIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow7" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Double Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA8" value="{0, number, $###,###,##0.00}"><apex:param value="{!DoubleRentIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow8" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lease Project Step Rent IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA9" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPSRIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow9" value=""/></td>-->
+            </tr>
+            <tr>
+                <td><b>Lease Project Lump Sums IA</b></td>
+                <apex:repeat value="{!intMonthCounter}" var="pos">
+                    <td align="right">&nbsp;<apex:outputText ID="GLXY_IA-10" value="{0, number, $###,###,##0.00}"><apex:param value="{!LPLSIA[pos]}" /></apex:outputText></td>
+                </apex:repeat>
+                <!--<td align="Right"><apex:outputText ID="GLXY_IATotalRow10" value=""/></td>-->
+            </tr>
+            <tr bgcolor="LightGrey">
+                <td><b>Total IA</b></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTOCTIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTNOVIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalNov}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTDECIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalDec}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJANIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotaljan}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTFEBIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalFeb}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMARIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMar}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAPRIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalApr}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAYIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMay}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUNIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJun}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJULIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJul}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAUGIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalAug}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTSEPIA" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalSep}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_IATotal" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct+IATotalNov+IATotalDec+IATotalJan+IATotalFeb+IATotalMar+IATotalApr+IATotalMay+IATotalJun+IATotalJul+IATotalAug+IATotalSep
+                }"/></apex:outputText></td>
+            </tr>
+            <tr>
+                <td colspan="14">&nbsp;</td>
+            </tr>
+            <tr bgcolor="LightGrey">
+                <td><b>Total NOA and IA</b></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTOCT" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct+NOATotalOct}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTNOV" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalNov+NOATotalNov}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTDEC" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalDec+NOATotalDec}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJAN" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJan+NOATotalJan}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTFEB" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalFeb+NOATotalFeb}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAR" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMar+NOATotalMar}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAPR" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalApr+NOATotalApr}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTMAY" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalMay+NOATotalMay}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUN" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJun+NOATotalJun}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTJUL" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalJul+NOATotalJul}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTAUG" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalAug+NOATotalAug}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_TOTSEP" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalSep+NOATotalSep}"/></apex:outputText></td>
+                <td align="Right"><apex:outputText ID="GLXY_Total" value="{0, number, $###,###,##0.00}"><apex:param value="{!IATotalOct+IATotalNov+IATotalDec+IATotalJan+IATotalFeb+IATotalMar+IATotalApr+IATotalMay+IATotalJun+IATotalJul+IATotalAug+IATotalSep+NOATotalOct+NOATotalNov+NOATotalDec+NOATotalJan+NOATotalFeb+NOATotalMar+NOATotalApr+NOATotalMay+NOATotalJun+NOATotalJul+NOATotalAug+NOATotalSep}"/></apex:outputText></td>
+            </tr>        
+        </table>
+
+        <!--<script language = "Javascript">
+    
+            var blnValidLease = 'false'; //Assume no lease found ...
+            
+            var TotalAmountOCTNOA = '0';
+            var TotalAmountNOVNOA = '0';
+            var TotalAmountDECNOA = '0';
+            var TotalAmountJANNOA = '0';
+            var TotalAmountFEBNOA = '0';
+            var TotalAmountMARNOA = '0';
+            var TotalAmountAPRNOA = '0';
+            var TotalAmountMAYNOA = '0';
+            var TotalAmountJUNNOA = '0';
+            var TotalAmountJULNOA = '0';
+            var TotalAmountAUGNOA = '0';
+            var TotalAmountSEPNOA = '0';
+     
+            var TotalAmountOCTIA = '0';
+            var TotalAmountNOVIA = '0';
+            var TotalAmountDECIA = '0';
+            var TotalAmountJANIA = '0';
+            var TotalAmountFEBIA = '0';
+            var TotalAmountMARIA = '0';
+            var TotalAmountAPRIA = '0';
+            var TotalAmountMAYIA = '0';
+            var TotalAmountJUNIA = '0';
+            var TotalAmountJULIA = '0';
+            var TotalAmountAUGIA = '0';
+            var TotalAmountSEPIA = '0';
+            
+            var TotalAmountOCT = '0';
+            var TotalAmountNOV = '0';
+            var TotalAmountDEC = '0';
+            var TotalAmountJAN = '0';
+            var TotalAmountFEB = '0';
+            var TotalAmountMAR = '0';
+            var TotalAmountAPR = '0';
+            var TotalAmountMAY = '0';
+            var TotalAmountJUN = '0';
+            var TotalAmountJUL = '0';
+            var TotalAmountAUG = '0';
+            var TotalAmountSEP = '0';
+            
+            var YearHorzNOA1 = '0';
+            var YearHorzNOA2 = '0';
+            var YearHorzNOA3 = '0';
+            var YearHorzNOA4 = '0';
+            var YearHorzNOA5 = '0';
+            var YearHorzNOA6 = '0';
+            var YearHorzNOA7 = '0';
+            var YearHorzNOA8 = '0';
+            var YearHorzNOA9 = '0';
+            var YearHorzNOA10 = '0';
+            var YearHorzNOA = '0';
+            
+            var YearHorzIA1 = '0';
+            var YearHorzIA2 = '0';
+            var YearHorzIA3 = '0';
+            var YearHorzIA4 = '0';
+            var YearHorzIA5 = '0';
+            var YearHorzIA6 = '0';
+            var YearHorzIA7 = '0';
+            var YearHorzIA8 = '0';
+            var YearHorzIA9 = '0';
+            var YearHorzIA10 = '0';
+            var YearHorzIA = '0';
+            
+            var elems = document.getElementsByTagName("*");
+            
+            for (var i=0, m=elems.length; i<m; i++) {
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_") != -1) {
+                    blnValidLease = 'true';
+                    Amount = document.getElementById(elems[i].id).innerHTML;
+                    Amount = Amount.replace('$','');
+                    Amount = Amount.replace('$','').replace(',','').replace(',','').replace(',','').replace(' ',''); // Easy way to make sure that we handle big numbers, or more commas ...
+                }
+                
+                // ##### Vertical NOA Totals
+                if (elems[i].id && elems[i].id.indexOf(":0:GLXY_NOA") != -1) {
+                    TotalAmountOCTNOA = parseFloat(TotalAmountOCTNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":1:GLXY_NOA") != -1) {
+                    TotalAmountNOVNOA = parseFloat(TotalAmountNOVNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":2:GLXY_NOA") != -1) {
+                    TotalAmountDECNOA = parseFloat(TotalAmountDECNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":3:GLXY_NOA") != -1) {
+                    TotalAmountJANNOA = parseFloat(TotalAmountJANNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":4:GLXY_NOA") != -1) {
+                    TotalAmountFEBNOA = parseFloat(TotalAmountFEBNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":5:GLXY_NOA") != -1) {
+                    TotalAmountMARNOA = parseFloat(TotalAmountMARNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":6:GLXY_NOA") != -1) {
+                    TotalAmountAPRNOA = parseFloat(TotalAmountAPRNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":7:GLXY_NOA") != -1) {
+                    TotalAmountMAYNOA = parseFloat(TotalAmountMAYNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":8:GLXY_NOA") != -1) {
+                    TotalAmountJUNNOA = parseFloat(TotalAmountJUNNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":9:GLXY_NOA") != -1) {
+                    TotalAmountJULNOA = parseFloat(TotalAmountJULNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":10:GLXY_NOA") != -1) {
+                    TotalAmountAUGNOA = parseFloat(TotalAmountAUGNOA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":11:GLXY_NOA") != -1) {
+                    TotalAmountSEPNOA = parseFloat(TotalAmountSEPNOA) + parseFloat(Amount);
+                }
+                
+                // ##### Vertical IA Totals
+                if (elems[i].id && elems[i].id.indexOf(":0:GLXY_IA") != -1) {
+                    TotalAmountOCTIA = parseFloat(TotalAmountOCTIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":1:GLXY_IA") != -1) {
+                    TotalAmountNOVIA = parseFloat(TotalAmountNOVIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":2:GLXY_IA") != -1) {
+                    TotalAmountDECIA = parseFloat(TotalAmountDECIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":3:GLXY_IA") != -1) {
+                    TotalAmountJANIA = parseFloat(TotalAmountJANIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":4:GLXY_IA") != -1) {
+                    TotalAmountFEBIA = parseFloat(TotalAmountFEBIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":5:GLXY_IA") != -1) {
+                    TotalAmountMARIA = parseFloat(TotalAmountMARIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":6:GLXY_IA") != -1) {
+                    TotalAmountAPRIA = parseFloat(TotalAmountAPRIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":7:GLXY_IA") != -1) {
+                    TotalAmountMAYIA = parseFloat(TotalAmountMAYIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":8:GLXY_IA") != -1) {
+                    TotalAmountJUNIA = parseFloat(TotalAmountJUNIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":9:GLXY_IA") != -1) {
+                    TotalAmountJULIA = parseFloat(TotalAmountJULIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":10:GLXY_IA") != -1) {
+                    TotalAmountAUGIA = parseFloat(TotalAmountAUGIA) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":11:GLXY_IA") != -1) {
+                    TotalAmountSEPIA = parseFloat(TotalAmountSEPIA) + parseFloat(Amount);
+                }
+                
+                // ##### Horizontal Totals NOA
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA1") != -1) {
+                    YearHorzNOA1 = parseFloat(YearHorzNOA1) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA2") != -1) {
+                    YearHorzNOA2 = parseFloat(YearHorzNOA2) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA3") != -1) {
+                    YearHorzNOA3 = parseFloat(YearHorzNOA3) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA4") != -1) {
+                    YearHorzNOA4 = parseFloat(YearHorzNOA4) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA5") != -1) {
+                    YearHorzNOA5 = parseFloat(YearHorzNOA5) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA6") != -1) {
+                    YearHorzNOA6 = parseFloat(YearHorzNOA6) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA7") != -1) {
+                    YearHorzNOA7 = parseFloat(YearHorzNOA7) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA8") != -1) {
+                    YearHorzNOA8 = parseFloat(YearHorzNOA8) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA9") != -1) {
+                    YearHorzNOA9 = parseFloat(YearHorzNOA9) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_NOA-10") != -1) {
+                    YearHorzNOA10 = parseFloat(YearHorzNOA10) + parseFloat(Amount);
+                }
+                
+                // ##### Horizontal Totals IA
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA1") != -1) {
+                    YearHorzIA1 = parseFloat(YearHorzIA1) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA2") != -1) {
+                    YearHorzIA2 = parseFloat(YearHorzIA2) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA3") != -1) {
+                    YearHorzIA3 = parseFloat(YearHorzIA3) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA4") != -1) {
+                    YearHorzIA4 = parseFloat(YearHorzIA4) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA5") != -1) {
+                    YearHorzIA5 = parseFloat(YearHorzIA5) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA6") != -1) {
+                    YearHorzIA6 = parseFloat(YearHorzIA6) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA7") != -1) {
+                    YearHorzIA7 = parseFloat(YearHorzIA7) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA8") != -1) {
+                    YearHorzIA8 = parseFloat(YearHorzIA8) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA9") != -1) {
+                    YearHorzIA9 = parseFloat(YearHorzIA9) + parseFloat(Amount);
+                }
+                if (elems[i].id && elems[i].id.indexOf(":GLXY_IA-10") != -1) {
+                    YearHorzIA10 = parseFloat(YearHorzIA10) + parseFloat(Amount);
+                }
+            }
+            
+            TotalAmountOCT = TotalAmountOCTNOA + TotalAmountOCTIA;
+            TotalAmountNOV = TotalAmountNOVNOA + TotalAmountNOVIA;
+            TotalAmountDEC = TotalAmountDECNOA + TotalAmountDECIA;
+            TotalAmountJAN = TotalAmountJANNOA + TotalAmountJANIA;
+            TotalAmountFEB = TotalAmountFEBNOA + TotalAmountFEBIA;
+            TotalAmountMAR = TotalAmountMARNOA + TotalAmountMARIA;
+            TotalAmountAPR = TotalAmountAPRNOA + TotalAmountAPRIA;
+            TotalAmountMAY = TotalAmountMAYNOA + TotalAmountMAYIA;
+            TotalAmountJUN = TotalAmountJUNNOA + TotalAmountJUNIA;
+            TotalAmountJUL = TotalAmountJULNOA + TotalAmountJULIA;
+            TotalAmountAUG = TotalAmountAUGNOA + TotalAmountAUGIA;
+            TotalAmountSEP = TotalAmountSEPNOA + TotalAmountSEPIA;
+            
+            YearHorzNOA = YearHorzNOA1 + YearHorzNOA2 + YearHorzNOA3 + YearHorzNOA4 + YearHorzNOA5 + YearHorzNOA6 + YearHorzNOA7 + YearHorzNOA8 + YearHorzNOA9 + YearHorzNOA10;
+            YearHorzIA = YearHorzIA1 + YearHorzIA2 + YearHorzIA3 + YearHorzIA4 + YearHorzIA5 + YearHorzIA6 + YearHorzIA7 + YearHorzIA8 + YearHorzIA9 + YearHorzIA10;
+            YearHorz = YearHorzNOA + YearHorzIA;
+            
+            if(blnValidLease=='true') {
+                TotalAmountOCTNOA = '$' + numberWithCommas(TotalAmountOCTNOA);
+                TotalAmountNOVNOA = '$' + numberWithCommas(TotalAmountNOVNOA);
+                TotalAmountDECNOA = '$' + numberWithCommas(TotalAmountDECNOA);
+                TotalAmountJANNOA = '$' + numberWithCommas(TotalAmountJANNOA);
+                TotalAmountFEBNOA = '$' + numberWithCommas(TotalAmountFEBNOA);
+                TotalAmountMARNOA = '$' + numberWithCommas(TotalAmountMARNOA);
+                TotalAmountAPRNOA = '$' + numberWithCommas(TotalAmountAPRNOA);
+                TotalAmountMAYNOA = '$' + numberWithCommas(TotalAmountMAYNOA);
+                TotalAmountJUNNOA = '$' + numberWithCommas(TotalAmountJUNNOA);
+                TotalAmountJULNOA = '$' + numberWithCommas(TotalAmountJULNOA);
+                TotalAmountAUGNOA = '$' + numberWithCommas(TotalAmountAUGNOA);
+                TotalAmountSEPNOA = '$' + numberWithCommas(TotalAmountSEPNOA);
+                
+                TotalAmountOCTIA = '$' + numberWithCommas(TotalAmountOCTIA);
+                TotalAmountNOVIA = '$' + numberWithCommas(TotalAmountNOVIA);
+                TotalAmountDECIA = '$' + numberWithCommas(TotalAmountDECIA);
+                TotalAmountJANIA = '$' + numberWithCommas(TotalAmountJANIA);
+                TotalAmountFEBIA = '$' + numberWithCommas(TotalAmountFEBIA);
+                TotalAmountMARIA = '$' + numberWithCommas(TotalAmountMARIA);
+                TotalAmountAPRIA = '$' + numberWithCommas(TotalAmountAPRIA);
+                TotalAmountMAYIA = '$' + numberWithCommas(TotalAmountMAYIA);
+                TotalAmountJUNIA = '$' + numberWithCommas(TotalAmountJUNIA);
+                TotalAmountJULIA = '$' + numberWithCommas(TotalAmountJULIA);
+                TotalAmountAUGIA = '$' + numberWithCommas(TotalAmountAUGIA);
+                TotalAmountSEPIA = '$' + numberWithCommas(TotalAmountSEPIA);
+                
+                TotalAmountOCT = '$' + numberWithCommas(TotalAmountOCT);
+                TotalAmountNOV = '$' + numberWithCommas(TotalAmountNOV);
+                TotalAmountDEC = '$' + numberWithCommas(TotalAmountDEC);
+                TotalAmountJAN = '$' + numberWithCommas(TotalAmountJAN);
+                TotalAmountFEB = '$' + numberWithCommas(TotalAmountFEB);
+                TotalAmountMAR = '$' + numberWithCommas(TotalAmountMAR);
+                TotalAmountAPR = '$' + numberWithCommas(TotalAmountAPR);
+                TotalAmountMAY = '$' + numberWithCommas(TotalAmountMAY);
+                TotalAmountJUN = '$' + numberWithCommas(TotalAmountJUN);
+                TotalAmountJUL = '$' + numberWithCommas(TotalAmountJUL);
+                TotalAmountAUG = '$' + numberWithCommas(TotalAmountAUG);
+                TotalAmountSEP = '$' + numberWithCommas(TotalAmountSEP);
+                
+                // ##### Horizontal Totals NOA
+                YearHorzNOA1 = '$' + numberWithCommas(YearHorzNOA1);
+                YearHorzNOA2 = '$' + numberWithCommas(YearHorzNOA2);
+                YearHorzNOA3 = '$' + numberWithCommas(YearHorzNOA3);
+                YearHorzNOA4 = '$' + numberWithCommas(YearHorzNOA4);
+                YearHorzNOA5 = '$' + numberWithCommas(YearHorzNOA5);
+                YearHorzNOA6 = '$' + numberWithCommas(YearHorzNOA6);
+                YearHorzNOA7 = '$' + numberWithCommas(YearHorzNOA7);
+                YearHorzNOA8 = '$' + numberWithCommas(YearHorzNOA8);
+                YearHorzNOA9 = '$' + numberWithCommas(YearHorzNOA9);
+                YearHorzNOA10 = '$' + numberWithCommas(YearHorzNOA10);
+                //YearHorzNOA11 = '$' + numberWithCommas(YearHorzNOA11);
+                //YearHorzNOA12 = '$' + numberWithCommas(YearHorzNOA12);
+                
+                // ##### Horizontal Totals IA
+                YearHorzIA1 = '$' + numberWithCommas(YearHorzIA1);
+                YearHorzIA2 = '$' + numberWithCommas(YearHorzIA2);
+                YearHorzIA3 = '$' + numberWithCommas(YearHorzIA3);
+                YearHorzIA4 = '$' + numberWithCommas(YearHorzIA4);
+                YearHorzIA5 = '$' + numberWithCommas(YearHorzIA5);
+                YearHorzIA6 = '$' + numberWithCommas(YearHorzIA6);
+                YearHorzIA7 = '$' + numberWithCommas(YearHorzIA7);
+                YearHorzIA8 = '$' + numberWithCommas(YearHorzIA8);
+                YearHorzIA9 = '$' + numberWithCommas(YearHorzIA9);
+                YearHorzIA10 = '$' + numberWithCommas(YearHorzIA10);
+                //YearHorzIA11 = '$' + numberWithCommas(YearHorzIA11);
+                //YearHorzIA12 = '$' + numberWithCommas(YearHorzIA12);
+                
+                // ##### Horizontal Totals
+                YearHorzNOA = '$' + numberWithCommas(YearHorzNOA);
+                YearHorzIA = '$' + numberWithCommas(YearHorzIA);
+                YearHorz = '$' + numberWithCommas(YearHorz);
+                
+                document.getElementById('{!$Component.frmList.GLXY_TOTOCTNOA}').innerHTML = TotalAmountOCTNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTNOVNOA}').innerHTML = TotalAmountNOVNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTDECNOA}').innerHTML = TotalAmountDECNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJANNOA}').innerHTML = TotalAmountJANNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTFEBNOA}').innerHTML = TotalAmountFEBNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTMARNOA}').innerHTML = TotalAmountMARNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTAPRNOA}').innerHTML = TotalAmountAPRNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTMAYNOA}').innerHTML = TotalAmountMAYNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJUNNOA}').innerHTML = TotalAmountJUNNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJULNOA}').innerHTML = TotalAmountJULNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTAUGNOA}').innerHTML = TotalAmountAUGNOA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTSEPNOA}').innerHTML = TotalAmountSEPNOA;
+                
+                document.getElementById('{!$Component.frmList.GLXY_TOTOCTIA}').innerHTML = TotalAmountOCTIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTNOVIA}').innerHTML = TotalAmountNOVIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTDECIA}').innerHTML = TotalAmountDECIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJANIA}').innerHTML = TotalAmountJANIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTFEBIA}').innerHTML = TotalAmountFEBIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTMARIA}').innerHTML = TotalAmountMARIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTAPRIA}').innerHTML = TotalAmountAPRIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTMAYIA}').innerHTML = TotalAmountMAYIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJUNIA}').innerHTML = TotalAmountJUNIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJULIA}').innerHTML = TotalAmountJULIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTAUGIA}').innerHTML = TotalAmountAUGIA;
+                document.getElementById('{!$Component.frmList.GLXY_TOTSEPIA}').innerHTML = TotalAmountSEPIA;
+                
+                document.getElementById('{!$Component.frmList.GLXY_TOTOCT}').innerHTML = TotalAmountOCT;
+                document.getElementById('{!$Component.frmList.GLXY_TOTNOV}').innerHTML = TotalAmountNOV;
+                document.getElementById('{!$Component.frmList.GLXY_TOTDEC}').innerHTML = TotalAmountDEC;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJAN}').innerHTML = TotalAmountJAN;
+                document.getElementById('{!$Component.frmList.GLXY_TOTFEB}').innerHTML = TotalAmountFEB;
+                document.getElementById('{!$Component.frmList.GLXY_TOTMAR}').innerHTML = TotalAmountMAR;
+                document.getElementById('{!$Component.frmList.GLXY_TOTAPR}').innerHTML = TotalAmountAPR;
+                document.getElementById('{!$Component.frmList.GLXY_TOTMAY}').innerHTML = TotalAmountMAY;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJUN}').innerHTML = TotalAmountJUN;
+                document.getElementById('{!$Component.frmList.GLXY_TOTJUL}').innerHTML = TotalAmountJUL;
+                document.getElementById('{!$Component.frmList.GLXY_TOTAUG}').innerHTML = TotalAmountAUG;
+                document.getElementById('{!$Component.frmList.GLXY_TOTSEP}').innerHTML = TotalAmountSEP;
+                
+                // ##### Horizontal Totals NOA
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow1}').innerHTML = YearHorzNOA1;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow2}').innerHTML = YearHorzNOA2;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow3}').innerHTML = YearHorzNOA3;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow4}').innerHTML = YearHorzNOA4;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow5}').innerHTML = YearHorzNOA5;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow6}').innerHTML = YearHorzNOA6;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow7}').innerHTML = YearHorzNOA7;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow8}').innerHTML = YearHorzNOA8;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow9}').innerHTML = YearHorzNOA9;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotalRow10}').innerHTML = YearHorzNOA10;
+                //document.getElementById('{!$Component.frmList.GLXY_NOATotalRow11}').innerHTML = YearHorzNOA11;
+                //document.getElementById('{!$Component.frmList.GLXY_NOATotalRow12}').innerHTML = YearHorzNOA12;
+                document.getElementById('{!$Component.frmList.GLXY_NOATotal}').innerHTML = YearHorzNOA;
+                
+                // ##### Horizontal Totals IA
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow1}').innerHTML = YearHorzIA1;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow2}').innerHTML = YearHorzIA2;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow3}').innerHTML = YearHorzIA3;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow4}').innerHTML = YearHorzIA4;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow5}').innerHTML = YearHorzIA5;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow6}').innerHTML = YearHorzIA6;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow7}').innerHTML = YearHorzIA7;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow8}').innerHTML = YearHorzIA8;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow9}').innerHTML = YearHorzIA9;
+                document.getElementById('{!$Component.frmList.GLXY_IATotalRow10}').innerHTML = YearHorzIA10;
+                //document.getElementById('{!$Component.frmList.GLXY_IATotalRow11}').innerHTML = YearHorzIA11;
+                //document.getElementById('{!$Component.frmList.GLXY_IATotalRow12}').innerHTML = YearHorzIA12;
+                document.getElementById('{!$Component.frmList.GLXY_IATotal}').innerHTML = YearHorzIA;
+                
+                // ##### Horizontal Totals
+                document.getElementById('{!$Component.frmList.GLXY_Total}').innerHTML = YearHorz;
+            }
+                
+            function numberWithCommas(x) {
+                x = parseFloat(x).toFixed(2);
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+        </script>-->
+    
+    </apex:form>      
+    
+</apex:page>

@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Critical_Item_Public</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Critical Items - Public</label>
+        <sharedTo>
+            <group>Critical_Items_Public_Record</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Public_Record__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Administrator_records</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items Administrator records</label>
+        <sharedTo>
+            <group>Critical_Items_Admin_Record_Sharing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Critical_Item_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Audit_Group_sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items Audit Group sharing</label>
+        <sharedTo>
+            <group>Critical_Items_AuditGroup_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Audit Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Audit Group</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_CFO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - CFO</label>
+        <sharedTo>
+            <group>Critical_Items_CFO_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>CFO</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>CFO</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_CIO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items_CIO</label>
+        <sharedTo>
+            <group>Critical_Items_CIO_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>CIO</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>CIO</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_CPO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - CPO</label>
+        <sharedTo>
+            <group>Critical_Items_CPO_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OHRM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OHRM</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Exec_Sec_sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items Exec Sec sharing</label>
+        <sharedTo>
+            <group>Critical_Items_ExecSec_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Exec Sec</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Exec Sec</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_FAS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - FAS</label>
+        <sharedTo>
+            <group>Critical_Items_FAS_Users</group>
+        </sharedTo>
+        <booleanFilter>2 OR 1</booleanFilter>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>FAS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>FAS</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Front_Office_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Front Office Users</label>
+        <sharedTo>
+            <group>Critical_Items_Front_Office_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_NCR</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - NCR</label>
+        <sharedTo>
+            <group>Critical_Items_NCR_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>NCR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>NCR</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OAS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OAS</label>
+        <sharedTo>
+            <group>Critical_Items_OAS_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OAS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OAS</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OCIA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OCIA</label>
+        <sharedTo>
+            <group>Critical_Items_OCIA_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OCIA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OCIA</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OCM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OCM</label>
+        <sharedTo>
+            <group>Critical_Items_OCM_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OCM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OCM</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OCR</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OCR</label>
+        <sharedTo>
+            <group>Critical_Items_OCR_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OCR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OCR</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OCSIT</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OCSIT</label>
+        <sharedTo>
+            <group>Critical_Items_OCSIT_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OCSIT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OCSIT</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OERR</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OERR</label>
+        <sharedTo>
+            <group>Critical_Items_OERR_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OMA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OMA</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OGC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OGC</label>
+        <sharedTo>
+            <group>Critical_Items_OGC_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OGC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OGC</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OGP</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OGP</label>
+        <sharedTo>
+            <group>Critical_Items_OGP_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OGP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OGP</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_OSBU</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - OSBU</label>
+        <sharedTo>
+            <group>Critical_Items_OSBU_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>OSBU</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>OSBU</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_PBS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - PBS</label>
+        <sharedTo>
+            <group>Critical_Items_PBS_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>PBS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>PBS</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_1</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 1</label>
+        <sharedTo>
+            <group>Critical_Items_Reg1_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 1;</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_10</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 10</label>
+        <sharedTo>
+            <group>Critical_Items_Reg10_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 10</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 10;</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 2</label>
+        <sharedTo>
+            <group>Critical_Items_Reg2_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 2</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_3</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 3</label>
+        <sharedTo>
+            <group>Critical_Items_Reg3_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 3</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 3</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_4</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 4</label>
+        <sharedTo>
+            <group>Critical_Items_Reg4_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 4</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_5</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 5</label>
+        <sharedTo>
+            <group>Critical_Items_Reg5_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 5</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 5</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_6</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 6</label>
+        <sharedTo>
+            <group>Critical_Items_Reg6_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 6</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 6</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_7</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 7</label>
+        <sharedTo>
+            <group>Critical_Items_Reg7_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 7</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 7</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_8</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 8</label>
+        <sharedTo>
+            <group>Critical_Items_Reg8_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 8</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 8</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Critical_Items_Region_9</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Critical Items - Region 9</label>
+        <sharedTo>
+            <group>Critical_Items_Reg9_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Organization__c</field>
+            <operation>equals</operation>
+            <value>Region 9</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Line__c</field>
+            <operation>contains</operation>
+            <value>Region 9</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

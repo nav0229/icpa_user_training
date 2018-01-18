@@ -1,0 +1,352 @@
+<apex:page Controller="IDP_Details" standardstylesheets="true" sidebar="false" action="{!updateIDPStatus}">
+<style>
+.tooltip{
+            display: inline;
+            position: relative;
+        }
+        
+        .tooltip:hover:after{
+            background: #333;
+            background: rgba(0,0,0,.8);
+            border-radius: 5px;
+            bottom: 26px;
+            color: #fff;
+            content: attr(title);
+            left: 20%;
+            padding: 5px 15px;
+            position: absolute;
+            z-index: 98;
+            width: 220px;
+            text-align:left;
+        }
+        
+        .tooltip:hover:before{
+            border: solid;
+            border-color: #333 transparent;
+            border-width: 6px 6px 0 6px;
+            bottom: 20px;
+            content: "";
+            left: 50%;
+            position: absolute;
+            z-index: 99;
+        }
+        
+        #instructions {
+            margin-left: 5px \9;
+        }
+        
+        #list{
+            margin-left: 10px \9;
+        }
+        
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border-radius: 10px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 20px solid #888;
+    width: 40%;
+	height: 30%;
+	text-align: center;
+	border-radius: 10px;
+	background: #EBF6FA;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+	position: relative;
+	bottom: 20px;
+    left: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+h1 {
+	font-size: 18px;
+}
+</style> 
+<script type="text/javascript">
+    function confirmDeleteIDP() {
+      return confirm('Are you sure you want to delete this IDP? Any associated Objectives and Activities will also be deleted.');
+    }
+    
+    function confirmCloneIDP() {    
+       return confirm('You have selected to Clone your Approved IDP.  Your new IDP will appear in your listing in a Resubmit status.  Click OK to Clone and then Click Edit to modify and resubmit your IDP.');
+            }
+    function reloadPage(){
+        location.reload();
+    }
+    function pageLoad(){
+        location.href =  "/apex/IDP_ViewPage";
+    }
+    var modal = document.getElementById('clonepopup');
+    var span = document.getElementsByClassName("close")[0];
+    
+    function openClonePopup(value) {
+  		  document.getElementById('clonepopup').style.display = "block";
+  		  document.getElementById('j_id0:j_id2:hdnField').value = value;
+  		  //alert(value);
+	}
+	
+	function closePopup(){
+   	 document.getElementById('clonepopup').style.display = "none";
+	}
+	
+	window.onclick = function(event) {
+	    if (event.target == modal) {
+	        document.getElementById('clonepopup').style.display = "none";
+	    }
+}
+
+</script>
+<apex:form >
+	<div id="clonepopup" class="modal">
+	  	<div class="modal-content">
+	    	<span class="close" onclick="closePopup();">x</span>
+	    		<h1>IDP Clone</h1>	    		
+	    		<br/>
+	    		<br/>
+	    		<apex:outputpanel id="counter">
+	    		<apex:pageMessages id="messages" />
+	    		<br />
+		    		<table align="center">
+			    		<tr>	
+			    			<td><apex:outputLabel value="Select Fiscal Year:" style="font-weight: bold;font-size: 14px;"/></td>
+			    			<!-- <td><apex:inputField value="{!createIDP.Fiscal_Year_pick__c}" /> -->
+			    			<td>
+			    				<apex:selectList value="{!selectedFY}" size="1">
+			    					<apex:selectOptions value="{!FiscalYearPiclist}"  />
+			    				</apex:selectList>
+			    			 </td>
+			    		</tr>
+		    		</table>
+		    		<br/>
+	    			<br/>
+		    		<apex:commandButton styleClass="btn"  style="text-decoration:none;padding-top:3px;padding-bottom:3px;" value="Clone" status="please wait...." action="{!CloneIDP}" rerender="counter" oncomplete="if({!refresh}) pageLoad();" >
+                                     <apex:actionSupport event="onclick" rerender="messages">
+                                     </apex:actionSupport>
+                    </apex:commandButton>
+                    <br/>
+                    <br/>
+                    <apex:inputHidden id="hdnField" value="{!idpIdValue}" />
+                    </apex:outputpanel>
+	  </div>
+</div>
+
+     <apex:pageBlock title="Individual Development Plan" >
+     <div id ="instructions">
+        <div>
+            Welcome to the Individual Development Plan (IDP) tool! The 'My IDPs' page allows you to Create, Review and Manage your own IDPs.
+        </div> 
+        <br />
+        <div>
+                <h1>Disclaimer:</h1> &nbsp;  The IDP is not a 'guarantee' between the employee and supervisor to attend specific training, but a learning and development plan that can be modified as necessary.
+                   <br />
+                   <span style="color:red; font-weight:bold"> Please note that we continuously update the IDP tool in subtle ways based on your feedback. So expect small improvements to change the look and feel of the tool over time.</span>
+       </div>
+                 <br />
+       <div><h1>Instructions:</h1></div>
+       <div id="list">           
+             <li>Click 'Create New Blank IDP' to get started. Please note, the 'Create New Blank IDP' button will become disabled when a user has two in progress IDPs (one for the current FY and one for the upcoming FY).</li>
+             <li>A second IDP for the same FY can only be created when the original IDP's status is set to 'Approved' or 'Archived'.</li>
+             <li>Select the 'Edit' button if you want to work on an IDP you have already started.</li>
+             <li>Click 'Delete' to permanently discard of an IDP in 'New' or 'Resubmit' status.</li>
+             <li>To Recall a submitted IDP, click the 'Recall' button. A recall confirmation will appear.</li>
+             <li>Click 'Clone' to copy an approved IDP for editing. The 'Clone' button will not be available if a user has two in progress IDPs (one for the current FY and one for the upcoming FY).</li>
+             <li>Click the 'Share IDP' button to manually share your IDP with a colleague; you will be redirected to the 'Sharing Details' page. Within that page you can search for and add the user that you would like to share your IDP with (please note, granting a user 'Read/Write' access will give the user edit access to your IDP).  </li>      
+             <li>To review the full details of an existing IDP, select the 'Review' button.</li>     
+             <li>To print your IDP, go to the Review and Submit section and refer to the instructions within that page.</li>
+             <li>If you have an Approved IDP (for the current or upcoming fiscal year) that contains an Activity with a cost associated with it you must create an SF 182. The form can be accessed from the <a href="/a2r/e?retURL=%2Fa2r%2Fo">SF 182</a> tab at any time</li>
+
+       </div>
+       <br />
+       </div>
+                <!-- <table width="100%" align="center">
+                <tr>
+                    <td align="center">
+                 --><div align="center">
+                    <apex:CommandButton value="Create New Blank IDP" action="{!createIDP}" rendered="{!buttonDisp}"/>
+                    <div class="tooltip" align="center" title="The 'Create New Blank IDP' button is disabled when there is one IDP in progress (Status is either set to 'New', 'Resubmit', 'Supervisor Review' or 'Needs Revision') for the current FY and upcoming FY. ">
+                    <apex:CommandButton value="Create New Blank IDP" rendered="{!!buttonDisp}" disabled="true"/>
+                    </div>
+                    </div>
+                    <br />
+                    <!-- 
+                    </td><br/><br/>
+                </tr><tr></tr>
+               
+                
+                
+                <tr> -->
+                    <div align="left" height="20px"  style="background-color: #5B9BD5;font-weight: bold; color:white;">My IDPs</div>
+                <!-- </tr> -->
+                <table width="100%" align="center">
+                <tr>
+                    <td width="100%">
+                  
+                        <apex:pageBlockTable value="{!CurrentIDPS}" var="idpCurrWrap" id="currentIDPTable" >
+                            <!-- <apex:column headerValue="Action" width="20%"> -->    
+                            <apex:column headerValue="Review" width="4%">
+                                    <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:3px;padding-bottom:3px;" action="{!reviewIDP}" 
+                                    rendered="{!(idpCurrWrap.idp.IDP_Status__c != 'New') && (idpCurrWrap.idp.IDP_Status__c != 'Needs Revision') && 
+                                    (idpCurrWrap.idp.IDP_Status__c != 'Resubmit')}">
+                                    Review
+                                    <apex:param name="idpID"   assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+                                    </apex:commandLink>
+                            </apex:column>   
+                            <apex:column headerValue="Edit" width="4%">
+                                    <apex:commandLink styleClass="btn" style="text-decoration:none;padding-top:3px;padding-bottom:3px;" action="{!continueEditingIDP}" 
+                                    rendered="{!(idpCurrWrap.idp.IDP_Status__c == 'New') || (idpCurrWrap.idp.IDP_Status__c == 'Needs Revision') ||
+                                    (idpCurrWrap.idp.IDP_Status__c == 'Resubmit')}">
+                                    Edit
+                                    <apex:param name="idpID"   assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+                                    </apex:commandLink>
+                             </apex:column>    
+                             <apex:column headerValue="Delete" width="4%">
+                                    <apex:commandLink styleClass="btn" style="text-decoration:none;padding-top:3px;padding-bottom:3px;" action="{!deleteIDP}" 
+                                    onclick="if(!confirmDeleteIDP()){return false;}"
+                                    rendered="{!(idpCurrWrap.idp.IDP_Status__c == 'New') || (idpCurrWrap.idp.IDP_Status__c == 'Resubmit')}" oncomplete="pageLoad();">
+                                    Delete
+                                    <apex:param name="idpID"   assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+                                    </apex:commandLink>
+                             </apex:column> 
+                             <apex:column headerValue="Recall" width="4%">                     
+                                    <apex:commandLink styleClass="btn" style="text-decoration:none;padding-top:3px;padding-bottom:3px;" action="{!recallApproval}" 
+                                    rendered="{!(idpCurrWrap.idp.IDP_Status__c == 'Supervisor Review')}" onclick="if(!confirm('Are you sure you want to Recall Approval Request?')) return false;">
+                                    Recall
+                                    <apex:param name="idpID"   assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+                                    </apex:commandLink>
+                             </apex:column>
+                             <apex:column headerValue="Clone" width="4%">  
+                             		
+                                	<apex:outputPanel rendered="{!(idpCurrWrap.idp.IDP_Status__c == 'Approved' && preClone == true && idpCurrWrap.idp.Fiscal_Year_pick__c == pFY  && idpCurrWrap.idp.Fiscal_Year_pick__c != cFY && idpCurrWrap.idp.Fiscal_Year_pick__c != fFY)}">
+											
+											<apex:outputLink value="#" styleClass="btn" style="text-decoration:none;padding-top:3px;padding-bottom:3px;" onclick="openClonePopup('{!idpCurrWrap.idp.Id}');">
+											Clone
+												<apex:param name="idpID" assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+											</apex:outputLink>                         		
+                             		</apex:outputPanel>
+                             		<apex:outputPanel rendered="{!(idpCurrWrap.idp.IDP_Status__c == 'Approved' && curClone == true && idpCurrWrap.idp.Fiscal_Year_pick__c == cFY && idpCurrWrap.idp.Fiscal_Year_pick__c != pFY && idpCurrWrap.idp.Fiscal_Year_pick__c != fFY)}">
+											<apex:outputLink value="#" styleClass="btn" style="text-decoration:none;padding-top:3px;padding-bottom:3px;" onclick="openClonePopup('{!idpCurrWrap.idp.Id}');">
+											Clone
+												<apex:param name="idpID" assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+											</apex:outputLink>                          		
+                             		</apex:outputPanel>                                                
+                                    <apex:outputPanel rendered="{!(idpCurrWrap.idp.IDP_Status__c == 'Approved' && furClone == true && idpCurrWrap.idp.Fiscal_Year_pick__c == fFY && idpCurrWrap.idp.Fiscal_Year_pick__c != pFY && idpCurrWrap.idp.Fiscal_Year_pick__c != cFY)}">
+											<apex:outputLink value="#" styleClass="btn" style="text-decoration:none;padding-top:3px;padding-bottom:3px;" onclick="openClonePopup('{!idpCurrWrap.idp.Id}');">
+											Clone
+												<apex:param name="idpID"   assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+											</apex:outputLink>                            		
+                             		</apex:outputPanel>                             		
+                              </apex:column>
+                   <!--  <apex:column headerValue="IDP ID" width="15%">
+                                
+                                <apex:outputLink value="/{!idpCurrWrap.idp.id}">{!idpCurrWrap.idp.Name}</apex:outputLink>
+                                <apex:commandLink value="{!idpCurrWrap.idp.Name}"  action="{!gotoIDPDetailPage}">
+                                     <apex:param name="idpID"   assignTo="{!idpID}" value="{!idpCurrWrap.idp.Id}" />
+                                 </apex:commandlink>
+                            </apex:column>-->
+                            <apex:column headervalue="Created Date" width="15%">
+                                <apex:outputtext value="{0,date,MM/dd/yyyy}">
+                                    <apex:param value="{!idpCurrWrap.idp.Create_Date__c}" />
+                                </apex:outputtext>
+                            </apex:column>
+                            
+                            <apex:column headervalue="IDP Name" value="{!idpCurrWrap.idp.IDP_Names__c}" width="25%"/>
+                            
+                            
+                            <apex:column headervalue="IDP ID" value="{!idpCurrWrap.idp.Name}" width="10%"/>
+                            <apex:column headervalue="Status" value="{!idpCurrWrap.idp.IDP_Status__c}" width="20%"/>
+                            <apex:column headerValue="Sharing" width="15%" style="padding-right: 5px;">
+                                <apex:outputLink value="/p/share/CustomObjectSharingDetail?parentId={!idpCurrWrap.idp.id}" id="theLink" styleClass="btn" style="text-decoration:none" target="_blank">Share IDP</apex:outputLink>
+                            </apex:column>
+                        
+                        </apex:pageBlockTable>
+                        
+                    </td>
+                </tr><br/>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                
+                
+                
+                
+                <tr>
+                    
+                   <td align="left"><h1>Instructions:</h1> &nbsp; To view an IDP from previous Fiscal Years, click 'Review' in the list below.</td>
+                
+                </tr>
+                
+                <tr>
+                    <td align="left" height="20px"  style="background-color: #5B9BD5;font-weight: bold; color:white;">Previous Fiscal Year IDPs </td>
+                </tr>
+                
+                <tr>
+                    <td  width="100%">
+                    
+                        <apex:pageBlockTable value="{!PreviousIDPS}" var="idpPrevWrap" id="prevIDPTable">
+                        
+                            <apex:column style="text-align: center;" headerValue="Action" width="20%">
+                            
+                                <apex:commandLink styleClass="btn"  style="text-decoration:none;padding-top:3px;padding-bottom:3px;" action="{!reviewIDP}">
+                                    Review
+                                    <apex:param name="idpID"   assignTo="{!idpID}" value="{!idpPrevWrap.idp.Id}" />
+                                </apex:commandLink>
+                                
+                               <apex:outputPanel rendered="{!(idpPrevWrap.idp.IDP_Status__c == 'Approved' && idpStatusCnt == 0)}" >
+											<apex:outputLink value="#" styleClass="btn" style="text-decoration:none;padding-top:3px;padding-bottom:3px;" onclick="openClonePopup('{!idpPrevWrap.idp.Id}');">
+											Clone
+												<apex:param name="idpID" assignTo="{!idpID}" value="{!idpPrevWrap.idp.Id}" />
+											</apex:outputLink>                            		
+                               </apex:outputPanel> 
+                            
+                            </apex:column>
+                            
+                            
+                            <apex:column headerValue="IDP ID" width="15%">
+                                <apex:outputLink value="/{!idpPrevWrap.idp.id}">{!idpPrevWrap.idp.Name}</apex:outputLink>
+                            </apex:column>
+                            
+                            
+                            <apex:column headervalue="IDP Name" value="{!idpPrevWrap.idp.IDP_Names__c}" width="30%"/>
+                            
+                            
+                            <apex:column headervalue="Created Date" width="15%">
+                                <apex:outputtext value="{0,date,MM/dd/yyyy}">
+                                    <apex:param value="{!idpPrevWrap.idp.Create_Date__c}" />
+                                </apex:outputtext>
+                            </apex:column>
+                            
+                            
+                            <apex:column headervalue="Status" value="{!idpPrevWrap.idp.IDP_Status__c}" width="20%"/>
+                        
+                        </apex:pageBlockTable>
+                    </td>
+                </tr>
+                
+            </table>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Step Recall Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Step Recall Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Step --></label>
+        <name>Approval_Step__c</name>
+        <relationshipLabel><!-- Approval Step Recall Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Exception --></label>
+        <name>Exception__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recalled By --></label>
+        <name>Recalled_By__c</name>
+        <relationshipLabel><!-- Approval Step Recall Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Recalled Date --></label>
+        <name>Recalled_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Work Item Id --></label>
+        <name>Work_Item_Id__c</name>
+    </fields>
+    <layouts>
+        <layout>Approval Step Recall Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

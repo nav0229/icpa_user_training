@@ -1,0 +1,34 @@
+<apex:page standardController="Glxy_Lease__c" extensions="Glxy_LeaseAgencyRelatedList">
+    <apex:pageBlock Title="Base Records">
+        <apex:pageBlockTable value="{!LeaseAgencyRelatedListBase}" var="item">
+            <apex:column headerValue="ASA" value="{!item.ASA__c}"/>
+            <apex:column headerValue="AB Code" value="{!item.ABCode__c}"/> 
+            <apex:column headerValue="Agency Bureau Name" value="{!item.Agency_Bureau_Name__c}"/> 
+            <apex:column headerValue="Square Feet" value="{!item.SquareFeet__c}"/>
+            <apex:column headerValue="Base Structured Parking Spaces" value="{!item.BaseStructuredParkingSpaces__c}"/>
+            <apex:column headerValue="Base Surface Parking Spaces" value="{!item.BaseSurfaceParkingSpaces__c}"/>
+            <apex:column headerValue="ASA IA Sq Ft" value="{!item.ASA_IASqFt__c}"/>
+            <apex:column headerValue="ASA NOA Sq Ft" value="{!item.ASA_NOASqFt__c}"/>
+            <apex:column headerValue="ASA IA Annual Rent" value="{!item.ASAIAAnnualRent__c}"/>
+            <apex:column headerValue="ASA NOA Annual Rent" value="{!item.ASANOAAnnualRent__c}"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+    <apex:outputText rendered="{!(LeaseAgencyRelatedListBase.size = 0)}" value="No records to display" />
+    
+    <apex:pageBlock Title="REXUS Records">
+        <apex:pageBlockTable value="{!LeaseAgencyRelatedListREXUS}" var="item">
+            <apex:column headerValue="ASA" value="{!item.REXUSASA__c}"/>
+            <apex:column headerValue="AB Code" value="{!item.REXUSABCode__c}"/> 
+            <apex:column headerValue="Agency Bureau Name" value="{!item.REXUSAgencyBureauName__c}"/> 
+            <apex:column headerValue="Square Feet" value="{!item.REXUSSquareFeet__c}"/>
+            <apex:column headerValue="Base Structured Parking Spaces" value="{!item.REXUSBaseStructuredParkingSpaces__c}"/>
+            <apex:column headerValue="Base Surface Parking Spaces" value="{!item.REXUSBaseSurfaceParkingSpaces__c}"/>
+            <apex:column headerValue="ASA IA Sq Ft" value="{!item.REXUSASA_IASqFt__c}"/>
+            <apex:column headerValue="ASA NOA Sq Ft" value="{!item.REXUSASA_NOASqFt__c}"/>
+            <apex:column headerValue="ASA IA Annual Rent" value="{!item.REXUSASAIAAnnualRent__c}"/>
+            <apex:column headerValue="ASA NOA Annual Rent" value="{!item.REXUSASANOAAnnualRent__c}"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+    <apex:outputText rendered="{!(LeaseAgencyRelatedListREXUS.size = 0)}" value="No records to display" />
+    
+</apex:page>

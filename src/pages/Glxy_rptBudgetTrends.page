@@ -1,0 +1,143 @@
+<apex:page controller="Glxy_BC_TrendAnalysis" title="Budget Trends" readonly="true" sidebar="false">
+	
+	<apex:stylesheet value="/sCSS/21.0/sprites/1297816277000/Theme3/default/gc/versioning.css" />
+	
+	<table align="center" border="0">
+        <tr>
+           <td align="center">
+                <h1><font color="darkred" size="+2">Budget Trends</font></h1><br/>
+           </td>
+        </tr>
+        <tr>
+           <td align="center">
+           		<div style="background:White; border:2px outset #888888;">
+                <h2><font color="darkred" size="+1">
+                    Fiscal Year: {!strCurrrentFY} &nbsp;&nbsp;&nbsp;
+                    Region: {!strRegion} &nbsp;&nbsp;&nbsp;
+                </font></h2>
+                </div>
+           </td><br/>
+        </tr>
+    </table>
+    <br/>  
+    
+    <table border="1" align="center" cellspacing="1" width="50%">
+		 <tr>
+               <td>&nbsp;</td>
+               <td align="center"><font color="DarkBlue"><b>{!strFiscalYear1}</b></font></td>
+              	<td align="center"><font color="DarkBlue"><b>{!strFiscalYear2}</b></font></td>
+               <td align="center"><font color="DarkBlue"><b>{!strFiscalYear3}</b></font></td>
+               <td align="center"><font color="DarkBlue"><b>{!strFiscalYear4}</b></font></td>
+               <td align="center"><font color="DarkBlue"><b>{!strFiscalYear5}</b></font></td>
+          	</tr>
+          	<tr>
+              	<td><b>Escalation Cost IA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationIA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationIA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationIA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationIA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationIA5}" /></apex:outputText></td>
+          	</tr>
+          	<tr>
+              	<td><b>Escalation Cost NOA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationNOA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationNOA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationNOA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationNOA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!EscalationNOA5}" /></apex:outputText></td>
+          	</tr>
+          	<tr>
+              	<td><b>Escalation Cost Total</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalationNOA1==null, 0, EscalationNOA1) + If(EscalationIA1==null, 0, EscalationIA1)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalationNOA2==null, 0, EscalationNOA2) + If(EscalationIA2==null, 0, EscalationIA2)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalationNOA3==null, 0, EscalationNOA3) + If(EscalationIA3==null, 0, EscalationIA3)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalationNOA4==null, 0, EscalationNOA4) + If(EscalationIA4==null, 0, EscalationIA4)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(EscalationNOA5==null, 0, EscalationNOA5) + If(EscalationIA5==null, 0, EscalationIA5)}" /></apex:outputText></td>
+          	</tr>
+          	
+          	<tr><td colspan="6">&nbsp;</td></tr>
+          	
+          	<tr>
+              	<td><b>Cancellation Cost IA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationIA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationIA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationIA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationIA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationIA5}" /></apex:outputText></td>
+          	</tr>
+          	<tr>
+              	<td><b>Cancellation Cost NOA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationNOA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationNOA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationNOA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationNOA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!CancellationNOA5}" /></apex:outputText></td>
+          	</tr>
+          	<tr>
+              	<td><b>Cancellation Cost Total</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancellationNOA1==null, 0, CancellationNOA1) + If(CancellationIA1==null, 0, CancellationIA1)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancellationNOA2==null, 0, CancellationNOA2) + If(CancellationIA2==null, 0, CancellationIA2)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancellationNOA3==null, 0, CancellationNOA3) + If(CancellationIA3==null, 0, CancellationIA3)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancellationNOA4==null, 0, CancellationNOA4) + If(CancellationIA4==null, 0, CancellationIA4)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(CancellationNOA5==null, 0, CancellationNOA5) + If(CancellationIA5==null, 0, CancellationIA5)}" /></apex:outputText></td>
+          	</tr>
+          	
+          	<tr><td colspan="6">&nbsp;</td></tr>
+          	
+          	<tr>
+              	<td><b>Expansion Cost IA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionIA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionIA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionIA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionIA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionIA5}" /></apex:outputText></td>
+          	</tr>
+          		<tr>
+              	<td><b>Expansion Cost NOA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionNOA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionNOA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionNOA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionNOA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!ExpansionNOA5}" /></apex:outputText></td>
+          	</tr>
+          	<tr>
+              	<td><b>Expansion Cost Total</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpansionNOA1==null, 0, ExpansionNOA1) + If(ExpansionIA1==null, 0, ExpansionIA1)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpansionNOA2==null, 0, ExpansionNOA2) + If(ExpansionIA2==null, 0, ExpansionIA2)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpansionNOA3==null, 0, ExpansionNOA3) + If(ExpansionIA3==null, 0, ExpansionIA3)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpansionNOA4==null, 0, ExpansionNOA4) + If(ExpansionIA4==null, 0, ExpansionIA4)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(ExpansionNOA5==null, 0, ExpansionNOA5) + If(ExpansionIA5==null, 0, ExpansionIA5)}" /></apex:outputText></td>
+          	</tr>
+          	
+          	<tr><td colspan="6">&nbsp;</td></tr>
+          	
+          	<tr>
+              	<td><b>Lump Sum IA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumIA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumIA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumIA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumIA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumIA5}" /></apex:outputText></td>
+          	</tr>
+          	<tr>
+              	<td><b>Lump Sum NOA</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumNOA1}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumNOA2}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumNOA3}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumNOA4}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!LumpSumNOA5}" /></apex:outputText></td>
+          	</tr>
+          	<tr>
+              	<td><b>Lump Sum Total</b></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(LumpSumNOA1==null, 0, LumpSumNOA1) + If(LumpSumIA1==null, 0, LumpSumIA1)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(LumpSumNOA2==null, 0, LumpSumNOA2) + If(LumpSumIA2==null, 0, LumpSumIA2)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(LumpSumNOA3==null, 0, LumpSumNOA3) + If(LumpSumIA3==null, 0, LumpSumIA3)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(LumpSumNOA4==null, 0, LumpSumNOA4) + If(LumpSumIA4==null, 0, LumpSumIA4)}" /></apex:outputText></td>
+               <td align="right">&nbsp;<apex:outputText value="{0, number, $###,###,##0}"><apex:param value="{!If(LumpSumNOA5==null, 0, LumpSumNOA5) + If(LumpSumIA5==null, 0, LumpSumIA5)}" /></apex:outputText></td>
+          	</tr>
+          	
+          	<tr><td colspan="6">&nbsp;</td></tr>
+          	
+	</table>
+
+</apex:page>

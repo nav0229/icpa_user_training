@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Child object to parent Agency Protest Cases object. Every &quot;Decision Ground&quot; will have a record of this object type related to the Agency Protest Case record.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Government_Fiscal_Year__c</fullName>
+        <description>Fiscal year of the Actual Decision Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fiscal year of the Actual Decision Date.</inlineHelpText>
+        <label>Government Fiscal Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Protestor_ID__c</fullName>
+        <description>Master-Detail Relationship with Agency Protest Cases.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Master-Detail Relationship with Agency Protest Cases.</inlineHelpText>
+        <label>Protestor ID</label>
+        <referenceTo>Agency_Protest_Case__c</referenceTo>
+        <relationshipLabel>APO Data</relationshipLabel>
+        <relationshipName>APO_Data</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <description>Contain all the full Decision Grounds names.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contain all the full Decision Grounds names.</inlineHelpText>
+        <label>Decision Ground(s)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cancellation</fullName>
+                    <color>#EFAE73</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Debriefing</fullName>
+                    <color>#641CCF</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flawed Communications</fullName>
+                    <color>#0B24BE</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flawed Evaluation</fullName>
+                    <color>#000066</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other-Explained in Comments</fullName>
+                    <color>#F3D904</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Small Business Issue</fullName>
+                    <color>#E27001</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Solicitation</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unduly Restrictive Solicitation</fullName>
+                    <color>#33CC00</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unequal Treatment</fullName>
+                    <color>#33FFFF</color>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>APO Data</label>
+    <nameField>
+        <displayFormat>{0}</displayFormat>
+        <label>APO Data Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>APO Data</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Reason__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Government_Fiscal_Year__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Reason__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Government_Fiscal_Year__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Reason__c</searchFilterFields>
+        <searchFilterFields>Government_Fiscal_Year__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

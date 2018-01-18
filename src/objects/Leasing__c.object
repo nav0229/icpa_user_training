@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is created to serve the business need of Internal Management Tool (IMT) Leasing line of business events/records.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AB_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>AB Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Award_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Award Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Number_of_Employees__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Number of Employees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Requirements_Finalized__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Requirements Finalized</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agency_Delays__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe any anticipated or actual delays caused by the agency</inlineHelpText>
+        <label>Agency Delays</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Anticipated_RWA_Funds__c</fullName>
+        <externalId>false</externalId>
+        <label>Anticipated RWA Funds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Savings__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+OR(ISBLANK(Current_RSF__c), ISBLANK(Proposed_Rental_Rate__c), ISBLANK(Proposed_RSF__c)), 
+  0,
+  ROUND((Current_RSF__c  *  Proposed_Rental_Rate__c) - (Proposed_RSF__c  *  Proposed_Rental_Rate__c),0)
+  )</formula>
+        <inlineHelpText>Formula: (Current RSF * Proposed Rental Rate) - (Proposed RSF * Proposed Rental Rate)</inlineHelpText>
+        <label>Anticipated Savings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Solicitation_Notification_Re__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Insert proposed/anticipated FBO solicitation date</inlineHelpText>
+        <label>Advertisement Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Asset_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Asset Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leasing3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Authorized_Annual_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Authorized Annual Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Authorized_Delineated_Area__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Delineated area authorized by approved prospectus</inlineHelpText>
+        <label>Authorized Delineated Area</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Authorized_Lease_Term_in_years__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Lease term authorized by approved prospectus</inlineHelpText>
+        <label>Authorized Lease Term (in years)</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Authorized_RSF__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>RSF authorized by approved prospectus</inlineHelpText>
+        <label>Authorized RSF</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Authorized_Rental_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Rental rate authorized by approved prospectus</inlineHelpText>
+        <label>Authorized Rental Rate</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Authorized_USF_Per_Person_all_in__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>USF authorized by approved prospectus</inlineHelpText>
+        <label>Authorized USF/Per Person (all-in)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Awarded_Annual_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Awarded Annual Rate</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Awarded_RSF__c</fullName>
+        <externalId>false</externalId>
+        <label>Awarded RSF</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bureau__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Insert Bureau name if applicable</inlineHelpText>
+        <label>Sub Agency/Bureau</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cilp_FY__c</fullName>
+        <externalId>false</externalId>
+        <label>CILP FY</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Congressional_District_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Congressional District(s)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_at_Full_Term__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total value of lease payments over term of lease</inlineHelpText>
+        <label>Cost at Full Term</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Annual_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If multiple leases, insert blended rate</inlineHelpText>
+        <label>Current Annual Rate</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Number_of_Employees__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current number of employees, including other agency leases</inlineHelpText>
+        <label>Current Number of Employees</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Office_Utilization_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Office Utilization Rate</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Project_Phase__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Requirements Development, Presolicitation, Solicitation, or Postaward</inlineHelpText>
+        <label>Current Project Phase</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Identification</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Initiation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Planning</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Execution</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Occupancy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Current_RSF__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Include total RSF all of leases, including non-GSA space if part of consolidation</inlineHelpText>
+        <label>Current RSF</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Total_Annual_Cost__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current total annual cost, including other agency leases if applicable</inlineHelpText>
+        <label>Current Total Annual Cost</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_USF_Per_Person_all_in__c</fullName>
+        <externalId>false</externalId>
+        <label>Current USF/Per Person (all-in)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_USF__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current USF from expiring leases, including non-GSA leases</inlineHelpText>
+        <label>Current USF</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Cleared_by_OMB__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Cleared by OMB</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Sent_to_Congress__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Sent to Congress</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Sent_to_OMB__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Sent to OMB</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_House_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of House Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Senate_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Senate Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Rent_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Insert estimated rent start date; update frequently as more project information is available</inlineHelpText>
+        <label>RLP Issuance Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date_of_Current_Lease__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If multiple leases, enter all dates</inlineHelpText>
+        <label>Expiration Date of Current Lease</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extension_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Extension Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Extension_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Extension Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Extension_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Extension Term</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_Cost_Savings__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISBLANK(Current_RSF__c), ISBLANK(Awarded_Annual_Rate__c), ISBLANK(Awarded_RSF__c), ISBLANK(Awarded_Annual_Rate__c)), 
+0, 
+ROUND((Current_RSF__c * Awarded_Annual_Rate__c) - (Awarded_RSF__c * Awarded_Annual_Rate__c),0) 
+)</formula>
+        <inlineHelpText>(Current RSF x Awarded Annual Rate) – (Awarded RSF x Awarded Annual Rate)</inlineHelpText>
+        <label>Final Cost Savings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Final_USF_person_all_in__c</fullName>
+        <externalId>false</externalId>
+        <label>Final USF/person (all in)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_USF_person_office__c</fullName>
+        <externalId>false</externalId>
+        <label>Final USF/person (office)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Holdover_Likely__c</fullName>
+        <externalId>false</externalId>
+        <label>Holdover Likely</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Interim_Actions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe interim actions that have or will occur prior to project award and completion (i.e., extensions, holdovers, etc.)</inlineHelpText>
+        <label>Interim Action Details</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Key_Properties__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Properties</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Needs Review</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LCO__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lease CO</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leasing2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lease_Construction__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Construction</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Insert current building name and address</inlineHelpText>
+        <label>Existing Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market_Rental_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Rental Rate</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NPV_FMV__c</fullName>
+        <externalId>false</externalId>
+        <label>NPV/FMV %</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_Lease_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>New Lease Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Total_Annual_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>New Total Annual Cost</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_USF__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual new USF</inlineHelpText>
+        <label>Awarded USF</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes_Background__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide details/notes about the project and its status</inlineHelpText>
+        <label>Notes/Background</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Inside_Parking_Spaces__c</fullName>
+        <externalId>false</externalId>
+        <label>Inside Parking Spaces</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Outside_Parking_Spaces__c</fullName>
+        <externalId>false</externalId>
+        <label>Outside Parking Spaces</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Official_Parking_Spaces__c</fullName>
+        <externalId>false</externalId>
+        <label>Official Parking Spaces</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PR_Zone_Exec__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PR Zone Exec</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leasing4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Part_Of_Consolidation_Project__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Part Of Consolidation Project</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Political_Issues__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe any anticipated or actual political issues or concerns with the procurement</inlineHelpText>
+        <label>Political Issues?</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Prior_Lease_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Insert all lease numbers for all expiring leases included in the project, including non-GSA leases if known</inlineHelpText>
+        <label>Prior Lease Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Procurement_Issues__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe any anticipated or actual procurement issues or concerns</inlineHelpText>
+        <label>Procurement Issues</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Action__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>New, New/Replacing, Succeeding, Extension, Expansion, Renewal</inlineHelpText>
+        <label>Project Action/Lease Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Delays__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe any actual or anticipated project delays and cause</inlineHelpText>
+        <label>Project Delays</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Health_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE( Project_Health__c , 
+&quot;Green&quot;, &quot;/resource/GreenFlag&quot;, 
+&quot;Red&quot;, &quot;/resource/RedFlag&quot;, 
+&quot;Yellow&quot;, &quot;/resource/YellowFlag&quot;,&quot;/s.gif&quot;), 
+CASE( Project_Health__c , 
+&quot;Green&quot;, &quot;Green&quot;, 
+&quot;Red&quot;, &quot;Red&quot;, 
+&quot;Yellow&quot;, &quot;Yellow&quot;,&quot;Project Health Flag&quot;) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Health Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Health__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Health</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leasing1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Status_Update__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide current project status updates as needed</inlineHelpText>
+        <label>Project Status Update</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Summary__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe/provide overview of the project</inlineHelpText>
+        <label>Project Summary</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Projected_Requirements_Finalized__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Requirements Finalized</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Delineated_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Delineated Area</label>
+        <length>300</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Proposed_Lease_Award_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Lease Award Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Lease_Term_in_years__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Lease Term (in years)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Number_of_Employees__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Number of Employees</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Office_Utilization_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Office Utilization Rate</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_RSF__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed RSF</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Rental_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Rental Rate</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Total_Annual_Cost__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Proposed total annual cost</inlineHelpText>
+        <label>Proposed Total Annual Cost</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Total_Annual_Parking_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Total Annual Parking Cost</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_USF_Per_Person_all_in__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed USF/Per Person (all-in)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_USF__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Proposed/anticipated USF</inlineHelpText>
+        <label>Proposed USF</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prospectus_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Prospectus Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Prospectus_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <inlineHelpText>Prospectus Number, or pre-prospectus number. Format as follows: XPYY-ZZ-AACC where YY = FY of lease expiration, ZZ is a “counter” field e.g., 01, 02, 03, AA = State code, and CC = anticipated CILP program year</inlineHelpText>
+        <label>Prospectus Number</label>
+        <length>12</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Prospectus_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Prospectus Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Replacing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Succeeding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Extension</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RSF_Reduction_Expansion__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISBLANK(Current_RSF__c), ISBLANK(Proposed_RSF__c)), 0, ROUND(Proposed_RSF__c - Current_RSF__c,0))</formula>
+        <inlineHelpText>Formula: Current RSF - Proposed RSF</inlineHelpText>
+        <label>Change in RSF</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Regional_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Insert regional contact&apos;s email address</inlineHelpText>
+        <label>Regional POC</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leasing</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Scoring_Result__c</fullName>
+        <externalId>false</externalId>
+        <label>Scoring Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capital</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Market__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Market</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Leasing</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Prospectus_Number__c</columns>
+        <columns>Proposed_Lease_Award_Date__c</columns>
+        <columns>Anticipated_Solicitation_Notification_Re__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Lease_Award_Next_3_Months</fullName>
+        <columns>NAME</columns>
+        <columns>Prospectus_Number__c</columns>
+        <columns>Proposed_Lease_Award_Date__c</columns>
+        <columns>Anticipated_Solicitation_Notification_Re__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Proposed_Lease_Award_Date__c</field>
+            <operation>equals</operation>
+            <value>NEXT_N_MONTHS:3</value>
+        </filters>
+        <label>Lease Award: Next 3 Months</label>
+    </listViews>
+    <listViews>
+        <fullName>Lease_Solicitation_Next_3_Months</fullName>
+        <columns>NAME</columns>
+        <columns>Prospectus_Number__c</columns>
+        <columns>Proposed_Lease_Award_Date__c</columns>
+        <columns>Anticipated_Solicitation_Notification_Re__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anticipated_Solicitation_Notification_Re__c</field>
+            <operation>equals</operation>
+            <value>NEXT_N_MONTHS:3</value>
+        </filters>
+        <label>Lease Solicitation: Next 3 Months</label>
+    </listViews>
+    <nameField>
+        <label>Major Dept/Agency</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Leasing</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Prospectus_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Proposed_Lease_Award_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Anticipated_Solicitation_Notification_Re__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Prospectus_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Proposed_Lease_Award_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Anticipated_Solicitation_Notification_Re__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Lease_Award_date_rule</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISBLANK( Proposed_Lease_Award_Date__c )</errorConditionFormula>
+        <errorDisplayField>Proposed_Lease_Award_Date__c</errorDisplayField>
+        <errorMessage>Please select the Proposed Lease Award Date value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lease_Solicitation_date_rule</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISBLANK(Anticipated_Solicitation_Notification_Re__c)</errorConditionFormula>
+        <errorDisplayField>Anticipated_Solicitation_Notification_Re__c</errorDisplayField>
+        <errorMessage>Please select the Anticipated FBO Solicit/Notification Date value.</errorMessage>
+    </validationRules>
+</CustomObject>

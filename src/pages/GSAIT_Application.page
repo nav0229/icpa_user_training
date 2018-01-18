@@ -1,0 +1,464 @@
+<apex:page controller="GSAITApplication" action="{!hstsHeader}" cache="false" showHeader="false" sidebar="false" showChat="false" 
+    standardStylesheets="false" id="appPage" docType="html-5.0" applyHtmlTag="false">
+<html>
+<head>
+<apex:outputText value="<" escape="false"/>!--
+................................................................................
+.................................................8..............................
+................................................OO$.............................
+....+OOOOOOO.......OOOOOO8...... .OOOOO.........O8O,......ZZZ$Z.ZZZZZZZZZZZZZZZ+
+..OOOOOOOOOOOO,.:OOOOOOOOOOO.....OOOOOOO........O7.O.. ...ZZ.ZZ.ZZZZZZZZZZZZZZZ+
+.OOOOO$..?OOOOO.OOOO....OOOO8...8OOOOOOO.......7O..,O8O.$Z7ZZZZ.ZZZZZZZZZZZZZZZ+
+OOOOO...........OOOOOO=.. ......OOOO.OO.~OOO88,........$Z,ZZZZZ......ZZZZZ......
+OOOOO...????????=OOOOOOOOOO....OOOO?.OOOO8.+OOO......ZZZ..ZZZZZ......ZZZZZ......
+OOOO$...OOOOOOOO...OOOOOOOOOO.?8OOO. .OOOO....:8O.....ZZ..ZZZZZ......ZZZZZ......
+OOOO8...???OOOOO....  ..OOOOO?OOOOOOOOOOOOO....O..OZZ$.Z:.ZZZZZ......ZZZZZ......
+8OOOO8.....8OOOOOOOO.....OOOOOOOOOOOOOOOOOO?...8.ZO..OZZZ.ZZZZZ......ZZZZZ......
+.8OOOOOOOOOOOOO8OOOOOOOOOOOOOOOOO=.....OOOOO...ZZ.......ZZ.ZZZZ......ZZZZZ......
+...OOOOOOOOOO....,OOOOOOOOO.OOOOO.......OOOOO.Z7..........,zZZZ......ZZZZZ......
+.........   ......... .. ....... ....... .......................................
+................................................................................
+
+If you are reading this, then we want to talk to you! Please submit your resume!  
+--<apex:outputText value=">" escape="false"/>
+
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_headercss)}"/>
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_baselinecss)}"/> 
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_stylecss)}" />  
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire1,'css/bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire1,'fonts/font-awesome-4.4.0/css/font-awesome.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire1,'css/stylesheet.css')}"/>
+<!--
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_Stylesheetcss)}"/>
+-->
+
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire1,'js/jquery.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire2,'pifa/simple-expand.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire1,'js/bootstrap.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire_Script)}"/>
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+
+    <title>GSA IT Job Opportunities</title>
+    <meta name="DC.creator" content="GSA IT - open.gsa.gov" />
+    <meta name="DC.language" content="en" />
+    <meta name="description" content="What GSA IT does." />
+
+
+
+</head>
+
+<!-- End Google Tag Manager -->
+<!--
+<div class="page-header" style="border-bottom:0px" >
+        <apex:image url="{!URLFOR($Resource.pifb,'images/logo-gsa.png')}" alt="GSA IT Logo" width="100" height="100"  style="position:absolute;top:0px;right:0px" />
+        <h1 style="float:left;top:10px;margin-left:50px" >GSA IT Application</h1>
+</div>
+-->
+<body>
+<header class="header cf" role="banner">
+  <div class="wrap">
+    <a target="_blank" href="http://www.gsa.gov/">
+      <img class="logo" alt="General Services Administration" src="/resource/1458761638000/GSAITHire_GSALogo"/>
+    </a>
+    <h1><span>GSA IT </span>JOB OPPORTUNITIES</h1>
+  </div>
+</header>
+<div class="container">
+  <div class="container clearfix" >
+    
+    <div id="header" style="margin-top:10px">
+
+      <p class="highlight"><a href="http://open.gsa.gov" target="_blank">
+            <apex:image url="{!URLFOR($Resource.GSAITHire_Starlogo)}" alt="GSA IT" id="gsaheaderlogo" style="float:left;padding-right:10px;width: 272px; height: 84px"/><br/><br/>  
+            <!--<img src="/resource/1452718467000/pifb/images/logo-gsa.png" id="appPage:gsa-logo"/>-->
+            </a>
+         Leading Technology Solutions in the Federal Government.</p>
+       <br/>
+      <p class="highlight">GSA IT provides customers with innovative, collaborative web and mobile information technology solutions. We are looking for motivated IT professionals to join our team to assist in creating digital solutions for our customers, staying current with emerging technology and enhancing large-scale IT solutions. GSA has ranked among the "Best Places to Work in the Federal Government" with effective leadership, pay, teamwork, work-life balance and innovation.</p>    
+      <p class="highlight" style="text-align:left">If you would like to be considered for a GSA IT employment opportunity, please fill out the following information.</p>
+      <br/>
+      <ul class="highlight">
+        <li><a href="http://open.gsa.gov/" target="_blank" >Learn More About GSA IT</a></li>
+        
+        <li><a href="mailto:gsaitcareers@gsa.gov" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div id="content">
+      <apex:form id="appForm"  enctype="multipart/form-data">
+        <apex:pageMessages /> <!-- this is where the error messages will appear -->
+        <div id="contact-info">
+          <h3>Contact Information</h3>
+          <p style="margin:0">
+            <label for="frmFullName" >Your Name</label>
+            <input id="frmFullName" type="text" name="frmFullName" title="Name" placeholder="Name" />
+            <apex:inputHidden id="hiddenFullName" value="{!ApplicantInfo.Name}"/>
+          </p>
+          <p>
+            <label for="frmEmailAddress" >Your Email Address</label>
+            <input style="margin-top:5px;margin-bottom:5px;" id="frmEmailAddress" type="email" name="frmEmailAddress" title="Email" placeholder="Email"/>
+            <apex:inputHidden id="hiddenEmailAddress" value="{!ApplicantInfo.Email__c}"/>
+          </p>
+          <p>
+            <label for="frmPhoneNumber" >Best Contact Number</label>
+            <input style="margin-top:5px;margin-bottom:5px;" id="frmPhoneNumber" type="tel" name="frmPhoneNumber" title="Phone" placeholder="Phone" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+            <apex:inputHidden id="hiddenPhoneNumber" value="{!ApplicantInfo.Phone__c}"/>
+          </p>
+          <p>
+            <label for="frmCity" >City and State, or Zip Code</label>
+            <input id="frmCity" type="text" name="frmCity" title="City/State or Zip Code" placeholder="City/State or Zip Code" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+            <apex:inputHidden id="hiddenCity" value="{!ApplicantInfo.City_State_or_Zip_Code__c}"/>
+          </p>
+          <p>
+            <label for="frmCurrentEmployer" >Your Current Employer</label>
+            <input id="frmCurrentEmployer" type="text" name="frmCurrentEmployer" title="Name of Current Employer" placeholder="Name of Current Employer" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+            <apex:inputHidden id="hiddenCurrentEmployer" value="{!ApplicantInfo.Current_Employer__c}"/>
+          </p>
+        </div>
+            
+        <p>
+          <input class="check" id="frmUSCitizenYes" name="frmUSCitizen" type="checkbox" value="true" />
+          <label for="frmUSCitizenYes" style="display:inline">Check here to verify that you are a U.S. Citizen. <em>For some positions, due to legislation or agency policy, U.S. citizenship is required.
+          </em></label><br/>
+          
+          <apex:inputHidden id="hiddenUSCitizen" value="{!applicant.U_S_Citizen__c}"/> </p><br/>
+          
+          <!--Function Skills-->
+          
+        <h3>Functional Skills</h3>
+        <p><em>Rate your ability 0-5 with 5 being the highest. Your responses here will be used primarily in assigning reviewers for your application.</em></p>
+  <div>
+    <div class="row">
+    
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsFunctional_Agile_Project_Management__c">
+          <select class="select" id="frmSkillsAgile_Project_Management__c">
+            <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+              <option value="0" selected="selected">0</option>
+          </select> Agile Project Management</label>
+                    <apex:inputHidden id="hiddenAgile_Project_Management__c" value="{!applicant.Agile_Project_Management__c}" />
+      </div>
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsData_Management_Visualization__c">
+                    <select class="select" id="frmSkillsData_Management_Visualization__c">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> DataManagement/Visualization</label>
+                    <apex:inputHidden id="hiddenData_Management_Visualization__c" value="{!applicant.Data_Management_Visualization__c}" />
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsBuildingSystem">
+          <select class="select" id="frmSkillsBuildingSystem">
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+            <option value="0" selected="selected">0</option>
+          </select> Building Systems</label>
+          <apex:inputHidden id="hiddenBuildingSystem" value="{!applicant.Building_Systems__c}" />
+      </div>
+      
+            <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">   
+         <label for="frmSkillsCloud_Infrastructure_SaaS__c">
+                    <select class="select" id="frmSkillsCloud_Infrastructure_SaaS__c">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> Cloud Infrastructure/SaaS</label>
+                    <apex:inputHidden id="hiddenCloud_Infrastructure_SaaS__c" value="{!applicant.Cloud_Infrastructure_SaaS__c}" />
+      </div>
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsDevOpsEngineeringandOperations">
+                    <select class="select" id="frmSkillsDevOpsEngineeringandOperations">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> DevOps Engineering &amp; Operations</label>
+                    <apex:inputHidden id="hiddenDevOpsEngineeringandOperations" value="{!applicant.DevOps_Engineering_and_Operations__c }" />
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsCyberSecurity__c">
+                    <select class="select" id="frmSkillsCyberSecurity__c">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> CyberSecurity</label>
+                    <apex:inputHidden id="hiddenCyberSecurity__c" value="{!applicant.CyberSecurity__c}" />
+            </div>
+      
+            <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">   
+        <label for="frmSkillsEnterpriseArchitecture">
+                    <select class="select" id="frmSkillsEnterpriseArchitecture">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> Enterprise Architecture</label>
+                    <apex:inputHidden id="hiddenEnterpriseArchitecture" value="{!applicant.Enterprise_Architecture__c}" />
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsSecurityEngineeringandOperations">
+                    <select class="select" id="frmSkillsSecurityEngineeringandOperations">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> Security Engineering &amp; Operations</label>
+                    <apex:inputHidden id="hiddenSecurityEngineeringandOperations" value="{!applicant.Security_Engineering_and_Operations__c}" />
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsData_Science__c">
+                    <select class="select" id="frmSkillsData_Science__c">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> Data Science</label>
+                    <apex:inputHidden id="hiddenData_Science__c" value="{!applicant.Data_Science__c}" />
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+                <label for="frmSkillsSolutionsArchitecture">
+                    <select class="select" id="frmSkillsSolutionsArchitecture">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> Solutions Architecture</label>
+                    <apex:inputHidden id="hiddenSolutionsArchitecture" value="{!applicant.Solutions_Architecture__c}" />
+            </div>
+      
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+        <label for="frmSkillsNetworkEngineers">
+                    <select class="select" id="frmSkillsNetworkEngineers">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> Network Engineers</label>
+                    <apex:inputHidden id="hiddenNetworkEngineers" value="{!applicant.Network_Engineers__c}" />
+            </div>   
+      
+      <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">
+               <label for="frmSkillsUI_UX">
+                    <select class="select" id="frmSkillsUI_UX">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> UI/UX</label>
+                    <apex:inputHidden id="hiddenUI_UX" value="{!applicant.UI_UX__c}" />
+      </div>
+                
+            <div class="col-lg-4 col-sm-6 col-md-6 col-xs-12">  
+        <label for="frmSkillsSoftwareDevelopmentfrontbackend">
+                    <select class="select" id="frmSkillsSoftwareDevelopmentfrontbackend">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0" selected="selected">0</option>
+                    </select> Software Development, front &amp; back end</label>
+                    <apex:inputHidden id="hiddenSoftwareDevelopmentfrontbackend" value="{!applicant.Software_Development_front_back_end__c }" />
+      </div>
+      
+        </div>
+
+</div>
+           
+            <br />
+            
+            <p>
+              <label for="frmAddSkills"><strong> Other skills you possess (optional): </strong> <em>(255 characters max)</em></label>
+            </p>
+            <apex:inputText required="false" styleClass="input-wide" value="{!applicant.Other_Skills__c}" id="frmAddSkills" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+            <br/><br/>
+            
+            
+            <p><label for="frmLink1"><strong>Where can we find you online?</strong> <em>Add up to three links (e.g. GitHub, LinkedIn, your portfolio, etc.).</em></label></p>
+            <input id="frmLink1" type="url" name="frmLink1" placeholder="e.g. http://github.com/username" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/><br />
+            <apex:inputHidden id="hiddenLink1" value="{!applicant.Link_1__c}"/>
+            <input id="frmLink2" type="url" name="frmLink2" placeholder="e.g. http://about.me/username" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/><br />
+            <apex:inputHidden id="hiddenLink2" value="{!applicant.Link_2__c}"/>
+            <input id="frmLink3" type="url" name="frmLink3" placeholder="e.g. http://linkedin.com/in/username" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}" /><br />
+            <apex:inputHidden id="hiddenLink3" value="{!applicant.Link_3__c}"/>
+                           
+            <h3>Resume</h3>
+            <p><label for="frmResume"><strong>Please copy and paste your resume below. Do NOT include your Social Security Number.</strong><br /><em>Be sure to include the number of years of experience for any given position.</em></label></p>
+            <!--<apex:outputLabel for="frmResume" value="Resume" rendered="false"/> -->
+            <apex:inputTextarea richText="true" required="false" value="{!applicant.Resume__c}" id="frmResume"/> 
+            <p><em>There is a limit of 32,000 characters (including markup). Please use a plain text editor, or if using a publishing tool (e.g. Microsoft Word), we recommend fewer characters as the formatting will be translated to markup.</em></p>
+            <br/>
+             
+            <h3>Veteran Status</h3>
+            <p>
+              Are you a Veteran of the U.S. Armed Forces or are you eligible for "derived" <a href="http://www.opm.gov/StaffingPortal/vetguide.asp#2Types">preference</a>? 
+              <input class="check" id="frmVetStatusA" name="frmVetStatus" type="radio" value="Yes - I am a Veteran or I am eligible for derived preference" /><label for="frmVetStatusA">Yes</label>
+              <input class="check" id="frmVetStatusB" name="frmVetStatus" type="radio" value="No - I am not a Veteran nor am I eligible for derived preference" /><label for="frmVetStatusB">No </label><br/>
+              <apex:inputHidden id="hiddenVeteranStatus" value="{!applicant.Veteran_Status_US_Armed_Forces__c}" />
+            </p>  
+
+            <p id="vet-pref-details" style="display:none">
+              Do you claim Veterans' <a href="http://www.dol.gov/elaws/vets/vetpref/choice.htm">Preference</a>?<br />
+              
+              <input class="check" id="frmVetPref1" name="frmVetPref" type="radio" value="No, I do not claim Veterans' Preference" /><label for="frmVetPref1">No, I do not claim Veterans' Preference.</label><br />
+              
+              <input class="check" id="frmVetPref2" name="frmVetPref" type="radio" value="0-point Sole Survivorship Preference (SSP) " /><label for="frmVetPref2">0-point Sole Survivorship Preference (SSP).</label><br />
+              
+              <input class="check" id="frmVetPref3" name="frmVetPref" type="radio" value="5-point preference based on active duty in the U.S. Armed Forces (TP)" /><label for="frmVetPref3">5-point preference based on active duty in the U.S. Armed Forces (TP).</label><br />
+              
+              <input class="check" id="frmVetPref4" name="frmVetPref" type="radio" value="10-point preference based on a compensable service connected disability of at least 10% but less than 30% (CP)" /><label for="frmVetPref4" style="display:inline">10-point preference based on a compensable service connected disability of at least 10% but less than 30% (CP).</label><br />
+              
+              <input class="check" id="frmVetPref5" name="frmVetPref" type="radio" value="10-point preference based on a compensable service connected disability of 30% or more (CPS)" /><label for="frmVetPref5">10-point preference based on a compensable service connected disability of 30% or more (CPS).</label><br />
+              
+              <input class="check" id="frmVetPref6" name="frmVetPref" type="radio" value="10-point preference for non-compensable disability or Purple Heart (XP)" /><label for="frmVetPref6">10-point preference for non-compensable disability or Purple Heart (XP).</label><br />
+              <!--
+              <input class="check" id="frmVetPref7" name="frmVetPref" type="radio" value="10-point preference based on widow/widower or mother of a deceased veteran, or spouse or mother of a disabled veteran (XP)" /><label for="frmVetPref7" style="display:inline;align:justify">10-point preference based on widow/widower or mother of a deceased veteran, or spouse or mother of a disabled veteran (XP).</label><br />
+              -->
+              <label for="frmVetPref7" style="display:inline">
+                <input class="check" id="frmVetPref7" name="frmVetPref" type="radio" value="10-point preference based on widow/widower or mother of a deceased veteran, or spouse or mother of a disabled veteran (XP)" />
+                <span>10-point preference based on widow/widower or mother of a deceased veteran, or spouse or mother of a disabled veteran (XP).</span>
+              </label>
+              
+              <apex:inputHidden id="hiddenVeteransPref" value="{!applicant.Veterans_Preference_Claim__c}" />
+            </p>
+                        
+                                                
+            <h3>Review &amp; Submit</h3>
+            
+            <p>
+              <label for="frmReferral">Where did you learn about the GSA IT?</label><br />
+              <input id="frmReferral" type="text" name="frmReferral" title="Referral Source" placeholder="Enter Referral Information Here" maxlength="40" size="40" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+              <apex:inputHidden id="hiddenReferral" value="{!applicant.Applicant_Source__c}"/>
+            </p>
+            
+            <style>
+                #lblInptHuman {font-size:100%; line-height:1.5em; margin:10px 0;}
+            </style> 
+            <br/>              
+            <div id="divQuestion">
+            <table style="height:65px" id="tblQuestion">
+              <tr> 
+                <td colspan="3"><label for="inptHuman" id="lblInptHuman"></label></td>
+              </tr>
+                    <tr>
+                        <td><input name="inptHuman" id="inptHuman" size="10" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/></td>
+                    </tr>
+            </table>
+           </div>  
+           <p>
+              <strong>Privacy Act Statement: </strong>
+               Federal agencies rate applicants for Federal jobs under the authority of sections 1104, 1302, 3301, 3304, 3320, 3361, 3393, and 3394 of title 5 of the United States Code. We need the information requested and in any associated vacancy announcements to evaluate your qualifications. Other laws require us to ask about citizenship, military service, etc. Failure to furnish the requested information may delay or prevent action on your application. Incomplete addresses and ZIP Codes, personal email addresses, social networking profiles, or other information may slow processing. We may confirm information from your records with prospective nonfederal employers concerning tenure of employment, civil service status, length of service, and date and nature of action for separation as shown on personnel action forms of specifically identified individuals. For routine uses and other relevant information, please see 
+               <a href="https://www.opm.gov/information-management/privacy-policy/sorn/opm-sorn-govt-5-recruiting-examining-and-placement-records.pdf">OPM/GOVT-5</a>
+               for the system of records notice (71 F.R. 35351).
+               <br/><br/>For information
+               on <strong>Privacy Impact Assessment (PIA)</strong>, click <a href="http://www.gsa.gov/portal/content/102237" style="color: #000000" target="_blank">here.</a>
+           </p>  <br/>        
+           <p><apex:commandButton action="{!submit}" value="Submit" id="appSubmit" onclick="return nameValidation();" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}" /></p>
+           
+           
+      </apex:form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container-fluid" id="footer" style="padding-right:30px">
+    <div class="row" id="footer-text" stlyle="margin-right:0px;margin-left:-50px">
+      <div class="col-md-offset-2 col-sm-offset-2">
+        
+        <div class="row">
+          
+          <div class="col-md-4 col-sm-4">
+            <ul>
+                <li><h4><b>About</b></h4></li>
+                  <li><h5><a href="http://open.gsa.gov" target="_blank">GSA IT</a></h5></li>
+                  <li><h5><a href="http://www.gsa.gov/" target="_blank">GSA</a></h5></li> 
+            </ul>
+          </div>
+         
+         <div class="col-md-4 col-sm-4">
+            <ul>
+              <li><h4 style="color:white"><b>Also of Interest</b></h4> </li>
+                <li><h5><a href="https://www.whitehouse.gov" target="_blank">White House</a></h5></li>
+                <li><h5><a href="http://business.usa.gov" target="_blank">Business USA</a></h5></li>
+                <li><h5><a href="http://usa.gov" target="_blank">USA Gov</a></h5></li>
+                 <li><h5><a href="https://data.gov" target="_blank">data.gov</a></h5></li>
+            </ul>
+          </div>
+        
+        <div class="col-md-4 col-sm-4 " id="social">
+          <h4><b>Connect</b></h4>
+          <ul>
+            <label style="color:white;width:60px">GitHub</label>
+            <li>
+              <a href="https://github.com/gsa" target="blank" title="Github"><i class="fa fa-github-square fa-2x"></i></a>
+            </li><br/>
+            <label style="color:white;width:60px">Twitter</label>
+            <li>
+              <a href="https://twitter.com/usgsa" target="blank" title="Twitter"><i class="fa fa-twitter-square fa-2x"> </i> </a>
+            </li><br/><br/>
+            <li>
+              <a href="http://gsa.gov" target="_blank">
+              <apex:image url="{!URLFOR($Resource.GSAITHire1,'images/logo-gsa.png')}" alt="GSA IT" id="gsalogo"/></a>
+          </li>
+        </ul>
+      </div>
+  </div>      
+</div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1" id="gov-links">
+        <p style="text-align:center">
+          <a href="http://www.gsa.gov/portal/content/116621" target="_blank">ACCESSBILITY</a> | <a href="http://www.gsa.gov/portal/content/116609" target="_blank">PRIVACY</a> | <a href="http://www.gsa.gov/portal/content/116617" target="_blank">LINKING POLICY</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data --> 
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script>
+</body>
+</html>
+</apex:page>

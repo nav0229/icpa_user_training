@@ -1,0 +1,32 @@
+<apex:page showHeader="true" sidebar="true" standardController="Controlled_Document__c" extensions="MultiselectController">
+	<apex:form >
+		<p/>
+		<apex:pageBlock title="Group Information">
+			<p>
+			<apex:outputLabel value="Search: "/>
+			<apex:selectList value="{!searchObject}" multiselect="false" size="1">
+				<apex:selectOptions value="{!searchCriteria}"/>
+				<apex:actionSupport action="{!refreshAvailableUserList}" event="onchange" reRender="userPicklist"/>
+			</apex:selectList>
+			<apex:outputLabel value=" for: "/>
+			<apex:inputText value="{!searchString}">
+				<apex:actionSupport action="{!refreshAvailableUserList}" event="onchange" reRender="userPicklist"/>
+			</apex:inputText>
+			&nbsp;
+			<apex:commandButton value="Search" action="{!refreshAvailableUserList}" onclick="return false;"/>
+			</p>
+			<apex:outputPanel id="userPicklist">
+				<c:MultiselectPicklist leftLabel="Available Members"
+					leftOptions="{!leftPicklist}"
+					rightLabel="Selected Members"
+					rightOptions="{!rightPicklist}"
+					size="14"
+					width="350px"/>
+			</apex:outputPanel>
+			<apex:pageBlockButtons >
+				<apex:commandButton value=" Save " action="{!saveChanges}" onClick="if({!notCollaborator}) { alert('You\'re not yet a collaborator on this document. Please allow some time for the batch to process your Quick Share addition / subtraction.'); }" />
+				<input type="button" class="btn" value="Cancel" onClick="location.href='{!baseUrl}/{!thisControlledDocument.Id}';"/>
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

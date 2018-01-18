@@ -1,0 +1,276 @@
+<aura:component controller="PDE_FormController">    
+    <ltng:require styles="/resource/Lgt_InputLookup/css/bootstrap.min.css,
+                /resource/SLDS230/assets/styles/salesforce-lightning-design-system.min.css"
+                  scripts="/resource/Lgt_InputLookup/js/jquery-2.2.4.min.js" 
+        afterScriptsLoaded="{!c.doScriptsLoaded}" />  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    <aura:registerEvent name="mySampleCompEvt" type="c:PDE_FormEvent" />
+    <aura:attribute name="newGsaCustom" type="PDE_Case_Entry__c" access="global"
+                    default="{ 'sobjectType': 'PDE_Case_Entry__c',
+                             'PDE_Source_Document__c':'',
+                             'PDE_Region__c': '--Select a Region--', 
+                             'PDE_Zone__c': ' ',
+                             'PDE_Amendment_Number__c':'',
+                             'PDE_Invoice_Number__c':'',
+                             'PDE_PDN__c':'',
+                             'PDE_Contact__c':'',
+                             'PDE_ContactEmail__c':'',
+                             'PDE_Status__c':'New',
+                             'PDE_Email__c':'test@test.com',
+                             'PDE_Subject__c':'PDE Case',
+                             'PDE_Origin__c':'Web',
+                             'PDE_Issue_Type__c':'--None--',
+                             'PDE_Priority__c':'Medium',
+                             'unknown_custom_field':'In Progress',
+                             'PDE_Attachments_To_Load_Counter__c ': 0
+                             }"/>
+    <aura:attribute name="displayassoc" type="Aura.Component[]" access="global"  />
+    <aura:attribute name="objNew" type="User" default="{'sobjectType':'User', 'Id':null}" access="GLOBAL"/>    
+    <form>         
+        <div class="hidden" id="pdeValidationErrorContainer">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
+                    <span class="slds-assistive-text">error</span>
+                    <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                        <c:svgIcon svgPath="/resource/slds230/assets/icons/utility-sprite/svg/symbols.svg#error" category="utility-sprite" size="small" name="error" />                        
+                    </span>
+                    <div class="slds-notify__content">
+                        <ul id="pdeValidationErrorList">
+                        </ul>
+                    </div>
+                    <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse toastCloser" title="Close" data-container-sel="#pdeValidationErrorContainer">
+						<c:svgIcon svgPath="/resource/slds230/assets/icons/utility-sprite/svg/symbols.svg#close" category="utility-sprite" size="small" name="close" />
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden" style="height:4rem;"  id="pdeFormFailed">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
+                    <span class="slds-assistive-text">error</span>
+                    <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                        <c:svgIcon svgPath="/resource/slds230/assets/icons/utility-sprite/svg/symbols.svg#error" category="utility-sprite" size="small" name="error" />                        
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">There was an error saving your data entry request.</h2>
+                    </div>
+                    <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse toastCloser" title="Close" data-container-sel="#pdeFormFailed">
+						<c:svgIcon svgPath="/resource/slds230/assets/icons/utility-sprite/svg/symbols.svg#close" category="utility-sprite" size="small" name="close" />
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden" id="pdeFormSaved">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_success" role="alert">
+                    <span class="slds-assistive-text">success</span>
+                    <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                        <c:svgIcon svgPath="/resource/slds230/assets/icons/utility-sprite/svg/symbols.svg#success" category="utility-sprite" size="small" name="success" />                        
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">You have successfully created case #<span id="createdCaseNumber"></span>.</h2>
+                    </div>
+                    <!--
+                    <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+						<c:svgIcon svgPath="/resource/slds230/assets/icons/utility-sprite/svg/symbols.svg#close" category="utility-sprite" size="small" name="close" />
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+				     -->
+                </div>
+            </div>
+            <center style="padding-top: 20px">
+	            <button class="slds-button slds-button--brand">Create Another Case</button>
+            </center>
+        </div>
+        
+        <div class="hidden" id="pdeFormSaving">            
+			<lightning:spinner variant="brand" size="large"/>
+        </div>        
+        
+        <div class="slds-form slds-form_stacked" id="pdeForm">
+          <div class="slds-form-element">
+            <label class="slds-form-element__label" for="docTypeCtrl">Source Document Type*</label>
+            <div class="slds-form-element__control">
+                <ui:inputSelect aura:id="docTypeCtrl" 
+                                class="slds-input"
+                                labelClass="slds-form-element__label"
+                                value="{!v.newGsaCustom.PDE_Source_Document__c}"
+                                required="true"                                        
+                                change="{!c.onDocTypeCtrlChange}"/>
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="*">
+            <div style="display:inline-block; width:50%; padding-right:5px">
+                <label class="slds-form-element__label" for="regionCtrl">Region*</label>
+                <div class="slds-form-element__control">
+                    <ui:inputSelect aura:id="regionCtrl" 
+                                    class="slds-input"
+                                    labelClass="slds-form-element__label"
+                                    value="{!v.newGsaCustom.PDE_Region__c}"
+                                    change="{!c.onRegionCtrlChange}"/>            
+                </div>
+          	</div>
+            <div style="display:inline-block; width:50%;  padding-left:5px">
+                <label class="slds-form-element__label" for="zoneCtrl">Zone</label>
+                <div class="slds-form-element__control">
+                    <ui:inputText aura:id="zoneCtrl" 
+                                    class="slds-input"
+                                    labelClass="slds-form-element__label"
+                                    disabled="true"
+                                    value="{!v.newGsaCustom.PDE_Zone__c}"/>
+                </div>
+	        </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="*">
+            <div style="display:inline-block; width:50%; padding-right:5px">
+                <label class="slds-form-element__label" for="nameCtrl">Name</label>
+                <div class="slds-form-element__control">
+                    <ui:inputText aura:id="nameCtrl" size="40" disabled="true"
+                                  class="slds-input"
+                                  labelClass="slds-form-element__label"
+                                  value="{!v.newGsaCustom.PDE_ContactName__c}"/>
+                </div>
+	          </div>
+            <div style="display:inline-block; width:50%; padding-left:5px">
+                <label class="slds-form-element__label" for="emailCtrl">Email</label>
+                <div class="slds-form-element__control">
+                    <ui:inputText aura:id="emailCtrl" size="40" disabled="true"
+                                  class="slds-input"
+                                  labelClass="slds-form-element__label"
+                                  value="{!v.newGsaCustom.PDE_ContactEmail__c}"/>
+                </div>
+	          </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="*">
+            <div style="display:inline-block; width:50%; padding-right:5px">
+                <label class="slds-form-element__label" for="titleCtrl">Title</label>
+                <div class="slds-form-element__control">
+                    <ui:inputText aura:id="titleCtrl" size="40" disabled="true"
+                                  class="slds-input"
+                                  labelClass="slds-form-element__label"
+                                  value="{!v.newGsaCustom.PDE_Title__c}"/>
+                </div>
+              </div>
+            <div style="display:inline-block; width:50%; padding-left:5px">
+                <label class="slds-form-element__label" for="divisionCtrl">Division</label>
+                <div class="slds-form-element__control">
+                    <ui:inputText aura:id="divisionCtrl" size="40" disabled="true"
+                                  class="slds-input"
+                                  labelClass="slds-form-element__label"
+                                  value="{!v.newGsaCustom.PDE_Division__c}"/>
+                </div>
+              </div>
+            </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="*">
+            <label class="slds-form-element__label" for="divisionCtrl">CC Recipient(s)</label>
+            <div class="slds-form-element__control teamMemberContainer">
+				{!v.displayassoc} 
+                <ui:button label="Add recipient" press="{!c.showAssoc}" />
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="oa,am,rra,rrgs">
+            <label class="slds-form-element__label" for="pdnCtrl">PDN*</label>
+            <div class="slds-form-element__control">
+                <ui:inputText aura:id="pdnCtrl" size="40"
+                              class="slds-input"
+                              labelClass="slds-form-element__label"                          
+                              value="{!v.newGsaCustom.PDE_PDN__c}"
+                              change="{!c.onPDNChange}" />
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="am">
+            <label class="slds-form-element__label" for="amendmentCtrl">Amendment Number*</label>
+            <div class="slds-form-element__control">
+                <ui:inputText aura:id="amendmentCtrl" size="40"
+                              class="slds-input"
+                              labelClass="slds-form-element__label"
+                              value="{!v.newGsaCustom.PDE_Amendment_Number__c}"
+                              change="{!c.onAmendmentChange}" />
+            </div>
+          </div>            
+          <div class="slds-form-element hidden" data-docTypeKeys="d7,pdnr,cc">
+            <label class="slds-form-element__label" for="pegasysCtrl">Pegasys Document Type*</label>
+            <div class="slds-form-element__control">
+                <ui:inputSelect aura:id="pegasysCtrl" 
+                                class="slds-input"
+                                labelClass="slds-form-element__label"
+                                value="{!v.newGsaCustom.PDE_Pegasys_Document_Type__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="rra,d7,rrgs">
+            <!-- not required for rrgs -->
+            <label class="slds-form-element__label" for="invoiceCtrl">Invoice Number<span class="hidden" data-docTypeKeys="d7">*</span></label>
+            <div class="slds-form-element__control">
+	            <ui:inputText aura:id="invoiceCtrl" size="40"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.newGsaCustom.PDE_Invoice_Number__c}"
+                          change="{!c.onInvoiceChange}"/>
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="rrgs">
+            <label class="slds-form-element__label" for="vendorCtrl">Vendor*</label>
+            <div class="slds-form-element__control">
+	            <ui:inputText aura:id="vendorCtrl" size="40"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.newGsaCustom.PDE_Vendor__c}"/>
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="rrgs">
+            <label class="slds-form-element__label" for="amountCtrl">Amount*</label>
+            <div class="slds-form-element__control">
+	            <ui:inputCurrency aura:id="amountCtrl"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.newGsaCustom.PDE_Dollar_Amount__c}"/>
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="rrgs">
+            <label class="slds-form-element__label" for="receivedOnCtrl">Received On Date*</label>
+            <div class="slds-form-element__control">
+	            <ui:inputDate aura:id="receivedOnCtrl"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          displayDatePicker="true"
+                          value="{!v.newGsaCustom.PDE_Received_On_Date__c}"/>
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="rrgs">
+            <label class="slds-form-element__label" for="acceptedOnCtrl">Accepted On Date*</label>
+            <div class="slds-form-element__control">
+	            <ui:inputDate aura:id="acceptedOnCtrl"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          displayDatePicker="true"
+                          value="{!v.newGsaCustom.PDE_Accepted_On_Date__c}"/>
+            </div>
+          </div>
+          <div class="slds-form-element hidden" data-docTypeKeys="*">
+            <!-- not required for rrgs or commitment -->
+            <label class="slds-form-element__label" for="attach">Attachment(s)<span class="hidden" data-docTypeKeys="oa,am,d7,pdnr,cc,rra">*</span></label>
+            <div class="slds-form-element__control" id="attachmentsContainer">
+				{!v.body}   
+                <ui:button label="Add attachment" press="{!c.showAttach}" />
+            </div>
+          </div>            
+          <div class="slds-form-element hidden" data-docTypeKeys="*">
+            <label class="slds-form-element__label" for="commentCtrl">Comment</label>
+            <div class="hidden" data-docTypeKeys="rra,rrgs">If there are multiple accounting lines, please enter below which lines and amounts to pay from.</div>
+            <div class="slds-form-element__control">
+                <ui:inputTextArea aura:id="commentCtrl" cols="45" rows="3"
+                                  class="slds-input"
+                                  labelClass="slds-form-element__label"
+                                  value="{!v.newGsaCustom.PDE_Description__c}"/>
+            </div>
+          </div>      
+          <div class="slds-form-element hidden" data-docTypeKeys="*">
+				<lightning:button variant="brand" label="Submit" onclick="{!c.createPDECaseEntry }" />
+          </div>
+	    </div>        
+    </form>
+</aura:component>

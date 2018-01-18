@@ -1,0 +1,120 @@
+<apex:page standardController="GSA_IT_Applications__c"  cache="false" showHeader="false" sidebar="false" showChat="false" standardStylesheets="false" id="appPage" docType="html-5.0" title="GSA IT Confirmation">
+
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_headercss)}"/>
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_baselinecss)}"/> 
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_stylecss)}" />  
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire1,'css/bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire1,'fonts/font-awesome-4.4.0/css/font-awesome.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire1,'css/stylesheet.css')}"/>
+<!--
+<apex:stylesheet value="{!URLFOR($Resource.GSAITHire_Stylesheetcss)}"/>
+-->
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire1,'js/jquery.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire2,'pifa/simple-expand.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire1,'js/bootstrap.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.GSAITHire_Script)}"/>
+<apex:outputText value="<" escape="false"/>!--
+................................................................................
+.................................................8..............................
+................................................OO$.............................
+....+OOOOOOO.......OOOOOO8...... .OOOOO.........O8O,......ZZZ$Z.ZZZZZZZZZZZZZZZ+
+..OOOOOOOOOOOO,.:OOOOOOOOOOO.....OOOOOOO........O7.O.. ...ZZ.ZZ.ZZZZZZZZZZZZZZZ+
+.OOOOO$..?OOOOO.OOOO....OOOO8...8OOOOOOO.......7O..,O8O.$Z7ZZZZ.ZZZZZZZZZZZZZZZ+
+OOOOO...........OOOOOO=.. ......OOOO.OO.~OOO88,........$Z,ZZZZZ......ZZZZZ......
+OOOOO...????????=OOOOOOOOOO....OOOO?.OOOO8.+OOO......ZZZ..ZZZZZ......ZZZZZ......
+OOOO$...OOOOOOOO...OOOOOOOOOO.?8OOO. .OOOO....:8O.....ZZ..ZZZZZ......ZZZZZ......
+OOOO8...???OOOOO....  ..OOOOO?OOOOOOOOOOOOO....O..OZZ$.Z:.ZZZZZ......ZZZZZ......
+8OOOO8.....8OOOOOOOO.....OOOOOOOOOOOOOOOOOO?...8.ZO..OZZZ.ZZZZZ......ZZZZZ......
+.8OOOOOOOOOOOOO8OOOOOOOOOOOOOOOOO=.....OOOOO...ZZ.......ZZ.ZZZZ......ZZZZZ......
+...OOOOOOOOOO....,OOOOOOOOO.OOOOO.......OOOOO.Z7..........,zZZZ......ZZZZZ......
+.........   ......... .. ....... ....... .......................................
+................................................................................
+
+Hey, thanks for checking out our source! You can learn more about GSA IT at open.gsa.gov
+--<apex:outputText value=">" escape="false"/>
+
+
+<header class="header cf" role="banner">
+  <div class="wrap">
+    <a target="_blank" href="http://www.gsa.gov/">
+      <img class="logo" alt="General Services Administration" src="/resource/1458761638000/GSAITHire_GSALogo"/>
+    </a>
+    <h1><span>GSA IT </span>JOB OPPORTUNITIES</h1>
+  </div>
+</header>
+    <div class="container">
+  <div class="container clearfix" >
+    <h3 style="text-align:center">Thank You.</h3>
+    <div style="margin:10px;padding-bottom: 25px" >
+            <p class="highlight" >
+            Thank you for your interest in working for GSA IT. We will review your resume and keep it on file.  If we find a fit within our organization that matches your resume experience, we will be in touch.
+            </p>
+            <p class="highlight">
+                You should also receive a confirmation email at the address you listed.  If you do not receive a confirmation email, please let us know at <a href="mailto:GSAIT@gsa.gov"><u>gsaitcareers@gsa.gov</u></a>
+            </p>
+            <p class="highlight">
+           <strong>GSA Information Technology, Management Services Team</strong>
+            </p>
+        <ul class="highlight">
+        <li><a href="http://open.gsa.gov/" target="_blank" >Learn More About GSA IT</a></li>
+        
+        </ul>
+        </div>
+  </div>
+  </div>
+<footer>
+  <div class="container-fluid" id="footer" style="padding-right:30px">
+    <div class="row" id="footer-text" stlyle="margin-right:0px;margin-left:-50px">
+      <div class="col-md-offset-1 col-sm-offset-1">
+        
+        <div class="row">
+          
+          <div class="col-md-4 col-sm-4">
+            <ul>
+                <li><h4><b>About</b></h4></li>
+                  <li><h5><a href="http://open.gsa.gov" target="_blank">GSA IT</a></h5></li>
+                  <li><h5><a href="http://www.gsa.gov/" target="_blank">GSA</a></h5></li> 
+            </ul>
+          </div>
+         
+         <div class="col-md-4 col-sm-4">
+            <ul>
+              <li><h4 style="color:white"><b>Also of Interest</b></h4> </li>
+                <li><h5><a href="https://www.whitehouse.gov" target="_blank">White House</a></h5></li>
+                <li><h5><a href="http://business.usa.gov" target="_blank">Business USA</a></h5></li>
+                <li><h5><a href="http://usa.gov" target="_blank">USA Gov</a></h5></li>
+                 <li><h5><a href="https://data.gov" target="_blank">data.gov</a></h5></li>
+            </ul>
+          </div>
+        
+        <div class="col-md-4 col-sm-4 " id="social">
+          <h4><b>Connect</b></h4>
+          <ul>
+            <label style="color:white;width:60px">GitHub</label>
+            <li>
+              <a href="https://github.com/gsa" target="blank" title="Github"><i class="fa fa-github-square fa-2x"></i></a>
+            </li><br/>
+            <label style="color:white;width:60px">Twitter</label>
+            <li>
+              <a href="https://twitter.com/usgsa" target="blank" title="Twitter"><i class="fa fa-twitter-square fa-2x"> </i> </a>
+            </li><br/><br/>
+            <li>
+              <a href="http://gsa.gov" target="_blank">
+              <apex:image url="{!URLFOR($Resource.GSAITHire1,'images/logo-gsa.png')}" alt="GSA IT" id="gsalogo"/></a>
+          </li>
+        </ul>
+      </div>
+  </div>      
+</div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1" id="gov-links">
+        <p style="text-align:center">
+          <a href="http://www.gsa.gov/portal/content/116621" target="_blank">ACCESSBILITY</a> | <a href="http://www.gsa.gov/portal/content/116609" target="_blank">PRIVACY</a> | <a href="http://www.gsa.gov/portal/content/116617" target="_blank">LINKING POLICY</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script>
+</apex:page>

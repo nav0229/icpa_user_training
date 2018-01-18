@@ -1,0 +1,2319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Items</value>
+    </caseValues>
+    <fields>
+        <help><!-- No entry is required. The status is system generated depending on the review process. --></help>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under FAS Review</masterLabel>
+            <translation><!-- Under FAS Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under OCFO Review</masterLabel>
+            <translation><!-- Under OCFO Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under PBS Review</masterLabel>
+            <translation><!-- Under PBS Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under SRB Review</masterLabel>
+            <translation><!-- Under SRB Review --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- DM&amp;E Cost plus O&amp;M Cost should be equal to the amount of the Total Cost. --></help>
+        <label><!-- DM&amp;E Cost --></label>
+        <name>DM_E_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- DM&amp;E OR O&amp;M --></label>
+        <name>DM_E_OR_O_M__c</name>
+        <picklistValues>
+            <masterLabel>DM&amp;E</masterLabel>
+            <translation><!-- DM&amp;E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mixed</masterLabel>
+            <translation><!-- Mixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M</masterLabel>
+            <translation><!-- O&amp;M --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Denied Hidden --></label>
+        <name>Denied_Hidden__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reserved for Approvers. --></help>
+        <label><!-- Deny Approved Item Comments --></label>
+        <name>Deny_Approved_Item_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- No entry is required. This field is reserved for reviewers use. --></help>
+        <label><!-- Deny Approved Item --></label>
+        <name>Deny_Approved_Item__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Number of Estimated Contractor Personnel. --></help>
+        <label><!-- Estimated Contractor Personnel? --></label>
+        <name>Estimated_Contractor_Personnel__c</name>
+    </fields>
+    <fields>
+        <help><!-- No entry is required. This field is reserved for reviewers use. --></help>
+        <label><!-- Follow Up --></label>
+        <name>Follow_Up__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Spend Category --></label>
+        <name>IT_Spend_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type --></label>
+        <name>Item_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Award or Modification --></label>
+        <name>New_Award_or_Modification__c</name>
+        <picklistValues>
+            <masterLabel>Modification</masterLabel>
+            <translation><!-- Modification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Award</masterLabel>
+            <translation><!-- New Award --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- O&amp;M Cost plus DM&amp;E Cost should be equal to the amount of the Total Cost. --></help>
+        <label><!-- O&amp;M Cost --></label>
+        <name>O_M_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- You are required to Enter a description of your category if you chose &quot;Other&quot; from the category List. --></help>
+        <label><!-- Other Category Explaination --></label>
+        <name>Other_Category_Explaination__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Or Service - Delete --></label>
+        <name>Product_Or_Service_Delete__c</name>
+        <picklistValues>
+            <masterLabel>AOL Netscape 7</masterLabel>
+            <translation><!-- AOL Netscape 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASG-becubic</masterLabel>
+            <translation><!-- ASG-becubic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Software Computrace 8</masterLabel>
+            <translation><!-- Absolute Software Computrace 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Management</masterLabel>
+            <translation><!-- Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accusoft Pegasus 3</masterLabel>
+            <translation><!-- Accusoft Pegasus 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ActivIdentity SecureLogin</masterLabel>
+            <translation><!-- ActivIdentity SecureLogin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Acrobat 4</masterLabel>
+            <translation><!-- Adobe Acrobat 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Acrobat 5</masterLabel>
+            <translation><!-- Adobe Acrobat 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Acrobat 6</masterLabel>
+            <translation><!-- Adobe Acrobat 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Acrobat Professional 10</masterLabel>
+            <translation><!-- Adobe Acrobat Professional 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Acrobat Professional 9</masterLabel>
+            <translation><!-- Adobe Acrobat Professional 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe ColdFusion 9</masterLabel>
+            <translation><!-- Adobe ColdFusion 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Flash Player 10</masterLabel>
+            <translation><!-- Adobe Flash Player 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe JETForm Design 5</masterLabel>
+            <translation><!-- Adobe JETForm Design 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Reader 10</masterLabel>
+            <translation><!-- Adobe Reader 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Reader 6</masterLabel>
+            <translation><!-- Adobe Reader 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Reader 7.x</masterLabel>
+            <translation><!-- Adobe Reader 7.x --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Reader 8.x</masterLabel>
+            <translation><!-- Adobe Reader 8.x --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Reader 9</masterLabel>
+            <translation><!-- Adobe Reader 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alcatel-Lucent CBX500 Switch</masterLabel>
+            <translation><!-- Alcatel-Lucent CBX500 Switch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analog 4.0</masterLabel>
+            <translation><!-- Analog 4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analog 5.0</masterLabel>
+            <translation><!-- Analog 5.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apache HTTP Server 1</masterLabel>
+            <translation><!-- Apache HTTP Server 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apache Tomcat 7</masterLabel>
+            <translation><!-- Apache Tomcat 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apple iPhone 4</masterLabel>
+            <translation><!-- Apple iPhone 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Implementation</masterLabel>
+            <translation><!-- Application Implementation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Operations &amp; Maintenance</masterLabel>
+            <translation><!-- Application Operations &amp; Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Security Inc AppDetectivePro</masterLabel>
+            <translation><!-- Application Security Inc AppDetectivePro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Testing</masterLabel>
+            <translation><!-- Application Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Architecture Standards Maintenance</masterLabel>
+            <translation><!-- Architecture Standards Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assessment &amp; Audit</masterLabel>
+            <translation><!-- Assessment &amp; Audit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Acquisition and Disposal</masterLabel>
+            <translation><!-- Asset Acquisition and Disposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Tracking</masterLabel>
+            <translation><!-- Asset Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attachmate NetWizard 6</masterLabel>
+            <translation><!-- Attachmate NetWizard 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authentication</masterLabel>
+            <translation><!-- Authentication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk 3DS Max Design 2012</masterLabel>
+            <translation><!-- Autodesk 3DS Max Design 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk AutoCAD 2007</masterLabel>
+            <translation><!-- Autodesk AutoCAD 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk AutoCAD 2012</masterLabel>
+            <translation><!-- Autodesk AutoCAD 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk AutoCAD Architecture 2012</masterLabel>
+            <translation><!-- Autodesk AutoCAD Architecture 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk AutoCAD Civil 3D 2012</masterLabel>
+            <translation><!-- Autodesk AutoCAD Civil 3D 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk AutoCAD MEP 2012</masterLabel>
+            <translation><!-- Autodesk AutoCAD MEP 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk AutoCAD Map 3D 2012</masterLabel>
+            <translation><!-- Autodesk AutoCAD Map 3D 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk AutoCAD Raster Design 2012</masterLabel>
+            <translation><!-- Autodesk AutoCAD Raster Design 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk DWG TrueView 2010</masterLabel>
+            <translation><!-- Autodesk DWG TrueView 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk Design Review 2011</masterLabel>
+            <translation><!-- Autodesk Design Review 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk MapGuide Viewer 6</masterLabel>
+            <translation><!-- Autodesk MapGuide Viewer 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk Navisworks Manage 2012</masterLabel>
+            <translation><!-- Autodesk Navisworks Manage 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk Revit Architecture 2012</masterLabel>
+            <translation><!-- Autodesk Revit Architecture 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk Revit MEP Suite 2012</masterLabel>
+            <translation><!-- Autodesk Revit MEP Suite 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk Revit Structure Suite 2012</masterLabel>
+            <translation><!-- Autodesk Revit Structure Suite 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autodesk TrueView 18</masterLabel>
+            <translation><!-- Autodesk TrueView 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autonomy Group Verity K2</masterLabel>
+            <translation><!-- Autonomy Group Verity K2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDNA Discover 7</masterLabel>
+            <translation><!-- BDNA Discover 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BMC Remedy IT Service Management Suite</masterLabel>
+            <translation><!-- BMC Remedy IT Service Management Suite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bomgar Corporation Bomgar 11</masterLabel>
+            <translation><!-- Bomgar Corporation Bomgar 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadvision Deployment Center 7</masterLabel>
+            <translation><!-- Broadvision Deployment Center 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Analytics</masterLabel>
+            <translation><!-- Business Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Advantage Data Transformer 2</masterLabel>
+            <translation><!-- CA Advantage Data Transformer 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Advantage Data Transformer Enterprise Metadata Edition 2</masterLabel>
+            <translation><!-- CA Advantage Data Transformer Enterprise Metadata Edition 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA ArcServe R15</masterLabel>
+            <translation><!-- CA ArcServe R15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Clarity Product Portfolio Management 12</masterLabel>
+            <translation><!-- CA Clarity Product Portfolio Management 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA DecisionBase Transformer 1</masterLabel>
+            <translation><!-- CA DecisionBase Transformer 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA ERwin Data Modeler 8</masterLabel>
+            <translation><!-- CA ERwin Data Modeler 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA IT Asset Manager 12</masterLabel>
+            <translation><!-- CA IT Asset Manager 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Service Catalog 12</masterLabel>
+            <translation><!-- CA Service Catalog 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Service Desk Manager 12</masterLabel>
+            <translation><!-- CA Service Desk Manager 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Unicenter Desktop and Server Management 12</masterLabel>
+            <translation><!-- CA Unicenter Desktop and Server Management 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Unicenter Network and Systems Management 11</masterLabel>
+            <translation><!-- CA Unicenter Network and Systems Management 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Unicenter Service Desk Dashboard 11</masterLabel>
+            <translation><!-- CA Unicenter Service Desk Dashboard 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA Unicenter Suite 11</masterLabel>
+            <translation><!-- CA Unicenter Suite 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA eTrust IDS 35</masterLabel>
+            <translation><!-- CA eTrust IDS 35 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint 9075 Power-1 Firewall R75</masterLabel>
+            <translation><!-- CheckPoint 9075 Power-1 Firewall R75 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint Firewall 4</masterLabel>
+            <translation><!-- CheckPoint Firewall 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint Firewall NG</masterLabel>
+            <translation><!-- CheckPoint Firewall NG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint Firewall R65</masterLabel>
+            <translation><!-- CheckPoint Firewall R65 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint Secure Client NGX R60</masterLabel>
+            <translation><!-- CheckPoint Secure Client NGX R60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint Server 4.1</masterLabel>
+            <translation><!-- CheckPoint Server 4.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint Server NG FP3</masterLabel>
+            <translation><!-- CheckPoint Server NG FP3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client Edge</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client Edge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client NG</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client NG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client NG R65</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client NG R65 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client NG-X R65</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client NG-X R65 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client NG-X R70</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client NG-X R70 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client R55</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client R55 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client R56</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client R56 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client R60</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client R60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client R60 Build 33</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client R60 Build 33 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client R60 Build 54</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client R60 Build 54 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client R65</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client R65 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client R70</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client R70 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CheckPoint VPN-1 Secure Client v4.1</masterLabel>
+            <translation><!-- CheckPoint VPN-1 Secure Client v4.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 1700 Series Router</masterLabel>
+            <translation><!-- Cisco 1700 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 1861 Router</masterLabel>
+            <translation><!-- Cisco 1861 Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 2500 Series Router</masterLabel>
+            <translation><!-- Cisco 2500 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 2600 Series Router</masterLabel>
+            <translation><!-- Cisco 2600 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 2800 Series Router</masterLabel>
+            <translation><!-- Cisco 2800 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 3600 Series Router</masterLabel>
+            <translation><!-- Cisco 3600 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 3700 Series Router</masterLabel>
+            <translation><!-- Cisco 3700 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 3800 Series Router</masterLabel>
+            <translation><!-- Cisco 3800 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 3845 Router</masterLabel>
+            <translation><!-- Cisco 3845 Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 3945 Router</masterLabel>
+            <translation><!-- Cisco 3945 Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 7200 VXR Series Router</masterLabel>
+            <translation><!-- Cisco 7200 VXR Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 7500 Series Router</masterLabel>
+            <translation><!-- Cisco 7500 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 7825 Server</masterLabel>
+            <translation><!-- Cisco 7825 Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 804 ISDN Routers</masterLabel>
+            <translation><!-- Cisco 804 ISDN Routers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco 806 Broadband Router</masterLabel>
+            <translation><!-- Cisco 806 Broadband Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco AS5350 Universal Gateway</masterLabel>
+            <translation><!-- Cisco AS5350 Universal Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco ASA5350XM Universal Gateway</masterLabel>
+            <translation><!-- Cisco ASA5350XM Universal Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco ASR 1000 Series Router</masterLabel>
+            <translation><!-- Cisco ASR 1000 Series Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Access Control Server v3.0</masterLabel>
+            <translation><!-- Cisco Access Control Server v3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Access Control Server v4.0</masterLabel>
+            <translation><!-- Cisco Access Control Server v4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Adaptive Security Appliances 5585</masterLabel>
+            <translation><!-- Cisco Adaptive Security Appliances 5585 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Call Manager 7852 V3</masterLabel>
+            <translation><!-- Cisco Call Manager 7852 V3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Catalyst 6509 Switch</masterLabel>
+            <translation><!-- Cisco Catalyst 6509 Switch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Conference Room Phone 7900</masterLabel>
+            <translation><!-- Cisco Conference Room Phone 7900 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Conference Room Phone 7937</masterLabel>
+            <translation><!-- Cisco Conference Room Phone 7937 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Emergency Responder (CER) 8.6.1a</masterLabel>
+            <translation><!-- Cisco Emergency Responder (CER) 8.6.1a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco IDS (CSA MARS) 6</masterLabel>
+            <translation><!-- Cisco IDS (CSA MARS) 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco IOS 12.4</masterLabel>
+            <translation><!-- Cisco IOS 12.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco IOS 15.1.1T</masterLabel>
+            <translation><!-- Cisco IOS 15.1.1T --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco IOS Secure Shell Server 12.4(15)T5</masterLabel>
+            <translation><!-- Cisco IOS Secure Shell Server 12.4(15)T5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco ISS Real Secure 7.0</masterLabel>
+            <translation><!-- Cisco ISS Real Secure 7.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Jabber Video for TelePresence (MOVI)</masterLabel>
+            <translation><!-- Cisco Jabber Video for TelePresence (MOVI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco MGX 8850 Switch</masterLabel>
+            <translation><!-- Cisco MGX 8850 Switch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco PIX 535</masterLabel>
+            <translation><!-- Cisco PIX 535 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Secure ACS v3</masterLabel>
+            <translation><!-- Cisco Secure ACS v3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Switched Multi-Megabit Data Service 3e</masterLabel>
+            <translation><!-- Cisco Switched Multi-Megabit Data Service 3e --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Tandberg 6000 MXP</masterLabel>
+            <translation><!-- Cisco Tandberg 6000 MXP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Tandberg Codian MSU 4500</masterLabel>
+            <translation><!-- Cisco Tandberg Codian MSU 4500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Tandberg Edge 95 MXP</masterLabel>
+            <translation><!-- Cisco Tandberg Edge 95 MXP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence C20</masterLabel>
+            <translation><!-- Cisco TelePresence C20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence C40</masterLabel>
+            <translation><!-- Cisco TelePresence C40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence C60</masterLabel>
+            <translation><!-- Cisco TelePresence C60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence C90</masterLabel>
+            <translation><!-- Cisco TelePresence C90 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence EX60</masterLabel>
+            <translation><!-- Cisco TelePresence EX60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence EX90</masterLabel>
+            <translation><!-- Cisco TelePresence EX90 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence ISDN GW 3241</masterLabel>
+            <translation><!-- Cisco TelePresence ISDN GW 3241 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence ISDN GW MSE 8321</masterLabel>
+            <translation><!-- Cisco TelePresence ISDN GW MSE 8321 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence MCU 4520</masterLabel>
+            <translation><!-- Cisco TelePresence MCU 4520 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence MCU MSE 8510</masterLabel>
+            <translation><!-- Cisco TelePresence MCU MSE 8510 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence MX200</masterLabel>
+            <translation><!-- Cisco TelePresence MX200 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence MX300</masterLabel>
+            <translation><!-- Cisco TelePresence MX300 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence Profile Series</masterLabel>
+            <translation><!-- Cisco TelePresence Profile Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco TelePresence VCS &amp; Expressway</masterLabel>
+            <translation><!-- Cisco TelePresence VCS &amp; Expressway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Call Manager 5.0</masterLabel>
+            <translation><!-- Cisco Unified Call Manager 5.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Communications Manager (CUCM) 8.5.1</masterLabel>
+            <translation><!-- Cisco Unified Communications Manager (CUCM) 8.5.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Communications Manager 4.0</masterLabel>
+            <translation><!-- Cisco Unified Communications Manager 4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Communications Manager 7.0</masterLabel>
+            <translation><!-- Cisco Unified Communications Manager 7.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Contact Center Express (UCCX) 8.0(2)</masterLabel>
+            <translation><!-- Cisco Unified Contact Center Express (UCCX) 8.0(2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Enterprise Attendant Console (CUEAC) 8.6.1.9</masterLabel>
+            <translation><!-- Cisco Unified Enterprise Attendant Console (CUEAC) 8.6.1.9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified IP Phone 7900</masterLabel>
+            <translation><!-- Cisco Unified IP Phone 7900 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified MeetingPlace 8.5.1</masterLabel>
+            <translation><!-- Cisco Unified MeetingPlace 8.5.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Operations Manager (CUOM) 2.3</masterLabel>
+            <translation><!-- Cisco Unified Operations Manager (CUOM) 2.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Personal Communicator 8</masterLabel>
+            <translation><!-- Cisco Unified Personal Communicator 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Presence 8.6.1</masterLabel>
+            <translation><!-- Cisco Unified Presence 8.6.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Provisioning Manager (CUPM) 8.5</masterLabel>
+            <translation><!-- Cisco Unified Provisioning Manager (CUPM) 8.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Service Monitor (CUSM) 2.3</masterLabel>
+            <translation><!-- Cisco Unified Service Monitor (CUSM) 2.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Video Advantage (CUVA)</masterLabel>
+            <translation><!-- Cisco Unified Video Advantage (CUVA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unified Videoconferencing 3545 MCU</masterLabel>
+            <translation><!-- Cisco Unified Videoconferencing 3545 MCU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unity 6</masterLabel>
+            <translation><!-- Cisco Unity 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unity 7.x</masterLabel>
+            <translation><!-- Cisco Unity 7.x --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unity Connection 8.6.1</masterLabel>
+            <translation><!-- Cisco Unity Connection 8.6.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco Unity MCS 7845-I2</masterLabel>
+            <translation><!-- Cisco Unity MCS 7845-I2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco VG224 Analog Phone Gateway</masterLabel>
+            <translation><!-- Cisco VG224 Analog Phone Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisco VG248 Analog Phone Gateway</masterLabel>
+            <translation><!-- Cisco VG248 Analog Phone Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix 6</masterLabel>
+            <translation><!-- Citrix 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix NetScaler 9</masterLabel>
+            <translation><!-- Citrix NetScaler 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix NetScaler 9010</masterLabel>
+            <translation><!-- Citrix NetScaler 9010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix Program Neighborhood Agent 11</masterLabel>
+            <translation><!-- Citrix Program Neighborhood Agent 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix Secure Gateway 3</masterLabel>
+            <translation><!-- Citrix Secure Gateway 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix Web Interface 5</masterLabel>
+            <translation><!-- Citrix Web Interface 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix XenApp 1.8</masterLabel>
+            <translation><!-- Citrix XenApp 1.8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix XenApp 4</masterLabel>
+            <translation><!-- Citrix XenApp 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix XenApp 5.5</masterLabel>
+            <translation><!-- Citrix XenApp 5.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citrix XenApp for Windows Server 2003 or Server 2008 5</masterLabel>
+            <translation><!-- Citrix XenApp for Windows Server 2003 or Server 2008 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloudmark Authority</masterLabel>
+            <translation><!-- Cloudmark Authority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloudmark Gateway</masterLabel>
+            <translation><!-- Cloudmark Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloudmark Immunity</masterLabel>
+            <translation><!-- Cloudmark Immunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Component Deployment</masterLabel>
+            <translation><!-- Component Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Component Selection</masterLabel>
+            <translation><!-- Component Selection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting Services</masterLabel>
+            <translation><!-- Consulting Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Management</masterLabel>
+            <translation><!-- Contract Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core Security Technologies Core Impact Pro 12</masterLabel>
+            <translation><!-- Core Security Technologies Core Impact Pro 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credant Mobile Guardian 5</masterLabel>
+            <translation><!-- Credant Mobile Guardian 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom and Standard IT Training Delivery</masterLabel>
+            <translation><!-- Custom and Standard IT Training Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyberlink PowerDVD 7</masterLabel>
+            <translation><!-- Cyberlink PowerDVD 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dell Client Mangement 3</masterLabel>
+            <translation><!-- Dell Client Mangement 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deltek wInsight 6</masterLabel>
+            <translation><!-- Deltek wInsight 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DerexTech Doc-NET</masterLabel>
+            <translation><!-- DerexTech Doc-NET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Directory Management</masterLabel>
+            <translation><!-- Directory Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMC Documentum 6</masterLabel>
+            <translation><!-- EMC Documentum 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>End User Device Selection</masterLabel>
+            <translation><!-- End User Device Selection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>End User Sevice Support &amp; Maintenance</masterLabel>
+            <translation><!-- End User Sevice Support &amp; Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Architecture Management</masterLabel>
+            <translation><!-- Enterprise Architecture Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Evaluation</masterLabel>
+            <translation><!-- Enterprise Evaluation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcCatalog 8</masterLabel>
+            <translation><!-- Esri ArcCatalog 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcEditor 10</masterLabel>
+            <translation><!-- Esri ArcEditor 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcGIS Explorer 9</masterLabel>
+            <translation><!-- Esri ArcGIS Explorer 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcGIS Server 10</masterLabel>
+            <translation><!-- Esri ArcGIS Server 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcGIS Server 9</masterLabel>
+            <translation><!-- Esri ArcGIS Server 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcGIS Suite 10</masterLabel>
+            <translation><!-- Esri ArcGIS Suite 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcGis Suite 9</masterLabel>
+            <translation><!-- Esri ArcGis Suite 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcInfo 10</masterLabel>
+            <translation><!-- Esri ArcInfo 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esri ArcView 10</masterLabel>
+            <translation><!-- Esri ArcView 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FRLinux Tripwire 2</masterLabel>
+            <translation><!-- FRLinux Tripwire 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FileZilla 3</masterLabel>
+            <translation><!-- FileZilla 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ForeScout CounterACT for Network Access Control CT-100</masterLabel>
+            <translation><!-- ForeScout CounterACT for Network Access Control CT-100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ForeScout CounterACT for Network Access Control CT-2000</masterLabel>
+            <translation><!-- ForeScout CounterACT for Network Access Control CT-2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ForeScout CounterAct Software 6</masterLabel>
+            <translation><!-- ForeScout CounterAct Software 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freedom Scientific JAWS 11</masterLabel>
+            <translation><!-- Freedom Scientific JAWS 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freedom Scientific JAWS 13</masterLabel>
+            <translation><!-- Freedom Scientific JAWS 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freedom Scientific MAGic Screen Magnification Software 11</masterLabel>
+            <translation><!-- Freedom Scientific MAGic Screen Magnification Software 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GW Micro Windows-Eyes 7</masterLabel>
+            <translation><!-- GW Micro Windows-Eyes 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gap Analysis Performance</masterLabel>
+            <translation><!-- Gap Analysis Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Golden Software Surfer 10</masterLabel>
+            <translation><!-- Golden Software Surfer 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Earth Pro 6</masterLabel>
+            <translation><!-- Google Earth Pro 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Gmail</masterLabel>
+            <translation><!-- Google Gmail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guardian Mobile</masterLabel>
+            <translation><!-- Guardian Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP 3000/MPE</masterLabel>
+            <translation><!-- HP 3000/MPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP WebInspect 9</masterLabel>
+            <translation><!-- HP WebInspect 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hutchings Software Component-X Graphics</masterLabel>
+            <translation><!-- Hutchings Software Component-X Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM AIX 7</masterLabel>
+            <translation><!-- IBM AIX 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM DOS 8</masterLabel>
+            <translation><!-- IBM DOS 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM KillNotes 1</masterLabel>
+            <translation><!-- IBM KillNotes 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Domino 6</masterLabel>
+            <translation><!-- IBM Lotus Domino 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Domino 7</masterLabel>
+            <translation><!-- IBM Lotus Domino 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Domino Database</masterLabel>
+            <translation><!-- IBM Lotus Domino Database --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Domino Designer</masterLabel>
+            <translation><!-- IBM Lotus Domino Designer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Domino Web Access 7</masterLabel>
+            <translation><!-- IBM Lotus Domino Web Access 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus EasySync Pro 4.2</masterLabel>
+            <translation><!-- IBM Lotus EasySync Pro 4.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Fax for Domino</masterLabel>
+            <translation><!-- IBM Lotus Fax for Domino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Notes .NSF Format</masterLabel>
+            <translation><!-- IBM Lotus Notes .NSF Format --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Notes 7.0.0</masterLabel>
+            <translation><!-- IBM Lotus Notes 7.0.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Notes Visual Programmer</masterLabel>
+            <translation><!-- IBM Lotus Notes Visual Programmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus QuickPlace 6.5</masterLabel>
+            <translation><!-- IBM Lotus QuickPlace 6.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus Quickr 8.2.0</masterLabel>
+            <translation><!-- IBM Lotus Quickr 8.2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lotus SameTime 8</masterLabel>
+            <translation><!-- IBM Lotus SameTime 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Lucent NaviScore 9</masterLabel>
+            <translation><!-- IBM Lucent NaviScore 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Rational Application Developer (RAD) 8</masterLabel>
+            <translation><!-- IBM Rational Application Developer (RAD) 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Rational ClearCase 8</masterLabel>
+            <translation><!-- IBM Rational ClearCase 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Rational Rose</masterLabel>
+            <translation><!-- IBM Rational Rose --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM System Architect 11</masterLabel>
+            <translation><!-- IBM System Architect 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM System Architect eXtended 11</masterLabel>
+            <translation><!-- IBM System Architect eXtended 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Tivoli 5</masterLabel>
+            <translation><!-- IBM Tivoli 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Tivoli NetView 7.1.5</masterLabel>
+            <translation><!-- IBM Tivoli NetView 7.1.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Websphere Content Management 8</masterLabel>
+            <translation><!-- IBM Websphere Content Management 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Websphere Portal 6</masterLabel>
+            <translation><!-- IBM Websphere Portal 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM Websphere Portal 7</masterLabel>
+            <translation><!-- IBM Websphere Portal 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Acquisition Management</masterLabel>
+            <translation><!-- IT Acquisition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Finances Management</masterLabel>
+            <translation><!-- IT Finances Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Investment Management</masterLabel>
+            <translation><!-- IT Investment Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Portfolio Informing</masterLabel>
+            <translation><!-- IT Portfolio Informing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Security Testing</masterLabel>
+            <translation><!-- IT Security Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Training Curriculum Development</masterLabel>
+            <translation><!-- IT Training Curriculum Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incident Response</masterLabel>
+            <translation><!-- Incident Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informatica Corporation Informatica Data Services</masterLabel>
+            <translation><!-- Informatica Corporation Informatica Data Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informatica PowerCenter 6</masterLabel>
+            <translation><!-- Informatica PowerCenter 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infoseek Ultraseek 5</masterLabel>
+            <translation><!-- Infoseek Ultraseek 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infoseek Ultraseek 6</masterLabel>
+            <translation><!-- Infoseek Ultraseek 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intellisync Corporation Intellisync Mobile Suite 8</masterLabel>
+            <translation><!-- Intellisync Corporation Intellisync Mobile Suite 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intercon Associates Accessible FormNet 2</masterLabel>
+            <translation><!-- Intercon Associates Accessible FormNet 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intercon Associates Accessible FormNet 3</masterLabel>
+            <translation><!-- Intercon Associates Accessible FormNet 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IntraVision OnTime</masterLabel>
+            <translation><!-- IntraVision OnTime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge Management</masterLabel>
+            <translation><!-- Knowledge Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L-Soft LISTSERV 15</masterLabel>
+            <translation><!-- L-Soft LISTSERV 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L-Soft LISTSERV 16</masterLabel>
+            <translation><!-- L-Soft LISTSERV 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LK4 Technology Corporation Accessible Wizard v2</masterLabel>
+            <translation><!-- LK4 Technology Corporation Accessible Wizard v2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linux 3</masterLabel>
+            <translation><!-- Linux 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lockheed Martin Intranet Quorum</masterLabel>
+            <translation><!-- Lockheed Martin Intranet Quorum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M-Tech Identity Management Suite 4</masterLabel>
+            <translation><!-- M-Tech Identity Management Suite 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magic Solutions Support Magic</masterLabel>
+            <translation><!-- Magic Solutions Support Magic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>McAfee Antivirus 4</masterLabel>
+            <translation><!-- McAfee Antivirus 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>McAfee Foundstone Enterprise Scanning Tool</masterLabel>
+            <translation><!-- McAfee Foundstone Enterprise Scanning Tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>McAfee GroupShield 7</masterLabel>
+            <translation><!-- McAfee GroupShield 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>McAfee NetShield</masterLabel>
+            <translation><!-- McAfee NetShield --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meridian Systems Proliance ePM 5</masterLabel>
+            <translation><!-- Meridian Systems Proliance ePM 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metastorm ProVision Federal</masterLabel>
+            <translation><!-- Metastorm ProVision Federal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft .NET Framework 3.0</masterLabel>
+            <translation><!-- Microsoft .NET Framework 3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft .NET Framework 4</masterLabel>
+            <translation><!-- Microsoft .NET Framework 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft 2000 Active Directory (5.0)</masterLabel>
+            <translation><!-- Microsoft 2000 Active Directory (5.0) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Access 2000 Standard Edition</masterLabel>
+            <translation><!-- Microsoft Access 2000 Standard Edition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Access 2003</masterLabel>
+            <translation><!-- Microsoft Access 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Access 2010 (14)</masterLabel>
+            <translation><!-- Microsoft Access 2010 (14) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Access 97 Standard Edition</masterLabel>
+            <translation><!-- Microsoft Access 97 Standard Edition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Access XP (10)</masterLabel>
+            <translation><!-- Microsoft Access XP (10) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft ActiveSync 4.5</masterLabel>
+            <translation><!-- Microsoft ActiveSync 4.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft DTS for SQL Server</masterLabel>
+            <translation><!-- Microsoft DTS for SQL Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Excel 2003</masterLabel>
+            <translation><!-- Microsoft Excel 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Excel 2007</masterLabel>
+            <translation><!-- Microsoft Excel 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Excel 2010 (14)</masterLabel>
+            <translation><!-- Microsoft Excel 2010 (14) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft IIS 7</masterLabel>
+            <translation><!-- Microsoft IIS 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft IIS Network Monitor Tool</masterLabel>
+            <translation><!-- Microsoft IIS Network Monitor Tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office 2000 Professional Edition</masterLabel>
+            <translation><!-- Microsoft Office 2000 Professional Edition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office 2003 Compatibility Pack for Office 2007 Files</masterLabel>
+            <translation><!-- Microsoft Office 2003 Compatibility Pack for Office 2007 Files --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office 2010 (14)</masterLabel>
+            <translation><!-- Microsoft Office 2010 (14) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office 97 Professional Edition</masterLabel>
+            <translation><!-- Microsoft Office 97 Professional Edition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office Converter Pack</masterLabel>
+            <translation><!-- Microsoft Office Converter Pack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office Professional 2007</masterLabel>
+            <translation><!-- Microsoft Office Professional 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office Professional Edition 2003</masterLabel>
+            <translation><!-- Microsoft Office Professional Edition 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Office XP Professional Edition</masterLabel>
+            <translation><!-- Microsoft Office XP Professional Edition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft OneNote 2007</masterLabel>
+            <translation><!-- Microsoft OneNote 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft OneNote 2010 (14)</masterLabel>
+            <translation><!-- Microsoft OneNote 2010 (14) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft PowerPoint 2003</masterLabel>
+            <translation><!-- Microsoft PowerPoint 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft PowerPoint 2010 (14)</masterLabel>
+            <translation><!-- Microsoft PowerPoint 2010 (14) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Project 1997 (9)</masterLabel>
+            <translation><!-- Microsoft Project 1997 (9) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Project Professional 2003</masterLabel>
+            <translation><!-- Microsoft Project Professional 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Project Standard 2007</masterLabel>
+            <translation><!-- Microsoft Project Standard 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Project Viewer</masterLabel>
+            <translation><!-- Microsoft Project Viewer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Publisher 2003 (11)</masterLabel>
+            <translation><!-- Microsoft Publisher 2003 (11) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Publisher 2010 (14)</masterLabel>
+            <translation><!-- Microsoft Publisher 2010 (14) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Retrievalware 8</masterLabel>
+            <translation><!-- Microsoft Retrievalware 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft SQL Server 2008 Standard</masterLabel>
+            <translation><!-- Microsoft SQL Server 2008 Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft SQL Server 2010 (10.5)</masterLabel>
+            <translation><!-- Microsoft SQL Server 2010 (10.5) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Server Update Servies (3.0)</masterLabel>
+            <translation><!-- Microsoft Server Update Servies (3.0) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft System Center Configuration Manager 2007</masterLabel>
+            <translation><!-- Microsoft System Center Configuration Manager 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Visio 2003 (11)</masterLabel>
+            <translation><!-- Microsoft Visio 2003 (11) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Visio 2007 (12)</masterLabel>
+            <translation><!-- Microsoft Visio 2007 (12) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Visio Viewer 2003</masterLabel>
+            <translation><!-- Microsoft Visio Viewer 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Visio Viewer 2007</masterLabel>
+            <translation><!-- Microsoft Visio Viewer 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Visual FoxPro 9.0 Professional Edition</masterLabel>
+            <translation><!-- Microsoft Visual FoxPro 9.0 Professional Edition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Visual Studio 2005</masterLabel>
+            <translation><!-- Microsoft Visual Studio 2005 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft WIndows 2008 Active Directory R2 (6.1)</masterLabel>
+            <translation><!-- Microsoft WIndows 2008 Active Directory R2 (6.1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2000 (5.0)</masterLabel>
+            <translation><!-- Microsoft Windows 2000 (5.0) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2000 Server</masterLabel>
+            <translation><!-- Microsoft Windows 2000 Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2000 Terminal Server</masterLabel>
+            <translation><!-- Microsoft Windows 2000 Terminal Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2003 Active Directory (5.2) R2</masterLabel>
+            <translation><!-- Microsoft Windows 2003 Active Directory (5.2) R2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2003 Server (5.2)</masterLabel>
+            <translation><!-- Microsoft Windows 2003 Server (5.2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2003 Terminal Server (5.2)</masterLabel>
+            <translation><!-- Microsoft Windows 2003 Terminal Server (5.2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2008 Active Directory (6.1)</masterLabel>
+            <translation><!-- Microsoft Windows 2008 Active Directory (6.1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 2008 Terminal Server (6.1)</masterLabel>
+            <translation><!-- Microsoft Windows 2008 Terminal Server (6.1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 7 (6.0)</masterLabel>
+            <translation><!-- Microsoft Windows 7 (6.0) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows 98 (4.1)</masterLabel>
+            <translation><!-- Microsoft Windows 98 (4.1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows CE/Mobile (7)</masterLabel>
+            <translation><!-- Microsoft Windows CE/Mobile (7) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows Internet Explorer 5</masterLabel>
+            <translation><!-- Microsoft Windows Internet Explorer 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows Internet Explorer 6</masterLabel>
+            <translation><!-- Microsoft Windows Internet Explorer 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows Internet Explorer 7</masterLabel>
+            <translation><!-- Microsoft Windows Internet Explorer 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows Internet Explorer 8</masterLabel>
+            <translation><!-- Microsoft Windows Internet Explorer 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows ME (4)</masterLabel>
+            <translation><!-- Microsoft Windows ME (4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows Media Player 11</masterLabel>
+            <translation><!-- Microsoft Windows Media Player 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows NT (6.1)</masterLabel>
+            <translation><!-- Microsoft Windows NT (6.1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows NT 4 Terminal Server Edition (4.0)</masterLabel>
+            <translation><!-- Microsoft Windows NT 4 Terminal Server Edition (4.0) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows NT 4.0</masterLabel>
+            <translation><!-- Microsoft Windows NT 4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows Server 2008 Standard</masterLabel>
+            <translation><!-- Microsoft Windows Server 2008 Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows Update Agent v7</masterLabel>
+            <translation><!-- Microsoft Windows Update Agent v7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Windows XP SP3</masterLabel>
+            <translation><!-- Microsoft Windows XP SP3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Word 2003 (11)</masterLabel>
+            <translation><!-- Microsoft Word 2003 (11) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Word 2007 (12)</masterLabel>
+            <translation><!-- Microsoft Word 2007 (12) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Word 2010</masterLabel>
+            <translation><!-- Microsoft Word 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MySQL AB MySQL 5</masterLabel>
+            <translation><!-- MySQL AB MySQL 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NetManage Viewnow 1</masterLabel>
+            <translation><!-- NetManage Viewnow 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Component Deployment</masterLabel>
+            <translation><!-- Network Component Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Component Selection</masterLabel>
+            <translation><!-- Network Component Selection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Operations &amp; Support</masterLabel>
+            <translation><!-- Network Operations &amp; Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Magic MagicDraw 17</masterLabel>
+            <translation><!-- No Magic MagicDraw 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nokia IP530 Firewall</masterLabel>
+            <translation><!-- Nokia IP530 Firewall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nokia IP560 Firewall</masterLabel>
+            <translation><!-- Nokia IP560 Firewall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nokia IPSO Operating System v3</masterLabel>
+            <translation><!-- Nokia IPSO Operating System v3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nokia IPSO Operating System v6</masterLabel>
+            <translation><!-- Nokia IPSO Operating System v6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Listed</masterLabel>
+            <translation><!-- Not Listed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novell Informs 4</masterLabel>
+            <translation><!-- Novell Informs 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novell ZENworks 11</masterLabel>
+            <translation><!-- Novell ZENworks 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novell eDirectory 8</masterLabel>
+            <translation><!-- Novell eDirectory 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuance Communications Dragon NaturallySpeaking 11</masterLabel>
+            <translation><!-- Nuance Communications Dragon NaturallySpeaking 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuance Communications PDF Converter 5</masterLabel>
+            <translation><!-- Nuance Communications PDF Converter 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuance Communications PDF Creator Professional 7</masterLabel>
+            <translation><!-- Nuance Communications PDF Creator Professional 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuance Paper Port 14</masterLabel>
+            <translation><!-- Nuance Paper Port 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPIE (Onetime Password In Everything)</masterLabel>
+            <translation><!-- OPIE (Onetime Password In Everything) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online, CBT and Instructor-led Training Materials Development</masterLabel>
+            <translation><!-- Online, CBT and Instructor-led Training Materials Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OpenText ECM Suite 2010</masterLabel>
+            <translation><!-- OpenText ECM Suite 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations &amp; Support</masterLabel>
+            <translation><!-- Operations &amp; Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle ADF 9</masterLabel>
+            <translation><!-- Oracle ADF 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Application Server 10g</masterLabel>
+            <translation><!-- Oracle Application Server 10g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Application Server 9</masterLabel>
+            <translation><!-- Oracle Application Server 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle BI Beans 11g</masterLabel>
+            <translation><!-- Oracle BI Beans 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Data Warehouse Builder 11g</masterLabel>
+            <translation><!-- Oracle Data Warehouse Builder 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle DataProvider for .NET 11g</masterLabel>
+            <translation><!-- Oracle DataProvider for .NET 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Database 11.1</masterLabel>
+            <translation><!-- Oracle Database 11.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Database 8.1.7</masterLabel>
+            <translation><!-- Oracle Database 8.1.7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Designer 10g</masterLabel>
+            <translation><!-- Oracle Designer 10g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Developer Suite 10g</masterLabel>
+            <translation><!-- Oracle Developer Suite 10g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Discoverer Admin Edition 11g</masterLabel>
+            <translation><!-- Oracle Discoverer Admin Edition 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Discoverer Portlet Software Development Kit 11g</masterLabel>
+            <translation><!-- Oracle Discoverer Portlet Software Development Kit 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Discovery Tools 12.3</masterLabel>
+            <translation><!-- Oracle Discovery Tools 12.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Enterprise Manager 12c</masterLabel>
+            <translation><!-- Oracle Enterprise Manager 12c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Forms and Report Developer 11g</masterLabel>
+            <translation><!-- Oracle Forms and Report Developer 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle JDeveloper 11</masterLabel>
+            <translation><!-- Oracle JDeveloper 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Java Enterprise Edition 5</masterLabel>
+            <translation><!-- Oracle Java Enterprise Edition 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Java Enterprise Edition 6</masterLabel>
+            <translation><!-- Oracle Java Enterprise Edition 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle OC4J 10</masterLabel>
+            <translation><!-- Oracle OC4J 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Portal 11g</masterLabel>
+            <translation><!-- Oracle Portal 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle SQL Worksheet 3</masterLabel>
+            <translation><!-- Oracle SQL Worksheet 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Siebel CRM 8.0.x</masterLabel>
+            <translation><!-- Oracle Siebel CRM 8.0.x --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Solaris 11</masterLabel>
+            <translation><!-- Oracle Solaris 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Sun Java Runtime Environment (JRE) 1.6</masterLabel>
+            <translation><!-- Oracle Sun Java Runtime Environment (JRE) 1.6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Sun Java Runtime Environment (JRE) 7</masterLabel>
+            <translation><!-- Oracle Sun Java Runtime Environment (JRE) 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Tuxedo 11g</masterLabel>
+            <translation><!-- Oracle Tuxedo 11g --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle Workflow 2</masterLabel>
+            <translation><!-- Oracle Workflow 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oracle for Metadata Management</masterLabel>
+            <translation><!-- Oracle for Metadata Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PERL 5</masterLabel>
+            <translation><!-- PERL 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGP Desktop 10</masterLabel>
+            <translation><!-- PGP Desktop 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palm Desktop 6</masterLabel>
+            <translation><!-- Palm Desktop 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palm OS Garnet 5</masterLabel>
+            <translation><!-- Palm OS Garnet 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palo Alto Networks PA-5000</masterLabel>
+            <translation><!-- Palo Alto Networks PA-5000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pilot Software Decision Support Suite 6.0</masterLabel>
+            <translation><!-- Pilot Software Decision Support Suite 6.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pilot Software Pilot Works</masterLabel>
+            <translation><!-- Pilot Software Pilot Works --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy Creation</masterLabel>
+            <translation><!-- Policy Creation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy Enforcement</masterLabel>
+            <translation><!-- Policy Enforcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy Evaluation</masterLabel>
+            <translation><!-- Policy Evaluation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Management Consulting</masterLabel>
+            <translation><!-- Project Management Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Management Standards &amp; Methods</masterLabel>
+            <translation><!-- Project Management Standards &amp; Methods --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Portfolio Tracking &amp; Report</masterLabel>
+            <translation><!-- Project Portfolio Tracking &amp; Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quest Software Toad 11</masterLabel>
+            <translation><!-- Quest Software Toad 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RealNetworks RealPlayer 6</masterLabel>
+            <translation><!-- RealNetworks RealPlayer 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RealNetworks RealPlayer Enterprise 15</masterLabel>
+            <translation><!-- RealNetworks RealPlayer Enterprise 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RealNetworks RealPlayer Enterprise 6</masterLabel>
+            <translation><!-- RealNetworks RealPlayer Enterprise 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red Hat Enterprise Linux 5</masterLabel>
+            <translation><!-- Red Hat Enterprise Linux 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red Hat Enterprise Linux 6</masterLabel>
+            <translation><!-- Red Hat Enterprise Linux 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporting</masterLabel>
+            <translation><!-- Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research in Motion Blackberry Bold</masterLabel>
+            <translation><!-- Research in Motion Blackberry Bold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research in Motion Blackberry Desktop Software 6</masterLabel>
+            <translation><!-- Research in Motion Blackberry Desktop Software 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rocket CorVu</masterLabel>
+            <translation><!-- Rocket CorVu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP BusinessObjects 4</masterLabel>
+            <translation><!-- SAP BusinessObjects 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP Crystal Reports 14</masterLabel>
+            <translation><!-- SAP Crystal Reports 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP Netweaver 7</masterLabel>
+            <translation><!-- SAP Netweaver 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP Sybase Enterprise Application Server 2.0</masterLabel>
+            <translation><!-- SAP Sybase Enterprise Application Server 2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLA Management</masterLabel>
+            <translation><!-- SLA Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Force.com IDE Winter &apos;12</masterLabel>
+            <translation><!-- Salesforce Force.com IDE Winter &apos;12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Force.com Winter &apos;12</masterLabel>
+            <translation><!-- Salesforce Force.com Winter &apos;12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scalable Software WinInstall 10</masterLabel>
+            <translation><!-- Scalable Software WinInstall 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Education</masterLabel>
+            <translation><!-- Security Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Monitoring</masterLabel>
+            <translation><!-- Security Monitoring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Serena Software PVCS 8</masterLabel>
+            <translation><!-- Serena Software PVCS 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Server Deployment</masterLabel>
+            <translation><!-- Server Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Server Operations &amp; Support</masterLabel>
+            <translation><!-- Server Operations &amp; Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Server Selection</masterLabel>
+            <translation><!-- Server Selection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Desk Management</masterLabel>
+            <translation><!-- Service Desk Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sherpa Software Mail Attender v4</masterLabel>
+            <translation><!-- Sherpa Software Mail Attender v4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siemens PLM Software Teamcenter 8</masterLabel>
+            <translation><!-- Siemens PLM Software Teamcenter 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smartegate VPN 4.0</masterLabel>
+            <translation><!-- Smartegate VPN 4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snort 2</masterLabel>
+            <translation><!-- Snort 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solarwinds Orion Network Performance Monitor 10.2</masterLabel>
+            <translation><!-- Solarwinds Orion Network Performance Monitor 10.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solibri Model Checker v4</masterLabel>
+            <translation><!-- Solibri Model Checker v4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solibri Model Checker v7</masterLabel>
+            <translation><!-- Solibri Model Checker v7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solutions Design</masterLabel>
+            <translation><!-- Solutions Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sonic Solutions Sonic Recorder 7</masterLabel>
+            <translation><!-- Sonic Solutions Sonic Recorder 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Outcomes Evaluation</masterLabel>
+            <translation><!-- Strategic Outcomes Evaluation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Plan Management</masterLabel>
+            <translation><!-- Strategic Plan Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sybase Adaptive Server Enterprise 11</masterLabel>
+            <translation><!-- Sybase Adaptive Server Enterprise 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sybase Adaptive Server Enterprise 15</masterLabel>
+            <translation><!-- Sybase Adaptive Server Enterprise 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sybase Enterprise Portal 6</masterLabel>
+            <translation><!-- Sybase Enterprise Portal 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sybase Power J</masterLabel>
+            <translation><!-- Sybase Power J --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sybase PowerDesigner 16</masterLabel>
+            <translation><!-- Sybase PowerDesigner 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sybase Powerbuilder 12</masterLabel>
+            <translation><!-- Sybase Powerbuilder 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symantec VeriSign</masterLabel>
+            <translation><!-- Symantec VeriSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symantec pcAnywhere 12</masterLabel>
+            <translation><!-- Symantec pcAnywhere 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Demonstration</masterLabel>
+            <translation><!-- Technology Demonstration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Transfer</masterLabel>
+            <translation><!-- Technology Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tenable Network Security Nessus 4</masterLabel>
+            <translation><!-- Tenable Network Security Nessus 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The CVS Team Concurrent Versions System 1</masterLabel>
+            <translation><!-- The CVS Team Concurrent Versions System 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Open Group Unix 03</masterLabel>
+            <translation><!-- The Open Group Unix 03 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TopQuadrant TopBraid 3</masterLabel>
+            <translation><!-- TopQuadrant TopBraid 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Study Performance</masterLabel>
+            <translation><!-- Trade Study Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tumbleweed E-mail Firewall 6</masterLabel>
+            <translation><!-- Tumbleweed E-mail Firewall 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unisys DMSII</masterLabel>
+            <translation><!-- Unisys DMSII --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unisys MCP 13</masterLabel>
+            <translation><!-- Unisys MCP 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universal Report Specifying Application 9.0</masterLabel>
+            <translation><!-- Universal Report Specifying Application 9.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Device Deployment Conclusion</masterLabel>
+            <translation><!-- User Device Deployment Conclusion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valid Bit Remotely Possible 1</masterLabel>
+            <translation><!-- Valid Bit Remotely Possible 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Selection</masterLabel>
+            <translation><!-- Vendor Selection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visioneer Paperport Viewer XP</masterLabel>
+            <translation><!-- Visioneer Paperport Viewer XP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Websense</masterLabel>
+            <translation><!-- Websense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webtrends 7</masterLabel>
+            <translation><!-- Webtrends 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webtrends 8</masterLabel>
+            <translation><!-- Webtrends 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WinZip Computing WinZip 16</masterLabel>
+            <translation><!-- WinZip Computing WinZip 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WinZip Computing WinZip 9</masterLabel>
+            <translation><!-- WinZip Computing WinZip 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zeus Technology Zeus Web Server</masterLabel>
+            <translation><!-- Zeus Technology Zeus Web Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dataBased Intelligence Inc. dBase 2</masterLabel>
+            <translation><!-- dataBased Intelligence Inc. dBase 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iPlanet Web Server 7</masterLabel>
+            <translation><!-- iPlanet Web Server 7 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type product/service name starting with a * (*Excel). If service not known, use *e* for search (will not work for software/hardware). If you still cannot find your product/service, enter &quot;Not Listed.&quot; --></help>
+        <label><!-- Product Or Service --></label>
+        <name>Product_Or_Service__c</name>
+        <relationshipLabel><!-- Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Standard or Not Listed --></label>
+        <name>Product_Standard_or_Not_Listed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Professional Services Category --></label>
+        <name>Professional_Services_Category__c</name>
+        <picklistValues>
+            <masterLabel>Education and Training Support Services</masterLabel>
+            <translation><!-- Education and Training Support Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering and Scientific Services</masterLabel>
+            <translation><!-- Engineering and Scientific Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Management Services</masterLabel>
+            <translation><!-- Financial Management Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics Services</masterLabel>
+            <translation><!-- Logistics Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Consulting Services</masterLabel>
+            <translation><!-- Management Consulting Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement/Contract Specialist Support Services</masterLabel>
+            <translation><!-- Procurement/Contract Specialist Support Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program Management Services</masterLabel>
+            <translation><!-- Program Management Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secretarial/Clerical Support Services</masterLabel>
+            <translation><!-- Secretarial/Clerical Support Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel and Transportation support services</masterLabel>
+            <translation><!-- Travel and Transportation support services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you are trying to Re-Submit the Denied Item, address the needed corrective action before checking the &quot;Re-Submit Denied Item for Approval&quot; checkbox. --></help>
+        <label><!-- Re-Submit Denied Item for Approval --></label>
+        <name>Re_Submit_Denied_Items_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spend Request Number --></label>
+        <name>Spend_Request_Number__c</name>
+        <relationshipLabel><!-- Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- T&amp;M or FFP --></label>
+        <name>T_M_or_FFP__c</name>
+        <picklistValues>
+            <masterLabel>Cost Reimbursable</masterLabel>
+            <translation><!-- Cost Reimbursable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firm Fixed Price</masterLabel>
+            <translation><!-- Firm Fixed Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOE</masterLabel>
+            <translation><!-- LOE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor Hour</masterLabel>
+            <translation><!-- Labor Hour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T&amp;M (Time and Materials)</masterLabel>
+            <translation><!-- T&amp;M (Time and Materials) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Cost - Remove --></label>
+        <name>Total_Cost_Remove__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Hardware</masterLabel>
+            <translation><!-- Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Services</masterLabel>
+            <translation><!-- IT Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROFESSIONAL SERVICES</masterLabel>
+            <translation><!-- PROFESSIONAL SERVICES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unit Cost --></label>
+        <name>Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Likely unit of time. 
+
+Example: Hours, Weeks, Months, or Firm Fixed Price. --></help>
+        <label><!-- Unit of Measurement --></label>
+        <name>Unit_of_Measurement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor (If Known) --></label>
+        <name>Vendor_If_Known__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Populated --></label>
+        <name>Vendor_Populated_Check__c</name>
+    </fields>
+    <layouts>
+        <layout>IT Spend Item</layout>
+        <sections>
+            <label><!-- Approval Process --></label>
+            <section>Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Item Costs --></label>
+            <section>Item Costs</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Legacy IT Spend Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Item Costs --></label>
+            <section>Item Costs</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Legacy Professional Services Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Professional Services Item</layout>
+        <sections>
+            <label><!-- Approval Process --></label>
+            <section>Approval Process</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Item Costs --></label>
+            <section>Item Costs</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- IT Spend Item --></label>
+        <name>IT_Spend_Item</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Legacy IT Spend Item Record Type --></label>
+        <name>IT_Spend_Item_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Legacy Professional Services Item --></label>
+        <name>Legacy_Professional_Services_Item</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Professional Services Item --></label>
+        <name>Professional_Services_Item</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You are required to enter a Category Explanation if IT Product or Service or Professional Service you&apos;ve chosen has a category of &quot;Other&quot; --></errorMessage>
+        <name>Category_Description_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Re-Submit checkbox can be checked, only if Approval Status is Denied. --></errorMessage>
+        <name>Denied_ReSubmit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Deny Approved Item&quot; check box can be checked, only when &quot;Approval Status&quot; is Approved. --></errorMessage>
+        <name>Deny_Approved_Item</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Deny Approved Item Comments&apos; needs to be provided upon Denying Approved Item. --></errorMessage>
+        <name>Deny_Approved_Item_Comments</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Estimated Contractor Personnel?&quot; field cannot be less than one. --></errorMessage>
+        <name>Estimated_Contractor_Personnel</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To create/edit an IT Spend Item, please ensure that Investment &amp; Application fields on Spend Request are filled in. --></errorMessage>
+        <name>IT_Spend_Item_Spend_Request_Invest_Appl</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You may NOT add a new line item once the request has been submitted for approval. If you would like to make any changes, click Recall Approval Request button on the Spend Request. --></errorMessage>
+        <name>Lock_New_Items</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have chosen &quot;Not Listed&quot; as your product.  Please supply the name of the product in the Product Name field. --></errorMessage>
+        <name>Product_Name_Required_if_Not_Listed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot have a negative quantity or quantity cannot equal zero --></errorMessage>
+        <name>Quantity_cannot_be_a_negative_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot have a negative unit cost. --></errorMessage>
+        <name>Unit_Cost_cannot_be_less_than_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have selected &quot;Follow-On&quot; For your Vendor Type therefore a Vendor name is required --></errorMessage>
+        <name>Vendor_Req_if_FollowOn</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Vendor (If Known)&quot; field is required when &quot;Modification&quot; is selected in &quot;New Award or Modification&quot; field. --></errorMessage>
+        <name>Vendor_Req_if_Modification</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Items --></label>
+        <name>New_Items</name>
+    </webLinks>
+</CustomObjectTranslation>

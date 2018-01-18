@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>EBC_CFO_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>EBC CFO Users</label>
+        <sharedTo>
+            <group>EBC_CFO_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Funding Approval,Internal Review</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EBC_ShareFullyApprovedWithP360Triage</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>EBC - Share fully approved EBCs with P360 Triage Public Group so that Triage users</description>
+        <label>EBC-ShareFullyApprovedWithP360Triage</label>
+        <sharedTo>
+            <group>P360_Triage</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>EBC CFO Record Type</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Funding Approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Denied</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>EBC_P_G_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>EBC-P&amp;G Sharing Rule</label>
+        <sharedTo>
+            <group>EBC_Super_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>EBC_All_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

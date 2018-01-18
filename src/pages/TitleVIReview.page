@@ -1,0 +1,517 @@
+<apex:page id="titleVIReview" standardController="OCIO_Title_VI_Submission__c" extensions="TitleVISubmissionController" showHeader="true" sidebar="true" title="Title VI Submission Review" action="{!editReview}">
+ 
+ 
+<script type="text/javascript">
+window.onload = setFocus
+function setFocus() {
+    try {
+            document.getElementById('{!$Component.myform.SubmissionID}').focus();
+        } catch (err) {
+    }
+}
+</script>
+
+ <table border="1" height="100" width="100%"> 
+ <tr>
+ <td nowrap="nowrap"> 
+ <div style="height: 310px; overflow: auto;">  
+  <apex:form id="myform">
+     <apex:sectionHeader title="Title VI Review" subtitle="{!titleReviews[0].Name}"/>
+       <apex:pageBlock id="reviewBlock" title="">                       
+          
+           <apex:pageBlockButtons style="align:center" >
+                <apex:commandButton value="Edit" action="{!editReview}" rendered="{!!isEdit}" reRender="reviewBlock"/>
+                <apex:commandButton value="Save" action="{!saveReview}" rendered="{!isEdit}"/>
+                <apex:commandButton value="Cancel" action="{!cancelAction}" rendered="{!isEdit}" reRender="reviewBlock"/>
+            </apex:pageBlockButtons>
+            
+         <!--  Edit Section of Title VI Review --> 
+         
+         <apex:pageBlockSection showHeader="true" title="REVIEW INFORMATION" columns="2" rendered="{!isEdit}">
+                        
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Title VI Submission</apex:outputLabel>
+                    <apex:outputField id="SubmissionID" value="{!titleReviews[0].OCR_Title_VI_Submission__r.Name}"/>             
+              </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem >                                     
+                    <apex:outputLabel style="font-weight: bold;">Title VI Review ID</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].Name}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Reviewer</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Reviewer__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Review Completion Date</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Review_Completion_Date__c}"/>             
+              </apex:pageBlockSectionItem>
+                           
+         </apex:pageBlockSection>
+         
+         
+         <apex:pageBlockSection showHeader="true" title="DONEE INFORMATION" columns="2" rendered="{!isEdit}">
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Donee ID</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_ID__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Donee Name</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_Name__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem >                                     
+                    <apex:outputLabel style="font-weight: bold;">Donee Contact</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_Contact__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Donee Address</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_Address__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Contact Phone</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Contact_Phone__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">GSA Region</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_GSA_Region__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem >                                     
+                    <apex:outputLabel style="font-weight: bold;">Preparation Date</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Preparation_Date__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              
+         </apex:pageBlockSection>
+         
+            
+         <apex:pageBlockSection showHeader="true" title="CHECKLIST FOR REVIEW OF COMPLIANCE SUBMISSION" columns="1" rendered="{!isEdit}">
+              <apex:pageBlockSectionItem >                  
+                    <apex:inputField value="{!titleReviews[0].OCR_Complete_name_and_address__c}"/>
+                    <apex:outputLabel style="font-weight: bold;">1. Complete name and address?</apex:outputLabel>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                  
+                    <apex:inputField value="{!titleReviews[0].OCR_Nature_and_type_of_organization__c}"/>
+                    <apex:outputLabel style="font-weight: bold;">2. Nature and type of organization? (see IA and IB)</apex:outputLabel>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                  
+                    <apex:inputField value="{!titleReviews[0].OCR_IS_chart_completed_for_IIA__c}"/>
+                    <apex:outputLabel style="font-weight: bold;">3. Civil Rights Data:<br/>A. Is chart completed for IIA?</apex:outputLabel>                
+              </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         
+         <apex:pageBlockSection showHeader="true" title="REVIEW OF LEP INFORMATION: (Section II, Questions: B, C, D, E, F, G)" columns="1" rendered="{!isEdit}">
+              <apex:pageBlockSectionItem >
+                <apex:inputField value="{!titleReviews[0].OCR_LEP_Provide_services__c}"/>
+                <apex:outputLabel style="font-weight: bold;">1. Does the donee provide services to LEP Individuals?</apex:outputLabel>                                   
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:inputField value="{!titleReviews[0].OCR_LEP_What_language__c}"/>
+                <apex:outputLabel style="font-weight: bold;">2. If so, what language(s) do they encounter?</apex:outputLabel>                                
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:inputField value="{!titleReviews[0].OCR_LEP_How_does_donee_communicate__c}"/>
+                <apex:outputLabel style="font-weight: bold;">3. If so, how does donee communicate with them?</apex:outputLabel>                                  
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:inputField value="{!titleReviews[0].OCR_LEP_How_to_notify__c}"/>
+                <apex:outputLabel style="font-weight: bold;">4. How does the donee notify LEP population of assistance?</apex:outputLabel>                                   
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:inputField value="{!titleReviews[0].OCR_LEP_Any_costs__c}"/>
+                <apex:outputLabel style="font-weight: bold;">5. What cost(s) were reported to provide LEP assistance? Any cost(s)?:</apex:outputLabel>                                   
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:inputField value="{!titleReviews[0].OCR_504_Any_question_s_or_concern_s__c}"/>
+                <apex:outputLabel style="font-weight: bold;">6. Based on review, any question(s) or concern(s)?:</apex:outputLabel>                                  
+              </apex:pageBlockSectionItem>
+              
+            </apex:pageBlockSection> 
+            
+              <apex:pageBlockSection showHeader="true" title="REVIEW OF 504 INFORMATION" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_504_Data_submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was data submitted regarding 504 compliance?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_504_Any_question_s_or_concern_s__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Based on review of data, any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF TITLE IX INFORMATION" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_Title_IX_Data_submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was data submitted regarding Title IX compliance?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_Title_IX_Any_question_s_or_concern_s__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Based on review of data, any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF MARKETING INFORMATION" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_marketing_Data_Submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was data submitted regarding how the donee markets their services?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_Marketing_Any_question_s_or_concern__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Based on review of data, any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION IV" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_Section_IV_complaint_data_submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was complaint data submitted?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:inputField value="{!titleReviews[0].OCR_Title_IV_any_question_concern__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. If so, does it present any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION V" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">1. How did your organization learn about the program?</apex:outputLabel>
+                        <apex:inputField value="{!titleReviews[0].OCR_V_How_did_you_learn__c}"/>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">2. How does your organization find out about the availability of the property?</apex:outputLabel>
+                        <apex:inputField value="{!titleReviews[0].OCR_Find_out_about_property_availability__c}"/>             
+                  </apex:pageBlockSectionItem>  
+                  
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">3. Any problems obtaining the type of property needed? </apex:outputLabel>
+                        <apex:inputField value="{!titleReviews[0].OCR_Problems_obtaining_the_property__c}"/>             
+                  </apex:pageBlockSectionItem> 
+                  
+                   <apex:pageBlockSectionItem >                                         
+                        <apex:outputLabel style="font-weight: bold;">4. How would you rate the quality of property received through the Federal Surplus
+Property? </apex:outputLabel>             
+                        <apex:inputField value="{!titleReviews[0].OCR_Quality_of_property__c}"/>
+                  </apex:pageBlockSectionItem>                                          
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION VI" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:inputField value="{!titleReviews[0].OCR_VI_Any_information_omitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Any information omitted?</apex:outputLabel>                                 
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                                                                  
+                        <apex:inputField value="{!titleReviews[0].OCR_VI_Are_donee_explanation_acceptable__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Are donee's explanation(s) acceptable?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>  
+
+             </apex:pageBlockSection>
+             
+              <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION VII" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">Estimated amount of time spent completing this compliance submission.</apex:outputLabel>
+                        <apex:inputField value="{!titleReviews[0].OCR_Estimated_amount_of_time_spent__c}"/>             
+                  </apex:pageBlockSectionItem>
+            
+             </apex:pageBlockSection>
+             
+              <apex:pageBlockSection showHeader="true" title="REVIEW RESULTS" columns="1" rendered="{!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">After reviewing the questionnaire, Is this submission in compliance?</apex:outputLabel>
+                        <apex:inputField value="{!titleReviews[0].OCR_REVIEW_RESULTS__c}"/>             
+                  </apex:pageBlockSectionItem>
+                  
+                    <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">Review Notes</apex:outputLabel>
+                        <apex:inputField value="{!titleReviews[0].OCR_Review_Notes__c}"/>             
+                  </apex:pageBlockSectionItem>
+                  
+         
+               
+            
+             </apex:pageBlockSection>
+    
+              
+            
+         <!--  View Section of Title VI Review -->
+         
+         <apex:pageBlockSection showHeader="true" title="REVIEW INFORMATION" columns="2" rendered="{!!isEdit}">
+                        
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Title VI Submission</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Title_VI_Submission__r.Name}"/>             
+              </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem >                                     
+                    <apex:outputLabel style="font-weight: bold;">Title VI Review ID</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].Name}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Reviewer</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Reviewer__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Review Completion Date</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Review_Completion_Date__c}"/>             
+              </apex:pageBlockSectionItem>
+                           
+                           
+         </apex:pageBlockSection>
+         
+         <apex:pageBlockSection showHeader="true" title="DONEE INFORMATION" columns="2" rendered="{!!isEdit}">
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Donee ID</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_ID__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Donee Name</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_Name__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem >                                     
+                    <apex:outputLabel style="font-weight: bold;">Donee Contact</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_Contact__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Donee Address</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Donee_Address__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">Contact Phone</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Contact_Phone__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem >                                     
+                    <apex:outputLabel style="font-weight: bold;">Preparation Date</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_Preparation_Date__c}"/>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                      
+                    <apex:outputLabel style="font-weight: bold;">GSA Region</apex:outputLabel>
+                    <apex:outputField value="{!titleReviews[0].OCR_GSA_Region__c}"/>             
+              </apex:pageBlockSectionItem> 
+         </apex:pageBlockSection>
+         
+            
+         <apex:pageBlockSection showHeader="true" title="CHECKLIST FOR REVIEW OF COMPLIANCE SUBMISSION" columns="1" rendered="{!!isEdit}">
+              <apex:pageBlockSectionItem >                  
+                    <apex:outputField value="{!titleReviews[0].OCR_Complete_name_and_address__c}"/>
+                    <apex:outputLabel style="font-weight: bold;">1. Complete name and address?</apex:outputLabel>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                  
+                    <apex:outputField value="{!titleReviews[0].OCR_Nature_and_type_of_organization__c}"/>
+                    <apex:outputLabel style="font-weight: bold;">2. Nature and type of organization? (see IA and IB)</apex:outputLabel>             
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >                                  
+                    <apex:outputField value="{!titleReviews[0].OCR_IS_chart_completed_for_IIA__c}"/>
+                    <apex:outputLabel style="font-weight: bold;">3. Civil Rights Data:<br/>A. Is chart completed for IIA?</apex:outputLabel>                
+              </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         
+         <apex:pageBlockSection showHeader="true" title="REVIEW OF LEP INFORMATION: (Section II, Questions: B, C, D, E, F, G)" columns="1" rendered="{!!isEdit}">
+              <apex:pageBlockSectionItem >
+                <apex:outputField value="{!titleReviews[0].OCR_LEP_Provide_services__c}"/>
+                <apex:outputLabel style="font-weight: bold;">1. Does the donee provide services to LEP Individuals?</apex:outputLabel>                                   
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:outputField value="{!titleReviews[0].OCR_LEP_What_language__c}"/>
+                <apex:outputLabel style="font-weight: bold;">2. If so, what language(s) do they encounter?</apex:outputLabel>                                
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:outputField value="{!titleReviews[0].OCR_LEP_How_does_donee_communicate__c}"/>
+                <apex:outputLabel style="font-weight: bold;">3. If so, how does donee communicate with them?</apex:outputLabel>                                  
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:outputField value="{!titleReviews[0].OCR_LEP_How_to_notify__c}"/>
+                <apex:outputLabel style="font-weight: bold;">4. How does the donee notify LEP population of assistance?</apex:outputLabel>                                   
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:outputField value="{!titleReviews[0].OCR_LEP_Any_costs__c}"/>
+                <apex:outputLabel style="font-weight: bold;">5. What cost(s) were reported to provide LEP assistance? Any cost(s)?:</apex:outputLabel>                                   
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                <apex:outputField value="{!titleReviews[0].OCR_504_Any_question_s_or_concern_s__c}"/>
+                <apex:outputLabel style="font-weight: bold;">6. Based on review, any question(s) or concern(s)?:</apex:outputLabel>                                  
+              </apex:pageBlockSectionItem>
+              
+          </apex:pageBlockSection>
+              
+              <apex:pageBlockSection showHeader="true" title="REVIEW OF 504 INFORMATION" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_504_Data_submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was data submitted regarding 504 compliance?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_504_Any_question_s_or_concern_s__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Based on review of data, any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF TITLE IX INFORMATION" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_Title_IX_Data_submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was data submitted regarding Title IX compliance?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_Title_IX_Any_question_s_or_concern_s__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Based on review of data, any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF MARKETING INFORMATION" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_marketing_Data_Submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was data submitted regarding how the donee markets their services?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_Marketing_Any_question_s_or_concern__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Based on review of data, any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION IV" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_Section_IV_complaint_data_submitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Was complaint data submitted?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                  
+                        <apex:outputField value="{!titleReviews[0].OCR_Title_IV_any_question_concern__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. If so, does it present any question(s) or concern(s)?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>              
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION V" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">1. How did your organization learn about the program?</apex:outputLabel>
+                        <apex:outputField value="{!titleReviews[0].OCR_V_How_did_you_learn__c}"/>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">2. How does your organization find out about the availability of the property?</apex:outputLabel>
+                        <apex:outputField value="{!titleReviews[0].OCR_Find_out_about_property_availability__c}"/>             
+                  </apex:pageBlockSectionItem>  
+                  
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">3. Any problems obtaining the type of property needed? </apex:outputLabel>
+                        <apex:outputField value="{!titleReviews[0].OCR_Problems_obtaining_the_property__c}"/>             
+                  </apex:pageBlockSectionItem> 
+                  
+                   <apex:pageBlockSectionItem >                                         
+                        <apex:outputLabel style="font-weight: bold;">4. How would you rate the quality of property received through the Federal Surplus
+Property? </apex:outputLabel>             
+                        <apex:outputField value="{!titleReviews[0].OCR_Quality_of_property__c}"/>
+                  </apex:pageBlockSectionItem>                                          
+                 
+             </apex:pageBlockSection>
+             
+             <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION VI" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputField value="{!titleReviews[0].OCR_VI_Any_information_omitted__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">1. Any information omitted?</apex:outputLabel>                                 
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                                                                  
+                        <apex:outputField value="{!titleReviews[0].OCR_VI_Are_donee_explanation_acceptable__c}"/>
+                        <apex:outputLabel style="font-weight: bold;">2. Are donee's explanation(s) acceptable?</apex:outputLabel>             
+                  </apex:pageBlockSectionItem>  
+
+             </apex:pageBlockSection>
+             
+              <apex:pageBlockSection showHeader="true" title="REVIEW OF SECTION VII" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">Estimated amount of time spent completing this compliance submission.</apex:outputLabel>
+                        <apex:outputField value="{!titleReviews[0].OCR_Estimated_amount_of_time_spent__c}"/>             
+                  </apex:pageBlockSectionItem>
+            
+             </apex:pageBlockSection>
+             
+              <apex:pageBlockSection showHeader="true" title="REVIEW RESULTS" columns="1" rendered="{!!isEdit}">
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">After reviewing the questionnaire, Is this submission in compliance?</apex:outputLabel>
+                        <apex:outputField value="{!titleReviews[0].OCR_REVIEW_RESULTS__c}"/>             
+                  </apex:pageBlockSectionItem>
+                  
+                  <apex:pageBlockSectionItem >                                          
+                        <apex:outputLabel style="font-weight: bold;">Review Notes</apex:outputLabel>
+                        <apex:outputField value="{!titleReviews[0].OCR_Review_Notes__c}"/>             
+                  </apex:pageBlockSectionItem>
+            
+             </apex:pageBlockSection>
+     
+       </apex:pageBlock>
+ 
+ </apex:form> 
+ </div>
+ </td>
+ </tr>
+ <tr>
+   <br/>
+ </tr>
+  <tr>
+ </tr>
+ <tr>
+   <td>
+     <div style="height: 300px; overflow: auto;">  
+      <apex:sectionHeader title="Title VI Submission" subtitle="{!titleVISubmission.Name}"/>  
+        <apex:pageBlock id="titleVISubmissionPageBlock">    
+                 <apex:include pageName="TitleVISubmissionViewFormInclude"/>
+      </apex:pageBlock>
+      </div>
+   </td>
+ </tr>
+
+</table>    
+   <!--     <apex:pageBlock >
+   
+         <apex:pageBlockSection columns="1" collapsible="true" title="Title VI Submission">
+
+            <apex:detail subject="{!OCIO_Title_VI_Submission__c.id}" relatedList="true" title="true"/>
+    
+         </apex:pageBlockSection>
+        </apex:pageBlock> 
+    -->
+</apex:page>

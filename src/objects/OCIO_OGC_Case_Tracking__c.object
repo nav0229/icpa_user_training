@@ -1,0 +1,2657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Case Tracking application for the Office of General Counsel.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_OGC_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>OGC Case Trackings</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Affected_Fund__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If using Other GSA Funds, indicate the specific fund in the description field.</inlineHelpText>
+        <label>Affected Fund</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Acquisition Services Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Energy Efficient Vehicles - ARRA (401)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Excess and Surplus Real and Related Personal Property Holding Account Fund (000X)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal Buildings Fund (192)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal Buildings Fund - ARRA (442)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal Citizens Services Fund (105)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Governmentwide Policy (151)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operating Expenses - Property Disposal (142)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Presidential Transition Expenses (108)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Working Capital Fund (262)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other GSA Funds</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Federal Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Inspector General (120)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Affirmative_Claim_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Affirmative Claim Amount</label>
+        <summarizedField>OCIO_OGC_Case_History_Data__c.Affirmative_Claim_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Include_in_Affirmative_Claim__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Activity</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_History_Data__c</fullName>
+        <description>Number of OGC Case History Data records for one OGC Case Tracking record.</description>
+        <externalId>false</externalId>
+        <label>Case History Data</label>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Case_Type_OGC_Case_Tracking__c</fullName>
+        <externalId>false</externalId>
+        <label>Matter Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>APA/OFPP/Declaratory Relief</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bankruptcy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CDA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Condemnation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inverse Condemnation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EEO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EEO (Mixed)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment/WPA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Environmental</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>False Claims/Fraud</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FOIA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FTCA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Individual Grievance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Institutional Grievance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Litigation Matter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Protest</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unfair Labor Practice</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Utility Regulation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client__c</fullName>
+        <externalId>false</externalId>
+        <label>Client</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Public Buildings Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal Acquisition Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Chief of Administrative Services Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Citizen Services and Innovative Technologies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Communications and Marketing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Congressional and Intergovernmental Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Emergency Response and Recovery</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Governmentwide Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Small Business Utilization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Chief Financial Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Chief People Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the General Counsel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office the Chief Information Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Technology Transformation Service</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Closed_Case_History_Data__c</fullName>
+        <description>Number of OGC Case History Data records closed for a parent OGC Case Tracking record.</description>
+        <externalId>false</externalId>
+        <label>Closed Case History Data</label>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Date_Closed_Case_History_Data__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Architect/Engineer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Construction (New)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Construction (R&amp;A)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Information Technology (Supply/Service)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lease (Personal Property)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lease (Real Property)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Real Property Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sale (Personal Property)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sale (Real Property)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Services (Non-IT/Real Prop)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Service (Real Property)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Supply (Non-IT)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Telecommunications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Travel/Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Utilities (Non-Telecom)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Corrective_Action_Protest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Corrective Action (Protest)</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Current_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Date_Closed__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Closed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Filed__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Opened</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description_OGC_Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Est_Just_Compensation_Condemnation__c</fullName>
+        <externalId>false</externalId>
+        <label>Est. Just Compensation (Condemnation)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Attorney_Fees__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Attorney Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Claim_Amount_Rollup__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Claim Amount</label>
+        <summarizedField>OCIO_OGC_Case_History_Data__c.Claim_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Include_in_Total_Amount_Claimed__c</field>
+            <operation>equals</operation>
+            <value>true</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Claim_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Claim Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_High__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Loss_Amount_Rollup__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Loss Amount</label>
+        <summarizedField>OCIO_OGC_Case_History_Data__c.Loss_Amount__c</summarizedField>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Low__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Total_Interest_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Total Interest Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTCA_Case__c</fullName>
+        <externalId>false</externalId>
+        <label>FTCA Claim Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Case_Type_OGC_Case_Tracking__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Motor Vehicle</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Premises Liability</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>FTCA</controllingFieldValue>
+                <valueName>Motor Vehicle</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FTCA</controllingFieldValue>
+                <valueName>Premises Liability</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FTCA</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>File_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>File ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_Loss_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Loss Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Final_Recovery_Amount_Rollup__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Recovery Amount</label>
+        <summarizedField>OCIO_OGC_Case_History_Data__c.Recovery_Amount__c</summarizedField>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Interest_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Link_to_Matter_File__c</fullName>
+        <externalId>false</externalId>
+        <label>Link to Matter File</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Loss_Contigency_Characterization__c</fullName>
+        <externalId>false</externalId>
+        <label>Loss Contingency Characterization</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Probable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reasonably Possible</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Remote</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Management_Response__c</fullName>
+        <externalId>false</externalId>
+        <label>Management Response</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Attempt Settlement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Defend Vigorously</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Matter_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Matter ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NRE_Estimated_Loss__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>NRE- Loss cannot be reasonably estimated</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Name_of_Other_Federal_Agency_Li__c</fullName>
+        <externalId>false</externalId>
+        <label>Name of Other Federal Agency Liable</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Claim_Amount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>No Claim Amount</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Originating_Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Originating Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NCR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Paid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Paid</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Date__c</fullName>
+        <description>Payment Date field</description>
+        <externalId>false</externalId>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Personnel_Case_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Personnel Matter Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EEO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EEO (Mixed)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment/ WPA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Individual Grievance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Institutional Grievance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Litigation Matter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unfair Labor Practice</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Civil Rights</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Civil Rights (Mixed)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Labor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Procurement_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use estimated value, if actual is unknown.</inlineHelpText>
+        <label>Procurement Amount (Protest)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reimbursable_Judgment_Fund__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If GSA will have to reimburse the Judgment Fund, check this box.</inlineHelpText>
+        <label>Reimbursable Judgment Fund</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Remarks_OGC_Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Schedule_Purchase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Schedule Purchase</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status_OGC_Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>To_be_paid_by_Judgment_Fund__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>To be Paid by Judgment Fund</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_Estimated_Potential_Claims__c</fullName>
+        <description>Per task #18180 - OK to delete after 1/15/16 if not issues arise</description>
+        <externalId>false</externalId>
+        <formula>Estimated_Claim_Amount_Rollup__c  +  Estimated_Total_Interest_Amount__c  +  Estimated_Attorney_Fees__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Estimated Exposure</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Open_Claims_Exposure__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Open_Estimated_Attorney_Fees__c + Total_Open_Estimated_Interest_Amount__c + Total_Open_Claims__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Open Claims Exposure</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Open_Claims__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Open Claims</label>
+        <summarizedField>OCIO_OGC_Case_History_Data__c.Claim_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Include_in_Total_Amount_Claimed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Open_Estimated_Attorney_Fees__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Open Est. Attorney Fees</label>
+        <summarizedField>OCIO_OGC_Case_History_Data__c.Estimated_Attorney_Fees__c</summarizedField>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Include_in_Total_Amount_Claimed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Open_Estimated_Interest_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Open Est. Interest Amount</label>
+        <summarizedField>OCIO_OGC_Case_History_Data__c.Estimated_Total_Interest_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>OCIO_OGC_Case_History_Data__c.Include_in_Total_Amount_Claimed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OCIO_OGC_Case_History_Data__c.OGC_Matter_Title_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>OGC Case Tracking</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Client__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Closed_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Client__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status_OGC_Case__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </filters>
+        <label>All Closed Matter</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Non_Personnel_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>File_ID__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>OCIO_OGC_Case_Tracking__c.OGC_Case_Non_Personnel_Case</value>
+        </filters>
+        <label>All Non-Personnel Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Open_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Client__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status_OGC_Case__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>All Open Matter</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Personnel_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>OCIO_OGC_Case_Tracking__c.OGC_Case_Personnel_Case</value>
+        </filters>
+        <label>All Personnel Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_10_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </filters>
+        <label>All Region 10 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_1_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Region 1 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_2_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </filters>
+        <label>All Region 2 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_3_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </filters>
+        <label>All Region 3 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_4_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>4</value>
+        </filters>
+        <label>All Region 4 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_5_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>5</value>
+        </filters>
+        <label>All Region 5 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_6_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>6</value>
+        </filters>
+        <label>All Region 6 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_7_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>7</value>
+        </filters>
+        <label>All Region 7 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_8_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>8</value>
+        </filters>
+        <label>All Region 8 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_9_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>9</value>
+        </filters>
+        <label>All Region 9 Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_C_O_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>CO</value>
+        </filters>
+        <label>All Region C.O. Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Region_NCR_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Account_OGC_Case__c</columns>
+        <columns>Client__c</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Personnel_Case_Type__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>Originating_Region__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Originating_Region__c</field>
+            <operation>equals</operation>
+            <value>NCR</value>
+        </filters>
+        <label>All Region NCR Matter</label>
+        <sharedTo>
+            <group>OGC_Case_Tracking_Non_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_CO_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_NCR_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg10_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg1_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg2_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg3_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg4_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg5_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg6_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg7_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg8_Users</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Mgrs</group>
+            <group>OGC_Case_Tracking_Pers_Cases_Reg9_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Closed_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Contract_Number__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status_OGC_Case__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </filters>
+        <label>My Closed Matter</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Matter</fullName>
+        <columns>NAME</columns>
+        <columns>Case_Type_OGC_Case_Tracking__c</columns>
+        <columns>Status_OGC_Case__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status_OGC_Case__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>My Open Matter</label>
+    </listViews>
+    <nameField>
+        <label>OGC Matter Title/Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>OGC Case Tracking</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>OGC_Case_Non_Personnel_Case</fullName>
+        <active>true</active>
+        <description>This record type is used to track information on non-personnel matter cases.</description>
+        <label>Non-Personnel Case</label>
+        <picklistValues>
+            <picklist>Affected_Fund__c</picklist>
+            <values>
+                <fullName>Acquisition Services Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Efficient Vehicles - ARRA %28401%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excess and Surplus Real and Related Personal Property Holding Account Fund %28000X%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Buildings Fund %28192%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Buildings Fund - ARRA %28442%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Citizens Services Fund %28105%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Governmentwide Policy %28151%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Inspector General %28120%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Expenses - Property Disposal %28142%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Federal Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other GSA Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presidential Transition Expenses %28108%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working Capital Fund %28262%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Type_OGC_Case_Tracking__c</picklist>
+            <values>
+                <fullName>APA%2FOFPP%2FDeclaratory Relief</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CDA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Condemnation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FTCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>False Claims%2FFraud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inverse Condemnation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Litigation Matter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility Regulation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Client__c</picklist>
+            <values>
+                <fullName>Federal Acquisition Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Chief of Administrative Services Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Citizen Services and Innovative Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Civil Rights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Communications and Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Congressional and Intergovernmental Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Emergency Response and Recovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Governmentwide Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Small Business Utilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the Chief People Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office the Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Buildings Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Transformation Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Category__c</picklist>
+            <values>
+                <fullName>Architect%2FEngineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction %28New%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction %28R%26A%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Technology %28Supply%2FService%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease %28Personal Property%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease %28Real Property%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Property Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale %28Personal Property%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale %28Real Property%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service %28Real Property%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services %28Non-IT%2FReal Prop%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply %28Non-IT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel%2FTransportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities %28Non-Telecom%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FTCA_Case__c</picklist>
+            <values>
+                <fullName>Motor Vehicle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premises Liability</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Contigency_Characterization__c</picklist>
+            <values>
+                <fullName>Probable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reasonably Possible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Management_Response__c</picklist>
+            <values>
+                <fullName>Attempt Settlement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defend Vigorously</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Originating_Region__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Personnel_Case_Type__c</picklist>
+            <values>
+                <fullName>EEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEO %28Mixed%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment%2F WPA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_OGC_Case__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OGC_Case_Personnel_Case</fullName>
+        <active>true</active>
+        <description>This record type is used to track information for personnel OGC cases.</description>
+        <label>Personnel Case</label>
+        <picklistValues>
+            <picklist>Affected_Fund__c</picklist>
+            <values>
+                <fullName>Acquisition Services Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Efficient Vehicles - ARRA %28401%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excess and Surplus Real and Related Personal Property Holding Account Fund %28000X%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Buildings Fund %28192%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Buildings Fund - ARRA %28442%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Citizens Services Fund %28105%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Governmentwide Policy %28151%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Inspector General %28120%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operating Expenses - Property Disposal %28142%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Federal Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other GSA Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presidential Transition Expenses %28108%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working Capital Fund %28262%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Type_OGC_Case_Tracking__c</picklist>
+            <values>
+                <fullName>EEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEO %28Mixed%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment%2FWPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Grievance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional Grievance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Litigation Matter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unfair Labor Practice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Client__c</picklist>
+            <values>
+                <fullName>Federal Acquisition Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Chief of Administrative Services Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Citizen Services and Innovative Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Civil Rights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Communications and Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Congressional and Intergovernmental Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Emergency Response and Recovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Governmentwide Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of Small Business Utilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the Chief People Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office of the General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office the Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Buildings Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Transformation Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Category__c</picklist>
+            <values>
+                <fullName>Construction %28R%26A%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Property Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale %28Personal Property%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale %28Real Property%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FTCA_Case__c</picklist>
+            <values>
+                <fullName>Motor Vehicle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premises Liability</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Contigency_Characterization__c</picklist>
+            <values>
+                <fullName>Probable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reasonably Possible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Management_Response__c</picklist>
+            <values>
+                <fullName>Attempt Settlement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defend Vigorously</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Originating_Region__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Personnel_Case_Type__c</picklist>
+            <values>
+                <fullName>EEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EEO %28Mixed%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment%2F WPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Grievance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional Grievance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Litigation Matter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unfair Labor Practice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_OGC_Case__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Case_Type_OGC_Case_Tracking__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Client__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_OGC_Case__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Case_Type_OGC_Case_Tracking__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Client__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_OGC_Case__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.ALIAS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Case_Type_OGC_Case_Tracking__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Client__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status_OGC_Case__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OWNER.ALIAS</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Case_Type_OGC_Case_Tracking__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Client__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status_OGC_Case__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Blank_Name_of_Other_Federal_Agency</fullName>
+        <active>true</active>
+        <description>Name of the Other Agency Liable must be blank if &quot;Other Federal Agency&quot; is not selected from Affected Fund.</description>
+        <errorConditionFormula>AND (NOT( ISPICKVAL(Affected_Fund__c , &quot;Other Federal Agency&quot;)), NOT( ISBLANK(Name_of_Other_Federal_Agency_Li__c )))</errorConditionFormula>
+        <errorMessage>Name of the Other Agency Liable must be blank if &quot;Other Federal Agency&quot; is not selected from Affected Fund.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_if_all_forums_are_closed</fullName>
+        <active>true</active>
+        <description>Check to see if all forums are closed when a Matter is closed. If yes, then close the matter record. If no, throw error that all Forums need to be closed prior to closing the matter</description>
+        <errorConditionFormula>AND( ISPICKVAL(Status_OGC_Case__c, &quot;Closed&quot;), Case_History_Data__c  &lt;&gt;  Closed_Case_History_Data__c )</errorConditionFormula>
+        <errorMessage>All forums need to be closed before this matter can be closed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Estimated_Claim_Amount_greater_than_zero</fullName>
+        <active>false</active>
+        <description>If no claim amount is blank.</description>
+        <errorConditionFormula>AND(NOT( No_Claim_Amount__c ), OR((ISNULL(Estimated_Claim_Amount__c )), Estimated_Claim_Amount__c =0))</errorConditionFormula>
+        <errorMessage>An Estimated Claim Amount must be entered or you must identify No Claim Amount.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Estimated_Low_less_than_Estimated_High</fullName>
+        <active>true</active>
+        <description>Estimated Low cannot be greater than Estimated High</description>
+        <errorConditionFormula>Estimated_Low__c &gt;  Estimated_High__c</errorConditionFormula>
+        <errorMessage>Estimated Low cannot be greater than Estimated High.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Future_Payment_Date_not_allowed</fullName>
+        <active>true</active>
+        <description>Payment date cannot be in the future. Ex: If the record is updated in November 2011, the value cannot be December 2011.</description>
+        <errorConditionFormula>Payment_Date__c &gt; TODAY()</errorConditionFormula>
+        <errorMessage>Payment date cannot be in the future.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoClaimAmount_or_EstimatedClaimAmount</fullName>
+        <active>false</active>
+        <description>If the no claim amount checkbox is selected, there shouldn&apos;t be a value in estimated claim amount</description>
+        <errorConditionFormula>AND( No_Claim_Amount__c, Estimated_Claim_Amount__c &lt;&gt;0)</errorConditionFormula>
+        <errorMessage>Estimated Claim Value must be zero if &apos;No Claim amount&apos; is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Negative_Estimated_Attorney_Fees</fullName>
+        <active>true</active>
+        <description>Negative Estimated Attorney Fees is not allowed.</description>
+        <errorConditionFormula>Estimated_Attorney_Fees__c &lt; 0</errorConditionFormula>
+        <errorMessage>Negative Estimated Attorney Fees is not allowed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Negative_Estimated_Cliam_Amount</fullName>
+        <active>true</active>
+        <description>Negative Estimated Claim Amount is allowed.</description>
+        <errorConditionFormula>Estimated_Claim_Amount__c &lt; 0</errorConditionFormula>
+        <errorMessage>Estimated Claim Amount cannot be negative.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Negative_Estimated_High</fullName>
+        <active>true</active>
+        <description>Negative Estimated High value is not allowed</description>
+        <errorConditionFormula>Estimated_High__c &lt; 0</errorConditionFormula>
+        <errorMessage>Estimated High cannot be negative.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Negative_Estimated_Low</fullName>
+        <active>true</active>
+        <description>Negative Estimated Low is not allowed</description>
+        <errorConditionFormula>Estimated_Low__c &lt; 0</errorConditionFormula>
+        <errorMessage>Estimated Low cannot be negative.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Negative_Estimated_Total_Interest</fullName>
+        <active>true</active>
+        <description>Negative Estimated Total Interest cannot be negative.</description>
+        <errorConditionFormula>Estimated_Total_Interest_Amount__c &lt; 0</errorConditionFormula>
+        <errorMessage>Estimated Total Interest Amount cannot be negative.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Negative_Final_Loss_Amount</fullName>
+        <active>true</active>
+        <description>Negative Final Loss Amount is not allowed</description>
+        <errorConditionFormula>Final_Loss_Amount__c &lt; 0</errorConditionFormula>
+        <errorMessage>Negative Final Loss Amount cannot be negative.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_claim_amount_and_affirmative_claim</fullName>
+        <active>false</active>
+        <description>Should not both be selected.</description>
+        <errorConditionFormula>AND(Affirmative_Claim__c,No_Claim_Amount__c)</errorConditionFormula>
+        <errorMessage>&apos;Affirmative Claim&apos; and &apos;No Claim Amount&apos; cannot both be selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OGC_CaseTracking_Matter_DateClosed</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Status_OGC_Case__c, &quot;Closed&quot;) ,  ISNULL(Date_Closed__c ))||
+AND(ISPICKVAL(Status_OGC_Case__c, &quot;Open&quot;) ,  NOT(ISNULL(Date_Closed__c )))</errorConditionFormula>
+        <errorDisplayField>Date_Closed__c</errorDisplayField>
+        <errorMessage>If status is &quot;Closed&quot; then enter the Date Closed, or if status is &quot;Open&quot; then leave this field blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Name_of_Other_Federal_Agency</fullName>
+        <active>true</active>
+        <description>You must enter the Name of the Other Agency Liable if &quot;Other Federal Agency&quot; is selected from Affected Fund.</description>
+        <errorConditionFormula>AND( ISPICKVAL(Affected_Fund__c , &quot;Other Federal Agency&quot;),ISBLANK( Name_of_Other_Federal_Agency_Li__c ))</errorConditionFormula>
+        <errorMessage>You must enter the Name of the Other Agency Liable if &quot;Other Federal Agency&quot; is selected from Affected Fund.</errorMessage>
+    </validationRules>
+</CustomObject>
