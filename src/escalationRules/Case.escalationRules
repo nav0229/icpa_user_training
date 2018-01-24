@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <escalationRule>
+        <fullName>Request Escalation Rule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <businessHoursSource>None</businessHoursSource>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Closing Document</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.No_of_Invalid_Documents__c</field>
+                <operation>greaterThan</operation>
+                <value>0</value>
+            </criteriaItems>
+            <escalationAction>
+                <assignedTo>Document_Verification_Queue</assignedTo>
+                <assignedToType>Queue</assignedToType>
+                <minutesToEscalation>30</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+            </escalationAction>
+            <escalationStartTime>CaseLastModified</escalationStartTime>
+        </ruleEntry>
+    </escalationRule>
+</EscalationRules>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Loan Condition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Loan Conditions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Loan Conditions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Generated Type --></label>
+        <name>Generated_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Condition Code --></label>
+        <name>Loan_Condition_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Condition Description --></label>
+        <name>Loan_Condition_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Condition Type --></label>
+        <name>Loan_Condition_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan --></label>
+        <name>Loan__c</name>
+        <relationshipLabel><!-- Loan Conditions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Loan Condition --></label>
+        <name>Master_Checklist__c</name>
+        <relationshipLabel><!-- Loan Conditions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Property --></label>
+        <name>Property__c</name>
+        <relationshipLabel><!-- Loan Conditions --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Loan Condition Checklist Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot edit Loan Conditions that have been assigned automatically to the Application --></errorMessage>
+        <name>Manual_Loan_Conditions</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A manually created Loan Condition must be marked as Active on creation. --></errorMessage>
+        <name>New_Manual_Loan_Conditions_Active</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For Property Loan Conditions, you must have a Property associated to the record --></errorMessage>
+        <name>Property_Loan_Condition</name>
+    </validationRules>
+</CustomObjectTranslation>

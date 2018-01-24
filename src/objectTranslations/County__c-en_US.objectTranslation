@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>County</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Counties</value>
+    </caseValues>
+    <fields>
+        <help><!-- Associates the County record to the corresponding Disaster Declaration Record --></help>
+        <label><!-- Disaster Declaration --></label>
+        <name>Disaster_Declaration__c</name>
+        <relationshipLabel><!-- Counties --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Links the County object to the relevant State / Territory parent record --></help>
+        <label><!-- State / Territory --></label>
+        <name>State_Territory__c</name>
+        <relationshipLabel><!-- Counties --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Disaster__c.Disaster_Type__c</field>
+    </columns>
+    <columns>
+        <field>Disaster__c.FEMA_Disaster_Number__c</field>
+    </columns>
+    <columns>
+        <field>Disaster__c.Interest_Rates__c</field>
+    </columns>
+    <columns>
+        <field>Disaster__c.High_Interest_Rate__c</field>
+    </columns>
+    <columns>
+        <field>Disaster__c.Low_Interest_Rate__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>List of All Disasters</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Disaster__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

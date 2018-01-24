@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Real Estate (Repair/Replace)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Real Estate (Other)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motor Vehicle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refinancing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Repay IHP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mitigation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interim Financing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contractor\&apos;s Malfeasance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom - Re</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom - Contents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disbursed_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Disbursed Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Disbursement__c</fullName>
+        <externalId>false</externalId>
+        <label>Disbursement</label>
+        <referenceTo>Disbursement__c</referenceTo>
+        <relationshipLabel>Disbursement Line Items</relationshipLabel>
+        <relationshipName>Disbursement_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Disbursement Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Disbursement Line Item Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Disbursement Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Disbursements_Greater_than_Total_Amount</fullName>
+        <active>true</active>
+        <description>If the Disbursed Amount across all disbursement line items(there will be multiple disbursement line items for a category across multiple disbursements for a Loan) for a given category is &gt; Total Category Amount(on the Loan record) throw an error</description>
+        <errorConditionFormula>OR(
+ IF(AND(ISPICKVAL(Category__c, &apos;Contents&apos;), (Disbursement__r.Loan__r.Balance_Contents__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Real Estate (Repair/Replace)&apos;), (Disbursement__r.Loan__r.Balance_Real_Estate_Repair__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Motor Vehicle&apos;), (Disbursement__r.Loan__r.Balance_Motor_Vehicle__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Real Estate (Other)&apos;), (Disbursement__r.Loan__r.Balance_Real_Estate_Other__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0 ) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Repay IHP&apos;), (Disbursement__r.Loan__r.Balance_Repay_IHP__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Refinancing&apos;), (Disbursement__r.Loan__r.Balance_Refinancing__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Mitigation&apos;), (Disbursement__r.Loan__r.Balance_Mitigation__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Contractor\&apos;s Malfeasance&apos;), (Disbursement__r.Loan__r.Balance_Contractor_Malfeasance__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Interim Financing&apos;), (Disbursement__r.Loan__r.Balance_Interim_Financing__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Custom - Re&apos;), (Disbursement__r.Loan__r.Balance_Custom_RE__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false),
+ IF(AND(ISPICKVAL(Category__c, &apos;Custom - Contents&apos;), (Disbursement__r.Loan__r.Balance_Custom_Contents__c + PRIORVALUE(Disbursed_Amount__c )) - Disbursed_Amount__c &lt; 0) , true, false))</errorConditionFormula>
+        <errorDisplayField>Disbursed_Amount__c</errorDisplayField>
+        <errorMessage>Total amount disbursed cannot be greater than Maximum eligible amount</errorMessage>
+    </validationRules>
+</CustomObject>

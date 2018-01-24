@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Receipt &amp; Document</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Receipts &amp; Documents</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Date --></label>
+        <name>Document_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comment to explain why a reciept is only partially eligible. --></help>
+        <label><!-- Eligible Receipt Amount Comment --></label>
+        <name>Eligible_Receipt_Amount_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Partial amount of a reciept that is eligible.  Must be more than $0 and less than the full receipt amount. --></help>
+        <label><!-- Eligible Receipt Amount --></label>
+        <name>Eligible_Receipt_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Eligible Receipt? --></label>
+        <name>Eligible_Receipt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Eligible? --></label>
+        <name>Eligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice # --></label>
+        <name>Invoice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item --></label>
+        <name>Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan --></label>
+        <name>Loan__c</name>
+        <relationshipLabel><!-- Receipts &amp; Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Property --></label>
+        <name>Property__c</name>
+        <relationshipLabel><!-- Receipts &amp; Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Date --></label>
+        <name>Receipt_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receipt ID --></label>
+        <name>Receipt_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use of Proceeds --></label>
+        <name>Use_of_Proceeds__c</name>
+        <picklistValues>
+            <masterLabel>Furniture &amp; Fixtures</masterLabel>
+            <translation><!-- Furniture &amp; Fixtures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory</masterLabel>
+            <translation><!-- Inventory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Machinery &amp; Equipment</masterLabel>
+            <translation><!-- Machinery &amp; Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitigation</masterLabel>
+            <translation><!-- Mitigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Property</masterLabel>
+            <translation><!-- Personal Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicles</masterLabel>
+            <translation><!-- Vehicles --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>Vendor__c</name>
+    </fields>
+    <layouts>
+        <layout>Receipt Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

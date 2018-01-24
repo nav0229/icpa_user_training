@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CreatedDate</field>
+    </columns>
+    <columns>
+        <field>SubmittedBy</field>
+    </columns>
+    <columns>
+        <field>TargetEntity</field>
+    </columns>
+    <columns>
+        <field>OriginalActor</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ProcessName</column>
+            <operator>equals</operator>
+            <value>Application Approval Team Lead Review</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ProcessName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Applications awaiting Team Lead Approval</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AllPendingWorkitems</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

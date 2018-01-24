@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Disbursement Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Disbursement Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Contents</masterLabel>
+            <translation><!-- Contents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor\&apos;s Malfeasance</masterLabel>
+            <translation><!-- Contractor\&apos;s Malfeasance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom - Contents</masterLabel>
+            <translation><!-- Custom - Contents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom - Re</masterLabel>
+            <translation><!-- Custom - Re --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interim Financing</masterLabel>
+            <translation><!-- Interim Financing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitigation</masterLabel>
+            <translation><!-- Mitigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motor Vehicle</masterLabel>
+            <translation><!-- Motor Vehicle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate (Other)</masterLabel>
+            <translation><!-- Real Estate (Other) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate (Repair/Replace)</masterLabel>
+            <translation><!-- Real Estate (Repair/Replace) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refinancing</masterLabel>
+            <translation><!-- Refinancing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repay IHP</masterLabel>
+            <translation><!-- Repay IHP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount --></label>
+        <name>Disbursed_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursement --></label>
+        <name>Disbursement__c</name>
+        <relationshipLabel><!-- Disbursement Line Items --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Disbursement Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Total amount disbursed cannot be greater than Maximum eligible amount --></errorMessage>
+        <name>Disbursements_Greater_than_Total_Amount</name>
+    </validationRules>
+</CustomObjectTranslation>

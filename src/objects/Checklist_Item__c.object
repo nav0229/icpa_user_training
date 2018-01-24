@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Checklist_Item_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Applicant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Applicant</label>
+        <referenceTo>Applicant__c</referenceTo>
+        <relationshipLabel>Checklist Items</relationshipLabel>
+        <relationshipName>Checklist_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Checklist Items</relationshipLabel>
+        <relationshipName>Checklist_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Borrower_s_Signature_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox indicates that borrower needs to sign and return the attached document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checkbox indicates that borrower needs to sign and return the attached document</inlineHelpText>
+        <label>Borrower&apos;s Signature Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Number</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Checklist Items</relationshipLabel>
+        <relationshipName>Checklist_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Checklist_Item_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Deadline_to_Submit_Documents__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Checklist Item Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Checklist_Item_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Checklist Item Status</label>
+        <picklist>
+            <controllingField>Type__c</controllingField>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>false</default>
+                <controllingFieldValues>Document Gathering</controllingFieldValues>
+                <controllingFieldValues>Interface</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+                <controllingFieldValues>Document Gathering</controllingFieldValues>
+                <controllingFieldValues>Interface</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valid</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+                <controllingFieldValues>Document Gathering</controllingFieldValues>
+                <controllingFieldValues>Interface</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invalid</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+                <controllingFieldValues>Document Gathering</controllingFieldValues>
+                <controllingFieldValues>Interface</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Failed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Document Gathering</controllingFieldValues>
+                <controllingFieldValues>Interface</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Borrower&apos;s Verification</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Case Manager Review</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finalized</fullName>
+                <default>false</default>
+                <controllingFieldValues>Closing Documents</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Available</fullName>
+                <default>false</default>
+                <controllingFieldValues>System Generated</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Checklist_Item_Text__c</fullName>
+        <description>Populated from related Master Checklist Document Description field</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Checklist Item Text</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Drawloop_Next__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Drawloop Next</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Generate_Document__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates to generate drawloop document when checked</description>
+        <externalId>false</externalId>
+        <label>Generate Document</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Invalid_Reason_Code__c</fullName>
+        <description>Reason why checklist item submitted by applicant is Invalid</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reason why checklist item submitted by applicant is Invalid</inlineHelpText>
+        <label>Invalid Reason Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Document is illegible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong Document</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incomplete Document</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outdated Document</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Action_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Last Action Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Condition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan Condition</label>
+        <referenceTo>Loan_Condition_Checklist__c</referenceTo>
+        <relationshipLabel>Checklist Items</relationshipLabel>
+        <relationshipName>Checklist_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan</label>
+        <referenceTo>Loan__c</referenceTo>
+        <relationshipLabel>Closing Checklist</relationshipLabel>
+        <relationshipName>Checklist_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Master_Checklist__c</fullName>
+        <externalId>false</externalId>
+        <label>Master Checklist</label>
+        <referenceTo>Master_Checklist__c</referenceTo>
+        <relationshipLabel>Checklist Items</relationshipLabel>
+        <relationshipName>Checklist_Items</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Other_Reason_Code_Description__c</fullName>
+        <description>Field is required when App Processing checklist item = Invalid AND Invalid Reason code = Other OR Closing Document Checklist Item = Invalid</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Please provide details for marking the document Invalid</inlineHelpText>
+        <label>Invalid Reason Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Property__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Property</label>
+        <referenceTo>Property__c</referenceTo>
+        <relationshipLabel>Checklist Items</relationshipLabel>
+        <relationshipName>Checklist_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Field indicates what type of item is needed, e.g., documents during the application process stage vs. closing documents during the closing stage</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Document Gathering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closing Documents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interface</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commitment Documents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Generated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Verified_By__c</fullName>
+        <description>Field indicates the user that verified the checklist item by changing the status to Valid/Invalid and adding the Invalid Reason Description</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>User that verified this checklist item by changing the status to Valid/Invalid and adding the Invalid Reason Description</inlineHelpText>
+        <label>Verified By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Verified_Date__c</fullName>
+        <description>Date when Checklist Item Status is changed to Valid</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Date indicates when the checklist item was marked as Valid</inlineHelpText>
+        <label>Verified Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Checklist Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Drawloop_Next__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Checklist Item Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Checklist Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Invalid_Reason_Code</fullName>
+        <active>true</active>
+        <description>Validation rule ensure that a Invalid Reason Code is entered when the Checklist Item Status is set to Invalid</description>
+        <errorConditionFormula>ISPICKVAL( Checklist_Item_Status__c , &quot;Invalid&quot;) &amp;&amp; ISPICKVAL( Invalid_Reason_Code__c,&quot;&quot;) &amp;&amp; ISPICKVAL(  Type__c , &quot;Document Gathering&quot;)</errorConditionFormula>
+        <errorDisplayField>Invalid_Reason_Code__c</errorDisplayField>
+        <errorMessage>You must enter an Invalid Reason Code for Documents labeled Invalid</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Invalid_Reason_Description</fullName>
+        <active>true</active>
+        <description>If Invalid Reason Code = Other, then a description must be provided</description>
+        <errorConditionFormula>(ISPICKVAL( Invalid_Reason_Code__c , &quot;Other&quot;) &amp;&amp; ISBLANK(  Other_Reason_Code_Description__c)&amp;&amp;  ISPICKVAL( Type__c , &quot;Document Gathering&quot;) )
+
+|| 
+
+(ISPICKVAL( Checklist_Item_Status__c , &quot;Invalid&quot;) &amp;&amp;  ISPICKVAL( Type__c , &quot;Closing Documents&quot;)&amp;&amp; ISBLANK(  Other_Reason_Code_Description__c))</errorConditionFormula>
+        <errorDisplayField>Other_Reason_Code_Description__c</errorDisplayField>
+        <errorMessage>You must enter an Invalid Reason Description for Documents labeled Invalid</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Run_DDP</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Run Document Package</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__looplus?eid={!Checklist_Item__c.Id}</url>
+    </webLinks>
+</CustomObject>

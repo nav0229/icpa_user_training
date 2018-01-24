@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Loan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Loans</value>
+    </caseValues>
+    <fields>
+        <label><!-- Age in Commitments --></label>
+        <name>Age_in_Commitments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Application to this Loan --></help>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Loans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approval Type --></label>
+        <name>Approval_Type__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L</masterLabel>
+            <translation><!-- L --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Loans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Balance - Contents --></label>
+        <name>Balance_Contents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Contractor Malfeasance --></label>
+        <name>Balance_Contractor_Malfeasance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Custom - Contents --></label>
+        <name>Balance_Custom_Contents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Custom - RE --></label>
+        <name>Balance_Custom_RE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Interim Financing --></label>
+        <name>Balance_Interim_Financing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Mitigation --></label>
+        <name>Balance_Mitigation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Motor Vehicle --></label>
+        <name>Balance_Motor_Vehicle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Real Estate (Other) --></label>
+        <name>Balance_Real_Estate_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Real Estate Repair --></label>
+        <name>Balance_Real_Estate_Repair__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Refinancing --></label>
+        <name>Balance_Refinancing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance - Repay IHP --></label>
+        <name>Balance_Repay_IHP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Borrower Name --></label>
+        <name>Borrower_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Companion Loan --></label>
+        <name>Companion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Assigned to Commitment Team Member --></label>
+        <name>Date_Assigned_to_Commitment_Team_Member__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Assigned to Queue --></label>
+        <name>Date_Assigned_to_Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time -Commitment Letter Generated --></label>
+        <name>Date_Time_Commitment_Letter_Generated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date assigned to Legal Manager Queue --></label>
+        <name>Date_assigned_to_Case_Manager_Queue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default= Date/Time (Commitment Letter Generated ) + 21 days --></help>
+        <label><!-- Return Deadline Date --></label>
+        <name>Deadline_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Disaster Declaration related to the Loan record --></help>
+        <label><!-- Disaster Declaration --></label>
+        <name>Disaster_Declaration__c</name>
+        <relationshipLabel><!-- Loans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Contents --></label>
+        <name>Disbursed_Amount_Contents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Custom - Contents --></label>
+        <name>Disbursed_Amount_Custom_Contents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Custom - RE --></label>
+        <name>Disbursed_Amount_Custom_RE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Interim Financing --></label>
+        <name>Disbursed_Amount_Interim_Financing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Mitigation --></label>
+        <name>Disbursed_Amount_Mitigation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Motor Vehicle --></label>
+        <name>Disbursed_Amount_Motor_Vehicle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Real Estate (Other) --></label>
+        <name>Disbursed_Amount_Real_Estate_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Real Estate Repair --></label>
+        <name>Disbursed_Amount_Real_Estate_Repair__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Refinancing --></label>
+        <name>Disbursed_Amount_Refinancing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amount - Repay IHP --></label>
+        <name>Disbursed_Amount_Repay_IHP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disbursed Amt - Contractor Malfeasance --></label>
+        <name>Disbursed_Amt_Contractor_Malfeasance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate with EIDL Unsecure Limit (Number) --></help>
+        <label><!-- EIDL Unsecured Limit --></label>
+        <name>EIDL_Unsecured_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- ETRAN Loan Number --></label>
+        <name>ETRAN_Loan_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initiate Disbursement --></label>
+        <name>Initiate_Disbursement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate with Value in the following format: #.### --></help>
+        <label><!-- Interest Rate --></label>
+        <name>Interest_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate with Issued Note Date, if it exists --></help>
+        <label><!-- Issued Note Date --></label>
+        <name>Issued_Note_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Amount --></label>
+        <name>Loan_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Modification --></label>
+        <name>Loan_Modification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Type --></label>
+        <name>Loan_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E</masterLabel>
+            <translation><!-- E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M</masterLabel>
+            <translation><!-- M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R</masterLabel>
+            <translation><!-- R --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Logged in User --></label>
+        <name>Logged_in_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maturity Date --></label>
+        <name>Maturity_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Months Deferred --></label>
+        <name>Months_Deferred__c</name>
+    </fields>
+    <fields>
+        <label><!-- My Team Owned --></label>
+        <name>My_Team_Owned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Zero Categories --></label>
+        <name>Non_Zero_Categories__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate with Disbursement Note Date, if it exists --></help>
+        <label><!-- Note Date --></label>
+        <name>Note_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Obligated Date --></label>
+        <name>Obligated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- FEMA DOB ReRun Results --></label>
+        <name>Other_Assistance_ReRun_Results__c</name>
+        <picklistValues>
+            <masterLabel>Error on ReRun of Interface</masterLabel>
+            <translation><!-- Error on ReRun of Interface --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issues Found</masterLabel>
+            <translation><!-- Issues Found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for disbursement</masterLabel>
+            <translation><!-- Ready for disbursement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Amount --></label>
+        <name>Payment_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Frequency --></label>
+        <name>Payment_Frequency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate with Physical Unsecure Limit (Number) --></help>
+        <label><!-- Phys Unsecured Limit --></label>
+        <name>Phys_Unsecured_Limit__c</name>
+    </fields>
+    <fields>
+        <help><!-- All documents received, proceed to &apos;Closing&apos; --></help>
+        <label><!-- Proceed To --></label>
+        <name>Proceed_To__c</name>
+        <picklistValues>
+            <masterLabel>Closing</masterLabel>
+            <translation><!-- Closing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Production Capacity --></label>
+        <name>Production_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Run Disbursement Interface --></label>
+        <name>Run_Disbursement_Interface__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBA Loan History ReRun Results --></label>
+        <name>SBA_Loan_History_ReRun_Results__c</name>
+        <picklistValues>
+            <masterLabel>Error on ReRun of Interface</masterLabel>
+            <translation><!-- Error on ReRun of Interface --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issues Found</masterLabel>
+            <translation><!-- Issues Found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for disbursement</masterLabel>
+            <translation><!-- Ready for disbursement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Loan Secure Flag --></help>
+        <label><!-- Secure --></label>
+        <name>Secure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Servicing Office --></label>
+        <name>Servicing_Office__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Assigned</masterLabel>
+            <translation><!-- Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Interface Data</masterLabel>
+            <translation><!-- Awaiting Interface Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closing</masterLabel>
+            <translation><!-- Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closing Docs - Review Completed</masterLabel>
+            <translation><!-- Closing Docs - Review Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closing Docs - Under Review</masterLabel>
+            <translation><!-- Closing Docs - Under Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closing Docs - Verification</masterLabel>
+            <translation><!-- Closing Docs - Verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commitment Item Required</masterLabel>
+            <translation><!-- Commitment Item Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commitment Team Review</masterLabel>
+            <translation><!-- Commitment Team Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commitment-Complete</masterLabel>
+            <translation><!-- Commitment-Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error on Rerun of interface</masterLabel>
+            <translation><!-- Error on Rerun of interface --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiate Disbursement</masterLabel>
+            <translation><!-- Initiate Disbursement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiated Loan Modification</masterLabel>
+            <translation><!-- Initiated Loan Modification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issues Found</masterLabel>
+            <translation><!-- Issues Found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Obligation-Successful</masterLabel>
+            <translation><!-- Obligation-Successful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Disbursement</masterLabel>
+            <translation><!-- Ready for Disbursement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reassign</masterLabel>
+            <translation><!-- Reassign --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Contents --></label>
+        <name>Total_Eligible_Contents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Contractor Malfeasance --></label>
+        <name>Total_Eligible_Contractor_Malfeasance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Custom - Contents --></label>
+        <name>Total_Eligible_Custom_Contents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Custom - RE --></label>
+        <name>Total_Eligible_Custom_RE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Interim Financing --></label>
+        <name>Total_Eligible_Interim_Financing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Mitigation --></label>
+        <name>Total_Eligible_Mitigation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Motor Vehicle --></label>
+        <name>Total_Eligible_Motor_Vehicle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Real Estate (Other) --></label>
+        <name>Total_Eligible_Real_Estate_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Real Estate Repair --></label>
+        <name>Total_Eligible_Real_Estate_Repair__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Refinancing --></label>
+        <name>Total_Eligible_Refinancing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Eligible - Repay IHP --></label>
+        <name>Total_Eligible_Repay_IHP__c</name>
+    </fields>
+    <fields>
+        <help><!-- In Months --></help>
+        <label><!-- Total Term --></label>
+        <name>Total_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger PB for Initiate Disbursement --></label>
+        <name>Trigger_PB_for_Initiate_Disbursement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger PB for Loan Mod --></label>
+        <name>Trigger_PB_for_Loan_Mod__c</name>
+    </fields>
+    <layouts>
+        <layout>Commitment Team Loan Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Category Disbursed and Remaining Balances --></label>
+            <section>Category Disbursed and Remaining Balances</section>
+        </sections>
+        <sections>
+            <label><!-- Category Total Eligible Amounts --></label>
+            <section>Category Total Eligible Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Loan Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Category Disbursed and Remaining Balances --></label>
+            <section>Category Disbursed and Remaining Balances</section>
+        </sections>
+        <sections>
+            <label><!-- Category Total Eligible Amounts --></label>
+            <section>Category Total Eligible Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Create Admin Mod Request --></label>
+        <name>Create_Admin_Mod_Request</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Create Loan Mod Request --></label>
+        <name>Create_Loan_Mod_Request</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Initiate Disbursement --></label>
+        <name>Initiate_Disbursement</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Loan Modification --></label>
+        <name>Loan_Modification</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Proceed To Closing --></label>
+        <name>Proceed_to</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Loan --></label>
+        <name>Re_Run_Interfaces</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You do not have permissions to change the Ownership or Assigned To fields --></errorMessage>
+        <name>Restrict_Comtt_Member_to_change_owner</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Run_DDP --></label>
+        <name>Run_DDP</name>
+    </webLinks>
+    <workflowTasks>
+        <name>Loan_for_your_review</name>
+        <subject><!-- Loan is pending for your review --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>New_Loan_waiting_for_assignment</name>
+        <subject><!-- New Loan waiting for assignment --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Pending_Loan_for_Assignment</name>
+        <subject><!-- Pending Loan for Assignment --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Pending_Loan_for_your_review</name>
+        <subject><!-- Pending Loan for your review --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Please Re Run the Interface because there is an error occured --></description>
+        <name>Please_ReRun_the_Interface</name>
+        <subject><!-- Please ReRun the Interface --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

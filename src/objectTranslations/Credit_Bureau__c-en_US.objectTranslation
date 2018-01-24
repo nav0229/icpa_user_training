@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Credit Bureau</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Credit Bureau</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active? --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant First Name --></label>
+        <name>Applicant_First_Name_From_CBR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Last Name --></label>
+        <name>Applicant_Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the applicant to whom the CBR belongs to. --></help>
+        <label><!-- Applicant Name --></label>
+        <name>Applicant_Name__c</name>
+        <relationshipLabel><!-- Credit Bureau --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Application related to this CB report --></help>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Credit Bureau --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Name Of The Credit Agency --></help>
+        <label><!-- Bureau Name --></label>
+        <name>Bureau_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date and Time Of the CBR Pull. --></help>
+        <label><!-- CBR Pulled Date --></label>
+        <name>CBR_Pulled_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBR Request Result --></label>
+        <name>CBR_Request_Result__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frozen File</masterLabel>
+            <translation><!-- Frozen File --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Locked File</masterLabel>
+            <translation><!-- Locked File --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Records Found</masterLabel>
+            <translation><!-- No Records Found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Status of Applicant&apos;s CBR.(e.g. Completed, Submitted, Pending) --></help>
+        <label><!-- CBR Status --></label>
+        <name>CBR_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- City (e.g. Herndon) --></help>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Credit Score # (850) --></help>
+        <label><!-- Credit Score --></label>
+        <name>Credit_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Code --></label>
+        <name>Error_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Associates the CB record to the corresponding Loan record --></help>
+        <label><!-- Loan --></label>
+        <name>Loan__c</name>
+        <relationshipLabel><!-- Credit Bureau --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Applicant&apos;s Most recent address on CBR (e.g 123 E Main St) --></help>
+        <label><!-- Mailing Address --></label>
+        <name>Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manual CBR --></label>
+        <name>Manual_CBR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Negative Record --></label>
+        <name>Negative_Record__c</name>
+    </fields>
+    <fields>
+        <help><!-- How was the CBR requested (Initial or Manual) --></help>
+        <label><!-- Requested Type --></label>
+        <name>Requested_Type__c</name>
+        <picklistValues>
+            <masterLabel>Initial</masterLabel>
+            <translation><!-- Initial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Social Security Number listed in the CBR --></help>
+        <label><!-- SSN --></label>
+        <name>SSN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Factor Five --></label>
+        <name>Score_Factor_Five__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Factor Four --></label>
+        <name>Score_Factor_Four__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Factor One --></label>
+        <name>Score_Factor_One__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Factor Six --></label>
+        <name>Score_Factor_Six__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Factor Three --></label>
+        <name>Score_Factor_Three__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score_Factor_Two --></label>
+        <name>Score_Factor_Two__c</name>
+    </fields>
+    <fields>
+        <help><!-- State (e.g. Virginia) --></help>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Zip-Code (e.g. 12345-0000) --></help>
+        <label><!-- Zip Code --></label>
+        <name>Zip_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Credit Bureau Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Read Only</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Credit Bureau Record Type --></label>
+        <name>Credit_Bureau_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Read Only --></label>
+        <name>New_Read_Only</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

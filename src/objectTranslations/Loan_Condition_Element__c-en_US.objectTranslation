@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Loan Condition Element</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Loan Condition Elements</value>
+    </caseValues>
+    <fields>
+        <label><!-- Custom Element Value --></label>
+        <name>Custom_Element_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Element Type --></label>
+        <name>Element_Type__c</name>
+        <picklistValues>
+            <masterLabel>Name of Policy Holder</masterLabel>
+            <translation><!-- Name of Policy Holder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy Number</masterLabel>
+            <translation><!-- Policy Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy Type</masterLabel>
+            <translation><!-- Policy Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shared Repair Responsibility</masterLabel>
+            <translation><!-- Shared Repair Responsibility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Element Value --></label>
+        <name>Element_Value__c</name>
+        <picklistValues>
+            <masterLabel>Automotive</masterLabel>
+            <translation><!-- Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bus Interruption</masterLabel>
+            <translation><!-- Bus Interruption --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Common road, bridge or other improvements</masterLabel>
+            <translation><!-- Common road, bridge or other improvements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Common roof</masterLabel>
+            <translation><!-- Common roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Common wall</masterLabel>
+            <translation><!-- Common wall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Earthquake</masterLabel>
+            <translation><!-- Earthquake --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flood</masterLabel>
+            <translation><!-- Flood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hazard</masterLabel>
+            <translation><!-- Hazard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Homeowners</masterLabel>
+            <translation><!-- Homeowners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hull</masterLabel>
+            <translation><!-- Hull --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renter Insurance</masterLabel>
+            <translation><!-- Renter Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sewer Backup</masterLabel>
+            <translation><!-- Sewer Backup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wind</masterLabel>
+            <translation><!-- Wind --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Element --></label>
+        <name>Element__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Condition --></label>
+        <name>Loan_Condition__c</name>
+        <relationshipLabel><!-- Loan Condition Elements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Master List --></label>
+        <name>Master_Checklist__c</name>
+        <relationshipLabel><!-- Loan Condition Elements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Required --></label>
+        <name>Required__c</name>
+    </fields>
+    <layouts>
+        <layout>Loan Condition Element Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- For this Element Type, you may only enter the pre-defined Element Values --></errorMessage>
+        <name>Pre_Defined_Element_Values</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Checklist Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Checklist Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Applicant --></label>
+        <name>Applicant__c</name>
+        <relationshipLabel><!-- Checklist Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Checklist Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Checkbox indicates that borrower needs to sign and return the attached document --></help>
+        <label><!-- Borrower&apos;s Signature Required --></label>
+        <name>Borrower_s_Signature_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Number --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Checklist Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Checklist Item Due Date --></label>
+        <name>Checklist_Item_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checklist Item Status --></label>
+        <name>Checklist_Item_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Available</masterLabel>
+            <translation><!-- Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finalized</masterLabel>
+            <translation><!-- Finalized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid</masterLabel>
+            <translation><!-- Invalid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Borrower&apos;s Verification</masterLabel>
+            <translation><!-- Pending Borrower&apos;s Verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Case Manager Review</masterLabel>
+            <translation><!-- Pending Case Manager Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valid</masterLabel>
+            <translation><!-- Valid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Checklist Item Text --></label>
+        <name>Checklist_Item_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drawloop Next --></label>
+        <name>Drawloop_Next__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generate Document --></label>
+        <name>Generate_Document__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reason why checklist item submitted by applicant is Invalid --></help>
+        <label><!-- Invalid Reason Code --></label>
+        <name>Invalid_Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>Document is illegible</masterLabel>
+            <translation><!-- Document is illegible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete Document</masterLabel>
+            <translation><!-- Incomplete Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outdated Document</masterLabel>
+            <translation><!-- Outdated Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Document</masterLabel>
+            <translation><!-- Wrong Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Action Date --></label>
+        <name>Last_Action_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Condition --></label>
+        <name>Loan_Condition__c</name>
+        <relationshipLabel><!-- Checklist Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Loan --></label>
+        <name>Loan__c</name>
+        <relationshipLabel><!-- Closing Checklist --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Master Checklist --></label>
+        <name>Master_Checklist__c</name>
+        <relationshipLabel><!-- Checklist Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please provide details for marking the document Invalid --></help>
+        <label><!-- Invalid Reason Description --></label>
+        <name>Other_Reason_Code_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Property --></label>
+        <name>Property__c</name>
+        <relationshipLabel><!-- Checklist Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Application Processing Documents</masterLabel>
+            <translation><!-- Application Processing Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closing Documents</masterLabel>
+            <translation><!-- Closing Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commitment Documents</masterLabel>
+            <translation><!-- Commitment Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interface</masterLabel>
+            <translation><!-- Interface --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Generated</masterLabel>
+            <translation><!-- System Generated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- User that verified this checklist item by changing the status to Valid/Invalid and adding the Invalid Reason Description --></help>
+        <label><!-- Verified By --></label>
+        <name>Verified_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date indicates when the checklist item was marked as Valid --></help>
+        <label><!-- Verified Date --></label>
+        <name>Verified_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Checklist Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must enter an Invalid Reason Code for Documents labeled Invalid --></errorMessage>
+        <name>Invalid_Reason_Code</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter an Invalid Reason Description for Documents labeled Invalid --></errorMessage>
+        <name>Other_Invalid_Reason_Description</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Run_DDP --></label>
+        <name>Run_DDP</name>
+    </webLinks>
+</CustomObjectTranslation>

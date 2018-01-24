@@ -1,0 +1,4 @@
+public interface LoanConditionElementRuleInterface {
+	Boolean doesRuleApply(LoanConditionCriteria loanConditionCriteria);
+	Loan_Condition_Element__c applyRuleAndCreateLoanConditionElement(LoanConditionCriteria loanConditionCriteria);
+}

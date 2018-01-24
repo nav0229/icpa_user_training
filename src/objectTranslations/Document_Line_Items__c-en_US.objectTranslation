@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Document Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Applicant --></label>
+        <name>Applicant__c</name>
+        <relationshipLabel><!-- Document Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Document Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Number --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Document Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Checklist --></label>
+        <name>Document_Checklist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Due Date --></label>
+        <name>Document_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Insertion --></label>
+        <name>Document_Insertion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Status --></label>
+        <name>Document_Status__c</name>
+        <picklistValues>
+            <masterLabel>Invalid</masterLabel>
+            <translation><!-- Invalid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valid</masterLabel>
+            <translation><!-- Valid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reason why document submitted by applicant is Invalid --></help>
+        <label><!-- Invalid Reason Code --></label>
+        <name>Invalid_Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>Document is illegible</masterLabel>
+            <translation><!-- Document is illegible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete Document</masterLabel>
+            <translation><!-- Incomplete Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outdated Document</masterLabel>
+            <translation><!-- Outdated Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Document</masterLabel>
+            <translation><!-- Wrong Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please provide details for invalid reason code --></help>
+        <label><!-- Other Reason Code Description --></label>
+        <name>Other_Reason_Code_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date indicates when the document was marked as Valid --></help>
+        <label><!-- Verified Date --></label>
+        <name>Verified_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Document Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must enter an Invalid Reason Code for Documents labeled Invalid --></errorMessage>
+        <name>Invalid_Reason_Code</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the invalid reason code is Other, then you must enter a description --></errorMessage>
+        <name>Other_Invalid_Reason_Description</name>
+    </validationRules>
+</CustomObjectTranslation>

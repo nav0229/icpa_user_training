@@ -1,0 +1,34 @@
+<apex:page id="LtngCmpTesting"
+           standardStylesheets="false"
+           sideBar="false"
+           showHeader="false"
+           standardController="Processing_Application_Review__c"
+           title="Testing">
+
+    <apex:includeLightning />
+
+    <div id="lightning"></div>
+
+
+    <script type="text/javascript">
+        try {
+            $Lightning.use("c:LtngCmpTestingApp", function () {
+                $Lightning.createComponent(
+                        "c:{!$CurrentPage.parameters.cmp}",
+                        {
+                             recordId: "{!Processing_Application_Review__c.Id}",
+                             application: "{!Processing_Application_Review__c.Application__c}",
+                        },
+                        "lightning",
+                        function (component) {
+                            component;
+                        }
+                );
+            });
+        }
+        catch(e) {
+            console.log(e.message);
+        }
+    </script>
+
+</apex:page>

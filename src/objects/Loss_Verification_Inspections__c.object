@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Objects holds all information gathered through the Loss Verification process</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>CBRA_Compliant__c</fullName>
+        <externalId>false</externalId>
+        <label>CBRA Compliant</label>
+        <picklist>
+            <picklistValues>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contents_Verified_Loss__c</fullName>
+        <description>Sum of amount from contents UP codes</description>
+        <externalId>false</externalId>
+        <label>Contents Verified Loss</label>
+        <summarizedField>UP_Codes__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>UP_Codes__c.UP_Code__c</field>
+            <operation>equals</operation>
+            <value>UP-01</value>
+        </summaryFilterItems>
+        <summaryForeignKey>UP_Codes__c.Loss_Verification__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Fair_Market_Value_of_Land__c</fullName>
+        <externalId>false</externalId>
+        <label>Fair Market Value of Land</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Fair_Market_Value_of_Structure__c</fullName>
+        <externalId>false</externalId>
+        <label>Fair Market Value of Structure</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Flood_Zone__c</fullName>
+        <externalId>false</externalId>
+        <label>Flood Zone</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>V</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associates the LV record with the appropriate Loan record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associates the LV record with the appropriate Loan record</inlineHelpText>
+        <label>Loan</label>
+        <referenceTo>Loan__c</referenceTo>
+        <relationshipName>Loss_Verification_Inspections</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Motor_Vehicle_Verified_Loss__c</fullName>
+        <description>Sum of amount from motor vehicle UP codes</description>
+        <externalId>false</externalId>
+        <label>Motor Vehicle Verified Loss</label>
+        <summarizedField>UP_Codes__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>UP_Codes__c.UP_Code__c</field>
+            <operation>equals</operation>
+            <value>UP-02</value>
+        </summaryFilterItems>
+        <summaryForeignKey>UP_Codes__c.Loss_Verification__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OPA_Compliant__c</fullName>
+        <externalId>false</externalId>
+        <label>OPA Compliant</label>
+        <picklist>
+            <picklistValues>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Property_Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Sub Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Boats / Ships / Vessels</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Condominium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO-OP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufactured Housing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi Family Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Single Family</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Storage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Townhouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacant Land</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vehicle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Property_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home / Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home / Renter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Boat (Not Registered with Coast Guard)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO-OP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Condo/Townhouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Homeowners Association</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufactured Home (Land Leased) - Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufactured Home (Land Leased) - Replaced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufactured Home (Land Owned) - Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufactured Home (Land Owned) - Replace</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Real Estate (Contract for Deed)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Real Estate (Leased Land)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Real Estate (Owned)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacant Land</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vessel (Registered with Coast Guard)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Property__c</fullName>
+        <externalId>false</externalId>
+        <label>Property</label>
+        <referenceTo>Property__c</referenceTo>
+        <relationshipLabel>Loss Verifications</relationshipLabel>
+        <relationshipName>Loss_Verifications</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Real_Estate_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Real Estate Other</label>
+        <summarizedField>UP_Codes__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>UP_Codes__c.UP_Code__c</field>
+            <operation>equals</operation>
+            <value>UP-25</value>
+        </summaryFilterItems>
+        <summaryForeignKey>UP_Codes__c.Loss_Verification__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Real_Estate_Repair_Replace__c</fullName>
+        <externalId>false</externalId>
+        <label>Real Estate Repair/Replace</label>
+        <summarizedField>UP_Codes__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>UP_Codes__c.UP_Code__c</field>
+            <operation>equals</operation>
+            <value>UP-17</value>
+        </summaryFilterItems>
+        <summaryForeignKey>UP_Codes__c.Loss_Verification__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Real_Estate_Verified_Loss__c</fullName>
+        <description>Sum of amount from real estate UP codes</description>
+        <externalId>false</externalId>
+        <label>Real Estate Verified Loss</label>
+        <summarizedField>UP_Codes__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>UP_Codes__c.UP_Code__c</field>
+            <operation>equals</operation>
+            <value>UP-04, UP-09, UP-17, UP-18, UP-19, UP-20, UP-24, UP-25, UP-27, UP-28, UP-29, UP-41, UP-43, UP-44, UP-53, UP-55</value>
+        </summaryFilterItems>
+        <summaryForeignKey>UP_Codes__c.Loss_Verification__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Rising_Water__c</fullName>
+        <externalId>false</externalId>
+        <label>Rising Water</label>
+        <picklist>
+            <picklistValues>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sanctioned_Community__c</fullName>
+        <externalId>false</externalId>
+        <label>Sanctioned Community</label>
+        <picklist>
+            <picklistValues>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Test__c</fullName>
+        <externalId>false</externalId>
+        <formula>0</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Test</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Fair_Market_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>Fair_Market_Value_of_Land__c  +  Fair_Market_Value_of_Structure__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Fair Market Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Verified_Loss__c</fullName>
+        <description>Sum of amounts from real estate, landscape, motor vehicle, and contents UP codes</description>
+        <externalId>false</externalId>
+        <label>Total Verified Loss</label>
+        <summarizedField>UP_Codes__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>UP_Codes__c.UP_Code__c</field>
+            <operation>equals</operation>
+            <value>UP-01, UP-02, UP-04, UP-09, UP-17, UP-18, UP-19, UP-20, UP-24, UP-25, UP-27, UP-28, UP-29, UP-41, UP-43, UP-44, UP-53, UP-55</value>
+        </summaryFilterItems>
+        <summaryForeignKey>UP_Codes__c.Loss_Verification__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Verified_Loss_for_Landscape__c</fullName>
+        <externalId>false</externalId>
+        <label>Verified Loss for Landscape</label>
+        <summarizedField>UP_Codes__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>UP_Codes__c.UP_Code__c</field>
+            <operation>equals</operation>
+            <value>UP-20</value>
+        </summaryFilterItems>
+        <summaryForeignKey>UP_Codes__c.Loss_Verification__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Loss Verification</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Loss Verification Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Loss Verifications</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

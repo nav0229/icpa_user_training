@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Closing Doc Reviewer Q</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Senior_Case_Manager_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>ISNEW() &amp;&amp;   RecordType.Name =&apos;Closing Document&apos;</formula>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>DocRequest LAT Assignment</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>Loan_Assistance_Team</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Document Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New,Requested</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Assigned__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

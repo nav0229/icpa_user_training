@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Progress Inspection Completed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Progress Inspection Completed</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Progress_Inspection_Status</name>
+        <label>Update Progress Inspection Status</label>
+        <locationX>151</locationX>
+        <locationY>167</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Inspections__c</object>
+    </recordUpdates>
+    <startElementReference>Update_Progress_Inspection_Status</startElementReference>
+    <variables>
+        <name>varId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

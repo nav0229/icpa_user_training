@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SBA Session Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SBA Session Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- isActive --></label>
+        <name>isActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- max_preferred_user_sessions --></label>
+        <name>max_preferred_user_sessions__c</name>
+    </fields>
+    <fields>
+        <label><!-- max_std_user_sessions --></label>
+        <name>max_std_user_sessions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated list of preferred user profile names. e.g: System Administrator --></help>
+        <label><!-- preferred user profile list --></label>
+        <name>preferred_user_profile_list__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Cannot have more that one active session setting --></errorMessage>
+        <name>Check_one_active_session_setting</name>
+    </validationRules>
+</CustomObjectTranslation>

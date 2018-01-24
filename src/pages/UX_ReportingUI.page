@@ -1,0 +1,49 @@
+<apex:page >
+    <apex:slds />
+    <link href="{!URLFOR($Resource.UX_VF_resources, 'styles.css')}" rel="stylesheet"/>
+      <div class="slds-p-around_medium" style="background-color:rgb(244, 246, 249);">
+        <div class="slds-media">
+          <div class="slds-media__figure">
+            <!-- Icon here -->
+          </div>
+          <div class="slds-media__body">
+            <p class="slds-text-heading_large">Standard Production Reports</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="slds-scope slds-p-around_large">
+        <div class="slds-grid slds-wrap slds-grid_pull-padded">
+    
+          <div class="slds-size_1-of-5 slds-p-horizontal_medium">
+            <div class="sba-report slds-m-bottom_large">
+              <a class="slds-p-around_large" href="">
+                <h2 class="slds-m-bottom_small">Accounts Summary- Commitments</h2>
+               <!-- <p>Neque blanditiis consequatur nobis magni ab consequatur.</p> -->
+               </a>
+            </div>
+          </div>
+    
+          <div class="slds-size_1-of-5 slds-p-horizontal_medium">
+            <div class="sba-report slds-m-bottom_large">
+              <a class="slds-p-around_large" href="">
+                <h2 class="slds-m-bottom_small">Operational Report</h2>
+                <!--<h2 class="slds-m-bottom_small">Receipts Audit</h2>
+                <p>Neque blanditiis consequatur nobis magni ab consequatur.</p>-->
+              </a>
+            </div>
+          </div>
+    
+          <div class="slds-size_1-of-5 slds-p-horizontal_medium">
+            <div class="sba-report slds-m-bottom_large">
+              <a class="slds-p-around_large" href="">
+                <h2 class="slds-m-bottom_small">Receipts Audit</h2>
+                <!--<h2 class="slds-m-bottom_small">Operational Report</h2>
+                <p>Neque blanditiis consequatur nobis magni ab consequatur.</p>-->
+              </a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </apex:page>
