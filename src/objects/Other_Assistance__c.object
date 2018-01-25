@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object holds any financial assistance information an Applicant may have received (FEMA grants, loans, etc.)</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Active_NFIRA_Policy__c</fullName>
+        <description>Active NFIRA Policy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. Yes / No</inlineHelpText>
+        <label>Active NIFRA Policy</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Application_No__c</fullName>
+        <description>Application Number </description>
+        <externalId>false</externalId>
+        <formula>Application__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>e.g. 1000123456</inlineHelpText>
+        <label>Application No.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <description>Field associates the Other Assistance record to the appropriate Application record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Application associated to this record</inlineHelpText>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Other Assistance</relationshipLabel>
+        <relationshipName>Other_Assistance</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Applied_Date__c</fullName>
+        <description>Date applied to FEMA</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g 1/29/2017</inlineHelpText>
+        <label>Applied Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Co_Reg_Name__c</fullName>
+        <description>Co-Reg Name</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. WILLIAM  SMITH</inlineHelpText>
+        <label>Co-Reg Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contents_Grant__c</fullName>
+        <externalId>false</externalId>
+        <label>Contents Grant</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. DOUGHERTY</inlineHelpText>
+        <label>County</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Damaged_Property_Address__c</fullName>
+        <description>Damaged Property Address</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 5011  AUG AVE ALBANY GA 31705</inlineHelpText>
+        <label>Damaged Property Address</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>FEMA_Reg_No__c</fullName>
+        <description>FEMA Registration Number </description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g 901234567</inlineHelpText>
+        <label>FEMA Reg. No</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Interface_Date_Time__c</fullName>
+        <description>Date and Time Interface was activated</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 5/24/201712:00:00PM</inlineHelpText>
+        <label>Interface Date / Time</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Interface_Status__c</fullName>
+        <description>The status of the interface request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. COMPLETED/FAILED</inlineHelpText>
+        <label>Interface Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Language__c</fullName>
+        <description>Primary Language</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. ENGLISH</inlineHelpText>
+        <label>Language</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associates the Other Assistance record to the relevant Loan record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associates the Other Assistance record to the relevant Loan record</inlineHelpText>
+        <label>Loan</label>
+        <referenceTo>Loan__c</referenceTo>
+        <relationshipLabel>Other Assistance</relationshipLabel>
+        <relationshipName>Other_Assistance</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Loss_Date__c</fullName>
+        <description>Date of Loss </description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 1/29/2017</inlineHelpText>
+        <label>Loss Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NFIRA_Compliant__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. Yes / No</inlineHelpText>
+        <label>NFIRA Compliant</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. DEB J SMITH</inlineHelpText>
+        <label>Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>O_R__c</fullName>
+        <description>Own or Rent</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Own / Rent</inlineHelpText>
+        <label>O/R</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Own</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rent</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Occupancy_Verification__c</fullName>
+        <description>Occupancy Verification- Verified or Not verified</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. Verified or Not verified</inlineHelpText>
+        <label>Occupancy Verification</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Verified</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Verified</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Ownership_Verification__c</fullName>
+        <description>Ownership Verification- Verified or Not verified</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g.Verified or Not verified</inlineHelpText>
+        <label>Ownership Verification</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Verified</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Verified</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Primary_Residence__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Residence</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Real_Estate_Grant__c</fullName>
+        <externalId>false</externalId>
+        <label>Real Estate Grant</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Request_Date__c</fullName>
+        <description>Date field which will display the date and time the interface with FEMA occurred</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 5/27/2017 8:15:05 AM</inlineHelpText>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Requested_By__c</fullName>
+        <description>The User ID of the user who initiated the interface.  This can also be a &apos;System&apos; generated interface.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. ZSBRADF</inlineHelpText>
+        <label>Requested By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Required_to_Maintain__c</fullName>
+        <description>Required to Maintain</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. Yes / No</inlineHelpText>
+        <label>Required to Maintain</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Residence_Type__c</fullName>
+        <description>Residence Type-Single Family / Mobile Home</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. Single Family / Mobile Home</inlineHelpText>
+        <label>Residence Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Family</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mobile Home</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rqmt_from_Previous_Assistance__c</fullName>
+        <description>Rqmt from Previous Assistance</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. Yes / No</inlineHelpText>
+        <label>Rqmt from Previous Assistance</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SBA_App_Status__c</fullName>
+        <description>SBA Application Status</description>
+        <externalId>false</externalId>
+        <formula>Application__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>e.g. RECON: SBA RECONSIDERATION</inlineHelpText>
+        <label>SBA App Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Size__c</fullName>
+        <description>Damage property Size</description>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. Square Footage 1500ft</inlineHelpText>
+        <label>Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Grant__c</fullName>
+        <externalId>false</externalId>
+        <label>State Grant</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Amount_of_Housing_Assistance__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Amount of Housing Assistance</label>
+        <summarizedField>Other_Assistance_Line_Item__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Other_Assistance_Line_Item__c.Type_of_Assistance__c</field>
+            <operation>equals</operation>
+            <value>Housing Assistance, Replacement Housing</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Other_Assistance_Line_Item__c.Other_Assistance_Report__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Amount_of_Other_Assistance__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Amount of Other Assistance</label>
+        <summarizedField>Other_Assistance_Line_Item__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Other_Assistance_Line_Item__c.Type_of_Assistance__c</field>
+            <operation>equals</operation>
+            <value>Other</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Other_Assistance_Line_Item__c.Other_Assistance_Report__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_FEMA_amount_for_Real_Estate__c</fullName>
+        <description>Sum of Total Housing Assistance Value and Total Other Assistance Value</description>
+        <externalId>false</externalId>
+        <formula>IF(Total_Amount_of_Housing_Assistance__c + Total_Amount_of_Other_Assistance__c &gt; 0, 
+    Total_Amount_of_Housing_Assistance__c + Total_Amount_of_Other_Assistance__c, 
+    0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total FEMA amount for Real Estate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Grants_Other_amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Real_Estate_Grant__c +  Contents_Grant__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Grants/Other amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Other Assistance</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Other Assistance Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Other Assistance</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

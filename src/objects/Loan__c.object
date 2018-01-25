@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Loan_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Objects holds all Loan data</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Age_in_Commitments__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY()-  (Datevalue(CreatedDate))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age in Commitments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Field related the Loan record to the Master Application record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Application to this Loan</inlineHelpText>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Loans</relationshipLabel>
+        <relationshipName>Loans</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Commitment Team</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Loans</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Borrower_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Primary_Applicant_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Borrower Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Companion__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Companion__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Companion Loan</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_Assigned_to_Commitment_Team_Member__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date Assigned to Commitment Team Member</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Assigned_to_Queue__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date Assigned to Queue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Commitment_Letter_Generated__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date/Time -Commitment Letter Generated</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_assigned_to_Case_Manager_Queue__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date assigned to Legal Manager Queue</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Deadline_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Default= Date/Time (Commitment Letter Generated ) + 21 days</inlineHelpText>
+        <label>Return Deadline Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Declaration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associates the Loan record to the corresponding Disaster Declaration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disaster Declaration related to the Loan record</inlineHelpText>
+        <label>Disaster Declaration</label>
+        <referenceTo>Disaster__c</referenceTo>
+        <relationshipLabel>Loans</relationshipLabel>
+        <relationshipName>Loans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Drawloop_Next__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Drawloop Next</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EIDL_Unsecured_Limit__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate with EIDL Unsecure Limit (Number)</inlineHelpText>
+        <label>EIDL Unsecured Limit</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ETRAN_Loan_Number__c</fullName>
+        <description>ETRAN Loan Number</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>ETRAN_Loan_Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initiate_Disbursement__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Initiate Disbursement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Interest_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate with Value in the following format: #.###</inlineHelpText>
+        <label>Interest Rate</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issued_Note_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate with Issued Note Date, if it exists</inlineHelpText>
+        <label>Issued Note Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Modification__c</fullName>
+        <description>For Quick Action</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Loan Modification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>H</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>B</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>E</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>M</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Logged_in_User__c</fullName>
+        <externalId>false</externalId>
+        <formula>Assigned_To__r.Id == $User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Logged in User</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Maturity_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Maturity Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Months_Deferred__c</fullName>
+        <externalId>false</externalId>
+        <label>Months Deferred</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>My_Team_Owned__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Manager.Id = $User.Id 
+|| 
+OwnerId = $User.Id 
+|| 
+Owner:User.Manager.ManagerId = $User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>My Team Owned</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Next_Payment_Due_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Next Payment Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Note_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate with Disbursement Note Date, if it exists</inlineHelpText>
+        <label>Note Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Obligated_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Obligated Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Assistance_ReRun_Results__c</fullName>
+        <externalId>false</externalId>
+        <label>FEMA DOB ReRun Results</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Error on ReRun of Interface</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Issues Found</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ready for disbursement</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Payment_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Frequency__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Payment Frequency</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phys_Unsecured_Limit__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate with Physical Unsecure Limit (Number)</inlineHelpText>
+        <label>Phys Unsecured Limit</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proceed_To__c</fullName>
+        <description>Loan Officer sets this to an appropriate value to kick off the automated actions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>All documents received, proceed to &apos;Closing&apos;</inlineHelpText>
+        <label>Proceed To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Closing</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Production_Capacity__c</fullName>
+        <externalId>false</externalId>
+        <label>Production Capacity</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Run_Disbursement_Interface__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Run Disbursement Interface</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SBA_Loan_History_ReRun_Results__c</fullName>
+        <externalId>false</externalId>
+        <label>SBA Loan History ReRun Results</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Error on ReRun of Interface</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Issues Found</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ready for disbursement</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Secure__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Loan Secure Flag</inlineHelpText>
+        <label>Secure</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Servicing_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Servicing Office</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assigned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Awaiting Interface Data</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closing Docs - Review Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closing Docs - Under Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closing Docs - Verification</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Commitment-Complete</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Commitment Item Required</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Error on Rerun of interface</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Issues Found</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Obligation-Successful</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Ready for Disbursement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reassign</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Initiated Loan Modification</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Initiate Disbursement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Communicate Conditional Approval to Applicant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Commitment Team Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closing</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Term__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>In Months</inlineHelpText>
+        <label>Total Term</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trigger_PB_for_Initiate_Disbursement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trigger PB for Initiate Disbursement</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Trigger_PB_for_Loan_Mod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trigger PB for Loan Mod</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Loan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Date_Assigned_to_Queue__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Application__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Case_Manager_Queue_Loan</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>Case Manager Queue</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Commitment_Team_Manager_Loan</fullName>
+        <columns>NAME</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Application__c</columns>
+        <columns>Date_Assigned_to_Queue__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Commitment Team Queue</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Assigned_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Application__c</columns>
+        <columns>Deadline_Date__c</columns>
+        <columns>Date_Assigned_to_Commitment_Team_Member__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Logged_in_User__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Assigned Loans- Commitment team</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Loans_to_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Application__c</columns>
+        <columns>Loan_Amount__c</columns>
+        <columns>Loan_Type__c</columns>
+        <columns>Secure__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Loans to Review</label>
+        <sharedTo>
+            <group>All_Internal_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Senior_Case_Manager_Queue_Loan</fullName>
+        <columns>NAME</columns>
+        <columns>Borrower_Name__c</columns>
+        <columns>Application__c</columns>
+        <columns>Date_assigned_to_Case_Manager_Queue__c</columns>
+        <columns>Companion__c</columns>
+        <columns>Loan_Amount__c</columns>
+        <columns>Loan_Type__c</columns>
+        <columns>Secure__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Legal Manager Queue</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Senor_Case_Manager_Queue_Loan</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Senior Case Manager Queue</label>
+        <queue>Senor_Case_Manager_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Loan Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Loans</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Restrict_Comtt_Member_to_change_owner</fullName>
+        <active>true</active>
+        <errorConditionFormula>$UserRole.Name=&apos;Commitment Team&apos; 
+&amp;&amp; ( ISCHANGED( OwnerId ) || ISCHANGED( Assigned_To__c ))</errorConditionFormula>
+        <errorMessage>You do not have permissions to change the Ownership or Assigned To fields</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Run_DDP</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Run Document Package</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__looplus?eid={!Loan__c.Id}</url>
+    </webLinks>
+</CustomObject>
