@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ContentSize</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Document_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>4506T</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tax Transcript</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Document_Validity__c</fullName>
+        <description>Picklist used to indicate if the uploaded file is valid or invalid based on the Document Request</description>
+        <externalId>false</externalId>
+        <label>Document Validity</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Valid</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Invalid</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FileExtension</fullName>
+    </fields>
+    <fields>
+        <fullName>FileType</fullName>
+    </fields>
+    <fields>
+        <fullName>Invalid_Reason_Code__c</fullName>
+        <description>Field indicates the reason why the uploaded document is deemed invalid</description>
+        <externalId>false</externalId>
+        <label>Invalid Reason Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Document_Validity__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Document is illegible</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wrong document</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incomplete document</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Outdated document</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Invalid</controllingFieldValue>
+                <valueName>Document is illegible</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Invalid</controllingFieldValue>
+                <valueName>Wrong document</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Invalid</controllingFieldValue>
+                <valueName>Incomplete document</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Invalid</controllingFieldValue>
+                <valueName>Outdated document</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Invalid</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsAssetEnabled</fullName>
+    </fields>
+    <fields>
+        <fullName>Language</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>New_Parent_Application_No__c</fullName>
+        <description>Enter the application number to which you&apos;d like to reassign this file</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the application number to which you&apos;d like to reassign this file</inlineHelpText>
+        <label>New Parent Application No.</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SharingOption</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SharingPrivacy</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TagCsv</fullName>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Verified_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Verified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <searchLayouts>
+        <searchResultsAdditionalFields>VERSION.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.CONTENT_SIZE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.FILE_EXTENSION</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.LAST_UPDATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.OWNER</searchResultsAdditionalFields>
+    </searchLayouts>
+</CustomObject>

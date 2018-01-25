@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Required_Documents</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Document handling line items for cases</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Applicant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Document related to specific applicant.</description>
+        <externalId>false</externalId>
+        <label>Applicant</label>
+        <referenceTo>Applicant__c</referenceTo>
+        <relationshipLabel>Document Line Items</relationshipLabel>
+        <relationshipName>Document_Line_Items1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Document Line Items</relationshipLabel>
+        <relationshipName>Document_Line_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Number</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Document Line Items</relationshipLabel>
+        <relationshipName>Document_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Document_Checklist__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Document Checklist</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Document_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Deadline_to_Submit_Documents__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Document Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Document_Insertion__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Insertion</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Document_Status__c</fullName>
+        <description>Document status</description>
+        <externalId>false</externalId>
+        <label>Document Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Valid</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Invalid</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invalid_Reason_Code__c</fullName>
+        <description>Reason why document submitted by applicant is Invalid</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reason why document submitted by applicant is Invalid</inlineHelpText>
+        <label>Invalid Reason Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Document is illegible</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wrong Document</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incomplete Document</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Outdated Document</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Reason_Code_Description__c</fullName>
+        <description>Field is required when document validity = Invalid and Invalid Reason code = Other</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Please provide details for invalid reason code</inlineHelpText>
+        <label>Other Reason Code Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Verified_Date__c</fullName>
+        <description>Date when Document Status is changed to Valid</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Date indicates when the document was marked as Valid</inlineHelpText>
+        <label>Verified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Document Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Documents_Needing_Review</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Document_Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>My Documents Needing Review</label>
+    </listViews>
+    <nameField>
+        <label>Document Line Items Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Document Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Invalid_Reason_Code</fullName>
+        <active>false</active>
+        <description>If Document Status = Invalid, then Invalid Reason Code must be entered</description>
+        <errorConditionFormula>ISPICKVAL(Document_Status__c, &quot;Invalid&quot;) &amp;&amp; ISPICKVAL(Invalid_Reason_Code__c,&quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Invalid_Reason_Code__c</errorDisplayField>
+        <errorMessage>You must enter an Invalid Reason Code for Documents labeled Invalid</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Invalid_Reason_Description</fullName>
+        <active>true</active>
+        <description>If Invalid Reason Code = Other, then a description must be provided</description>
+        <errorConditionFormula>ISPICKVAL(Invalid_Reason_Code__c, &quot;Other&quot;) &amp;&amp; ISBLANK( Other_Reason_Code_Description__c )</errorConditionFormula>
+        <errorDisplayField>Other_Reason_Code_Description__c</errorDisplayField>
+        <errorMessage>If the invalid reason code is Other, then you must enter a description</errorMessage>
+    </validationRules>
+</CustomObject>
