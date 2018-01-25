@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ContentSize</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Document_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>4506T</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tax Transcript</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FileExtension</fullName>
+    </fields>
+    <fields>
+        <fullName>FileType</fullName>
+    </fields>
+    <fields>
+        <fullName>IsAssetEnabled</fullName>
+    </fields>
+    <fields>
+        <fullName>Language</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>New_Parent_Application_No__c</fullName>
+        <description>Enter the application number to which you&apos;d like to reassign this file</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the application number to which you&apos;d like to reassign this file</inlineHelpText>
+        <label>New Parent Application No.</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SharingOption</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SharingPrivacy</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TagCsv</fullName>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Verified_Date__c</fullName>
+        <description>Field displays the date/time when document was updated to Valid</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Verified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <searchLayouts>
+        <searchResultsAdditionalFields>VERSION.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.CONTENT_SIZE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.FILE_EXTENSION</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.LAST_UPDATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VERSION.OWNER</searchResultsAdditionalFields>
+    </searchLayouts>
+</CustomObject>

@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Gross_Annual_Income__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sub_Total_Normal_Income_Types__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Gross Annual Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Gross_Monthly_Income__c</fullName>
+        <externalId>false</externalId>
+        <formula>Actual_Gross_Annual_Income__c  / 12</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Gross Monthly Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Address__c</fullName>
+        <description>Address (Number and Street) on that tax year&apos;s transcript</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 506 AUG AVE</inlineHelpText>
+        <label>Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alimony__c</fullName>
+        <externalId>false</externalId>
+        <label>Alimony</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Applicant_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Applicant Name</label>
+        <referenceTo>Applicant__c</referenceTo>
+        <relationshipLabel>IRS Transcripts</relationshipLabel>
+        <relationshipName>IRS_Transcripts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Applicant_Text_Name__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Applicant Text Name</label>
+        <length>155</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>IRS Transcripts</relationshipLabel>
+        <relationshipName>IRS_Transcripts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Batch_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Business_Name__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Business Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CASAD_Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <formula>Net_Income_Schedule_C__c + Depreciation_Schedule_C__c + Mortgage_Interest_Schedule_C__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CASAD Schedule C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CASAD_Schedule_E__c</fullName>
+        <externalId>false</externalId>
+        <formula>Net_Income_Schedule_E__c + Depreciation_for_all_Properties__c + Mortgage_Interest_all_Properties__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CASAD Schedule E</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CASAD_Schedule_F__c</fullName>
+        <externalId>false</externalId>
+        <formula>Net_Income_Schedule_F__c + Mortgage_Interest_Schedule_F__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CASAD Schedule F</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Capital_Gains__c</fullName>
+        <externalId>false</externalId>
+        <label>Capital Gains</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cash_Schedule_F__c</fullName>
+        <description>Cash Schedule F</description>
+        <externalId>false</externalId>
+        <label>Cash_Schedule_F</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Child_Support__c</fullName>
+        <externalId>false</externalId>
+        <label>Child Support</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>Address (City) on that tax year&apos;s transcript</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. ALBANY</inlineHelpText>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_of_Goods_Sold__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost of Goods Sold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Depreciation_Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Depreciation Schedule C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Depreciation_for_all_Properties__c</fullName>
+        <externalId>false</externalId>
+        <label>Depreciation for all Properties</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dividends__c</fullName>
+        <externalId>false</externalId>
+        <label>Dividends</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Name__c</fullName>
+        <description>Applicant name or Entity name</description>
+        <encrypted>true</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. DEB JOHN SMITH</inlineHelpText>
+        <label>Entity Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Error_Message__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Error Message</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Estate_Trust_Income_Loss__c</fullName>
+        <externalId>false</externalId>
+        <label>Estate/Trust Income/Loss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Expenses_for_all_Properties__c</fullName>
+        <externalId>false</externalId>
+        <label>Expenses for all Properties</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FARM_INCOME_OR_LOSS__c</fullName>
+        <externalId>false</externalId>
+        <label>FARM INCOME OR LOSS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTR_Filing_Status__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>FTR Filing Status</label>
+        <length>155</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTR_Type__c</fullName>
+        <description>Type of Financial Transcript.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 1040, 1120, 1065, 1120S</inlineHelpText>
+        <label>FTR Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FTR_Year__c</fullName>
+        <description>Year of Federal Tax Return</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. 2001</inlineHelpText>
+        <label>FTR Year</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Form_Type__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Form Type</label>
+        <length>55</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gross_Farm_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Gross Farm Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Gross_Margin_Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <formula>Net_Gross_Receipts__c - Cost_of_Goods_Sold__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Gross Margin Schedule C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IRA_Distributions__c</fullName>
+        <externalId>false</externalId>
+        <label>IRA Distributions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IRS_Pulled_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>IRS Pulled Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IRS_Reject_Reason__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>IRS Reject Reason</label>
+        <length>155</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IRS_Request_Result__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>IRS Request Result</label>
+        <length>155</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IRS_Request_Status__c</fullName>
+        <description>Transcript Request Status (Initial, New, Sent, Received)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Transcript Request Status (Initial, New, Sent, Received)</inlineHelpText>
+        <label>IRS Request Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Received</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Initial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IRS_Status__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>IRS Status</label>
+        <length>155</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Interest__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Issue__c</fullName>
+        <description>Brief statement of the issue present on the FTR Transcript.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. IRS Offset</inlineHelpText>
+        <label>Issue</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associates the IRS Transcript record to the corresponding Loan record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associates the IRS Transcript record to the corresponding Loan record</inlineHelpText>
+        <label>Loan</label>
+        <referenceTo>Loan__c</referenceTo>
+        <relationshipLabel>IRS Transcripts</relationshipLabel>
+        <relationshipName>IRS_Transcripts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Log_Message__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Log Message</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mortgage_Interest_Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Interest Schedule C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mortgage_Interest_Schedule_F__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Interest Schedule F</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mortgage_Interest_all_Properties__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Interest all Properties</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Gross_Receipts__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Gross Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Income_Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <formula>Gross_Margin_Schedule_C__c - Total_Expenses_Schedule_C__c + Other_Income_Schedule_C__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Income Schedule C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Income_Schedule_E__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Rent_Received__c + Royalties_Received__c) - Expenses_for_all_Properties__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Income Schedule E</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Income_Schedule_F__c</fullName>
+        <externalId>false</externalId>
+        <formula>Gross_Farm_Income__c - Total_Farm_Expenes__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Income Schedule F</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Alimony__c</fullName>
+        <externalId>false</externalId>
+        <formula>Alimony__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Alimony</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Business_Rental_Farm__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( (CASAD_Schedule_C__c + CASAD_Schedule_E__c + CASAD_Schedule_F__c) &gt; 0, 
+   (CASAD_Schedule_C__c + CASAD_Schedule_E__c + CASAD_Schedule_F__c), 
+   0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Business, Rental, Farm</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Child_Support__c</fullName>
+        <externalId>false</externalId>
+        <label>Normal Child Support</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Distribution_from_Retirement__c</fullName>
+        <externalId>false</externalId>
+        <formula>IRA_Distributions__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Distribution from Retirement</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Interest_Dividends__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((Interest__c + Tax_Exempt_Interest__c + Dividends__c) != 0,
+   (Interest__c + Tax_Exempt_Interest__c + Dividends__c),
+    0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Interest/Dividends</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Other_Incomes__c</fullName>
+        <externalId>false</externalId>
+        <label>Normal Other Incomes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Partnerships_SCorporations__c</fullName>
+        <externalId>false</externalId>
+        <formula>PRTSHP_CORP_Nonpassive_Income__c - PRTSHP_CORP_Nonpassive_Loss__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Partnerships &amp; SCorporations</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Pension__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pensions_and_Annuities__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Pension</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Social_Security__c</fullName>
+        <externalId>false</externalId>
+        <formula>Social_Security__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Social Security</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Trust__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estate_Trust_Income_Loss__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Trust</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Normal_Wages__c</fullName>
+        <externalId>false</externalId>
+        <formula>Wages__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Normal Wages</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Gains__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Gains</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Income_Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Income Schedule C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PRTSHP_CORP_Nonpassive_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>PRTSHP/CORP Nonpassive Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PRTSHP_CORP_Nonpassive_Loss__c</fullName>
+        <externalId>false</externalId>
+        <label>PRTSHP/CORP Nonpassive Loss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Partnerships_and_S_Corporations__c</fullName>
+        <externalId>false</externalId>
+        <label>Partnerships and S-Corporations</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Pensions_and_Annuities__c</fullName>
+        <externalId>false</externalId>
+        <label>Pensions and Annuities</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RENT_ROYALTY_PARTNERSHIP_ESTATE__c</fullName>
+        <externalId>false</externalId>
+        <label>RENT/ROYALTY/PARTNERSHIP/ESTATE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rent_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Rent Received</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Royalties_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Royalties Received</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SSN_EIN__c</fullName>
+        <description>SSN or ENI Found on the IRS Transcript</description>
+        <encrypted>true</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. SSN/EIN (000-11-1234)</inlineHelpText>
+        <label>SSN / EIN</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Social_Security__c</fullName>
+        <externalId>false</externalId>
+        <label>Social Security</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <description>Address (State) on that tax year&apos;s transcript</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. New York</inlineHelpText>
+        <label>State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 2/28/2017</inlineHelpText>
+        <label>Status Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Total_Actual_Income_Types__c</fullName>
+        <externalId>false</externalId>
+        <formula>Wages__c + Interest__c + Dividends__c + Pensions_and_Annuities__c + IRA_Distributions__c + Alimony__c + Estate_Trust_Income_Loss__c + (PRTSHP_CORP_Nonpassive_Income__c - PRTSHP_CORP_Nonpassive_Loss__c) + CASAD_Schedule_C__c + CASAD_Schedule_E__c + CASAD_Schedule_F__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub Total Actual Income Types</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Total_Normal_Income_Types__c</fullName>
+        <externalId>false</externalId>
+        <formula>Normal_Wages__c + Normal_Interest_Dividends__c + Normal_Social_Security__c + Normal_Pension__c + Normal_Distribution_from_Retirement__c + Normal_Alimony__c + Normal_Trust__c + Normal_Partnerships_SCorporations__c + CASAD_Schedule_C__c + CASAD_Schedule_E__c + CASAD_Schedule_F__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub Total Normal Income Types</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Exempt_Interest__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Exempt Interest</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Refunds__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Refunds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Year__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Tax Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Expenses_Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Expenses Schedule C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Farm_Expenes__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Farm Expenes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Income</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Unemployment__c</fullName>
+        <externalId>false</externalId>
+        <label>Unemployment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Wages__c</fullName>
+        <externalId>false</externalId>
+        <label>Wages</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <description>Address (Zip) on that tax year&apos;s transcript</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g. 31705-4306</inlineHelpText>
+        <label>Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>IRS Transcripts</label>
+    <nameField>
+        <label>IRS Transcripts Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>IRS Transcripts</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>IRS_Transcripts</fullName>
+        <active>true</active>
+        <description>Master RecordType For IRS Transcripts</description>
+        <label>IRS Transcripts</label>
+        <picklistValues>
+            <picklist>IRS_Request_Status__c</picklist>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New_Read_Only</fullName>
+        <active>true</active>
+        <label>Read Only</label>
+        <picklistValues>
+            <picklist>IRS_Request_Status__c</picklist>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

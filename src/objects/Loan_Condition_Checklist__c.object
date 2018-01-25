@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Loan_Condition_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object holds the individual Loan Conditions that apply to any given Application.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Box indicates that the Loan Condition is Active. Default value is Checked.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Loan Conditions</relationshipLabel>
+        <relationshipName>Loan_Conditions</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Generated_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Master_Checklist__r.Generated_Type__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Generated Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Condition_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Master_Checklist__r.Checklist_Code__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loan Condition Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Condition_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>Master_Checklist__r.Checklist_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loan Condition Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Condition_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Master_Checklist__r.Related_To__c)</formula>
+        <label>Loan Condition Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Fields associates the Loan Conditions and the Loan record.</description>
+        <externalId>false</externalId>
+        <label>Loan</label>
+        <referenceTo>Loan__c</referenceTo>
+        <relationshipLabel>Loan Conditions</relationshipLabel>
+        <relationshipName>Loan_Condition_Checklists</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Master_Checklist__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Condition</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Master_Checklist__c.Checklist_Type__c</field>
+                <operation>equals</operation>
+                <value>Loan Condition</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Master_Checklist__c</referenceTo>
+        <relationshipLabel>Loan Conditions</relationshipLabel>
+        <relationshipName>Loan_Condition_Checklists</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Property__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Property</label>
+        <referenceTo>Property__c</referenceTo>
+        <relationshipLabel>Loan Conditions</relationshipLabel>
+        <relationshipName>Loan_Conditions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Loan Condition</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Loan Condition Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Loan Conditions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Manual_Loan_Conditions</fullName>
+        <active>false</active>
+        <description>Validation rule ensures the Loan Condition is NOT changed if the Loan Condition is Automatic. If the loan condition is Manual, THEN the Loan Condition Type can be edited.</description>
+        <errorConditionFormula>Generated_Type__c = &quot;Auto&quot; &amp;&amp;  ISCHANGED(Master_Checklist__c )</errorConditionFormula>
+        <errorDisplayField>Master_Checklist__c</errorDisplayField>
+        <errorMessage>You cannot edit Loan Conditions that have been assigned automatically to the Application</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>New_Manual_Loan_Conditions_Active</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Generated_Type__c = &apos;Manual&apos;,  Active__c = false)</errorConditionFormula>
+        <errorDisplayField>Active__c</errorDisplayField>
+        <errorMessage>A manually created Loan Condition must be marked as Active on creation.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Property_Loan_Condition</fullName>
+        <active>true</active>
+        <description>Rule ensure that Loan Condition that are Type = Property have a Property associated to it.</description>
+        <errorConditionFormula>Loan_Condition_Type__c = &quot;Property&quot; &amp;&amp;  ISBLANK(Property__c )</errorConditionFormula>
+        <errorDisplayField>Property__c</errorDisplayField>
+        <errorMessage>For Property Loan Conditions, you must have a Property associated to the record</errorMessage>
+    </validationRules>
+</CustomObject>

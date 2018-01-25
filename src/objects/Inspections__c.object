@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Loan__r.Loan_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <externalId>false</externalId>
+        <formula>Loan__r.Application__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Loss Verification Rep</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Loss Verification Management</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Progress_Inspections</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Assignment_Queue_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( NOT( ISBLANK( DATEVALUE(Date_Assigned_to_LV_Assignment_Queue__c )) ) ,
+IF( DATE( 2000 , MONTH( DATEVALUE(Date_Assigned_to_LV_Assignment_Queue__c )) , DAY( DATEVALUE(Date_Assigned_to_LV_Assignment_Queue__c )) ) &lt;= DATE( 2000 , MONTH( TODAY() ) , DAY( TODAY() ) ),
+Today() - DATEVALUE(Date_Assigned_to_LV_Assignment_Queue__c ),
+Today() - DATEVALUE(Date_Assigned_to_LV_Assignment_Queue__c ) -1 ),
+null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assignment Queue Age (Days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Type__c</fullName>
+        <description>This is just a placeholder..  This will be replaced with a lookup into the Application table (?) for the actual business type.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Business Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Companion__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.Application__r.Companion__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Companion</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contractors_with_Commitments_10_000__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Contractors with Commitments &gt; $10,000</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.County__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>County</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Damage_Caused_By__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Damage Caused By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Assigned_to_Inspector__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date Assigned to Inspector</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Assigned_to_LV_Assignment_Queue__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date Assigned to LV AssignmentQueue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Assigned_to_Queue__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date Assigned to Queue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Assigned_to_SLV_Queue__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date Assigned to SLV Queue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Completed__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Date Completed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Disasater__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.Application__r.Disaster_Declaration__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Disaster</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disaster_Declaration__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.Application__r.Disaster_Declaration__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Disaster</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disbursement_Recommendation__c</fullName>
+        <externalId>false</externalId>
+        <label>Disbursement Recommendation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Est_Completion_Date__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Est Completion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exp_To_Date_vs_Available_Funds__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Exp To Date vs Available Funds</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>File_Age__c</fullName>
+        <description>Calculated field defined to show how long a file has been in the LV system.</description>
+        <externalId>false</externalId>
+        <label>File Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Funds_Available__c</fullName>
+        <externalId>false</externalId>
+        <label>Funds Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Furniture_Fixtures_Receipts__c</fullName>
+        <description>Receipts from Furniture and Fixture UP Category</description>
+        <externalId>false</externalId>
+        <label>Furniture &amp; Fixtures Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Injection__c</fullName>
+        <externalId>false</externalId>
+        <label>Injection</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Personal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Required</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Inspection_Name__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Inspection Name</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inspection_Type__c</fullName>
+        <description>Placeholder, to be replaced with a lookup of the actual inspection type when available.</description>
+        <externalId>false</externalId>
+        <label>Inspection Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Progress Inspection</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Inventory_Receipts__c</fullName>
+        <description>Receipts from Inventory UP Category</description>
+        <externalId>false</externalId>
+        <label>Inventory Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Type__c</fullName>
+        <description>Placeholder until the actual loan type field can be wired in.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Loan Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan</label>
+        <referenceTo>Loan__c</referenceTo>
+        <relationshipName>Progress_Inspections</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Machinery_and_Equipment_Receipts__c</fullName>
+        <description>Receipts from M&amp;E UP Category</description>
+        <externalId>false</externalId>
+        <label>Machinery and Equipment Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mit_Disbursed_to_Date__c</fullName>
+        <description>Disbursed to date for mitigation</description>
+        <externalId>false</externalId>
+        <label>Disbursed to Date for Mitigation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mit_Disbursement_Recommended__c</fullName>
+        <description>Disbursement recommended for mitigation</description>
+        <externalId>false</externalId>
+        <label>Disbursement Recommended for Mitigation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mit_Required_Injection__c</fullName>
+        <description>Required injection for mitigation</description>
+        <externalId>false</externalId>
+        <label>Required Injection for Mitigation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mit_Total_Project_Cost__c</fullName>
+        <description>Mitigation total project cost</description>
+        <externalId>false</externalId>
+        <label>Total Project Cost for Mitigation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mitigation_Receipts__c</fullName>
+        <description>Receipts from Mitigation UP Category</description>
+        <externalId>false</externalId>
+        <label>Mitigation Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PD__c</fullName>
+        <description>Placeholder for actual Post Desktop Indicator when available.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>PD</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PP_Disbursed_to_Date__c</fullName>
+        <description>Disbursed to date for personal property</description>
+        <externalId>false</externalId>
+        <label>Disbursed to Date for Pers Property</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PP_Disbursement_Recommended__c</fullName>
+        <description>Disbursement recommended for PP</description>
+        <externalId>false</externalId>
+        <label>Disbursement Recommended for Pers Prop</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PP_Required_Injection__c</fullName>
+        <description>Required injection for personal property</description>
+        <externalId>false</externalId>
+        <label>Required Injection for Pers Property</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PP_Total_Project_Cost__c</fullName>
+        <description>Personal property total project cost</description>
+        <externalId>false</externalId>
+        <label>Total Project Cost for Pers Property</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Percent_Repairs_to_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Percent Repairs to Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Personal_Property_Receipts__c</fullName>
+        <description>Receipts from PP UP Category</description>
+        <externalId>false</externalId>
+        <label>Personal Property Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Applicant_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Loan__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Applicant Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Property_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.Property_Address__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Property Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Property_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Home</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Property__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Property</label>
+        <referenceTo>Property__c</referenceTo>
+        <relationshipLabel>Inspections</relationshipLabel>
+        <relationshipName>Inspections</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Queue_Age__c</fullName>
+        <description>Calculated field defined to show how long the file has been in the queue</description>
+        <externalId>false</externalId>
+        <label>Queue Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RE_Disbursed_to_Date__c</fullName>
+        <description>RE disbursed to date</description>
+        <externalId>false</externalId>
+        <label>Disbursed to Date for RE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RE_Disbursement_Recommended__c</fullName>
+        <description>Disbursement recommended for RE</description>
+        <externalId>false</externalId>
+        <label>Disbursement Recommended for RE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RE_Receipts__c</fullName>
+        <description>Real Estate UP Category receipts</description>
+        <externalId>false</externalId>
+        <label>RE Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RE_Required_Injection__c</fullName>
+        <description>RE required injection</description>
+        <externalId>false</externalId>
+        <label>Required Injection for RE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RE_Total_Project_Cost__c</fullName>
+        <description>RE Total Project Cost</description>
+        <externalId>false</externalId>
+        <label>Total Project Cost for RE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_Repairs__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Remaining Repairs</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Repairs_to_Date_Are__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Repairs to Date Are</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLV_Queue_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( NOT( ISBLANK( DATEVALUE(Date_Assigned_to_SLV_Queue__c)) ) ,
+  IF( DATE( 2000 , MONTH( DATEVALUE(Date_Assigned_to_SLV_Queue__c)) , DAY( DATEVALUE(Date_Assigned_to_SLV_Queue__c)) ) &lt;= DATE( 2000 , MONTH( TODAY() ) , DAY( TODAY() ) ),
+     Today() - DATEVALUE(Date_Assigned_to_SLV_Queue__c),
+     Today() - DATEVALUE(Date_Assigned_to_SLV_Queue__c) -1 ),
+  null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLV Queue Age (Days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Property__r.State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assigned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Progress Inspection Requested</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Assigned</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending SLV Review</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.Property_Address__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Street Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Project_Cost_Based_On__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Total Project Cost Based On</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Upcoming_Commitments__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Upcoming Commitments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Veh_Disbursed_to_Date__c</fullName>
+        <description>Disbursed to date for vehicles</description>
+        <externalId>false</externalId>
+        <label>Disbursed to Date for Vehicles</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Veh_Disbursement_Recommended__c</fullName>
+        <description>Disbursement recommended for vehicles</description>
+        <externalId>false</externalId>
+        <label>Disbursement Recommended for Veh</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Veh_Required_Injection__c</fullName>
+        <description>Required injection for vehicles</description>
+        <externalId>false</externalId>
+        <label>Required Injection for Vehicles</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Veh_Total_Project_Cost__c</fullName>
+        <description>Vehicle total project cost</description>
+        <externalId>false</externalId>
+        <label>Total Project Cost for Vehicles</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Receipts__c</fullName>
+        <description>Receipts from Vehicle UP Category</description>
+        <externalId>false</externalId>
+        <label>Vehicle Receipts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Property__r.Zip_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Zip Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Inspection</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Assigned_Inspections</fullName>
+        <columns>NAME</columns>
+        <columns>Disaster_Declaration__c</columns>
+        <columns>Loan_Type__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Primary_Applicant_Name__c</columns>
+        <columns>Street_Address__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>County__c</columns>
+        <columns>Inspection_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Assignment_Queue_Age__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Assigned</value>
+        </filters>
+        <label>Assigned Inspections</label>
+    </listViews>
+    <listViews>
+        <fullName>LV_Assignment_Queue_Progress_Inspections</fullName>
+        <columns>NAME</columns>
+        <columns>Disasater__c</columns>
+        <columns>Loan_Type__c</columns>
+        <columns>Application__c</columns>
+        <columns>Property_Address__c</columns>
+        <columns>Assignment_Queue_Age__c</columns>
+        <columns>File_Age__c</columns>
+        <columns>PD__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>LV Assignment Queue</label>
+        <queue>LV_Assignment_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Progress_Inspections</fullName>
+        <columns>NAME</columns>
+        <columns>Application__c</columns>
+        <columns>Property_Address__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>Loan_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>File_Age__c</columns>
+        <columns>Assignment_Queue_Age__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Progress Inspections</label>
+    </listViews>
+    <listViews>
+        <fullName>Senior_Loss_Verification_Queue_Inspections</fullName>
+        <columns>NAME</columns>
+        <columns>Disasater__c</columns>
+        <columns>Loan_Type__c</columns>
+        <columns>Application__c</columns>
+        <columns>Property_Address__c</columns>
+        <columns>SLV_Queue_Age__c</columns>
+        <columns>File_Age__c</columns>
+        <columns>PD__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>Senior Loss Verification Queue</label>
+        <queue>Senior_Loss_Verification_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Inspection Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Inspections</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Application__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Assigned_To__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Req_Assigned_to_Field_if_status_Assigne</fullName>
+        <active>true</active>
+        <description>If Status = Assigned, Assigned To cannot be empty</description>
+        <errorConditionFormula>Text(Status__c)  = &apos;Assigned&apos;  &amp;&amp;  Assigned_To__c =&apos;&apos;</errorConditionFormula>
+        <errorMessage>Please assign this file to an inspector.  Assigned To must be selected if Status = Assigned.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Complete_Inspection</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Complete Inspection</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/flow/Progress_Inspection_Completed?retUrl=/{!Inspections__c.Id}&amp;varId={!Inspections__c.Id}&amp;</url>
+    </webLinks>
+</CustomObject>

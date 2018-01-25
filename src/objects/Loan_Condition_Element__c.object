@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Custom_Element_Value__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Custom Element Value</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Element_Type__c</fullName>
+        <description>Indicates the Type of Loan Condition Element</description>
+        <externalId>false</externalId>
+        <label>Element Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Shared Repair Responsibility</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policy Type</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policy Number</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Name of Policy Holder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Element_Value__c</fullName>
+        <description>Indicates the specific Element Value for the Loan Condition Element</description>
+        <externalId>false</externalId>
+        <label>Element Value</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Element_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Common wall</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Common roof</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Common road, bridge or other improvements</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Homeowners</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flood</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Automotive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Earthquake</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sewer Backup</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wind</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hazard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bus Interruption</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Renter Insurance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hull</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Shared Repair Responsibility</controllingFieldValue>
+                <valueName>Common wall</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Shared Repair Responsibility</controllingFieldValue>
+                <valueName>Common roof</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Shared Repair Responsibility</controllingFieldValue>
+                <valueName>Common road, bridge or other improvements</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Homeowners</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Flood</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Automotive</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Earthquake</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Sewer Backup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Wind</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Hazard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Bus Interruption</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Renter Insurance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Policy Type</controllingFieldValue>
+                <valueName>Hull</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Element__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot;, &quot;Element&quot; ,  Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Element</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Condition__c</fullName>
+        <description>Field associates the Loan Condition Element with the parent Loan Condition</description>
+        <externalId>false</externalId>
+        <label>Loan Condition</label>
+        <referenceTo>Loan_Condition_Checklist__c</referenceTo>
+        <relationshipLabel>Loan Condition Elements</relationshipLabel>
+        <relationshipName>Loan_Condition_Elements</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Master_Checklist__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master List</label>
+        <referenceTo>Master_Checklist__c</referenceTo>
+        <relationshipLabel>Loan Condition Elements</relationshipLabel>
+        <relationshipName>Loan_Condition_Elements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Loan Condition Element</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>LC Element Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Loan Condition Elements</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Pre_Defined_Element_Values</fullName>
+        <active>true</active>
+        <description>Validation rule ensure no Custom Element values are entered for specific Element Types</description>
+        <errorConditionFormula>(ISPICKVAL( Element_Type__c , &quot;Policy Type&quot;) || ISPICKVAL( Element_Type__c, &quot;Shared Repair Responsibility&quot;)) &amp;&amp; NOT(ISBLANK( Custom_Element_Value__c ))</errorConditionFormula>
+        <errorDisplayField>Custom_Element_Value__c</errorDisplayField>
+        <errorMessage>For this Element Type, you may only enter the pre-defined Element Values</errorMessage>
+    </validationRules>
+</CustomObject>

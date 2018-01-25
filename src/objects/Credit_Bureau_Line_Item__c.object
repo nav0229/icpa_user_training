@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object pertains to the particulars required in the applicants CBR to perform the credit analysis of the applicant. This object is also the child object against the custom object &quot;Credit Bureau&quot;</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Balance__c</fullName>
+        <description>Account Balance of collection and Account Balance for tradelines</description>
+        <externalId>false</externalId>
+        <label>Account Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Account_Condition_Code__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Account Condition Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Condition__c</fullName>
+        <description>This field pertains to account condition of Tradelines Creditors account, if any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Tradelines-Account Condition (e.g. Open, Closed)</inlineHelpText>
+        <label>Account Condition</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <description>This field pertains to creditor account number for collection, if any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Account# (e.g. 4409844)</inlineHelpText>
+        <label>Account Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Type__c</fullName>
+        <description>This field pertains applicants Tradeline&apos;s creditor&apos;s type, If any found on the applicants CBR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tradelines- Creditor Type (e.g. Bank, Auto, Retail, Card)</inlineHelpText>
+        <label>Account Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bank</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bank Credit Card</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Credit Card</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Loan Finance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sales Finance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Credit Union</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Savings &amp; Loan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Service &amp; Professional</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Amount_Past_Due__c</fullName>
+        <description>Integration field used to pull and load CBR</description>
+        <externalId>false</externalId>
+        <label>Amount Past Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Balance_Date__c</fullName>
+        <description>This field pertains to the last balance date under collections and tradelines , If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Collections/Tradelines -Balance Date ( 01/31/2000)</inlineHelpText>
+        <label>Balance Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Bureau_Line_Item_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Bureau Line Item Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Collection</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Public Record</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Score Factor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Trade Line</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Credit_Bureau__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Bureau</label>
+        <referenceTo>Credit_Bureau__c</referenceTo>
+        <relationshipLabel>Credit Bureau Line Items</relationshipLabel>
+        <relationshipName>Credit_Bureau_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Credit_Limit__c</fullName>
+        <description>This field pertains applicant&apos;s Tradelines credit limit against the creditor, If any found on the applicants CBR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tradelines-Credit Limit (e.g. $5,649.00)</inlineHelpText>
+        <label>Credit Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Creditor_Name__c</fullName>
+        <description>This field pertains to name of the creditor, if any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Creditor Name (e.g. Bank of America)</inlineHelpText>
+        <label>Creditor Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Creditor_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Creditor_Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>I</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Currency__c</fullName>
+        <description>Integration field used to pull and load CBR</description>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ECOA__c</fullName>
+        <description>Integration field used to pull and load CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>ECOA</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>High_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>High_Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>History_Date__c</fullName>
+        <description>This field pertains to the date of history for the creditors account, If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Collections- History Date ( 01/31/2000)</inlineHelpText>
+        <label>History Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Is_Duplicate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Duplicate</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Mortgage__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Integration field used to pull and load CBR</description>
+        <externalId>false</externalId>
+        <label>Is Mortgage</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Kind_of_Business__c</fullName>
+        <description>Integration field used to pull and load CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Kind of Business</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Activity__c</fullName>
+        <description>This field pertains to the date of last activity done on the collection record , If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Collections-Last Activity Date ( 01/31/1990)</inlineHelpText>
+        <label>Last Activity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Monthly_Payments__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Payment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Open_Date__c</fullName>
+        <description>This field pertains to the date the credit was opened, If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Collections-Open Date ( 01/31/1980)</inlineHelpText>
+        <label>Open Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Open_Or_Closed__c</fullName>
+        <externalId>false</externalId>
+        <label>Open_Or_Closed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Payment_Status_Code__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Payment Status Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <description>This field pertains to status of the payment made against the creditors, if any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Tradelines-Payment Status (30 2 TIMES, CURR ACCT)</inlineHelpText>
+        <label>Payment Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Public_Record_Amount__c</fullName>
+        <description>This field pertains to any amount  against the  public record type, If any found on the applicants CBR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Public Record Type Amount ( $1000.00)</inlineHelpText>
+        <label>Public Record Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Public_Record_Filed_Date__c</fullName>
+        <description>This field pertains to the Date  the public record was filed, If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Public Record-Date Filed ( 01/31/2000)</inlineHelpText>
+        <label>Public Record Filed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Public_Record_Satisified_Date__c</fullName>
+        <description>This field pertains to the Date the public record was satisfied, If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Public Record-Date Satisfied ( 01/31/2050)</inlineHelpText>
+        <label>Public Record Satisified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Public_Record_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Public Record Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Filed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Satisfied</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Public_Record_Type__c</fullName>
+        <description>This field pertains to any type of public record If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Public Record (e.g. Bankruptcy, Judgments, Liens)</inlineHelpText>
+        <label>Public Record Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purpose_Of_Account_Code__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Purpose Of Account Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purpose_of_Account__c</fullName>
+        <description>This field pertains to purpose of the credit account, if any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Tradelines- Purpose of Account (e.g. CRC)</inlineHelpText>
+        <label>Purpose of Account</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Date__c</fullName>
+        <description>Integration field used to pull and load CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Status Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Integration field used to pull and load CBR</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subcode__c</fullName>
+        <description>Integration field used to pull and load CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>Subcode</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Term_Type__c</fullName>
+        <description>This field pertains creditor&apos;s type of term against the collections, If any found on the applicants CBR</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Collections Term (e.g. CLOSED/COLLECTION)</inlineHelpText>
+        <label>Term Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Credit Bureau Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CBRL-{00000000}</displayFormat>
+        <label>Credit Bureau Line Item No.</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Credit Bureau Line Items</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Default</fullName>
+        <active>true</active>
+        <label>Default</label>
+        <picklistValues>
+            <picklist>Account_Type__c</picklist>
+            <values>
+                <fullName>Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Union</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings %26 Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service %26 Professional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Bureau_Line_Item_Type__c</picklist>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Score Factor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Line</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creditor_Type__c</picklist>
+            <values>
+                <fullName>I</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Open_Or_Closed__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Public_Record_Status__c</picklist>
+            <values>
+                <fullName>Filed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Satisfied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New_Read_Only</fullName>
+        <active>true</active>
+        <label>Read Only</label>
+        <picklistValues>
+            <picklist>Account_Type__c</picklist>
+            <values>
+                <fullName>Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Union</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings %26 Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service %26 Professional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Bureau_Line_Item_Type__c</picklist>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Score Factor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Line</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creditor_Type__c</picklist>
+            <values>
+                <fullName>I</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Open_Or_Closed__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Public_Record_Status__c</picklist>
+            <values>
+                <fullName>Filed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Satisfied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>
